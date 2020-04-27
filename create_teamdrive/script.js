@@ -121,7 +121,7 @@ var authConfig = {
                           class="form-check-label"
                           for="teamDriveThemeOptionRandom"
                         >
-                          随机
+                          สุ่มพื้นหลัง
                         </label>
                       </div>
                     </div>
