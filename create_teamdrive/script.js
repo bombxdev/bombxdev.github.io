@@ -1,0 +1,498 @@
+// Script ตัวอย่าง การสร้างหน้าเว็บ สำหรับ "gen สร้าง teamdrive แบบอัตโนมัติ"
+// Copy this script to paste on your cloudflare's worker ก๊อปสคริปต์นี้ไปใส่ใน Cloudflare Worker
+var authConfig = {
+    version: "จัดทำโดย BoMBx",
+    dailyLimit: true, //จำกัดการขอไดรฟ์ต่อวัน ต่อเมล ถ้าไม่จำกัดจำนวนไดรฟ์ให้เป็นเป็น false Whether to restrict each mailbox to submit only one request per day
+    //แก้ไข client_id, client_secret, refresh_token ให้ไป gen มาจาก https://gdindex-code-builder.glitch.me/(https://github.com/maple3142/GDIndex)
+    client_id: "",
+    client_secret: "",
+    refresh_token: "",
+    domain: "ใส่โดเมนของทีมไดรฟ์", // The team page of this site is displayed on the page, you can leave it blank
+    // The blacklist, the free version does not have a database, a feasible idea is to obtain it from its own server, which can be implemented by itself
+    // ต้องการแบล็คลิสต์เมลไหน ให้มาใส่ตรงนี้
+    black_list: ["example@gmail.com"]
+};
+  
+  var gd;
+  
+  var today;
+  
+  var html = `
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"
+      />
+      <title>Google TeamDrive Generator</title>
+      <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      />
+      <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"
+      ></script>
+    <!--source code: https://github.com/yyuueexxiinngg/some-scripts/blob/master/workers/google/drive/create-share-teamdrive.js-->
+    </head>
+    <body>
+    <br><br>
+      <div id="app">
+        <div id="container" class="container">
+          <div class="row">
+            <div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 text-center">
+              <h1>แจกฟรี Google TeamDrive</h1>
+               <p>${authConfig.version}</p>
+               <p><a href="https://www.facebook.com/groups/260637511640852/" target="_blank"><img src="https://scontent.fkul15-1.fna.fbcdn.net/v/t1.0-9/90165002_10222108193872315_2275393937352949760_n.jpg?_nc_cat=104&_nc_sid=ca434c&_nc_ohc=V1KTvsmIjQ8AX-r8q7v&_nc_ht=scontent.fkul15-1.fna&oh=e1db5debecf6cba0f53507435e7f27b8&oe=5ECD069D" width="200"></a></p>
+           ${
+             authConfig.domain
+               ? ` <h5>ทีมไดรฟ์โดเมน:  ${authConfig.domain}</h5>`
+               : ""
+           }
+              <p>
+                หลาย API ถูกเรียกใช้งานพร้อมกัน โปรดรอสักครู่..
+              </p>
+              <p>
+                <span style="color: red"><b>ห้ามนำไปจำหน่าย หรือนำไปใช้เพื่อการค้า</b></span>
+              </p>
+              <br />
+              <div class="info-form text-left">
+                <form id="teamDriveForm">
+                  <div class="form-group">
+                    <label for="teamDriveName" class="sr-only">
+                      ชื่อทีมไดรฟ์
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="teamDriveName"
+                      placeholder="ตั้งชื่อทีมไดรฟ์"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="emailAddress" class="sr-only">
+                      เมล
+                    </label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="emailAddress"
+                      placeholder="ใส่เมลของคุณ"
+                    />
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      id="customTheme"
+                      value=""
+                    />
+                    <label class="form-check-label" for="customTheme">
+                      เลือกพื้นหลัง TeamDrive
+                    </label>
+                  </div>
+                  <div id="customThemeSection" class="d-none">
+                    <div id="teamDriveThemePreview"></div>
+                    <div id="teamDriveThemeOptions">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="teamDriveTheme"
+                          id="teamDriveThemeOptionRandom"
+                          value="random"
+                          checked
+                        />
+                        <label
+                          class="form-check-label"
+                          for="teamDriveThemeOptionRandom"
+                        >
+                          随机
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="loadMe"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="loadMeLabel"
+      >
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-body text-center">
+              <div class="d-flex justify-content-center">
+                <div class="spinner-border" role="status">
+                  <span class="sr-only">กำลังสร้าง...</span>
+                </div>
+              </div>
+              <div clas="loader-txt">
+                <p>กำลังสร้าง...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer font-small blue">
+  
+        <div class="footer-copyright text-center py-3">
+          © 2019 source code:
+          <a
+            href="https://github.com/yyuueexxiinngg/some-scripts/blob/master/workers/google/drive/create-share-teamdrive.js"
+          >
+            yyuueexxiinngg
+          </a>
+          <br />
+          Special Thanks:
+          <a href="https://github.com/maple3142/GDIndex">
+            maple3142
+          </a>
+        </div>
+      </footer>
+    </body>
+  
+    <script>
+      var teamDriveThemes;
+      $("input[id=customTheme]").change(function() {
+        if ($(this).is(":checked")) {
+          $("#customThemeSection").removeClass("d-none");
+        } else {
+          $("#customThemeSection").addClass("d-none");
+          $("input[name=teamDriveTheme]")[0].click();
+        }
+      });
+  
+      $.get("/teamDriveThemes", function(json) {
+        teamDriveThemes = json.teamDriveThemes;
+        $.each(json.teamDriveThemes, function(i, item) {
+          $("#teamDriveThemeOptions").append(\`
+          <div class="form-check">
+             <input
+              class="form-check-input"
+              type="radio"
+              name="teamDriveTheme"
+              id="teamDriveThemeOption-\${item.id}"
+              value="\${item.id}"
+            />
+            <label class="form-check-label" for="teamDriveThemeOption-\${item.id}">
+             \${item.id}
+            </label>
+          </div>
+          \`);
+        });
+  
+        $("input[name=teamDriveTheme]").change(function() {
+          var themeId = this.value;
+          if (themeId === "random") {
+            $("#teamDriveThemePreview").html("");
+          } else {
+            var theme = teamDriveThemes.find(function(t) {
+              return t.id == themeId;
+            });
+  
+            $("#teamDriveThemePreview").html(
+              \`
+            <div class="card" style="background-color: \${theme.colorRgb}">
+              <img src="\${theme.backgroundImageLink}" class="card-img-top" alt="\${theme.id}" />
+              <div class="card-body">
+                <h5 class="card-text" style="color: white">
+                  \${theme.id}
+                </h5>
+              </div>
+            </div>
+        \`
+            );
+          }
+        });
+  
+        $("#teamDriveForm").on("submit", function(event) {
+          event.preventDefault();
+  
+          $("#loadMe").modal({
+            backdrop: "static", //remove ability to close modal with click
+            keyboard: false, //remove option to close with keyboard
+            show: true //Display loader!
+          });
+          $.ajax({
+            type: "POST",
+            url: "/drive",
+            data: JSON.stringify({
+              teamDriveName: $("input[id=teamDriveName]").val(),
+              teamDriveThemeId: $("input[name=teamDriveTheme]:checked").val(),
+              emailAddress: $("input[id=emailAddress]").val()
+            }),
+            success: function(data) {
+              $("#loadMe").modal("hide");
+              alert("สำเร็จ!");
+            },
+            error: function(request, status, error) {
+              $("#loadMe").modal("hide");
+              alert("ล้มเหลว!" + request.responseText);
+            },
+            contentType: "application/json"
+          });
+        });
+      });
+    </script>
+    <style type="text/css">
+      .card-img-top {
+        width: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </html>
+  
+  
+  `;
+  
+  addEventListener("fetch", event => {
+    event.respondWith(handleRequest(event.request));
+  });
+  
+  var dailyLimit = [];
+  
+  /**
+   * Fetch and log a request
+   * @param {Request} request
+   */
+  async function handleRequest(request) {
+    if (authConfig.dailyLimit) {
+      if (!today) today = new Date().getDate();
+  
+      // Remove email rate limit every day
+      if (new Date().getDate() != today) {
+        today = new Date().getDate();
+        dailyLimit.length = 0;
+      }
+    }
+  
+    if (gd == undefined) {
+      gd = new googleDrive(authConfig);
+    }
+    let url = new URL(request.url);
+    let path = url.pathname;
+  
+    switch (path) {
+      case "/teamDriveThemes":
+        let teamDriveThemes = await gd.getTeamDriveThemes();
+        return new Response(JSON.stringify(teamDriveThemes), {
+          status: 200,
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*"
+          }
+        });
+      case "/drive":
+        if (request.method === "POST") {
+          const requestBody = await request.json();
+  
+          if (authConfig.dailyLimit) {
+            if (dailyLimit.includes(requestBody.emailAddress)) {
+              return new Response("อนุญาตให้สร้างได้วันละครั้งเท่านั้น", {
+                status: 429
+              });
+            } else {
+              dailyLimit.push(requestBody.emailAddress);
+            }
+          }
+  
+          if (authConfig.black_list.includes(requestBody.emailAddress)) {
+            return new Response("Failed", {
+              status: 429
+            });
+          }
+  
+          try {
+            let result = await gd.createAndShareTeamDrive(requestBody);
+            return new Response("OK", {
+              status: 200
+            });
+          } catch (err) {
+            return new Response(err.toString(), {
+              status: 500
+            });
+          }
+        } else if (request.method === "OPTIONS") {
+          return new Response("", {
+            status: 200,
+            headers: {
+              "Access-Control-Allow-Origin": "*"
+            }
+          });
+        } else {
+          return new Response("Bad Request", {
+            status: 400
+          });
+        }
+      default:
+        return new Response(html, {
+          status: 200,
+          headers: {
+            "Content-Type": "text/html; charset=utf-8",
+            "Access-Control-Allow-Origin": "*"
+          }
+        });
+    }
+  }
+  // https://stackoverflow.com/a/2117523
+  function uuidv4() {
+    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, c => {
+      // tslint:disable-next-line:one-variable-per-declaration
+      const r = (Math.random() * 16) | 0,
+        // tslint:disable-next-line:triple-equals
+        v = c == "x" ? r : (r & 0x3) | 0x8;
+      return v.toString(16);
+    });
+  }
+  
+  class googleDrive {
+    constructor(authConfig) {
+      this.authConfig = authConfig;
+      this.accessToken();
+    }
+  
+    async getTeamDriveThemes() {
+      let url = "https://www.googleapis.com/drive/v3/about";
+      let requestOption = await this.requestOption();
+      let params = { fields: "teamDriveThemes" };
+      url += "?" + this.enQuery(params);
+      let response = await fetch(url, requestOption);
+      return await response.json();
+    }
+  
+    async createAndShareTeamDrive(requestBody) {
+      // Create team drive
+      console.log("Creating TeamDrive");
+      let url = "https://www.googleapis.com/drive/v3/drives";
+      let requestOption = await this.requestOption(
+        { "Content-Type": "application/json" },
+        "POST"
+      );
+      let params = { requestId: uuidv4() };
+      url += "?" + this.enQuery(params);
+      let post_data = {
+        name: requestBody.teamDriveName
+      };
+      if (
+        requestBody.teamDriveThemeId &&
+        requestBody.teamDriveThemeId !== "random"
+      ) {
+        post_data.themeId = requestBody.teamDriveThemeId;
+      }
+      requestOption.body = JSON.stringify(post_data);
+      let response = await fetch(url, requestOption);
+      let result = await response.json();
+      const teamDriveId = result.id;
+      console.log("Created TeamDrive ID", teamDriveId);
+  
+      // Get created drive user permission ID
+      console.log(`Getting creator permission ID`);
+      url = `https://www.googleapis.com/drive/v3/files/${teamDriveId}/permissions`;
+      params = { supportsAllDrives: true };
+      params.fields = "permissions(id,emailAddress)";
+      url += "?" + this.enQuery(params);
+      requestOption = await this.requestOption();
+      response = await fetch(url, requestOption);
+      result = await response.json();
+      const currentUserPermissionID = result.permissions[0].id;
+      console.log(currentUserPermissionID);
+  
+      // Share team drive with email address
+      console.log(`Sharing the team drive to ${requestBody.emailAddress}`);
+      url = `https://www.googleapis.com/drive/v3/files/${teamDriveId}/permissions`;
+      params = { supportsAllDrives: true };
+      url += "?" + this.enQuery(params);
+      requestOption = await this.requestOption(
+        { "Content-Type": "application/json" },
+        "POST"
+      );
+      post_data = {
+        role: "organizer",
+        type: "user",
+        emailAddress: requestBody.emailAddress
+      };
+      requestOption.body = JSON.stringify(post_data);
+      response = await fetch(url, requestOption);
+      await response.json();
+  
+      // Delete creator from the team drive
+      console.log("Deleting creator from the team drive");
+      url = `https://www.googleapis.com/drive/v3/files/${teamDriveId}/permissions/${currentUserPermissionID}`;
+      params = { supportsAllDrives: true };
+      url += "?" + this.enQuery(params);
+      requestOption = await this.requestOption({}, "DELETE");
+      response = await fetch(url, requestOption);
+      return await response.text();
+    }
+  
+    async accessToken() {
+      console.log("accessToken");
+      if (
+        this.authConfig.expires == undefined ||
+        this.authConfig.expires < Date.now()
+      ) {
+        const obj = await this.fetchAccessToken();
+        if (obj.access_token != undefined) {
+          this.authConfig.accessToken = obj.access_token;
+          this.authConfig.expires = Date.now() + 3500 * 1000;
+        }
+      }
+      return this.authConfig.accessToken;
+    }
+  
+    async fetchAccessToken() {
+      console.log("fetchAccessToken");
+      const url = "https://www.googleapis.com/oauth2/v4/token";
+      const headers = {
+        "Content-Type": "application/x-www-form-urlencoded"
+      };
+      const post_data = {
+        client_id: this.authConfig.client_id,
+        client_secret: this.authConfig.client_secret,
+        refresh_token: this.authConfig.refresh_token,
+        grant_type: "refresh_token"
+      };
+  
+      let requestOption = {
+        method: "POST",
+        headers: headers,
+        body: this.enQuery(post_data)
+      };
+  
+      const response = await fetch(url, requestOption);
+      return await response.json();
+    }
+  
+    async requestOption(headers = {}, method = "GET") {
+      const accessToken = await this.accessToken();
+      headers["authorization"] = "Bearer " + accessToken;
+      return { method: method, headers: headers };
+    }
+  
+    enQuery(data) {
+      const ret = [];
+      for (let d in data) {
+        ret.push(encodeURIComponent(d) + "=" + encodeURIComponent(data[d]));
+      }
+      return ret.join("&");
+    }
+  }
