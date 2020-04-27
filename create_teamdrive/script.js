@@ -1,9 +1,13 @@
-// Script ตัวอย่าง การสร้างหน้าเว็บ สำหรับ "gen สร้าง teamdrive แบบอัตโนมัติ"
+// Script ตัวอย่าง การสร้างหน้าเว็บ สำหรับ "gen สร้าง teamdrive แบบอัตโนมัติ" Edit : 28/04/2020
+// Translate to Thai by BoMBx
+// Original source code : https://github.com/yyuueexxiinngg/some-scripts/blob/master/workers/google/drive/create-share-teamdrive.js
 // Copy this script to paste on your cloudflare's worker ก๊อปสคริปต์นี้ไปใส่ใน Cloudflare Worker
+// Find for client_id, client_secret, refresh_token from here https://github.com/maple3142/GDIndex
+
 var authConfig = {
     version: "จัดทำโดย BoMBx",
     dailyLimit: true, //จำกัดการขอไดรฟ์ต่อวัน ต่อเมล ถ้าไม่จำกัดจำนวนไดรฟ์ให้เป็นเป็น false Whether to restrict each mailbox to submit only one request per day
-    //แก้ไข client_id, client_secret, refresh_token ให้ไป gen มาจาก https://gdindex-code-builder.glitch.me/(https://github.com/maple3142/GDIndex)
+    //แก้ไข client_id, client_secret, refresh_token ให้ไป gen มาจาก https://gdindex-code-builder.glitch.me/
     client_id: "",
     client_secret: "",
     refresh_token: "",
