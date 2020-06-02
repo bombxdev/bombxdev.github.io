@@ -57,7 +57,8 @@ var authConfig = {
             <div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 text-center">
               <h1>แจกฟรี Google TeamDrive</h1>
                <p>${authConfig.version}</p>
-               <p><a href="https://www.facebook.com/groups/260637511640852/" target="_blank"><img src="https://scontent.fkul15-1.fna.fbcdn.net/v/t1.0-9/90165002_10222108193872315_2275393937352949760_n.jpg?_nc_cat=104&_nc_sid=ca434c&_nc_ohc=V1KTvsmIjQ8AX-r8q7v&_nc_ht=scontent.fkul15-1.fna&oh=e1db5debecf6cba0f53507435e7f27b8&oe=5ECD069D" width="200"></a></p>
+               <!-- ใส่ URL เว็บไซต์ + URL รูปข้างล่างนี้ -->
+               <p><a href="https://www.facebook.com/groups/260637511640852/" target="_blank"><img src="https://www.img.in.th/images/5174615e4f9d0916ac32c9bc436ea97e.jpg" width="200"></a></p>
            ${
              authConfig.domain
                ? ` <h5>ทีมไดรฟ์โดเมน:  ${authConfig.domain}</h5>`
