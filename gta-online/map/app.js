@@ -516,7 +516,7 @@
   // and the repository copy (in case Pages has not rebuilt yet); use the newest.
   var TUNABLES_URLS = [
     'data/tunables.json',
-    'https://raw.githubusercontent.com/bombxdev/bombxdev.github.io/master/gta-online-map/data/tunables.json'
+    'https://raw.githubusercontent.com/bombxdev/bombxdev.github.io/master/gta-online/map/data/tunables.json'
   ];
   function loadTunables() {
     return Promise.all(TUNABLES_URLS.map(function (u) {

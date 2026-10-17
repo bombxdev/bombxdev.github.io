@@ -1,6 +1,6 @@
 # GTA Online Map
 
-แผนที่ GTA Online แบบค้นหาได้ ไม่มีโฆษณา ใช้งานที่ `https://bombxdev.github.io/gta-online-map/`
+แผนที่ GTA Online แบบค้นหาได้ ไม่มีโฆษณา ใช้งานที่ `https://bombxdev.github.io/gta-online/map/`
 
 ## ฟีเจอร์
 

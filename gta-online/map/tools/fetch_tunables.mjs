@@ -65,7 +65,7 @@ function lookup(tunables, forms) {
 async function load() {
   // TUNABLES_FILE lets the script run against a saved response (testing).
   if (process.env.TUNABLES_FILE) return JSON.parse(readFileSync(process.env.TUNABLES_FILE, 'utf8'));
-  const res = await fetch(SOURCE, { headers: { 'user-agent': 'bombxdev.github.io gta-online-map' } });
+  const res = await fetch(SOURCE, { headers: { 'user-agent': 'bombxdev.github.io gta-online/map' } });
   if (!res.ok) throw new Error(`${SOURCE} -> HTTP ${res.status}`);
   return res.json();
 }
