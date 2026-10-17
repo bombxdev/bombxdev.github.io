@@ -1,0 +1,140 @@
+{
+ "ui": {
+  "meta.description": "Bản đồ GTA Online tìm kiếm vật phẩm sưu tầm và vị trí hằng ngày. Không quảng cáo, không cần đăng ký.",
+  "aria.sidebar": "Tìm kiếm và bộ lọc",
+  "aria.closeMenu": "Đóng menu",
+  "aria.openMenu": "Mở menu tìm kiếm",
+  "aria.clearSearch": "Xóa tìm kiếm",
+  "aria.today": "Vị trí hằng ngày",
+  "aria.dayPrev": "Ngày trước",
+  "aria.dayNext": "Ngày sau",
+  "mobile.open": "☰ Tìm kiếm",
+  "search.placeholder": "Tìm vd. figure 12, card 5, -75, -818",
+  "search.gotoCoord": "Đến tọa độ trong game",
+  "search.clickToGo": "Nhấn để đến điểm này",
+  "search.found": "{n} kết quả",
+  "search.showingFirst": " (hiển thị {n} kết quả đầu)",
+  "search.mapFiltered": " · bản đồ chỉ hiện kết quả",
+  "today.title": "Hằng ngày",
+  "today.only": "Mục hằng ngày: chỉ hiện điểm của ngày đã chọn",
+  "today.today": "Hôm nay",
+  "today.ahead": "+{n} ngày",
+  "today.behind": "{n} ngày",
+  "today.resetIn": "Làm mới sau {h} giờ {m} phút ({time})",
+  "today.eventOnly": "{name} (chỉ trong sự kiện)",
+  "status.noTunables": "Tính từ script của game · chưa có tunables của Rockstar để đối chiếu",
+  "status.override": "⚠ Rockstar thay đổi: {list} (đã áp dụng)",
+  "status.ok": "✓ Đã đối chiếu với tunables của Rockstar, không có thay đổi · cập nhật {time}",
+  "status.gunVanPinned": "Tuần này Rockstar cố định vị trí Gun Van: {list}",
+  "toolbar.showAll": "Hiện tất cả",
+  "toolbar.hideAll": "Ẩn tất cả",
+  "toolbar.hideCollected": "Ẩn mục đã nhặt",
+  "group.permanent": "Cố định",
+  "group.daily": "Hằng ngày",
+  "group.event": "Sự kiện theo mùa",
+  "pop.selectedDay": "xuất hiện ngày đã chọn",
+  "pop.coords": "Tọa độ",
+  "pop.gameCoords": "Tọa độ trong game",
+  "pop.markDone": "✔ Đã nhặt",
+  "pop.markUndone": "↩︎ Chưa nhặt",
+  "pop.copyCoords": "Sao chép tọa độ",
+  "pop.copyLink": "Sao chép liên kết",
+  "pop.copy": "Sao chép",
+  "cayo.note": "(không có ảnh bản đồ đảo)",
+  "toast.copied": "Đã sao chép: {text}",
+  "toast.loadError": "Không tải được dữ liệu",
+  "settings.language": "Ngôn ngữ",
+  "settings.export": "Xuất bản sao lưu",
+  "settings.import": "Nhập bản sao lưu",
+  "settings.hint": "Tiến độ và cài đặt chỉ lưu trong trình duyệt này. Hãy xuất bản sao lưu để giữ lại hoặc chuyển sang thiết bị khác.",
+  "export.done": "Đã tải bản sao lưu",
+  "import.confirm": "Thay tiến độ và cài đặt của trình duyệt này bằng bản sao lưu ngày {date} (đã nhặt {n})?",
+  "import.done": "Đã khôi phục bản sao lưu",
+  "import.invalid": "Tệp này không phải bản sao lưu hợp lệ",
+  "foot.hint": "Nhấp chuột phải (hoặc nhấn giữ) trên bản đồ để xem tọa độ trong game.",
+  "foot.daily": "Vị trí hằng ngày được tính từ bảng luân phiên của game + tunables từ {rdo} (cảm ơn {bot})",
+  "foot.sources": "Vị trí lấy từ script game ({scripts}) · bản đồ {tiles} · {leaflet}",
+  "foot.legal": "GTA V / GTA Online © Rockstar Games — trang của fan, không liên quan đến Rockstar"
+ },
+ "cats": {
+  "action_figures": {
+   "name": "Mô hình nhân vật"
+  },
+  "playing_cards": {
+   "name": "Lá bài"
+  },
+  "signal_jammers": {
+   "name": "Thiết bị gây nhiễu"
+  },
+  "peyote": {
+   "name": "Cây peyote",
+   "note": "Một số cây nằm dưới nước"
+  },
+  "movie_props": {
+   "name": "Đạo cụ phim",
+   "note": "3 đạo cụ còn lại nằm trong xe đang chạy nên không có vị trí cố định"
+  },
+  "media_sticks": {
+   "name": "USB nhạc",
+   "note": "Một số nằm trong nhà như sòng bạc hoặc hộp đêm"
+  },
+  "radio_antennas": {
+   "name": "Ăng-ten radio"
+  },
+  "ld_organics": {
+   "name": "Sản phẩm LD Organics"
+  },
+  "skydives": {
+   "name": "Nhảy dù Junk Energy",
+   "note": "Hằng ngày: 10 trên 25 điểm mỗi ngày"
+  },
+  "gun_van": {
+   "name": "Gun Van",
+   "note": "Hằng ngày: đổi chỗ mỗi ngày (1 trong 30 điểm)"
+  },
+  "ls_tags": {
+   "name": "Graffiti LS Tags",
+   "note": "Hằng ngày: xuất hiện 5 điểm mỗi ngày (trong 30 điểm đầu)"
+  },
+  "hidden_caches": {
+   "name": "Kho ẩn dưới nước",
+   "note": "Hằng ngày: 10 điểm ngẫu nhiên mỗi ngày (dưới nước)"
+  },
+  "shipwrecks": {
+   "name": "Xác tàu đắm",
+   "note": "Hằng ngày: 1 điểm mỗi ngày dọc bờ biển"
+  },
+  "treasure_chests": {
+   "name": "Rương kho báu (Cayo Perico)",
+   "note": "Hằng ngày: 2 điểm mỗi ngày trên Cayo Perico"
+  },
+  "buried_stashes": {
+   "name": "Kho chôn giấu (Cayo Perico)",
+   "note": "Hằng ngày: 2 điểm mỗi ngày trên Cayo Perico"
+  },
+  "jack_o_lanterns": {
+   "name": "Đèn bí ngô",
+   "note": "Sự kiện Halloween"
+  },
+  "snowmen": {
+   "name": "Người tuyết",
+   "note": "Sự kiện Giáng sinh / Năm mới"
+  },
+  "yuanbao": {
+   "name": "Nén vàng (Yuanbao)",
+   "note": "Sự kiện Tết Nguyên đán"
+  },
+  "gold_charms": {
+   "name": "Bùa vàng",
+   "note": "Sự kiện ngày Thánh Patrick"
+  },
+  "lucky_charms": {
+   "name": "Bùa may mắn",
+   "note": "Sự kiện ngày Thánh Patrick"
+  },
+  "weed_packages": {
+   "name": "Gói cần sa",
+   "note": "Sự kiện đặc biệt: 10 điểm mỗi ngày trong thời gian diễn ra"
+  }
+ }
+}

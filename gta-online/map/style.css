@@ -32,7 +32,16 @@ a { color: var(--accent); }
 }
 #sidebar > * { flex-shrink: 0; }
 .brand { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px 6px; }
-.brand h1 { font-size: 18px; margin: 0; letter-spacing: .3px; }
+.brand h1 { font-size: 17px; margin: 0; letter-spacing: .3px; flex: 1; white-space: nowrap; }
+.brand { gap: 8px; }
+.lang { display: inline-flex; align-items: center; gap: 4px; font-size: 13px; }
+.lang select {
+  background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px;
+  padding: 4px 6px; max-width: 128px; cursor: pointer;
+}
+.backup { padding: 6px 8px 0; border-top: 1px solid var(--line); }
+.backup .toolbar { padding: 6px 8px 4px; }
+.backup .muted { margin: 0 8px 8px; }
 
 .search { position: relative; padding: 8px 16px; }
 .search input {

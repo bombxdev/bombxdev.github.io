@@ -1,0 +1,140 @@
+{
+ "ui": {
+  "meta.description": "Peta GTA Online untuk mencari collectible dan lokasi harian. Tanpa iklan dan tanpa daftar akun.",
+  "aria.sidebar": "Pencarian dan filter",
+  "aria.closeMenu": "Tutup menu",
+  "aria.openMenu": "Buka menu pencarian",
+  "aria.clearSearch": "Hapus pencarian",
+  "aria.today": "Lokasi harian",
+  "aria.dayPrev": "Hari sebelumnya",
+  "aria.dayNext": "Hari berikutnya",
+  "mobile.open": "☰ Cari",
+  "search.placeholder": "Cari mis. figure 12, kartu 5, -75, -818",
+  "search.gotoCoord": "Ke koordinat dalam game",
+  "search.clickToGo": "Klik untuk menuju titik ini",
+  "search.found": "{n} hasil",
+  "search.showingFirst": " (menampilkan {n} pertama)",
+  "search.mapFiltered": " · peta hanya menampilkan hasil",
+  "today.title": "Harian",
+  "today.only": "Kategori harian: tampilkan hanya titik hari yang dipilih",
+  "today.today": "Hari ini",
+  "today.ahead": "+{n} hari",
+  "today.behind": "{n} hari",
+  "today.resetIn": "Reset dalam {h} jam {m} menit ({time})",
+  "today.eventOnly": "{name} (hanya saat event)",
+  "status.noTunables": "Dihitung dari script game · belum ada tunables Rockstar untuk dibandingkan",
+  "status.override": "⚠ Perubahan dari Rockstar: {list} (diterapkan)",
+  "status.ok": "✓ Sudah dicek dengan tunables Rockstar, tidak ada perubahan · diperbarui {time}",
+  "status.gunVanPinned": "Rockstar menetapkan lokasi Gun Van minggu ini: {list}",
+  "toolbar.showAll": "Tampilkan semua",
+  "toolbar.hideAll": "Sembunyikan semua",
+  "toolbar.hideCollected": "Sembunyikan yang sudah diambil",
+  "group.permanent": "Permanen",
+  "group.daily": "Harian",
+  "group.event": "Event musiman",
+  "pop.selectedDay": "aktif di hari yang dipilih",
+  "pop.coords": "Koordinat",
+  "pop.gameCoords": "Koordinat dalam game",
+  "pop.markDone": "✔ Sudah diambil",
+  "pop.markUndone": "↩︎ Belum diambil",
+  "pop.copyCoords": "Salin koordinat",
+  "pop.copyLink": "Salin tautan",
+  "pop.copy": "Salin",
+  "cayo.note": "(tidak ada gambar peta pulau)",
+  "toast.copied": "Disalin: {text}",
+  "toast.loadError": "Gagal memuat data",
+  "settings.language": "Bahasa",
+  "settings.export": "Ekspor cadangan",
+  "settings.import": "Impor cadangan",
+  "settings.hint": "Progres dan pengaturan hanya tersimpan di browser ini. Ekspor file cadangan untuk menyimpannya atau memindahkannya ke perangkat lain.",
+  "export.done": "Cadangan diunduh",
+  "import.confirm": "Ganti progres dan pengaturan browser ini dengan cadangan tanggal {date} ({n} sudah diambil)?",
+  "import.done": "Cadangan dipulihkan",
+  "import.invalid": "File ini bukan cadangan yang valid",
+  "foot.hint": "Klik kanan (atau tekan lama) pada peta untuk melihat koordinat dalam game.",
+  "foot.daily": "Lokasi harian dihitung dari tabel rotasi game + tunables dari {rdo} (terima kasih {bot})",
+  "foot.sources": "Lokasi dari script game ({scripts}) · peta {tiles} · {leaflet}",
+  "foot.legal": "GTA V / GTA Online © Rockstar Games — situs buatan penggemar, tidak berafiliasi dengan Rockstar"
+ },
+ "cats": {
+  "action_figures": {
+   "name": "Action Figure"
+  },
+  "playing_cards": {
+   "name": "Kartu Remi"
+  },
+  "signal_jammers": {
+   "name": "Pengacau Sinyal"
+  },
+  "peyote": {
+   "name": "Tanaman Peyote",
+   "note": "Beberapa tanaman ada di bawah air"
+  },
+  "movie_props": {
+   "name": "Properti Film",
+   "note": "3 properti lainnya ada di kendaraan yang bergerak, jadi tidak punya posisi tetap"
+  },
+  "media_sticks": {
+   "name": "USB Musik",
+   "note": "Beberapa ada di dalam ruangan seperti kasino atau kelab malam"
+  },
+  "radio_antennas": {
+   "name": "Antena Radio"
+  },
+  "ld_organics": {
+   "name": "Produk LD Organics"
+  },
+  "skydives": {
+   "name": "Terjun Payung Junk Energy",
+   "note": "Harian: 10 dari 25 aktif setiap hari"
+  },
+  "gun_van": {
+   "name": "Gun Van",
+   "note": "Harian: pindah setiap hari (1 dari 30 titik)"
+  },
+  "ls_tags": {
+   "name": "Grafiti LS Tags",
+   "note": "Harian: muncul 5 setiap hari (dari 30 pertama)"
+  },
+  "hidden_caches": {
+   "name": "Simpanan Tersembunyi",
+   "note": "Harian: 10 titik acak setiap hari (di bawah air)"
+  },
+  "shipwrecks": {
+   "name": "Kapal Karam",
+   "note": "Harian: 1 titik setiap hari di pesisir"
+  },
+  "treasure_chests": {
+   "name": "Peti Harta (Cayo Perico)",
+   "note": "Harian: 2 titik setiap hari di Cayo Perico"
+  },
+  "buried_stashes": {
+   "name": "Simpanan Terkubur (Cayo Perico)",
+   "note": "Harian: 2 titik setiap hari di Cayo Perico"
+  },
+  "jack_o_lanterns": {
+   "name": "Lentera Labu",
+   "note": "Event Halloween"
+  },
+  "snowmen": {
+   "name": "Manusia Salju",
+   "note": "Event Natal / Tahun Baru"
+  },
+  "yuanbao": {
+   "name": "Yuanbao",
+   "note": "Event Tahun Baru Imlek"
+  },
+  "gold_charms": {
+   "name": "Jimat Emas",
+   "note": "Event Hari Santo Patrick"
+  },
+  "lucky_charms": {
+   "name": "Jimat Keberuntungan",
+   "note": "Event Hari Santo Patrick"
+  },
+  "weed_packages": {
+   "name": "Paket Ganja",
+   "note": "Event khusus: 10 titik per hari selama event"
+  }
+ }
+}

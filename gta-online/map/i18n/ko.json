@@ -1,0 +1,140 @@
+{
+ "ui": {
+  "meta.description": "수집품과 일일 위치를 검색할 수 있는 GTA 온라인 지도. 광고 없음, 회원가입 불필요.",
+  "aria.sidebar": "검색 및 필터",
+  "aria.closeMenu": "메뉴 닫기",
+  "aria.openMenu": "검색 메뉴 열기",
+  "aria.clearSearch": "검색어 지우기",
+  "aria.today": "일일 위치",
+  "aria.dayPrev": "이전 날",
+  "aria.dayNext": "다음 날",
+  "mobile.open": "☰ 검색",
+  "search.placeholder": "검색 예: 피규어 12, 카드 5, -75, -818",
+  "search.gotoCoord": "게임 좌표로 이동",
+  "search.clickToGo": "클릭하면 이 위치로 이동",
+  "search.found": "결과 {n}개",
+  "search.showingFirst": " (처음 {n}개 표시)",
+  "search.mapFiltered": " · 지도에 검색 결과만 표시",
+  "today.title": "일일",
+  "today.only": "일일 카테고리: 선택한 날의 위치만 표시",
+  "today.today": "오늘",
+  "today.ahead": "+{n}일",
+  "today.behind": "{n}일",
+  "today.resetIn": "{h}시간 {m}분 후 초기화 ({time})",
+  "today.eventOnly": "{name} (이벤트 기간에만)",
+  "status.noTunables": "게임 스크립트로 계산 · 비교할 Rockstar 튜너블이 아직 없음",
+  "status.override": "⚠ Rockstar 변경: {list} (적용됨)",
+  "status.ok": "✓ Rockstar 튜너블과 비교 완료, 변경 없음 · 업데이트 {time}",
+  "status.gunVanPinned": "이번 주 Rockstar가 건 밴 위치를 지정함: {list}",
+  "toolbar.showAll": "모두 표시",
+  "toolbar.hideAll": "모두 숨기기",
+  "toolbar.hideCollected": "수집한 항목 숨기기",
+  "group.permanent": "상시",
+  "group.daily": "일일",
+  "group.event": "시즌 이벤트",
+  "pop.selectedDay": "선택한 날 활성",
+  "pop.coords": "좌표",
+  "pop.gameCoords": "게임 좌표",
+  "pop.markDone": "✔ 수집함",
+  "pop.markUndone": "↩︎ 수집 안 함",
+  "pop.copyCoords": "좌표 복사",
+  "pop.copyLink": "링크 복사",
+  "pop.copy": "복사",
+  "cayo.note": "(섬 지도 이미지 없음)",
+  "toast.copied": "복사됨: {text}",
+  "toast.loadError": "데이터를 불러오지 못했습니다",
+  "settings.language": "언어",
+  "settings.export": "백업 내보내기",
+  "settings.import": "백업 가져오기",
+  "settings.hint": "진행 상황과 설정은 이 브라우저에만 저장됩니다. 백업 파일을 내보내 보관하거나 다른 기기로 옮길 수 있습니다.",
+  "export.done": "백업을 다운로드했습니다",
+  "import.confirm": "이 브라우저의 진행 상황과 설정을 {date} 백업(수집 {n}개)으로 바꿀까요?",
+  "import.done": "백업을 복원했습니다",
+  "import.invalid": "올바른 백업 파일이 아닙니다",
+  "foot.hint": "지도에서 마우스 오른쪽 클릭(또는 길게 누르기)하면 게임 좌표를 볼 수 있습니다.",
+  "foot.daily": "일일 위치는 게임의 순환표와 {rdo}의 튜너블로 계산합니다 ({bot}에 감사)",
+  "foot.sources": "위치 데이터: 게임 스크립트 ({scripts}) · 지도 {tiles} · {leaflet}",
+  "foot.legal": "GTA V / GTA 온라인 © Rockstar Games — 팬 사이트이며 Rockstar와 무관합니다"
+ },
+ "cats": {
+  "action_figures": {
+   "name": "액션 피규어"
+  },
+  "playing_cards": {
+   "name": "트럼프 카드"
+  },
+  "signal_jammers": {
+   "name": "신호 교란기"
+  },
+  "peyote": {
+   "name": "페요테 선인장",
+   "note": "일부는 물속에 있습니다"
+  },
+  "movie_props": {
+   "name": "영화 소품",
+   "note": "나머지 3개는 움직이는 차량 안에 있어 위치가 고정되어 있지 않습니다"
+  },
+  "media_sticks": {
+   "name": "음악 USB",
+   "note": "일부는 카지노나 나이트클럽 같은 실내에 있습니다"
+  },
+  "radio_antennas": {
+   "name": "무선 안테나"
+  },
+  "ld_organics": {
+   "name": "LD 오가닉스 제품"
+  },
+  "skydives": {
+   "name": "Junk Energy 스카이다이빙",
+   "note": "일일: 25곳 중 매일 10곳 활성"
+  },
+  "gun_van": {
+   "name": "건 밴",
+   "note": "일일: 매일 위치 변경 (30곳 중 1곳)"
+  },
+  "ls_tags": {
+   "name": "LS 태그 (그래피티)",
+   "note": "일일: 매일 5곳 등장 (처음 30곳 중)"
+  },
+  "hidden_caches": {
+   "name": "숨겨진 은닉처",
+   "note": "일일: 매일 무작위 10곳 (물속)"
+  },
+  "shipwrecks": {
+   "name": "난파선",
+   "note": "일일: 매일 해안가 1곳"
+  },
+  "treasure_chests": {
+   "name": "보물 상자 (카요 페리코)",
+   "note": "일일: 매일 카요 페리코 2곳"
+  },
+  "buried_stashes": {
+   "name": "묻힌 은닉처 (카요 페리코)",
+   "note": "일일: 매일 카요 페리코 2곳"
+  },
+  "jack_o_lanterns": {
+   "name": "잭오랜턴",
+   "note": "핼러윈 이벤트"
+  },
+  "snowmen": {
+   "name": "눈사람",
+   "note": "크리스마스 / 새해 이벤트"
+  },
+  "yuanbao": {
+   "name": "원보",
+   "note": "설날 이벤트"
+  },
+  "gold_charms": {
+   "name": "황금 부적",
+   "note": "성 패트릭의 날 이벤트"
+  },
+  "lucky_charms": {
+   "name": "행운의 부적",
+   "note": "성 패트릭의 날 이벤트"
+  },
+  "weed_packages": {
+   "name": "대마 꾸러미",
+   "note": "특별 이벤트: 기간 중 매일 10곳"
+  }
+ }
+}

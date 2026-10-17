@@ -1,0 +1,140 @@
+{
+ "ui": {
+  "meta.description": "可搜尋的 GTA 線上模式地圖，包含收集品與每日地點。無廣告，免註冊。",
+  "aria.sidebar": "搜尋與篩選",
+  "aria.closeMenu": "關閉選單",
+  "aria.openMenu": "開啟搜尋選單",
+  "aria.clearSearch": "清除搜尋",
+  "aria.today": "每日地點",
+  "aria.dayPrev": "前一天",
+  "aria.dayNext": "後一天",
+  "mobile.open": "☰ 搜尋",
+  "search.placeholder": "搜尋，例如 公仔 12、撲克牌 5、-75, -818",
+  "search.gotoCoord": "前往遊戲座標",
+  "search.clickToGo": "點擊前往此地點",
+  "search.found": "找到 {n} 筆結果",
+  "search.showingFirst": "（顯示前 {n} 筆）",
+  "search.mapFiltered": " · 地圖僅顯示搜尋結果",
+  "today.title": "每日",
+  "today.only": "每日類別：只顯示所選日期的地點",
+  "today.today": "今天",
+  "today.ahead": "+{n} 天",
+  "today.behind": "{n} 天",
+  "today.resetIn": "{h} 小時 {m} 分鐘後重置（{time}）",
+  "today.eventOnly": "{name}（僅限活動期間）",
+  "status.noTunables": "依遊戲腳本計算 · 尚無 Rockstar 可調參數可供比對",
+  "status.override": "⚠ Rockstar 覆寫：{list}（已套用）",
+  "status.ok": "✓ 已與 Rockstar 可調參數比對，無覆寫 · 更新於 {time}",
+  "status.gunVanPinned": "Rockstar 本週指定了槍車位置：{list}",
+  "toolbar.showAll": "全部顯示",
+  "toolbar.hideAll": "全部隱藏",
+  "toolbar.hideCollected": "隱藏已收集",
+  "group.permanent": "永久",
+  "group.daily": "每日",
+  "group.event": "季節活動",
+  "pop.selectedDay": "所選日期出現",
+  "pop.coords": "座標",
+  "pop.gameCoords": "遊戲座標",
+  "pop.markDone": "✔ 已收集",
+  "pop.markUndone": "↩︎ 未收集",
+  "pop.copyCoords": "複製座標",
+  "pop.copyLink": "複製連結",
+  "pop.copy": "複製",
+  "cayo.note": "（無島嶼地圖影像）",
+  "toast.copied": "已複製：{text}",
+  "toast.loadError": "資料載入失敗",
+  "settings.language": "語言",
+  "settings.export": "匯出備份",
+  "settings.import": "匯入備份",
+  "settings.hint": "進度與設定只儲存在此瀏覽器中。匯出備份檔即可保存或移轉到其他裝置。",
+  "export.done": "備份已下載",
+  "import.confirm": "以 {date} 的備份（已收集 {n} 個）取代此瀏覽器中的進度與設定？",
+  "import.done": "備份已還原",
+  "import.invalid": "此檔案不是有效的備份",
+  "foot.hint": "在地圖上按右鍵（或長按）可查看遊戲座標。",
+  "foot.daily": "每日地點依遊戲的輪替表與 {rdo} 的可調參數計算（感謝 {bot}）",
+  "foot.sources": "地點資料來自遊戲腳本（{scripts}）· 地圖 {tiles} · {leaflet}",
+  "foot.legal": "GTA V / GTA 線上模式 © Rockstar Games —— 粉絲網站，與 Rockstar 無關"
+ },
+ "cats": {
+  "action_figures": {
+   "name": "可動公仔"
+  },
+  "playing_cards": {
+   "name": "撲克牌"
+  },
+  "signal_jammers": {
+   "name": "訊號干擾器"
+  },
+  "peyote": {
+   "name": "佩奧特仙人掌",
+   "note": "部分植物在水下"
+  },
+  "movie_props": {
+   "name": "電影道具",
+   "note": "另外 3 件道具在行駛的車輛中，沒有固定位置"
+  },
+  "media_sticks": {
+   "name": "音樂隨身碟",
+   "note": "部分位於室內，例如賭場或夜店"
+  },
+  "radio_antennas": {
+   "name": "無線電天線"
+  },
+  "ld_organics": {
+   "name": "LD Organics 產品"
+  },
+  "skydives": {
+   "name": "Junk Energy 跳傘",
+   "note": "每日：25 個中每天開放 10 個"
+  },
+  "gun_van": {
+   "name": "槍車 (Gun Van)",
+   "note": "每日：每天更換位置（30 個中的 1 個）"
+  },
+  "ls_tags": {
+   "name": "LS 塗鴉",
+   "note": "每日：每天出現 5 個（來自前 30 個）"
+  },
+  "hidden_caches": {
+   "name": "隱藏藏匿處",
+   "note": "每日：每天隨機 10 個（水下）"
+  },
+  "shipwrecks": {
+   "name": "沉船",
+   "note": "每日：每天海岸邊 1 個"
+  },
+  "treasure_chests": {
+   "name": "寶箱（佩里科島）",
+   "note": "每日：每天佩里科島 2 個"
+  },
+  "buried_stashes": {
+   "name": "埋藏藏匿處（佩里科島）",
+   "note": "每日：每天佩里科島 2 個"
+  },
+  "jack_o_lanterns": {
+   "name": "南瓜燈",
+   "note": "萬聖節活動"
+  },
+  "snowmen": {
+   "name": "雪人",
+   "note": "聖誕節 / 新年活動"
+  },
+  "yuanbao": {
+   "name": "元寶",
+   "note": "農曆新年活動"
+  },
+  "gold_charms": {
+   "name": "金色護身符",
+   "note": "聖派翠克節活動"
+  },
+  "lucky_charms": {
+   "name": "幸運護身符",
+   "note": "聖派翠克節活動"
+  },
+  "weed_packages": {
+   "name": "大麻包裹",
+   "note": "特別活動：活動期間每天 10 個"
+  }
+ }
+}
