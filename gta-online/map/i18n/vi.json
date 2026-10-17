@@ -54,7 +54,62 @@
   "foot.hint": "Nhấp chuột phải (hoặc nhấn giữ) trên bản đồ để xem tọa độ trong game.",
   "foot.daily": "Vị trí hằng ngày được tính từ bảng luân phiên của game + tunables từ {rdo} (cảm ơn {bot})",
   "foot.sources": "Vị trí lấy từ script game ({scripts}) · bản đồ {tiles} · blips {blips} · {leaflet}",
-  "foot.legal": "GTA V / GTA Online © Rockstar Games — trang của fan, không liên quan đến Rockstar"
+  "foot.legal": "GTA V / GTA Online © Rockstar Games — trang của fan, không liên quan đến Rockstar",
+  "info.open": "Chi tiết",
+  "info.perItem": "Mỗi cái",
+  "info.bonus": "Thưởng hoàn thành bộ",
+  "info.chips": "+ chip sòng bạc (100, +50 mỗi lá)",
+  "info.escalating": "Cái đầu {first}, sau đó +{step} mỗi cái (tổng {total})",
+  "info.defaults": "Giá trị mặc định trong script game. Rockstar có thể thay đổi hoặc tổ chức sự kiện 2×/3×.",
+  "view.label": "Nhóm theo",
+  "view.type": "Loại",
+  "view.purpose": "Mục đích",
+  "purpose.money": "Kiếm tiền",
+  "purpose.unlock": "Mở khóa & sưu tầm",
+  "purpose.service": "Cửa hàng & dịch vụ",
+  "purpose.event": "Sự kiện theo mùa",
+  "purpose.timed": "Có thời hạn",
+  "clock.game": "Giờ trong game {time}",
+  "ghost.window": "Xuất hiện {from}–{to} (giờ trong game)",
+  "ghost.next": "Lần tới sau {m} phút ({time})",
+  "ghost.now": "Đang xuất hiện — còn {m} phút",
+  "ghost.nowShort": "bây giờ",
+  "ghost.spots": "Xuất hiện ở một trong {n} vị trí",
+  "ghost.schedule": "Lần xuất hiện tiếp theo (giờ địa phương)",
+  "purpose.activity": "Hoạt động & thử thách",
+  "plan.open": "🧮 Lập kế hoạch: tiền / RP / cấp",
+  "plan.title": "Lập kế hoạch",
+  "plan.goalMoney": "Tiền",
+  "plan.goalRp": "RP",
+  "plan.goalRank": "Cấp",
+  "plan.amount": "Bạn muốn bao nhiêu?",
+  "plan.curRank": "Cấp hiện tại",
+  "plan.curRp": "Tổng RP hiện tại (không bắt buộc, chính xác hơn)",
+  "plan.targetRank": "Cấp mục tiêu",
+  "plan.needRp": "Cấp {from} → {to}: cần {rp} RP",
+  "plan.alreadyDone": "Bạn đã đạt cấp đó rồi.",
+  "plan.result": "Kế hoạch gợi ý",
+  "plan.items": "×{n}",
+  "plan.minutes": "~{m} phút",
+  "plan.today": "hôm nay",
+  "plan.total": "Tổng {cash} + {rp} RP · khoảng {min} phút",
+  "plan.short": "Hiện trên bản đồ chưa đủ — còn thiếu {left}. Điểm hằng ngày đổi mỗi ngày, hoặc bật sự kiện / tăng hệ số trong Tùy chỉnh.",
+  "plan.reached": "Đã đạt mục tiêu ✓",
+  "plan.showAll": "📍 Hiện kế hoạch trên bản đồ",
+  "plan.mapTitle": "Kế hoạch: {n} điểm",
+  "plan.custom": "Tùy chỉnh",
+  "plan.includeEvents": "Tính cả sự kiện theo mùa (chỉ khi đang diễn ra)",
+  "plan.excludeCollected": "Bỏ qua mục đã nhặt",
+  "plan.useBonus": "Tính thưởng hoàn thành bộ",
+  "plan.multCash": "Tiền ×",
+  "plan.multRp": "RP ×",
+  "plan.colUse": "Dùng",
+  "plan.colCat": "Mục",
+  "plan.colMin": "Phút / cái",
+  "plan.reset": "Đặt lại",
+  "plan.close": "Đóng",
+  "plan.estimate": "Thời gian chỉ là ước tính — chỉnh theo cách chơi của bạn. Phần thưởng là giá trị mặc định của game.",
+  "plan.empty": "Nhập mục tiêu để xem kế hoạch."
  },
  "cats": {
   "action_figures": {
@@ -135,6 +190,22 @@
   "weed_packages": {
    "name": "Gói cần sa",
    "note": "Sự kiện đặc biệt: 10 điểm mỗi ngày trong thời gian diễn ra"
+  },
+  "street_dealers": {
+   "name": "Kẻ buôn đường phố",
+   "note": "Hằng ngày: 3 người mỗi ngày"
+  },
+  "bike_time_trial": {
+   "name": "Đua tính giờ xe đạp Junk Energy",
+   "note": "Hằng ngày: 1 trong 14 tuyến mỗi ngày"
+  },
+  "rc_time_trial": {
+   "name": "Đua tính giờ RC Bandito",
+   "note": "Hằng ngày: 1 trong 14 tuyến mỗi ngày"
+  },
+  "ghosts": {
+   "name": "Ghosts Exposed (chụp ma)",
+   "note": "Sự kiện Halloween: mỗi con ma xuất hiện 1 giờ trong game"
   }
  }
 }

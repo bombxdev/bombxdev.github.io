@@ -54,7 +54,62 @@
   "foot.hint": "Klik kanan (atau tekan lama) pada peta untuk melihat koordinat dalam game.",
   "foot.daily": "Lokasi harian dihitung dari tabel rotasi game + tunables dari {rdo} (terima kasih {bot})",
   "foot.sources": "Lokasi dari script game ({scripts}) · peta {tiles} · blips {blips} · {leaflet}",
-  "foot.legal": "GTA V / GTA Online © Rockstar Games — situs buatan penggemar, tidak berafiliasi dengan Rockstar"
+  "foot.legal": "GTA V / GTA Online © Rockstar Games — situs buatan penggemar, tidak berafiliasi dengan Rockstar",
+  "info.open": "Detail",
+  "info.perItem": "Per item",
+  "info.bonus": "Bonus koleksi lengkap",
+  "info.chips": "+ chip kasino (100, +50 per kartu)",
+  "info.escalating": "Pertama {first}, lalu +{step} tiap berikutnya (total {total})",
+  "info.defaults": "Nilai bawaan dari script game. Rockstar bisa mengubahnya atau mengadakan event 2×/3×.",
+  "view.label": "Kelompokkan",
+  "view.type": "Jenis",
+  "view.purpose": "Tujuan",
+  "purpose.money": "Cari uang",
+  "purpose.unlock": "Buka kunci & koleksi",
+  "purpose.service": "Toko & layanan",
+  "purpose.event": "Event musiman",
+  "purpose.timed": "Waktu terbatas",
+  "clock.game": "Waktu dalam game {time}",
+  "ghost.window": "Muncul {from}–{to} (waktu game)",
+  "ghost.next": "Muncul lagi dalam {m} menit ({time})",
+  "ghost.now": "Sedang muncul — sisa {m} menit",
+  "ghost.nowShort": "sekarang",
+  "ghost.spots": "Muncul di salah satu dari {n} titik",
+  "ghost.schedule": "Waktu muncul berikutnya (waktu lokal Anda)",
+  "purpose.activity": "Aktivitas & tantangan",
+  "plan.open": "🧮 Perencana: uang / RP / rank",
+  "plan.title": "Perencana",
+  "plan.goalMoney": "Uang",
+  "plan.goalRp": "RP",
+  "plan.goalRank": "Rank",
+  "plan.amount": "Mau berapa?",
+  "plan.curRank": "Rank saat ini",
+  "plan.curRp": "Total RP saat ini (opsional, lebih akurat)",
+  "plan.targetRank": "Rank tujuan",
+  "plan.needRp": "Rank {from} → {to}: butuh {rp} RP",
+  "plan.alreadyDone": "Kamu sudah di rank itu atau lebih.",
+  "plan.result": "Rencana yang disarankan",
+  "plan.items": "×{n}",
+  "plan.minutes": "~{m} menit",
+  "plan.today": "hari ini",
+  "plan.total": "Total {cash} + {rp} RP · sekitar {min} menit",
+  "plan.short": "Belum cukup di peta saat ini — kurang {left}. Titik harian berganti tiap hari, atau aktifkan event / naikkan pengali di Sesuaikan.",
+  "plan.reached": "Target tercapai ✓",
+  "plan.showAll": "📍 Tampilkan rencana di peta",
+  "plan.mapTitle": "Rencana: {n} titik",
+  "plan.custom": "Sesuaikan",
+  "plan.includeEvents": "Sertakan event musiman (hanya jika sedang aktif)",
+  "plan.excludeCollected": "Lewati yang sudah diambil",
+  "plan.useBonus": "Hitung bonus koleksi lengkap",
+  "plan.multCash": "Uang ×",
+  "plan.multRp": "RP ×",
+  "plan.colUse": "Pakai",
+  "plan.colCat": "Kategori",
+  "plan.colMin": "Menit / item",
+  "plan.reset": "Atur ulang",
+  "plan.close": "Tutup",
+  "plan.estimate": "Waktu hanya perkiraan — sesuaikan dengan gaya bermainmu. Hadiah adalah nilai bawaan game.",
+  "plan.empty": "Masukkan target untuk melihat rencana."
  },
  "cats": {
   "action_figures": {
@@ -135,6 +190,22 @@
   "weed_packages": {
    "name": "Paket Ganja",
    "note": "Event khusus: 10 titik per hari selama event"
+  },
+  "street_dealers": {
+   "name": "Pengedar jalanan",
+   "note": "Harian: 3 pengedar setiap hari"
+  },
+  "bike_time_trial": {
+   "name": "Time trial sepeda Junk Energy",
+   "note": "Harian: 1 dari 14 rute setiap hari"
+  },
+  "rc_time_trial": {
+   "name": "Time trial RC Bandito",
+   "note": "Harian: 1 dari 14 rute setiap hari"
+  },
+  "ghosts": {
+   "name": "Ghosts Exposed (foto hantu)",
+   "note": "Event Halloween: tiap hantu muncul selama satu jam dalam game"
   }
  }
 }

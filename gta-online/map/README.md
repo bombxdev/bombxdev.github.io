@@ -12,6 +12,12 @@
 - ติ๊ก "เก็บแล้ว" แล้วนับความคืบหน้าต่อหมวด (บันทึกใน localStorage ของเบราว์เซอร์)
 - ลิงก์ตรงไปยังแต่ละจุด เช่น `#action_figures-12`
 - คลิกขวา/กดค้างบนแผนที่เพื่อดูพิกัดในเกม
+- ปุ่ม ⓘ ข้างแต่ละหมวด: ทำไปเพื่ออะไร ได้เงิน/RP เท่าไหร่ (ค่าเริ่มต้นจาก tunables ของเกม `data/info.json`) และจัดกลุ่มเมนูตาม "ประเภท" หรือ "เป้าหมาย"
+- Ghosts Exposed: ตำแหน่ง + ชั่วโมงที่ผีแต่ละตัวโผล่ (เวลาในเกม) แปลงเป็นเวลาจริงของเครื่องผู้ใช้ และนาฬิกาเวลาในเกม (1 นาทีในเกม = 2 วินาทีจริง)
+- รายวันเพิ่ม: Street Dealers (3 จุด/วัน), Junk Energy Bike Time Trial, RC Bandito Time Trial
+- แผนที่เกาะ Cayo Perico (ภาพดาวเทียม) วางตามพิกัดเกม
+- 🧮 วางแผน (`planner.js`): ใส่เป้าหมายเป็นเงิน / RP / Rank (Rank ปัจจุบัน → Rank เป้าหมาย ใช้ตาราง RP จริงของเกม `data/ranks.json`)
+  แล้วแนะนำว่าควรเก็บหมวดไหนกี่ชิ้น เรียงจากคุ้มที่สุดต่อนาที ปรับเวลาต่อชิ้น เปิด/ปิดหมวด ตัวคูณอีเวนต์ ฯลฯ ได้ และกดแสดงบนแผนที่ได้
 - รองรับ 16 ภาษา (เลือกอัตโนมัติตามเบราว์เซอร์ เปลี่ยนได้ที่ 🌐) ค้นหาด้วยชื่อหมวดภาษาไหนก็ได้
 - ไม่ต้องสมัครสมาชิก: ความคืบหน้า/การตั้งค่าเก็บใน localStorage และ **ส่งออก/นำเข้าไฟล์สำรอง (.json)** ได้
 
@@ -51,6 +57,8 @@
 | พิกัด collectibles | `freemode.c` จาก [Sainan/GTA-V-Decompiled-Scripts](https://github.com/Sainan/GTA-V-Decompiled-Scripts) (สคริปต์เกมที่ decompile แล้ว) |
 | ภาพแผนที่ | [CreepPork/GTAV-Maps](https://github.com/CreepPork/GTAV-Maps) (MIT) แปลงเป็น WebP |
 | ไอคอนบนแผนที่ | ภาพ radar blip จริงของเกม จาก [FiveM docs](https://docs.fivem.net/docs/game-references/blips/) (`citizenfx/fivem-docs`, `static/blips/`) — `blipSource: "game"` = blip ที่สคริปต์เกมใช้กับหมวดนั้นจริง (`SET_BLIP_SPRITE`), `"closest"` = เกมไม่มี blip เฉพาะ เลือก blip ทางการที่ใกล้เคียงที่สุด |
+| แผนที่ Cayo Perico | [fivenet-app/livemap-tiles](https://github.com/fivenet-app/livemap-tiles) (Apache-2.0) ภาพโดย jonstyle83 — ดู `tiles-cayo/README.md` |
+| Ghosts Exposed / Street Dealers / Time Trials | `fm_content_ghosthunt.c` และ `freemode.c`; ตาราง/ลำดับสุ่มตรวจเทียบกับ GTAO-Bot (Street Dealers ใช้ตรรกะเกมล่าสุดที่เว้นระยะ 1 กม.) |
 | ไลบรารีแผนที่ | [Leaflet 1.9.4](https://leafletjs.com) (BSD-2-Clause) |
 
 ภาพแผนที่ไม่มีเกาะ Cayo Perico — หมุดของหมวดที่อยู่บนเกาะ (Treasure Chests, Buried Stashes)

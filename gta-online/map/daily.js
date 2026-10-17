@@ -85,8 +85,50 @@
       if (p !== -1) pinned.push(p);
     }
     if (pinned.length) result.gunVanPinned = pinned;
+
+    // Street Dealers: shuffle all spots with the daily seed, then keep the
+    // first 3 that are at least min_distance apart (x/y only).
+    var sd = daily.street_dealers;
+    if (sd && daily.dealerXY) {
+      var order = [];
+      for (var k = 0; k < sd.count; k++) order.push(k);
+      var drng = new NetRng(seed);
+      for (var i = sd.count - 1; i >= 1; i--) {
+        var j = drng.intRanged(0, i);
+        var tmp = order[i]; order[i] = order[j]; order[j] = tmp;
+      }
+      var picked = [];
+      for (var q = 0; q < order.length && picked.length < sd.per_day; q++) {
+        var c = daily.dealerXY[order[q]];
+        var far = picked.every(function (pi) {
+          var o = daily.dealerXY[pi];
+          return Math.sqrt((c[0] - o[0]) * (c[0] - o[0]) + (c[1] - o[1]) * (c[1] - o[1])) >= sd.min_distance;
+        });
+        if (far) picked.push(order[q]);
+      }
+      result.lists.street_dealers = picked;
+    }
+
+    // Daily time trials: fixed table indexed by the daily seed.
+    Object.keys(daily.time_trials || {}).forEach(function (cat) {
+      var table = daily.time_trials[cat];
+      result.lists[cat] = [table[((seed % table.length) + table.length) % table.length]];
+    });
     return result;
   }
 
-  window.GTAODaily = { compute: compute, NetRng: NetRng };
+  // GTA Online clock: one in-game minute every 2 real seconds.
+  function gameTime(t) {
+    return { hour: Math.floor(t / 120) % 24, minute: Math.floor(t / 2) % 60 };
+  }
+  // Real time (seconds) when the in-game clock next reaches `hour`:00, and
+  // whether we are inside that hour right now.
+  function nextGameHour(t, hour) {
+    var dayStartT = Math.floor(t / 2880) * 2880;
+    var start = dayStartT + hour * 120;
+    if (t >= start + 120) start += 2880;
+    return { start: start, active: t >= start && t < start + 120 };
+  }
+
+  window.GTAODaily = { compute: compute, NetRng: NetRng, gameTime: gameTime, nextGameHour: nextGameHour };
 })();

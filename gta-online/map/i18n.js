@@ -61,6 +61,7 @@
     return (I18N.dict && I18N.dict.cats[key]) || (I18N.base && I18N.base.cats[key]) || {};
   }
   I18N.catName = function (key) { return catEntry(key).name || (I18N.base.cats[key] || {}).name || key; };
+  I18N.catInfo = function (key) { return catEntry(key).info || (I18N.base.cats[key] || {}).info || ''; };
   I18N.catNote = function (key) { return catEntry(key).note || (I18N.base.cats[key] || {}).note || ''; };
   // Every language file, so a search in any language finds its category.
   I18N.loadAll = function () {

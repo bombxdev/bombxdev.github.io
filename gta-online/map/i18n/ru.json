@@ -54,7 +54,62 @@
   "foot.hint": "Нажмите правой кнопкой (или удерживайте) на карте, чтобы узнать игровые координаты.",
   "foot.daily": "Ежедневные точки рассчитываются по таблицам ротации игры + tunables с {rdo} (спасибо {bot})",
   "foot.sources": "Точки из игровых скриптов ({scripts}) · карта {tiles} · blips {blips} · {leaflet}",
-  "foot.legal": "GTA V / GTA Online © Rockstar Games — фанатский сайт, не связан с Rockstar"
+  "foot.legal": "GTA V / GTA Online © Rockstar Games — фанатский сайт, не связан с Rockstar",
+  "info.open": "Подробнее",
+  "info.perItem": "За каждый",
+  "info.bonus": "Бонус за полный набор",
+  "info.chips": "+ фишки казино (100, +50 за каждую карту)",
+  "info.escalating": "1-я {first}, затем +{step} за каждую (всего {total})",
+  "info.defaults": "Стандартные значения из игровых скриптов. Rockstar может их менять или проводить события ×2/×3.",
+  "view.label": "Группировать",
+  "view.type": "По типу",
+  "view.purpose": "По цели",
+  "purpose.money": "Заработок",
+  "purpose.unlock": "Открытия и коллекции",
+  "purpose.service": "Магазины и услуги",
+  "purpose.event": "Сезонные события",
+  "purpose.timed": "Ограничено по времени",
+  "clock.game": "Время в игре {time}",
+  "ghost.window": "Появляется {from}–{to} (игровое время)",
+  "ghost.next": "Следующее появление через {m} мин ({time})",
+  "ghost.now": "Сейчас — осталось {m} мин",
+  "ghost.nowShort": "сейчас",
+  "ghost.spots": "Появляется в одной из {n} возможных точек",
+  "ghost.schedule": "Ближайшие появления (ваше местное время)",
+  "purpose.activity": "Активности и испытания",
+  "plan.open": "🧮 Планировщик: деньги / RP / ранг",
+  "plan.title": "Планировщик",
+  "plan.goalMoney": "Деньги",
+  "plan.goalRp": "RP",
+  "plan.goalRank": "Ранг",
+  "plan.amount": "Сколько нужно?",
+  "plan.curRank": "Текущий ранг",
+  "plan.curRp": "Текущий общий RP (необязательно, точнее)",
+  "plan.targetRank": "Целевой ранг",
+  "plan.needRp": "Ранг {from} → {to}: нужно {rp} RP",
+  "plan.alreadyDone": "Вы уже достигли этого ранга.",
+  "plan.result": "Рекомендуемый план",
+  "plan.items": "×{n}",
+  "plan.minutes": "~{m} мин",
+  "plan.today": "сегодня",
+  "plan.total": "Итого {cash} + {rp} RP · около {min} мин",
+  "plan.short": "Сейчас на карте недостаточно — не хватает {left}. Ежедневные точки обновляются каждый день, или включите события / увеличьте множитель в настройках.",
+  "plan.reached": "Цель достигнута ✓",
+  "plan.showAll": "📍 Показать план на карте",
+  "plan.mapTitle": "План: {n} точек",
+  "plan.custom": "Настроить",
+  "plan.includeEvents": "Учитывать сезонные события (только если активны)",
+  "plan.excludeCollected": "Пропускать уже собранное",
+  "plan.useBonus": "Учитывать бонусы за полный набор",
+  "plan.multCash": "Деньги ×",
+  "plan.multRp": "RP ×",
+  "plan.colUse": "Исп.",
+  "plan.colCat": "Категория",
+  "plan.colMin": "Мин / шт.",
+  "plan.reset": "Сбросить",
+  "plan.close": "Закрыть",
+  "plan.estimate": "Время — примерная оценка, подстройте под свой стиль игры. Награды — стандартные значения игры.",
+  "plan.empty": "Введите цель, чтобы получить план."
  },
  "cats": {
   "action_figures": {
@@ -135,6 +190,22 @@
   "weed_packages": {
    "name": "Пакеты с травкой",
    "note": "Особое событие: 10 точек в день во время события"
+  },
+  "street_dealers": {
+   "name": "Уличные дилеры",
+   "note": "Ежедневно: 3 дилера в день"
+  },
+  "bike_time_trial": {
+   "name": "Гонка на время на велосипеде Junk Energy",
+   "note": "Ежедневно: 1 из 14 маршрутов в день"
+  },
+  "rc_time_trial": {
+   "name": "Гонка на время RC Bandito",
+   "note": "Ежедневно: 1 из 14 маршрутов в день"
+  },
+  "ghosts": {
+   "name": "Ghosts Exposed",
+   "note": "Событие Хэллоуина: каждый призрак появляется на один игровой час"
   }
  }
 }

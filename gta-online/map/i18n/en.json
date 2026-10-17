@@ -54,87 +54,183 @@
   "foot.hint": "Right-click (or long-press) the map to read in-game coordinates.",
   "foot.daily": "Daily locations are computed from the game's rotation tables + tunables from {rdo} (thanks {bot})",
   "foot.sources": "Locations from game scripts ({scripts}) · map tiles {tiles} · blips {blips} · {leaflet}",
-  "foot.legal": "GTA V / GTA Online © Rockstar Games — fan-made site, not affiliated with Rockstar"
+  "foot.legal": "GTA V / GTA Online © Rockstar Games — fan-made site, not affiliated with Rockstar",
+  "info.open": "Details",
+  "info.perItem": "Each",
+  "info.bonus": "Complete-set bonus",
+  "info.chips": "+ casino chips (100, +50 per card)",
+  "info.escalating": "1st {first}, then +{step} each ({total} in total)",
+  "info.defaults": "Default values from the game scripts. Rockstar can change them or run 2×/3× events.",
+  "view.label": "Group by",
+  "view.type": "Type",
+  "view.purpose": "Purpose",
+  "purpose.money": "Make money",
+  "purpose.unlock": "Unlocks & collections",
+  "purpose.service": "Shops & services",
+  "purpose.event": "Seasonal events",
+  "purpose.timed": "Time-limited",
+  "clock.game": "In-game time {time}",
+  "ghost.window": "Appears {from}–{to} (in-game time)",
+  "ghost.next": "Next appearance in {m} min ({time})",
+  "ghost.now": "Out now — {m} min left",
+  "ghost.nowShort": "now",
+  "ghost.spots": "Spawns at one of {n} possible spots",
+  "ghost.schedule": "Next appearances (your local time)",
+  "purpose.activity": "Activities & challenges",
+  "plan.open": "🧮 Planner: money / RP / rank",
+  "plan.title": "Planner",
+  "plan.goalMoney": "Money",
+  "plan.goalRp": "RP",
+  "plan.goalRank": "Rank",
+  "plan.amount": "How much do you want?",
+  "plan.curRank": "Current rank",
+  "plan.curRp": "Current total RP (optional, more exact)",
+  "plan.targetRank": "Target rank",
+  "plan.needRp": "Rank {from} → {to}: {rp} RP needed",
+  "plan.alreadyDone": "You are already at or above that rank.",
+  "plan.result": "Suggested plan",
+  "plan.items": "×{n}",
+  "plan.minutes": "~{m} min",
+  "plan.today": "today",
+  "plan.total": "Total {cash} + {rp} RP · about {min} min",
+  "plan.short": "Not enough on the map right now — {left} short. Daily spots reset every day, or turn on events / raise the multiplier in Customize.",
+  "plan.reached": "Goal reached ✓",
+  "plan.showAll": "📍 Show plan on map",
+  "plan.mapTitle": "Plan: {n} spots",
+  "plan.custom": "Customize",
+  "plan.includeEvents": "Include seasonal events (only if active in game)",
+  "plan.excludeCollected": "Skip items I already collected",
+  "plan.useBonus": "Count complete-set bonuses",
+  "plan.multCash": "Cash ×",
+  "plan.multRp": "RP ×",
+  "plan.colUse": "Use",
+  "plan.colCat": "Category",
+  "plan.colMin": "Min / item",
+  "plan.reset": "Reset",
+  "plan.close": "Close",
+  "plan.estimate": "Times are rough estimates — adjust them to how you play. Rewards are the game's default values.",
+  "plan.empty": "Enter a goal to get a plan."
  },
  "cats": {
   "action_figures": {
-   "name": "Action Figures"
+   "name": "Action Figures",
+   "info": "100 figures hidden around Los Santos and Blaine County. Finding all 100 also unlocks an outfit."
   },
   "playing_cards": {
-   "name": "Playing Cards"
+   "name": "Playing Cards",
+   "info": "54 cards hidden around the map. Collecting all 54 unlocks an outfit. The chips go straight to your Diamond Casino balance."
   },
   "signal_jammers": {
-   "name": "Signal Jammers"
+   "name": "Signal Jammers",
+   "info": "50 jammers on rooftops and poles — shoot them to destroy. Destroying all 50 unlocks Avi Schwartzman, the best hacker for the Diamond Casino Heist."
   },
   "peyote": {
    "name": "Peyote Plants",
-   "note": "Some plants are underwater"
+   "note": "Some plants are underwater",
+   "info": "Eat a peyote plant to turn into an animal for a while (land, sea or bird depending on the plant)."
   },
   "movie_props": {
    "name": "Movie Props",
-   "note": "3 more props are inside moving vehicles, so they have no fixed position"
+   "note": "3 more props are inside moving vehicles, so they have no fixed position",
+   "info": "Movie props scattered around the map: 7 at fixed spots, 3 more inside moving vehicles."
   },
   "media_sticks": {
    "name": "Media Sticks",
-   "note": "Some are inside interiors such as the casino or nightclubs"
+   "note": "Some are inside interiors such as the casino or nightclubs",
+   "info": "USB sticks that unlock new music tracks for the Media Player."
   },
   "radio_antennas": {
-   "name": "Radio Antennas"
+   "name": "Radio Antennas",
+   "info": "Find all 10 antennas to unlock the Still Slipping Los Santos radio station. The cash grows with each antenna found."
   },
   "ld_organics": {
-   "name": "LD Organics Product"
+   "name": "LD Organics Product",
+   "info": "LD Organics product hidden around the map; collect all 100 for the bonus."
   },
   "skydives": {
    "name": "Junk Energy Skydives",
-   "note": "Daily: 10 of 25 open each day"
+   "note": "Daily: 10 of 25 open each day",
+   "info": "Junk Energy parachute challenges: jump, pass the checkpoints and land on the target. Rewards depend on the medal you earn."
   },
   "gun_van": {
    "name": "Gun Van",
-   "note": "Daily: moves every day (1 of 30 spots)"
+   "note": "Daily: moves every day (1 of 30 spots)",
+   "info": "A van that sells weapons at discount — including items not sold at Ammu-Nation. It parks in a different spot every day."
   },
   "ls_tags": {
    "name": "LS Tags",
-   "note": "Daily: 5 appear each day (from the first set of 30)"
+   "note": "Daily: 5 appear each day (from the first set of 30)",
+   "info": "Graffiti tags that appear around the city each day; spray over them to earn the reward."
   },
   "hidden_caches": {
    "name": "Hidden Caches",
-   "note": "Daily: 10 random spots each day (underwater)"
+   "note": "Daily: 10 random spots each day (underwater)",
+   "info": "Underwater crates — use a submarine, Kraken or scuba gear. 10 random spots are active each day."
   },
   "shipwrecks": {
    "name": "Shipwrecks",
-   "note": "Daily: 1 spot each day along the coast"
+   "note": "Daily: 1 spot each day along the coast",
+   "info": "One wreck on the coast each day, with a chest to collect."
   },
   "treasure_chests": {
    "name": "Treasure Chests (Cayo Perico)",
-   "note": "Daily: 2 spots each day on Cayo Perico"
+   "note": "Daily: 2 spots each day on Cayo Perico",
+   "info": "Cayo Perico only: 2 chests are active each day."
   },
   "buried_stashes": {
    "name": "Buried Stashes (Cayo Perico)",
-   "note": "Daily: 2 spots each day on Cayo Perico"
+   "note": "Daily: 2 spots each day on Cayo Perico",
+   "info": "Cayo Perico only: 2 stashes to dig up each day."
   },
   "jack_o_lanterns": {
    "name": "Jack O' Lanterns",
-   "note": "Halloween event"
+   "note": "Halloween event",
+   "info": "Halloween event: find and smash the pumpkins."
   },
   "snowmen": {
    "name": "Snowmen",
-   "note": "Christmas / New Year event"
+   "note": "Christmas / New Year event",
+   "info": "Christmas event: find and destroy the snowmen."
   },
   "yuanbao": {
    "name": "Yuanbao",
-   "note": "Lunar New Year event"
+   "note": "Lunar New Year event",
+   "info": "Lunar New Year event: collect the gold ingots."
   },
   "gold_charms": {
    "name": "Gold Charms",
-   "note": "St. Patrick's Day event"
+   "note": "St. Patrick's Day event",
+   "info": "St. Patrick's Day event."
   },
   "lucky_charms": {
    "name": "Lucky Charms",
-   "note": "St. Patrick's Day event"
+   "note": "St. Patrick's Day event",
+   "info": "St. Patrick's Day event."
   },
   "weed_packages": {
    "name": "Weed Packages",
-   "note": "Special event: 10 spots per day while active"
+   "note": "Special event: 10 spots per day while active",
+   "info": "Special event: 10 packages appear each day while it runs."
+  },
+  "street_dealers": {
+   "name": "Street Dealers",
+   "note": "Daily: 3 dealers each day",
+   "info": "Three drug buyers set up shop at different spots every day, at least 1 km apart. Sell product from your businesses for cash."
+  },
+  "bike_time_trial": {
+   "name": "Junk Energy Bike Time Trial",
+   "note": "Daily: 1 of 14 routes each day",
+   "info": "A daily bicycle time trial; beat the par time for a cash and RP reward."
+  },
+  "rc_time_trial": {
+   "name": "RC Bandito Time Trial",
+   "note": "Daily: 1 of 14 routes each day",
+   "info": "A daily time trial with an RC Bandito; beat the par time for a reward."
+  },
+  "ghosts": {
+   "name": "Ghosts Exposed",
+   "note": "Halloween event: each ghost appears for one in-game hour",
+   "info": "Photograph each ghost with your phone camera while it is out. $20,000 per ghost, $50,000 bonus for all 10. The clock in the Daily panel shows the current in-game time."
   }
  }
 }

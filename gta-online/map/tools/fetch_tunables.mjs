@@ -14,6 +14,7 @@ const NAMED = [
   'DAILY_COLLECTABLES_OVERRIDE_TREASURE_CHEST0',
   'DAILY_COLLECTABLES_OVERRIDE_TREASURE_CHEST1',
   ...Array.from({ length: 10 }, (_, i) => `DAILY_COLLECTABLES_OVERRIDE_HIDDEN_CACHE${i}`),
+  'VC_PEYOTE_ENABLE',
   'XM22_GUN_VAN_AVAILABLE',
   ...Array.from({ length: 30 }, (_, i) => `XM22_GUN_VAN_LOCATION_ENABLED_${i}`),
 ];
@@ -25,6 +26,11 @@ const HASHED = {
   GUN_VAN_DAY_4: -22453923,
   GUN_VAN_DAY_5: -791771736,
   GUN_VAN_DAY_6: 722680368,
+  // Ghosts Exposed location sets (fm_content_ghosthunt.c); the enabled one is live.
+  GHOSTS_SET_2023: 1275644823,
+  GHOSTS_SET_2024: -818123201,
+  GHOSTS_SET_2025: -817993986,
+  GHOSTS_SET_2026: -1235590925,
 };
 
 function joaat(s) {

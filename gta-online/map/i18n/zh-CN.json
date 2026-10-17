@@ -54,7 +54,62 @@
   "foot.hint": "在地图上右键（或长按）可查看游戏坐标。",
   "foot.daily": "每日地点根据游戏的轮换表和 {rdo} 的可调参数计算（感谢 {bot}）",
   "foot.sources": "地点数据来自游戏脚本（{scripts}）· 地图 {tiles} · blips {blips} · {leaflet}",
-  "foot.legal": "GTA V / GTA 在线模式 © Rockstar Games —— 粉丝网站，与 Rockstar 无关"
+  "foot.legal": "GTA V / GTA 在线模式 © Rockstar Games —— 粉丝网站，与 Rockstar 无关",
+  "info.open": "详情",
+  "info.perItem": "每个",
+  "info.bonus": "集齐奖励",
+  "info.chips": "+ 赌场筹码（100，每张牌 +50）",
+  "info.escalating": "第 1 个 {first}，之后每个 +{step}（共 {total}）",
+  "info.defaults": "游戏脚本中的默认数值，Rockstar 可能调整或举办 2×/3× 活动。",
+  "view.label": "分组方式",
+  "view.type": "类型",
+  "view.purpose": "用途",
+  "purpose.money": "赚钱",
+  "purpose.unlock": "解锁与收集",
+  "purpose.service": "商店与服务",
+  "purpose.event": "季节活动",
+  "purpose.timed": "限时",
+  "clock.game": "游戏时间 {time}",
+  "ghost.window": "出现时间 {from}–{to}（游戏时间）",
+  "ghost.next": "{m} 分钟后出现（{time}）",
+  "ghost.now": "正在出现 — 还剩 {m} 分钟",
+  "ghost.nowShort": "现在",
+  "ghost.spots": "在 {n} 个可能地点之一出现",
+  "ghost.schedule": "下次出现时间（您的本地时间）",
+  "purpose.activity": "活动与挑战",
+  "plan.open": "🧮 规划：金钱 / RP / 等级",
+  "plan.title": "规划",
+  "plan.goalMoney": "金钱",
+  "plan.goalRp": "RP",
+  "plan.goalRank": "等级",
+  "plan.amount": "想要多少？",
+  "plan.curRank": "当前等级",
+  "plan.curRp": "当前总 RP（可选，更准确）",
+  "plan.targetRank": "目标等级",
+  "plan.needRp": "等级 {from} → {to}：还需 {rp} RP",
+  "plan.alreadyDone": "你已达到或超过该等级。",
+  "plan.result": "推荐方案",
+  "plan.items": "×{n}",
+  "plan.minutes": "约 {m} 分钟",
+  "plan.today": "今天",
+  "plan.total": "合计 {cash} + {rp} RP · 约 {min} 分钟",
+  "plan.short": "目前地图上的内容不够 — 还差 {left}。每日地点每天刷新，或在“自定义”中开启活动 / 提高倍率。",
+  "plan.reached": "已达到目标 ✓",
+  "plan.showAll": "📍 在地图上显示方案",
+  "plan.mapTitle": "方案：{n} 个地点",
+  "plan.custom": "自定义",
+  "plan.includeEvents": "包含季节活动（仅限游戏中开启时）",
+  "plan.excludeCollected": "跳过已收集的",
+  "plan.useBonus": "计入集齐奖励",
+  "plan.multCash": "金钱 ×",
+  "plan.multRp": "RP ×",
+  "plan.colUse": "使用",
+  "plan.colCat": "类别",
+  "plan.colMin": "分钟 / 个",
+  "plan.reset": "重置",
+  "plan.close": "关闭",
+  "plan.estimate": "时间为粗略估计 — 可按你的游玩方式调整。奖励为游戏默认数值。",
+  "plan.empty": "输入目标以查看方案。"
  },
  "cats": {
   "action_figures": {
@@ -135,6 +190,22 @@
   "weed_packages": {
    "name": "大麻包裹",
    "note": "特别活动：活动期间每天 10 个"
+  },
+  "street_dealers": {
+   "name": "街头毒贩",
+   "note": "每日：每天 3 名毒贩"
+  },
+  "bike_time_trial": {
+   "name": "Junk Energy 自行车计时赛",
+   "note": "每日：每天 14 条路线之一"
+  },
+  "rc_time_trial": {
+   "name": "RC 匪徒计时赛",
+   "note": "每日：每天 14 条路线之一"
+  },
+  "ghosts": {
+   "name": "Ghosts Exposed（拍鬼）",
+   "note": "万圣节活动：每个鬼魂只在游戏中的一小时出现"
   }
  }
 }

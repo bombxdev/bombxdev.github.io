@@ -54,7 +54,62 @@
   "foot.hint": "Kliknij prawym przyciskiem (lub przytrzymaj) na mapie, aby odczytać współrzędne w grze.",
   "foot.daily": "Lokalizacje dnia są liczone z tabel rotacji gry + tunables z {rdo} (dzięki {bot})",
   "foot.sources": "Lokalizacje ze skryptów gry ({scripts}) · mapa {tiles} · blips {blips} · {leaflet}",
-  "foot.legal": "GTA V / GTA Online © Rockstar Games — strona fanowska, niezwiązana z Rockstar"
+  "foot.legal": "GTA V / GTA Online © Rockstar Games — strona fanowska, niezwiązana z Rockstar",
+  "info.open": "Szczegóły",
+  "info.perItem": "Za każdy",
+  "info.bonus": "Bonus za komplet",
+  "info.chips": "+ żetony kasyna (100, +50 za kartę)",
+  "info.escalating": "1. {first}, potem +{step} za każdą ({total} łącznie)",
+  "info.defaults": "Domyślne wartości ze skryptów gry. Rockstar może je zmieniać lub organizować wydarzenia 2×/3×.",
+  "view.label": "Grupuj wg",
+  "view.type": "Typu",
+  "view.purpose": "Celu",
+  "purpose.money": "Zarabianie",
+  "purpose.unlock": "Odblokowania i kolekcje",
+  "purpose.service": "Sklepy i usługi",
+  "purpose.event": "Wydarzenia sezonowe",
+  "purpose.timed": "Ograniczone czasowo",
+  "clock.game": "Czas w grze {time}",
+  "ghost.window": "Pojawia się {from}–{to} (czas w grze)",
+  "ghost.next": "Następne pojawienie za {m} min ({time})",
+  "ghost.now": "Teraz — zostało {m} min",
+  "ghost.nowShort": "teraz",
+  "ghost.spots": "Pojawia się w jednym z {n} możliwych miejsc",
+  "ghost.schedule": "Najbliższe pojawienia (twój czas lokalny)",
+  "purpose.activity": "Aktywności i wyzwania",
+  "plan.open": "🧮 Planer: pieniądze / RP / ranga",
+  "plan.title": "Planer",
+  "plan.goalMoney": "Pieniądze",
+  "plan.goalRp": "RP",
+  "plan.goalRank": "Ranga",
+  "plan.amount": "Ile chcesz?",
+  "plan.curRank": "Obecna ranga",
+  "plan.curRp": "Obecne łączne RP (opcjonalnie, dokładniej)",
+  "plan.targetRank": "Docelowa ranga",
+  "plan.needRp": "Ranga {from} → {to}: potrzeba {rp} RP",
+  "plan.alreadyDone": "Masz już tę rangę lub wyższą.",
+  "plan.result": "Proponowany plan",
+  "plan.items": "×{n}",
+  "plan.minutes": "~{m} min",
+  "plan.today": "dziś",
+  "plan.total": "Razem {cash} + {rp} RP · około {min} min",
+  "plan.short": "Na mapie jest teraz za mało — brakuje {left}. Punkty dzienne odnawiają się codziennie, możesz też włączyć wydarzenia / zwiększyć mnożnik w Dostosuj.",
+  "plan.reached": "Cel osiągnięty ✓",
+  "plan.showAll": "📍 Pokaż plan na mapie",
+  "plan.mapTitle": "Plan: {n} punktów",
+  "plan.custom": "Dostosuj",
+  "plan.includeEvents": "Uwzględnij wydarzenia sezonowe (tylko gdy aktywne)",
+  "plan.excludeCollected": "Pomijaj już zebrane",
+  "plan.useBonus": "Liczyć bonusy za komplet",
+  "plan.multCash": "Pieniądze ×",
+  "plan.multRp": "RP ×",
+  "plan.colUse": "Użyj",
+  "plan.colCat": "Kategoria",
+  "plan.colMin": "Min / szt.",
+  "plan.reset": "Przywróć",
+  "plan.close": "Zamknij",
+  "plan.estimate": "Czasy to przybliżenia — dopasuj je do swojego stylu gry. Nagrody to domyślne wartości gry.",
+  "plan.empty": "Podaj cel, aby zobaczyć plan."
  },
  "cats": {
   "action_figures": {
@@ -135,6 +190,22 @@
   "weed_packages": {
    "name": "Paczki zioła",
    "note": "Wydarzenie specjalne: 10 miejsc dziennie w trakcie"
+  },
+  "street_dealers": {
+   "name": "Dilerzy uliczni",
+   "note": "Dziennie: 3 dilerów każdego dnia"
+  },
+  "bike_time_trial": {
+   "name": "Jazda na czas rowerem Junk Energy",
+   "note": "Dziennie: 1 z 14 tras każdego dnia"
+  },
+  "rc_time_trial": {
+   "name": "Jazda na czas RC Bandito",
+   "note": "Dziennie: 1 z 14 tras każdego dnia"
+  },
+  "ghosts": {
+   "name": "Ghosts Exposed",
+   "note": "Wydarzenie halloweenowe: każdy duch pojawia się na godzinę gry"
   }
  }
 }
