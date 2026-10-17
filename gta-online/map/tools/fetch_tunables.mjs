@@ -1,0 +1,100 @@
+// Fetch GTA Online tunables (decrypted by api.rdo.gg) and keep only the values
+// that change daily locations. Writes data/tunables.json.
+// Usage: node tools/fetch_tunables.mjs data/tunables.json
+import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+
+const SOURCE = 'https://api.rdo.gg/tunables/gta/pcros/';
+const out = process.argv[2] || 'data/tunables.json';
+
+// Tunable names from tuneables_processing.c. The Gun Van weekday overrides
+// have no known name, only their joaat hash.
+const NAMED = [
+  'DAILY_OBJ_TIME_REFRESH',
+  'DAILY_COLLECTABLES_OVERRIDE_INDEX',
+  'DAILY_COLLECTABLES_OVERRIDE_TREASURE_CHEST0',
+  'DAILY_COLLECTABLES_OVERRIDE_TREASURE_CHEST1',
+  ...Array.from({ length: 10 }, (_, i) => `DAILY_COLLECTABLES_OVERRIDE_HIDDEN_CACHE${i}`),
+  'XM22_GUN_VAN_AVAILABLE',
+  ...Array.from({ length: 30 }, (_, i) => `XM22_GUN_VAN_LOCATION_ENABLED_${i}`),
+];
+const HASHED = {
+  GUN_VAN_DAY_0: -292994779,
+  GUN_VAN_DAY_1: 13297064,
+  GUN_VAN_DAY_2: -502421466,
+  GUN_VAN_DAY_3: 876399747,
+  GUN_VAN_DAY_4: -22453923,
+  GUN_VAN_DAY_5: -791771736,
+  GUN_VAN_DAY_6: 722680368,
+};
+
+function joaat(s) {
+  let h = 0;
+  for (const c of s.toLowerCase()) {
+    h = (h + c.charCodeAt(0)) >>> 0;
+    h = (h + (h << 10)) >>> 0;
+    h = (h ^ (h >>> 6)) >>> 0;
+  }
+  h = (h + (h << 3)) >>> 0;
+  h = (h ^ (h >>> 11)) >>> 0;
+  return (h + (h << 15)) >>> 0;
+}
+
+function keyForms(name, hash) {
+  const u = hash >>> 0;
+  const forms = [String(u), String(u | 0), '0x' + u.toString(16), '0x' + u.toString(16).toUpperCase(),
+    u.toString(16).toUpperCase().padStart(8, '0')];
+  return name ? [name, name.toLowerCase(), ...forms] : forms;
+}
+
+// Values can sit in BASE_GLOBALS or other contexts; BASE_GLOBALS wins.
+function lookup(tunables, forms) {
+  const contexts = Object.keys(tunables).sort((a, b) => (b === 'BASE_GLOBALS') - (a === 'BASE_GLOBALS'));
+  for (const ctx of contexts) {
+    const table = tunables[ctx];
+    if (!table || typeof table !== 'object') continue;
+    for (const k of forms) {
+      if (k in table) {
+        const v = table[k];
+        return typeof v === 'object' && v !== null && 'value' in v ? v.value : v;
+      }
+    }
+  }
+  return undefined;
+}
+
+async function load() {
+  // TUNABLES_FILE lets the script run against a saved response (testing).
+  if (process.env.TUNABLES_FILE) return JSON.parse(readFileSync(process.env.TUNABLES_FILE, 'utf8'));
+  const res = await fetch(SOURCE, { headers: { 'user-agent': 'bombxdev.github.io gta-online/map' } });
+  if (!res.ok) throw new Error(`${SOURCE} -> HTTP ${res.status}`);
+  return res.json();
+}
+const body = await load();
+const tunables = body?.contents?.tunables ?? body?.tunables;
+if (!tunables) throw new Error('unexpected response shape: ' + Object.keys(body).join(','));
+
+const values = {};
+for (const name of NAMED) {
+  const v = lookup(tunables, keyForms(name, joaat(name)));
+  if (v !== undefined) values[name] = v;
+}
+for (const [name, hash] of Object.entries(HASHED)) {
+  const v = lookup(tunables, keyForms(null, hash));
+  if (v !== undefined) values[name] = v;
+}
+
+const result = {
+  source: SOURCE,
+  tunables_updated: body?.meta?.updated ?? body?.updated ?? null,
+  values,
+};
+
+// Keep the file (and the commit history) quiet when nothing changed.
+const prev = existsSync(out) ? JSON.parse(readFileSync(out, 'utf8')) : null;
+if (prev && JSON.stringify(prev.values) === JSON.stringify(values) && prev.tunables_updated === result.tunables_updated) {
+  console.log('unchanged');
+} else {
+  result.fetched_at = new Date().toISOString();
+  writeFileSync(out, JSON.stringify(result, null, 1) + '\n');
+  console.log('updated', Object.keys(values).length, 'values');
+}
