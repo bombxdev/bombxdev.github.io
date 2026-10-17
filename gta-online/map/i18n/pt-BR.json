@@ -109,7 +109,13 @@
   "plan.reset": "Restaurar",
   "plan.close": "Fechar",
   "plan.estimate": "Os tempos são estimativas — ajuste ao seu jeito de jogar. As recompensas são os valores padrão do jogo.",
-  "plan.empty": "Digite uma meta para ver um plano."
+  "plan.empty": "Digite uma meta para ver um plano.",
+  "pop.near": "Perto de {zone}",
+  "pop.altitude": "{m} m acima do nível do mar",
+  "pop.underwater": "Debaixo d'água, cerca de {m} m",
+  "pop.closeup": "Satélite de perto — o círculo vermelho marca o local",
+  "pop.myNote": "Minha nota",
+  "pop.notePh": "ex.: 2.º andar atrás das caixas; de frente ao prédio, 3.º arbusto à direita"
  },
  "cats": {
   "action_figures": {

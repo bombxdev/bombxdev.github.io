@@ -109,7 +109,13 @@
   "plan.reset": "リセット",
   "plan.close": "閉じる",
   "plan.estimate": "時間はおおよその目安です。自分のプレイに合わせて調整してください。報酬はゲームの初期値です。",
-  "plan.empty": "目標を入力するとプランが表示されます。"
+  "plan.empty": "目標を入力するとプランが表示されます。",
+  "pop.near": "{zone} 付近",
+  "pop.altitude": "海抜 {m} m",
+  "pop.underwater": "水中・深さ約 {m} m",
+  "pop.closeup": "衛星写真の拡大 — 赤い丸が位置です",
+  "pop.myNote": "自分のメモ",
+  "pop.notePh": "例: 2 階の木箱の裏、建物を正面に右から 3 つ目の茂み"
  },
  "cats": {
   "action_figures": {

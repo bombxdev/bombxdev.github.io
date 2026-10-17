@@ -109,7 +109,13 @@
   "plan.reset": "Przywróć",
   "plan.close": "Zamknij",
   "plan.estimate": "Czasy to przybliżenia — dopasuj je do swojego stylu gry. Nagrody to domyślne wartości gry.",
-  "plan.empty": "Podaj cel, aby zobaczyć plan."
+  "plan.empty": "Podaj cel, aby zobaczyć plan.",
+  "pop.near": "W pobliżu: {zone}",
+  "pop.altitude": "{m} m n.p.m.",
+  "pop.underwater": "Pod wodą, ok. {m} m głębokości",
+  "pop.closeup": "Zbliżenie satelitarne — czerwone kółko oznacza miejsce",
+  "pop.myNote": "Moja notatka",
+  "pop.notePh": "np. 2. piętro za skrzyniami; przodem do budynku, 3. krzak po prawej"
  },
  "cats": {
   "action_figures": {
