@@ -12,6 +12,20 @@
 - ติ๊ก "เก็บแล้ว" แล้วนับความคืบหน้าต่อหมวด (บันทึกใน localStorage ของเบราว์เซอร์)
 - ลิงก์ตรงไปยังแต่ละจุด เช่น `#action_figures-12`
 - คลิกขวา/กดค้างบนแผนที่เพื่อดูพิกัดในเกม
+- รองรับ 16 ภาษา (เลือกอัตโนมัติตามเบราว์เซอร์ เปลี่ยนได้ที่ 🌐) ค้นหาด้วยชื่อหมวดภาษาไหนก็ได้
+- ไม่ต้องสมัครสมาชิก: ความคืบหน้า/การตั้งค่าเก็บใน localStorage และ **ส่งออก/นำเข้าไฟล์สำรอง (.json)** ได้
+
+## ภาษา
+
+ไฟล์ภาษาอยู่ใน `i18n/` (`index.json` = รายชื่อภาษา, `<code>.json` = ข้อความ UI + ชื่อ/คำอธิบายหมวด)
+เพิ่มภาษาใหม่: คัดลอก `en.json` เป็น `<code>.json` แปลค่า (คง `{placeholder}` ไว้) แล้วเพิ่มลงใน `index.json`
+คีย์ที่ไม่มีจะใช้ภาษาอังกฤษแทนอัตโนมัติ
+
+## ไฟล์สำรอง
+
+ปุ่ม "ส่งออกไฟล์สำรอง" ดาวน์โหลดทุกค่าที่ขึ้นต้นด้วย `gtaomap.` ใน localStorage
+(เช่น `collected`, `visible`, `lang`, `style`) เป็นไฟล์ `{"app":"bombxdev-gta-online-map","version":1,"data":{...}}`
+"นำเข้าไฟล์สำรอง" จะถามยืนยันแล้วแทนที่ค่าทั้งหมดในเบราว์เซอร์นั้น
 
 ## ตำแหน่งประจำวัน (Gun Van, Shipwreck, Hidden Caches ฯลฯ)
 
@@ -36,6 +50,7 @@
 | --- | --- |
 | พิกัด collectibles | `freemode.c` จาก [Sainan/GTA-V-Decompiled-Scripts](https://github.com/Sainan/GTA-V-Decompiled-Scripts) (สคริปต์เกมที่ decompile แล้ว) |
 | ภาพแผนที่ | [CreepPork/GTAV-Maps](https://github.com/CreepPork/GTAV-Maps) (MIT) แปลงเป็น WebP |
+| ไอคอนบนแผนที่ | ภาพ radar blip จริงของเกม จาก [FiveM docs](https://docs.fivem.net/docs/game-references/blips/) (`citizenfx/fivem-docs`, `static/blips/`) — `blipSource: "game"` = blip ที่สคริปต์เกมใช้กับหมวดนั้นจริง (`SET_BLIP_SPRITE`), `"closest"` = เกมไม่มี blip เฉพาะ เลือก blip ทางการที่ใกล้เคียงที่สุด |
 | ไลบรารีแผนที่ | [Leaflet 1.9.4](https://leafletjs.com) (BSD-2-Clause) |
 
 ภาพแผนที่ไม่มีเกาะ Cayo Perico — หมุดของหมวดที่อยู่บนเกาะ (Treasure Chests, Buried Stashes)

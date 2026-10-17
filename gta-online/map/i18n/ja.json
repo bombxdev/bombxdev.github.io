@@ -1,0 +1,140 @@
+{
+ "ui": {
+  "meta.description": "収集アイテムと日替わり地点を検索できる GTAオンライン マップ。広告なし・登録不要。",
+  "aria.sidebar": "検索とフィルター",
+  "aria.closeMenu": "メニューを閉じる",
+  "aria.openMenu": "検索メニューを開く",
+  "aria.clearSearch": "検索をクリア",
+  "aria.today": "日替わり地点",
+  "aria.dayPrev": "前の日",
+  "aria.dayNext": "次の日",
+  "mobile.open": "☰ 検索",
+  "search.placeholder": "検索 例: フィギュア 12, カード 5, -75, -818",
+  "search.gotoCoord": "ゲーム内座標へ移動",
+  "search.clickToGo": "クリックでこの地点へ移動",
+  "search.found": "{n} 件",
+  "search.showingFirst": "（先頭 {n} 件を表示）",
+  "search.mapFiltered": " · 地図には検索結果のみ表示",
+  "today.title": "日替わり",
+  "today.only": "日替わりカテゴリ: 選択した日の地点のみ表示",
+  "today.today": "今日",
+  "today.ahead": "+{n} 日",
+  "today.behind": "{n} 日",
+  "today.resetIn": "リセットまで {h} 時間 {m} 分（{time}）",
+  "today.eventOnly": "{name}（イベント期間のみ）",
+  "status.noTunables": "ゲームスクリプトから計算 · 照合用の Rockstar チューナブルはまだありません",
+  "status.override": "⚠ Rockstar による上書き: {list}（適用済み）",
+  "status.ok": "✓ Rockstar チューナブルと照合済み、上書きなし · 更新 {time}",
+  "status.gunVanPinned": "今週は Rockstar がガンバンの位置を指定しています: {list}",
+  "toolbar.showAll": "すべて表示",
+  "toolbar.hideAll": "すべて非表示",
+  "toolbar.hideCollected": "収集済みを隠す",
+  "group.permanent": "常設",
+  "group.daily": "日替わり",
+  "group.event": "季節イベント",
+  "pop.selectedDay": "選択した日に出現",
+  "pop.coords": "座標",
+  "pop.gameCoords": "ゲーム内座標",
+  "pop.markDone": "✔ 収集済み",
+  "pop.markUndone": "↩︎ 未収集",
+  "pop.copyCoords": "座標をコピー",
+  "pop.copyLink": "リンクをコピー",
+  "pop.copy": "コピー",
+  "cayo.note": "（島の地図画像なし）",
+  "toast.copied": "コピーしました: {text}",
+  "toast.loadError": "データを読み込めませんでした",
+  "settings.language": "言語",
+  "settings.export": "バックアップを書き出す",
+  "settings.import": "バックアップを読み込む",
+  "settings.hint": "進捗と設定はこのブラウザにのみ保存されます。バックアップを書き出せば保管や別の端末への移行ができます。",
+  "export.done": "バックアップをダウンロードしました",
+  "import.confirm": "このブラウザの進捗と設定を {date} のバックアップ（収集済み {n} 件）で置き換えますか？",
+  "import.done": "バックアップを復元しました",
+  "import.invalid": "有効なバックアップファイルではありません",
+  "foot.hint": "地図を右クリック（または長押し）するとゲーム内座標を確認できます。",
+  "foot.daily": "日替わり地点はゲームのローテーション表と {rdo} のチューナブルから計算しています（{bot} に感謝）",
+  "foot.sources": "地点データはゲームスクリプトより（{scripts}）· 地図 {tiles} · blips {blips} · {leaflet}",
+  "foot.legal": "GTA V / GTAオンライン © Rockstar Games — ファンサイトであり Rockstar とは無関係です"
+ },
+ "cats": {
+  "action_figures": {
+   "name": "アクションフィギュア"
+  },
+  "playing_cards": {
+   "name": "トランプ"
+  },
+  "signal_jammers": {
+   "name": "信号妨害装置"
+  },
+  "peyote": {
+   "name": "ペヨーテ",
+   "note": "一部は水中にあります"
+  },
+  "movie_props": {
+   "name": "映画の小道具",
+   "note": "残り 3 つは走行中の車両内にあり、位置は固定されていません"
+  },
+  "media_sticks": {
+   "name": "音楽 USB メモリ",
+   "note": "一部はカジノやナイトクラブなどの屋内にあります"
+  },
+  "radio_antennas": {
+   "name": "無線アンテナ"
+  },
+  "ld_organics": {
+   "name": "LD オーガニクス製品"
+  },
+  "skydives": {
+   "name": "Junk Energy スカイダイブ",
+   "note": "日替わり: 25 か所中 10 か所が毎日有効"
+  },
+  "gun_van": {
+   "name": "ガンバン",
+   "note": "日替わり: 毎日移動（30 か所中 1 か所）"
+  },
+  "ls_tags": {
+   "name": "LS タグ（グラフィティ）",
+   "note": "日替わり: 毎日 5 か所出現（最初の 30 か所から）"
+  },
+  "hidden_caches": {
+   "name": "隠し物資",
+   "note": "日替わり: 毎日ランダムに 10 か所（水中）"
+  },
+  "shipwrecks": {
+   "name": "難破船",
+   "note": "日替わり: 毎日海岸に 1 か所"
+  },
+  "treasure_chests": {
+   "name": "宝箱（カヨ・ペリコ）",
+   "note": "日替わり: 毎日カヨ・ペリコに 2 か所"
+  },
+  "buried_stashes": {
+   "name": "埋められた隠し物資（カヨ・ペリコ）",
+   "note": "日替わり: 毎日カヨ・ペリコに 2 か所"
+  },
+  "jack_o_lanterns": {
+   "name": "ジャック・オー・ランタン",
+   "note": "ハロウィンイベント"
+  },
+  "snowmen": {
+   "name": "雪だるま",
+   "note": "クリスマス / 年末年始イベント"
+  },
+  "yuanbao": {
+   "name": "元宝",
+   "note": "旧正月イベント"
+  },
+  "gold_charms": {
+   "name": "ゴールドチャーム",
+   "note": "聖パトリックの祝日イベント"
+  },
+  "lucky_charms": {
+   "name": "ラッキーチャーム",
+   "note": "聖パトリックの祝日イベント"
+  },
+  "weed_packages": {
+   "name": "大麻パッケージ",
+   "note": "特別イベント: 期間中は毎日 10 か所"
+  }
+ }
+}

@@ -84,10 +84,7 @@
       var p = tun(tunables, 'GUN_VAN_DAY_' + d, -1);
       if (p !== -1) pinned.push(p);
     }
-    if (pinned.length) {
-      result.gunVanPinned = pinned;
-      result.overrides.push('Gun Van ถูกกำหนดตำแหน่งรายวันในสัปดาห์นี้: #' + pinned.map(function (p) { return p + 1; }).join(', #'));
-    }
+    if (pinned.length) result.gunVanPinned = pinned;
     return result;
   }
 

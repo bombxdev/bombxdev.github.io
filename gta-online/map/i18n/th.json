@@ -1,0 +1,140 @@
+{
+ "ui": {
+  "meta.description": "แผนที่ GTA Online ค้นหาตำแหน่ง collectibles และตำแหน่งประจำวันได้ทันที ไม่มีโฆษณา ไม่ต้องสมัครสมาชิก",
+  "aria.sidebar": "ค้นหาและตัวกรอง",
+  "aria.closeMenu": "ปิดเมนู",
+  "aria.openMenu": "เปิดเมนูค้นหา",
+  "aria.clearSearch": "ล้างคำค้นหา",
+  "aria.today": "ตำแหน่งประจำวัน",
+  "aria.dayPrev": "วันก่อนหน้า",
+  "aria.dayNext": "วันถัดไป",
+  "mobile.open": "☰ ค้นหา",
+  "search.placeholder": "ค้นหา เช่น ฟิกเกอร์ 12, card 5, -75, -818",
+  "search.gotoCoord": "ไปยังพิกัดในเกม",
+  "search.clickToGo": "คลิกเพื่อไปยังจุดนี้",
+  "search.found": "พบ {n} รายการ",
+  "search.showingFirst": " (แสดง {n} รายการแรก)",
+  "search.mapFiltered": " · แผนที่แสดงเฉพาะผลค้นหา",
+  "today.title": "ประจำวัน",
+  "today.only": "หมวดรายวัน: แสดงเฉพาะจุดของวันที่เลือก",
+  "today.today": "วันนี้",
+  "today.ahead": "ล่วงหน้า +{n} วัน",
+  "today.behind": "ย้อนหลัง {n} วัน",
+  "today.resetIn": "รีเซ็ตใน {h} ชม. {m} นาที ({time})",
+  "today.eventOnly": "{name} (เฉพาะช่วงอีเวนต์)",
+  "status.noTunables": "คำนวณจากสคริปต์เกม · ยังไม่มีข้อมูล tunables ของ Rockstar ให้เทียบ",
+  "status.override": "⚠ Rockstar override: {list} (ใช้ค่าที่ override แล้ว)",
+  "status.ok": "✓ เทียบกับ tunables ของ Rockstar แล้ว ไม่มี override · อัปเดต {time}",
+  "status.gunVanPinned": "Rockstar กำหนดตำแหน่ง Gun Van ในสัปดาห์นี้: {list}",
+  "toolbar.showAll": "แสดงทั้งหมด",
+  "toolbar.hideAll": "ซ่อนทั้งหมด",
+  "toolbar.hideCollected": "ซ่อนที่เก็บแล้ว",
+  "group.permanent": "ถาวร",
+  "group.daily": "รายวัน",
+  "group.event": "อีเวนต์ตามเทศกาล",
+  "pop.selectedDay": "ขึ้นวันที่เลือก",
+  "pop.coords": "พิกัด",
+  "pop.gameCoords": "พิกัดในเกม",
+  "pop.markDone": "✔ เก็บแล้ว",
+  "pop.markUndone": "↩︎ ยังไม่ได้เก็บ",
+  "pop.copyCoords": "คัดลอกพิกัด",
+  "pop.copyLink": "คัดลอกลิงก์",
+  "pop.copy": "คัดลอก",
+  "cayo.note": "(ไม่มีภาพแผนที่เกาะ)",
+  "toast.copied": "คัดลอกแล้ว: {text}",
+  "toast.loadError": "โหลดข้อมูลไม่สำเร็จ",
+  "settings.language": "ภาษา",
+  "settings.export": "ส่งออกไฟล์สำรอง",
+  "settings.import": "นำเข้าไฟล์สำรอง",
+  "settings.hint": "ความคืบหน้าและการตั้งค่าบันทึกไว้ในเบราว์เซอร์นี้เท่านั้น ส่งออกไฟล์สำรองเก็บไว้ หรือย้ายไปเครื่องอื่นได้",
+  "export.done": "ดาวน์โหลดไฟล์สำรองแล้ว",
+  "import.confirm": "แทนที่ความคืบหน้าและการตั้งค่าในเบราว์เซอร์นี้ด้วยไฟล์สำรองวันที่ {date} (เก็บแล้ว {n} รายการ)?",
+  "import.done": "กู้คืนไฟล์สำรองแล้ว",
+  "import.invalid": "ไฟล์นี้ไม่ใช่ไฟล์สำรองที่ถูกต้อง",
+  "foot.hint": "คลิกขวา (หรือกดค้าง) บนแผนที่เพื่อดูพิกัดในเกม",
+  "foot.daily": "ตำแหน่งรายวันคำนวณจากตารางหมุนเวียนในสคริปต์เกม + tunables จาก {rdo} (ขอบคุณ {bot})",
+  "foot.sources": "ข้อมูลตำแหน่งจากสคริปต์เกม ({scripts}) · ภาพแผนที่ {tiles} · blips {blips} · {leaflet}",
+  "foot.legal": "GTA V / GTA Online © Rockstar Games — เว็บแฟนเมด ไม่เกี่ยวข้องกับ Rockstar"
+ },
+ "cats": {
+  "action_figures": {
+   "name": "ฟิกเกอร์แอคชั่น"
+  },
+  "playing_cards": {
+   "name": "ไพ่"
+  },
+  "signal_jammers": {
+   "name": "เครื่องรบกวนสัญญาณ"
+  },
+  "peyote": {
+   "name": "ต้นเพโยตี",
+   "note": "บางต้นอยู่ใต้น้ำ"
+  },
+  "movie_props": {
+   "name": "ของประกอบฉากหนัง",
+   "note": "อีก 3 ชิ้นอยู่ในรถที่วิ่งอยู่ในเมือง จึงไม่มีตำแหน่งตายตัว"
+  },
+  "media_sticks": {
+   "name": "USB เพลง (Media Sticks)",
+   "note": "บางอันอยู่ในอาคาร เช่น คาสิโน / ไนต์คลับ"
+  },
+  "radio_antennas": {
+   "name": "เสาวิทยุ"
+  },
+  "ld_organics": {
+   "name": "LD Organics"
+  },
+  "skydives": {
+   "name": "สกายไดฟ์ Junk Energy",
+   "note": "รายวัน: เปิด 10 จาก 25 จุดต่อวัน"
+  },
+  "gun_van": {
+   "name": "รถขายปืน (Gun Van)",
+   "note": "รายวัน: ย้ายตำแหน่งทุกวัน (1 จาก 30 จุด)"
+  },
+  "ls_tags": {
+   "name": "กราฟฟิตี LS Tags",
+   "note": "รายวัน: ขึ้น 5 จุดต่อวัน (จากชุดแรก 30 จุด)"
+  },
+  "hidden_caches": {
+   "name": "กล่องใต้น้ำ (Hidden Caches)",
+   "note": "รายวัน: สุ่มขึ้น 10 จุดต่อวัน (ใต้น้ำ)"
+  },
+  "shipwrecks": {
+   "name": "ซากเรืออับปาง",
+   "note": "รายวัน: สุ่มขึ้น 1 จุดต่อวัน ตามชายฝั่ง"
+  },
+  "treasure_chests": {
+   "name": "หีบสมบัติ (Cayo Perico)",
+   "note": "รายวัน: สุ่มขึ้น 2 จุดต่อวันบนเกาะ Cayo Perico"
+  },
+  "buried_stashes": {
+   "name": "ของที่ฝังไว้ (Cayo Perico)",
+   "note": "รายวัน: สุ่มขึ้น 2 จุดต่อวันบนเกาะ Cayo Perico"
+  },
+  "jack_o_lanterns": {
+   "name": "ฟักทองฮาโลวีน",
+   "note": "อีเวนต์ฮาโลวีน"
+  },
+  "snowmen": {
+   "name": "ตุ๊กตาหิมะ",
+   "note": "อีเวนต์คริสต์มาส / ปีใหม่"
+  },
+  "yuanbao": {
+   "name": "ก้อนทองหยวนเปา",
+   "note": "อีเวนต์ตรุษจีน"
+  },
+  "gold_charms": {
+   "name": "เครื่องรางทอง",
+   "note": "อีเวนต์วันเซนต์แพทริก"
+  },
+  "lucky_charms": {
+   "name": "เครื่องรางนำโชค",
+   "note": "อีเวนต์วันเซนต์แพทริก"
+  },
+  "weed_packages": {
+   "name": "ห่อกัญชา",
+   "note": "อีเวนต์พิเศษ: ช่วงที่เปิด จะขึ้น 10 จุดต่อวัน"
+  }
+ }
+}

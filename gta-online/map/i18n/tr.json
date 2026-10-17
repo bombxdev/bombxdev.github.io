@@ -1,0 +1,140 @@
+{
+ "ui": {
+  "meta.description": "Koleksiyon eşyaları ve günlük konumlar için aranabilir GTA Online haritası. Reklamsız, üyelik gerektirmez.",
+  "aria.sidebar": "Arama ve filtreler",
+  "aria.closeMenu": "Menüyü kapat",
+  "aria.openMenu": "Arama menüsünü aç",
+  "aria.clearSearch": "Aramayı temizle",
+  "aria.today": "Günlük konumlar",
+  "aria.dayPrev": "Önceki gün",
+  "aria.dayNext": "Sonraki gün",
+  "mobile.open": "☰ Ara",
+  "search.placeholder": "Ara ör. figür 12, kart 5, -75, -818",
+  "search.gotoCoord": "Oyun koordinatlarına git",
+  "search.clickToGo": "Bu noktaya gitmek için tıklayın",
+  "search.found": "{n} sonuç",
+  "search.showingFirst": " (ilk {n} gösteriliyor)",
+  "search.mapFiltered": " · harita yalnızca sonuçları gösteriyor",
+  "today.title": "Günlük",
+  "today.only": "Günlük kategoriler: yalnızca seçilen günün noktalarını göster",
+  "today.today": "Bugün",
+  "today.ahead": "+{n} gün",
+  "today.behind": "{n} gün",
+  "today.resetIn": "{h} sa {m} dk sonra sıfırlanır ({time})",
+  "today.eventOnly": "{name} (yalnızca etkinlikte)",
+  "status.noTunables": "Oyun betiklerinden hesaplandı · karşılaştırılacak Rockstar tunables verisi henüz yok",
+  "status.override": "⚠ Rockstar değişikliği: {list} (uygulandı)",
+  "status.ok": "✓ Rockstar tunables ile karşılaştırıldı, değişiklik yok · güncellendi {time}",
+  "status.gunVanPinned": "Rockstar bu hafta Gun Van konumunu sabitledi: {list}",
+  "toolbar.showAll": "Tümünü göster",
+  "toolbar.hideAll": "Tümünü gizle",
+  "toolbar.hideCollected": "Toplananları gizle",
+  "group.permanent": "Kalıcı",
+  "group.daily": "Günlük",
+  "group.event": "Sezonluk etkinlikler",
+  "pop.selectedDay": "seçilen günde aktif",
+  "pop.coords": "Koordinatlar",
+  "pop.gameCoords": "Oyun koordinatları",
+  "pop.markDone": "✔ Toplandı",
+  "pop.markUndone": "↩︎ Toplanmadı",
+  "pop.copyCoords": "Koordinatları kopyala",
+  "pop.copyLink": "Bağlantıyı kopyala",
+  "pop.copy": "Kopyala",
+  "cayo.note": "(ada harita görseli yok)",
+  "toast.copied": "Kopyalandı: {text}",
+  "toast.loadError": "Veriler yüklenemedi",
+  "settings.language": "Dil",
+  "settings.export": "Yedeği dışa aktar",
+  "settings.import": "Yedeği içe aktar",
+  "settings.hint": "İlerleme ve ayarlar yalnızca bu tarayıcıda saklanır. Saklamak ya da başka cihaza taşımak için yedek dosyası dışa aktarın.",
+  "export.done": "Yedek indirildi",
+  "import.confirm": "Bu tarayıcıdaki ilerleme ve ayarlar {date} tarihli yedekle değiştirilsin mi? ({n} toplandı)",
+  "import.done": "Yedek geri yüklendi",
+  "import.invalid": "Bu dosya geçerli bir yedek değil",
+  "foot.hint": "Oyun koordinatlarını görmek için haritaya sağ tıklayın (veya basılı tutun).",
+  "foot.daily": "Günlük konumlar oyunun rotasyon tablolarından + {rdo} tunables verisinden hesaplanır (teşekkürler {bot})",
+  "foot.sources": "Konumlar oyun betiklerinden ({scripts}) · harita {tiles} · blips {blips} · {leaflet}",
+  "foot.legal": "GTA V / GTA Online © Rockstar Games — hayran sitesi, Rockstar ile bağlantısı yoktur"
+ },
+ "cats": {
+  "action_figures": {
+   "name": "Aksiyon figürleri"
+  },
+  "playing_cards": {
+   "name": "Oyun kartları"
+  },
+  "signal_jammers": {
+   "name": "Sinyal bozucular"
+  },
+  "peyote": {
+   "name": "Peyote bitkileri",
+   "note": "Bazı bitkiler su altında"
+  },
+  "movie_props": {
+   "name": "Film aksesuarları",
+   "note": "3 aksesuar daha hareket eden araçlarda, sabit konumları yok"
+  },
+  "media_sticks": {
+   "name": "Müzik USB bellekleri",
+   "note": "Bazıları kumarhane veya gece kulübü gibi iç mekânlarda"
+  },
+  "radio_antennas": {
+   "name": "Radyo antenleri"
+  },
+  "ld_organics": {
+   "name": "LD Organics ürünleri"
+  },
+  "skydives": {
+   "name": "Junk Energy paraşüt atlayışları",
+   "note": "Günlük: her gün 25'ten 10'u açık"
+  },
+  "gun_van": {
+   "name": "Gun Van",
+   "note": "Günlük: her gün yer değiştirir (30 noktadan 1'i)"
+  },
+  "ls_tags": {
+   "name": "LS Tags grafitileri",
+   "note": "Günlük: her gün 5 tane çıkar (ilk 30'dan)"
+  },
+  "hidden_caches": {
+   "name": "Gizli zulalar",
+   "note": "Günlük: her gün 10 rastgele nokta (su altında)"
+  },
+  "shipwrecks": {
+   "name": "Batık gemiler",
+   "note": "Günlük: her gün kıyıda 1 nokta"
+  },
+  "treasure_chests": {
+   "name": "Hazine sandıkları (Cayo Perico)",
+   "note": "Günlük: her gün Cayo Perico'da 2 nokta"
+  },
+  "buried_stashes": {
+   "name": "Gömülü zulalar (Cayo Perico)",
+   "note": "Günlük: her gün Cayo Perico'da 2 nokta"
+  },
+  "jack_o_lanterns": {
+   "name": "Cadılar Bayramı balkabakları",
+   "note": "Cadılar Bayramı etkinliği"
+  },
+  "snowmen": {
+   "name": "Kardan adamlar",
+   "note": "Noel / Yılbaşı etkinliği"
+  },
+  "yuanbao": {
+   "name": "Yuanbao",
+   "note": "Ay Yeni Yılı etkinliği"
+  },
+  "gold_charms": {
+   "name": "Altın tılsımlar",
+   "note": "Aziz Patrick Günü etkinliği"
+  },
+  "lucky_charms": {
+   "name": "Şans tılsımları",
+   "note": "Aziz Patrick Günü etkinliği"
+  },
+  "weed_packages": {
+   "name": "Ot paketleri",
+   "note": "Özel etkinlik: etkinlik süresince günde 10 nokta"
+  }
+ }
+}

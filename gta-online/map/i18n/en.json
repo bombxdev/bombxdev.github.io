@@ -1,0 +1,140 @@
+{
+ "ui": {
+  "meta.description": "Searchable GTA Online map with collectibles and daily locations. No ads, no sign-up.",
+  "aria.sidebar": "Search and filters",
+  "aria.closeMenu": "Close menu",
+  "aria.openMenu": "Open search menu",
+  "aria.clearSearch": "Clear search",
+  "aria.today": "Daily locations",
+  "aria.dayPrev": "Previous day",
+  "aria.dayNext": "Next day",
+  "mobile.open": "☰ Search",
+  "search.placeholder": "Search e.g. figure 12, card 5, -75, -818",
+  "search.gotoCoord": "Go to in-game coordinates",
+  "search.clickToGo": "Click to go to this point",
+  "search.found": "{n} results",
+  "search.showingFirst": " (showing first {n})",
+  "search.mapFiltered": " · map shows matches only",
+  "today.title": "Daily",
+  "today.only": "Daily categories: show only the selected day's spots",
+  "today.today": "Today",
+  "today.ahead": "+{n} days",
+  "today.behind": "{n} days",
+  "today.resetIn": "Resets in {h}h {m}m ({time})",
+  "today.eventOnly": "{name} (event only)",
+  "status.noTunables": "Computed from game scripts · no Rockstar tunables to compare yet",
+  "status.override": "⚠ Rockstar override: {list} (applied)",
+  "status.ok": "✓ Checked against Rockstar tunables, no overrides · updated {time}",
+  "status.gunVanPinned": "Gun Van location pinned by Rockstar this week: {list}",
+  "toolbar.showAll": "Show all",
+  "toolbar.hideAll": "Hide all",
+  "toolbar.hideCollected": "Hide collected",
+  "group.permanent": "Permanent",
+  "group.daily": "Daily",
+  "group.event": "Seasonal events",
+  "pop.selectedDay": "active on selected day",
+  "pop.coords": "Coordinates",
+  "pop.gameCoords": "In-game coordinates",
+  "pop.markDone": "✔ Collected",
+  "pop.markUndone": "↩︎ Not collected",
+  "pop.copyCoords": "Copy coordinates",
+  "pop.copyLink": "Copy link",
+  "pop.copy": "Copy",
+  "cayo.note": "(no island map image)",
+  "toast.copied": "Copied: {text}",
+  "toast.loadError": "Could not load data",
+  "settings.language": "Language",
+  "settings.export": "Export backup",
+  "settings.import": "Import backup",
+  "settings.hint": "Progress and settings are saved in this browser only. Export a backup file to keep them or move them to another device.",
+  "export.done": "Backup downloaded",
+  "import.confirm": "Replace this browser's progress and settings with the backup from {date} ({n} collected)?",
+  "import.done": "Backup restored",
+  "import.invalid": "This is not a valid backup file",
+  "foot.hint": "Right-click (or long-press) the map to read in-game coordinates.",
+  "foot.daily": "Daily locations are computed from the game's rotation tables + tunables from {rdo} (thanks {bot})",
+  "foot.sources": "Locations from game scripts ({scripts}) · map tiles {tiles} · blips {blips} · {leaflet}",
+  "foot.legal": "GTA V / GTA Online © Rockstar Games — fan-made site, not affiliated with Rockstar"
+ },
+ "cats": {
+  "action_figures": {
+   "name": "Action Figures"
+  },
+  "playing_cards": {
+   "name": "Playing Cards"
+  },
+  "signal_jammers": {
+   "name": "Signal Jammers"
+  },
+  "peyote": {
+   "name": "Peyote Plants",
+   "note": "Some plants are underwater"
+  },
+  "movie_props": {
+   "name": "Movie Props",
+   "note": "3 more props are inside moving vehicles, so they have no fixed position"
+  },
+  "media_sticks": {
+   "name": "Media Sticks",
+   "note": "Some are inside interiors such as the casino or nightclubs"
+  },
+  "radio_antennas": {
+   "name": "Radio Antennas"
+  },
+  "ld_organics": {
+   "name": "LD Organics Product"
+  },
+  "skydives": {
+   "name": "Junk Energy Skydives",
+   "note": "Daily: 10 of 25 open each day"
+  },
+  "gun_van": {
+   "name": "Gun Van",
+   "note": "Daily: moves every day (1 of 30 spots)"
+  },
+  "ls_tags": {
+   "name": "LS Tags",
+   "note": "Daily: 5 appear each day (from the first set of 30)"
+  },
+  "hidden_caches": {
+   "name": "Hidden Caches",
+   "note": "Daily: 10 random spots each day (underwater)"
+  },
+  "shipwrecks": {
+   "name": "Shipwrecks",
+   "note": "Daily: 1 spot each day along the coast"
+  },
+  "treasure_chests": {
+   "name": "Treasure Chests (Cayo Perico)",
+   "note": "Daily: 2 spots each day on Cayo Perico"
+  },
+  "buried_stashes": {
+   "name": "Buried Stashes (Cayo Perico)",
+   "note": "Daily: 2 spots each day on Cayo Perico"
+  },
+  "jack_o_lanterns": {
+   "name": "Jack O' Lanterns",
+   "note": "Halloween event"
+  },
+  "snowmen": {
+   "name": "Snowmen",
+   "note": "Christmas / New Year event"
+  },
+  "yuanbao": {
+   "name": "Yuanbao",
+   "note": "Lunar New Year event"
+  },
+  "gold_charms": {
+   "name": "Gold Charms",
+   "note": "St. Patrick's Day event"
+  },
+  "lucky_charms": {
+   "name": "Lucky Charms",
+   "note": "St. Patrick's Day event"
+  },
+  "weed_packages": {
+   "name": "Weed Packages",
+   "note": "Special event: 10 spots per day while active"
+  }
+ }
+}

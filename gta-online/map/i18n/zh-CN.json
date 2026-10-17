@@ -1,0 +1,140 @@
+{
+ "ui": {
+  "meta.description": "可搜索的 GTA 在线模式地图，包含收集品和每日地点。无广告，无需注册。",
+  "aria.sidebar": "搜索和筛选",
+  "aria.closeMenu": "关闭菜单",
+  "aria.openMenu": "打开搜索菜单",
+  "aria.clearSearch": "清除搜索",
+  "aria.today": "每日地点",
+  "aria.dayPrev": "前一天",
+  "aria.dayNext": "后一天",
+  "mobile.open": "☰ 搜索",
+  "search.placeholder": "搜索，例如 人偶 12、扑克牌 5、-75, -818",
+  "search.gotoCoord": "前往游戏坐标",
+  "search.clickToGo": "点击前往此地点",
+  "search.found": "找到 {n} 个结果",
+  "search.showingFirst": "（显示前 {n} 个）",
+  "search.mapFiltered": " · 地图仅显示搜索结果",
+  "today.title": "每日",
+  "today.only": "每日类别：只显示所选日期的地点",
+  "today.today": "今天",
+  "today.ahead": "+{n} 天",
+  "today.behind": "{n} 天",
+  "today.resetIn": "{h} 小时 {m} 分钟后重置（{time}）",
+  "today.eventOnly": "{name}（仅限活动期间）",
+  "status.noTunables": "根据游戏脚本计算 · 暂无 Rockstar 可调参数可供核对",
+  "status.override": "⚠ Rockstar 覆盖：{list}（已应用）",
+  "status.ok": "✓ 已与 Rockstar 可调参数核对，无覆盖 · 更新于 {time}",
+  "status.gunVanPinned": "Rockstar 本周指定了枪车位置：{list}",
+  "toolbar.showAll": "全部显示",
+  "toolbar.hideAll": "全部隐藏",
+  "toolbar.hideCollected": "隐藏已收集",
+  "group.permanent": "永久",
+  "group.daily": "每日",
+  "group.event": "季节活动",
+  "pop.selectedDay": "所选日期出现",
+  "pop.coords": "坐标",
+  "pop.gameCoords": "游戏坐标",
+  "pop.markDone": "✔ 已收集",
+  "pop.markUndone": "↩︎ 未收集",
+  "pop.copyCoords": "复制坐标",
+  "pop.copyLink": "复制链接",
+  "pop.copy": "复制",
+  "cayo.note": "（无岛屿地图图像）",
+  "toast.copied": "已复制：{text}",
+  "toast.loadError": "数据加载失败",
+  "settings.language": "语言",
+  "settings.export": "导出备份",
+  "settings.import": "导入备份",
+  "settings.hint": "进度和设置只保存在此浏览器中。导出备份文件即可保存或转移到其他设备。",
+  "export.done": "备份已下载",
+  "import.confirm": "用 {date} 的备份（已收集 {n} 个）替换此浏览器中的进度和设置？",
+  "import.done": "备份已恢复",
+  "import.invalid": "此文件不是有效的备份",
+  "foot.hint": "在地图上右键（或长按）可查看游戏坐标。",
+  "foot.daily": "每日地点根据游戏的轮换表和 {rdo} 的可调参数计算（感谢 {bot}）",
+  "foot.sources": "地点数据来自游戏脚本（{scripts}）· 地图 {tiles} · blips {blips} · {leaflet}",
+  "foot.legal": "GTA V / GTA 在线模式 © Rockstar Games —— 粉丝网站，与 Rockstar 无关"
+ },
+ "cats": {
+  "action_figures": {
+   "name": "可动人偶"
+  },
+  "playing_cards": {
+   "name": "扑克牌"
+  },
+  "signal_jammers": {
+   "name": "信号干扰器"
+  },
+  "peyote": {
+   "name": "佩约特仙人掌",
+   "note": "部分植物在水下"
+  },
+  "movie_props": {
+   "name": "电影道具",
+   "note": "另外 3 件道具在行驶的车辆中，没有固定位置"
+  },
+  "media_sticks": {
+   "name": "音乐 U 盘",
+   "note": "部分位于室内，例如赌场或夜总会"
+  },
+  "radio_antennas": {
+   "name": "无线电天线"
+  },
+  "ld_organics": {
+   "name": "LD Organics 产品"
+  },
+  "skydives": {
+   "name": "Junk Energy 跳伞",
+   "note": "每日：25 个中每天开放 10 个"
+  },
+  "gun_van": {
+   "name": "枪车 (Gun Van)",
+   "note": "每日：每天更换位置（30 个中的 1 个）"
+  },
+  "ls_tags": {
+   "name": "LS 涂鸦",
+   "note": "每日：每天出现 5 个（来自前 30 个）"
+  },
+  "hidden_caches": {
+   "name": "隐藏藏匿处",
+   "note": "每日：每天随机 10 个（水下）"
+  },
+  "shipwrecks": {
+   "name": "沉船",
+   "note": "每日：每天海岸边 1 个"
+  },
+  "treasure_chests": {
+   "name": "宝箱（佩里科岛）",
+   "note": "每日：每天佩里科岛 2 个"
+  },
+  "buried_stashes": {
+   "name": "埋藏藏匿处（佩里科岛）",
+   "note": "每日：每天佩里科岛 2 个"
+  },
+  "jack_o_lanterns": {
+   "name": "南瓜灯",
+   "note": "万圣节活动"
+  },
+  "snowmen": {
+   "name": "雪人",
+   "note": "圣诞节 / 新年活动"
+  },
+  "yuanbao": {
+   "name": "元宝",
+   "note": "农历新年活动"
+  },
+  "gold_charms": {
+   "name": "金色护身符",
+   "note": "圣帕特里克节活动"
+  },
+  "lucky_charms": {
+   "name": "幸运护身符",
+   "note": "圣帕特里克节活动"
+  },
+  "weed_packages": {
+   "name": "大麻包裹",
+   "note": "特别活动：活动期间每天 10 个"
+  }
+ }
+}

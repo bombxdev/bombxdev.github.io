@@ -1,0 +1,140 @@
+{
+ "ui": {
+  "meta.description": "Mapa GTA Online z wyszukiwarką znajdziek i dziennych lokalizacji. Bez reklam i rejestracji.",
+  "aria.sidebar": "Wyszukiwanie i filtry",
+  "aria.closeMenu": "Zamknij menu",
+  "aria.openMenu": "Otwórz menu wyszukiwania",
+  "aria.clearSearch": "Wyczyść wyszukiwanie",
+  "aria.today": "Lokalizacje dnia",
+  "aria.dayPrev": "Poprzedni dzień",
+  "aria.dayNext": "Następny dzień",
+  "mobile.open": "☰ Szukaj",
+  "search.placeholder": "Szukaj np. figurka 12, karta 5, -75, -818",
+  "search.gotoCoord": "Przejdź do współrzędnych w grze",
+  "search.clickToGo": "Kliknij, aby przejść do punktu",
+  "search.found": "Wyniki: {n}",
+  "search.showingFirst": " (pokazano pierwsze {n})",
+  "search.mapFiltered": " · mapa pokazuje tylko wyniki",
+  "today.title": "Dzienne",
+  "today.only": "Kategorie dzienne: pokaż tylko punkty wybranego dnia",
+  "today.today": "Dziś",
+  "today.ahead": "+{n} dni",
+  "today.behind": "{n} dni",
+  "today.resetIn": "Reset za {h} godz. {m} min ({time})",
+  "today.eventOnly": "{name} (tylko podczas wydarzenia)",
+  "status.noTunables": "Obliczone ze skryptów gry · brak jeszcze tunables Rockstar do porównania",
+  "status.override": "⚠ Zmiana od Rockstar: {list} (zastosowana)",
+  "status.ok": "✓ Sprawdzone z tunables Rockstar, bez zmian · aktualizacja {time}",
+  "status.gunVanPinned": "Rockstar ustalił lokalizację Gun Van w tym tygodniu: {list}",
+  "toolbar.showAll": "Pokaż wszystko",
+  "toolbar.hideAll": "Ukryj wszystko",
+  "toolbar.hideCollected": "Ukryj zebrane",
+  "group.permanent": "Stałe",
+  "group.daily": "Dzienne",
+  "group.event": "Wydarzenia sezonowe",
+  "pop.selectedDay": "aktywne w wybranym dniu",
+  "pop.coords": "Współrzędne",
+  "pop.gameCoords": "Współrzędne w grze",
+  "pop.markDone": "✔ Zebrane",
+  "pop.markUndone": "↩︎ Niezebrane",
+  "pop.copyCoords": "Kopiuj współrzędne",
+  "pop.copyLink": "Kopiuj link",
+  "pop.copy": "Kopiuj",
+  "cayo.note": "(brak obrazu wyspy)",
+  "toast.copied": "Skopiowano: {text}",
+  "toast.loadError": "Nie udało się wczytać danych",
+  "settings.language": "Język",
+  "settings.export": "Eksportuj kopię",
+  "settings.import": "Importuj kopię",
+  "settings.hint": "Postęp i ustawienia są zapisane tylko w tej przeglądarce. Wyeksportuj kopię, aby je zachować lub przenieść na inne urządzenie.",
+  "export.done": "Kopia pobrana",
+  "import.confirm": "Zastąpić postęp i ustawienia tej przeglądarki kopią z {date} (zebrane: {n})?",
+  "import.done": "Kopia przywrócona",
+  "import.invalid": "Ten plik nie jest prawidłową kopią",
+  "foot.hint": "Kliknij prawym przyciskiem (lub przytrzymaj) na mapie, aby odczytać współrzędne w grze.",
+  "foot.daily": "Lokalizacje dnia są liczone z tabel rotacji gry + tunables z {rdo} (dzięki {bot})",
+  "foot.sources": "Lokalizacje ze skryptów gry ({scripts}) · mapa {tiles} · blips {blips} · {leaflet}",
+  "foot.legal": "GTA V / GTA Online © Rockstar Games — strona fanowska, niezwiązana z Rockstar"
+ },
+ "cats": {
+  "action_figures": {
+   "name": "Figurki"
+  },
+  "playing_cards": {
+   "name": "Karty do gry"
+  },
+  "signal_jammers": {
+   "name": "Zagłuszacze sygnału"
+  },
+  "peyote": {
+   "name": "Pejotle",
+   "note": "Niektóre rośliny są pod wodą"
+  },
+  "movie_props": {
+   "name": "Rekwizyty filmowe",
+   "note": "3 kolejne rekwizyty są w jeżdżących pojazdach, więc nie mają stałego miejsca"
+  },
+  "media_sticks": {
+   "name": "Pendrive'y z muzyką",
+   "note": "Niektóre są we wnętrzach, np. w kasynie lub klubach nocnych"
+  },
+  "radio_antennas": {
+   "name": "Anteny radiowe"
+  },
+  "ld_organics": {
+   "name": "Produkty LD Organics"
+  },
+  "skydives": {
+   "name": "Skoki spadochronowe Junk Energy",
+   "note": "Dziennie: 10 z 25 aktywnych każdego dnia"
+  },
+  "gun_van": {
+   "name": "Gun Van",
+   "note": "Dziennie: zmienia miejsce codziennie (1 z 30)"
+  },
+  "ls_tags": {
+   "name": "Graffiti LS Tags",
+   "note": "Dziennie: pojawia się 5 dziennie (z pierwszych 30)"
+  },
+  "hidden_caches": {
+   "name": "Ukryte skrytki",
+   "note": "Dziennie: 10 losowych miejsc dziennie (pod wodą)"
+  },
+  "shipwrecks": {
+   "name": "Wraki statków",
+   "note": "Dziennie: 1 miejsce dziennie na wybrzeżu"
+  },
+  "treasure_chests": {
+   "name": "Skrzynie ze skarbem (Cayo Perico)",
+   "note": "Dziennie: 2 miejsca dziennie na Cayo Perico"
+  },
+  "buried_stashes": {
+   "name": "Zakopane skrytki (Cayo Perico)",
+   "note": "Dziennie: 2 miejsca dziennie na Cayo Perico"
+  },
+  "jack_o_lanterns": {
+   "name": "Dyniowe lampiony",
+   "note": "Wydarzenie halloweenowe"
+  },
+  "snowmen": {
+   "name": "Bałwany",
+   "note": "Wydarzenie świąteczne / noworoczne"
+  },
+  "yuanbao": {
+   "name": "Yuanbao",
+   "note": "Wydarzenie Księżycowego Nowego Roku"
+  },
+  "gold_charms": {
+   "name": "Złote amulety",
+   "note": "Wydarzenie Dnia Świętego Patryka"
+  },
+  "lucky_charms": {
+   "name": "Amulety szczęścia",
+   "note": "Wydarzenie Dnia Świętego Patryka"
+  },
+  "weed_packages": {
+   "name": "Paczki zioła",
+   "note": "Wydarzenie specjalne: 10 miejsc dziennie w trakcie"
+  }
+ }
+}

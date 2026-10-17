@@ -1,0 +1,140 @@
+{
+ "ui": {
+  "meta.description": "Durchsuchbare GTA-Online-Karte mit Sammelobjekten und täglichen Orten. Ohne Werbung und ohne Anmeldung.",
+  "aria.sidebar": "Suche und Filter",
+  "aria.closeMenu": "Menü schließen",
+  "aria.openMenu": "Suchmenü öffnen",
+  "aria.clearSearch": "Suche löschen",
+  "aria.today": "Tägliche Orte",
+  "aria.dayPrev": "Vorheriger Tag",
+  "aria.dayNext": "Nächster Tag",
+  "mobile.open": "☰ Suche",
+  "search.placeholder": "Suche z. B. Figur 12, Karte 5, -75, -818",
+  "search.gotoCoord": "Zu Spielkoordinaten springen",
+  "search.clickToGo": "Klicken, um zu diesem Punkt zu springen",
+  "search.found": "{n} Treffer",
+  "search.showingFirst": " (erste {n} angezeigt)",
+  "search.mapFiltered": " · Karte zeigt nur Treffer",
+  "today.title": "Täglich",
+  "today.only": "Tägliche Kategorien: nur Orte des gewählten Tages zeigen",
+  "today.today": "Heute",
+  "today.ahead": "+{n} Tage",
+  "today.behind": "{n} Tage",
+  "today.resetIn": "Reset in {h} Std. {m} Min. ({time})",
+  "today.eventOnly": "{name} (nur während Event)",
+  "status.noTunables": "Aus Spielskripten berechnet · noch keine Rockstar-Tunables zum Abgleich",
+  "status.override": "⚠ Rockstar-Änderung: {list} (angewendet)",
+  "status.ok": "✓ Mit Rockstar-Tunables abgeglichen, keine Änderungen · aktualisiert {time}",
+  "status.gunVanPinned": "Rockstar hat den Gun-Van-Standort diese Woche festgelegt: {list}",
+  "toolbar.showAll": "Alle zeigen",
+  "toolbar.hideAll": "Alle ausblenden",
+  "toolbar.hideCollected": "Gesammelte ausblenden",
+  "group.permanent": "Dauerhaft",
+  "group.daily": "Täglich",
+  "group.event": "Saisonale Events",
+  "pop.selectedDay": "am gewählten Tag aktiv",
+  "pop.coords": "Koordinaten",
+  "pop.gameCoords": "Spielkoordinaten",
+  "pop.markDone": "✔ Gesammelt",
+  "pop.markUndone": "↩︎ Nicht gesammelt",
+  "pop.copyCoords": "Koordinaten kopieren",
+  "pop.copyLink": "Link kopieren",
+  "pop.copy": "Kopieren",
+  "cayo.note": "(kein Kartenbild der Insel)",
+  "toast.copied": "Kopiert: {text}",
+  "toast.loadError": "Daten konnten nicht geladen werden",
+  "settings.language": "Sprache",
+  "settings.export": "Backup exportieren",
+  "settings.import": "Backup importieren",
+  "settings.hint": "Fortschritt und Einstellungen werden nur in diesem Browser gespeichert. Exportiere ein Backup, um sie zu sichern oder auf ein anderes Gerät zu übertragen.",
+  "export.done": "Backup heruntergeladen",
+  "import.confirm": "Fortschritt und Einstellungen dieses Browsers durch das Backup vom {date} ersetzen ({n} gesammelt)?",
+  "import.done": "Backup wiederhergestellt",
+  "import.invalid": "Diese Datei ist kein gültiges Backup",
+  "foot.hint": "Rechtsklick (oder lange drücken) auf die Karte zeigt die Spielkoordinaten.",
+  "foot.daily": "Tägliche Orte werden aus den Rotationstabellen des Spiels + Tunables von {rdo} berechnet (danke {bot})",
+  "foot.sources": "Orte aus den Spielskripten ({scripts}) · Karte {tiles} · blips {blips} · {leaflet}",
+  "foot.legal": "GTA V / GTA Online © Rockstar Games — Fan-Projekt, nicht mit Rockstar verbunden"
+ },
+ "cats": {
+  "action_figures": {
+   "name": "Actionfiguren"
+  },
+  "playing_cards": {
+   "name": "Spielkarten"
+  },
+  "signal_jammers": {
+   "name": "Signalstörsender"
+  },
+  "peyote": {
+   "name": "Peyote-Pflanzen",
+   "note": "Einige Pflanzen liegen unter Wasser"
+  },
+  "movie_props": {
+   "name": "Filmrequisiten",
+   "note": "3 weitere Requisiten sind in fahrenden Fahrzeugen und haben keinen festen Ort"
+  },
+  "media_sticks": {
+   "name": "Musik-USB-Sticks",
+   "note": "Einige befinden sich in Innenräumen wie dem Casino oder Nachtclubs"
+  },
+  "radio_antennas": {
+   "name": "Funkantennen"
+  },
+  "ld_organics": {
+   "name": "LD-Organics-Produkte"
+  },
+  "skydives": {
+   "name": "Junk-Energy-Fallschirmsprünge",
+   "note": "Täglich: 10 von 25 pro Tag aktiv"
+  },
+  "gun_van": {
+   "name": "Gun Van",
+   "note": "Täglich: wechselt jeden Tag (1 von 30 Orten)"
+  },
+  "ls_tags": {
+   "name": "LS-Tags-Graffiti",
+   "note": "Täglich: 5 erscheinen pro Tag (aus den ersten 30)"
+  },
+  "hidden_caches": {
+   "name": "Versteckte Lager",
+   "note": "Täglich: 10 zufällige Orte pro Tag (unter Wasser)"
+  },
+  "shipwrecks": {
+   "name": "Schiffswracks",
+   "note": "Täglich: 1 Ort pro Tag an der Küste"
+  },
+  "treasure_chests": {
+   "name": "Schatztruhen (Cayo Perico)",
+   "note": "Täglich: 2 Orte pro Tag auf Cayo Perico"
+  },
+  "buried_stashes": {
+   "name": "Vergrabene Verstecke (Cayo Perico)",
+   "note": "Täglich: 2 Orte pro Tag auf Cayo Perico"
+  },
+  "jack_o_lanterns": {
+   "name": "Kürbislaternen",
+   "note": "Halloween-Event"
+  },
+  "snowmen": {
+   "name": "Schneemänner",
+   "note": "Weihnachts- / Neujahrs-Event"
+  },
+  "yuanbao": {
+   "name": "Yuanbao",
+   "note": "Event zum Mondneujahr"
+  },
+  "gold_charms": {
+   "name": "Goldene Glücksbringer",
+   "note": "St.-Patrick's-Day-Event"
+  },
+  "lucky_charms": {
+   "name": "Glücksbringer",
+   "note": "St.-Patrick's-Day-Event"
+  },
+  "weed_packages": {
+   "name": "Gras-Pakete",
+   "note": "Sonder-Event: 10 Orte pro Tag während des Events"
+  }
+ }
+}
