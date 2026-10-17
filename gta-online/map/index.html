@@ -19,7 +19,7 @@
           <span aria-hidden="true">🌐</span>
           <select id="lang" data-i18n-attr="aria-label:settings.language"></select>
         </label>
-        <button id="closeSidebar" class="icon-btn only-mobile" data-i18n-attr="aria-label:aria.closeMenu">✕</button>
+        <button id="closeSidebar" class="icon-btn" data-i18n-attr="aria-label:aria.closeMenu;title:aria.closeMenu">«</button>
       </header>
 
       <div class="search">
@@ -67,9 +67,10 @@
         <p data-i18n="foot.legal"></p>
       </footer>
     </aside>
+    <button id="backdrop" class="backdrop" tabindex="-1" data-i18n-attr="aria-label:aria.closeMenu"></button>
 
     <main id="mapWrap">
-      <button id="openSidebar" class="fab only-mobile" data-i18n="mobile.open" data-i18n-attr="aria-label:aria.openMenu"></button>
+      <button id="openSidebar" class="fab" data-i18n-attr="aria-label:aria.openMenu;title:aria.openMenu" hidden><span class="only-desktop">☰</span><span class="only-mobile" data-i18n="mobile.open"></span></button>
       <div id="map"></div>
       <div id="cursor" class="cursor" aria-live="off"></div>
     </main>

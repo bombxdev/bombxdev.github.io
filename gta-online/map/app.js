@@ -264,7 +264,7 @@
     }
     map.flyTo([item.y, item.x], Math.max(map.getZoom(), 6), { duration: 0.6 });
     map.once('moveend', function () { item.marker.openPopup(); });
-    if (window.matchMedia('(max-width: 760px)').matches) $('sidebar').classList.remove('open');
+    if (isMobile()) setSidebar(false);
   }
 
   // ---------------------------------------------------------------------------
@@ -422,8 +422,36 @@
     STORE.set('hideCollected', state.hideCollected);
     refreshMarkers();
   });
-  $('openSidebar').addEventListener('click', function () { $('sidebar').classList.add('open'); });
-  $('closeSidebar').addEventListener('click', function () { $('sidebar').classList.remove('open'); });
+  // Sidebar: overlay drawer on phones, collapsible column on wider screens.
+  var mobileQuery = window.matchMedia('(max-width: 760px)');
+  function isMobile() { return mobileQuery.matches; }
+  function sidebarOpen() {
+    return isMobile() ? $('sidebar').classList.contains('open') : !$('app').classList.contains('sidebar-collapsed');
+  }
+  function setSidebar(open) {
+    if (isMobile()) {
+      $('sidebar').classList.toggle('open', open);
+    } else {
+      $('app').classList.toggle('sidebar-collapsed', !open);
+      STORE.set('sidebarCollapsed', !open);
+      map.invalidateSize();
+    }
+    $('openSidebar').hidden = sidebarOpen();
+  }
+  $('openSidebar').addEventListener('click', function () { setSidebar(true); });
+  $('closeSidebar').addEventListener('click', function () { setSidebar(false); });
+  $('backdrop').addEventListener('click', function () { setSidebar(false); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && isMobile() && sidebarOpen()) setSidebar(false);
+  });
+  mobileQuery.addEventListener('change', function () {
+    $('app').classList.toggle('sidebar-collapsed', !isMobile() && STORE.get('sidebarCollapsed', false));
+    $('openSidebar').hidden = sidebarOpen();
+    map.invalidateSize();
+  });
+  $('app').classList.toggle('sidebar-collapsed', !isMobile() && STORE.get('sidebarCollapsed', false));
+  $('openSidebar').hidden = sidebarOpen();
+  map.invalidateSize();
 
   map.on('mousemove', function (e) {
     $('cursor').textContent = 'X ' + fmt(e.latlng.lng) + '  Y ' + fmt(e.latlng.lat);
