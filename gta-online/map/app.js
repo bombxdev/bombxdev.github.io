@@ -676,9 +676,9 @@
   // ---------------------------------------------------------------------------
   Promise.all([
     I18N.init().then(function () { return I18N.use(I18N.detect(STORE.get('lang', null))); }),
-    fetch('data/categories.json').then(function (r) { return r.json(); }),
-    fetch('data/points.json').then(function (r) { return r.json(); }),
-    fetch('data/daily.json').then(function (r) { return r.json(); })
+    fetch('data/categories.json?v=' + window.APP_VERSION).then(function (r) { return r.json(); }),
+    fetch('data/points.json?v=' + window.APP_VERSION).then(function (r) { return r.json(); }),
+    fetch('data/daily.json?v=' + window.APP_VERSION).then(function (r) { return r.json(); })
   ]).then(function (res) {
     var cats = res[1], points = res[2];
     state.daily = res[3];

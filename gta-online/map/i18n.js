@@ -9,7 +9,7 @@
 
   function load(code) {
     if (!cache[code]) {
-      cache[code] = fetch('i18n/' + code + '.json').then(function (r) {
+      cache[code] = fetch('i18n/' + code + '.json?v=' + window.APP_VERSION).then(function (r) {
         if (!r.ok) throw new Error('i18n ' + code + ' ' + r.status);
         return r.json();
       });
@@ -34,7 +34,7 @@
   };
 
   I18N.init = function () {
-    return fetch('i18n/index.json').then(function (r) { return r.json(); }).then(function (list) {
+    return fetch('i18n/index.json?v=' + window.APP_VERSION).then(function (r) { return r.json(); }).then(function (list) {
       I18N.languages = list;
       return load(FALLBACK);
     }).then(function (base) { I18N.base = base; });
