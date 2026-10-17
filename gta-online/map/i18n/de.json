@@ -109,7 +109,13 @@
   "plan.reset": "Zurücksetzen",
   "plan.close": "Schließen",
   "plan.estimate": "Zeiten sind grobe Schätzungen — passe sie an deine Spielweise an. Belohnungen sind die Standardwerte des Spiels.",
-  "plan.empty": "Gib ein Ziel ein, um einen Plan zu sehen."
+  "plan.empty": "Gib ein Ziel ein, um einen Plan zu sehen.",
+  "pop.near": "Bei {zone}",
+  "pop.altitude": "{m} m über dem Meeresspiegel",
+  "pop.underwater": "Unter Wasser, etwa {m} m tief",
+  "pop.closeup": "Satelliten-Nahansicht — der rote Kreis markiert die Stelle",
+  "pop.myNote": "Meine Notiz",
+  "pop.notePh": "z. B. 2. Stock hinter den Kisten; vor dem Gebäude, 3. Busch rechts"
  },
  "cats": {
   "action_figures": {

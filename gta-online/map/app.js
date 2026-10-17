@@ -79,7 +79,8 @@
     todaySets: {},
     info: {},
     groupBy: STORE.get('groupBy', 'type'),
-    openInfo: {}
+    openInfo: {},
+    notes: STORE.get('notes', {})
   };
 
   // ---------------------------------------------------------------------------
@@ -248,6 +249,31 @@
       (cat.key === 'ghosts' ? ghostScheduleHtml() : '');
   }
 
+  // "Where exactly": area name + height above sea level / depth under water.
+  function whereHtml(item) {
+    var parts = [];
+    if (item.zone) parts.push('📍 ' + esc(t('pop.near', { zone: item.zone })));
+    if (item.z < -1) parts.push('🌊 ' + esc(t('pop.underwater', { m: Math.round(-item.z) })));
+    else parts.push('⛰ ' + esc(t('pop.altitude', { m: Math.round(item.z) })));
+    return '<div class="pop-where">' + parts.join(' · ') + '</div>';
+  }
+
+  // Close-up satellite view inside the popup, with the spot circled.
+  var miniMap = null;
+  function attachMini(item, popupEl) {
+    if (miniMap) { miniMap.remove(); miniMap = null; }
+    var el = popupEl && popupEl.querySelector('[data-mini]');
+    if (!el) return;
+    miniMap = L.map(el, {
+      crs: CRS, zoomControl: false, attributionControl: false, dragging: false, scrollWheelZoom: false,
+      doubleClickZoom: false, boxZoom: false, keyboard: false, touchZoom: false, tap: false
+    }).setView([item.y, item.x], 7);
+    L.tileLayer('tiles/satellite/{z}/{x}_{y}.webp', { maxZoom: 9, maxNativeZoom: 7, bounds: TILE_BOUNDS, noWrap: true }).addTo(miniMap);
+    if (CAYO_BOUNDS.contains([item.y, item.x])) L.imageOverlay('tiles-cayo/satellite.webp?v=' + window.APP_VERSION, CAYO_BOUNDS).addTo(miniMap);
+    L.circleMarker([item.y, item.x], { radius: 18, color: '#ff3b3b', weight: 3, fill: false, className: 'mini-ring' }).addTo(miniMap);
+    L.circleMarker([item.y, item.x], { radius: 3, color: '#ff3b3b', weight: 1, fillOpacity: 1 }).addTo(miniMap);
+  }
+
   function popupHtml(item) {
     var cat = state.catByKey[item.cat];
     var done = state.collected.has(idOf(item));
@@ -259,7 +285,12 @@
       (note ? '<div class="note">' + esc(note) + '</div>' : '') +
       (item.ghost ? '<div class="pop-rw">' + ghostTimingHtml(item.ghost) + '</div>' : '') +
       (rewardHtml(cat) ? '<div class="pop-rw">' + rewardHtml(cat) + '</div>' : '') +
+      whereHtml(item) +
+      '<div class="pop-mini" data-mini="' + idOf(item) + '"></div>' +
+      '<div class="muted small">' + esc(t('pop.closeup')) + '</div>' +
       '<div>' + esc(t('pop.coords')) + ': <code>' + coordText(item.x, item.y, item.z) + '</code></div>' +
+      '<label class="pop-note"><span>📝 ' + esc(t('pop.myNote')) + '</span><textarea rows="2" data-note="' + idOf(item) + '" placeholder="' +
+        esc(t('pop.notePh')) + '">' + esc(state.notes[idOf(item)] || '') + '</textarea></label>' +
       '<div class="actions">' +
       (NOT_COLLECTABLE[item.cat] ? '' : '<button class="chip primary" data-act="toggle">' + esc(t(done ? 'pop.markUndone' : 'pop.markDone')) + '</button>') +
       '<button class="chip" data-act="copy">' + esc(t('pop.copyCoords')) + '</button>' +
@@ -271,11 +302,13 @@
     (list || state.items).forEach(function (item) {
       item.marker = L.marker([item.y, item.x], { icon: makeIcon(item), title: state.catByKey[item.cat].en + ' ' + itemLabel(item), riseOnHover: true });
       item.marker.bindPopup(function () { return popupHtml(item); }, { autoPanPadding: [40, 40] });
-      item.marker.on('popupopen', function () {
+      item.marker.on('popupopen', function (e) {
+        attachMini(item, e.popup.getElement());
         setActive(item);
         history.replaceState(null, '', '#' + idOf(item));
       });
       item.marker.on('popupclose', function () {
+        if (miniMap) { miniMap.remove(); miniMap = null; }
         if (state.active === item) setActive(null);
         if (location.hash === '#' + idOf(item)) history.replaceState(null, '', location.pathname + location.search);
       });
@@ -423,7 +456,7 @@
     });
     return state.items.filter(function (item) {
       if (nums.length && nums.indexOf(item.num || item.n) === -1) return false;
-      var hay = state.catByKey[item.cat].hay;
+      var hay = state.catByKey[item.cat].hay + ' | ' + norm(item.zone || '') + ' | ' + norm(state.notes[idOf(item)] || '');
       return words.every(function (w) { return hay.indexOf(w) !== -1; });
     });
   }
@@ -465,7 +498,7 @@
       b.className = 'result' + (state.collected.has(idOf(item)) ? ' done' : '');
       var name = I18N.catName(cat.key);
       b.innerHTML = '<span class="res-blip" style="--c:' + cat.color + '">' + blipImg(cat) + '</span><span><div class="name">' + esc(name) + ' ' + esc(itemLabel(item)) +
-        '</div><div class="meta">' + (name !== cat.en ? esc(cat.en) + ' · ' : '') + coordText(item.x, item.y) + '</div></span>';
+        '</div><div class="meta">' + (name !== cat.en ? esc(cat.en) + ' · ' : '') + (item.zone ? esc(item.zone) + ' · ' : '') + coordText(item.x, item.y) + '</div></span>';
       b.addEventListener('click', function () { focusItem(item); });
       box.appendChild(b);
     });
@@ -490,7 +523,7 @@
       var b = document.createElement('button');
       b.className = 'result' + (state.collected.has(idOf(item)) ? ' done' : '');
       b.innerHTML = '<span class="res-blip" style="--c:' + cat.color + '">' + blipImg(cat) + '</span><span><div class="name">' +
-        esc(I18N.catName(cat.key)) + ' ' + esc(itemLabel(item)) + '</div><div class="meta">' + coordText(item.x, item.y) + '</div></span>';
+        esc(I18N.catName(cat.key)) + ' ' + esc(itemLabel(item)) + '</div><div class="meta">' + (item.zone ? esc(item.zone) + ' · ' : '') + coordText(item.x, item.y) + '</div></span>';
       b.addEventListener('click', function () { focusItem(item); });
       box.appendChild(b);
     });
@@ -590,6 +623,18 @@
       .setContent('<div class="pop"><h3>📍 ' + esc(t('pop.gameCoords')) + '</h3><code>' + c + '</code><div class="actions"><button class="chip" data-copy="' + c + '">' + esc(t('pop.copy')) + '</button></div></div>')
       .openOn(map);
   });
+  // Personal notes typed in a popup (saved locally, included in backups).
+  map.getContainer().addEventListener('input', function (ev) {
+    var id = ev.target.getAttribute && ev.target.getAttribute('data-note');
+    if (!id) return;
+    var v = ev.target.value.trim();
+    if (v) state.notes[id] = ev.target.value; else delete state.notes[id];
+    STORE.set('notes', state.notes);
+  });
+  map.getContainer().addEventListener('keydown', function (ev) {
+    if (ev.target.tagName === 'TEXTAREA') ev.stopPropagation();
+  }, true);
+
   // Buttons inside popups (popup DOM is reused, so delegate from the container).
   map.getContainer().addEventListener('click', function (ev) {
     var btn = ev.target.closest && ev.target.closest('.pop button');
@@ -600,7 +645,10 @@
     var act = btn.getAttribute('data-act');
     if (act === 'toggle') {
       toggleCollected(item);
-      if (item.marker.isPopupOpen()) item.marker.setPopupContent(popupHtml(item));
+      if (item.marker.isPopupOpen()) {
+        item.marker.setPopupContent(popupHtml(item));
+        attachMini(item, item.marker.getPopup().getElement());
+      }
     }
     if (act === 'copy') copy(coordText(item.x, item.y, item.z));
     if (act === 'link') copy(location.href.split('#')[0] + '#' + idOf(item));
@@ -819,7 +867,8 @@
     set.ghosts.forEach(function (g) {
       g.spots.forEach(function (p, si) {
         seq++;
-        items.push({ cat: 'ghosts', n: seq, num: g.n, label: '#' + g.n + (g.spots.length > 1 ? 'AB'[si] : ''), ghost: g, x: p[0], y: p[1], z: p[2] });
+        var gz = ((state.zones.ghosts || {})[key] || [])[g.n - 1] || [];
+        items.push({ cat: 'ghosts', n: seq, num: g.n, label: '#' + g.n + (g.spots.length > 1 ? 'AB'[si] : ''), ghost: g, x: p[0], y: p[1], z: p[2], zone: gz[si] || '' });
       });
     });
     state.items = state.items.filter(function (it) { return it.cat !== 'ghosts'; }).concat(items);
@@ -837,17 +886,19 @@
     fetch('data/points.json?v=' + window.APP_VERSION).then(function (r) { return r.json(); }),
     fetch('data/daily.json?v=' + window.APP_VERSION).then(function (r) { return r.json(); }),
     fetch('data/info.json?v=' + window.APP_VERSION).then(function (r) { return r.json(); }),
-    fetch('data/ghosts.json?v=' + window.APP_VERSION).then(function (r) { return r.json(); })
+    fetch('data/ghosts.json?v=' + window.APP_VERSION).then(function (r) { return r.json(); }),
+    fetch('data/zones.json?v=' + window.APP_VERSION).then(function (r) { return r.json(); })
   ]).then(function (res) {
     var cats = res[1], points = res[2];
     state.daily = res[3];
     state.info = res[4];
     state.ghostData = res[5];
+    state.zones = res[6];
     state.daily.dealerXY = points.street_dealers;
     var savedVisible = STORE.get('visible', null);
     cats.forEach(function (cat) {
       cat.items = cat.key === 'ghosts' ? [] : (points[cat.key] || []).map(function (p, i) {
-        return { cat: cat.key, n: i + 1, x: p[0], y: p[1], z: p[2] };
+        return { cat: cat.key, n: i + 1, x: p[0], y: p[1], z: p[2], zone: (state.zones[cat.key] || [])[i] || '' };
       });
       state.catByKey[cat.key] = cat;
       state.items = state.items.concat(cat.items);

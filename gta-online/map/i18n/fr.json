@@ -109,7 +109,13 @@
   "plan.reset": "Réinitialiser",
   "plan.close": "Fermer",
   "plan.estimate": "Les durées sont des estimations — ajustez-les à votre façon de jouer. Les récompenses sont les valeurs par défaut du jeu.",
-  "plan.empty": "Saisissez un objectif pour obtenir un plan."
+  "plan.empty": "Saisissez un objectif pour obtenir un plan.",
+  "pop.near": "Près de {zone}",
+  "pop.altitude": "{m} m au-dessus du niveau de la mer",
+  "pop.underwater": "Sous l'eau, environ {m} m de profondeur",
+  "pop.closeup": "Vue satellite rapprochée — le cercle rouge marque l'endroit",
+  "pop.myNote": "Ma note",
+  "pop.notePh": "ex. 2e étage derrière les caisses ; face au bâtiment, 3e buisson à droite"
  },
  "cats": {
   "action_figures": {

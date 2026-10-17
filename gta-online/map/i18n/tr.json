@@ -109,7 +109,13 @@
   "plan.reset": "Sıfırla",
   "plan.close": "Kapat",
   "plan.estimate": "Süreler kabaca tahmindir — oyun tarzına göre ayarla. Ödüller oyunun varsayılan değerleridir.",
-  "plan.empty": "Plan görmek için bir hedef gir."
+  "plan.empty": "Plan görmek için bir hedef gir.",
+  "pop.near": "{zone} yakınında",
+  "pop.altitude": "Deniz seviyesinden {m} m yüksek",
+  "pop.underwater": "Su altında, yaklaşık {m} m derinlikte",
+  "pop.closeup": "Yakın uydu görüntüsü — kırmızı daire yeri gösterir",
+  "pop.myNote": "Notum",
+  "pop.notePh": "ör. 2. kat sandıkların arkası; binaya dönük, sağdaki 3. çalı"
  },
  "cats": {
   "action_figures": {

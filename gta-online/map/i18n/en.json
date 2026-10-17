@@ -109,7 +109,13 @@
   "plan.reset": "Reset",
   "plan.close": "Close",
   "plan.estimate": "Times are rough estimates — adjust them to how you play. Rewards are the game's default values.",
-  "plan.empty": "Enter a goal to get a plan."
+  "plan.empty": "Enter a goal to get a plan.",
+  "pop.near": "Near {zone}",
+  "pop.altitude": "{m} m above sea level",
+  "pop.underwater": "Underwater, about {m} m deep",
+  "pop.closeup": "Satellite close-up — the red circle marks the spot",
+  "pop.myNote": "My note",
+  "pop.notePh": "e.g. 2nd floor behind the crates; face the building, 3rd bush on the right"
  },
  "cats": {
   "action_figures": {

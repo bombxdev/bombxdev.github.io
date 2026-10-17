@@ -109,7 +109,13 @@
   "plan.reset": "초기화",
   "plan.close": "닫기",
   "plan.estimate": "시간은 대략적인 추정치입니다. 플레이 방식에 맞게 조정하세요. 보상은 게임 기본값입니다.",
-  "plan.empty": "목표를 입력하면 계획이 표시됩니다."
+  "plan.empty": "목표를 입력하면 계획이 표시됩니다.",
+  "pop.near": "{zone} 근처",
+  "pop.altitude": "해발 {m}m",
+  "pop.underwater": "물속, 깊이 약 {m}m",
+  "pop.closeup": "위성 확대 사진 — 빨간 원이 위치입니다",
+  "pop.myNote": "내 메모",
+  "pop.notePh": "예: 2층 상자 뒤, 건물을 보고 오른쪽 세 번째 덤불"
  },
  "cats": {
   "action_figures": {

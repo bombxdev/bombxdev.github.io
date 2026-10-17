@@ -109,7 +109,13 @@
   "plan.reset": "重設",
   "plan.close": "關閉",
   "plan.estimate": "時間為粗略估計 — 可依你的遊玩方式調整。獎勵為遊戲預設數值。",
-  "plan.empty": "輸入目標以查看方案。"
+  "plan.empty": "輸入目標以查看方案。",
+  "pop.near": "靠近 {zone}",
+  "pop.altitude": "海拔 {m} 公尺",
+  "pop.underwater": "在水下，深約 {m} 公尺",
+  "pop.closeup": "衛星近景 — 紅圈為位置",
+  "pop.myNote": "我的備註",
+  "pop.notePh": "例如：2 樓箱子後面；面向建築，右邊第 3 個灌木叢"
  },
  "cats": {
   "action_figures": {

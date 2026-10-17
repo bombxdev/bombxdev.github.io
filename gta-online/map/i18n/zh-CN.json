@@ -109,7 +109,13 @@
   "plan.reset": "重置",
   "plan.close": "关闭",
   "plan.estimate": "时间为粗略估计 — 可按你的游玩方式调整。奖励为游戏默认数值。",
-  "plan.empty": "输入目标以查看方案。"
+  "plan.empty": "输入目标以查看方案。",
+  "pop.near": "靠近 {zone}",
+  "pop.altitude": "海拔 {m} 米",
+  "pop.underwater": "在水下，深约 {m} 米",
+  "pop.closeup": "卫星近景 — 红圈为位置",
+  "pop.myNote": "我的备注",
+  "pop.notePh": "例如：2 楼箱子后面；面向建筑，右边第 3 个灌木丛"
  },
  "cats": {
   "action_figures": {

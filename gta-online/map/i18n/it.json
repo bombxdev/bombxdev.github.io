@@ -109,7 +109,13 @@
   "plan.reset": "Ripristina",
   "plan.close": "Chiudi",
   "plan.estimate": "I tempi sono stime — adattali al tuo modo di giocare. Le ricompense sono i valori predefiniti del gioco.",
-  "plan.empty": "Inserisci un obiettivo per vedere un piano."
+  "plan.empty": "Inserisci un obiettivo per vedere un piano.",
+  "pop.near": "Vicino a {zone}",
+  "pop.altitude": "{m} m sul livello del mare",
+  "pop.underwater": "Sott'acqua, circa {m} m di profondità",
+  "pop.closeup": "Vista satellitare ravvicinata — il cerchio rosso indica il punto",
+  "pop.myNote": "La mia nota",
+  "pop.notePh": "es. 2° piano dietro le casse; di fronte all'edificio, 3° cespuglio a destra"
  },
  "cats": {
   "action_figures": {
