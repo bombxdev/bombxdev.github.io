@@ -23,6 +23,7 @@
     satellite: { name: 'Satellite', bg: '#143d6b' }
   };
   var GROUPS = ['permanent', 'daily', 'event'];
+  var PURPOSES = ['money', 'unlock', 'service', 'timed', 'event'];
   var t = I18N.t;
   var LINKS = {
     rdo: '<a href="https://tunables.rdo.gg" target="_blank" rel="noopener">rdo.gg</a>',
@@ -74,7 +75,10 @@
     daily: null,
     tunables: null,
     today: null,
-    todaySets: {}
+    todaySets: {},
+    info: {},
+    groupBy: STORE.get('groupBy', 'type'),
+    openInfo: {}
   };
 
   // ---------------------------------------------------------------------------
@@ -191,6 +195,30 @@
     });
   }
 
+  // Reward summary for a category, from data/info.json (game default values).
+  var money = function (n) { return '$' + Number(n).toLocaleString(I18N.code); };
+  var num = function (n) { return Number(n).toLocaleString(I18N.code); };
+  function rewardHtml(cat) {
+    var r = state.info[cat.key] || {};
+    var parts = [];
+    var cash = r.cash ? money(r.cash) : '';
+    if (r.cash_first) {
+      var total = 0, n = cat.items.length;
+      for (var i = 0; i < n; i++) total += r.cash_first + r.cash_step * i;
+      cash = t('info.escalating', { first: money(r.cash_first), step: money(r.cash_step), total: money(total) });
+    }
+    var each = [cash, r.rp ? num(r.rp) + ' RP' : ''].filter(Boolean).join(' + ');
+    if (each) parts.push('<div class="rw"><span class="rw-k">💵 ' + esc(t('info.perItem')) + '</span> ' + esc(each) + (r.chips ? ' ' + esc(t('info.chips')) : '') + '</div>');
+    else if (r.chips) parts.push('<div class="rw">' + esc(t('info.chips')) + '</div>');
+    if (r.bonus_cash) parts.push('<div class="rw"><span class="rw-k">🏆 ' + esc(t('info.bonus')) + '</span> ' + esc(money(r.bonus_cash)) + '</div>');
+    return parts.join('');
+  }
+  function infoHtml(cat) {
+    var info = I18N.catInfo(cat.key), note = I18N.catNote(cat.key), rw = rewardHtml(cat);
+    return (info ? '<p>' + esc(info) + '</p>' : '') + (note ? '<p class="muted">' + esc(note) + '</p>' : '') + rw +
+      (rw ? '<p class="muted small">' + esc(t('info.defaults')) + '</p>' : '');
+  }
+
   function popupHtml(item) {
     var cat = state.catByKey[item.cat];
     var done = state.collected.has(idOf(item));
@@ -200,6 +228,7 @@
       '<div class="sub">' + (name !== cat.en ? esc(cat.en) + ' · ' : '') + esc(t('group.' + cat.group)) +
       (state.todaySets[item.cat] && state.todaySets[item.cat].has(item.n) ? '<span class="today-badge">' + esc(t('pop.selectedDay')) + '</span>' : '') + '</div>' +
       (note ? '<div class="note">' + esc(note) + '</div>' : '') +
+      (rewardHtml(cat) ? '<div class="pop-rw">' + rewardHtml(cat) + '</div>' : '') +
       '<div>' + esc(t('pop.coords')) + ': <code>' + coordText(item.x, item.y, item.z) + '</code></div>' +
       '<div class="actions">' +
       (item.cat === 'gun_van' ? '' : '<button class="chip primary" data-act="toggle">' + esc(t(done ? 'pop.markUndone' : 'pop.markDone')) + '</button>') +
@@ -277,24 +306,33 @@
   // ---------------------------------------------------------------------------
   function saveVisible() { STORE.set('visible', state.visible); }
 
+  function catGroup(cat) {
+    return state.groupBy === 'purpose' ? ((state.info[cat.key] || {}).purpose || 'unlock') : cat.group;
+  }
+
   function renderCategories() {
     var host = $('categories');
     host.innerHTML = '';
-    GROUPS.forEach(function (g) {
-      var cats = state.cats.filter(function (c) { return c.group === g; });
+    document.querySelectorAll('#groupBy button').forEach(function (b) {
+      b.classList.toggle('active', b.getAttribute('data-v') === state.groupBy);
+    });
+    var groups = state.groupBy === 'purpose' ? PURPOSES : GROUPS;
+    groups.forEach(function (g) {
+      var cats = state.cats.filter(function (c) { return catGroup(c) === g; });
       if (!cats.length) return;
       var title = document.createElement('div');
       title.className = 'group-title';
-      title.textContent = t('group.' + g);
+      title.textContent = t((state.groupBy === 'purpose' ? 'purpose.' : 'group.') + g);
       host.appendChild(title);
       cats.forEach(function (cat) {
         var total = cat.items.length;
         var got = cat.items.filter(function (it) { return state.collected.has(idOf(it)); }).length;
+        var wrap = document.createElement('div');
+        wrap.className = 'cat-wrap';
         var row = document.createElement('label');
         row.className = 'cat' + (state.visible[cat.key] ? ' on' : '');
         row.style.setProperty('--c', cat.color);
         var name = I18N.catName(cat.key);
-        row.title = I18N.catNote(cat.key);
         row.innerHTML =
           '<input type="checkbox"' + (state.visible[cat.key] ? ' checked' : '') + '>' +
           '<span class="dot">' + blipImg(cat) + '</span>' +
@@ -307,10 +345,38 @@
           saveVisible();
           refreshMarkers();
         });
-        host.appendChild(row);
+        var btn = document.createElement('button');
+        btn.className = 'info-btn' + (state.openInfo[cat.key] ? ' active' : '');
+        btn.type = 'button';
+        btn.textContent = 'i';
+        btn.setAttribute('aria-label', t('info.open') + ': ' + name);
+        btn.setAttribute('aria-expanded', state.openInfo[cat.key] ? 'true' : 'false');
+        btn.title = t('info.open');
+        var panel = document.createElement('div');
+        panel.className = 'cat-info';
+        panel.hidden = !state.openInfo[cat.key];
+        panel.innerHTML = infoHtml(cat);
+        btn.addEventListener('click', function () {
+          state.openInfo[cat.key] = !state.openInfo[cat.key];
+          panel.hidden = !state.openInfo[cat.key];
+          btn.classList.toggle('active', !panel.hidden);
+          btn.setAttribute('aria-expanded', panel.hidden ? 'false' : 'true');
+        });
+        wrap.appendChild(row);
+        wrap.appendChild(btn);
+        wrap.appendChild(panel);
+        host.appendChild(wrap);
       });
     });
   }
+
+  document.querySelectorAll('#groupBy button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      state.groupBy = b.getAttribute('data-v');
+      STORE.set('groupBy', state.groupBy);
+      renderCategories();
+    });
+  });
 
   // ---------------------------------------------------------------------------
   // Search
@@ -678,10 +744,12 @@
     I18N.init().then(function () { return I18N.use(I18N.detect(STORE.get('lang', null))); }),
     fetch('data/categories.json?v=' + window.APP_VERSION).then(function (r) { return r.json(); }),
     fetch('data/points.json?v=' + window.APP_VERSION).then(function (r) { return r.json(); }),
-    fetch('data/daily.json?v=' + window.APP_VERSION).then(function (r) { return r.json(); })
+    fetch('data/daily.json?v=' + window.APP_VERSION).then(function (r) { return r.json(); }),
+    fetch('data/info.json?v=' + window.APP_VERSION).then(function (r) { return r.json(); })
   ]).then(function (res) {
     var cats = res[1], points = res[2];
     state.daily = res[3];
+    state.info = res[4];
     var savedVisible = STORE.get('visible', null);
     cats.forEach(function (cat) {
       cat.items = (points[cat.key] || []).map(function (p, i) {

@@ -54,7 +54,21 @@
   "foot.hint": "地図を右クリック（または長押し）するとゲーム内座標を確認できます。",
   "foot.daily": "日替わり地点はゲームのローテーション表と {rdo} のチューナブルから計算しています（{bot} に感謝）",
   "foot.sources": "地点データはゲームスクリプトより（{scripts}）· 地図 {tiles} · blips {blips} · {leaflet}",
-  "foot.legal": "GTA V / GTAオンライン © Rockstar Games — ファンサイトであり Rockstar とは無関係です"
+  "foot.legal": "GTA V / GTAオンライン © Rockstar Games — ファンサイトであり Rockstar とは無関係です",
+  "info.open": "詳細",
+  "info.perItem": "1 つにつき",
+  "info.bonus": "コンプリートボーナス",
+  "info.chips": "+ カジノチップ（100、1 枚ごとに +50）",
+  "info.escalating": "1 つ目 {first}、以降 1 つごとに +{step}（合計 {total}）",
+  "info.defaults": "ゲームスクリプトの初期値です。Rockstar が変更したり 2×/3× イベントを行う場合があります。",
+  "view.label": "グループ",
+  "view.type": "種類",
+  "view.purpose": "目的",
+  "purpose.money": "お金を稼ぐ",
+  "purpose.unlock": "アンロック・収集",
+  "purpose.service": "ショップ・サービス",
+  "purpose.event": "季節イベント",
+  "purpose.timed": "期間限定"
  },
  "cats": {
   "action_figures": {

@@ -54,7 +54,21 @@
   "foot.hint": "Kliknij prawym przyciskiem (lub przytrzymaj) na mapie, aby odczytać współrzędne w grze.",
   "foot.daily": "Lokalizacje dnia są liczone z tabel rotacji gry + tunables z {rdo} (dzięki {bot})",
   "foot.sources": "Lokalizacje ze skryptów gry ({scripts}) · mapa {tiles} · blips {blips} · {leaflet}",
-  "foot.legal": "GTA V / GTA Online © Rockstar Games — strona fanowska, niezwiązana z Rockstar"
+  "foot.legal": "GTA V / GTA Online © Rockstar Games — strona fanowska, niezwiązana z Rockstar",
+  "info.open": "Szczegóły",
+  "info.perItem": "Za każdy",
+  "info.bonus": "Bonus za komplet",
+  "info.chips": "+ żetony kasyna (100, +50 za kartę)",
+  "info.escalating": "1. {first}, potem +{step} za każdą ({total} łącznie)",
+  "info.defaults": "Domyślne wartości ze skryptów gry. Rockstar może je zmieniać lub organizować wydarzenia 2×/3×.",
+  "view.label": "Grupuj wg",
+  "view.type": "Typu",
+  "view.purpose": "Celu",
+  "purpose.money": "Zarabianie",
+  "purpose.unlock": "Odblokowania i kolekcje",
+  "purpose.service": "Sklepy i usługi",
+  "purpose.event": "Wydarzenia sezonowe",
+  "purpose.timed": "Ograniczone czasowo"
  },
  "cats": {
   "action_figures": {

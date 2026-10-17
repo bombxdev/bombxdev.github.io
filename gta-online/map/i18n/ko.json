@@ -54,7 +54,21 @@
   "foot.hint": "지도에서 마우스 오른쪽 클릭(또는 길게 누르기)하면 게임 좌표를 볼 수 있습니다.",
   "foot.daily": "일일 위치는 게임의 순환표와 {rdo}의 튜너블로 계산합니다 ({bot}에 감사)",
   "foot.sources": "위치 데이터: 게임 스크립트 ({scripts}) · 지도 {tiles} · blips {blips} · {leaflet}",
-  "foot.legal": "GTA V / GTA 온라인 © Rockstar Games — 팬 사이트이며 Rockstar와 무관합니다"
+  "foot.legal": "GTA V / GTA 온라인 © Rockstar Games — 팬 사이트이며 Rockstar와 무관합니다",
+  "info.open": "자세히",
+  "info.perItem": "개당",
+  "info.bonus": "전부 수집 보너스",
+  "info.chips": "+ 카지노 칩 (100개, 카드마다 +50)",
+  "info.escalating": "첫 번째 {first}, 이후 하나마다 +{step} (총 {total})",
+  "info.defaults": "게임 스크립트의 기본값입니다. Rockstar가 변경하거나 2×/3× 이벤트를 열 수 있습니다.",
+  "view.label": "그룹 기준",
+  "view.type": "유형",
+  "view.purpose": "목적",
+  "purpose.money": "돈 벌기",
+  "purpose.unlock": "잠금 해제 및 수집",
+  "purpose.service": "상점 및 서비스",
+  "purpose.event": "시즌 이벤트",
+  "purpose.timed": "기간 한정"
  },
  "cats": {
   "action_figures": {

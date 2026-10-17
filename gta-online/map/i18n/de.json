@@ -54,7 +54,21 @@
   "foot.hint": "Rechtsklick (oder lange drücken) auf die Karte zeigt die Spielkoordinaten.",
   "foot.daily": "Tägliche Orte werden aus den Rotationstabellen des Spiels + Tunables von {rdo} berechnet (danke {bot})",
   "foot.sources": "Orte aus den Spielskripten ({scripts}) · Karte {tiles} · blips {blips} · {leaflet}",
-  "foot.legal": "GTA V / GTA Online © Rockstar Games — Fan-Projekt, nicht mit Rockstar verbunden"
+  "foot.legal": "GTA V / GTA Online © Rockstar Games — Fan-Projekt, nicht mit Rockstar verbunden",
+  "info.open": "Details",
+  "info.perItem": "Je Stück",
+  "info.bonus": "Bonus für komplette Sammlung",
+  "info.chips": "+ Casino-Chips (100, +50 pro Karte)",
+  "info.escalating": "1. {first}, dann je +{step} ({total} insgesamt)",
+  "info.defaults": "Standardwerte aus den Spielskripten. Rockstar kann sie ändern oder 2×/3×-Events anbieten.",
+  "view.label": "Gruppieren nach",
+  "view.type": "Typ",
+  "view.purpose": "Zweck",
+  "purpose.money": "Geld verdienen",
+  "purpose.unlock": "Freischaltungen & Sammlungen",
+  "purpose.service": "Läden & Dienste",
+  "purpose.event": "Saisonale Events",
+  "purpose.timed": "Zeitlich begrenzt"
  },
  "cats": {
   "action_figures": {

@@ -54,7 +54,21 @@
   "foot.hint": "Clique com o botão direito (ou toque e segure) no mapa para ver as coordenadas do jogo.",
   "foot.daily": "Os locais diários são calculados pelas tabelas de rotação do jogo + tunables de {rdo} (obrigado, {bot})",
   "foot.sources": "Locais dos scripts do jogo ({scripts}) · mapa {tiles} · blips {blips} · {leaflet}",
-  "foot.legal": "GTA V / GTA Online © Rockstar Games — site feito por fãs, sem ligação com a Rockstar"
+  "foot.legal": "GTA V / GTA Online © Rockstar Games — site feito por fãs, sem ligação com a Rockstar",
+  "info.open": "Detalhes",
+  "info.perItem": "Cada",
+  "info.bonus": "Bônus por completar",
+  "info.chips": "+ fichas de cassino (100, +50 por carta)",
+  "info.escalating": "1.º {first}, depois +{step} cada ({total} no total)",
+  "info.defaults": "Valores padrão dos scripts do jogo. A Rockstar pode mudá-los ou fazer eventos 2×/3×.",
+  "view.label": "Agrupar por",
+  "view.type": "Tipo",
+  "view.purpose": "Objetivo",
+  "purpose.money": "Ganhar dinheiro",
+  "purpose.unlock": "Desbloqueios e coleções",
+  "purpose.service": "Lojas e serviços",
+  "purpose.event": "Eventos sazonais",
+  "purpose.timed": "Por tempo limitado"
  },
  "cats": {
   "action_figures": {

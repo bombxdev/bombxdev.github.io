@@ -54,7 +54,21 @@
   "foot.hint": "Нажмите правой кнопкой (или удерживайте) на карте, чтобы узнать игровые координаты.",
   "foot.daily": "Ежедневные точки рассчитываются по таблицам ротации игры + tunables с {rdo} (спасибо {bot})",
   "foot.sources": "Точки из игровых скриптов ({scripts}) · карта {tiles} · blips {blips} · {leaflet}",
-  "foot.legal": "GTA V / GTA Online © Rockstar Games — фанатский сайт, не связан с Rockstar"
+  "foot.legal": "GTA V / GTA Online © Rockstar Games — фанатский сайт, не связан с Rockstar",
+  "info.open": "Подробнее",
+  "info.perItem": "За каждый",
+  "info.bonus": "Бонус за полный набор",
+  "info.chips": "+ фишки казино (100, +50 за каждую карту)",
+  "info.escalating": "1-я {first}, затем +{step} за каждую (всего {total})",
+  "info.defaults": "Стандартные значения из игровых скриптов. Rockstar может их менять или проводить события ×2/×3.",
+  "view.label": "Группировать",
+  "view.type": "По типу",
+  "view.purpose": "По цели",
+  "purpose.money": "Заработок",
+  "purpose.unlock": "Открытия и коллекции",
+  "purpose.service": "Магазины и услуги",
+  "purpose.event": "Сезонные события",
+  "purpose.timed": "Ограничено по времени"
  },
  "cats": {
   "action_figures": {

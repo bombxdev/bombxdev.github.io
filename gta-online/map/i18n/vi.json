@@ -54,7 +54,21 @@
   "foot.hint": "Nhấp chuột phải (hoặc nhấn giữ) trên bản đồ để xem tọa độ trong game.",
   "foot.daily": "Vị trí hằng ngày được tính từ bảng luân phiên của game + tunables từ {rdo} (cảm ơn {bot})",
   "foot.sources": "Vị trí lấy từ script game ({scripts}) · bản đồ {tiles} · blips {blips} · {leaflet}",
-  "foot.legal": "GTA V / GTA Online © Rockstar Games — trang của fan, không liên quan đến Rockstar"
+  "foot.legal": "GTA V / GTA Online © Rockstar Games — trang của fan, không liên quan đến Rockstar",
+  "info.open": "Chi tiết",
+  "info.perItem": "Mỗi cái",
+  "info.bonus": "Thưởng hoàn thành bộ",
+  "info.chips": "+ chip sòng bạc (100, +50 mỗi lá)",
+  "info.escalating": "Cái đầu {first}, sau đó +{step} mỗi cái (tổng {total})",
+  "info.defaults": "Giá trị mặc định trong script game. Rockstar có thể thay đổi hoặc tổ chức sự kiện 2×/3×.",
+  "view.label": "Nhóm theo",
+  "view.type": "Loại",
+  "view.purpose": "Mục đích",
+  "purpose.money": "Kiếm tiền",
+  "purpose.unlock": "Mở khóa & sưu tầm",
+  "purpose.service": "Cửa hàng & dịch vụ",
+  "purpose.event": "Sự kiện theo mùa",
+  "purpose.timed": "Có thời hạn"
  },
  "cats": {
   "action_figures": {

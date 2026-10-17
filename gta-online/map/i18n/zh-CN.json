@@ -54,7 +54,21 @@
   "foot.hint": "在地图上右键（或长按）可查看游戏坐标。",
   "foot.daily": "每日地点根据游戏的轮换表和 {rdo} 的可调参数计算（感谢 {bot}）",
   "foot.sources": "地点数据来自游戏脚本（{scripts}）· 地图 {tiles} · blips {blips} · {leaflet}",
-  "foot.legal": "GTA V / GTA 在线模式 © Rockstar Games —— 粉丝网站，与 Rockstar 无关"
+  "foot.legal": "GTA V / GTA 在线模式 © Rockstar Games —— 粉丝网站，与 Rockstar 无关",
+  "info.open": "详情",
+  "info.perItem": "每个",
+  "info.bonus": "集齐奖励",
+  "info.chips": "+ 赌场筹码（100，每张牌 +50）",
+  "info.escalating": "第 1 个 {first}，之后每个 +{step}（共 {total}）",
+  "info.defaults": "游戏脚本中的默认数值，Rockstar 可能调整或举办 2×/3× 活动。",
+  "view.label": "分组方式",
+  "view.type": "类型",
+  "view.purpose": "用途",
+  "purpose.money": "赚钱",
+  "purpose.unlock": "解锁与收集",
+  "purpose.service": "商店与服务",
+  "purpose.event": "季节活动",
+  "purpose.timed": "限时"
  },
  "cats": {
   "action_figures": {

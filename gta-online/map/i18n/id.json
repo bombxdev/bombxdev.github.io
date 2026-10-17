@@ -54,7 +54,21 @@
   "foot.hint": "Klik kanan (atau tekan lama) pada peta untuk melihat koordinat dalam game.",
   "foot.daily": "Lokasi harian dihitung dari tabel rotasi game + tunables dari {rdo} (terima kasih {bot})",
   "foot.sources": "Lokasi dari script game ({scripts}) · peta {tiles} · blips {blips} · {leaflet}",
-  "foot.legal": "GTA V / GTA Online © Rockstar Games — situs buatan penggemar, tidak berafiliasi dengan Rockstar"
+  "foot.legal": "GTA V / GTA Online © Rockstar Games — situs buatan penggemar, tidak berafiliasi dengan Rockstar",
+  "info.open": "Detail",
+  "info.perItem": "Per item",
+  "info.bonus": "Bonus koleksi lengkap",
+  "info.chips": "+ chip kasino (100, +50 per kartu)",
+  "info.escalating": "Pertama {first}, lalu +{step} tiap berikutnya (total {total})",
+  "info.defaults": "Nilai bawaan dari script game. Rockstar bisa mengubahnya atau mengadakan event 2×/3×.",
+  "view.label": "Kelompokkan",
+  "view.type": "Jenis",
+  "view.purpose": "Tujuan",
+  "purpose.money": "Cari uang",
+  "purpose.unlock": "Buka kunci & koleksi",
+  "purpose.service": "Toko & layanan",
+  "purpose.event": "Event musiman",
+  "purpose.timed": "Waktu terbatas"
  },
  "cats": {
   "action_figures": {

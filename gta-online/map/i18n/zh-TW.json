@@ -54,7 +54,21 @@
   "foot.hint": "在地圖上按右鍵（或長按）可查看遊戲座標。",
   "foot.daily": "每日地點依遊戲的輪替表與 {rdo} 的可調參數計算（感謝 {bot}）",
   "foot.sources": "地點資料來自遊戲腳本（{scripts}）· 地圖 {tiles} · blips {blips} · {leaflet}",
-  "foot.legal": "GTA V / GTA 線上模式 © Rockstar Games —— 粉絲網站，與 Rockstar 無關"
+  "foot.legal": "GTA V / GTA 線上模式 © Rockstar Games —— 粉絲網站，與 Rockstar 無關",
+  "info.open": "詳情",
+  "info.perItem": "每個",
+  "info.bonus": "集滿獎勵",
+  "info.chips": "+ 賭場籌碼（100，每張牌 +50）",
+  "info.escalating": "第 1 個 {first}，之後每個 +{step}（共 {total}）",
+  "info.defaults": "遊戲腳本中的預設數值，Rockstar 可能調整或舉辦 2×/3× 活動。",
+  "view.label": "分組方式",
+  "view.type": "類型",
+  "view.purpose": "用途",
+  "purpose.money": "賺錢",
+  "purpose.unlock": "解鎖與收集",
+  "purpose.service": "商店與服務",
+  "purpose.event": "季節活動",
+  "purpose.timed": "限時"
  },
  "cats": {
   "action_figures": {

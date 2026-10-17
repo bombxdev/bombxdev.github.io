@@ -54,7 +54,21 @@
   "foot.hint": "Oyun koordinatlarını görmek için haritaya sağ tıklayın (veya basılı tutun).",
   "foot.daily": "Günlük konumlar oyunun rotasyon tablolarından + {rdo} tunables verisinden hesaplanır (teşekkürler {bot})",
   "foot.sources": "Konumlar oyun betiklerinden ({scripts}) · harita {tiles} · blips {blips} · {leaflet}",
-  "foot.legal": "GTA V / GTA Online © Rockstar Games — hayran sitesi, Rockstar ile bağlantısı yoktur"
+  "foot.legal": "GTA V / GTA Online © Rockstar Games — hayran sitesi, Rockstar ile bağlantısı yoktur",
+  "info.open": "Ayrıntılar",
+  "info.perItem": "Her biri",
+  "info.bonus": "Seti tamamlama bonusu",
+  "info.chips": "+ kumarhane fişi (100, kart başına +50)",
+  "info.escalating": "1. {first}, sonra her biri +{step} (toplam {total})",
+  "info.defaults": "Oyun betiklerindeki varsayılan değerler. Rockstar bunları değiştirebilir veya 2×/3× etkinlik yapabilir.",
+  "view.label": "Grupla",
+  "view.type": "Türe göre",
+  "view.purpose": "Amaca göre",
+  "purpose.money": "Para kazan",
+  "purpose.unlock": "Kilit açma ve koleksiyonlar",
+  "purpose.service": "Mağazalar ve hizmetler",
+  "purpose.event": "Sezonluk etkinlikler",
+  "purpose.timed": "Sınırlı süreli"
  },
  "cats": {
   "action_figures": {
