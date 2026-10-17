@@ -53,7 +53,7 @@
   "import.invalid": "올바른 백업 파일이 아닙니다",
   "foot.hint": "지도에서 마우스 오른쪽 클릭(또는 길게 누르기)하면 게임 좌표를 볼 수 있습니다.",
   "foot.daily": "일일 위치는 게임의 순환표와 {rdo}의 튜너블로 계산합니다 ({bot}에 감사)",
-  "foot.sources": "위치 데이터: 게임 스크립트 ({scripts}) · 지도 {tiles} · {leaflet}",
+  "foot.sources": "위치 데이터: 게임 스크립트 ({scripts}) · 지도 {tiles} · blips {blips} · {leaflet}",
   "foot.legal": "GTA V / GTA 온라인 © Rockstar Games — 팬 사이트이며 Rockstar와 무관합니다"
  },
  "cats": {

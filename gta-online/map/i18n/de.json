@@ -53,7 +53,7 @@
   "import.invalid": "Diese Datei ist kein gültiges Backup",
   "foot.hint": "Rechtsklick (oder lange drücken) auf die Karte zeigt die Spielkoordinaten.",
   "foot.daily": "Tägliche Orte werden aus den Rotationstabellen des Spiels + Tunables von {rdo} berechnet (danke {bot})",
-  "foot.sources": "Orte aus den Spielskripten ({scripts}) · Karte {tiles} · {leaflet}",
+  "foot.sources": "Orte aus den Spielskripten ({scripts}) · Karte {tiles} · blips {blips} · {leaflet}",
   "foot.legal": "GTA V / GTA Online © Rockstar Games — Fan-Projekt, nicht mit Rockstar verbunden"
  },
  "cats": {

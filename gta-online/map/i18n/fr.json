@@ -53,7 +53,7 @@
   "import.invalid": "Ce fichier n'est pas une sauvegarde valide",
   "foot.hint": "Clic droit (ou appui long) sur la carte pour lire les coordonnées du jeu.",
   "foot.daily": "Les emplacements quotidiens sont calculés à partir des tables de rotation du jeu + tunables de {rdo} (merci à {bot})",
-  "foot.sources": "Emplacements issus des scripts du jeu ({scripts}) · carte {tiles} · {leaflet}",
+  "foot.sources": "Emplacements issus des scripts du jeu ({scripts}) · carte {tiles} · blips {blips} · {leaflet}",
   "foot.legal": "GTA V / GTA Online © Rockstar Games — site de fan, non affilié à Rockstar"
  },
  "cats": {

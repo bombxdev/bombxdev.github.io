@@ -53,7 +53,7 @@
   "import.invalid": "此檔案不是有效的備份",
   "foot.hint": "在地圖上按右鍵（或長按）可查看遊戲座標。",
   "foot.daily": "每日地點依遊戲的輪替表與 {rdo} 的可調參數計算（感謝 {bot}）",
-  "foot.sources": "地點資料來自遊戲腳本（{scripts}）· 地圖 {tiles} · {leaflet}",
+  "foot.sources": "地點資料來自遊戲腳本（{scripts}）· 地圖 {tiles} · blips {blips} · {leaflet}",
   "foot.legal": "GTA V / GTA 線上模式 © Rockstar Games —— 粉絲網站，與 Rockstar 無關"
  },
  "cats": {

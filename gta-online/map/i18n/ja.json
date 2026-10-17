@@ -53,7 +53,7 @@
   "import.invalid": "有効なバックアップファイルではありません",
   "foot.hint": "地図を右クリック（または長押し）するとゲーム内座標を確認できます。",
   "foot.daily": "日替わり地点はゲームのローテーション表と {rdo} のチューナブルから計算しています（{bot} に感謝）",
-  "foot.sources": "地点データはゲームスクリプトより（{scripts}）· 地図 {tiles} · {leaflet}",
+  "foot.sources": "地点データはゲームスクリプトより（{scripts}）· 地図 {tiles} · blips {blips} · {leaflet}",
   "foot.legal": "GTA V / GTAオンライン © Rockstar Games — ファンサイトであり Rockstar とは無関係です"
  },
  "cats": {

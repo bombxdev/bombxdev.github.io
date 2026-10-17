@@ -53,7 +53,7 @@
   "import.invalid": "This is not a valid backup file",
   "foot.hint": "Right-click (or long-press) the map to read in-game coordinates.",
   "foot.daily": "Daily locations are computed from the game's rotation tables + tunables from {rdo} (thanks {bot})",
-  "foot.sources": "Locations from game scripts ({scripts}) · map tiles {tiles} · {leaflet}",
+  "foot.sources": "Locations from game scripts ({scripts}) · map tiles {tiles} · blips {blips} · {leaflet}",
   "foot.legal": "GTA V / GTA Online © Rockstar Games — fan-made site, not affiliated with Rockstar"
  },
  "cats": {

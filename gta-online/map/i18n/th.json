@@ -53,7 +53,7 @@
   "import.invalid": "ไฟล์นี้ไม่ใช่ไฟล์สำรองที่ถูกต้อง",
   "foot.hint": "คลิกขวา (หรือกดค้าง) บนแผนที่เพื่อดูพิกัดในเกม",
   "foot.daily": "ตำแหน่งรายวันคำนวณจากตารางหมุนเวียนในสคริปต์เกม + tunables จาก {rdo} (ขอบคุณ {bot})",
-  "foot.sources": "ข้อมูลตำแหน่งจากสคริปต์เกม ({scripts}) · ภาพแผนที่ {tiles} · {leaflet}",
+  "foot.sources": "ข้อมูลตำแหน่งจากสคริปต์เกม ({scripts}) · ภาพแผนที่ {tiles} · blips {blips} · {leaflet}",
   "foot.legal": "GTA V / GTA Online © Rockstar Games — เว็บแฟนเมด ไม่เกี่ยวข้องกับ Rockstar"
  },
  "cats": {

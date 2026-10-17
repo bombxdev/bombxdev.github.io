@@ -29,6 +29,7 @@
     bot: '<a href="https://github.com/ShinyWasabi/GTAO-Bot" target="_blank" rel="noopener">GTAO-Bot</a>',
     scripts: '<a href="https://github.com/Sainan/GTA-V-Decompiled-Scripts" target="_blank" rel="noopener">decompiled scripts</a>',
     tiles: '<a href="https://github.com/CreepPork/GTAV-Maps" target="_blank" rel="noopener">CreepPork/GTAV-Maps</a>',
+    blips: '<a href="https://docs.fivem.net/docs/game-references/blips/" target="_blank" rel="noopener">FiveM docs</a>',
     leaflet: '<a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a>'
   };
 
@@ -140,6 +141,10 @@
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
     });
   }
+  // In-game radar blip (white silhouette) for a category; see data/categories.json.
+  function blipImg(cat, extraClass) {
+    return '<img class="blip' + (extraClass ? ' ' + extraClass : '') + '" src="blips/' + cat.blip + '.png" alt="" draggable="false">';
+  }
   function norm(s) { return String(s).toLowerCase().replace(/[’']/g, '').trim(); }
 
   var toastTimer;
@@ -179,7 +184,7 @@
     var cls = 'pin' + (state.collected.has(idOf(item)) ? ' done' : '') + (state.active === item ? ' active' : '');
     return L.divIcon({
       className: '',
-      html: '<div class="' + cls + '" style="--c:' + cat.color + '">' + cat.glyph + '</div>',
+      html: '<div class="' + cls + '" style="--c:' + cat.color + '">' + blipImg(cat) + '</div>',
       iconSize: [26, 26],
       iconAnchor: [13, 13],
       popupAnchor: [0, -12]
@@ -191,7 +196,7 @@
     var done = state.collected.has(idOf(item));
     var name = I18N.catName(cat.key), note = I18N.catNote(cat.key);
     return '<div class="pop">' +
-      '<h3>' + cat.glyph + ' ' + esc(name) + ' #' + item.n + '</h3>' +
+      '<h3><span class="pop-blip" style="--c:' + cat.color + '">' + blipImg(cat) + '</span>' + esc(name) + ' #' + item.n + '</h3>' +
       '<div class="sub">' + (name !== cat.en ? esc(cat.en) + ' · ' : '') + esc(t('group.' + cat.group)) +
       (state.todaySets[item.cat] && state.todaySets[item.cat].has(item.n) ? '<span class="today-badge">' + esc(t('pop.selectedDay')) + '</span>' : '') + '</div>' +
       (note ? '<div class="note">' + esc(note) + '</div>' : '') +
@@ -292,7 +297,7 @@
         row.title = I18N.catNote(cat.key);
         row.innerHTML =
           '<input type="checkbox"' + (state.visible[cat.key] ? ' checked' : '') + '>' +
-          '<span class="dot">' + cat.glyph + '</span>' +
+          '<span class="dot">' + blipImg(cat) + '</span>' +
           '<span class="label"><div class="th">' + esc(name) + '</div>' + (name !== cat.en ? '<div class="en">' + esc(cat.en) + '</div>' : '') + '</span>' +
           '<span class="count">' + got + '/' + total + '</span>' +
           '<span class="bar"><span style="width:' + (total ? (100 * got / total) : 0) + '%"></span></span>';
@@ -363,7 +368,7 @@
       var b = document.createElement('button');
       b.className = 'result' + (state.collected.has(idOf(item)) ? ' done' : '');
       var name = I18N.catName(cat.key);
-      b.innerHTML = '<span>' + cat.glyph + '</span><span><div class="name">' + esc(name) + ' #' + item.n +
+      b.innerHTML = '<span class="res-blip" style="--c:' + cat.color + '">' + blipImg(cat) + '</span><span><div class="name">' + esc(name) + ' #' + item.n +
         '</div><div class="meta">' + (name !== cat.en ? esc(cat.en) + ' · ' : '') + coordText(item.x, item.y) + '</div></span>';
       b.addEventListener('click', function () { focusItem(item); });
       box.appendChild(b);
@@ -535,7 +540,7 @@
       row.style.setProperty('--c', cat.color);
       var label = I18N.catName(key);
       if (EVENT_ONLY[key]) label = t('today.eventOnly', { name: label });
-      row.innerHTML = '<span class="g">' + cat.glyph + '</span><div><div class="n">' + esc(label) + '</div><div class="chips"></div></div>';
+      row.innerHTML = '<span class="g">' + blipImg(cat) + '</span><div><div class="n">' + esc(label) + '</div><div class="chips"></div></div>';
       var chips = row.querySelector('.chips');
       idxs.forEach(function (i) {
         var item = cat.items[i];

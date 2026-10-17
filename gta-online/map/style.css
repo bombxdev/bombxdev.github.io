@@ -169,7 +169,7 @@ a { color: var(--accent); }
   position: absolute; left: 50%; top: 50%; translate: -50% -50%;
   width: 26px; height: 26px; border-radius: 50%;
   display: grid; place-items: center; font-size: 14px; line-height: 1;
-  background: color-mix(in srgb, var(--c) 35%, #111318);
+  background: color-mix(in srgb, var(--c) 45%, #111318);
   border: 2px solid var(--c);
   box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
   transition: transform .12s;
@@ -177,9 +177,22 @@ a { color: var(--accent); }
 .pin:hover { transform: scale(1.18); }
 .pin.done { opacity: .45; border-style: dashed; }
 .pin.active { transform: scale(1.35); box-shadow: 0 0 0 4px rgba(255, 255, 255, .45), 0 1px 6px rgba(0, 0, 0, .7); }
+img.blip { display: block; width: 16px; height: 16px; image-rendering: auto; pointer-events: none; user-select: none; }
+.cat .dot img.blip { width: 17px; height: 17px; }
+.today-row .g { display: grid; place-items: center; height: 22px; width: 22px; border-radius: 50%; background: color-mix(in srgb, var(--c) 45%, #111318); }
+.today-row .g img.blip { width: 14px; height: 14px; }
+.pop-blip, .res-blip {
+  display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%;
+  background: color-mix(in srgb, var(--c) 45%, #111318); border: 2px solid var(--c);
+  vertical-align: middle; margin-right: 6px; flex: 0 0 auto;
+}
+.pop-blip img.blip, .res-blip img.blip { width: 14px; height: 14px; }
 /* smaller pins when zoomed out so the overview stays readable */
 .zoom-far .pin { width: 11px; height: 11px; font-size: 0; border-width: 2px; background: var(--c); }
-.zoom-mid .pin { width: 19px; height: 19px; font-size: 10px; }
+.zoom-far .pin img.blip { display: none; }
+.zoom-mid .pin { width: 20px; height: 20px; }
+.zoom-mid .pin img.blip { width: 12px; height: 12px; }
+.zoom-far .pin.active img.blip, .zoom-mid .pin.active img.blip { display: block; width: 16px; height: 16px; }
 .zoom-far .pin.active, .zoom-mid .pin.active { width: 26px; height: 26px; font-size: 14px; }
 
 .leaflet-popup-content-wrapper, .leaflet-popup-tip { background: var(--panel); color: var(--text); }

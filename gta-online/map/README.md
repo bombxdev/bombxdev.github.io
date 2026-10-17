@@ -50,6 +50,7 @@
 | --- | --- |
 | พิกัด collectibles | `freemode.c` จาก [Sainan/GTA-V-Decompiled-Scripts](https://github.com/Sainan/GTA-V-Decompiled-Scripts) (สคริปต์เกมที่ decompile แล้ว) |
 | ภาพแผนที่ | [CreepPork/GTAV-Maps](https://github.com/CreepPork/GTAV-Maps) (MIT) แปลงเป็น WebP |
+| ไอคอนบนแผนที่ | ภาพ radar blip จริงของเกม จาก [FiveM docs](https://docs.fivem.net/docs/game-references/blips/) (`citizenfx/fivem-docs`, `static/blips/`) — `blipSource: "game"` = blip ที่สคริปต์เกมใช้กับหมวดนั้นจริง (`SET_BLIP_SPRITE`), `"closest"` = เกมไม่มี blip เฉพาะ เลือก blip ทางการที่ใกล้เคียงที่สุด |
 | ไลบรารีแผนที่ | [Leaflet 1.9.4](https://leafletjs.com) (BSD-2-Clause) |
 
 ภาพแผนที่ไม่มีเกาะ Cayo Perico — หมุดของหมวดที่อยู่บนเกาะ (Treasure Chests, Buried Stashes)

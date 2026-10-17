@@ -53,7 +53,7 @@
   "import.invalid": "File ini bukan cadangan yang valid",
   "foot.hint": "Klik kanan (atau tekan lama) pada peta untuk melihat koordinat dalam game.",
   "foot.daily": "Lokasi harian dihitung dari tabel rotasi game + tunables dari {rdo} (terima kasih {bot})",
-  "foot.sources": "Lokasi dari script game ({scripts}) · peta {tiles} · {leaflet}",
+  "foot.sources": "Lokasi dari script game ({scripts}) · peta {tiles} · blips {blips} · {leaflet}",
   "foot.legal": "GTA V / GTA Online © Rockstar Games — situs buatan penggemar, tidak berafiliasi dengan Rockstar"
  },
  "cats": {

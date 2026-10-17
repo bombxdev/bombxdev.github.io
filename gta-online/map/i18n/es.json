@@ -53,7 +53,7 @@
   "import.invalid": "Este archivo no es una copia válida",
   "foot.hint": "Haz clic derecho (o mantén pulsado) en el mapa para ver las coordenadas del juego.",
   "foot.daily": "Las ubicaciones diarias se calculan con las tablas de rotación del juego + tunables de {rdo} (gracias a {bot})",
-  "foot.sources": "Ubicaciones de los scripts del juego ({scripts}) · mapa {tiles} · {leaflet}",
+  "foot.sources": "Ubicaciones de los scripts del juego ({scripts}) · mapa {tiles} · blips {blips} · {leaflet}",
   "foot.legal": "GTA V / GTA Online © Rockstar Games — sitio hecho por fans, sin relación con Rockstar"
  },
  "cats": {

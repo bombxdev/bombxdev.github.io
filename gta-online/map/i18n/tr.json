@@ -53,7 +53,7 @@
   "import.invalid": "Bu dosya geçerli bir yedek değil",
   "foot.hint": "Oyun koordinatlarını görmek için haritaya sağ tıklayın (veya basılı tutun).",
   "foot.daily": "Günlük konumlar oyunun rotasyon tablolarından + {rdo} tunables verisinden hesaplanır (teşekkürler {bot})",
-  "foot.sources": "Konumlar oyun betiklerinden ({scripts}) · harita {tiles} · {leaflet}",
+  "foot.sources": "Konumlar oyun betiklerinden ({scripts}) · harita {tiles} · blips {blips} · {leaflet}",
   "foot.legal": "GTA V / GTA Online © Rockstar Games — hayran sitesi, Rockstar ile bağlantısı yoktur"
  },
  "cats": {

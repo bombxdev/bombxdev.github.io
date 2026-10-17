@@ -53,7 +53,7 @@
   "import.invalid": "此文件不是有效的备份",
   "foot.hint": "在地图上右键（或长按）可查看游戏坐标。",
   "foot.daily": "每日地点根据游戏的轮换表和 {rdo} 的可调参数计算（感谢 {bot}）",
-  "foot.sources": "地点数据来自游戏脚本（{scripts}）· 地图 {tiles} · {leaflet}",
+  "foot.sources": "地点数据来自游戏脚本（{scripts}）· 地图 {tiles} · blips {blips} · {leaflet}",
   "foot.legal": "GTA V / GTA 在线模式 © Rockstar Games —— 粉丝网站，与 Rockstar 无关"
  },
  "cats": {

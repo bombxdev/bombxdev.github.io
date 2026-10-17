@@ -53,7 +53,7 @@
   "import.invalid": "Этот файл не является резервной копией",
   "foot.hint": "Нажмите правой кнопкой (или удерживайте) на карте, чтобы узнать игровые координаты.",
   "foot.daily": "Ежедневные точки рассчитываются по таблицам ротации игры + tunables с {rdo} (спасибо {bot})",
-  "foot.sources": "Точки из игровых скриптов ({scripts}) · карта {tiles} · {leaflet}",
+  "foot.sources": "Точки из игровых скриптов ({scripts}) · карта {tiles} · blips {blips} · {leaflet}",
   "foot.legal": "GTA V / GTA Online © Rockstar Games — фанатский сайт, не связан с Rockstar"
  },
  "cats": {

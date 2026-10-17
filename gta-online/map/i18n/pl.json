@@ -53,7 +53,7 @@
   "import.invalid": "Ten plik nie jest prawidłową kopią",
   "foot.hint": "Kliknij prawym przyciskiem (lub przytrzymaj) na mapie, aby odczytać współrzędne w grze.",
   "foot.daily": "Lokalizacje dnia są liczone z tabel rotacji gry + tunables z {rdo} (dzięki {bot})",
-  "foot.sources": "Lokalizacje ze skryptów gry ({scripts}) · mapa {tiles} · {leaflet}",
+  "foot.sources": "Lokalizacje ze skryptów gry ({scripts}) · mapa {tiles} · blips {blips} · {leaflet}",
   "foot.legal": "GTA V / GTA Online © Rockstar Games — strona fanowska, niezwiązana z Rockstar"
  },
  "cats": {

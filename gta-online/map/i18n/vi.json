@@ -53,7 +53,7 @@
   "import.invalid": "Tệp này không phải bản sao lưu hợp lệ",
   "foot.hint": "Nhấp chuột phải (hoặc nhấn giữ) trên bản đồ để xem tọa độ trong game.",
   "foot.daily": "Vị trí hằng ngày được tính từ bảng luân phiên của game + tunables từ {rdo} (cảm ơn {bot})",
-  "foot.sources": "Vị trí lấy từ script game ({scripts}) · bản đồ {tiles} · {leaflet}",
+  "foot.sources": "Vị trí lấy từ script game ({scripts}) · bản đồ {tiles} · blips {blips} · {leaflet}",
   "foot.legal": "GTA V / GTA Online © Rockstar Games — trang của fan, không liên quan đến Rockstar"
  },
  "cats": {
