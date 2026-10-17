@@ -77,9 +77,21 @@ def parse(body):
     return out
 
 
+def gun_van_func(src):
+    """The Gun Van position function switches on the same index getter that
+    the GUN_VAN telemetry call uses."""
+    m = re.search(r"iVar0 = (func_\d+)\(\);(?:(?!\n}\n).)*?PLAYSTATS_BACKGROUND_SCRIPT_ACTION\(\"GUN_VAN\"", src, re.S)
+    getter = m.group(1)
+    m = re.search(r"^Vector3 (func_\d+)\(\)\n\{(?:(?!\n}\n).)*?switch \(" + getter + r"\(\)\)", src, re.M | re.S)
+    return m.group(1)
+
+
 def main():
-    lines = open(sys.argv[1], encoding="utf-8", errors="replace").read().split("\n")
+    text = open(sys.argv[1], encoding="utf-8", errors="replace").read()
+    lines = text.split("\n")
     items = {}
+    cases = parse(function_lines(lines, gun_van_func(text)))
+    items["gun_van"] = [cases[k] for k in sorted(cases, key=lambda k: k[1])]
     for key, fn in FLAT_FUNCS.items():
         cases = parse(function_lines(lines, fn))
         items[key] = [cases[k] for k in sorted(cases, key=lambda k: k[1])]

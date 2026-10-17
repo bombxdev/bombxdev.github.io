@@ -27,9 +27,10 @@ a { color: var(--accent); }
   border-right: 1px solid var(--line);
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow-y: auto;
   z-index: 1000;
 }
+#sidebar > * { flex-shrink: 0; }
 .brand { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px 6px; }
 .brand h1 { font-size: 18px; margin: 0; letter-spacing: .3px; }
 
@@ -80,7 +81,7 @@ a { color: var(--accent); }
 .chip:hover { border-color: #3d4452; }
 .chip.toggle input { margin: 0; accent-color: var(--accent); }
 
-.categories { flex: 1; overflow: auto; padding: 0 8px 8px; }
+.categories { flex: 1 0 auto; padding: 0 8px 8px; }
 .group-title {
   font-size: 11px; text-transform: uppercase; letter-spacing: .8px;
   color: var(--muted); padding: 12px 8px 4px;
@@ -109,6 +110,27 @@ a { color: var(--accent); }
 
 .foot { border-top: 1px solid var(--line); padding: 8px 16px 12px; font-size: 11px; color: var(--muted); }
 .foot p { margin: 4px 0; }
+
+.today { margin: 0 16px 8px; padding: 8px 10px 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel-2); }
+.today-head { display: flex; align-items: center; gap: 6px; }
+.today-title { flex: 1; text-align: center; font-size: 13px; line-height: 1.3; }
+.today-title #dayLabel { font-weight: 600; }
+.muted { color: var(--muted); font-size: 11px; }
+.today-list { margin: 6px 0 8px; display: grid; gap: 6px; }
+.today-row { display: grid; grid-template-columns: 22px 1fr; gap: 6px; align-items: start; font-size: 12px; }
+.today-row .g { font-size: 15px; line-height: 22px; text-align: center; }
+.today-row .n { color: var(--muted); margin-bottom: 2px; }
+.today-row .chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.today-row button {
+  border: 1px solid var(--c); background: color-mix(in srgb, var(--c) 18%, transparent);
+  border-radius: 6px; padding: 1px 7px; font-size: 12px; cursor: pointer; font-variant-numeric: tabular-nums;
+}
+.today-row button:hover { background: color-mix(in srgb, var(--c) 40%, transparent); }
+.today-row button.done { opacity: .5; text-decoration: line-through; }
+.today .chip.toggle { font-size: 12px; width: 100%; border-radius: 8px; }
+.today-status { font-size: 11px; color: var(--muted); margin-top: 6px; }
+.today-status.warn { color: #ffb224; }
+.pop .today-badge { display: inline-block; font-size: 11px; padding: 1px 6px; border-radius: 4px; background: color-mix(in srgb, var(--ok) 30%, transparent); border: 1px solid var(--ok); margin-left: 4px; }
 
 /* ---------- map ---------- */
 #mapWrap { position: relative; flex: 1; min-width: 0; }

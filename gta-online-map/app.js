@@ -43,7 +43,13 @@
     hideCollected: STORE.get('hideCollected', false),
     query: '',
     matches: null,
-    active: null
+    active: null,
+    todayOnly: STORE.get('todayOnly', true),
+    dayOffset: 0,
+    daily: null,
+    tunables: null,
+    today: null,
+    todaySets: {}
   };
 
   // ---------------------------------------------------------------------------
@@ -161,11 +167,12 @@
     var done = state.collected.has(idOf(item));
     return '<div class="pop">' +
       '<h3>' + cat.glyph + ' ' + esc(cat.en) + ' #' + item.n + '</h3>' +
-      '<div class="sub">' + esc(cat.th) + ' · ' + GROUPS[cat.group] + '</div>' +
+      '<div class="sub">' + esc(cat.th) + ' · ' + GROUPS[cat.group] +
+      (state.todaySets[item.cat] && state.todaySets[item.cat].has(item.n) ? '<span class="today-badge">ขึ้นวันที่เลือก</span>' : '') + '</div>' +
       (cat.note ? '<div class="note">' + esc(cat.note) + '</div>' : '') +
       '<div>พิกัด: <code>' + coordText(item.x, item.y, item.z) + '</code></div>' +
       '<div class="actions">' +
-      '<button class="chip primary" data-act="toggle">' + (done ? '↩︎ ยังไม่ได้เก็บ' : '✔ เก็บแล้ว') + '</button>' +
+      (item.cat === 'gun_van' ? '' : '<button class="chip primary" data-act="toggle">' + (done ? '↩︎ ยังไม่ได้เก็บ' : '✔ เก็บแล้ว') + '</button>') +
       '<button class="chip" data-act="copy">คัดลอกพิกัด</button>' +
       '<button class="chip" data-act="link">คัดลอกลิงก์</button>' +
       '</div></div>';
@@ -196,6 +203,8 @@
   function isShown(item) {
     if (state.matches) return state.matches.has(item);
     if (!state.visible[item.cat]) return false;
+    var today = state.todaySets[item.cat];
+    if (state.todayOnly && today && !today.has(item.n)) return false;
     if (state.hideCollected && state.collected.has(idOf(item))) return false;
     return true;
   }
@@ -224,6 +233,9 @@
       saveVisible();
       renderCategories();
       refreshMarkers();
+    }
+    if (!markerLayer.hasLayer(item.marker) && state.todayOnly) {
+      setTodayOnly(false);
     }
     map.flyTo([item.y, item.x], Math.max(map.getZoom(), 6), { duration: 0.6 });
     map.once('moveend', function () { item.marker.openPopup(); });
@@ -421,13 +433,111 @@
   window.addEventListener('hashchange', openFromHash);
 
   // ---------------------------------------------------------------------------
+  // Daily locations
+  // ---------------------------------------------------------------------------
+  var TODAY_ORDER = ['gun_van', 'shipwrecks', 'treasure_chests', 'buried_stashes', 'hidden_caches', 'skydives', 'ls_tags', 'weed_packages'];
+  var TODAY_NAMES = { weed_packages: 'Weed Packages (เฉพาะช่วงอีเวนต์)' };
+  var dateFmt = new Intl.DateTimeFormat('th-TH', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+
+  function setTodayOnly(on) {
+    state.todayOnly = on;
+    $('todayOnly').checked = on;
+    STORE.set('todayOnly', on);
+    refreshMarkers();
+  }
+
+  function renderToday() {
+    if (!state.daily) return;
+    var now = Date.now() / 1000;
+    var t = now + state.dayOffset * 86400;
+    var r = GTAODaily.compute(t, state.daily, state.tunables);
+    state.today = r;
+    state.todaySets = {};
+    Object.keys(r.lists).forEach(function (cat) {
+      state.todaySets[cat] = new Set(r.lists[cat].map(function (i) { return i + 1; }));
+    });
+
+    var start = new Date(r.start * 1000), end = new Date((r.start + 86400) * 1000);
+    $('dayLabel').textContent = (state.dayOffset === 0 ? 'วันนี้ · ' : state.dayOffset > 0 ? 'ล่วงหน้า +' + state.dayOffset + ' วัน · ' : 'ย้อนหลัง ' + state.dayOffset + ' วัน · ') +
+      dateFmt.format(start).replace(/\s+\d{2}:\d{2}$/, '');
+    var left = Math.max(0, r.start + 86400 - now);
+    $('dayReset').textContent = state.dayOffset === 0
+      ? 'รีเซ็ตใน ' + Math.floor(left / 3600) + ' ชม. ' + Math.floor(left % 3600 / 60) + ' นาที (' + dateFmt.format(end) + ')'
+      : dateFmt.format(start) + ' – ' + dateFmt.format(end);
+
+    var list = $('todayList');
+    list.innerHTML = '';
+    TODAY_ORDER.forEach(function (key) {
+      var cat = state.catByKey[key];
+      var idxs = r.lists[key];
+      if (!cat || !idxs) return;
+      var row = document.createElement('div');
+      row.className = 'today-row';
+      row.style.setProperty('--c', cat.color);
+      row.innerHTML = '<span class="g">' + cat.glyph + '</span><div><div class="n">' + esc(TODAY_NAMES[key] || cat.en) + '</div><div class="chips"></div></div>';
+      var chips = row.querySelector('.chips');
+      idxs.forEach(function (i) {
+        var item = cat.items[i];
+        if (!item) return;
+        var b = document.createElement('button');
+        b.textContent = '#' + item.n;
+        if (state.collected.has(idOf(item))) b.className = 'done';
+        b.title = cat.en + ' #' + item.n + ' (' + coordText(item.x, item.y) + ')';
+        b.addEventListener('click', function () { focusItem(item); });
+        chips.appendChild(b);
+      });
+      list.appendChild(row);
+    });
+
+    var st = $('todayStatus');
+    var tv = state.tunables;
+    if (!tv) {
+      st.className = 'today-status';
+      st.textContent = 'คำนวณจากสคริปต์เกม · ยังไม่มีข้อมูล tunables ของ Rockstar ให้เทียบ';
+    } else if (r.overrides.length) {
+      st.className = 'today-status warn';
+      st.textContent = '⚠ Rockstar override: ' + r.overrides.join(' · ') + ' (ใช้ค่าที่ override แล้ว)';
+    } else {
+      st.className = 'today-status';
+      st.textContent = '✓ เทียบกับ tunables ของ Rockstar แล้ว ไม่มี override · อัปเดต ' + dateFmt.format(new Date(tv.fetched_at));
+    }
+    renderCategories();
+    refreshMarkers();
+  }
+
+  $('todayOnly').checked = state.todayOnly;
+  $('todayOnly').addEventListener('change', function (e) { setTodayOnly(e.target.checked); });
+  $('dayPrev').addEventListener('click', function () { state.dayOffset--; renderToday(); });
+  $('dayNext').addEventListener('click', function () { state.dayOffset++; renderToday(); });
+  $('dayLabel').addEventListener('click', function () { state.dayOffset = 0; renderToday(); });
+  setInterval(renderToday, 30000);
+
+  // Tunables are refreshed daily by a GitHub Action. Read both the deployed copy
+  // and the repository copy (in case Pages has not rebuilt yet); use the newest.
+  var TUNABLES_URLS = [
+    'data/tunables.json',
+    'https://raw.githubusercontent.com/bombxdev/bombxdev.github.io/master/gta-online-map/data/tunables.json'
+  ];
+  function loadTunables() {
+    return Promise.all(TUNABLES_URLS.map(function (u) {
+      return fetch(u, { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+    })).then(function (list) {
+      list.filter(Boolean).forEach(function (tv) {
+        if (tv.values && (!state.tunables || tv.fetched_at > state.tunables.fetched_at)) state.tunables = tv;
+      });
+    });
+  }
+
+  // ---------------------------------------------------------------------------
   // Boot
   // ---------------------------------------------------------------------------
   Promise.all([
     fetch('data/categories.json').then(function (r) { return r.json(); }),
-    fetch('data/points.json').then(function (r) { return r.json(); })
+    fetch('data/points.json').then(function (r) { return r.json(); }),
+    fetch('data/daily.json').then(function (r) { return r.json(); })
   ]).then(function (res) {
     var cats = res[0], points = res[1];
+    state.daily = res[2];
     var savedVisible = STORE.get('visible', null);
     cats.forEach(function (cat) {
       cat.items = (points[cat.key] || []).map(function (p, i) {
@@ -440,9 +550,9 @@
     });
     state.cats = cats;
     buildMarkers();
-    renderCategories();
-    refreshMarkers();
+    renderToday();
     openFromHash();
+    loadTunables().then(renderToday);
   }).catch(function (err) {
     console.error(err);
     toast('โหลดข้อมูลไม่สำเร็จ');

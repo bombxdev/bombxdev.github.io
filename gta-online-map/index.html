@@ -26,6 +26,20 @@
 
       <div id="results" class="results" hidden></div>
 
+      <section id="today" class="today" aria-label="ตำแหน่งประจำวัน">
+        <div class="today-head">
+          <button id="dayPrev" class="icon-btn" aria-label="วันก่อนหน้า">◀</button>
+          <div class="today-title">
+            <div id="dayLabel">ประจำวัน</div>
+            <div id="dayReset" class="muted"></div>
+          </div>
+          <button id="dayNext" class="icon-btn" aria-label="วันถัดไป">▶</button>
+        </div>
+        <div id="todayList" class="today-list"></div>
+        <label class="chip toggle"><input id="todayOnly" type="checkbox"> หมวดรายวัน: แสดงเฉพาะจุดของวันที่เลือก</label>
+        <div id="todayStatus" class="today-status"></div>
+      </section>
+
       <div class="toolbar">
         <button id="showAll" class="chip">แสดงทั้งหมด</button>
         <button id="hideAll" class="chip">ซ่อนทั้งหมด</button>
@@ -36,6 +50,7 @@
 
       <footer class="foot">
         <p>คลิกขวา (หรือกดค้าง) บนแผนที่เพื่อดูพิกัดในเกม · ความคืบหน้าบันทึกไว้ในเบราว์เซอร์นี้</p>
+        <p>ตำแหน่งรายวันคำนวณจากตารางหมุนเวียนในสคริปต์เกม + tunables จาก <a href="https://tunables.rdo.gg" target="_blank" rel="noopener">rdo.gg</a> (ขอบคุณ <a href="https://github.com/ShinyWasabi/GTAO-Bot" target="_blank" rel="noopener">GTAO-Bot</a>)</p>
         <p>ข้อมูลตำแหน่งจากสคริปต์เกม (<a href="https://github.com/Sainan/GTA-V-Decompiled-Scripts" target="_blank" rel="noopener">decompiled scripts</a>) ·
            ภาพแผนที่ <a href="https://github.com/CreepPork/GTAV-Maps" target="_blank" rel="noopener">CreepPork/GTAV-Maps</a> ·
            <a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a></p>
@@ -53,6 +68,7 @@
   <div id="toast" class="toast" role="status" hidden></div>
 
   <script src="vendor/leaflet/leaflet.js"></script>
+  <script src="daily.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

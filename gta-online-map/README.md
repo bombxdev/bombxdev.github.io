@@ -13,6 +13,23 @@
 - ลิงก์ตรงไปยังแต่ละจุด เช่น `#action_figures-12`
 - คลิกขวา/กดค้างบนแผนที่เพื่อดูพิกัดในเกม
 
+## ตำแหน่งประจำวัน (Gun Van, Shipwreck, Hidden Caches ฯลฯ)
+
+คำนวณในเบราว์เซอร์เองทั้งหมด ไม่ต้องอัปเดตมือ ด้วยตรรกะเดียวกับในเกม (`freemode.c`):
+
+- **ของรายวัน** (Hidden Caches, Shipwreck, Treasure Chests, Buried Stashes, Skydives, LS Tags, Weed Packages):
+  เกมใช้ตารางตายตัววนรอบ 84 วัน `day = (เวลา UTC - 1555999200) / 86400`, ใช้แถวที่ `day % 84`
+  → `data/daily.json` (ดึงด้วย `tools/extract_daily.py`)
+- **Gun Van**: ตัวสุ่มของเกม (`NETWORK_SEED_RANDOM_NUMBER_GENERATOR`) seed = `(เวลา UTC - 6 ชม.) / 86400`
+  สุ่มใหม่ถ้าจุดนั้นถูกปิด (`XM22_GUN_VAN_LOCATION_ENABLED_n`) → `daily.js`
+- ทุกอย่างรีเซ็ต 06:00 UTC (13:00 เวลาไทย)
+- Rockstar override ได้ผ่าน tunables → GitHub Action `.github/workflows/gtao-tunables.yml`
+  ดึงจาก [api.rdo.gg](https://tunables.rdo.gg) ทุกวันหลังรีเซ็ต เก็บไว้ที่ `data/tunables.json`
+  หน้าเว็บจะนำ override มาใช้และแจ้งเตือนถ้ามี
+
+ตรวจสอบแล้ว: ตาราง 84 วันที่ดึงเองตรงกับของ [GTAO-Bot](https://github.com/ShinyWasabi/GTAO-Bot) ครบ 504/504 รายการ
+และ Gun Van ที่คำนวณได้ตรงกับที่เว็บอื่นรายงาน (17 ต.ค. 2026 = #7 Paleto Forest)
+
 ## ที่มาของข้อมูล
 
 | ส่วน | แหล่งที่มา |
@@ -40,7 +57,9 @@ py = -0.0069134440 * y + 57.919678
 
 ```sh
 curl -LO https://raw.githubusercontent.com/Sainan/GTA-V-Decompiled-Scripts/master/decompiled_scripts/freemode.c
+curl -LO https://raw.githubusercontent.com/Sainan/GTA-V-Decompiled-Scripts/master/decompiled_scripts/tuneables_processing.c
 python3 tools/extract_collectibles.py freemode.c data/points.json
+python3 tools/extract_daily.py freemode.c tuneables_processing.c data/daily.json
 ```
 
 ชื่อฟังก์ชัน (`func_NNNN`) อาจเปลี่ยนเมื่อเกมอัปเดต ดูคำอธิบายใน `tools/extract_collectibles.py`

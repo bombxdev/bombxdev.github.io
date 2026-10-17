@@ -1,0 +1,38 @@
+name: GTA Online tunables
+
+# Daily locations are computed in the browser from the game's own rotation
+# tables. This job refreshes the Rockstar tunables that can override them.
+on:
+  schedule:
+    - cron: '20 6 * * *'   # 20 min after the 06:00 UTC daily reset
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gtao-tunables
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Fetch tunables
+        working-directory: gta-online-map
+        run: node tools/fetch_tunables.mjs data/tunables.json
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- gta-online-map/data/tunables.json && git ls-files --error-unmatch gta-online-map/data/tunables.json >/dev/null 2>&1; then
+            echo "No changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add gta-online-map/data/tunables.json
+          git commit -m "gta-online-map: update tunables"
+          git push
