@@ -68,7 +68,15 @@
   "purpose.unlock": "잠금 해제 및 수집",
   "purpose.service": "상점 및 서비스",
   "purpose.event": "시즌 이벤트",
-  "purpose.timed": "기간 한정"
+  "purpose.timed": "기간 한정",
+  "clock.game": "게임 시간 {time}",
+  "ghost.window": "{from}–{to} 출현 (게임 시간)",
+  "ghost.next": "다음 출현까지 {m}분 ({time})",
+  "ghost.now": "지금 출현 중 — {m}분 남음",
+  "ghost.nowShort": "지금",
+  "ghost.spots": "가능한 {n}곳 중 한 곳에 출현",
+  "ghost.schedule": "다음 출현 시간 (내 현지 시간)",
+  "purpose.activity": "활동 및 챌린지"
  },
  "cats": {
   "action_figures": {
@@ -149,6 +157,22 @@
   "weed_packages": {
    "name": "대마 꾸러미",
    "note": "특별 이벤트: 기간 중 매일 10곳"
+  },
+  "street_dealers": {
+   "name": "거리 마약상",
+   "note": "일일: 매일 3명"
+  },
+  "bike_time_trial": {
+   "name": "Junk Energy 자전거 타임 트라이얼",
+   "note": "일일: 14개 코스 중 매일 1개"
+  },
+  "rc_time_trial": {
+   "name": "RC 반디토 타임 트라이얼",
+   "note": "일일: 14개 코스 중 매일 1개"
+  },
+  "ghosts": {
+   "name": "Ghosts Exposed (유령 촬영)",
+   "note": "핼러윈 이벤트: 유령마다 게임 시간 1시간 동안 출현"
   }
  }
 }

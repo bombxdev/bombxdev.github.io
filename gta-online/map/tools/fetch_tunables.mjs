@@ -25,6 +25,11 @@ const HASHED = {
   GUN_VAN_DAY_4: -22453923,
   GUN_VAN_DAY_5: -791771736,
   GUN_VAN_DAY_6: 722680368,
+  // Ghosts Exposed location sets (fm_content_ghosthunt.c); the enabled one is live.
+  GHOSTS_SET_2023: 1275644823,
+  GHOSTS_SET_2024: -818123201,
+  GHOSTS_SET_2025: -817993986,
+  GHOSTS_SET_2026: -1235590925,
 };
 
 function joaat(s) {

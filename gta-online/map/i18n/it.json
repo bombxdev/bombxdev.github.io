@@ -68,7 +68,15 @@
   "purpose.unlock": "Sbloccabili e collezioni",
   "purpose.service": "Negozi e servizi",
   "purpose.event": "Eventi stagionali",
-  "purpose.timed": "A tempo limitato"
+  "purpose.timed": "A tempo limitato",
+  "clock.game": "Ora di gioco {time}",
+  "ghost.window": "Appare {from}–{to} (ora di gioco)",
+  "ghost.next": "Prossima apparizione tra {m} min ({time})",
+  "ghost.now": "Visibile ora — mancano {m} min",
+  "ghost.nowShort": "ora",
+  "ghost.spots": "Compare in uno di {n} punti possibili",
+  "ghost.schedule": "Prossime apparizioni (ora locale)",
+  "purpose.activity": "Attività e sfide"
  },
  "cats": {
   "action_figures": {
@@ -149,6 +157,22 @@
   "weed_packages": {
    "name": "Pacchi d'erba",
    "note": "Evento speciale: 10 posti al giorno durante l'evento"
+  },
+  "street_dealers": {
+   "name": "Spacciatori di strada",
+   "note": "Giornaliero: 3 spacciatori al giorno"
+  },
+  "bike_time_trial": {
+   "name": "Cronometro in bici Junk Energy",
+   "note": "Giornaliero: 1 percorso su 14 al giorno"
+  },
+  "rc_time_trial": {
+   "name": "Cronometro RC Bandito",
+   "note": "Giornaliero: 1 percorso su 14 al giorno"
+  },
+  "ghosts": {
+   "name": "Ghosts Exposed",
+   "note": "Evento di Halloween: ogni fantasma appare per un'ora di gioco"
   }
  }
 }

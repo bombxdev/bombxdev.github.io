@@ -68,7 +68,15 @@
   "purpose.unlock": "Desbloqueos y colecciones",
   "purpose.service": "Tiendas y servicios",
   "purpose.event": "Eventos de temporada",
-  "purpose.timed": "Por tiempo limitado"
+  "purpose.timed": "Por tiempo limitado",
+  "clock.game": "Hora del juego {time}",
+  "ghost.window": "Aparece {from}–{to} (hora del juego)",
+  "ghost.next": "Próxima aparición en {m} min ({time})",
+  "ghost.now": "Ahora — quedan {m} min",
+  "ghost.nowShort": "ahora",
+  "ghost.spots": "Aparece en uno de {n} lugares posibles",
+  "ghost.schedule": "Próximas apariciones (tu hora local)",
+  "purpose.activity": "Actividades y desafíos"
  },
  "cats": {
   "action_figures": {
@@ -149,6 +157,22 @@
   "weed_packages": {
    "name": "Paquetes de hierba",
    "note": "Evento especial: 10 lugares por día mientras dure"
+  },
+  "street_dealers": {
+   "name": "Traficantes callejeros",
+   "note": "Diario: 3 traficantes cada día"
+  },
+  "bike_time_trial": {
+   "name": "Contrarreloj en bici Junk Energy",
+   "note": "Diario: 1 de 14 rutas cada día"
+  },
+  "rc_time_trial": {
+   "name": "Contrarreloj RC Bandito",
+   "note": "Diario: 1 de 14 rutas cada día"
+  },
+  "ghosts": {
+   "name": "Ghosts Exposed",
+   "note": "Evento de Halloween: cada fantasma aparece una hora del juego"
   }
  }
 }

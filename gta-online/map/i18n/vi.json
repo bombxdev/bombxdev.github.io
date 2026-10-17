@@ -68,7 +68,15 @@
   "purpose.unlock": "Mở khóa & sưu tầm",
   "purpose.service": "Cửa hàng & dịch vụ",
   "purpose.event": "Sự kiện theo mùa",
-  "purpose.timed": "Có thời hạn"
+  "purpose.timed": "Có thời hạn",
+  "clock.game": "Giờ trong game {time}",
+  "ghost.window": "Xuất hiện {from}–{to} (giờ trong game)",
+  "ghost.next": "Lần tới sau {m} phút ({time})",
+  "ghost.now": "Đang xuất hiện — còn {m} phút",
+  "ghost.nowShort": "bây giờ",
+  "ghost.spots": "Xuất hiện ở một trong {n} vị trí",
+  "ghost.schedule": "Lần xuất hiện tiếp theo (giờ địa phương)",
+  "purpose.activity": "Hoạt động & thử thách"
  },
  "cats": {
   "action_figures": {
@@ -149,6 +157,22 @@
   "weed_packages": {
    "name": "Gói cần sa",
    "note": "Sự kiện đặc biệt: 10 điểm mỗi ngày trong thời gian diễn ra"
+  },
+  "street_dealers": {
+   "name": "Kẻ buôn đường phố",
+   "note": "Hằng ngày: 3 người mỗi ngày"
+  },
+  "bike_time_trial": {
+   "name": "Đua tính giờ xe đạp Junk Energy",
+   "note": "Hằng ngày: 1 trong 14 tuyến mỗi ngày"
+  },
+  "rc_time_trial": {
+   "name": "Đua tính giờ RC Bandito",
+   "note": "Hằng ngày: 1 trong 14 tuyến mỗi ngày"
+  },
+  "ghosts": {
+   "name": "Ghosts Exposed (chụp ma)",
+   "note": "Sự kiện Halloween: mỗi con ma xuất hiện 1 giờ trong game"
   }
  }
 }

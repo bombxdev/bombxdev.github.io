@@ -68,7 +68,15 @@
   "purpose.unlock": "Buka kunci & koleksi",
   "purpose.service": "Toko & layanan",
   "purpose.event": "Event musiman",
-  "purpose.timed": "Waktu terbatas"
+  "purpose.timed": "Waktu terbatas",
+  "clock.game": "Waktu dalam game {time}",
+  "ghost.window": "Muncul {from}–{to} (waktu game)",
+  "ghost.next": "Muncul lagi dalam {m} menit ({time})",
+  "ghost.now": "Sedang muncul — sisa {m} menit",
+  "ghost.nowShort": "sekarang",
+  "ghost.spots": "Muncul di salah satu dari {n} titik",
+  "ghost.schedule": "Waktu muncul berikutnya (waktu lokal Anda)",
+  "purpose.activity": "Aktivitas & tantangan"
  },
  "cats": {
   "action_figures": {
@@ -149,6 +157,22 @@
   "weed_packages": {
    "name": "Paket Ganja",
    "note": "Event khusus: 10 titik per hari selama event"
+  },
+  "street_dealers": {
+   "name": "Pengedar jalanan",
+   "note": "Harian: 3 pengedar setiap hari"
+  },
+  "bike_time_trial": {
+   "name": "Time trial sepeda Junk Energy",
+   "note": "Harian: 1 dari 14 rute setiap hari"
+  },
+  "rc_time_trial": {
+   "name": "Time trial RC Bandito",
+   "note": "Harian: 1 dari 14 rute setiap hari"
+  },
+  "ghosts": {
+   "name": "Ghosts Exposed (foto hantu)",
+   "note": "Event Halloween: tiap hantu muncul selama satu jam dalam game"
   }
  }
 }

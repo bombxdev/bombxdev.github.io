@@ -68,7 +68,15 @@
   "purpose.unlock": "Freischaltungen & Sammlungen",
   "purpose.service": "Läden & Dienste",
   "purpose.event": "Saisonale Events",
-  "purpose.timed": "Zeitlich begrenzt"
+  "purpose.timed": "Zeitlich begrenzt",
+  "clock.game": "Spielzeit {time}",
+  "ghost.window": "Erscheint {from}–{to} (Spielzeit)",
+  "ghost.next": "Nächstes Erscheinen in {m} Min. ({time})",
+  "ghost.now": "Jetzt da — noch {m} Min.",
+  "ghost.nowShort": "jetzt",
+  "ghost.spots": "Erscheint an einem von {n} möglichen Orten",
+  "ghost.schedule": "Nächste Erscheinungen (deine Ortszeit)",
+  "purpose.activity": "Aktivitäten & Herausforderungen"
  },
  "cats": {
   "action_figures": {
@@ -149,6 +157,22 @@
   "weed_packages": {
    "name": "Gras-Pakete",
    "note": "Sonder-Event: 10 Orte pro Tag während des Events"
+  },
+  "street_dealers": {
+   "name": "Straßendealer",
+   "note": "Täglich: 3 Dealer pro Tag"
+  },
+  "bike_time_trial": {
+   "name": "Junk-Energy-Fahrrad-Zeitrennen",
+   "note": "Täglich: 1 von 14 Strecken pro Tag"
+  },
+  "rc_time_trial": {
+   "name": "RC-Bandito-Zeitrennen",
+   "note": "Täglich: 1 von 14 Strecken pro Tag"
+  },
+  "ghosts": {
+   "name": "Ghosts Exposed",
+   "note": "Halloween-Event: jeder Geist erscheint eine Spielstunde lang"
   }
  }
 }

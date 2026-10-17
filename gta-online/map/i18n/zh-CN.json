@@ -68,7 +68,15 @@
   "purpose.unlock": "解锁与收集",
   "purpose.service": "商店与服务",
   "purpose.event": "季节活动",
-  "purpose.timed": "限时"
+  "purpose.timed": "限时",
+  "clock.game": "游戏时间 {time}",
+  "ghost.window": "出现时间 {from}–{to}（游戏时间）",
+  "ghost.next": "{m} 分钟后出现（{time}）",
+  "ghost.now": "正在出现 — 还剩 {m} 分钟",
+  "ghost.nowShort": "现在",
+  "ghost.spots": "在 {n} 个可能地点之一出现",
+  "ghost.schedule": "下次出现时间（您的本地时间）",
+  "purpose.activity": "活动与挑战"
  },
  "cats": {
   "action_figures": {
@@ -149,6 +157,22 @@
   "weed_packages": {
    "name": "大麻包裹",
    "note": "特别活动：活动期间每天 10 个"
+  },
+  "street_dealers": {
+   "name": "街头毒贩",
+   "note": "每日：每天 3 名毒贩"
+  },
+  "bike_time_trial": {
+   "name": "Junk Energy 自行车计时赛",
+   "note": "每日：每天 14 条路线之一"
+  },
+  "rc_time_trial": {
+   "name": "RC 匪徒计时赛",
+   "note": "每日：每天 14 条路线之一"
+  },
+  "ghosts": {
+   "name": "Ghosts Exposed（拍鬼）",
+   "note": "万圣节活动：每个鬼魂只在游戏中的一小时出现"
   }
  }
 }

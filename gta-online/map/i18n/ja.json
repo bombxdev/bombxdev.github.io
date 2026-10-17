@@ -68,7 +68,15 @@
   "purpose.unlock": "アンロック・収集",
   "purpose.service": "ショップ・サービス",
   "purpose.event": "季節イベント",
-  "purpose.timed": "期間限定"
+  "purpose.timed": "期間限定",
+  "clock.game": "ゲーム内時刻 {time}",
+  "ghost.window": "出現 {from}–{to}（ゲーム内時刻）",
+  "ghost.next": "次の出現まで {m} 分（{time}）",
+  "ghost.now": "出現中 — 残り {m} 分",
+  "ghost.nowShort": "今",
+  "ghost.spots": "{n} か所の候補のいずれかに出現",
+  "ghost.schedule": "次の出現時刻（あなたの現地時間）",
+  "purpose.activity": "アクティビティ・チャレンジ"
  },
  "cats": {
   "action_figures": {
@@ -149,6 +157,22 @@
   "weed_packages": {
    "name": "大麻パッケージ",
    "note": "特別イベント: 期間中は毎日 10 か所"
+  },
+  "street_dealers": {
+   "name": "ストリートディーラー",
+   "note": "日替わり: 毎日 3 人"
+  },
+  "bike_time_trial": {
+   "name": "Junk Energy 自転車タイムトライアル",
+   "note": "日替わり: 14 ルートから毎日 1 つ"
+  },
+  "rc_time_trial": {
+   "name": "RC バンディート タイムトライアル",
+   "note": "日替わり: 14 ルートから毎日 1 つ"
+  },
+  "ghosts": {
+   "name": "Ghosts Exposed（幽霊撮影）",
+   "note": "ハロウィンイベント: 各幽霊はゲーム内の 1 時間だけ出現"
   }
  }
 }

@@ -68,7 +68,15 @@
   "purpose.unlock": "Unlocks & collections",
   "purpose.service": "Shops & services",
   "purpose.event": "Seasonal events",
-  "purpose.timed": "Time-limited"
+  "purpose.timed": "Time-limited",
+  "clock.game": "In-game time {time}",
+  "ghost.window": "Appears {from}–{to} (in-game time)",
+  "ghost.next": "Next appearance in {m} min ({time})",
+  "ghost.now": "Out now — {m} min left",
+  "ghost.nowShort": "now",
+  "ghost.spots": "Spawns at one of {n} possible spots",
+  "ghost.schedule": "Next appearances (your local time)",
+  "purpose.activity": "Activities & challenges"
  },
  "cats": {
   "action_figures": {
@@ -170,6 +178,26 @@
    "name": "Weed Packages",
    "note": "Special event: 10 spots per day while active",
    "info": "Special event: 10 packages appear each day while it runs."
+  },
+  "street_dealers": {
+   "name": "Street Dealers",
+   "note": "Daily: 3 dealers each day",
+   "info": "Three drug buyers set up shop at different spots every day, at least 1 km apart. Sell product from your businesses for cash."
+  },
+  "bike_time_trial": {
+   "name": "Junk Energy Bike Time Trial",
+   "note": "Daily: 1 of 14 routes each day",
+   "info": "A daily bicycle time trial; beat the par time for a cash and RP reward."
+  },
+  "rc_time_trial": {
+   "name": "RC Bandito Time Trial",
+   "note": "Daily: 1 of 14 routes each day",
+   "info": "A daily time trial with an RC Bandito; beat the par time for a reward."
+  },
+  "ghosts": {
+   "name": "Ghosts Exposed",
+   "note": "Halloween event: each ghost appears for one in-game hour",
+   "info": "Photograph each ghost with your phone camera while it is out. $20,000 per ghost, $50,000 bonus for all 10. The clock in the Daily panel shows the current in-game time."
   }
  }
 }

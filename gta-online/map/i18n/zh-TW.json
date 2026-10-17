@@ -68,7 +68,15 @@
   "purpose.unlock": "解鎖與收集",
   "purpose.service": "商店與服務",
   "purpose.event": "季節活動",
-  "purpose.timed": "限時"
+  "purpose.timed": "限時",
+  "clock.game": "遊戲時間 {time}",
+  "ghost.window": "出現時間 {from}–{to}（遊戲時間）",
+  "ghost.next": "{m} 分鐘後出現（{time}）",
+  "ghost.now": "正在出現 — 還剩 {m} 分鐘",
+  "ghost.nowShort": "現在",
+  "ghost.spots": "在 {n} 個可能地點之一出現",
+  "ghost.schedule": "下次出現時間（您的當地時間）",
+  "purpose.activity": "活動與挑戰"
  },
  "cats": {
   "action_figures": {
@@ -149,6 +157,22 @@
   "weed_packages": {
    "name": "大麻包裹",
    "note": "特別活動：活動期間每天 10 個"
+  },
+  "street_dealers": {
+   "name": "街頭毒販",
+   "note": "每日：每天 3 名毒販"
+  },
+  "bike_time_trial": {
+   "name": "Junk Energy 自行車計時賽",
+   "note": "每日：每天 14 條路線之一"
+  },
+  "rc_time_trial": {
+   "name": "RC 匪徒計時賽",
+   "note": "每日：每天 14 條路線之一"
+  },
+  "ghosts": {
+   "name": "Ghosts Exposed（拍鬼）",
+   "note": "萬聖節活動：每個鬼魂只在遊戲中的一小時出現"
   }
  }
 }

@@ -172,6 +172,11 @@ a { color: var(--accent); }
 .rw-k { color: var(--muted); }
 .pop-rw { margin: 6px 0; font-size: 12px; }
 
+.clock { font-variant-numeric: tabular-nums; }
+.rw.live, tr.live td { color: var(--ok); font-weight: 600; }
+.sched { border-collapse: collapse; font-size: 12px; font-variant-numeric: tabular-nums; margin-top: 2px; }
+.sched td { padding: 1px 10px 1px 0; }
+
 /* ---------- map ---------- */
 #mapWrap { position: relative; flex: 1; min-width: 0; }
 #map { position: absolute; inset: 0; background: #0fa8d2; }

@@ -68,7 +68,15 @@
   "purpose.unlock": "Kilit açma ve koleksiyonlar",
   "purpose.service": "Mağazalar ve hizmetler",
   "purpose.event": "Sezonluk etkinlikler",
-  "purpose.timed": "Sınırlı süreli"
+  "purpose.timed": "Sınırlı süreli",
+  "clock.game": "Oyun saati {time}",
+  "ghost.window": "{from}–{to} arası görünür (oyun saati)",
+  "ghost.next": "Sonraki görünme {m} dk sonra ({time})",
+  "ghost.now": "Şu an görünüyor — {m} dk kaldı",
+  "ghost.nowShort": "şimdi",
+  "ghost.spots": "{n} olası noktadan birinde çıkar",
+  "ghost.schedule": "Sonraki görünmeler (yerel saatiniz)",
+  "purpose.activity": "Etkinlikler ve meydan okumalar"
  },
  "cats": {
   "action_figures": {
@@ -149,6 +157,22 @@
   "weed_packages": {
    "name": "Ot paketleri",
    "note": "Özel etkinlik: etkinlik süresince günde 10 nokta"
+  },
+  "street_dealers": {
+   "name": "Sokak satıcıları",
+   "note": "Günlük: her gün 3 satıcı"
+  },
+  "bike_time_trial": {
+   "name": "Junk Energy bisiklet zamana karşı",
+   "note": "Günlük: her gün 14 rotadan 1'i"
+  },
+  "rc_time_trial": {
+   "name": "RC Bandito zamana karşı",
+   "note": "Günlük: her gün 14 rotadan 1'i"
+  },
+  "ghosts": {
+   "name": "Ghosts Exposed",
+   "note": "Cadılar Bayramı etkinliği: her hayalet bir oyun saati görünür"
   }
  }
 }

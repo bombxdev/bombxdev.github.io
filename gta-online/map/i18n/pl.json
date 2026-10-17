@@ -68,7 +68,15 @@
   "purpose.unlock": "Odblokowania i kolekcje",
   "purpose.service": "Sklepy i usługi",
   "purpose.event": "Wydarzenia sezonowe",
-  "purpose.timed": "Ograniczone czasowo"
+  "purpose.timed": "Ograniczone czasowo",
+  "clock.game": "Czas w grze {time}",
+  "ghost.window": "Pojawia się {from}–{to} (czas w grze)",
+  "ghost.next": "Następne pojawienie za {m} min ({time})",
+  "ghost.now": "Teraz — zostało {m} min",
+  "ghost.nowShort": "teraz",
+  "ghost.spots": "Pojawia się w jednym z {n} możliwych miejsc",
+  "ghost.schedule": "Najbliższe pojawienia (twój czas lokalny)",
+  "purpose.activity": "Aktywności i wyzwania"
  },
  "cats": {
   "action_figures": {
@@ -149,6 +157,22 @@
   "weed_packages": {
    "name": "Paczki zioła",
    "note": "Wydarzenie specjalne: 10 miejsc dziennie w trakcie"
+  },
+  "street_dealers": {
+   "name": "Dilerzy uliczni",
+   "note": "Dziennie: 3 dilerów każdego dnia"
+  },
+  "bike_time_trial": {
+   "name": "Jazda na czas rowerem Junk Energy",
+   "note": "Dziennie: 1 z 14 tras każdego dnia"
+  },
+  "rc_time_trial": {
+   "name": "Jazda na czas RC Bandito",
+   "note": "Dziennie: 1 z 14 tras każdego dnia"
+  },
+  "ghosts": {
+   "name": "Ghosts Exposed",
+   "note": "Wydarzenie halloweenowe: każdy duch pojawia się na godzinę gry"
   }
  }
 }
