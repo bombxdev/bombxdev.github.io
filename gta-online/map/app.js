@@ -474,6 +474,32 @@
     }
   }
 
+  // Show only `items` on the map with a list in the results box (planner).
+  function showItemsOnMap(items, title) {
+    $('search').value = '';
+    $('clearSearch').hidden = false;
+    state.query = '';
+    tempLayer.clearLayers();
+    state.matches = new Set(items);
+    refreshMarkers();
+    var box = $('results');
+    box.hidden = false;
+    box.innerHTML = '<div class="summary">' + esc(title) + '</div>';
+    items.forEach(function (item) {
+      var cat = state.catByKey[item.cat];
+      var b = document.createElement('button');
+      b.className = 'result' + (state.collected.has(idOf(item)) ? ' done' : '');
+      b.innerHTML = '<span class="res-blip" style="--c:' + cat.color + '">' + blipImg(cat) + '</span><span><div class="name">' +
+        esc(I18N.catName(cat.key)) + ' ' + esc(itemLabel(item)) + '</div><div class="meta">' + coordText(item.x, item.y) + '</div></span>';
+      b.addEventListener('click', function () { focusItem(item); });
+      box.appendChild(b);
+    });
+    if (items.length) {
+      map.flyToBounds(L.latLngBounds(items.map(function (it) { return [it.y, it.x]; })).pad(0.15), { maxZoom: 6, duration: 0.6 });
+    }
+    if (isMobile()) setSidebar(true);
+  }
+
   function gotoCoord(x, y) {
     tempLayer.clearLayers();
     var m = L.marker([y, x]).addTo(tempLayer);
@@ -670,6 +696,7 @@
     }
     renderCategories();
     refreshMarkers();
+    document.dispatchEvent(new CustomEvent('gtao:today'));
   }
 
   $('todayOnly').checked = state.todayOnly;
@@ -721,6 +748,7 @@
       renderToday();
       if (state.query) renderResults();
     }
+    document.dispatchEvent(new CustomEvent('gtao:lang'));
   }
 
   function initLanguagePicker() {
@@ -849,8 +877,16 @@
         toast(t('import.done'));
       }
     } catch (e) { /* ignore */ }
+    document.dispatchEvent(new CustomEvent('gtao:ready'));
   }).catch(function (err) {
     console.error(err);
     toast(t('toast.loadError'));
   });
+
+  // Small API for planner.js.
+  window.GTAOMap = {
+    state: state, store: STORE, idOf: idOf, itemLabel: itemLabel, blipImg: blipImg, esc: esc,
+    money: function (n) { return money(n); }, num: function (n) { return num(n); },
+    showItemsOnMap: showItemsOnMap, setSidebar: function (open) { setSidebar(open); }
+  };
 })();
