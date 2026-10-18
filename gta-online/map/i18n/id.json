@@ -178,7 +178,8 @@
   "ee.hint.strict": "Diurutkan prioritas 1; seri dilihat 2, 3, 4",
   "ee.hint.name": "Urut A–Z",
   "ee.hint.today": "Mobil hari ini lebih dulu",
-  "ee.overall": "Skor keseluruhan {score}/100 — #{n} dari {total} sesuai pengaturanmu"
+  "ee.overall": "Skor keseluruhan {score}/100 — #{n} dari {total} sesuai pengaturanmu",
+  "pop.noteSaved": "tersimpan"
  },
  "cats": {
   "action_figures": {

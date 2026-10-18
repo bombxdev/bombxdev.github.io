@@ -178,7 +178,25 @@
   "ee.hint.strict": "เรียงตามลำดับ 1 ถ้าเท่ากันดูลำดับ 2, 3, 4",
   "ee.hint.name": "เรียง ก–ฮ / A–Z",
   "ee.hint.today": "รถในรายการวันนี้ขึ้นก่อน",
-  "ee.overall": "คะแนนรวม {score}/100 — อันดับ {n} จาก {total} ตามการจัดอันดับที่ตั้งไว้"
+  "ee.overall": "คะแนนรวม {score}/100 — อันดับ {n} จาก {total} ตามการจัดอันดับที่ตั้งไว้",
+  "pop.noteSaved": "บันทึกแล้ว",
+  "hint.add": "เพิ่มรูป",
+  "hint.delete": "ลบ",
+  "hint.captionPrompt": "คำอธิบายรูป (ไม่ใส่ก็ได้) เช่น \"หลังพุ่มไม้ที่ 3 ขวาประตู\":",
+  "hint.uploading": "กำลังอัปโหลดรูป…",
+  "hint.uploaded": "เพิ่มรูปแล้ว คนอื่นจะเห็นหลัง GitHub Pages build เสร็จ (ประมาณ 1 นาที)",
+  "hint.failed": "ไม่สำเร็จ: {msg}",
+  "hint.confirmDelete": "ลบรูปนี้ออกจากเว็บ?",
+  "hint.deleted": "ลบรูปแล้ว",
+  "hint.notOwner": "token นี้ไม่ใช่ของเจ้าของเว็บ",
+  "hint.adminTitle": "เข้าสู่ระบบแอดมิน (เฉพาะเจ้าของเว็บ)",
+  "hint.tokenHelp": "วาง GitHub fine-grained token: เลือกเฉพาะ repo นี้ สิทธิ์ Contents = Read and write สร้างได้ที่",
+  "hint.remember": "จำไว้ในเครื่องนี้",
+  "hint.signIn": "เข้าสู่ระบบ",
+  "hint.signOut": "ออกจากระบบ",
+  "hint.signedIn": "แอดมิน: {login}",
+  "hint.signedOut": "ออกจากระบบแล้ว ลบ token ออกจากเบราว์เซอร์นี้แล้ว",
+  "hint.howTo": "เปิดจุดไหนก็ได้บนแผนที่ แล้วกด \"เพิ่มรูป\" ใน popup"
  },
  "cats": {
   "action_figures": {

@@ -178,7 +178,8 @@
   "ee.hint.strict": "優先1で並べ、同じなら2・3・4で比較",
   "ee.hint.name": "名前順",
   "ee.hint.today": "この日の車を先に",
-  "ee.overall": "総合スコア {score}/100 — 設定した順位で{total}台中{n}位"
+  "ee.overall": "総合スコア {score}/100 — 設定した順位で{total}台中{n}位",
+  "pop.noteSaved": "保存しました"
  },
  "cats": {
   "action_figures": {

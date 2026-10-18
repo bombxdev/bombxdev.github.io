@@ -178,7 +178,8 @@
   "ee.hint.strict": "Według priorytetu 1; remisy wg 2, 3, 4",
   "ee.hint.name": "A–Z",
   "ee.hint.today": "Najpierw auta dnia",
-  "ee.overall": "Wynik ogólny {score}/100 — {n}. z {total} według twoich ustawień"
+  "ee.overall": "Wynik ogólny {score}/100 — {n}. z {total} według twoich ustawień",
+  "pop.noteSaved": "zapisano"
  },
  "cats": {
   "action_figures": {

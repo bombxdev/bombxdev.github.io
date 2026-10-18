@@ -392,3 +392,20 @@ img.blip { display: block; width: 16px; height: 16px; image-rendering: auto; poi
 .ee-prio.off label { opacity: .4; pointer-events: none; }
 .ee-rank { font-size: 11px; font-weight: 600; color: #f5d565; }
 .ee-overall { font-size: 13px; margin: 8px 0 2px; color: #f5d565; }
+.note-saved { color: var(--ok); margin-left: 6px; }
+
+/* Location photos + admin */
+.hint-photos { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0; }
+.hint-photos figure { margin: 0; flex: 1 1 140px; max-width: 100%; }
+.hint-img { display: block; padding: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; cursor: zoom-in; background: #000; width: 100%; }
+.hint-img img { display: block; width: 100%; max-height: 170px; object-fit: cover; }
+.hint-photos figcaption { font-size: 12px; margin-top: 3px; }
+.hint-del { margin-top: 4px; font-size: 11px; padding: 2px 8px; }
+.hint-add { font-size: 12px; align-self: flex-start; }
+.hint-viewer { position: fixed; inset: 0; z-index: 4000; background: rgba(0, 0, 0, .88); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 16px; cursor: zoom-out; }
+.hint-viewer[hidden] { display: none; }
+.hint-viewer img { max-width: 100%; max-height: 85vh; object-fit: contain; border-radius: 8px; }
+.hint-viewer div { max-width: 700px; text-align: center; }
+.admin-box { margin: 8px 16px; padding: 10px; border: 1px dashed #c9a227; border-radius: 10px; display: grid; gap: 6px; font-size: 13px; }
+.admin-box p { margin: 0; }
+.admin-box input[type=password] { padding: 7px 9px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel-2); color: var(--text); font-size: 14px; }

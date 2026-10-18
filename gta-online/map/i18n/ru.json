@@ -178,7 +178,8 @@
   "ee.hint.strict": "По приоритету 1; при равенстве — 2, 3, 4",
   "ee.hint.name": "По алфавиту",
   "ee.hint.today": "Сначала машины дня",
-  "ee.overall": "Общий балл {score}/100 — № {n} из {total} по вашим настройкам"
+  "ee.overall": "Общий балл {score}/100 — № {n} из {total} по вашим настройкам",
+  "pop.noteSaved": "сохранено"
  },
  "cats": {
   "action_figures": {

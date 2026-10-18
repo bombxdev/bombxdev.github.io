@@ -178,7 +178,8 @@
   "ee.hint.strict": "우선순위 1로 정렬, 같으면 2, 3, 4",
   "ee.hint.name": "이름순",
   "ee.hint.today": "이 날의 차량 먼저",
-  "ee.overall": "종합 점수 {score}/100 — 설정 기준 {total}대 중 {n}위"
+  "ee.overall": "종합 점수 {score}/100 — 설정 기준 {total}대 중 {n}위",
+  "pop.noteSaved": "저장됨"
  },
  "cats": {
   "action_figures": {

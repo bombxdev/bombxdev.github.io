@@ -178,7 +178,8 @@
   "ee.hint.strict": "Ordenado por la prioridad 1; empates por 2, 3, 4",
   "ee.hint.name": "Orden A–Z",
   "ee.hint.today": "Primero los coches del día",
-  "ee.overall": "Puntuación total {score}/100 — n.º {n} de {total} con tu clasificación"
+  "ee.overall": "Puntuación total {score}/100 — n.º {n} de {total} con tu clasificación",
+  "pop.noteSaved": "guardado"
  },
  "cats": {
   "action_figures": {

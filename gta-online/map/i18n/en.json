@@ -178,7 +178,25 @@
   "ee.hint.strict": "Sorted by priority 1; ties broken by 2, 3, 4",
   "ee.hint.name": "Sorted A–Z",
   "ee.hint.today": "This day's cars first",
-  "ee.overall": "Overall score {score}/100 — #{n} of {total} with your ranking settings"
+  "ee.overall": "Overall score {score}/100 — #{n} of {total} with your ranking settings",
+  "pop.noteSaved": "saved",
+  "hint.add": "Add photo",
+  "hint.delete": "Delete",
+  "hint.captionPrompt": "Caption for this photo (optional), e.g. \"behind the 3rd bush, right of the door\":",
+  "hint.uploading": "Uploading photo…",
+  "hint.uploaded": "Photo added. Everyone sees it after GitHub Pages rebuilds (about 1 minute).",
+  "hint.failed": "Failed: {msg}",
+  "hint.confirmDelete": "Delete this photo from the site?",
+  "hint.deleted": "Photo deleted.",
+  "hint.notOwner": "This token does not belong to the site owner.",
+  "hint.adminTitle": "Admin sign-in (site owner only)",
+  "hint.tokenHelp": "Paste a GitHub fine-grained token: only this repository, permission Contents = Read and write. Create one at",
+  "hint.remember": "Remember on this device",
+  "hint.signIn": "Sign in",
+  "hint.signOut": "Sign out",
+  "hint.signedIn": "Admin: {login}",
+  "hint.signedOut": "Signed out. The token was removed from this browser.",
+  "hint.howTo": "Open any point on the map and use \"Add photo\" in its popup."
  },
  "cats": {
   "action_figures": {

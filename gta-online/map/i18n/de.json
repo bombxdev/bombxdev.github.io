@@ -178,7 +178,8 @@
   "ee.hint.strict": "Nach Priorität 1 sortiert; Gleichstand nach 2, 3, 4",
   "ee.hint.name": "Sortiert A–Z",
   "ee.hint.today": "Autos des Tages zuerst",
-  "ee.overall": "Gesamtpunkte {score}/100 — Platz {n} von {total} mit deiner Rangfolge"
+  "ee.overall": "Gesamtpunkte {score}/100 — Platz {n} von {total} mit deiner Rangfolge",
+  "pop.noteSaved": "gespeichert"
  },
  "cats": {
   "action_figures": {

@@ -178,7 +178,8 @@
   "ee.hint.strict": "Ordinato per priorità 1; pareggi per 2, 3, 4",
   "ee.hint.name": "Ordine A–Z",
   "ee.hint.today": "Prima le auto del giorno",
-  "ee.overall": "Punteggio totale {score}/100 — n. {n} su {total} con la tua classifica"
+  "ee.overall": "Punteggio totale {score}/100 — n. {n} su {total} con la tua classifica",
+  "pop.noteSaved": "salvato"
  },
  "cats": {
   "action_figures": {

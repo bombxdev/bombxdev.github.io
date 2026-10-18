@@ -178,7 +178,8 @@
   "ee.hint.strict": "Xếp theo ưu tiên 1; bằng nhau thì xét 2, 3, 4",
   "ee.hint.name": "Xếp A–Z",
   "ee.hint.today": "Xe của ngày lên trước",
-  "ee.overall": "Điểm tổng {score}/100 — hạng {n}/{total} theo cài đặt của bạn"
+  "ee.overall": "Điểm tổng {score}/100 — hạng {n}/{total} theo cài đặt của bạn",
+  "pop.noteSaved": "đã lưu"
  },
  "cats": {
   "action_figures": {
