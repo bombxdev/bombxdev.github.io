@@ -150,10 +150,6 @@
   "ee.set.high": "高級車の駐車地点",
   "ee.set.std": "一般車の駐車地点",
   "ee.sort": "並べ替え：",
-  "ee.sort.name": "名前",
-  "ee.sort.speed": "最高速度",
-  "ee.sort.accel": "加速",
-  "ee.sort.today": "この日のリスト",
   "ee.badge": "今日 {n}番目",
   "ee.found": "輸出車 {n}台",
   "ee.popHere": "この日のリストにあり、ここに停まる可能性あり：",
@@ -171,9 +167,18 @@
   "ee.showSpots": "候補の{n}か所を地図に表示",
   "ee.filter": "名前で絞り込み…",
   "ee.legend": "バー：",
-  "ee.sort.brake": "ブレーキ",
-  "ee.sort.traction": "トラクション",
-  "credits.imagesVehicles": "車の画像（Exotic Exports）。"
+  "credits.imagesVehicles": "車の画像（Exotic Exports）。",
+  "ee.mode.score": "総合ベスト（重み付け）",
+  "ee.mode.strict": "優先順位順（厳密）",
+  "ee.mode.name": "名前",
+  "ee.mode.today": "この日のリスト",
+  "ee.prio": "優先 {n}",
+  "ee.score": "点",
+  "ee.hint.score": "スコア = 優先順位に応じた性能の加重平均",
+  "ee.hint.strict": "優先1で並べ、同じなら2・3・4で比較",
+  "ee.hint.name": "名前順",
+  "ee.hint.today": "この日の車を先に",
+  "ee.overall": "総合スコア {score}/100 — 設定した順位で{total}台中{n}位"
  },
  "cats": {
   "action_figures": {

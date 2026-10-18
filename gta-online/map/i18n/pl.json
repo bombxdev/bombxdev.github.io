@@ -150,10 +150,6 @@
   "ee.set.high": "Miejsca aut luksusowych",
   "ee.set.std": "Miejsca zwykłych aut",
   "ee.sort": "Sortuj:",
-  "ee.sort.name": "Nazwa",
-  "ee.sort.speed": "Prędkość maks.",
-  "ee.sort.accel": "Przyspieszenie",
-  "ee.sort.today": "Lista dnia",
   "ee.badge": "Dziś nr {n}",
   "ee.found": "Aut na eksport: {n}",
   "ee.popHere": "Na liście tego dnia i może tu stać:",
@@ -171,9 +167,18 @@
   "ee.showSpots": "Pokaż {n} możliwych miejsc na mapie",
   "ee.filter": "Filtruj po nazwie…",
   "ee.legend": "Paski:",
-  "ee.sort.brake": "Hamowanie",
-  "ee.sort.traction": "Przyczepność",
-  "credits.imagesVehicles": "Zdjęcia pojazdów (Exotic Exports)."
+  "credits.imagesVehicles": "Zdjęcia pojazdów (Exotic Exports).",
+  "ee.mode.score": "Najlepsze ogólnie (ważone)",
+  "ee.mode.strict": "Kolejność priorytetów (ściśle)",
+  "ee.mode.name": "Nazwa",
+  "ee.mode.today": "Lista dnia",
+  "ee.prio": "Priorytet {n}",
+  "ee.score": "pkt",
+  "ee.hint.score": "Wynik = średnia ważona statystyk według twoich priorytetów",
+  "ee.hint.strict": "Według priorytetu 1; remisy wg 2, 3, 4",
+  "ee.hint.name": "A–Z",
+  "ee.hint.today": "Najpierw auta dnia",
+  "ee.overall": "Wynik ogólny {score}/100 — {n}. z {total} według twoich ustawień"
  },
  "cats": {
   "action_figures": {

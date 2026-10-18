@@ -150,10 +150,6 @@
   "ee.set.high": "Lüks araç noktaları",
   "ee.set.std": "Normal araç noktaları",
   "ee.sort": "Sırala:",
-  "ee.sort.name": "Ad",
-  "ee.sort.speed": "Azami hız",
-  "ee.sort.accel": "Hızlanma",
-  "ee.sort.today": "Günün listesi",
   "ee.badge": "Bugün #{n}",
   "ee.found": "{n} ihracat aracı",
   "ee.popHere": "Bu günün listesinde ve burada olabilir:",
@@ -171,9 +167,18 @@
   "ee.showSpots": "{n} olası noktayı haritada göster",
   "ee.filter": "Ada göre süz…",
   "ee.legend": "Çubuklar:",
-  "ee.sort.brake": "Frenleme",
-  "ee.sort.traction": "Yol tutuş",
-  "credits.imagesVehicles": "Araç görselleri (Exotic Exports)."
+  "credits.imagesVehicles": "Araç görselleri (Exotic Exports).",
+  "ee.mode.score": "Genel en iyi (ağırlıklı)",
+  "ee.mode.strict": "Öncelik sırası (katı)",
+  "ee.mode.name": "Ad",
+  "ee.mode.today": "Günün listesi",
+  "ee.prio": "Öncelik {n}",
+  "ee.score": "puan",
+  "ee.hint.score": "Puan = önceliğinize göre değerlerin ağırlıklı ortalaması",
+  "ee.hint.strict": "Öncelik 1'e göre; eşitlikte 2, 3, 4",
+  "ee.hint.name": "A–Z",
+  "ee.hint.today": "Önce günün araçları",
+  "ee.overall": "Genel puan {score}/100 — ayarlarınıza göre {total} içinde #{n}"
  },
  "cats": {
   "action_figures": {

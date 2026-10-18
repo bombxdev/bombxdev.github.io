@@ -150,10 +150,6 @@
   "ee.set.high": "고급 차량 주차 지점",
   "ee.set.std": "일반 차량 주차 지점",
   "ee.sort": "정렬:",
-  "ee.sort.name": "이름",
-  "ee.sort.speed": "최고 속도",
-  "ee.sort.accel": "가속",
-  "ee.sort.today": "이 날의 목록",
   "ee.badge": "오늘 {n}번",
   "ee.found": "수출 차량 {n}대",
   "ee.popHere": "이 날의 목록에 있으며 여기 주차될 수 있음:",
@@ -171,9 +167,18 @@
   "ee.showSpots": "가능한 {n}곳을 지도에 표시",
   "ee.filter": "이름으로 필터…",
   "ee.legend": "막대:",
-  "ee.sort.brake": "제동",
-  "ee.sort.traction": "접지력",
-  "credits.imagesVehicles": "차량 이미지 (Exotic Exports)."
+  "credits.imagesVehicles": "차량 이미지 (Exotic Exports).",
+  "ee.mode.score": "종합 최고 (가중치)",
+  "ee.mode.strict": "우선순위 순 (엄격)",
+  "ee.mode.name": "이름",
+  "ee.mode.today": "이 날의 목록",
+  "ee.prio": "우선순위 {n}",
+  "ee.score": "점",
+  "ee.hint.score": "점수 = 우선순위에 따른 성능의 가중 평균",
+  "ee.hint.strict": "우선순위 1로 정렬, 같으면 2, 3, 4",
+  "ee.hint.name": "이름순",
+  "ee.hint.today": "이 날의 차량 먼저",
+  "ee.overall": "종합 점수 {score}/100 — 설정 기준 {total}대 중 {n}위"
  },
  "cats": {
   "action_figures": {

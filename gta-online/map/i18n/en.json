@@ -150,10 +150,6 @@
   "ee.set.high": "High-end car spots",
   "ee.set.std": "Regular car spots",
   "ee.sort": "Sort:",
-  "ee.sort.name": "Name",
-  "ee.sort.speed": "Top speed",
-  "ee.sort.accel": "Acceleration",
-  "ee.sort.today": "This day's list",
   "ee.badge": "Today #{n}",
   "ee.found": "{n} export cars",
   "ee.popHere": "On this day's list and may be parked here:",
@@ -171,9 +167,18 @@
   "ee.showSpots": "Show the {n} possible spots on the map",
   "ee.filter": "Filter by name…",
   "ee.legend": "Bars:",
-  "ee.sort.brake": "Braking",
-  "ee.sort.traction": "Traction",
-  "credits.imagesVehicles": "Vehicle pictures (Exotic Exports)."
+  "credits.imagesVehicles": "Vehicle pictures (Exotic Exports).",
+  "ee.mode.score": "Best overall (weighted)",
+  "ee.mode.strict": "Priority order (strict)",
+  "ee.mode.name": "Name",
+  "ee.mode.today": "This day's list",
+  "ee.prio": "Priority {n}",
+  "ee.score": "score",
+  "ee.hint.score": "Score = weighted average of the stats in your priority order",
+  "ee.hint.strict": "Sorted by priority 1; ties broken by 2, 3, 4",
+  "ee.hint.name": "Sorted A–Z",
+  "ee.hint.today": "This day's cars first",
+  "ee.overall": "Overall score {score}/100 — #{n} of {total} with your ranking settings"
  },
  "cats": {
   "action_figures": {

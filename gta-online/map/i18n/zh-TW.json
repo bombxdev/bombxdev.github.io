@@ -150,10 +150,6 @@
   "ee.set.high": "高級車停放點",
   "ee.set.std": "一般車停放點",
   "ee.sort": "排序：",
-  "ee.sort.name": "名稱",
-  "ee.sort.speed": "最高速度",
-  "ee.sort.accel": "加速",
-  "ee.sort.today": "當天清單",
   "ee.badge": "今天第 {n} 輛",
   "ee.found": "{n} 輛出口車",
   "ee.popHere": "在當天清單上且可能停在這裡：",
@@ -171,9 +167,18 @@
   "ee.showSpots": "在地圖上顯示 {n} 個可能地點",
   "ee.filter": "依名稱篩選…",
   "ee.legend": "長條：",
-  "ee.sort.brake": "煞車",
-  "ee.sort.traction": "抓地力",
-  "credits.imagesVehicles": "車輛圖片（Exotic Exports）。"
+  "credits.imagesVehicles": "車輛圖片（Exotic Exports）。",
+  "ee.mode.score": "綜合最佳（加權）",
+  "ee.mode.strict": "依優先順序（嚴格）",
+  "ee.mode.name": "名稱",
+  "ee.mode.today": "當天清單",
+  "ee.prio": "優先 {n}",
+  "ee.score": "分",
+  "ee.hint.score": "分數 = 依你的優先順序對各項性能加權平均",
+  "ee.hint.strict": "依優先 1 排序，相同時依 2、3、4",
+  "ee.hint.name": "依名稱排序",
+  "ee.hint.today": "當天車輛優先",
+  "ee.overall": "綜合分 {score}/100 — 依你的設定排第 {n}/{total}"
  },
  "cats": {
   "action_figures": {

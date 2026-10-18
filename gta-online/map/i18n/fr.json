@@ -150,10 +150,6 @@
   "ee.set.high": "Emplacements voitures haut de gamme",
   "ee.set.std": "Emplacements voitures normales",
   "ee.sort": "Trier :",
-  "ee.sort.name": "Nom",
-  "ee.sort.speed": "Vitesse max.",
-  "ee.sort.accel": "Accélération",
-  "ee.sort.today": "Liste du jour",
   "ee.badge": "Aujourd'hui n° {n}",
   "ee.found": "{n} voitures d'export",
   "ee.popHere": "Sur la liste de ce jour et peut être garée ici :",
@@ -171,9 +167,18 @@
   "ee.showSpots": "Voir les {n} emplacements possibles sur la carte",
   "ee.filter": "Filtrer par nom…",
   "ee.legend": "Barres :",
-  "ee.sort.brake": "Freinage",
-  "ee.sort.traction": "Adhérence",
-  "credits.imagesVehicles": "Images des véhicules (Exotic Exports)."
+  "credits.imagesVehicles": "Images des véhicules (Exotic Exports).",
+  "ee.mode.score": "Meilleur global (pondéré)",
+  "ee.mode.strict": "Ordre de priorité (strict)",
+  "ee.mode.name": "Nom",
+  "ee.mode.today": "Liste du jour",
+  "ee.prio": "Priorité {n}",
+  "ee.score": "score",
+  "ee.hint.score": "Score = moyenne pondérée des stats selon votre priorité",
+  "ee.hint.strict": "Trié par priorité 1 ; égalités départagées par 2, 3, 4",
+  "ee.hint.name": "Tri A–Z",
+  "ee.hint.today": "Voitures du jour d'abord",
+  "ee.overall": "Score global {score}/100 — n° {n} sur {total} avec votre classement"
  },
  "cats": {
   "action_figures": {

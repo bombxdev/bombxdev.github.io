@@ -150,10 +150,6 @@
   "ee.set.high": "Điểm đỗ xe cao cấp",
   "ee.set.std": "Điểm đỗ xe thường",
   "ee.sort": "Sắp xếp:",
-  "ee.sort.name": "Tên",
-  "ee.sort.speed": "Tốc độ tối đa",
-  "ee.sort.accel": "Tăng tốc",
-  "ee.sort.today": "Danh sách ngày",
   "ee.badge": "Hôm nay #{n}",
   "ee.found": "{n} xe xuất khẩu",
   "ee.popHere": "Có trong danh sách ngày này và có thể đỗ ở đây:",
@@ -171,9 +167,18 @@
   "ee.showSpots": "Hiện {n} điểm có thể đỗ trên bản đồ",
   "ee.filter": "Lọc theo tên…",
   "ee.legend": "Thanh:",
-  "ee.sort.brake": "Phanh",
-  "ee.sort.traction": "Độ bám",
-  "credits.imagesVehicles": "Hình ảnh xe (Exotic Exports)."
+  "credits.imagesVehicles": "Hình ảnh xe (Exotic Exports).",
+  "ee.mode.score": "Tốt nhất tổng thể (có trọng số)",
+  "ee.mode.strict": "Theo thứ tự ưu tiên (chặt)",
+  "ee.mode.name": "Tên",
+  "ee.mode.today": "Danh sách ngày",
+  "ee.prio": "Ưu tiên {n}",
+  "ee.score": "điểm",
+  "ee.hint.score": "Điểm = trung bình có trọng số của chỉ số theo thứ tự ưu tiên",
+  "ee.hint.strict": "Xếp theo ưu tiên 1; bằng nhau thì xét 2, 3, 4",
+  "ee.hint.name": "Xếp A–Z",
+  "ee.hint.today": "Xe của ngày lên trước",
+  "ee.overall": "Điểm tổng {score}/100 — hạng {n}/{total} theo cài đặt của bạn"
  },
  "cats": {
   "action_figures": {
