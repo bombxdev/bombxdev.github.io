@@ -197,6 +197,7 @@
   // category, and extra search results shown above the map points.
   var POPUP_EXTRA = {};
   var SEARCH_EXTRA = [];
+  var POPUP_ALL = [];   // extra popup HTML for every point (photos)
   function itemLabel(item) { return item.label || '#' + item.n; }
   function fmt(n) { return (Math.round(n * 100) / 100).toFixed(2); }
   function coordText(x, y, z) { return fmt(x) + ', ' + fmt(y) + (z === undefined ? '' : ', ' + fmt(z)); }
@@ -342,11 +343,12 @@
       (item.ghost ? '<div class="pop-rw">' + ghostTimingHtml(item.ghost) + '</div>' : '') +
       (rewardHtml(cat) ? '<div class="pop-rw">' + rewardHtml(cat) + '</div>' : '') +
       (POPUP_EXTRA[item.cat] ? POPUP_EXTRA[item.cat](item) : '') +
+      POPUP_ALL.map(function (fn) { return fn(item); }).join('') +
       whereHtml(item) +
       '<div class="pop-mini" data-mini="' + idOf(item) + '"></div>' +
       '<div class="muted small">' + esc(t('pop.closeup')) + '</div>' +
       '<div>' + esc(t('pop.coords')) + ': <code>' + coordText(item.x, item.y, item.z) + '</code></div>' +
-      '<label class="pop-note"><span>📝 ' + esc(t('pop.myNote')) + '</span><textarea rows="2" data-note="' + idOf(item) + '" placeholder="' +
+      '<label class="pop-note"><span>📝 ' + esc(t('pop.myNote')) + ' <span class="note-saved" hidden>✓ ' + esc(t('pop.noteSaved')) + '</span></span><textarea rows="2" data-note="' + idOf(item) + '" placeholder="' +
         esc(t('pop.notePh')) + '">' + esc(state.notes[idOf(item)] || '') + '</textarea></label>' +
       '<div class="actions">' +
       (NOT_COLLECTABLE[item.cat] ? '' : '<button class="chip primary" data-act="toggle">' + esc(t(done ? 'pop.markUndone' : 'pop.markDone')) + '</button>') +
@@ -364,7 +366,9 @@
         setActive(item);
         history.replaceState(null, '', '#' + idOf(item));
       });
-      item.marker.on('popupclose', function () {
+      item.marker.on('popupclose', function (e) {
+        var el = e.popup.getElement();
+        if (el) saveNote(el.querySelector('[data-note]'));
         if (miniMap) { miniMap.remove(); miniMap = null; }
         if (state.active === item) setActive(null);
         if (location.hash === '#' + idOf(item)) history.replaceState(null, '', location.pathname + location.search);
@@ -372,11 +376,21 @@
     });
   }
 
+  // Redraw a marker's icon. While Leaflet is removing a marker (its popup
+  // closes during removal) setIcon would create a new icon element that is
+  // never removed: a stray pin that stays on the map and drifts when zooming.
+  // So only redraw icons that are on the map; others get it when re-added.
+  function updateIcon(item) {
+    if (!item || !item.marker) return;
+    if (item.marker._icon) item.marker.setIcon(makeIcon(item));
+    else item.marker.options.icon = makeIcon(item);
+  }
+
   function setActive(item) {
     var prev = state.active;
     state.active = item;
-    if (prev && prev.marker) prev.marker.setIcon(makeIcon(prev));
-    if (item && item.marker) item.marker.setIcon(makeIcon(item));
+    updateIcon(prev);
+    updateIcon(item);
   }
 
   function isShown(item) {
@@ -400,7 +414,7 @@
     var id = idOf(item);
     if (state.collected.has(id)) state.collected.delete(id); else state.collected.add(id);
     STORE.set('collected', Array.from(state.collected));
-    item.marker.setIcon(makeIcon(item));
+    updateIcon(item);
     renderCategories();
     if (state.query) renderResults();
     refreshMarkers();
@@ -709,12 +723,20 @@
       .openOn(map);
   });
   // Personal notes typed in a popup (saved locally, included in backups).
-  map.getContainer().addEventListener('input', function (ev) {
-    var id = ev.target.getAttribute && ev.target.getAttribute('data-note');
+  // Notes: saved on every keystroke, on change/blur and when the popup closes
+  // (some mobile keyboards only report the text at the end).
+  function saveNote(el) {
+    var id = el && el.getAttribute && el.getAttribute('data-note');
     if (!id) return;
-    var v = ev.target.value.trim();
-    if (v) state.notes[id] = ev.target.value; else delete state.notes[id];
+    var v = el.value;
+    if ((state.notes[id] || '') === (v.trim() ? v : '')) return;
+    if (v.trim()) state.notes[id] = v; else delete state.notes[id];
     STORE.set('notes', state.notes);
+    var ok = el.parentNode && el.parentNode.querySelector('.note-saved');
+    if (ok) { ok.hidden = false; clearTimeout(ok._t); ok._t = setTimeout(function () { ok.hidden = true; }, 1500); }
+  }
+  ['input', 'change', 'compositionend', 'focusout'].forEach(function (type) {
+    document.addEventListener(type, function (ev) { saveNote(ev.target); }, true);
   });
   map.getContainer().addEventListener('keydown', function (ev) {
     if (ev.target.tagName === 'TEXTAREA') ev.stopPropagation();
@@ -1019,6 +1041,7 @@
         toast(t('import.done'));
       }
     } catch (e) { /* ignore */ }
+    window.GTAOMap.ready = true;   // for scripts that load after this point
     document.dispatchEvent(new CustomEvent('gtao:ready'));
   }).catch(function (err) {
     console.error(err);
@@ -1032,6 +1055,12 @@
     showItemsOnMap: showItemsOnMap, showPanel: showPanel, setSidebar: function (open) { setSidebar(open); },
     focusItem: function (item) { focusItem(item); }, isMobile: function () { return isMobile(); },
     dayFmt: function () { return dayFmt; },
-    popupExtra: POPUP_EXTRA, searchExtra: SEARCH_EXTRA
+    popupExtra: POPUP_EXTRA, searchExtra: SEARCH_EXTRA, popupAll: POPUP_ALL, toast: function (m) { toast(m); },
+    findItem: function (id) { return state.items.find(function (it) { return idOf(it) === id; }); },
+    refreshPopup: function (item) {
+      if (!item || !item.marker || !item.marker.isPopupOpen()) return;
+      item.marker.setPopupContent(popupHtml(item));
+      attachMini(item, item.marker.getPopup().getElement());
+    }
   };
 })();

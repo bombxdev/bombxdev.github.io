@@ -360,7 +360,12 @@
     renderToday();
   }
 
-  document.addEventListener('gtao:ready', function () {
+  // The map may finish loading before this file runs (scripts load one by one).
+  function onReady(fn) {
+    if (window.GTAOMap && window.GTAOMap.ready) fn();
+    else document.addEventListener('gtao:ready', fn, { once: true });
+  }
+  onReady(function () {
     M = window.GTAOMap;
     fetch('data/exotic_exports.json?v=' + window.APP_VERSION).then(function (r) { return r.json(); }).then(init)
       .catch(function (err) { console.error('exotic exports', err); });

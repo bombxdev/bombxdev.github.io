@@ -3,6 +3,9 @@
 (function () {
   'use strict';
 
+  // index.html carries the version on <html data-app-version> (no inline scripts there).
+  window.APP_VERSION = window.APP_VERSION || document.documentElement.getAttribute('data-app-version') || '';
+
   var FALLBACK = 'en';
   var cache = {};
   var I18N = { code: FALLBACK, languages: [], dict: null, base: null };

@@ -178,7 +178,8 @@
   "ee.hint.strict": "Öncelik 1'e göre; eşitlikte 2, 3, 4",
   "ee.hint.name": "A–Z",
   "ee.hint.today": "Önce günün araçları",
-  "ee.overall": "Genel puan {score}/100 — ayarlarınıza göre {total} içinde #{n}"
+  "ee.overall": "Genel puan {score}/100 — ayarlarınıza göre {total} içinde #{n}",
+  "pop.noteSaved": "kaydedildi"
  },
  "cats": {
   "action_figures": {

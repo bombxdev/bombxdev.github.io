@@ -178,7 +178,8 @@
   "ee.hint.strict": "按优先级 1 排序，相同时按 2、3、4",
   "ee.hint.name": "按名称排序",
   "ee.hint.today": "当天车辆优先",
-  "ee.overall": "综合分 {score}/100 — 按你的设置排第 {n}/{total}"
+  "ee.overall": "综合分 {score}/100 — 按你的设置排第 {n}/{total}",
+  "pop.noteSaved": "已保存"
  },
  "cats": {
   "action_figures": {

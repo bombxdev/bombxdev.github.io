@@ -96,9 +96,23 @@ py = -0.0069134440 * y + 57.919678
 ค่านี้ fit จากตำแหน่ง Shipwrecks 30 จุด (อยู่ที่ระดับน้ำทะเลพอดี) ให้ตรงกับแนวชายฝั่งบนภาพ
 ความคลาดเคลื่อนเฉลี่ยประมาณ 5 เมตร
 
+## โหมดแอดมิน: เพิ่มรูปประกอบจุด (เฉพาะเจ้าของเว็บ)
+
+1. สร้าง token ที่ https://github.com/settings/personal-access-tokens/new (Fine-grained)
+   - Repository access: **Only select repositories** → `bombxdev/bombxdev.github.io`
+   - Permissions: **Contents = Read and write** (ไม่ต้องให้สิทธิ์อื่น) ตั้งวันหมดอายุไว้ เช่น 90 วัน
+2. เปิด `https://bombxdev.github.io/gta-online/map/?admin` → วาง token → เข้าสู่ระบบ
+3. เปิดจุดไหนก็ได้ → "📷 เพิ่มรูป" → รูปจะถูกย่อ (ยาวสุด 1600px, webp) ลบ EXIF/GPS แล้ว commit เข้า
+   `hints/` + `data/hints.json` บน master ผ่าน GitHub API (Pages build ใหม่ ~1 นาที)
+
+ความปลอดภัย: โค้ดเปิดเผยได้ไม่เป็นไร เพราะสิทธิ์เขียนถูกตรวจโดย GitHub เอง คนอื่นไม่มี token ก็อัปโหลดไม่ได้
+และเว็บเช็กว่า token เป็นของบัญชี `bombxdev` เท่านั้น token เก็บแค่ในเบราว์เซอร์ของแอดมิน (ไม่อยู่ใน repo
+และไม่อยู่ในไฟล์สำรอง) หน้าเว็บมี Content-Security-Policy ห้ามสคริปต์จากที่อื่นและคุยได้แค่กับ GitHub
+ถ้าสงสัยว่า token หลุด ให้ revoke ที่หน้า settings ของ GitHub ได้ทันที
+
 ## ก่อน deploy ทุกครั้ง
 
-เปลี่ยนเลข `APP_VERSION` และ `?v=` ใน `index.html` (ค่าเดียวกันทุกจุด) ไม่งั้นเบราว์เซอร์อาจใช้
+เปลี่ยนเลข `data-app-version` (บน `<html>`) และ `?v=` ใน `index.html` + `credits.html` (ค่าเดียวกันทุกจุด) ไม่งั้นเบราว์เซอร์อาจใช้
 ไฟล์ CSS/JS/ข้อมูลเก่าจากแคช (GitHub Pages แคช 10 นาที) ปนกับไฟล์ใหม่
 
 ## อัปเดตข้อมูลเมื่อเกมอัปเดต
