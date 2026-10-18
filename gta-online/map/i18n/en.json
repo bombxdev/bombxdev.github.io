@@ -201,9 +201,10 @@
   "purpose.landmark": "Shops & landmarks",
   "group.showAll": "Show all",
   "group.hideAll": "Hide all",
-  "style.road": "In-game",
+  "style.road": "Road",
   "style.atlas": "Atlas",
-  "style.satellite": "Satellite"
+  "style.satellite": "Satellite",
+  "style.game": "In-game"
  },
  "cats": {
   "action_figures": {

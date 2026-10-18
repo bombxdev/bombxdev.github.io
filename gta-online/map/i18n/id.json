@@ -184,9 +184,10 @@
   "purpose.landmark": "Toko & penanda",
   "group.showAll": "Tampilkan semua",
   "group.hideAll": "Sembunyikan semua",
-  "style.road": "Dalam game",
+  "style.road": "Jalan",
   "style.atlas": "Atlas",
-  "style.satellite": "Satelit"
+  "style.satellite": "Satelit",
+  "style.game": "Dalam game"
  },
  "cats": {
   "action_figures": {

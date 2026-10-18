@@ -184,9 +184,10 @@
   "purpose.landmark": "Negozi e punti di riferimento",
   "group.showAll": "Mostra tutto",
   "group.hideAll": "Nascondi tutto",
-  "style.road": "Come nel gioco",
+  "style.road": "Strade",
   "style.atlas": "Atlas",
-  "style.satellite": "Satellite"
+  "style.satellite": "Satellite",
+  "style.game": "Come nel gioco"
  },
  "cats": {
   "action_figures": {

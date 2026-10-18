@@ -184,9 +184,10 @@
   "purpose.landmark": "Dükkanlar ve simgeler",
   "group.showAll": "Tümünü göster",
   "group.hideAll": "Tümünü gizle",
-  "style.road": "Oyundaki",
+  "style.road": "Yollar",
   "style.atlas": "Atlas",
-  "style.satellite": "Uydu"
+  "style.satellite": "Uydu",
+  "style.game": "Oyundaki"
  },
  "cats": {
   "action_figures": {

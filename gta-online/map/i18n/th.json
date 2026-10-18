@@ -201,9 +201,10 @@
   "purpose.landmark": "ร้านค้าและจุดสังเกต",
   "group.showAll": "แสดงทั้งหมด",
   "group.hideAll": "ซ่อนทั้งหมด",
-  "style.road": "แบบในเกม",
+  "style.road": "ถนน (สว่าง)",
   "style.atlas": "Atlas",
-  "style.satellite": "ดาวเทียม"
+  "style.satellite": "ดาวเทียม",
+  "style.game": "แบบในเกม"
  },
  "cats": {
   "action_figures": {

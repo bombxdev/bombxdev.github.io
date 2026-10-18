@@ -184,9 +184,10 @@
   "purpose.landmark": "Sklepy i punkty orientacyjne",
   "group.showAll": "Pokaż wszystko",
   "group.hideAll": "Ukryj wszystko",
-  "style.road": "Jak w grze",
+  "style.road": "Drogi",
   "style.atlas": "Atlas",
-  "style.satellite": "Satelita"
+  "style.satellite": "Satelita",
+  "style.game": "Jak w grze"
  },
  "cats": {
   "action_figures": {

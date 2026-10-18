@@ -184,9 +184,10 @@
   "purpose.landmark": "ショップ・目印",
   "group.showAll": "すべて表示",
   "group.hideAll": "すべて非表示",
-  "style.road": "ゲーム内",
+  "style.road": "道路",
   "style.atlas": "アトラス",
-  "style.satellite": "衛星"
+  "style.satellite": "衛星",
+  "style.game": "ゲーム内"
  },
  "cats": {
   "action_figures": {

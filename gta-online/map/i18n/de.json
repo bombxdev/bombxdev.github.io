@@ -184,9 +184,10 @@
   "purpose.landmark": "Läden & Orientierungspunkte",
   "group.showAll": "Alle zeigen",
   "group.hideAll": "Alle ausblenden",
-  "style.road": "Wie im Spiel",
+  "style.road": "Straßen",
   "style.atlas": "Atlas",
-  "style.satellite": "Satellit"
+  "style.satellite": "Satellit",
+  "style.game": "Wie im Spiel"
  },
  "cats": {
   "action_figures": {

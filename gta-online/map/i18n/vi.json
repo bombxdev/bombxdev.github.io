@@ -184,9 +184,10 @@
   "purpose.landmark": "Cửa hàng & địa danh",
   "group.showAll": "Hiện tất cả",
   "group.hideAll": "Ẩn tất cả",
-  "style.road": "Trong game",
+  "style.road": "Đường",
   "style.atlas": "Atlas",
-  "style.satellite": "Vệ tinh"
+  "style.satellite": "Vệ tinh",
+  "style.game": "Trong game"
  },
  "cats": {
   "action_figures": {

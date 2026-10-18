@@ -184,9 +184,10 @@
   "purpose.landmark": "Tiendas y puntos de referencia",
   "group.showAll": "Mostrar todo",
   "group.hideAll": "Ocultar todo",
-  "style.road": "Del juego",
+  "style.road": "Carreteras",
   "style.atlas": "Atlas",
-  "style.satellite": "Satélite"
+  "style.satellite": "Satélite",
+  "style.game": "Del juego"
  },
  "cats": {
   "action_figures": {

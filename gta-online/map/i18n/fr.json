@@ -184,9 +184,10 @@
   "purpose.landmark": "Magasins et repères",
   "group.showAll": "Tout afficher",
   "group.hideAll": "Tout masquer",
-  "style.road": "Jeu",
+  "style.road": "Routes",
   "style.atlas": "Atlas",
-  "style.satellite": "Satellite"
+  "style.satellite": "Satellite",
+  "style.game": "Jeu"
  },
  "cats": {
   "action_figures": {

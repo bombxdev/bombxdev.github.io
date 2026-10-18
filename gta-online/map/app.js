@@ -21,6 +21,8 @@
   var STYLES = {
     atlas: { name: 'Atlas', bg: '#0fa8d2' },
     road: { name: 'Road', bg: '#1862ad' },
+    // Dark in-game pause-map look (tools/build_game_tiles.py recolours the road tiles).
+    game: { name: 'Game', bg: '#0d1625' },
     satellite: { name: 'Satellite', bg: '#143d6b' }
   };
   var GROUPS = ['permanent', 'daily', 'event', 'landmark'];
@@ -94,8 +96,8 @@
 
   var baseLayers = {};
   // Map style switch (always visible on the map, also when the menu is closed).
-  // "road" is the in-game pause-map look; it is the default for new visitors.
-  var STYLE_ORDER = [['road', '🎮'], ['atlas', '🗺'], ['satellite', '🛰']];
+  // "game" is the dark in-game pause-map look; it is the default for new visitors.
+  var STYLE_ORDER = [['game', '🎮'], ['road', '🛣'], ['atlas', '🗺'], ['satellite', '🛰']];
   var currentStyle = null;
   Object.keys(STYLES).forEach(function (key) {
     baseLayers[key] = L.tileLayer('tiles/' + key + '/{z}/{x}_{y}.webp', {
@@ -128,13 +130,16 @@
       L.DomEvent.disableClickPropagation(div);
       div.addEventListener('click', function (e) {
         var b = e.target.closest('button');
-        if (b) setStyle(b.getAttribute('data-style'));
+        if (b) { STORE.set('styleChosen', true); setStyle(b.getAttribute('data-style')); }
       });
       return div;
     }
   });
   map.addControl(new StyleControl());
-  setStyle(STYLES[STORE.get('style', 'road')] ? STORE.get('style', 'road') : 'road');
+  // A saved style counts only if the visitor picked it with these buttons
+  // (older versions saved whatever was shown), so everyone starts on "game".
+  var savedStyle = STORE.get('styleChosen', false) ? STORE.get('style', 'game') : 'game';
+  setStyle(STYLES[savedStyle] ? savedStyle : 'game');
 
   map.fitBounds(L.latLngBounds([[-3800, -3600], [7700, 4300]]));
 
