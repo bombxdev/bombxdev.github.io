@@ -115,7 +115,9 @@
   "pop.underwater": "Bajo el agua, a unos {m} m",
   "pop.closeup": "Vista satelital cercana — el círculo rojo marca el punto",
   "pop.myNote": "Mi nota",
-  "pop.notePh": "p. ej. 2.º piso detrás de las cajas; frente al edificio, 3.er arbusto a la derecha"
+  "pop.notePh": "p. ej. 2.º piso detrás de las cajas; frente al edificio, 3.er arbusto a la derecha",
+  "zones.toggle": "Resaltar zonas de la ciudad",
+  "zones.opacity": "Opacidad"
  },
  "cats": {
   "action_figures": {

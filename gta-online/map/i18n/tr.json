@@ -115,7 +115,9 @@
   "pop.underwater": "Su altında, yaklaşık {m} m derinlikte",
   "pop.closeup": "Yakın uydu görüntüsü — kırmızı daire yeri gösterir",
   "pop.myNote": "Notum",
-  "pop.notePh": "ör. 2. kat sandıkların arkası; binaya dönük, sağdaki 3. çalı"
+  "pop.notePh": "ör. 2. kat sandıkların arkası; binaya dönük, sağdaki 3. çalı",
+  "zones.toggle": "Şehir bölgelerini vurgula",
+  "zones.opacity": "Opaklık"
  },
  "cats": {
   "action_figures": {

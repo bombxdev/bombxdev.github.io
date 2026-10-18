@@ -115,7 +115,9 @@
   "pop.underwater": "Debaixo d'água, cerca de {m} m",
   "pop.closeup": "Satélite de perto — o círculo vermelho marca o local",
   "pop.myNote": "Minha nota",
-  "pop.notePh": "ex.: 2.º andar atrás das caixas; de frente ao prédio, 3.º arbusto à direita"
+  "pop.notePh": "ex.: 2.º andar atrás das caixas; de frente ao prédio, 3.º arbusto à direita",
+  "zones.toggle": "Destacar zonas da cidade",
+  "zones.opacity": "Opacidade"
  },
  "cats": {
   "action_figures": {

@@ -115,7 +115,9 @@
   "pop.underwater": "水中・深さ約 {m} m",
   "pop.closeup": "衛星写真の拡大 — 赤い丸が位置です",
   "pop.myNote": "自分のメモ",
-  "pop.notePh": "例: 2 階の木箱の裏、建物を正面に右から 3 つ目の茂み"
+  "pop.notePh": "例: 2 階の木箱の裏、建物を正面に右から 3 つ目の茂み",
+  "zones.toggle": "地区を色分け表示",
+  "zones.opacity": "不透明度"
  },
  "cats": {
   "action_figures": {

@@ -115,7 +115,9 @@
   "pop.underwater": "Dưới nước, sâu khoảng {m} m",
   "pop.closeup": "Ảnh vệ tinh cận cảnh — vòng đỏ là vị trí",
   "pop.myNote": "Ghi chú của tôi",
-  "pop.notePh": "vd. tầng 2 sau thùng gỗ; quay mặt vào tòa nhà, bụi cây thứ 3 bên phải"
+  "pop.notePh": "vd. tầng 2 sau thùng gỗ; quay mặt vào tòa nhà, bụi cây thứ 3 bên phải",
+  "zones.toggle": "Tô màu các khu vực",
+  "zones.opacity": "Độ đậm"
  },
  "cats": {
   "action_figures": {

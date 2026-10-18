@@ -115,7 +115,9 @@
   "pop.underwater": "Sott'acqua, circa {m} m di profondità",
   "pop.closeup": "Vista satellitare ravvicinata — il cerchio rosso indica il punto",
   "pop.myNote": "La mia nota",
-  "pop.notePh": "es. 2° piano dietro le casse; di fronte all'edificio, 3° cespuglio a destra"
+  "pop.notePh": "es. 2° piano dietro le casse; di fronte all'edificio, 3° cespuglio a destra",
+  "zones.toggle": "Evidenzia le zone della città",
+  "zones.opacity": "Opacità"
  },
  "cats": {
   "action_figures": {

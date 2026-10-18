@@ -115,7 +115,9 @@
   "pop.underwater": "Pod wodą, ok. {m} m głębokości",
   "pop.closeup": "Zbliżenie satelitarne — czerwone kółko oznacza miejsce",
   "pop.myNote": "Moja notatka",
-  "pop.notePh": "np. 2. piętro za skrzyniami; przodem do budynku, 3. krzak po prawej"
+  "pop.notePh": "np. 2. piętro za skrzyniami; przodem do budynku, 3. krzak po prawej",
+  "zones.toggle": "Podświetl dzielnice",
+  "zones.opacity": "Krycie"
  },
  "cats": {
   "action_figures": {

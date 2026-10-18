@@ -115,7 +115,9 @@
   "pop.underwater": "물속, 깊이 약 {m}m",
   "pop.closeup": "위성 확대 사진 — 빨간 원이 위치입니다",
   "pop.myNote": "내 메모",
-  "pop.notePh": "예: 2층 상자 뒤, 건물을 보고 오른쪽 세 번째 덤불"
+  "pop.notePh": "예: 2층 상자 뒤, 건물을 보고 오른쪽 세 번째 덤불",
+  "zones.toggle": "도시 구역 강조",
+  "zones.opacity": "불투명도"
  },
  "cats": {
   "action_figures": {

@@ -115,7 +115,9 @@
   "pop.underwater": "Unter Wasser, etwa {m} m tief",
   "pop.closeup": "Satelliten-Nahansicht — der rote Kreis markiert die Stelle",
   "pop.myNote": "Meine Notiz",
-  "pop.notePh": "z. B. 2. Stock hinter den Kisten; vor dem Gebäude, 3. Busch rechts"
+  "pop.notePh": "z. B. 2. Stock hinter den Kisten; vor dem Gebäude, 3. Busch rechts",
+  "zones.toggle": "Stadtbezirke hervorheben",
+  "zones.opacity": "Deckkraft"
  },
  "cats": {
   "action_figures": {

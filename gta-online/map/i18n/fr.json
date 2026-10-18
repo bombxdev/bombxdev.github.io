@@ -115,7 +115,9 @@
   "pop.underwater": "Sous l'eau, environ {m} m de profondeur",
   "pop.closeup": "Vue satellite rapprochée — le cercle rouge marque l'endroit",
   "pop.myNote": "Ma note",
-  "pop.notePh": "ex. 2e étage derrière les caisses ; face au bâtiment, 3e buisson à droite"
+  "pop.notePh": "ex. 2e étage derrière les caisses ; face au bâtiment, 3e buisson à droite",
+  "zones.toggle": "Mettre en évidence les quartiers",
+  "zones.opacity": "Opacité"
  },
  "cats": {
   "action_figures": {

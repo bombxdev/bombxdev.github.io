@@ -115,7 +115,9 @@
   "pop.underwater": "在水下，深约 {m} 米",
   "pop.closeup": "卫星近景 — 红圈为位置",
   "pop.myNote": "我的备注",
-  "pop.notePh": "例如：2 楼箱子后面；面向建筑，右边第 3 个灌木丛"
+  "pop.notePh": "例如：2 楼箱子后面；面向建筑，右边第 3 个灌木丛",
+  "zones.toggle": "高亮城市区域",
+  "zones.opacity": "不透明度"
  },
  "cats": {
   "action_figures": {

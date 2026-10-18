@@ -115,7 +115,9 @@
   "pop.underwater": "Di bawah air, kedalaman sekitar {m} m",
   "pop.closeup": "Citra satelit dekat — lingkaran merah menandai lokasinya",
   "pop.myNote": "Catatan saya",
-  "pop.notePh": "mis. lantai 2 di balik peti; menghadap gedung, semak ke-3 di kanan"
+  "pop.notePh": "mis. lantai 2 di balik peti; menghadap gedung, semak ke-3 di kanan",
+  "zones.toggle": "Sorot zona kota",
+  "zones.opacity": "Opasitas"
  },
  "cats": {
   "action_figures": {
