@@ -30,5 +30,16 @@
   {"key": "barbers", "en": "Barbers", "group": "landmark", "color": "#4ea3d9", "glyph": "💈", "aliases": ["barber", "hair", "ร้านตัดผม", "ตัดผม"], "blip": "radar_barber", "blipSource": "game"},
   {"key": "tattoo_parlors", "en": "Tattoo Parlors", "group": "landmark", "color": "#d96bb0", "glyph": "🖋", "aliases": ["tattoo", "ink", "สัก", "ร้านสัก"], "blip": "radar_tattoo", "blipSource": "game"},
   {"key": "ls_customs", "en": "Los Santos Customs", "group": "landmark", "color": "#e0a030", "glyph": "🔧", "aliases": ["lsc", "mod shop", "customs", "beeker", "แต่งรถ", "อู่"], "blip": "radar_car_mod_shop", "blipSource": "game"},
-  {"key": "convenience_stores", "en": "Convenience Stores", "group": "landmark", "color": "#5fb85f", "glyph": "🏪", "aliases": ["store", "24/7", "ltd", "rob's liquor", "holdup", "robbery", "ร้านสะดวกซื้อ", "ปล้นร้าน"], "blip": "radar_crim_holdups", "blipSource": "game"}
+  {"key": "convenience_stores", "en": "Convenience Stores", "group": "landmark", "color": "#5fb85f", "glyph": "🏪", "aliases": ["store", "24/7", "ltd", "rob's liquor", "holdup", "robbery", "ร้านสะดวกซื้อ", "ปล้นร้าน"], "blip": "radar_crim_holdups", "blipSource": "game"},
+  {"key": "cayo_key_places", "en": "Key locations", "group": "cayo", "color": "#e5484d", "glyph": "🏝", "aliases": ["cayo", "el rubio", "คาโย"], "blip": "radar_control_tower", "blipSource": "game"},
+  {"key": "cayo_infiltration", "en": "Infiltration points", "group": "cayo", "color": "#3e9cf0", "glyph": "🏝", "aliases": ["infiltration", "approach", "จุดเข้า"], "blip": "radar_heist_island", "blipSource": "game"},
+  {"key": "cayo_escape", "en": "Escape points", "group": "cayo", "color": "#30a46c", "glyph": "🏝", "aliases": ["escape", "exit", "kosatka", "หนี", "ทางหนี"], "blip": "radar_sub2", "blipSource": "game"},
+  {"key": "cayo_entrances", "en": "Compound entrances", "group": "cayo", "color": "#f76b15", "glyph": "🏝", "aliases": ["entrance", "ทางเข้า"], "blip": "radar_compound_gate", "blipSource": "game"},
+  {"key": "cayo_bolt_cutters", "en": "Bolt cutters", "group": "cayo", "color": "#a26bdb", "glyph": "🏝", "aliases": ["bolt cutters", "คีมตัด"], "blip": "radar_bolt_cutters", "blipSource": "game"},
+  {"key": "cayo_grapple", "en": "Grappling equipment", "group": "cayo", "color": "#4ea3d9", "glyph": "🏝", "aliases": ["grapple", "grappling", "rope", "ตะขอ"], "blip": "radar_rappel_gear", "blipSource": "game"},
+  {"key": "cayo_uniform", "en": "Guard clothing", "group": "cayo", "color": "#d96bb0", "glyph": "🏝", "aliases": ["guard clothing", "uniform", "disguise", "ชุดยาม"], "blip": "radar_clothes_store", "blipSource": "game"},
+  {"key": "cayo_supply_truck", "en": "Supply truck", "group": "cayo", "color": "#e0a030", "glyph": "🏝", "aliases": ["supply truck", "truck", "trojan", "รถส่งของ"], "blip": "radar_truck", "blipSource": "game"},
+  {"key": "cayo_loot_island", "en": "Secondary loot (outside)", "group": "cayo", "color": "#5fb85f", "glyph": "🏝", "aliases": ["loot", "secondary", "cash", "weed", "cocaine", "coke", "gold", "ของมีค่า", "เงิน", "ทอง"], "blip": "radar_cash_pickup", "blipSource": "game"},
+  {"key": "cayo_loot_compound", "en": "Secondary loot (compound)", "group": "cayo", "color": "#c9a227", "glyph": "🏝", "aliases": ["loot", "secondary", "cash", "weed", "cocaine", "coke", "gold", "ของมีค่า"], "blip": "radar_cash_pickup", "blipSource": "game"},
+  {"key": "cayo_paintings", "en": "Paintings", "group": "cayo", "color": "#8e4ec6", "glyph": "🏝", "aliases": ["painting", "art", "ภาพวาด"], "blip": "radar_painting", "blipSource": "game"}
 ]

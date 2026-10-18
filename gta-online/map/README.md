@@ -18,6 +18,9 @@
 - แผนที่เกาะ Cayo Perico (ภาพดาวเทียม) วางตามพิกัดเกม
 - 🎮 ปุ่มสลับแผนที่บนมุมขวา: แบบในเกม (โทนมืดเหมือน pause map, ค่าเริ่มต้น) / ถนน (สว่าง) / Atlas / ดาวเทียม
   tiles โทนมืด `tiles/game` สร้างจาก `tiles/road` ด้วย `tools/build_game_tiles.py`
+- 🏝 ปล้น Cayo Perico: จุดเข้าเกาะ, จุดหนี, ทางเข้าคฤหาสน์, หอควบคุม/สถานีไฟฟ้า, จุดที่อาจมีคีมตัดเหล็ก/ตะขอปีน/ชุดยาม/รถส่งของ,
+  จุดของมีค่ารอง (นอก/ในคฤหาสน์) และภาพวาด — จากกระดานวางแผนในเกม (`heist_island_planning.c`) ด้วย `tools/extract_cayo_heist.py`
+- เกาะ Cayo Perico เปลี่ยนตามแบบแผนที่ (แบบในเกม/ถนน/Atlas/ดาวเทียม) — สร้างด้วย `tools/build_cayo_styles.py`
 - 🏪 ร้านค้าและจุดสังเกตแบบที่เห็นในเกม: Ammu-Nation, ร้านเสื้อผ้า (รวมร้านหน้ากาก), ร้านตัดผม, ร้านสัก,
   Los Santos Customs, ร้านสะดวกซื้อ — ดึงจาก `shop_controller.c` + `freemode.c` ด้วย `tools/extract_shops.py`
   ซ่อน/แสดงทั้งกลุ่มได้ด้วยปุ่มข้างหัวข้อกลุ่ม (ทุกกลุ่มมีปุ่มนี้)
@@ -129,6 +132,8 @@ python3 tools/extract_collectibles.py freemode.c data/points.json
 python3 tools/extract_daily.py freemode.c tuneables_processing.c data/daily.json
 curl -LO https://raw.githubusercontent.com/Sainan/GTA-V-Decompiled-Scripts/master/decompiled_scripts/shop_controller.c
 python3 tools/extract_shops.py shop_controller.c freemode.c data/points.json
+curl -LO https://raw.githubusercontent.com/Sainan/GTA-V-Decompiled-Scripts/master/decompiled_scripts/heist_island_planning.c
+python3 tools/extract_cayo_heist.py heist_island_planning.c data/points.json
 curl -LO https://raw.githubusercontent.com/DurtyFree/gta-v-data-dumps/master/vehicles.json
 python3 tools/extract_exotic_exports.py freemode.c tuneables_processing.c vehicles.json data/exotic_exports.json data/points.json
 # รูปรถ: ดาวน์โหลด https://raw.githubusercontent.com/citizenfx/fivem-docs/master/static/vehicles/<model>.webp

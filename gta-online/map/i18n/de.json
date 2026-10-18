@@ -187,7 +187,9 @@
   "style.road": "Straßen",
   "style.atlas": "Atlas",
   "style.satellite": "Satellit",
-  "style.game": "Wie im Spiel"
+  "style.game": "Wie im Spiel",
+  "group.cayo": "Cayo-Perico-Coup",
+  "purpose.heist": "Coup"
  },
  "cats": {
   "action_figures": {
@@ -319,6 +321,61 @@
    "name": "Supermärkte",
    "note": "24/7, LTD, Rob's Liquor",
    "info": "Kleine Läden; man kann sie auch überfallen."
+  },
+  "cayo_key_places": {
+   "name": "Wichtige Orte",
+   "note": "Anwesen, Kontrollturm, Kraftwerk",
+   "info": "El Rubios Anwesen (Hauptziel) sowie Kontrollturm und Kraftwerk zum Auskundschaften."
+  },
+  "cayo_infiltration": {
+   "name": "Infiltrationspunkte",
+   "note": "Wo ihr ankommt",
+   "info": "Anfahrtspunkte, die die Crew wählen kann. Der HALO-Sprung hat keinen festen Punkt."
+  },
+  "cayo_escape": {
+   "name": "Fluchtpunkte",
+   "note": "Weg von der Insel",
+   "info": "Wo ihr die Insel nach dem Coup verlasst."
+  },
+  "cayo_entrances": {
+   "name": "Eingänge zum Anwesen",
+   "note": "Hinein",
+   "info": "Tore, Mauern und der Abwassertunnel zu El Rubios Anwesen."
+  },
+  "cayo_bolt_cutters": {
+   "name": "Bolzenschneider",
+   "note": "Mögliche Orte",
+   "info": "Mögliche Orte für Bolzenschneider, die verschlossene Tore öffnen. Wechseln bei jedem Coup."
+  },
+  "cayo_grapple": {
+   "name": "Kletterausrüstung",
+   "note": "Mögliche Orte",
+   "info": "Mögliche Orte für den Enterhaken zum Überklettern der Mauern. Wechseln bei jedem Coup."
+  },
+  "cayo_uniform": {
+   "name": "Wachkleidung",
+   "note": "Mögliche Orte",
+   "info": "Mögliche Orte für Wachkleidung zur Tarnung. Wechseln bei jedem Coup."
+  },
+  "cayo_supply_truck": {
+   "name": "Versorgungstruck",
+   "note": "Mögliche Orte",
+   "info": "Mögliche Orte des Trucks, der euch ins Anwesen bringen kann."
+  },
+  "cayo_loot_island": {
+   "name": "Nebenbeute (außen)",
+   "note": "Bargeld, Gras, Kokain oder Gold",
+   "info": "Nebenbeute außerhalb des Anwesens; der Inhalt wird pro Coup festgelegt."
+  },
+  "cayo_loot_compound": {
+   "name": "Nebenbeute (Anwesen)",
+   "note": "Bargeld, Gras, Kokain oder Gold",
+   "info": "Nebenbeute im Anwesen; der Inhalt wird pro Coup festgelegt."
+  },
+  "cayo_paintings": {
+   "name": "Gemälde",
+   "note": "Im Anwesen",
+   "info": "Orte, an denen im Anwesen Gemälde hängen können."
   }
  }
 }

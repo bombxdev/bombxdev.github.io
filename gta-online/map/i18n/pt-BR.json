@@ -187,7 +187,9 @@
   "style.road": "Ruas",
   "style.atlas": "Atlas",
   "style.satellite": "Satélite",
-  "style.game": "Do jogo"
+  "style.game": "Do jogo",
+  "group.cayo": "Golpe de Cayo Perico",
+  "purpose.heist": "Golpe"
  },
  "cats": {
   "action_figures": {
@@ -319,6 +321,61 @@
    "name": "Lojas de conveniência",
    "note": "24/7, LTD, Rob's Liquor",
    "info": "Lojinhas de lanches; também dá para assaltá-las."
+  },
+  "cayo_key_places": {
+   "name": "Locais-chave",
+   "note": "Complexo, torre de controle, usina",
+   "info": "O complexo de El Rubio (alvo principal), a torre de controle e a usina de energia."
+  },
+  "cayo_infiltration": {
+   "name": "Pontos de infiltração",
+   "note": "Onde pousar",
+   "info": "Pontos de aproximação que a equipe pode escolher. O salto HALO não tem ponto fixo."
+  },
+  "cayo_escape": {
+   "name": "Pontos de fuga",
+   "note": "Como sair da ilha",
+   "info": "Onde sair da ilha depois do golpe."
+  },
+  "cayo_entrances": {
+   "name": "Entradas do complexo",
+   "note": "Como entrar",
+   "info": "Portões, muros e o túnel de drenagem do complexo de El Rubio."
+  },
+  "cayo_bolt_cutters": {
+   "name": "Alicate de corte",
+   "note": "Locais possíveis",
+   "info": "Locais possíveis do alicate, que abre portões trancados. Mudam a cada golpe."
+  },
+  "cayo_grapple": {
+   "name": "Equipamento de escalada",
+   "note": "Locais possíveis",
+   "info": "Locais possíveis do gancho para escalar os muros. Mudam a cada golpe."
+  },
+  "cayo_uniform": {
+   "name": "Roupa de guarda",
+   "note": "Locais possíveis",
+   "info": "Locais possíveis da roupa de guarda para se disfarçar. Mudam a cada golpe."
+  },
+  "cayo_supply_truck": {
+   "name": "Caminhão de suprimentos",
+   "note": "Locais possíveis",
+   "info": "Locais possíveis do caminhão que leva você para dentro do complexo."
+  },
+  "cayo_loot_island": {
+   "name": "Saque secundário (fora)",
+   "note": "Dinheiro, maconha, cocaína ou ouro",
+   "info": "Saque secundário fora do complexo; o conteúdo de cada ponto muda a cada golpe."
+  },
+  "cayo_loot_compound": {
+   "name": "Saque secundário (complexo)",
+   "note": "Dinheiro, maconha, cocaína ou ouro",
+   "info": "Saque secundário dentro do complexo; o conteúdo muda a cada golpe."
+  },
+  "cayo_paintings": {
+   "name": "Quadros",
+   "note": "Dentro do complexo",
+   "info": "Locais onde pode haver quadros dentro do complexo."
   }
  }
 }

@@ -187,7 +187,9 @@
   "style.road": "道路",
   "style.atlas": "地图集",
   "style.satellite": "卫星",
-  "style.game": "游戏内"
+  "style.game": "游戏内",
+  "group.cayo": "佩里科岛抢劫",
+  "purpose.heist": "抢劫"
  },
  "cats": {
   "action_figures": {
@@ -319,6 +321,61 @@
    "name": "便利店",
    "note": "24/7、LTD、Rob's Liquor",
    "info": "卖零食的小店，也可以抢劫。"
+  },
+  "cayo_key_places": {
+   "name": "关键地点",
+   "note": "豪宅、控制塔、发电站",
+   "info": "El Rubio 的豪宅（主要目标）以及可侦察的控制塔和发电站。"
+  },
+  "cayo_infiltration": {
+   "name": "潜入点",
+   "note": "登岛地点",
+   "info": "团队可选择的接近点。HALO 跳伞没有固定地点。"
+  },
+  "cayo_escape": {
+   "name": "撤离点",
+   "note": "离开岛屿",
+   "info": "抢劫完成后离开岛屿的地点。"
+  },
+  "cayo_entrances": {
+   "name": "豪宅入口",
+   "note": "进入方式",
+   "info": "进入 El Rubio 豪宅的大门、围墙和排水隧道。"
+  },
+  "cayo_bolt_cutters": {
+   "name": "断线钳",
+   "note": "可能位置",
+   "info": "断线钳可能出现的位置，用于打开上锁的门。每次抢劫都不同。"
+  },
+  "cayo_grapple": {
+   "name": "攀爬装备",
+   "note": "可能位置",
+   "info": "钩爪可能出现的位置，用于翻越围墙。每次抢劫都不同。"
+  },
+  "cayo_uniform": {
+   "name": "守卫制服",
+   "note": "可能位置",
+   "info": "守卫制服可能出现的位置，用于伪装。每次抢劫都不同。"
+  },
+  "cayo_supply_truck": {
+   "name": "补给卡车",
+   "note": "可能位置",
+   "info": "可载你进入豪宅的补给卡车可能出现的位置。"
+  },
+  "cayo_loot_island": {
+   "name": "次要战利品（外部）",
+   "note": "现金、大麻、可卡因或黄金",
+   "info": "豪宅外的次要战利品；每次抢劫内容不同。"
+  },
+  "cayo_loot_compound": {
+   "name": "次要战利品（豪宅）",
+   "note": "现金、大麻、可卡因或黄金",
+   "info": "豪宅内的次要战利品；每次抢劫内容不同。"
+  },
+  "cayo_paintings": {
+   "name": "画作",
+   "note": "豪宅内",
+   "info": "豪宅内可能挂有画作的位置。"
   }
  }
 }

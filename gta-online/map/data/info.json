@@ -139,5 +139,38 @@
  },
  "convenience_stores": {
   "purpose": "landmark"
+ },
+ "cayo_key_places": {
+  "purpose": "heist"
+ },
+ "cayo_infiltration": {
+  "purpose": "heist"
+ },
+ "cayo_escape": {
+  "purpose": "heist"
+ },
+ "cayo_entrances": {
+  "purpose": "heist"
+ },
+ "cayo_bolt_cutters": {
+  "purpose": "heist"
+ },
+ "cayo_grapple": {
+  "purpose": "heist"
+ },
+ "cayo_uniform": {
+  "purpose": "heist"
+ },
+ "cayo_supply_truck": {
+  "purpose": "heist"
+ },
+ "cayo_loot_island": {
+  "purpose": "heist"
+ },
+ "cayo_loot_compound": {
+  "purpose": "heist"
+ },
+ "cayo_paintings": {
+  "purpose": "heist"
  }
 }

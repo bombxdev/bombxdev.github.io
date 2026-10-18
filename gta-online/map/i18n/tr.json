@@ -187,7 +187,9 @@
   "style.road": "Yollar",
   "style.atlas": "Atlas",
   "style.satellite": "Uydu",
-  "style.game": "Oyundaki"
+  "style.game": "Oyundaki",
+  "group.cayo": "Cayo Perico Soygunu",
+  "purpose.heist": "Soygun"
  },
  "cats": {
   "action_figures": {
@@ -319,6 +321,61 @@
    "name": "Market",
    "note": "24/7, LTD, Rob's Liquor",
    "info": "Küçük marketler; soyulabilirler de."
+  },
+  "cayo_key_places": {
+   "name": "Önemli yerler",
+   "note": "Malikâne, kontrol kulesi, elektrik santrali",
+   "info": "El Rubio'nun malikânesi (ana hedef), kontrol kulesi ve elektrik santrali."
+  },
+  "cayo_infiltration": {
+   "name": "Sızma noktaları",
+   "note": "Nereye inebilirsin",
+   "info": "Ekibin seçebileceği yaklaşma noktaları. HALO atlayışının sabit noktası yok."
+  },
+  "cayo_escape": {
+   "name": "Kaçış noktaları",
+   "note": "Adadan çıkış",
+   "info": "Soygundan sonra adadan ayrılma noktaları."
+  },
+  "cayo_entrances": {
+   "name": "Malikâne girişleri",
+   "note": "İçeri giriş",
+   "info": "El Rubio'nun malikânesine kapılar, duvarlar ve drenaj tüneli."
+  },
+  "cayo_bolt_cutters": {
+   "name": "Cıvata makası",
+   "note": "Olası yerler",
+   "info": "Kilitli kapıları açan cıvata makasının olası yerleri. Her soygunda değişir."
+  },
+  "cayo_grapple": {
+   "name": "Tırmanma ekipmanı",
+   "note": "Olası yerler",
+   "info": "Duvarları aşmak için kancanın olası yerleri. Her soygunda değişir."
+  },
+  "cayo_uniform": {
+   "name": "Muhafız kıyafeti",
+   "note": "Olası yerler",
+   "info": "Muhafızlara karışmak için kıyafetin olası yerleri. Her soygunda değişir."
+  },
+  "cayo_supply_truck": {
+   "name": "İkmal kamyonu",
+   "note": "Olası yerler",
+   "info": "Seni malikâneye sokabilecek kamyonun olası yerleri."
+  },
+  "cayo_loot_island": {
+   "name": "İkincil ganimet (dışarı)",
+   "note": "Nakit, ot, kokain veya altın",
+   "info": "Malikâne dışındaki ikincil ganimet; içerik her soygunda değişir."
+  },
+  "cayo_loot_compound": {
+   "name": "İkincil ganimet (malikâne)",
+   "note": "Nakit, ot, kokain veya altın",
+   "info": "Malikâne içindeki ikincil ganimet; içerik her soygunda değişir."
+  },
+  "cayo_paintings": {
+   "name": "Tablolar",
+   "note": "Malikâne içinde",
+   "info": "Malikânede tabloların asılı olabileceği yerler."
   }
  }
 }
