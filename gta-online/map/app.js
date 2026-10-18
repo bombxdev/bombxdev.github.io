@@ -376,11 +376,21 @@
     });
   }
 
+  // Redraw a marker's icon. While Leaflet is removing a marker (its popup
+  // closes during removal) setIcon would create a new icon element that is
+  // never removed: a stray pin that stays on the map and drifts when zooming.
+  // So only redraw icons that are on the map; others get it when re-added.
+  function updateIcon(item) {
+    if (!item || !item.marker) return;
+    if (item.marker._icon) item.marker.setIcon(makeIcon(item));
+    else item.marker.options.icon = makeIcon(item);
+  }
+
   function setActive(item) {
     var prev = state.active;
     state.active = item;
-    if (prev && prev.marker) prev.marker.setIcon(makeIcon(prev));
-    if (item && item.marker) item.marker.setIcon(makeIcon(item));
+    updateIcon(prev);
+    updateIcon(item);
   }
 
   function isShown(item) {
@@ -404,7 +414,7 @@
     var id = idOf(item);
     if (state.collected.has(id)) state.collected.delete(id); else state.collected.add(id);
     STORE.set('collected', Array.from(state.collected));
-    item.marker.setIcon(makeIcon(item));
+    updateIcon(item);
     renderCategories();
     if (state.query) renderResults();
     refreshMarkers();
