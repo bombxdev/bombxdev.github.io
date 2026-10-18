@@ -584,6 +584,7 @@
     box.innerHTML = '<div class="summary">' + esc(title) + '</div>';
     if (extraEl) box.appendChild(extraEl);
     box.scrollTop = 0;
+    $('sidebar').scrollTo({ top: 0, behavior: 'smooth' });   // results box sits at the top
     items.forEach(function (item) {
       var cat = state.catByKey[item.cat];
       var b = document.createElement('button');
@@ -612,6 +613,7 @@
     box.innerHTML = '<div class="summary">' + esc(title) + '</div>';
     box.appendChild(el);
     box.scrollTop = 0;
+    $('sidebar').scrollTo({ top: 0, behavior: 'smooth' });
     if (isMobile()) setSidebar(true);
   }
 

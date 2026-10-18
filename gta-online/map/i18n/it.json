@@ -167,7 +167,13 @@
   "ee.class.COMPACT": "Utilitaria",
   "ee.class.OFF_ROAD": "Fuoristrada",
   "ee.class.SEDAN": "Berlina",
-  "credits.dataVehicles": "Nomi dei veicoli e statistiche di serie (Exotic Exports)."
+  "credits.dataVehicles": "Nomi dei veicoli e statistiche di serie (Exotic Exports).",
+  "ee.showSpots": "Mostra i {n} punti possibili sulla mappa",
+  "ee.filter": "Filtra per nome…",
+  "ee.legend": "Barre:",
+  "ee.sort.brake": "Frenata",
+  "ee.sort.traction": "Trazione",
+  "credits.imagesVehicles": "Immagini dei veicoli (Exotic Exports)."
  },
  "cats": {
   "action_figures": {

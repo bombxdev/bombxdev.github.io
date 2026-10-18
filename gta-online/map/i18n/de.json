@@ -167,7 +167,13 @@
   "ee.class.COMPACT": "Kompaktwagen",
   "ee.class.OFF_ROAD": "Geländewagen",
   "ee.class.SEDAN": "Limousine",
-  "credits.dataVehicles": "Fahrzeugnamen und Serien-Leistungswerte (Exotic Exports)."
+  "credits.dataVehicles": "Fahrzeugnamen und Serien-Leistungswerte (Exotic Exports).",
+  "ee.showSpots": "Die {n} möglichen Orte auf der Karte zeigen",
+  "ee.filter": "Nach Name filtern…",
+  "ee.legend": "Balken:",
+  "ee.sort.brake": "Bremsen",
+  "ee.sort.traction": "Traktion",
+  "credits.imagesVehicles": "Fahrzeugbilder (Exotic Exports)."
  },
  "cats": {
   "action_figures": {

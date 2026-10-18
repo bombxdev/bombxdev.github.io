@@ -167,7 +167,13 @@
   "ee.class.COMPACT": "Kompak",
   "ee.class.OFF_ROAD": "Off-road",
   "ee.class.SEDAN": "Sedan",
-  "credits.dataVehicles": "Nama kendaraan dan statistik performa standar (Exotic Exports)."
+  "credits.dataVehicles": "Nama kendaraan dan statistik performa standar (Exotic Exports).",
+  "ee.showSpots": "Tampilkan {n} titik yang mungkin di peta",
+  "ee.filter": "Saring menurut nama…",
+  "ee.legend": "Bar:",
+  "ee.sort.brake": "Pengereman",
+  "ee.sort.traction": "Traksi",
+  "credits.imagesVehicles": "Gambar kendaraan (Exotic Exports)."
  },
  "cats": {
   "action_figures": {

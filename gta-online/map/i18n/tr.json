@@ -167,7 +167,13 @@
   "ee.class.COMPACT": "Kompakt",
   "ee.class.OFF_ROAD": "Arazi",
   "ee.class.SEDAN": "Sedan",
-  "credits.dataVehicles": "Araç adları ve stok performans değerleri (Exotic Exports)."
+  "credits.dataVehicles": "Araç adları ve stok performans değerleri (Exotic Exports).",
+  "ee.showSpots": "{n} olası noktayı haritada göster",
+  "ee.filter": "Ada göre süz…",
+  "ee.legend": "Çubuklar:",
+  "ee.sort.brake": "Frenleme",
+  "ee.sort.traction": "Yol tutuş",
+  "credits.imagesVehicles": "Araç görselleri (Exotic Exports)."
  },
  "cats": {
   "action_figures": {

@@ -167,7 +167,13 @@
   "ee.class.COMPACT": "Компактные",
   "ee.class.OFF_ROAD": "Внедорожные",
   "ee.class.SEDAN": "Седаны",
-  "credits.dataVehicles": "Названия машин и стоковые характеристики (Exotic Exports)."
+  "credits.dataVehicles": "Названия машин и стоковые характеристики (Exotic Exports).",
+  "ee.showSpots": "Показать {n} возможных точек на карте",
+  "ee.filter": "Фильтр по названию…",
+  "ee.legend": "Полосы:",
+  "ee.sort.brake": "Торможение",
+  "ee.sort.traction": "Сцепление",
+  "credits.imagesVehicles": "Изображения машин (Exotic Exports)."
  },
  "cats": {
   "action_figures": {

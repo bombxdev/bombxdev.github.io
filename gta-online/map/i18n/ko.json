@@ -167,7 +167,13 @@
   "ee.class.COMPACT": "소형차",
   "ee.class.OFF_ROAD": "오프로드",
   "ee.class.SEDAN": "세단",
-  "credits.dataVehicles": "차량 이름과 순정 성능 데이터 (Exotic Exports)."
+  "credits.dataVehicles": "차량 이름과 순정 성능 데이터 (Exotic Exports).",
+  "ee.showSpots": "가능한 {n}곳을 지도에 표시",
+  "ee.filter": "이름으로 필터…",
+  "ee.legend": "막대:",
+  "ee.sort.brake": "제동",
+  "ee.sort.traction": "접지력",
+  "credits.imagesVehicles": "차량 이미지 (Exotic Exports)."
  },
  "cats": {
   "action_figures": {

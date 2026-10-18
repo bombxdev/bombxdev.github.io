@@ -167,7 +167,13 @@
   "ee.class.COMPACT": "Kompaktowe",
   "ee.class.OFF_ROAD": "Terenowe",
   "ee.class.SEDAN": "Sedany",
-  "credits.dataVehicles": "Nazwy pojazdów i fabryczne osiągi (Exotic Exports)."
+  "credits.dataVehicles": "Nazwy pojazdów i fabryczne osiągi (Exotic Exports).",
+  "ee.showSpots": "Pokaż {n} możliwych miejsc na mapie",
+  "ee.filter": "Filtruj po nazwie…",
+  "ee.legend": "Paski:",
+  "ee.sort.brake": "Hamowanie",
+  "ee.sort.traction": "Przyczepność",
+  "credits.imagesVehicles": "Zdjęcia pojazdów (Exotic Exports)."
  },
  "cats": {
   "action_figures": {

@@ -167,7 +167,13 @@
   "ee.class.COMPACT": "คอมแพกต์",
   "ee.class.OFF_ROAD": "ออฟโรด",
   "ee.class.SEDAN": "ซีดาน",
-  "credits.dataVehicles": "ชื่อรถและค่าความแรงของรถ (Exotic Exports)"
+  "credits.dataVehicles": "ชื่อรถและค่าความแรงของรถ (Exotic Exports)",
+  "ee.showSpots": "แสดง {n} จุดที่อาจจอดบนแผนที่",
+  "ee.filter": "กรองตามชื่อ…",
+  "ee.legend": "แถบ:",
+  "ee.sort.brake": "การเบรก",
+  "ee.sort.traction": "การยึดเกาะ",
+  "credits.imagesVehicles": "รูปรถแต่ละรุ่น (Exotic Exports)"
  },
  "cats": {
   "action_figures": {

@@ -167,7 +167,13 @@
   "ee.class.COMPACT": "Cỡ nhỏ",
   "ee.class.OFF_ROAD": "Địa hình",
   "ee.class.SEDAN": "Sedan",
-  "credits.dataVehicles": "Tên xe và chỉ số hiệu năng gốc (Exotic Exports)."
+  "credits.dataVehicles": "Tên xe và chỉ số hiệu năng gốc (Exotic Exports).",
+  "ee.showSpots": "Hiện {n} điểm có thể đỗ trên bản đồ",
+  "ee.filter": "Lọc theo tên…",
+  "ee.legend": "Thanh:",
+  "ee.sort.brake": "Phanh",
+  "ee.sort.traction": "Độ bám",
+  "credits.imagesVehicles": "Hình ảnh xe (Exotic Exports)."
  },
  "cats": {
   "action_figures": {

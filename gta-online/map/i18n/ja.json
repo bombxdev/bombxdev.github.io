@@ -167,7 +167,13 @@
   "ee.class.COMPACT": "コンパクト",
   "ee.class.OFF_ROAD": "オフロード",
   "ee.class.SEDAN": "セダン",
-  "credits.dataVehicles": "車名とノーマル性能データ（Exotic Exports）。"
+  "credits.dataVehicles": "車名とノーマル性能データ（Exotic Exports）。",
+  "ee.showSpots": "候補の{n}か所を地図に表示",
+  "ee.filter": "名前で絞り込み…",
+  "ee.legend": "バー：",
+  "ee.sort.brake": "ブレーキ",
+  "ee.sort.traction": "トラクション",
+  "credits.imagesVehicles": "車の画像（Exotic Exports）。"
  },
  "cats": {
   "action_figures": {

@@ -167,7 +167,13 @@
   "ee.class.COMPACT": "Compacto",
   "ee.class.OFF_ROAD": "Todoterreno",
   "ee.class.SEDAN": "Sedán",
-  "credits.dataVehicles": "Nombres de vehículos y estadísticas de serie (Exotic Exports)."
+  "credits.dataVehicles": "Nombres de vehículos y estadísticas de serie (Exotic Exports).",
+  "ee.showSpots": "Ver los {n} puntos posibles en el mapa",
+  "ee.filter": "Filtrar por nombre…",
+  "ee.legend": "Barras:",
+  "ee.sort.brake": "Frenada",
+  "ee.sort.traction": "Tracción",
+  "credits.imagesVehicles": "Imágenes de vehículos (Exotic Exports)."
  },
  "cats": {
   "action_figures": {

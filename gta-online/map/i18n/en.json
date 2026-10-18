@@ -167,7 +167,13 @@
   "ee.class.COMPACT": "Compact",
   "ee.class.OFF_ROAD": "Off-road",
   "ee.class.SEDAN": "Sedan",
-  "credits.dataVehicles": "Vehicle names and stock performance stats (Exotic Exports)."
+  "credits.dataVehicles": "Vehicle names and stock performance stats (Exotic Exports).",
+  "ee.showSpots": "Show the {n} possible spots on the map",
+  "ee.filter": "Filter by name…",
+  "ee.legend": "Bars:",
+  "ee.sort.brake": "Braking",
+  "ee.sort.traction": "Traction",
+  "credits.imagesVehicles": "Vehicle pictures (Exotic Exports)."
  },
  "cats": {
   "action_figures": {

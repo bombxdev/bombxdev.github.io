@@ -102,61 +102,110 @@
     return '<div class="ee-when">📅 ' + esc(t('ee.next', { date: M.dayFmt().format(new Date(nx.start * 1000)), n: nx.days, pos: nx.pos })) + '</div>';
   }
 
-  function cardEl(v) {
-    var el = document.createElement('div');
-    el.className = 'ee-card';
-    el.innerHTML = '<div class="ee-h"><b>' + esc(fullName(v)) + '</b>' + (carName(v) !== v.name.en ? ' <span class="muted">(' + esc(v.name.en) + ')</span>' : '') + '</div>' +
-      '<div class="muted">' + esc(className(v)) + ' · ' + esc(t('ee.seats', { n: v.seats })) + ' · ' + esc(t('ee.fastest', { n: speedRank[v.i], total: data.vehicles.length })) + '</div>' +
-      whenHtml(v) + statBars(v) +
-      '<p class="muted">' + esc(t('ee.statsNote')) + '</p>' +
-      '<p class="ee-spots">📍 ' + esc(t('ee.spots', { n: spotItems[v.tier].length, set: t('ee.set.' + v.tier) })) + '</p>';
-    return el;
+  function img(v, cls) {
+    return '<img class="' + cls + '" src="vehicles/' + v.model + '.webp?v=' + window.APP_VERSION + '" alt="" loading="lazy" decoding="async">';
   }
-
-  function openCar(v) {
-    if (!v || v.unknown) return;
-    M.showItemsOnMap(spotItems[v.tier], t('ee.spotsTitle', { name: carName(v) }), cardEl(v));
-  }
-
-  function carButton(v, extra) {
-    var b = document.createElement('button');
-    b.className = 'result';
-    var cat = M.state.catByKey.exotic_exports;
-    b.innerHTML = '<span class="res-blip" style="--c:' + cat.color + '">' + M.blipImg(cat) + '</span><span><div class="name">' + esc(fullName(v)) + (extra || '') + '</div>' +
-      '<div class="meta">' + esc(className(v)) + ' · 🏁 ' + kmh(v) + ' km/h · ' + esc(t('ee.set.' + v.tier)) + '</div></span>';
-    b.addEventListener('click', function () { openCar(v); });
-    return b;
-  }
-
   function badge(v, list) {
     var pos = list.indexOf(v);
     return pos === -1 ? '' : ' <span class="ee-badge">' + esc(t('ee.badge', { n: pos + 1 })) + '</span>';
   }
 
-  // Every export car, sortable.
-  function openAll(sortBy) {
-    sortBy = sortBy || M.store.get('eeSort', 'name');
-    var list = todayList();
-    var el = document.createElement('div');
-    var sel = '<label class="ee-sort"><span class="muted">' + esc(t('ee.sort')) + '</span> <select>' +
-      ['name', 'speed', 'accel', 'today'].map(function (k) {
-        return '<option value="' + k + '"' + (k === sortBy ? ' selected' : '') + '>' + esc(t('ee.sort.' + k)) + '</option>';
-      }).join('') + '</select></label>';
-    el.innerHTML = sel;
-    var cars = data.vehicles.slice();
-    var byName = function (a, b) { return carName(a).localeCompare(carName(b), I18N.code); };
-    cars.sort(sortBy === 'name' ? byName
-      : sortBy === 'today' ? function (a, b) {
-        var pa = list.indexOf(a), pb = list.indexOf(b);
-        return (pa === -1 ? 99 : pa) - (pb === -1 ? 99 : pb) || byName(a, b);
-      }
-      : function (a, b) { return b[sortBy] - a[sortBy]; });
-    cars.forEach(function (v) { el.appendChild(carButton(v, badge(v, list))); });
-    el.querySelector('select').addEventListener('change', function (e) {
-      M.store.set('eeSort', e.target.value);
-      openAll(e.target.value);
+  // Car details and the full car list open in a dialog (like the planner), so
+  // they are always in view, also on phones.
+  var dlg = document.createElement('div');
+  dlg.className = 'planner ee-dlg';
+  dlg.hidden = true;
+  dlg.setAttribute('role', 'dialog');
+  dlg.setAttribute('aria-modal', 'true');
+  document.body.appendChild(dlg);
+  function closeDlg() { dlg.hidden = true; }
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) closeDlg(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !dlg.hidden) closeDlg(); });
+  function showDlg(title, body) {
+    dlg.innerHTML = '<div class="pl-box ee-box"><div class="pl-top"><h2>' + title + '</h2>' +
+      '<button type="button" class="icon-btn" data-close aria-label="' + esc(t('plan.close')) + '">✕</button></div>' + body + '</div>';
+    dlg.querySelector('[data-close]').addEventListener('click', closeDlg);
+    dlg.hidden = false;
+    dlg.querySelector('.pl-box').scrollTop = 0;
+  }
+
+  function openCar(v, fromList) {
+    if (!v || v.unknown) return;
+    showDlg('🚗 ' + esc(fullName(v)),
+      '<div class="ee-hero">' + img(v, 'ee-img') + '</div>' +
+      (carName(v) !== v.name.en ? '<div class="muted">' + esc(v.name.en) + '</div>' : '') +
+      '<div class="ee-meta">' + esc(className(v)) + ' · ' + esc(t('ee.seats', { n: v.seats })) + ' · ' + esc(t('ee.fastest', { n: speedRank[v.i], total: data.vehicles.length })) + '</div>' +
+      whenHtml(v) + statBars(v) +
+      '<p class="muted">' + esc(t('ee.statsNote')) + '</p>' +
+      '<p class="ee-spots">📍 ' + esc(t('ee.spots', { n: spotItems[v.tier].length, set: t('ee.set.' + v.tier) })) + '</p>' +
+      '<div class="ee-actions"><button type="button" class="chip primary" data-map>🗺 ' + esc(t('ee.showSpots', { n: spotItems[v.tier].length })) + '</button>' +
+      '<button type="button" class="chip" data-all>☰ ' + esc(t('ee.all', { n: data.vehicles.length })) + '</button></div>');
+    dlg.querySelector('[data-map]').addEventListener('click', function () {
+      closeDlg();
+      M.showItemsOnMap(spotItems[v.tier], t('ee.spotsTitle', { name: carName(v) }));
+      if (M.isMobile()) M.setSidebar(false);   // phones: show the map, the list stays in the menu
     });
-    M.showPanel(t('ee.allTitle', { n: data.vehicles.length }), el);
+    dlg.querySelector('[data-all]').addEventListener('click', function () { openAll(); });
+  }
+
+  // Search result row (sidebar).
+  function carButton(v, extra) {
+    var b = document.createElement('button');
+    b.className = 'result ee-result';
+    b.innerHTML = img(v, 'ee-thumb') + '<span><div class="name">' + esc(fullName(v)) + (extra || '') + '</div>' +
+      '<div class="meta">' + esc(className(v)) + ' · 🏁 ' + kmh(v) + ' km/h · ' + esc(t('ee.set.' + v.tier)) + '</div></span>';
+    b.addEventListener('click', function () { openCar(v); });
+    return b;
+  }
+
+  // Every export car as a grid of cards: sortable and filterable.
+  function openAll() {
+    var sortBy = M.store.get('eeSort', 'name');
+    showDlg('🚗 ' + esc(t('ee.allTitle', { n: data.vehicles.length })),
+      '<div class="ee-tools"><input type="search" class="ee-filter" placeholder="' + esc(t('ee.filter')) + '">' +
+      '<label class="ee-sort"><span class="muted">' + esc(t('ee.sort')) + '</span> <select>' +
+      ['name', 'speed', 'accel', 'brake', 'traction', 'today'].map(function (k) {
+        return '<option value="' + k + '"' + (k === sortBy ? ' selected' : '') + '>' + esc(t('ee.sort.' + k)) + '</option>';
+      }).join('') + '</select></label></div>' +
+      '<div class="muted ee-legend">' + esc(t('ee.legend')) + ' ' + STATS.map(function (k) { return esc(t('ee.' + k)); }).join(' · ') + '</div>' +
+      '<div class="ee-grid"></div>');
+    var grid = dlg.querySelector('.ee-grid'), filter = dlg.querySelector('.ee-filter');
+    function draw() {
+      var list = todayList();
+      var cars = data.vehicles.slice();
+      var byName = function (a, b) { return carName(a).localeCompare(carName(b), I18N.code); };
+      cars.sort(sortBy === 'name' ? byName
+        : sortBy === 'today' ? function (a, b) {
+          var pa = list.indexOf(a), pb = list.indexOf(b);
+          return (pa === -1 ? 99 : pa) - (pb === -1 ? 99 : pb) || byName(a, b);
+        }
+        : function (a, b) { return b[sortBy] - a[sortBy]; });
+      var words = M.norm(filter.value).split(/\s+/).filter(Boolean);
+      grid.innerHTML = '';
+      cars.forEach(function (v) {
+        if (!words.every(function (w) { return hay[v.i].indexOf(w) !== -1; })) return;
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'ee-tile' + (list.indexOf(v) !== -1 ? ' on' : '');
+        b.innerHTML = img(v, 'ee-tile-img') + '<div class="ee-tile-n">' + esc(carName(v)) + badge(v, list) + '</div>' +
+          '<div class="muted">' + esc(v.maker) + ' · ' + esc(className(v)) + '</div>' + miniBars(v);
+        b.addEventListener('click', function () { openCar(v, true); });
+        grid.appendChild(b);
+      });
+    }
+    dlg.querySelector('select').addEventListener('change', function (e) {
+      sortBy = e.target.value;
+      M.store.set('eeSort', sortBy);
+      draw();
+    });
+    filter.addEventListener('input', draw);
+    draw();
+  }
+
+  function miniBars(v) {
+    return '<div class="ee-mini">' + STATS.map(function (k) {
+      return '<span title="' + esc(t('ee.' + k)) + (k === 'speed' ? ' ' + kmh(v) + ' km/h' : '') + '"><i style="width:' + Math.round(v[k] / best[k] * 100) + '%"></i></span>';
+    }).join('') + '</div><div class="ee-kmh">🏁 ' + kmh(v) + ' km/h</div>';
   }
 
   // Today panel row: the 10 cars in the order they are asked for.

@@ -167,7 +167,13 @@
   "ee.class.COMPACT": "Compacte",
   "ee.class.OFF_ROAD": "Tout-terrain",
   "ee.class.SEDAN": "Berline",
-  "credits.dataVehicles": "Noms des véhicules et stats d'origine (Exotic Exports)."
+  "credits.dataVehicles": "Noms des véhicules et stats d'origine (Exotic Exports).",
+  "ee.showSpots": "Voir les {n} emplacements possibles sur la carte",
+  "ee.filter": "Filtrer par nom…",
+  "ee.legend": "Barres :",
+  "ee.sort.brake": "Freinage",
+  "ee.sort.traction": "Adhérence",
+  "credits.imagesVehicles": "Images des véhicules (Exotic Exports)."
  },
  "cats": {
   "action_figures": {

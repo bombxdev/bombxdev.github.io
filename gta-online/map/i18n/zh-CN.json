@@ -167,7 +167,13 @@
   "ee.class.COMPACT": "小型车",
   "ee.class.OFF_ROAD": "越野车",
   "ee.class.SEDAN": "轿车",
-  "credits.dataVehicles": "车辆名称及原厂性能数据（Exotic Exports）。"
+  "credits.dataVehicles": "车辆名称及原厂性能数据（Exotic Exports）。",
+  "ee.showSpots": "在地图上显示 {n} 个可能地点",
+  "ee.filter": "按名称筛选…",
+  "ee.legend": "条形：",
+  "ee.sort.brake": "制动",
+  "ee.sort.traction": "抓地力",
+  "credits.imagesVehicles": "车辆图片（Exotic Exports）。"
  },
  "cats": {
   "action_figures": {
