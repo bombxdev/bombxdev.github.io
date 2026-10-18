@@ -187,7 +187,9 @@
   "style.road": "Jalan",
   "style.atlas": "Atlas",
   "style.satellite": "Satelit",
-  "style.game": "Dalam game"
+  "style.game": "Dalam game",
+  "group.cayo": "Perampokan Cayo Perico",
+  "purpose.heist": "Perampokan"
  },
  "cats": {
   "action_figures": {
@@ -319,6 +321,61 @@
    "name": "Minimarket",
    "note": "24/7, LTD, Rob's Liquor",
    "info": "Toko kecil; bisa juga dirampok."
+  },
+  "cayo_key_places": {
+   "name": "Lokasi penting",
+   "note": "Kompleks, menara kontrol, pembangkit listrik",
+   "info": "Kompleks El Rubio (target utama), menara kontrol, dan pembangkit listrik untuk diintai."
+  },
+  "cayo_infiltration": {
+   "name": "Titik infiltrasi",
+   "note": "Tempat mendarat",
+   "info": "Titik pendekatan yang bisa dipilih kru. Lompatan HALO tidak punya titik tetap."
+  },
+  "cayo_escape": {
+   "name": "Titik kabur",
+   "note": "Keluar dari pulau",
+   "info": "Tempat meninggalkan pulau setelah perampokan."
+  },
+  "cayo_entrances": {
+   "name": "Pintu masuk kompleks",
+   "note": "Cara masuk",
+   "info": "Gerbang, tembok, dan terowongan drainase kompleks El Rubio."
+  },
+  "cayo_bolt_cutters": {
+   "name": "Pemotong baut",
+   "note": "Lokasi mungkin",
+   "info": "Lokasi mungkin pemotong baut untuk membuka gerbang terkunci. Berubah tiap perampokan."
+  },
+  "cayo_grapple": {
+   "name": "Alat panjat",
+   "note": "Lokasi mungkin",
+   "info": "Lokasi mungkin kait panjat untuk melewati tembok. Berubah tiap perampokan."
+  },
+  "cayo_uniform": {
+   "name": "Seragam penjaga",
+   "note": "Lokasi mungkin",
+   "info": "Lokasi mungkin seragam penjaga untuk menyamar. Berubah tiap perampokan."
+  },
+  "cayo_supply_truck": {
+   "name": "Truk pasokan",
+   "note": "Lokasi mungkin",
+   "info": "Lokasi mungkin truk yang bisa membawamu ke dalam kompleks."
+  },
+  "cayo_loot_island": {
+   "name": "Jarahan sekunder (luar)",
+   "note": "Uang, ganja, kokain, atau emas",
+   "info": "Jarahan sekunder di luar kompleks; isinya berubah tiap perampokan."
+  },
+  "cayo_loot_compound": {
+   "name": "Jarahan sekunder (kompleks)",
+   "note": "Uang, ganja, kokain, atau emas",
+   "info": "Jarahan sekunder di dalam kompleks; isinya berubah tiap perampokan."
+  },
+  "cayo_paintings": {
+   "name": "Lukisan",
+   "note": "Di dalam kompleks",
+   "info": "Tempat lukisan bisa tergantung di dalam kompleks."
   }
  }
 }

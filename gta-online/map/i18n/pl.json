@@ -187,7 +187,9 @@
   "style.road": "Drogi",
   "style.atlas": "Atlas",
   "style.satellite": "Satelita",
-  "style.game": "Jak w grze"
+  "style.game": "Jak w grze",
+  "group.cayo": "Skok na Cayo Perico",
+  "purpose.heist": "Skok"
  },
  "cats": {
   "action_figures": {
@@ -319,6 +321,61 @@
    "name": "Sklepy osiedlowe",
    "note": "24/7, LTD, Rob's Liquor",
    "info": "Małe sklepy; można je też obrabować."
+  },
+  "cayo_key_places": {
+   "name": "Kluczowe miejsca",
+   "note": "Posiadłość, wieża kontrolna, elektrownia",
+   "info": "Posiadłość El Rubio (główny cel), wieża kontrolna i elektrownia do rozpoznania."
+  },
+  "cayo_infiltration": {
+   "name": "Punkty infiltracji",
+   "note": "Gdzie wylądować",
+   "info": "Punkty podejścia do wyboru. Skok HALO nie ma stałego punktu."
+  },
+  "cayo_escape": {
+   "name": "Punkty ucieczki",
+   "note": "Jak opuścić wyspę",
+   "info": "Gdzie opuścić wyspę po skoku."
+  },
+  "cayo_entrances": {
+   "name": "Wejścia do posiadłości",
+   "note": "Jak wejść",
+   "info": "Bramy, mury i tunel odpływowy posiadłości El Rubio."
+  },
+  "cayo_bolt_cutters": {
+   "name": "Nożyce do metalu",
+   "note": "Możliwe miejsca",
+   "info": "Możliwe miejsca nożyc otwierających zamknięte bramy. Zmieniają się co skok."
+  },
+  "cayo_grapple": {
+   "name": "Sprzęt do wspinaczki",
+   "note": "Możliwe miejsca",
+   "info": "Możliwe miejsca kotwiczki do wspinaczki na mury. Zmieniają się co skok."
+  },
+  "cayo_uniform": {
+   "name": "Strój strażnika",
+   "note": "Możliwe miejsca",
+   "info": "Możliwe miejsca stroju strażnika do przebrania. Zmieniają się co skok."
+  },
+  "cayo_supply_truck": {
+   "name": "Ciężarówka z zaopatrzeniem",
+   "note": "Możliwe miejsca",
+   "info": "Możliwe miejsca ciężarówki, którą można wjechać do posiadłości."
+  },
+  "cayo_loot_island": {
+   "name": "Łup dodatkowy (na zewnątrz)",
+   "note": "Gotówka, trawka, kokaina lub złoto",
+   "info": "Łup dodatkowy poza posiadłością; zawartość zmienia się co skok."
+  },
+  "cayo_loot_compound": {
+   "name": "Łup dodatkowy (posiadłość)",
+   "note": "Gotówka, trawka, kokaina lub złoto",
+   "info": "Łup dodatkowy w posiadłości; zawartość zmienia się co skok."
+  },
+  "cayo_paintings": {
+   "name": "Obrazy",
+   "note": "W posiadłości",
+   "info": "Miejsca, gdzie w posiadłości mogą wisieć obrazy."
   }
  }
 }

@@ -187,7 +187,9 @@
   "style.road": "Carreteras",
   "style.atlas": "Atlas",
   "style.satellite": "Satélite",
-  "style.game": "Del juego"
+  "style.game": "Del juego",
+  "group.cayo": "Golpe a Cayo Perico",
+  "purpose.heist": "Golpe"
  },
  "cats": {
   "action_figures": {
@@ -319,6 +321,61 @@
    "name": "Tiendas 24 h",
    "note": "24/7, LTD, Rob's Liquor",
    "info": "Tiendas pequeñas; también puedes atracarlas para conseguir dinero."
+  },
+  "cayo_key_places": {
+   "name": "Lugares clave",
+   "note": "Complejo, torre de control, central eléctrica",
+   "info": "El complejo de El Rubio (objetivo principal), la torre de control y la central eléctrica."
+  },
+  "cayo_infiltration": {
+   "name": "Puntos de infiltración",
+   "note": "Dónde puedes llegar",
+   "info": "Puntos de aproximación que puede elegir el equipo. El salto HALO no tiene punto fijo."
+  },
+  "cayo_escape": {
+   "name": "Puntos de huida",
+   "note": "Cómo salir de la isla",
+   "info": "Dónde puedes salir de la isla tras el golpe."
+  },
+  "cayo_entrances": {
+   "name": "Entradas al complejo",
+   "note": "Cómo entrar",
+   "info": "Puertas, muros y el túnel de drenaje del complejo de El Rubio."
+  },
+  "cayo_bolt_cutters": {
+   "name": "Cizalla",
+   "note": "Posibles ubicaciones",
+   "info": "Posibles ubicaciones de la cizalla, que abre puertas cerradas. Cambian en cada golpe."
+  },
+  "cayo_grapple": {
+   "name": "Equipo de escalada",
+   "note": "Posibles ubicaciones",
+   "info": "Posibles ubicaciones del gancho para escalar los muros. Cambian en cada golpe."
+  },
+  "cayo_uniform": {
+   "name": "Ropa de guardia",
+   "note": "Posibles ubicaciones",
+   "info": "Posibles ubicaciones de la ropa de guardia para pasar desapercibido. Cambian en cada golpe."
+  },
+  "cayo_supply_truck": {
+   "name": "Camión de suministros",
+   "note": "Posibles ubicaciones",
+   "info": "Posibles ubicaciones del camión que puede llevarte dentro del complejo."
+  },
+  "cayo_loot_island": {
+   "name": "Botín secundario (fuera)",
+   "note": "Dinero, hierba, cocaína u oro",
+   "info": "Botín secundario fuera del complejo; el contenido de cada punto se decide en cada golpe."
+  },
+  "cayo_loot_compound": {
+   "name": "Botín secundario (complejo)",
+   "note": "Dinero, hierba, cocaína u oro",
+   "info": "Botín secundario dentro del complejo; el contenido se decide en cada golpe."
+  },
+  "cayo_paintings": {
+   "name": "Cuadros",
+   "note": "Dentro del complejo",
+   "info": "Lugares donde puede haber cuadros dentro del complejo."
   }
  }
 }

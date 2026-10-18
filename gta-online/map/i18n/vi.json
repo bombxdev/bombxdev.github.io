@@ -187,7 +187,9 @@
   "style.road": "Đường",
   "style.atlas": "Atlas",
   "style.satellite": "Vệ tinh",
-  "style.game": "Trong game"
+  "style.game": "Trong game",
+  "group.cayo": "Phi vụ Cayo Perico",
+  "purpose.heist": "Phi vụ"
  },
  "cats": {
   "action_figures": {
@@ -319,6 +321,61 @@
    "name": "Cửa hàng tiện lợi",
    "note": "24/7, LTD, Rob's Liquor",
    "info": "Cửa hàng nhỏ bán đồ ăn vặt; cũng có thể cướp."
+  },
+  "cayo_key_places": {
+   "name": "Địa điểm chính",
+   "note": "Dinh thự, tháp điều khiển, trạm điện",
+   "info": "Dinh thự của El Rubio (mục tiêu chính), tháp điều khiển và trạm điện để trinh sát."
+  },
+  "cayo_infiltration": {
+   "name": "Điểm xâm nhập",
+   "note": "Nơi đổ bộ",
+   "info": "Các điểm tiếp cận đội có thể chọn. Nhảy HALO không có điểm cố định."
+  },
+  "cayo_escape": {
+   "name": "Điểm tẩu thoát",
+   "note": "Rời đảo",
+   "info": "Nơi rời đảo sau phi vụ."
+  },
+  "cayo_entrances": {
+   "name": "Lối vào dinh thự",
+   "note": "Cách vào",
+   "info": "Cổng, tường và đường hầm thoát nước vào dinh thự El Rubio."
+  },
+  "cayo_bolt_cutters": {
+   "name": "Kìm cắt",
+   "note": "Vị trí có thể",
+   "info": "Vị trí có thể của kìm cắt để mở cổng khóa. Thay đổi mỗi phi vụ."
+  },
+  "cayo_grapple": {
+   "name": "Đồ leo",
+   "note": "Vị trí có thể",
+   "info": "Vị trí có thể của móc leo để vượt tường. Thay đổi mỗi phi vụ."
+  },
+  "cayo_uniform": {
+   "name": "Đồng phục bảo vệ",
+   "note": "Vị trí có thể",
+   "info": "Vị trí có thể của đồng phục để cải trang. Thay đổi mỗi phi vụ."
+  },
+  "cayo_supply_truck": {
+   "name": "Xe tải tiếp tế",
+   "note": "Vị trí có thể",
+   "info": "Vị trí có thể của xe tải đưa bạn vào dinh thự."
+  },
+  "cayo_loot_island": {
+   "name": "Chiến lợi phẩm phụ (ngoài)",
+   "note": "Tiền, cần sa, cocaine hoặc vàng",
+   "info": "Chiến lợi phẩm phụ ngoài dinh thự; nội dung đổi mỗi phi vụ."
+  },
+  "cayo_loot_compound": {
+   "name": "Chiến lợi phẩm phụ (dinh thự)",
+   "note": "Tiền, cần sa, cocaine hoặc vàng",
+   "info": "Chiến lợi phẩm phụ trong dinh thự; nội dung đổi mỗi phi vụ."
+  },
+  "cayo_paintings": {
+   "name": "Tranh",
+   "note": "Trong dinh thự",
+   "info": "Chỗ có thể treo tranh trong dinh thự."
   }
  }
 }

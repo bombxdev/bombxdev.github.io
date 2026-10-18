@@ -25,8 +25,8 @@
     game: { name: 'Game', bg: '#0d1625' },
     satellite: { name: 'Satellite', bg: '#143d6b' }
   };
-  var GROUPS = ['permanent', 'daily', 'event', 'landmark'];
-  var PURPOSES = ['money', 'unlock', 'service', 'activity', 'timed', 'event', 'landmark'];
+  var GROUPS = ['permanent', 'daily', 'event', 'landmark', 'cayo'];
+  var PURPOSES = ['money', 'unlock', 'service', 'activity', 'timed', 'event', 'landmark', 'heist'];
   var t = I18N.t;
 
   var PREFIX = 'gtaomap.';
@@ -108,11 +108,17 @@
       noWrap: true
     });
   });
+  // Cayo Perico is not part of the main tile set; it has one image per style
+  // (tools/build_cayo_styles.py) that follows the style switch.
+  function cayoUrl(key) { return 'tiles-cayo/' + key + '.webp?v=' + window.APP_VERSION; }
+  var cayoLayer = L.imageOverlay(cayoUrl('satellite'), CAYO_BOUNDS, { interactive: false });
   function setStyle(key) {
     if (!baseLayers[key] || key === currentStyle) return;
     if (currentStyle) map.removeLayer(baseLayers[currentStyle]);
     currentStyle = key;
     baseLayers[key].addTo(map);
+    cayoLayer.setUrl(cayoUrl(key));
+    if (!map.hasLayer(cayoLayer)) cayoLayer.addTo(map);
     $('map').style.background = STYLES[key].bg;
     STORE.set('style', key);
     document.querySelectorAll('.style-ctl button').forEach(function (b) {
@@ -143,10 +149,6 @@
 
   map.fitBounds(L.latLngBounds([[-3800, -3600], [7700, 4300]]));
 
-  // Cayo Perico is not part of the main tile set; it has its own image.
-  L.imageOverlay('tiles-cayo/satellite.webp?v=' + window.APP_VERSION, CAYO_BOUNDS, {
-    interactive: false
-  }).addTo(map);
 
   function updateZoomClass() {
     var z = map.getZoom(), c = map.getContainer().classList;
@@ -225,13 +227,15 @@
   function idOf(item) { return item.cat + '-' + item.n; }
   // Shops/services move daily; there is nothing to "collect".
   var NOT_COLLECTABLE = { gun_van: true, street_dealers: true, exotic_exports: true };
-  function collectable(cat) { return !NOT_COLLECTABLE[cat.key] && cat.group !== 'landmark'; }
+  function collectable(cat) { return !NOT_COLLECTABLE[cat.key] && cat.group !== 'landmark' && cat.group !== 'cayo'; }
   // Extension points for other modules (exports.js): extra popup HTML per
   // category, and extra search results shown above the map points.
   var POPUP_EXTRA = {};
   var SEARCH_EXTRA = [];
   var POPUP_ALL = [];   // extra popup HTML for every point (photos)
-  function itemLabel(item) { return item.label || '#' + item.n; }
+  // Points can carry a translated name ("@key" in points.json) when it is unique
+  // in their category, e.g. "Airstrip"; otherwise they are numbered.
+  function itemLabel(item) { return item.labelKey ? t(item.labelKey) : item.label || '#' + item.n; }
   function fmt(n) { return (Math.round(n * 100) / 100).toFixed(2); }
   function coordText(x, y, z) { return fmt(x) + ', ' + fmt(y) + (z === undefined ? '' : ', ' + fmt(z)); }
   function esc(s) {
@@ -359,7 +363,7 @@
       doubleClickZoom: false, boxZoom: false, keyboard: false, touchZoom: false, tap: false
     }).setView([item.y, item.x], 7);
     L.tileLayer('tiles/satellite/{z}/{x}_{y}.webp', { maxZoom: 9, maxNativeZoom: 7, bounds: TILE_BOUNDS, noWrap: true }).addTo(miniMap);
-    if (CAYO_BOUNDS.contains([item.y, item.x])) L.imageOverlay('tiles-cayo/satellite.webp?v=' + window.APP_VERSION, CAYO_BOUNDS).addTo(miniMap);
+    if (CAYO_BOUNDS.contains([item.y, item.x])) L.imageOverlay(cayoUrl('satellite'), CAYO_BOUNDS).addTo(miniMap);
     L.circleMarker([item.y, item.x], { radius: 18, color: '#ff3b3b', weight: 3, fill: false, className: 'mini-ring' }).addTo(miniMap);
     L.circleMarker([item.y, item.x], { radius: 3, color: '#ff3b3b', weight: 1, fillOpacity: 1 }).addTo(miniMap);
   }
@@ -574,7 +578,8 @@
     });
     return state.items.filter(function (item) {
       if (nums.length && nums.indexOf(item.num || item.n) === -1) return false;
-      var hay = state.catByKey[item.cat].hay + ' | ' + norm(item.zone || '') + ' | ' + norm(state.notes[idOf(item)] || '');
+      var hay = state.catByKey[item.cat].hay + ' | ' + norm(item.zone || '') + ' | ' + norm(state.notes[idOf(item)] || '') +
+        (item.labelKey ? ' | ' + norm(t(item.labelKey)) + ' | ' + norm(I18N.base.ui[item.labelKey] || '') : '');
       return words.every(function (w) { return hay.indexOf(w) !== -1; });
     });
   }
@@ -1058,7 +1063,10 @@
     var savedVisible = STORE.get('visible', null);
     cats.forEach(function (cat) {
       cat.items = cat.key === 'ghosts' ? [] : (points[cat.key] || []).map(function (p, i) {
-        return { cat: cat.key, n: i + 1, x: p[0], y: p[1], z: p[2], zone: (state.zones[cat.key] || [])[i] || zoneNameAt(p[0], p[1]) };
+        var key = typeof p[3] === 'string' && p[3].charAt(0) === '@' ? p[3].slice(1) : null;
+        var unique = key && (points[cat.key] || []).filter(function (q) { return q[3] === p[3]; }).length === 1;
+        return { cat: cat.key, n: i + 1, x: p[0], y: p[1], z: p[2], labelKey: unique ? key : null,
+          zone: (state.zones[cat.key] || [])[i] || zoneNameAt(p[0], p[1]) };
       });
       state.catByKey[cat.key] = cat;
       state.items = state.items.concat(cat.items);

@@ -187,7 +187,9 @@
   "style.road": "도로",
   "style.atlas": "아틀라스",
   "style.satellite": "위성",
-  "style.game": "게임 지도"
+  "style.game": "게임 지도",
+  "group.cayo": "카요 페리코 습격",
+  "purpose.heist": "습격"
  },
  "cats": {
   "action_figures": {
@@ -319,6 +321,61 @@
    "name": "편의점",
    "note": "24/7, LTD, Rob's Liquor",
    "info": "간식을 파는 작은 가게. 털 수도 있습니다."
+  },
+  "cayo_key_places": {
+   "name": "주요 장소",
+   "note": "저택, 관제탑, 발전소",
+   "info": "엘 루비오의 저택(주 목표)과 정찰할 수 있는 관제탑, 발전소."
+  },
+  "cayo_infiltration": {
+   "name": "침투 지점",
+   "note": "상륙 지점",
+   "info": "팀이 고를 수 있는 접근 지점. HALO 점프는 고정 지점이 없습니다."
+  },
+  "cayo_escape": {
+   "name": "탈출 지점",
+   "note": "섬을 떠나는 곳",
+   "info": "습격 후 섬을 떠나는 지점."
+  },
+  "cayo_entrances": {
+   "name": "저택 입구",
+   "note": "진입 경로",
+   "info": "엘 루비오 저택의 정문, 담장, 배수 터널."
+  },
+  "cayo_bolt_cutters": {
+   "name": "볼트 커터",
+   "note": "출현 후보",
+   "info": "잠긴 문을 여는 볼트 커터의 출현 후보. 습격마다 바뀝니다."
+  },
+  "cayo_grapple": {
+   "name": "갈고리 장비",
+   "note": "출현 후보",
+   "info": "담장을 넘는 갈고리 장비의 출현 후보. 습격마다 바뀝니다."
+  },
+  "cayo_uniform": {
+   "name": "경비원 복장",
+   "note": "출현 후보",
+   "info": "경비원으로 위장하는 복장의 출현 후보. 습격마다 바뀝니다."
+  },
+  "cayo_supply_truck": {
+   "name": "보급 트럭",
+   "note": "출현 후보",
+   "info": "저택으로 들어갈 수 있는 보급 트럭의 출현 후보."
+  },
+  "cayo_loot_island": {
+   "name": "보조 전리품(외부)",
+   "note": "현금, 대마, 코카인 또는 금",
+   "info": "저택 밖 보조 전리품. 내용은 습격마다 정해집니다."
+  },
+  "cayo_loot_compound": {
+   "name": "보조 전리품(저택)",
+   "note": "현금, 대마, 코카인 또는 금",
+   "info": "저택 안 보조 전리품. 내용은 습격마다 정해집니다."
+  },
+  "cayo_paintings": {
+   "name": "그림",
+   "note": "저택 안",
+   "info": "저택 안에 그림이 걸려 있을 수 있는 곳."
   }
  }
 }

@@ -204,7 +204,36 @@
   "style.road": "Road",
   "style.atlas": "Atlas",
   "style.satellite": "Satellite",
-  "style.game": "In-game"
+  "style.game": "In-game",
+  "group.cayo": "Cayo Perico Heist",
+  "purpose.heist": "Heist",
+  "cayo.INT3_AIRS": "Airstrip",
+  "cayo.INT3_BEAC": "West Beach",
+  "cayo.INT3_MDCK": "Main Dock",
+  "cayo.INT3_NDCK": "North Dock",
+  "cayo.INT3_NDRP": "North Drop Zone",
+  "cayo.INT3_SDRP": "South Drop Zone",
+  "cayo.INT3_DTUN": "Drainage Tunnel",
+  "cayo.INT4_AIRS": "Airstrip",
+  "cayo.INT4_MDCK": "Main Dock",
+  "cayo.INT4_NDCK": "North Dock",
+  "cayo.INT4_SUBM": "Kosatka",
+  "cayo.INT5_MGAT": "Main Gate",
+  "cayo.INT5_NWAL": "North Wall",
+  "cayo.INT5_NSGT": "North Side Gate",
+  "cayo.INT5_SWAL": "South Wall",
+  "cayo.INT5_SSGT": "South Side Gate",
+  "cayo.INT5_DTUN": "Drainage Tunnel",
+  "cayo.INT6_CTOW": "Control Tower",
+  "cayo.INT6_PWRS": "Power Station",
+  "cayo.INT0_COMP": "El Rubio's Compound",
+  "cayo.INT6_TROJ": "Supply Truck",
+  "cayo.INT6_BCUT": "Bolt Cutters",
+  "cayo.INT6_GRAP": "Grappling Equipment",
+  "cayo.INT6_UNIF": "Guard Clothing",
+  "cayo.INT2_PAIN": "Painting",
+  "cayo.LOOT_OUT": "Secondary loot",
+  "cayo.LOOT_IN": "Secondary loot"
  },
  "cats": {
   "action_figures": {
@@ -361,6 +390,61 @@
    "name": "Convenience Stores",
    "note": "24/7, LTD, Rob's Liquor",
    "info": "Small shops that sell snacks; you can also hold them up for cash."
+  },
+  "cayo_key_places": {
+   "name": "Key locations",
+   "note": "Compound, control tower, power station",
+   "info": "El Rubio's compound (primary target) plus the control tower and power station you can scope out."
+  },
+  "cayo_infiltration": {
+   "name": "Infiltration points",
+   "note": "Where you can land",
+   "info": "Approach points the crew can choose. The HALO jump has no fixed point."
+  },
+  "cayo_escape": {
+   "name": "Escape points",
+   "note": "Ways off the island",
+   "info": "Where you can leave the island after the heist."
+  },
+  "cayo_entrances": {
+   "name": "Compound entrances",
+   "note": "Ways into the compound",
+   "info": "Gates, walls and the drainage tunnel into El Rubio's compound."
+  },
+  "cayo_bolt_cutters": {
+   "name": "Bolt cutters",
+   "note": "Possible spots",
+   "info": "Possible spots for bolt cutters, which open locked gates. Which spots are used changes each heist."
+  },
+  "cayo_grapple": {
+   "name": "Grappling equipment",
+   "note": "Possible spots",
+   "info": "Possible spots for grappling equipment, for climbing the compound walls. Which spots are used changes each heist."
+  },
+  "cayo_uniform": {
+   "name": "Guard clothing",
+   "note": "Possible spots",
+   "info": "Possible spots for guard clothing, to blend in with the guards. Which spots are used changes each heist."
+  },
+  "cayo_supply_truck": {
+   "name": "Supply truck",
+   "note": "Possible spots",
+   "info": "Possible spots for the supply truck that can drive you into the compound."
+  },
+  "cayo_loot_island": {
+   "name": "Secondary loot (outside)",
+   "note": "Cash, weed, cocaine or gold",
+   "info": "Secondary loot spots outside the compound. What each spot holds (or whether it has anything) is decided per heist."
+  },
+  "cayo_loot_compound": {
+   "name": "Secondary loot (compound)",
+   "note": "Cash, weed, cocaine or gold",
+   "info": "Secondary loot spots inside the compound. What each spot holds is decided per heist."
+  },
+  "cayo_paintings": {
+   "name": "Paintings",
+   "note": "Inside the compound",
+   "info": "Spots where paintings can hang inside the compound."
   }
  }
 }

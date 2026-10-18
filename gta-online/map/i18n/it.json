@@ -187,7 +187,9 @@
   "style.road": "Strade",
   "style.atlas": "Atlas",
   "style.satellite": "Satellite",
-  "style.game": "Come nel gioco"
+  "style.game": "Come nel gioco",
+  "group.cayo": "Colpo a Cayo Perico",
+  "purpose.heist": "Colpo"
  },
  "cats": {
   "action_figures": {
@@ -319,6 +321,61 @@
    "name": "Minimarket",
    "note": "24/7, LTD, Rob's Liquor",
    "info": "Piccoli negozi; si possono anche rapinare."
+  },
+  "cayo_key_places": {
+   "name": "Luoghi chiave",
+   "note": "Complesso, torre di controllo, centrale",
+   "info": "Il complesso di El Rubio (obiettivo principale), la torre di controllo e la centrale elettrica."
+  },
+  "cayo_infiltration": {
+   "name": "Punti di infiltrazione",
+   "note": "Dove arrivare",
+   "info": "Punti di avvicinamento scelti dalla squadra. Il lancio HALO non ha un punto fisso."
+  },
+  "cayo_escape": {
+   "name": "Punti di fuga",
+   "note": "Lasciare l'isola",
+   "info": "Dove lasciare l'isola dopo il colpo."
+  },
+  "cayo_entrances": {
+   "name": "Ingressi del complesso",
+   "note": "Entrare",
+   "info": "Cancelli, mura e tunnel di scolo del complesso di El Rubio."
+  },
+  "cayo_bolt_cutters": {
+   "name": "Tronchesi",
+   "note": "Posizioni possibili",
+   "info": "Posizioni possibili delle tronchesi, che aprono i cancelli chiusi. Cambiano a ogni colpo."
+  },
+  "cayo_grapple": {
+   "name": "Rampino",
+   "note": "Posizioni possibili",
+   "info": "Posizioni possibili del rampino per scalare le mura. Cambiano a ogni colpo."
+  },
+  "cayo_uniform": {
+   "name": "Divisa da guardia",
+   "note": "Posizioni possibili",
+   "info": "Posizioni possibili della divisa per mimetizzarsi. Cambiano a ogni colpo."
+  },
+  "cayo_supply_truck": {
+   "name": "Camion dei rifornimenti",
+   "note": "Posizioni possibili",
+   "info": "Posizioni possibili del camion che può portarti nel complesso."
+  },
+  "cayo_loot_island": {
+   "name": "Bottino secondario (fuori)",
+   "note": "Contanti, erba, cocaina o oro",
+   "info": "Bottino secondario fuori dal complesso; il contenuto cambia a ogni colpo."
+  },
+  "cayo_loot_compound": {
+   "name": "Bottino secondario (complesso)",
+   "note": "Contanti, erba, cocaina o oro",
+   "info": "Bottino secondario nel complesso; il contenuto cambia a ogni colpo."
+  },
+  "cayo_paintings": {
+   "name": "Dipinti",
+   "note": "Nel complesso",
+   "info": "Punti dove possono esserci dipinti nel complesso."
   }
  }
 }

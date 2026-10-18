@@ -187,7 +187,9 @@
   "style.road": "Routes",
   "style.atlas": "Atlas",
   "style.satellite": "Satellite",
-  "style.game": "Jeu"
+  "style.game": "Jeu",
+  "group.cayo": "Braquage de Cayo Perico",
+  "purpose.heist": "Braquage"
  },
  "cats": {
   "action_figures": {
@@ -319,6 +321,61 @@
    "name": "Supérettes",
    "note": "24/7, LTD, Rob's Liquor",
    "info": "Petites boutiques ; on peut aussi les braquer."
+  },
+  "cayo_key_places": {
+   "name": "Lieux clés",
+   "note": "Complexe, tour de contrôle, centrale",
+   "info": "Le complexe d'El Rubio (cible principale), la tour de contrôle et la centrale électrique."
+  },
+  "cayo_infiltration": {
+   "name": "Points d'infiltration",
+   "note": "Où arriver",
+   "info": "Points d'approche au choix de l'équipe. Le saut HALO n'a pas de point fixe."
+  },
+  "cayo_escape": {
+   "name": "Points de fuite",
+   "note": "Quitter l'île",
+   "info": "Où quitter l'île après le braquage."
+  },
+  "cayo_entrances": {
+   "name": "Entrées du complexe",
+   "note": "Entrer",
+   "info": "Portails, murs et tunnel d'évacuation du complexe d'El Rubio."
+  },
+  "cayo_bolt_cutters": {
+   "name": "Coupe-boulons",
+   "note": "Emplacements possibles",
+   "info": "Emplacements possibles des coupe-boulons, qui ouvrent les portails verrouillés. Variables à chaque braquage."
+  },
+  "cayo_grapple": {
+   "name": "Grappin",
+   "note": "Emplacements possibles",
+   "info": "Emplacements possibles du grappin pour escalader les murs. Variables à chaque braquage."
+  },
+  "cayo_uniform": {
+   "name": "Tenue de garde",
+   "note": "Emplacements possibles",
+   "info": "Emplacements possibles de la tenue de garde pour se fondre parmi les gardes. Variables à chaque braquage."
+  },
+  "cayo_supply_truck": {
+   "name": "Camion de ravitaillement",
+   "note": "Emplacements possibles",
+   "info": "Emplacements possibles du camion qui peut vous faire entrer dans le complexe."
+  },
+  "cayo_loot_island": {
+   "name": "Butin secondaire (extérieur)",
+   "note": "Argent, herbe, cocaïne ou or",
+   "info": "Butin secondaire hors du complexe ; le contenu de chaque point change à chaque braquage."
+  },
+  "cayo_loot_compound": {
+   "name": "Butin secondaire (complexe)",
+   "note": "Argent, herbe, cocaïne ou or",
+   "info": "Butin secondaire dans le complexe ; le contenu change à chaque braquage."
+  },
+  "cayo_paintings": {
+   "name": "Tableaux",
+   "note": "Dans le complexe",
+   "info": "Emplacements où des tableaux peuvent être accrochés dans le complexe."
   }
  }
 }

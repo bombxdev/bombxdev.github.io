@@ -1,10 +1,13 @@
 # Cayo Perico overlay
 
-`satellite.webp` (2500×2436, transparent sea around the island) come from
+One image per map style (2500×2436, transparent sea around the island), from
 [fivenet-app/livemap-tiles](https://github.com/fivenet-app/livemap-tiles) `overlays/cayo-perico/`
 (repository license: Apache-2.0). The imagery itself is credited there to:
 
-- [Cayo Perico Satelitte Map V3](https://forum.cfx.re/t/free-cayo-perico-satelitte-map-v3/5260282) by jonstyle83
+- `satellite.webp`: [Cayo Perico Satelitte Map V3](https://forum.cfx.re/t/free-cayo-perico-satelitte-map-v3/5260282) by jonstyle83
+- `atlas.webp`, `road.webp`, `game.webp`: built from `postal.webp`,
+  [Cayo Perico Atlas Postal Map](https://forum.cfx.re/t/cayo-perico-atlas-postal-map-free/5275857) by DZ2024,
+  with `tools/build_cayo_styles.py` (postal-code numbers removed, recoloured per style)
 
 Game imagery © Rockstar Games.
 
