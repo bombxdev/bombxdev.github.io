@@ -131,7 +131,43 @@
   "credits.imagesCayo": "佩里科岛图像。",
   "credits.imagesBlips": "游戏内雷达图标。",
   "credits.software": "软件",
-  "credits.softwareLeaflet": "交互式地图库。"
+  "credits.softwareLeaflet": "交互式地图库。",
+  "ee.title": "Exotic Exports — 当天的 10 辆车",
+  "ee.all": "全部 {n} 辆出口车及性能",
+  "ee.allTitle": "Exotic Exports 车辆（{n}）",
+  "ee.spotsTitle": "{name} 可能停放的位置",
+  "ee.onList": "在当天的清单上（第 {n} 辆）",
+  "ee.next": "下次上榜：{date}（{n} 天后，第 {pos} 辆）",
+  "ee.notSoon": "未来 {n} 天内不在清单上",
+  "ee.seats": "{n} 座",
+  "ee.fastest": "速度排名 {n}/{total}",
+  "ee.speed": "最高速度",
+  "ee.accel": "加速",
+  "ee.brake": "制动",
+  "ee.traction": "抓地力",
+  "ee.statsNote": "游戏文件中的原厂数据（未改装）。条形图与最好的出口车比较。",
+  "ee.spots": "随机停在以下 {n} 个地点之一（{set}）——逐个查看即可。",
+  "ee.set.high": "高端车停放点",
+  "ee.set.std": "普通车停放点",
+  "ee.sort": "排序：",
+  "ee.sort.name": "名称",
+  "ee.sort.speed": "最高速度",
+  "ee.sort.accel": "加速",
+  "ee.sort.today": "当天清单",
+  "ee.badge": "今天第 {n} 辆",
+  "ee.found": "{n} 辆出口车",
+  "ee.popHere": "在当天清单上且可能停在这里：",
+  "ee.popNone": "当天没有车使用这组地点。",
+  "ee.class.SUPER": "超级跑车",
+  "ee.class.SPORT": "跑车",
+  "ee.class.SPORT_CLASSIC": "经典跑车",
+  "ee.class.MUSCLE": "肌肉车",
+  "ee.class.SUV": "SUV",
+  "ee.class.COUPE": "轿跑车",
+  "ee.class.COMPACT": "小型车",
+  "ee.class.OFF_ROAD": "越野车",
+  "ee.class.SEDAN": "轿车",
+  "credits.dataVehicles": "车辆名称及原厂性能数据（Exotic Exports）。"
  },
  "cats": {
   "action_figures": {
@@ -228,6 +264,11 @@
   "ghosts": {
    "name": "Ghosts Exposed（拍鬼）",
    "note": "万圣节活动：每个鬼魂只在游戏中的一小时出现"
+  },
+  "exotic_exports": {
+   "name": "Exotic Exports 车辆",
+   "note": "每日：每天 10 辆车，各停在 50 个地点之一",
+   "info": "Exotic Exports（LS Tuners 更新）：每天有一份 10 辆车的清单，需要找到并送到洛圣都港的 Exotic Exports 码头。每辆车随机停在 50 个固定地点之一（高端车一组，普通车一组）。按车名搜索即可查看可能的停放位置、性能以及下次上榜日期。"
   }
  }
 }

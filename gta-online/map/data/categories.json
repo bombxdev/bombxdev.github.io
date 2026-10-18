@@ -12,6 +12,7 @@
   {"key": "street_dealers", "en": "Street Dealers", "group": "daily", "color": "#9e8cfc", "glyph": "💊", "aliases": ["dealer", "drug", "ดีลเลอร์"], "blip": "radar_drugs_package", "blipSource": "closest"},
   {"key": "bike_time_trial", "en": "Junk Energy Bike Time Trial", "group": "daily", "color": "#ffb224", "glyph": "🚲", "aliases": ["bike", "bmx", "time trial", "จักรยาน"], "blip": "radar_bicycle_trial", "blipSource": "game"},
   {"key": "rc_time_trial", "en": "RC Bandito Time Trial", "group": "daily", "color": "#3dd68c", "glyph": "🚗", "aliases": ["rc", "bandito", "time trial"], "blip": "radar_rc_time_trials", "blipSource": "game"},
+  {"key": "exotic_exports", "en": "Exotic Exports cars", "group": "daily", "color": "#c9a227", "glyph": "🚗", "aliases": ["exotic exports", "export", "simeon", "car", "vehicle", "steal", "รถ", "ขโมยรถ", "ซีเมียน"], "blip": "radar_export_vehicle", "blipSource": "game", "hidden": true},
   {"key": "ls_tags", "en": "LS Tags", "group": "daily", "color": "#ff8dcc", "glyph": "🎨", "aliases": ["tag", "graffiti", "spray", "กราฟฟิตี"], "blip": "radar_painting", "blipSource": "closest"},
   {"key": "hidden_caches", "en": "Hidden Caches", "group": "daily", "color": "#0090ff", "glyph": "📦", "aliases": ["cache", "underwater", "ใต้น้ำ"], "blip": "radar_sm_cargo", "blipSource": "game"},
   {"key": "shipwrecks", "en": "Shipwrecks", "group": "daily", "color": "#a18072", "glyph": "⚓", "aliases": ["ship", "wreck", "เรือ"], "blip": "radar_ship_wheel", "blipSource": "closest"},

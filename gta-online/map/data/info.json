@@ -118,5 +118,8 @@
   "purpose": "timed",
   "cash": 20000,
   "bonus_cash": 50000
+ },
+ "exotic_exports": {
+  "purpose": "money"
  }
 }

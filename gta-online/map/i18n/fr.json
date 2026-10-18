@@ -131,7 +131,43 @@
   "credits.imagesCayo": "Image de l'île de Cayo Perico.",
   "credits.imagesBlips": "Icônes de radar du jeu.",
   "credits.software": "Logiciels",
-  "credits.softwareLeaflet": "Bibliothèque de cartes interactives."
+  "credits.softwareLeaflet": "Bibliothèque de cartes interactives.",
+  "ee.title": "Exotic Exports — les 10 voitures du jour",
+  "ee.all": "Les {n} voitures d'export et leurs stats",
+  "ee.allTitle": "Voitures Exotic Exports ({n})",
+  "ee.spotsTitle": "Où la {name} peut être garée",
+  "ee.onList": "Sur la liste de ce jour (n° {n})",
+  "ee.next": "Prochaine fois sur la liste : {date} (dans {n} jours, n° {pos})",
+  "ee.notSoon": "Pas sur la liste dans les {n} prochains jours",
+  "ee.seats": "{n} places",
+  "ee.fastest": "{n}e plus rapide sur {total}",
+  "ee.speed": "Vitesse max.",
+  "ee.accel": "Accélération",
+  "ee.brake": "Freinage",
+  "ee.traction": "Adhérence",
+  "ee.statsNote": "Stats d'origine tirées des fichiers du jeu (sans amélioration). Les barres comparent à la meilleure voiture d'export.",
+  "ee.spots": "Garée au hasard à l'un de ces {n} endroits ({set}) — vérifiez-les un par un.",
+  "ee.set.high": "Emplacements voitures haut de gamme",
+  "ee.set.std": "Emplacements voitures normales",
+  "ee.sort": "Trier :",
+  "ee.sort.name": "Nom",
+  "ee.sort.speed": "Vitesse max.",
+  "ee.sort.accel": "Accélération",
+  "ee.sort.today": "Liste du jour",
+  "ee.badge": "Aujourd'hui n° {n}",
+  "ee.found": "{n} voitures d'export",
+  "ee.popHere": "Sur la liste de ce jour et peut être garée ici :",
+  "ee.popNone": "Aucune voiture du jour n'utilise ces emplacements.",
+  "ee.class.SUPER": "Super",
+  "ee.class.SPORT": "Sport",
+  "ee.class.SPORT_CLASSIC": "Sport classique",
+  "ee.class.MUSCLE": "Muscle",
+  "ee.class.SUV": "SUV",
+  "ee.class.COUPE": "Coupé",
+  "ee.class.COMPACT": "Compacte",
+  "ee.class.OFF_ROAD": "Tout-terrain",
+  "ee.class.SEDAN": "Berline",
+  "credits.dataVehicles": "Noms des véhicules et stats d'origine (Exotic Exports)."
  },
  "cats": {
   "action_figures": {
@@ -228,6 +264,11 @@
   "ghosts": {
    "name": "Ghosts Exposed",
    "note": "Événement d'Halloween : chaque fantôme apparaît pendant une heure de jeu"
+  },
+  "exotic_exports": {
+   "name": "Voitures Exotic Exports",
+   "note": "Quotidien : 10 voitures par jour, chacune à 1 de 50 endroits",
+   "info": "Exotic Exports (LS Tuners) : chaque jour, une liste de 10 voitures à trouver et livrer au quai Exotic Exports du port de Los Santos. Chaque voiture est garée au hasard à l'un de 50 endroits fixes (un groupe pour le haut de gamme, un pour les voitures normales). Cherchez une voiture par son nom pour voir où elle peut être, ses stats et quand elle revient sur la liste."
   }
  }
 }

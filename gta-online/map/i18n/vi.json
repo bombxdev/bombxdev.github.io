@@ -131,7 +131,43 @@
   "credits.imagesCayo": "Hình đảo Cayo Perico.",
   "credits.imagesBlips": "Biểu tượng radar trong game.",
   "credits.software": "Phần mềm",
-  "credits.softwareLeaflet": "Thư viện bản đồ tương tác."
+  "credits.softwareLeaflet": "Thư viện bản đồ tương tác.",
+  "ee.title": "Exotic Exports — 10 xe của ngày này",
+  "ee.all": "Tất cả {n} xe xuất khẩu và chỉ số",
+  "ee.allTitle": "Xe Exotic Exports ({n})",
+  "ee.spotsTitle": "Nơi {name} có thể đang đỗ",
+  "ee.onList": "Có trong danh sách ngày này (#{n})",
+  "ee.next": "Lần tới trong danh sách: {date} (sau {n} ngày, #{pos})",
+  "ee.notSoon": "Không có trong danh sách {n} ngày tới",
+  "ee.seats": "{n} chỗ",
+  "ee.fastest": "Nhanh thứ {n}/{total}",
+  "ee.speed": "Tốc độ tối đa",
+  "ee.accel": "Tăng tốc",
+  "ee.brake": "Phanh",
+  "ee.traction": "Độ bám",
+  "ee.statsNote": "Chỉ số gốc từ dữ liệu game (chưa nâng cấp). Thanh so với xe xuất khẩu tốt nhất.",
+  "ee.spots": "Đỗ ngẫu nhiên ở một trong {n} điểm này ({set}) — kiểm tra lần lượt.",
+  "ee.set.high": "Điểm đỗ xe cao cấp",
+  "ee.set.std": "Điểm đỗ xe thường",
+  "ee.sort": "Sắp xếp:",
+  "ee.sort.name": "Tên",
+  "ee.sort.speed": "Tốc độ tối đa",
+  "ee.sort.accel": "Tăng tốc",
+  "ee.sort.today": "Danh sách ngày",
+  "ee.badge": "Hôm nay #{n}",
+  "ee.found": "{n} xe xuất khẩu",
+  "ee.popHere": "Có trong danh sách ngày này và có thể đỗ ở đây:",
+  "ee.popNone": "Không xe nào của ngày này dùng nhóm điểm này.",
+  "ee.class.SUPER": "Siêu xe",
+  "ee.class.SPORT": "Thể thao",
+  "ee.class.SPORT_CLASSIC": "Thể thao cổ điển",
+  "ee.class.MUSCLE": "Muscle",
+  "ee.class.SUV": "SUV",
+  "ee.class.COUPE": "Coupe",
+  "ee.class.COMPACT": "Cỡ nhỏ",
+  "ee.class.OFF_ROAD": "Địa hình",
+  "ee.class.SEDAN": "Sedan",
+  "credits.dataVehicles": "Tên xe và chỉ số hiệu năng gốc (Exotic Exports)."
  },
  "cats": {
   "action_figures": {
@@ -228,6 +264,11 @@
   "ghosts": {
    "name": "Ghosts Exposed (chụp ma)",
    "note": "Sự kiện Halloween: mỗi con ma xuất hiện 1 giờ trong game"
+  },
+  "exotic_exports": {
+   "name": "Xe Exotic Exports",
+   "note": "Hằng ngày: 10 xe mỗi ngày, mỗi xe ở 1 trong 50 điểm",
+   "info": "Exotic Exports (LS Tuners): mỗi ngày có danh sách 10 xe cần tìm và giao tới bến Exotic Exports ở cảng Los Santos. Mỗi xe đỗ ngẫu nhiên ở một trong 50 điểm cố định (một nhóm cho xe cao cấp, một nhóm cho xe thường). Tìm xe theo tên để xem nơi có thể đỗ, chỉ số và khi nào xe trở lại danh sách."
   }
  }
 }

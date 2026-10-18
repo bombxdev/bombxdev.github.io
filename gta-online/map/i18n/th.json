@@ -131,7 +131,43 @@
   "credits.imagesCayo": "ภาพเกาะ Cayo Perico",
   "credits.imagesBlips": "ไอคอน blip เรดาร์จากในเกม",
   "credits.software": "ซอฟต์แวร์",
-  "credits.softwareLeaflet": "ไลบรารีแผนที่แบบโต้ตอบ"
+  "credits.softwareLeaflet": "ไลบรารีแผนที่แบบโต้ตอบ",
+  "ee.title": "Exotic Exports — รถ 10 คันของวันนี้",
+  "ee.all": "รถส่งออกทั้งหมด {n} คัน + ค่าความแรง",
+  "ee.allTitle": "รถ Exotic Exports ({n})",
+  "ee.spotsTitle": "จุดที่ {name} อาจจอดอยู่",
+  "ee.onList": "อยู่ในรายการวันนี้ (ลำดับ {n})",
+  "ee.next": "จะอยู่ในรายการครั้งถัดไป: {date} (อีก {n} วัน, ลำดับ {pos})",
+  "ee.notSoon": "ไม่อยู่ในรายการภายใน {n} วันข้างหน้า",
+  "ee.seats": "{n} ที่นั่ง",
+  "ee.fastest": "เร็วอันดับ {n} จาก {total}",
+  "ee.speed": "ความเร็วสูงสุด",
+  "ee.accel": "อัตราเร่ง",
+  "ee.brake": "การเบรก",
+  "ee.traction": "การยึดเกาะ",
+  "ee.statsNote": "ค่าจากไฟล์เกม (รถสต็อก ไม่อัปเกรด) แถบเทียบกับรถส่งออกที่ดีที่สุด",
+  "ee.spots": "จอดอยู่แบบสุ่ม 1 ใน {n} จุดนี้ ({set}) — ไล่เช็กทีละจุดได้เลย",
+  "ee.set.high": "จุดจอดรถหรู",
+  "ee.set.std": "จุดจอดรถทั่วไป",
+  "ee.sort": "เรียง:",
+  "ee.sort.name": "ชื่อ",
+  "ee.sort.speed": "ความเร็วสูงสุด",
+  "ee.sort.accel": "อัตราเร่ง",
+  "ee.sort.today": "รายการวันนี้",
+  "ee.badge": "วันนี้ #{n}",
+  "ee.found": "รถส่งออก {n} คัน",
+  "ee.popHere": "อยู่ในรายการวันนี้และอาจจอดอยู่ที่นี่:",
+  "ee.popNone": "ไม่มีรถในรายการวันนี้ที่ใช้จุดชุดนี้",
+  "ee.class.SUPER": "ซูเปอร์คาร์",
+  "ee.class.SPORT": "สปอร์ต",
+  "ee.class.SPORT_CLASSIC": "สปอร์ตคลาสสิก",
+  "ee.class.MUSCLE": "มัสเซิล",
+  "ee.class.SUV": "SUV",
+  "ee.class.COUPE": "คูเป้",
+  "ee.class.COMPACT": "คอมแพกต์",
+  "ee.class.OFF_ROAD": "ออฟโรด",
+  "ee.class.SEDAN": "ซีดาน",
+  "credits.dataVehicles": "ชื่อรถและค่าความแรงของรถ (Exotic Exports)"
  },
  "cats": {
   "action_figures": {
@@ -253,6 +289,11 @@
    "name": "Ghosts Exposed (ถ่ายรูปผี)",
    "note": "อีเวนต์ฮาโลวีน: ผีแต่ละตัวโผล่ 1 ชั่วโมงในเกม",
    "info": "ถ่ายรูปผีด้วยกล้องโทรศัพท์ตอนที่มันโผล่ ได้ $20,000 ต่อตัว โบนัสครบ 10 ตัว $50,000 ดูเวลาในเกมปัจจุบันได้ที่แผง \"ประจำวัน\""
+  },
+  "exotic_exports": {
+   "name": "รถ Exotic Exports",
+   "note": "รายวัน: วันละ 10 คัน แต่ละคันจอด 1 ใน 50 จุด",
+   "info": "Exotic Exports (อัปเดต LS Tuners): ทุกวันจะมีรายการรถ 10 คันให้ไปหาและส่งที่ท่าเรือ Exotic Exports ใน Port of Los Santos รถแต่ละคันจะจอดแบบสุ่ม 1 ใน 50 จุดที่กำหนดไว้ (รถหรูใช้ชุดหนึ่ง รถทั่วไปอีกชุด) พิมพ์ชื่อรถในช่องค้นหาเพื่อดูจุดที่อาจจอด ค่าความแรง และวันที่จะกลับมาอยู่ในรายการ"
   }
  }
 }

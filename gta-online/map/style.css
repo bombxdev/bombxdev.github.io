@@ -338,3 +338,24 @@ img.blip { display: block; width: 16px; height: 16px; image-rendering: auto; poi
   }
   #sidebar.open ~ .backdrop { display: block; }
 }
+
+/* Exotic Exports */
+.ee-today { margin-top: 6px; }
+.ee-today .chips button { text-align: left; }
+.ee-today .ee-all { margin-top: 5px; border-style: dashed; }
+.ee-card { padding: 8px 12px 6px; border-bottom: 1px solid var(--line); font-size: 13px; }
+.ee-card .ee-h { font-size: 14px; margin-bottom: 2px; }
+.ee-card p { margin: 6px 0 0; }
+.ee-when { margin: 6px 0; font-size: 12px; }
+.ee-when.live { color: var(--ok); }
+.ee-stats { display: grid; gap: 4px; margin-top: 6px; }
+.ee-stat { display: grid; grid-template-columns: 82px 1fr auto; gap: 8px; align-items: center; font-size: 12px; }
+.ee-bar { height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; }
+.ee-bar i { display: block; height: 100%; background: linear-gradient(90deg, #c9a227, #f5d565); border-radius: 3px; }
+.ee-val { color: var(--muted); font-variant-numeric: tabular-nums; min-width: 44px; text-align: right; }
+.ee-spots { font-size: 12px; }
+.ee-sort { display: flex; align-items: center; gap: 6px; padding: 8px 12px; border-bottom: 1px solid var(--line); }
+.ee-sort select { background: var(--panel); color: var(--text); border: 1px solid var(--line); border-radius: 6px; padding: 3px 6px; }
+.ee-badge { display: inline-block; font-size: 11px; padding: 0 6px; margin-left: 4px; border-radius: 4px; border: 1px solid var(--ok); background: color-mix(in srgb, var(--ok) 25%, transparent); }
+.ee-pop { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+.ee-pop .chip { font-size: 12px; padding: 2px 8px; }

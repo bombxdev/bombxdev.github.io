@@ -192,7 +192,11 @@
   // ---------------------------------------------------------------------------
   function idOf(item) { return item.cat + '-' + item.n; }
   // Shops/services move daily; there is nothing to "collect".
-  var NOT_COLLECTABLE = { gun_van: true, street_dealers: true };
+  var NOT_COLLECTABLE = { gun_van: true, street_dealers: true, exotic_exports: true };
+  // Extension points for other modules (exports.js): extra popup HTML per
+  // category, and extra search results shown above the map points.
+  var POPUP_EXTRA = {};
+  var SEARCH_EXTRA = [];
   function itemLabel(item) { return item.label || '#' + item.n; }
   function fmt(n) { return (Math.round(n * 100) / 100).toFixed(2); }
   function coordText(x, y, z) { return fmt(x) + ', ' + fmt(y) + (z === undefined ? '' : ', ' + fmt(z)); }
@@ -337,6 +341,7 @@
       (note ? '<div class="note">' + esc(note) + '</div>' : '') +
       (item.ghost ? '<div class="pop-rw">' + ghostTimingHtml(item.ghost) + '</div>' : '') +
       (rewardHtml(cat) ? '<div class="pop-rw">' + rewardHtml(cat) + '</div>' : '') +
+      (POPUP_EXTRA[item.cat] ? POPUP_EXTRA[item.cat](item) : '') +
       whereHtml(item) +
       '<div class="pop-mini" data-mini="' + idOf(item) + '"></div>' +
       '<div class="muted small">' + esc(t('pop.closeup')) + '</div>' +
@@ -538,12 +543,18 @@
       return;
     }
     var found = searchItems(q);
+    var extra = SEARCH_EXTRA.map(function (fn) { return fn(q); }).filter(Boolean);
     state.matches = new Set(found);
+    // An extra result can bring its own points (e.g. where a car can be parked).
+    var extraItems = [].concat.apply([], extra.map(function (x) { return x.items || []; }));
+    extraItems.forEach(function (it) { state.matches.add(it); });
     refreshMarkers();
     var shown = found.slice(0, 300);
-    box.innerHTML = '<div class="summary">' + esc(t('search.found', { n: found.length }) +
+    box.innerHTML = '';
+    extra.forEach(function (x) { box.appendChild(x.el); });
+    if (found.length || !extra.length) box.insertAdjacentHTML('beforeend', '<div class="summary">' + esc(t('search.found', { n: found.length }) +
       (found.length > shown.length ? t('search.showingFirst', { n: shown.length }) : '') +
-      (found.length ? t('search.mapFiltered') : '')) + '</div>';
+      (found.length ? t('search.mapFiltered') : '')) + '</div>');
     shown.forEach(function (item) {
       var cat = state.catByKey[item.cat];
       var b = document.createElement('button');
@@ -554,13 +565,14 @@
       b.addEventListener('click', function () { focusItem(item); });
       box.appendChild(b);
     });
-    if (found.length && found.length <= 300) {
-      map.flyToBounds(L.latLngBounds(found.map(function (it) { return [it.y, it.x]; })).pad(0.15), { maxZoom: 6, duration: 0.6 });
+    var fit = found.length ? found : extraItems;
+    if (fit.length && fit.length <= 300) {
+      map.flyToBounds(L.latLngBounds(fit.map(function (it) { return [it.y, it.x]; })).pad(0.15), { maxZoom: 6, duration: 0.6 });
     }
   }
 
   // Show only `items` on the map with a list in the results box (planner).
-  function showItemsOnMap(items, title) {
+  function showItemsOnMap(items, title, extraEl) {
     $('search').value = '';
     $('clearSearch').hidden = false;
     state.query = '';
@@ -570,6 +582,8 @@
     var box = $('results');
     box.hidden = false;
     box.innerHTML = '<div class="summary">' + esc(title) + '</div>';
+    if (extraEl) box.appendChild(extraEl);
+    box.scrollTop = 0;
     items.forEach(function (item) {
       var cat = state.catByKey[item.cat];
       var b = document.createElement('button');
@@ -582,6 +596,22 @@
     if (items.length) {
       map.flyToBounds(L.latLngBounds(items.map(function (it) { return [it.y, it.x]; })).pad(0.15), { maxZoom: 6, duration: 0.6 });
     }
+    if (isMobile()) setSidebar(true);
+  }
+
+  // Show a custom panel in the results box without filtering the map.
+  function showPanel(title, el) {
+    $('search').value = '';
+    $('clearSearch').hidden = false;
+    state.query = '';
+    tempLayer.clearLayers();
+    state.matches = null;
+    refreshMarkers();
+    var box = $('results');
+    box.hidden = false;
+    box.innerHTML = '<div class="summary">' + esc(title) + '</div>';
+    box.appendChild(el);
+    box.scrollTop = 0;
     if (isMobile()) setSidebar(true);
   }
 
@@ -957,11 +987,11 @@
     var savedVisible = STORE.get('visible', null);
     cats.forEach(function (cat) {
       cat.items = cat.key === 'ghosts' ? [] : (points[cat.key] || []).map(function (p, i) {
-        return { cat: cat.key, n: i + 1, x: p[0], y: p[1], z: p[2], zone: (state.zones[cat.key] || [])[i] || '' };
+        return { cat: cat.key, n: i + 1, x: p[0], y: p[1], z: p[2], zone: (state.zones[cat.key] || [])[i] || zoneNameAt(p[0], p[1]) };
       });
       state.catByKey[cat.key] = cat;
       state.items = state.items.concat(cat.items);
-      state.visible[cat.key] = savedVisible && cat.key in savedVisible ? savedVisible[cat.key] : cat.group !== 'event';
+      state.visible[cat.key] = savedVisible && cat.key in savedVisible ? savedVisible[cat.key] : cat.group !== 'event' && !cat.hidden;
     });
     state.cats = cats;
     setGhostSet(pickGhostSet());
@@ -993,10 +1023,13 @@
     toast(t('toast.loadError'));
   });
 
-  // Small API for planner.js.
+  // Small API for planner.js and exports.js.
   window.GTAOMap = {
-    state: state, store: STORE, idOf: idOf, itemLabel: itemLabel, blipImg: blipImg, esc: esc,
+    state: state, store: STORE, idOf: idOf, itemLabel: itemLabel, blipImg: blipImg, esc: esc, norm: norm,
     money: function (n) { return money(n); }, num: function (n) { return num(n); },
-    showItemsOnMap: showItemsOnMap, setSidebar: function (open) { setSidebar(open); }
+    showItemsOnMap: showItemsOnMap, showPanel: showPanel, setSidebar: function (open) { setSidebar(open); },
+    focusItem: function (item) { focusItem(item); }, isMobile: function () { return isMobile(); },
+    dayFmt: function () { return dayFmt; },
+    popupExtra: POPUP_EXTRA, searchExtra: SEARCH_EXTRA
   };
 })();
