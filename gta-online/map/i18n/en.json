@@ -196,7 +196,14 @@
   "hint.signOut": "Sign out",
   "hint.signedIn": "Admin: {login}",
   "hint.signedOut": "Signed out. The token was removed from this browser.",
-  "hint.howTo": "Open any point on the map and use \"Add photo\" in its popup."
+  "hint.howTo": "Open any point on the map and use \"Add photo\" in its popup.",
+  "group.landmark": "Shops & landmarks",
+  "purpose.landmark": "Shops & landmarks",
+  "group.showAll": "Show all",
+  "group.hideAll": "Hide all",
+  "style.road": "In-game",
+  "style.atlas": "Atlas",
+  "style.satellite": "Satellite"
  },
  "cats": {
   "action_figures": {
@@ -323,6 +330,36 @@
    "name": "Exotic Exports cars",
    "note": "Daily: 10 cars a day, each parked at 1 of 50 spots",
    "info": "Exotic Exports (LS Tuners): every day there is a list of 10 cars to find and deliver to the Exotic Exports dock at the Port of Los Santos. Each car is parked at a random one of 50 fixed spots (one set for high-end cars, one for regular cars). Search a car by name to see where it can be, its stats, and when it is on the list again."
+  },
+  "ammunation": {
+   "name": "Ammu-Nation",
+   "note": "Gun shop",
+   "info": "Weapons, ammo, body armor and attachments. The Pillbox Hill and Cypress Flats branches have a shooting range."
+  },
+  "clothes_stores": {
+   "name": "Clothing Stores",
+   "note": "Clothes shop",
+   "info": "Clothes and accessories (Binco, Discount Store, Suburban, Ponsonbys), plus Vespucci Movie Masks."
+  },
+  "barbers": {
+   "name": "Barbers",
+   "note": "Barber shop",
+   "info": "Haircuts, beards, makeup and hair colours."
+  },
+  "tattoo_parlors": {
+   "name": "Tattoo Parlors",
+   "note": "Tattoo shop",
+   "info": "Buy and remove tattoos."
+  },
+  "ls_customs": {
+   "name": "Los Santos Customs",
+   "note": "Vehicle mod shop",
+   "info": "Repair, respray and upgrade vehicles (includes Beeker's Garage in Paleto Bay)."
+  },
+  "convenience_stores": {
+   "name": "Convenience Stores",
+   "note": "24/7, LTD, Rob's Liquor",
+   "info": "Small shops that sell snacks; you can also hold them up for cash."
   }
  }
 }

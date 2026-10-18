@@ -179,7 +179,14 @@
   "ee.hint.name": "Orden A–Z",
   "ee.hint.today": "Primero los coches del día",
   "ee.overall": "Puntuación total {score}/100 — n.º {n} de {total} con tu clasificación",
-  "pop.noteSaved": "guardado"
+  "pop.noteSaved": "guardado",
+  "group.landmark": "Tiendas y puntos de referencia",
+  "purpose.landmark": "Tiendas y puntos de referencia",
+  "group.showAll": "Mostrar todo",
+  "group.hideAll": "Ocultar todo",
+  "style.road": "Del juego",
+  "style.atlas": "Atlas",
+  "style.satellite": "Satélite"
  },
  "cats": {
   "action_figures": {
@@ -281,6 +288,36 @@
    "name": "Coches de Exotic Exports",
    "note": "Diario: 10 coches al día, cada uno en 1 de 50 puntos",
    "info": "Exotic Exports (LS Tuners): cada día hay una lista de 10 coches que buscar y entregar en el muelle de Exotic Exports del puerto de Los Santos. Cada coche está aparcado en uno de 50 puntos fijos al azar (un grupo para gama alta y otro para coches normales). Busca un coche por nombre para ver dónde puede estar, sus datos y cuándo vuelve a la lista."
+  },
+  "ammunation": {
+   "name": "Ammu-Nation",
+   "note": "Armería",
+   "info": "Armas, munición, chalecos y accesorios. Las sucursales de Pillbox Hill y Cypress Flats tienen galería de tiro."
+  },
+  "clothes_stores": {
+   "name": "Tiendas de ropa",
+   "note": "Tienda de ropa",
+   "info": "Ropa y accesorios (Binco, Discount Store, Suburban, Ponsonbys) y Vespucci Movie Masks."
+  },
+  "barbers": {
+   "name": "Peluquerías",
+   "note": "Peluquería",
+   "info": "Cortes de pelo, barba, maquillaje y tintes."
+  },
+  "tattoo_parlors": {
+   "name": "Tatuajes",
+   "note": "Estudio de tatuajes",
+   "info": "Hazte o quítate tatuajes."
+  },
+  "ls_customs": {
+   "name": "Los Santos Customs",
+   "note": "Taller de tuneo",
+   "info": "Repara, pinta y mejora vehículos (incluye Beeker's Garage en Paleto Bay)."
+  },
+  "convenience_stores": {
+   "name": "Tiendas 24 h",
+   "note": "24/7, LTD, Rob's Liquor",
+   "info": "Tiendas pequeñas; también puedes atracarlas para conseguir dinero."
   }
  }
 }

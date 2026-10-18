@@ -196,7 +196,14 @@
   "hint.signOut": "ออกจากระบบ",
   "hint.signedIn": "แอดมิน: {login}",
   "hint.signedOut": "ออกจากระบบแล้ว ลบ token ออกจากเบราว์เซอร์นี้แล้ว",
-  "hint.howTo": "เปิดจุดไหนก็ได้บนแผนที่ แล้วกด \"เพิ่มรูป\" ใน popup"
+  "hint.howTo": "เปิดจุดไหนก็ได้บนแผนที่ แล้วกด \"เพิ่มรูป\" ใน popup",
+  "group.landmark": "ร้านค้าและจุดสังเกต",
+  "purpose.landmark": "ร้านค้าและจุดสังเกต",
+  "group.showAll": "แสดงทั้งหมด",
+  "group.hideAll": "ซ่อนทั้งหมด",
+  "style.road": "แบบในเกม",
+  "style.atlas": "Atlas",
+  "style.satellite": "ดาวเทียม"
  },
  "cats": {
   "action_figures": {
@@ -323,6 +330,36 @@
    "name": "รถ Exotic Exports",
    "note": "รายวัน: วันละ 10 คัน แต่ละคันจอด 1 ใน 50 จุด",
    "info": "Exotic Exports (อัปเดต LS Tuners): ทุกวันจะมีรายการรถ 10 คันให้ไปหาและส่งที่ท่าเรือ Exotic Exports ใน Port of Los Santos รถแต่ละคันจะจอดแบบสุ่ม 1 ใน 50 จุดที่กำหนดไว้ (รถหรูใช้ชุดหนึ่ง รถทั่วไปอีกชุด) พิมพ์ชื่อรถในช่องค้นหาเพื่อดูจุดที่อาจจอด ค่าความแรง และวันที่จะกลับมาอยู่ในรายการ"
+  },
+  "ammunation": {
+   "name": "Ammu-Nation (ร้านปืน)",
+   "note": "ร้านปืน",
+   "info": "ซื้ออาวุธ กระสุน เสื้อเกราะ และอุปกรณ์เสริม สาขา Pillbox Hill และ Cypress Flats มีสนามยิงปืน"
+  },
+  "clothes_stores": {
+   "name": "ร้านเสื้อผ้า",
+   "note": "ร้านเสื้อผ้า",
+   "info": "เสื้อผ้าและเครื่องประดับ (Binco, Discount Store, Suburban, Ponsonbys) และร้านหน้ากาก Vespucci Movie Masks"
+  },
+  "barbers": {
+   "name": "ร้านตัดผม",
+   "note": "ร้านตัดผม",
+   "info": "ทำผม เครา แต่งหน้า และทำสีผม"
+  },
+  "tattoo_parlors": {
+   "name": "ร้านสัก",
+   "note": "ร้านสัก",
+   "info": "ซื้อและลบรอยสัก"
+  },
+  "ls_customs": {
+   "name": "Los Santos Customs (อู่แต่งรถ)",
+   "note": "อู่แต่งรถ",
+   "info": "ซ่อม ทำสี และอัปเกรดรถ (รวม Beeker's Garage ที่ Paleto Bay)"
+  },
+  "convenience_stores": {
+   "name": "ร้านสะดวกซื้อ",
+   "note": "24/7, LTD, Rob's Liquor",
+   "info": "ร้านขายของกินเล่น และปล้นเอาเงินได้"
   }
  }
 }

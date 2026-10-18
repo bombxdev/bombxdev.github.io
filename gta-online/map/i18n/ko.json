@@ -179,7 +179,14 @@
   "ee.hint.name": "이름순",
   "ee.hint.today": "이 날의 차량 먼저",
   "ee.overall": "종합 점수 {score}/100 — 설정 기준 {total}대 중 {n}위",
-  "pop.noteSaved": "저장됨"
+  "pop.noteSaved": "저장됨",
+  "group.landmark": "상점 및 랜드마크",
+  "purpose.landmark": "상점 및 랜드마크",
+  "group.showAll": "모두 표시",
+  "group.hideAll": "모두 숨기기",
+  "style.road": "게임 지도",
+  "style.atlas": "아틀라스",
+  "style.satellite": "위성"
  },
  "cats": {
   "action_figures": {
@@ -281,6 +288,36 @@
    "name": "Exotic Exports 차량",
    "note": "일일: 하루 10대, 각각 50곳 중 한 곳에 주차",
    "info": "Exotic Exports (LS Tuners): 매일 찾아서 로스 산토스 항구의 Exotic Exports 부두로 배달할 차량 10대 목록이 있습니다. 각 차량은 고정된 50곳 중 한 곳에 무작위로 주차됩니다(고급 차량용, 일반 차량용 두 세트). 차량 이름으로 검색하면 주차 가능한 곳, 성능, 다음 등장일을 볼 수 있습니다."
+  },
+  "ammunation": {
+   "name": "암뮤네이션",
+   "note": "총포상",
+   "info": "무기, 탄약, 방탄복, 부착물. Pillbox Hill과 Cypress Flats 지점에는 사격장이 있습니다."
+  },
+  "clothes_stores": {
+   "name": "옷가게",
+   "note": "옷가게",
+   "info": "옷과 액세서리(Binco, Discount Store, Suburban, Ponsonbys)와 Vespucci Movie Masks."
+  },
+  "barbers": {
+   "name": "이발소",
+   "note": "이발소",
+   "info": "헤어, 수염, 메이크업, 염색."
+  },
+  "tattoo_parlors": {
+   "name": "타투 가게",
+   "note": "타투 가게",
+   "info": "타투 하기/지우기."
+  },
+  "ls_customs": {
+   "name": "로스 산토스 커스텀",
+   "note": "튜닝 샵",
+   "info": "차량 수리, 도색, 업그레이드(Paleto Bay의 Beeker's Garage 포함)."
+  },
+  "convenience_stores": {
+   "name": "편의점",
+   "note": "24/7, LTD, Rob's Liquor",
+   "info": "간식을 파는 작은 가게. 털 수도 있습니다."
   }
  }
 }

@@ -179,7 +179,14 @@
   "ee.hint.name": "Urut A–Z",
   "ee.hint.today": "Mobil hari ini lebih dulu",
   "ee.overall": "Skor keseluruhan {score}/100 — #{n} dari {total} sesuai pengaturanmu",
-  "pop.noteSaved": "tersimpan"
+  "pop.noteSaved": "tersimpan",
+  "group.landmark": "Toko & penanda",
+  "purpose.landmark": "Toko & penanda",
+  "group.showAll": "Tampilkan semua",
+  "group.hideAll": "Sembunyikan semua",
+  "style.road": "Dalam game",
+  "style.atlas": "Atlas",
+  "style.satellite": "Satelit"
  },
  "cats": {
   "action_figures": {
@@ -281,6 +288,36 @@
    "name": "Mobil Exotic Exports",
    "note": "Harian: 10 mobil per hari, masing-masing di 1 dari 50 titik",
    "info": "Exotic Exports (LS Tuners): setiap hari ada daftar 10 mobil untuk dicari dan diantar ke dermaga Exotic Exports di Pelabuhan Los Santos. Tiap mobil diparkir acak di salah satu dari 50 titik tetap (satu set untuk mobil mewah, satu untuk mobil biasa). Cari mobil berdasarkan nama untuk melihat lokasinya, statistiknya, dan kapan muncul lagi di daftar."
+  },
+  "ammunation": {
+   "name": "Ammu-Nation",
+   "note": "Toko senjata",
+   "info": "Senjata, amunisi, rompi, dan aksesori. Cabang Pillbox Hill dan Cypress Flats punya lapangan tembak."
+  },
+  "clothes_stores": {
+   "name": "Toko pakaian",
+   "note": "Pakaian",
+   "info": "Pakaian dan aksesori (Binco, Discount Store, Suburban, Ponsonbys) serta Vespucci Movie Masks."
+  },
+  "barbers": {
+   "name": "Tukang cukur",
+   "note": "Tukang cukur",
+   "info": "Rambut, jenggot, rias wajah, dan cat rambut."
+  },
+  "tattoo_parlors": {
+   "name": "Studio tato",
+   "note": "Studio tato",
+   "info": "Buat atau hapus tato."
+  },
+  "ls_customs": {
+   "name": "Los Santos Customs",
+   "note": "Bengkel modifikasi",
+   "info": "Perbaiki, cat, dan upgrade kendaraan (termasuk Beeker's Garage di Paleto Bay)."
+  },
+  "convenience_stores": {
+   "name": "Minimarket",
+   "note": "24/7, LTD, Rob's Liquor",
+   "info": "Toko kecil; bisa juga dirampok."
   }
  }
 }

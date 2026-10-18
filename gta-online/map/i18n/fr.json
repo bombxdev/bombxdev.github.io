@@ -179,7 +179,14 @@
   "ee.hint.name": "Tri A–Z",
   "ee.hint.today": "Voitures du jour d'abord",
   "ee.overall": "Score global {score}/100 — n° {n} sur {total} avec votre classement",
-  "pop.noteSaved": "enregistré"
+  "pop.noteSaved": "enregistré",
+  "group.landmark": "Magasins et repères",
+  "purpose.landmark": "Magasins et repères",
+  "group.showAll": "Tout afficher",
+  "group.hideAll": "Tout masquer",
+  "style.road": "Jeu",
+  "style.atlas": "Atlas",
+  "style.satellite": "Satellite"
  },
  "cats": {
   "action_figures": {
@@ -281,6 +288,36 @@
    "name": "Voitures Exotic Exports",
    "note": "Quotidien : 10 voitures par jour, chacune à 1 de 50 endroits",
    "info": "Exotic Exports (LS Tuners) : chaque jour, une liste de 10 voitures à trouver et livrer au quai Exotic Exports du port de Los Santos. Chaque voiture est garée au hasard à l'un de 50 endroits fixes (un groupe pour le haut de gamme, un pour les voitures normales). Cherchez une voiture par son nom pour voir où elle peut être, ses stats et quand elle revient sur la liste."
+  },
+  "ammunation": {
+   "name": "Ammu-Nation",
+   "note": "Armurerie",
+   "info": "Armes, munitions, gilets et accessoires. Les magasins de Pillbox Hill et Cypress Flats ont un stand de tir."
+  },
+  "clothes_stores": {
+   "name": "Magasins de vêtements",
+   "note": "Vêtements",
+   "info": "Vêtements et accessoires (Binco, Discount Store, Suburban, Ponsonbys) et Vespucci Movie Masks."
+  },
+  "barbers": {
+   "name": "Coiffeurs",
+   "note": "Coiffeur",
+   "info": "Coupes, barbes, maquillage et colorations."
+  },
+  "tattoo_parlors": {
+   "name": "Salons de tatouage",
+   "note": "Tatoueur",
+   "info": "Se faire tatouer ou retirer un tatouage."
+  },
+  "ls_customs": {
+   "name": "Los Santos Customs",
+   "note": "Garage de personnalisation",
+   "info": "Réparer, repeindre et améliorer les véhicules (dont Beeker's Garage à Paleto Bay)."
+  },
+  "convenience_stores": {
+   "name": "Supérettes",
+   "note": "24/7, LTD, Rob's Liquor",
+   "info": "Petites boutiques ; on peut aussi les braquer."
   }
  }
 }
