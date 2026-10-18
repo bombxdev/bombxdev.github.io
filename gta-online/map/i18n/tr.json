@@ -179,7 +179,14 @@
   "ee.hint.name": "A–Z",
   "ee.hint.today": "Önce günün araçları",
   "ee.overall": "Genel puan {score}/100 — ayarlarınıza göre {total} içinde #{n}",
-  "pop.noteSaved": "kaydedildi"
+  "pop.noteSaved": "kaydedildi",
+  "group.landmark": "Dükkanlar ve simgeler",
+  "purpose.landmark": "Dükkanlar ve simgeler",
+  "group.showAll": "Tümünü göster",
+  "group.hideAll": "Tümünü gizle",
+  "style.road": "Oyundaki",
+  "style.atlas": "Atlas",
+  "style.satellite": "Uydu"
  },
  "cats": {
   "action_figures": {
@@ -281,6 +288,36 @@
    "name": "Exotic Exports araçları",
    "note": "Günlük: günde 10 araç, her biri 50 noktadan birinde",
    "info": "Exotic Exports (LS Tuners): her gün bulunup Los Santos Limanı'ndaki Exotic Exports iskelesine teslim edilecek 10 araçlık bir liste olur. Her araç 50 sabit noktadan rastgele birinde park halindedir (lüks araçlar için bir grup, normal araçlar için bir grup). Nerede olabileceğini, değerlerini ve listeye ne zaman döneceğini görmek için aracı adıyla arayın."
+  },
+  "ammunation": {
+   "name": "Ammu-Nation",
+   "note": "Silah dükkanı",
+   "info": "Silah, mermi, zırh ve eklentiler. Pillbox Hill ve Cypress Flats şubelerinde atış poligonu var."
+  },
+  "clothes_stores": {
+   "name": "Giyim mağazaları",
+   "note": "Giyim",
+   "info": "Kıyafet ve aksesuar (Binco, Discount Store, Suburban, Ponsonbys) ile Vespucci Movie Masks."
+  },
+  "barbers": {
+   "name": "Berberler",
+   "note": "Berber",
+   "info": "Saç, sakal, makyaj ve saç boyası."
+  },
+  "tattoo_parlors": {
+   "name": "Dövme stüdyoları",
+   "note": "Dövmeci",
+   "info": "Dövme yaptır veya sildir."
+  },
+  "ls_customs": {
+   "name": "Los Santos Customs",
+   "note": "Modifiye atölyesi",
+   "info": "Araç tamiri, boya ve geliştirme (Paleto Bay'deki Beeker's Garage dahil)."
+  },
+  "convenience_stores": {
+   "name": "Market",
+   "note": "24/7, LTD, Rob's Liquor",
+   "info": "Küçük marketler; soyulabilirler de."
   }
  }
 }

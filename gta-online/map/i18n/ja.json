@@ -179,7 +179,14 @@
   "ee.hint.name": "名前順",
   "ee.hint.today": "この日の車を先に",
   "ee.overall": "総合スコア {score}/100 — 設定した順位で{total}台中{n}位",
-  "pop.noteSaved": "保存しました"
+  "pop.noteSaved": "保存しました",
+  "group.landmark": "ショップ・目印",
+  "purpose.landmark": "ショップ・目印",
+  "group.showAll": "すべて表示",
+  "group.hideAll": "すべて非表示",
+  "style.road": "ゲーム内",
+  "style.atlas": "アトラス",
+  "style.satellite": "衛星"
  },
  "cats": {
   "action_figures": {
@@ -281,6 +288,36 @@
    "name": "Exotic Exports の車",
    "note": "デイリー：1日10台、それぞれ50か所のどこかに駐車",
    "info": "Exotic Exports（LS Tuners）：毎日10台の車のリストがあり、見つけてロスサントス港の Exotic Exports の埠頭へ届けます。各車は50か所の固定地点のどこかにランダムで駐車されています（高級車用と一般車用の2セット）。車名で検索すると、駐車場所の候補・性能・次にリストに載る日がわかります。"
+  },
+  "ammunation": {
+   "name": "アミュネーション",
+   "note": "銃砲店",
+   "info": "武器・弾薬・ボディアーマー・アタッチメント。Pillbox Hill と Cypress Flats の店には射撃場があります。"
+  },
+  "clothes_stores": {
+   "name": "服屋",
+   "note": "服屋",
+   "info": "服とアクセサリー（Binco、Discount Store、Suburban、Ponsonbys）と Vespucci Movie Masks。"
+  },
+  "barbers": {
+   "name": "理髪店",
+   "note": "理髪店",
+   "info": "髪型・ひげ・メイク・ヘアカラー。"
+  },
+  "tattoo_parlors": {
+   "name": "タトゥー店",
+   "note": "タトゥー店",
+   "info": "タトゥーを入れる・消す。"
+  },
+  "ls_customs": {
+   "name": "ロスサントスカスタム",
+   "note": "改造ショップ",
+   "info": "車の修理・塗装・改造（Paleto Bay の Beeker's Garage を含む）。"
+  },
+  "convenience_stores": {
+   "name": "コンビニ",
+   "note": "24/7、LTD、Rob's Liquor",
+   "info": "軽食を売る小さな店。強盗もできます。"
   }
  }
 }

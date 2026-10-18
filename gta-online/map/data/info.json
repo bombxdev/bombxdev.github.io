@@ -121,5 +121,23 @@
  },
  "exotic_exports": {
   "purpose": "money"
+ },
+ "ammunation": {
+  "purpose": "landmark"
+ },
+ "clothes_stores": {
+  "purpose": "landmark"
+ },
+ "barbers": {
+  "purpose": "landmark"
+ },
+ "tattoo_parlors": {
+  "purpose": "landmark"
+ },
+ "ls_customs": {
+  "purpose": "landmark"
+ },
+ "convenience_stores": {
+  "purpose": "landmark"
  }
 }

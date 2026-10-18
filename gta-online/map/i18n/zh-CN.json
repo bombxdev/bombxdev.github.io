@@ -179,7 +179,14 @@
   "ee.hint.name": "按名称排序",
   "ee.hint.today": "当天车辆优先",
   "ee.overall": "综合分 {score}/100 — 按你的设置排第 {n}/{total}",
-  "pop.noteSaved": "已保存"
+  "pop.noteSaved": "已保存",
+  "group.landmark": "商店与地标",
+  "purpose.landmark": "商店与地标",
+  "group.showAll": "全部显示",
+  "group.hideAll": "全部隐藏",
+  "style.road": "游戏内",
+  "style.atlas": "地图集",
+  "style.satellite": "卫星"
  },
  "cats": {
   "action_figures": {
@@ -281,6 +288,36 @@
    "name": "Exotic Exports 车辆",
    "note": "每日：每天 10 辆车，各停在 50 个地点之一",
    "info": "Exotic Exports（LS Tuners 更新）：每天有一份 10 辆车的清单，需要找到并送到洛圣都港的 Exotic Exports 码头。每辆车随机停在 50 个固定地点之一（高端车一组，普通车一组）。按车名搜索即可查看可能的停放位置、性能以及下次上榜日期。"
+  },
+  "ammunation": {
+   "name": "Ammu-Nation 武器店",
+   "note": "武器店",
+   "info": "武器、弹药、防弹衣和配件。Pillbox Hill 和 Cypress Flats 分店设有射击场。"
+  },
+  "clothes_stores": {
+   "name": "服装店",
+   "note": "服装店",
+   "info": "服装与配饰（Binco、Discount Store、Suburban、Ponsonbys）以及 Vespucci 电影面具店。"
+  },
+  "barbers": {
+   "name": "理发店",
+   "note": "理发店",
+   "info": "发型、胡须、化妆和染发。"
+  },
+  "tattoo_parlors": {
+   "name": "纹身店",
+   "note": "纹身店",
+   "info": "纹身或去除纹身。"
+  },
+  "ls_customs": {
+   "name": "Los Santos Customs 改装店",
+   "note": "改装店",
+   "info": "修理、喷漆和改装车辆（包括 Paleto Bay 的 Beeker's Garage）。"
+  },
+  "convenience_stores": {
+   "name": "便利店",
+   "note": "24/7、LTD、Rob's Liquor",
+   "info": "卖零食的小店，也可以抢劫。"
   }
  }
 }

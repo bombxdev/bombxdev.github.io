@@ -99,7 +99,13 @@ a { color: var(--accent); }
 .group-title {
   font-size: 11px; text-transform: uppercase; letter-spacing: .8px;
   color: var(--muted); padding: 12px 8px 4px;
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
 }
+.group-toggle {
+  text-transform: none; letter-spacing: 0; font-size: 11px; color: var(--muted);
+  border: 1px solid var(--line); background: transparent; border-radius: 999px; padding: 1px 9px; cursor: pointer;
+}
+.group-toggle:hover { color: var(--text); border-color: #3d4452; }
 .cat {
   position: relative;
   display: grid;
@@ -409,3 +415,10 @@ img.blip { display: block; width: 16px; height: 16px; image-rendering: auto; poi
 .admin-box { margin: 8px 16px; padding: 10px; border: 1px dashed #c9a227; border-radius: 10px; display: grid; gap: 6px; font-size: 13px; }
 .admin-box p { margin: 0; }
 .admin-box input[type=password] { padding: 7px 9px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel-2); color: var(--text); font-size: 14px; }
+
+/* Map style switch */
+.style-ctl { display: flex; overflow: hidden; background: var(--panel); }
+.style-ctl button { border: 0; border-right: 1px solid var(--line); background: var(--panel); color: var(--text); padding: 6px 10px; font-size: 12px; cursor: pointer; white-space: nowrap; }
+.style-ctl button:last-child { border-right: 0; }
+.style-ctl button.active { background: color-mix(in srgb, var(--accent) 30%, var(--panel)); }
+@media (max-width: 520px) { .style-ctl button span { display: none; } .style-ctl button { padding: 6px 9px; font-size: 15px; } }

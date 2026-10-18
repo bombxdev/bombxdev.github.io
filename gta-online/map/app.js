@@ -23,8 +23,8 @@
     road: { name: 'Road', bg: '#1862ad' },
     satellite: { name: 'Satellite', bg: '#143d6b' }
   };
-  var GROUPS = ['permanent', 'daily', 'event'];
-  var PURPOSES = ['money', 'unlock', 'service', 'activity', 'timed', 'event'];
+  var GROUPS = ['permanent', 'daily', 'event', 'landmark'];
+  var PURPOSES = ['money', 'unlock', 'service', 'activity', 'timed', 'event', 'landmark'];
   var t = I18N.t;
 
   var PREFIX = 'gtaomap.';
@@ -93,21 +93,48 @@
   map.attributionControl.addAttribution('<a href="credits.html" data-i18n="credits.link">Credits</a>');
 
   var baseLayers = {};
+  // Map style switch (always visible on the map, also when the menu is closed).
+  // "road" is the in-game pause-map look; it is the default for new visitors.
+  var STYLE_ORDER = [['road', '🎮'], ['atlas', '🗺'], ['satellite', '🛰']];
+  var currentStyle = null;
   Object.keys(STYLES).forEach(function (key) {
-    baseLayers[STYLES[key].name] = L.tileLayer('tiles/' + key + '/{z}/{x}_{y}.webp', {
+    baseLayers[key] = L.tileLayer('tiles/' + key + '/{z}/{x}_{y}.webp', {
       minZoom: 2,
       maxZoom: 9,
       maxNativeZoom: 7,
       bounds: TILE_BOUNDS,
       noWrap: true
-    }).on('add', function () {
-      $('map').style.background = STYLES[key].bg;
-      STORE.set('style', key);
     });
   });
-  var startStyle = STYLES[STORE.get('style', 'atlas')] ? STORE.get('style', 'atlas') : 'atlas';
-  baseLayers[STYLES[startStyle].name].addTo(map);
-  L.control.layers(baseLayers, null, { position: 'topright' }).addTo(map);
+  function setStyle(key) {
+    if (!baseLayers[key] || key === currentStyle) return;
+    if (currentStyle) map.removeLayer(baseLayers[currentStyle]);
+    currentStyle = key;
+    baseLayers[key].addTo(map);
+    $('map').style.background = STYLES[key].bg;
+    STORE.set('style', key);
+    document.querySelectorAll('.style-ctl button').forEach(function (b) {
+      b.classList.toggle('active', b.getAttribute('data-style') === key);
+      b.setAttribute('aria-pressed', b.getAttribute('data-style') === key ? 'true' : 'false');
+    });
+  }
+  var StyleControl = L.Control.extend({
+    options: { position: 'topright' },
+    onAdd: function () {
+      var div = L.DomUtil.create('div', 'style-ctl leaflet-bar');
+      div.innerHTML = STYLE_ORDER.map(function (s) {
+        return '<button type="button" data-style="' + s[0] + '">' + s[1] + ' <span data-i18n="style.' + s[0] + '"></span></button>';
+      }).join('');
+      L.DomEvent.disableClickPropagation(div);
+      div.addEventListener('click', function (e) {
+        var b = e.target.closest('button');
+        if (b) setStyle(b.getAttribute('data-style'));
+      });
+      return div;
+    }
+  });
+  map.addControl(new StyleControl());
+  setStyle(STYLES[STORE.get('style', 'road')] ? STORE.get('style', 'road') : 'road');
 
   map.fitBounds(L.latLngBounds([[-3800, -3600], [7700, 4300]]));
 
@@ -193,6 +220,7 @@
   function idOf(item) { return item.cat + '-' + item.n; }
   // Shops/services move daily; there is nothing to "collect".
   var NOT_COLLECTABLE = { gun_van: true, street_dealers: true, exotic_exports: true };
+  function collectable(cat) { return !NOT_COLLECTABLE[cat.key] && cat.group !== 'landmark'; }
   // Extension points for other modules (exports.js): extra popup HTML per
   // category, and extra search results shown above the map points.
   var POPUP_EXTRA = {};
@@ -351,7 +379,7 @@
       '<label class="pop-note"><span>📝 ' + esc(t('pop.myNote')) + ' <span class="note-saved" hidden>✓ ' + esc(t('pop.noteSaved')) + '</span></span><textarea rows="2" data-note="' + idOf(item) + '" placeholder="' +
         esc(t('pop.notePh')) + '">' + esc(state.notes[idOf(item)] || '') + '</textarea></label>' +
       '<div class="actions">' +
-      (NOT_COLLECTABLE[item.cat] ? '' : '<button class="chip primary" data-act="toggle">' + esc(t(done ? 'pop.markUndone' : 'pop.markDone')) + '</button>') +
+      (!collectable(state.catByKey[item.cat]) ? '' : '<button class="chip primary" data-act="toggle">' + esc(t(done ? 'pop.markUndone' : 'pop.markDone')) + '</button>') +
       '<button class="chip" data-act="copy">' + esc(t('pop.copyCoords')) + '</button>' +
       '<button class="chip" data-act="link">' + esc(t('pop.copyLink')) + '</button>' +
       '</div></div>';
@@ -456,7 +484,20 @@
       if (!cats.length) return;
       var title = document.createElement('div');
       title.className = 'group-title';
-      title.textContent = t((state.groupBy === 'purpose' ? 'purpose.' : 'group.') + g);
+      title.innerHTML = '<span>' + esc(t((state.groupBy === 'purpose' ? 'purpose.' : 'group.') + g)) + '</span>';
+      // One click shows or hides the whole group.
+      var anyOn = cats.some(function (c) { return state.visible[c.key]; });
+      var gt = document.createElement('button');
+      gt.type = 'button';
+      gt.className = 'group-toggle';
+      gt.textContent = anyOn ? t('group.hideAll') : t('group.showAll');
+      gt.addEventListener('click', function () {
+        cats.forEach(function (c) { state.visible[c.key] = !anyOn; });
+        saveVisible();
+        renderCategories();
+        refreshMarkers();
+      });
+      title.appendChild(gt);
       host.appendChild(title);
       cats.forEach(function (cat) {
         var total = cat.items.length;
@@ -471,8 +512,9 @@
           '<input type="checkbox"' + (state.visible[cat.key] ? ' checked' : '') + '>' +
           '<span class="dot">' + blipImg(cat) + '</span>' +
           '<span class="label"><div class="th">' + esc(name) + '</div>' + (name !== cat.en ? '<div class="en">' + esc(cat.en) + '</div>' : '') + '</span>' +
-          '<span class="count">' + got + '/' + total + '</span>' +
-          '<span class="bar"><span style="width:' + (total ? (100 * got / total) : 0) + '%"></span></span>';
+          (collectable(cat) ? '<span class="count">' + got + '/' + total + '</span>' +
+            '<span class="bar"><span style="width:' + (total ? (100 * got / total) : 0) + '%"></span></span>'
+            : '<span class="count">' + total + '</span>');
         row.querySelector('input').addEventListener('change', function (e) {
           state.visible[cat.key] = e.target.checked;
           row.classList.toggle('on', e.target.checked);

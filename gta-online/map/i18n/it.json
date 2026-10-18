@@ -179,7 +179,14 @@
   "ee.hint.name": "Ordine A–Z",
   "ee.hint.today": "Prima le auto del giorno",
   "ee.overall": "Punteggio totale {score}/100 — n. {n} su {total} con la tua classifica",
-  "pop.noteSaved": "salvato"
+  "pop.noteSaved": "salvato",
+  "group.landmark": "Negozi e punti di riferimento",
+  "purpose.landmark": "Negozi e punti di riferimento",
+  "group.showAll": "Mostra tutto",
+  "group.hideAll": "Nascondi tutto",
+  "style.road": "Come nel gioco",
+  "style.atlas": "Atlas",
+  "style.satellite": "Satellite"
  },
  "cats": {
   "action_figures": {
@@ -281,6 +288,36 @@
    "name": "Auto di Exotic Exports",
    "note": "Giornaliero: 10 auto al giorno, ognuna in 1 di 50 punti",
    "info": "Exotic Exports (LS Tuners): ogni giorno c'è una lista di 10 auto da trovare e consegnare al molo di Exotic Exports nel porto di Los Santos. Ogni auto è parcheggiata a caso in uno di 50 punti fissi (un gruppo per le auto di lusso, uno per le normali). Cerca un'auto per nome per vedere dove può essere, le statistiche e quando torna in lista."
+  },
+  "ammunation": {
+   "name": "Ammu-Nation",
+   "note": "Armeria",
+   "info": "Armi, munizioni, giubbotti e accessori. Le sedi di Pillbox Hill e Cypress Flats hanno un poligono di tiro."
+  },
+  "clothes_stores": {
+   "name": "Negozi di vestiti",
+   "note": "Abbigliamento",
+   "info": "Vestiti e accessori (Binco, Discount Store, Suburban, Ponsonbys) e Vespucci Movie Masks."
+  },
+  "barbers": {
+   "name": "Barbieri",
+   "note": "Barbiere",
+   "info": "Tagli, barba, trucco e tinte."
+  },
+  "tattoo_parlors": {
+   "name": "Studi di tatuaggi",
+   "note": "Tatuatore",
+   "info": "Fai o rimuovi tatuaggi."
+  },
+  "ls_customs": {
+   "name": "Los Santos Customs",
+   "note": "Officina elaborazioni",
+   "info": "Ripara, vernicia e modifica i veicoli (incluso Beeker's Garage a Paleto Bay)."
+  },
+  "convenience_stores": {
+   "name": "Minimarket",
+   "note": "24/7, LTD, Rob's Liquor",
+   "info": "Piccoli negozi; si possono anche rapinare."
   }
  }
 }

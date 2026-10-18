@@ -24,5 +24,11 @@
   {"key": "yuanbao", "en": "Yuanbao", "group": "event", "color": "#ffd60a", "glyph": "🪙", "aliases": ["gold", "lunar", "chinese new year", "ตรุษจีน"], "blip": "radar_bat_hack_gold", "blipSource": "closest"},
   {"key": "gold_charms", "en": "Gold Charms", "group": "event", "color": "#d4af37", "glyph": "🍀", "aliases": ["charm", "clover", "st patrick", "เซนต์แพทริก"], "blip": "radar_collectible", "blipSource": "game"},
   {"key": "lucky_charms", "en": "Lucky Charms", "group": "event", "color": "#2f9e44", "glyph": "☘️", "aliases": ["charm", "clover", "st patrick", "เซนต์แพทริก"], "blip": "radar_collectible", "blipSource": "game"},
-  {"key": "weed_packages", "en": "Weed Packages", "group": "event", "color": "#5c7c2f", "glyph": "🍃", "aliases": ["weed", "package", "420", "กัญชา"], "blip": "radar_weed_stash", "blipSource": "closest"}
+  {"key": "weed_packages", "en": "Weed Packages", "group": "event", "color": "#5c7c2f", "glyph": "🍃", "aliases": ["weed", "package", "420", "กัญชา"], "blip": "radar_weed_stash", "blipSource": "closest"},
+  {"key": "ammunation", "en": "Ammu-Nation", "group": "landmark", "color": "#d9534f", "glyph": "🔫", "aliases": ["gun shop", "guns", "weapon", "ร้านปืน", "ปืน", "shooting range"], "blip": "radar_gun_shop", "blipSource": "game"},
+  {"key": "clothes_stores", "en": "Clothing Stores", "group": "landmark", "color": "#a26bdb", "glyph": "👕", "aliases": ["clothes", "clothing", "binco", "suburban", "ponsonbys", "mask", "ร้านเสื้อผ้า", "เสื้อผ้า"], "blip": "radar_clothes_store", "blipSource": "game"},
+  {"key": "barbers", "en": "Barbers", "group": "landmark", "color": "#4ea3d9", "glyph": "💈", "aliases": ["barber", "hair", "ร้านตัดผม", "ตัดผม"], "blip": "radar_barber", "blipSource": "game"},
+  {"key": "tattoo_parlors", "en": "Tattoo Parlors", "group": "landmark", "color": "#d96bb0", "glyph": "🖋", "aliases": ["tattoo", "ink", "สัก", "ร้านสัก"], "blip": "radar_tattoo", "blipSource": "game"},
+  {"key": "ls_customs", "en": "Los Santos Customs", "group": "landmark", "color": "#e0a030", "glyph": "🔧", "aliases": ["lsc", "mod shop", "customs", "beeker", "แต่งรถ", "อู่"], "blip": "radar_car_mod_shop", "blipSource": "game"},
+  {"key": "convenience_stores", "en": "Convenience Stores", "group": "landmark", "color": "#5fb85f", "glyph": "🏪", "aliases": ["store", "24/7", "ltd", "rob's liquor", "holdup", "robbery", "ร้านสะดวกซื้อ", "ปล้นร้าน"], "blip": "radar_crim_holdups", "blipSource": "game"}
 ]

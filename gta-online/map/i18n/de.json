@@ -179,7 +179,14 @@
   "ee.hint.name": "Sortiert A–Z",
   "ee.hint.today": "Autos des Tages zuerst",
   "ee.overall": "Gesamtpunkte {score}/100 — Platz {n} von {total} mit deiner Rangfolge",
-  "pop.noteSaved": "gespeichert"
+  "pop.noteSaved": "gespeichert",
+  "group.landmark": "Läden & Orientierungspunkte",
+  "purpose.landmark": "Läden & Orientierungspunkte",
+  "group.showAll": "Alle zeigen",
+  "group.hideAll": "Alle ausblenden",
+  "style.road": "Wie im Spiel",
+  "style.atlas": "Atlas",
+  "style.satellite": "Satellit"
  },
  "cats": {
   "action_figures": {
@@ -281,6 +288,36 @@
    "name": "Exotic-Exports-Autos",
    "note": "Täglich: 10 Autos pro Tag, jedes an 1 von 50 Orten",
    "info": "Exotic Exports (LS Tuners): Jeden Tag gibt es eine Liste mit 10 Autos, die gefunden und zum Exotic-Exports-Dock im Hafen von Los Santos gebracht werden. Jedes Auto steht zufällig an einem von 50 festen Orten (eine Gruppe für Luxusautos, eine für normale Autos). Suche ein Auto per Name, um zu sehen, wo es stehen kann, seine Werte und wann es wieder auf der Liste ist."
+  },
+  "ammunation": {
+   "name": "Ammu-Nation",
+   "note": "Waffenladen",
+   "info": "Waffen, Munition, Schutzwesten und Aufsätze. Die Filialen in Pillbox Hill und Cypress Flats haben einen Schießstand."
+  },
+  "clothes_stores": {
+   "name": "Kleidungsläden",
+   "note": "Kleidung",
+   "info": "Kleidung und Accessoires (Binco, Discount Store, Suburban, Ponsonbys) sowie Vespucci Movie Masks."
+  },
+  "barbers": {
+   "name": "Friseure",
+   "note": "Friseur",
+   "info": "Frisuren, Bärte, Make-up und Haarfarben."
+  },
+  "tattoo_parlors": {
+   "name": "Tattoo-Studios",
+   "note": "Tätowierer",
+   "info": "Tattoos stechen oder entfernen."
+  },
+  "ls_customs": {
+   "name": "Los Santos Customs",
+   "note": "Tuning-Werkstatt",
+   "info": "Fahrzeuge reparieren, lackieren und tunen (inkl. Beeker's Garage in Paleto Bay)."
+  },
+  "convenience_stores": {
+   "name": "Supermärkte",
+   "note": "24/7, LTD, Rob's Liquor",
+   "info": "Kleine Läden; man kann sie auch überfallen."
   }
  }
 }

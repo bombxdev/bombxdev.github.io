@@ -16,6 +16,10 @@
 - Ghosts Exposed: ตำแหน่ง + ชั่วโมงที่ผีแต่ละตัวโผล่ (เวลาในเกม) แปลงเป็นเวลาจริงของเครื่องผู้ใช้ และนาฬิกาเวลาในเกม (1 นาทีในเกม = 2 วินาทีจริง)
 - รายวันเพิ่ม: Street Dealers (3 จุด/วัน), Junk Energy Bike Time Trial, RC Bandito Time Trial
 - แผนที่เกาะ Cayo Perico (ภาพดาวเทียม) วางตามพิกัดเกม
+- 🎮 ปุ่มสลับแผนที่บนมุมขวา: แบบในเกม (pause map, ค่าเริ่มต้น) / Atlas / ดาวเทียม
+- 🏪 ร้านค้าและจุดสังเกตแบบที่เห็นในเกม: Ammu-Nation, ร้านเสื้อผ้า (รวมร้านหน้ากาก), ร้านตัดผม, ร้านสัก,
+  Los Santos Customs, ร้านสะดวกซื้อ — ดึงจาก `shop_controller.c` + `freemode.c` ด้วย `tools/extract_shops.py`
+  ซ่อน/แสดงทั้งกลุ่มได้ด้วยปุ่มข้างหัวข้อกลุ่ม (ทุกกลุ่มมีปุ่มนี้)
 - 🚗 Exotic Exports (`exports.js`): รถ 10 คันที่ต้องหาในวันนั้น (เรียงตามลำดับในเกม) ค้นหารถด้วยชื่อรุ่น/ยี่ห้อ (หลายภาษา)
   แสดงจุดจอดที่เป็นไปได้ทั้ง 50 จุดของรถคันนั้นบนแผนที่ ค่าความแรงรถสต็อก (ความเร็วสูงสุด/อัตราเร่ง/เบรก/การยึดเกาะ)
   และวันที่รถคันนั้นจะกลับมาอยู่ในรายการ พร้อมรูปรถ (`vehicles/<model>.webp` จาก FiveM docs) และหน้ารวมรถ 100 คัน กรอง/เรียงตามค่าความแรงได้
@@ -122,6 +126,8 @@ curl -LO https://raw.githubusercontent.com/Sainan/GTA-V-Decompiled-Scripts/maste
 curl -LO https://raw.githubusercontent.com/Sainan/GTA-V-Decompiled-Scripts/master/decompiled_scripts/tuneables_processing.c
 python3 tools/extract_collectibles.py freemode.c data/points.json
 python3 tools/extract_daily.py freemode.c tuneables_processing.c data/daily.json
+curl -LO https://raw.githubusercontent.com/Sainan/GTA-V-Decompiled-Scripts/master/decompiled_scripts/shop_controller.c
+python3 tools/extract_shops.py shop_controller.c freemode.c data/points.json
 curl -LO https://raw.githubusercontent.com/DurtyFree/gta-v-data-dumps/master/vehicles.json
 python3 tools/extract_exotic_exports.py freemode.c tuneables_processing.c vehicles.json data/exotic_exports.json data/points.json
 # รูปรถ: ดาวน์โหลด https://raw.githubusercontent.com/citizenfx/fivem-docs/master/static/vehicles/<model>.webp

@@ -179,7 +179,14 @@
   "ee.hint.name": "Xếp A–Z",
   "ee.hint.today": "Xe của ngày lên trước",
   "ee.overall": "Điểm tổng {score}/100 — hạng {n}/{total} theo cài đặt của bạn",
-  "pop.noteSaved": "đã lưu"
+  "pop.noteSaved": "đã lưu",
+  "group.landmark": "Cửa hàng & địa danh",
+  "purpose.landmark": "Cửa hàng & địa danh",
+  "group.showAll": "Hiện tất cả",
+  "group.hideAll": "Ẩn tất cả",
+  "style.road": "Trong game",
+  "style.atlas": "Atlas",
+  "style.satellite": "Vệ tinh"
  },
  "cats": {
   "action_figures": {
@@ -281,6 +288,36 @@
    "name": "Xe Exotic Exports",
    "note": "Hằng ngày: 10 xe mỗi ngày, mỗi xe ở 1 trong 50 điểm",
    "info": "Exotic Exports (LS Tuners): mỗi ngày có danh sách 10 xe cần tìm và giao tới bến Exotic Exports ở cảng Los Santos. Mỗi xe đỗ ngẫu nhiên ở một trong 50 điểm cố định (một nhóm cho xe cao cấp, một nhóm cho xe thường). Tìm xe theo tên để xem nơi có thể đỗ, chỉ số và khi nào xe trở lại danh sách."
+  },
+  "ammunation": {
+   "name": "Ammu-Nation",
+   "note": "Cửa hàng súng",
+   "info": "Vũ khí, đạn, giáp và phụ kiện. Chi nhánh Pillbox Hill và Cypress Flats có trường bắn."
+  },
+  "clothes_stores": {
+   "name": "Cửa hàng quần áo",
+   "note": "Quần áo",
+   "info": "Quần áo và phụ kiện (Binco, Discount Store, Suburban, Ponsonbys) và Vespucci Movie Masks."
+  },
+  "barbers": {
+   "name": "Tiệm cắt tóc",
+   "note": "Tiệm cắt tóc",
+   "info": "Kiểu tóc, râu, trang điểm và nhuộm."
+  },
+  "tattoo_parlors": {
+   "name": "Tiệm xăm",
+   "note": "Tiệm xăm",
+   "info": "Xăm hoặc xóa hình xăm."
+  },
+  "ls_customs": {
+   "name": "Los Santos Customs",
+   "note": "Xưởng độ xe",
+   "info": "Sửa, sơn và nâng cấp xe (gồm Beeker's Garage ở Paleto Bay)."
+  },
+  "convenience_stores": {
+   "name": "Cửa hàng tiện lợi",
+   "note": "24/7, LTD, Rob's Liquor",
+   "info": "Cửa hàng nhỏ bán đồ ăn vặt; cũng có thể cướp."
   }
  }
 }
