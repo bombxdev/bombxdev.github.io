@@ -26,14 +26,6 @@
   var GROUPS = ['permanent', 'daily', 'event'];
   var PURPOSES = ['money', 'unlock', 'service', 'activity', 'timed', 'event'];
   var t = I18N.t;
-  var LINKS = {
-    rdo: '<a href="https://tunables.rdo.gg" target="_blank" rel="noopener">rdo.gg</a>',
-    bot: '<a href="https://github.com/ShinyWasabi/GTAO-Bot" target="_blank" rel="noopener">GTAO-Bot</a>',
-    scripts: '<a href="https://github.com/Sainan/GTA-V-Decompiled-Scripts" target="_blank" rel="noopener">decompiled scripts</a>',
-    tiles: '<a href="https://github.com/CreepPork/GTAV-Maps" target="_blank" rel="noopener">CreepPork/GTAV-Maps</a>',
-    blips: '<a href="https://docs.fivem.net/docs/game-references/blips/" target="_blank" rel="noopener">FiveM docs</a>',
-    leaflet: '<a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a>'
-  };
 
   var PREFIX = 'gtaomap.';
   var STORE = {
@@ -97,6 +89,8 @@
     zoomControl: true
   });
   map.attributionControl.setPrefix(false);
+  // All sources are listed on the credits page; keep the map corner tidy.
+  map.attributionControl.addAttribution('<a href="credits.html" data-i18n="credits.link">Credits</a>');
 
   var baseLayers = {};
   Object.keys(STYLES).forEach(function (key) {
@@ -105,8 +99,7 @@
       maxZoom: 9,
       maxNativeZoom: 7,
       bounds: TILE_BOUNDS,
-      noWrap: true,
-      attribution: 'Map: <a href="https://github.com/CreepPork/GTAV-Maps" target="_blank" rel="noopener">GTAV-Maps</a>'
+      noWrap: true
     }).on('add', function () {
       $('map').style.background = STYLES[key].bg;
       STORE.set('style', key);
@@ -120,8 +113,7 @@
 
   // Cayo Perico is not part of the main tile set; it has its own image.
   L.imageOverlay('tiles-cayo/satellite.webp?v=' + window.APP_VERSION, CAYO_BOUNDS, {
-    interactive: false,
-    attribution: 'Cayo Perico: <a href="https://github.com/fivenet-app/livemap-tiles" target="_blank" rel="noopener">FiveNet</a> / jonstyle83'
+    interactive: false
   }).addTo(map);
 
   function updateZoomClass() {
@@ -848,7 +840,7 @@
   }
 
   function applyLanguage() {
-    I18N.apply(document, LINKS);
+    I18N.apply(document);
     setDateFormats();
     $('lang').value = I18N.code;
     map.closePopup();
