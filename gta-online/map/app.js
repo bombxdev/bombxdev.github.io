@@ -26,14 +26,6 @@
   var GROUPS = ['permanent', 'daily', 'event'];
   var PURPOSES = ['money', 'unlock', 'service', 'activity', 'timed', 'event'];
   var t = I18N.t;
-  var LINKS = {
-    rdo: '<a href="https://tunables.rdo.gg" target="_blank" rel="noopener">rdo.gg</a>',
-    bot: '<a href="https://github.com/ShinyWasabi/GTAO-Bot" target="_blank" rel="noopener">GTAO-Bot</a>',
-    scripts: '<a href="https://github.com/Sainan/GTA-V-Decompiled-Scripts" target="_blank" rel="noopener">decompiled scripts</a>',
-    tiles: '<a href="https://github.com/CreepPork/GTAV-Maps" target="_blank" rel="noopener">CreepPork/GTAV-Maps</a>',
-    blips: '<a href="https://docs.fivem.net/docs/game-references/blips/" target="_blank" rel="noopener">FiveM docs</a>',
-    leaflet: '<a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a>'
-  };
 
   var PREFIX = 'gtaomap.';
   var STORE = {
@@ -97,6 +89,8 @@
     zoomControl: true
   });
   map.attributionControl.setPrefix(false);
+  // All sources are listed on the credits page; keep the map corner tidy.
+  map.attributionControl.addAttribution('<a href="credits.html" data-i18n="credits.link">Credits</a>');
 
   var baseLayers = {};
   Object.keys(STYLES).forEach(function (key) {
@@ -105,8 +99,7 @@
       maxZoom: 9,
       maxNativeZoom: 7,
       bounds: TILE_BOUNDS,
-      noWrap: true,
-      attribution: 'Map: <a href="https://github.com/CreepPork/GTAV-Maps" target="_blank" rel="noopener">GTAV-Maps</a>'
+      noWrap: true
     }).on('add', function () {
       $('map').style.background = STYLES[key].bg;
       STORE.set('style', key);
@@ -120,8 +113,7 @@
 
   // Cayo Perico is not part of the main tile set; it has its own image.
   L.imageOverlay('tiles-cayo/satellite.webp?v=' + window.APP_VERSION, CAYO_BOUNDS, {
-    interactive: false,
-    attribution: 'Cayo Perico: <a href="https://github.com/fivenet-app/livemap-tiles" target="_blank" rel="noopener">FiveNet</a> / jonstyle83'
+    interactive: false
   }).addTo(map);
 
   function updateZoomClass() {
@@ -131,6 +123,66 @@
   }
   map.on('zoomend', updateZoomClass);
   updateZoomClass();
+
+  // ---------------------------------------------------------------------------
+  // City zones overlay: game zone boxes drawn opaque inside a pane whose own
+  // opacity makes them see-through, so overlapping boxes don't stack colour.
+  // The pane sits above the tiles and below all markers.
+  // ---------------------------------------------------------------------------
+  map.createPane('zones').style.zIndex = 350;
+  map.createPane('zoneLabels').style.zIndex = 450;
+  map.getPane('zoneLabels').style.pointerEvents = 'none';
+  var zoneLayer = L.layerGroup(), zoneLabelLayer = L.layerGroup();
+  var zoneShapes = null;
+  function buildZones(data) {
+    zoneShapes = data;
+    data.boxes.forEach(function (b) {   // file order: later boxes win, so draw them on top
+      L.rectangle([[b[2], b[1]], [b[4], b[3]]], {
+        pane: 'zones', stroke: false, fillColor: data.zones[b[0]].color, fillOpacity: 1, interactive: false
+      }).addTo(zoneLayer);
+    });
+    data.zones.forEach(function (z) {
+      if (!z.label) return;
+      z.marker = L.marker([z.label[1], z.label[0]], {
+        pane: 'zoneLabels', interactive: false, keyboard: false,
+        icon: L.divIcon({ className: 'zone-label', html: '<span>' + esc(z.name) + '</span>', iconSize: [0, 0] })
+      });
+    });
+  }
+  // Show labels of big zones when zoomed out, all of them when zoomed in.
+  function updateZoneLabels() {
+    if (!zoneShapes) return;
+    var zoom = map.getZoom();
+    var minArea = zoom < 3.5 ? Infinity : zoom < 4.5 ? 6 : zoom < 5.5 ? 1.2 : 0;
+    zoneShapes.zones.forEach(function (z) {
+      if (!z.marker) return;
+      var show = z.area_km2 >= minArea;
+      if (show && !zoneLabelLayer.hasLayer(z.marker)) zoneLabelLayer.addLayer(z.marker);
+      if (!show && zoneLabelLayer.hasLayer(z.marker)) zoneLabelLayer.removeLayer(z.marker);
+    });
+  }
+  map.on('zoomend', updateZoneLabels);
+  function zoneNameAt(x, y) {
+    if (!zoneShapes) return '';
+    var hit = '';
+    for (var i = 0; i < zoneShapes.boxes.length; i++) {
+      var b = zoneShapes.boxes[i];
+      if (x >= b[1] && x <= b[3] && y >= b[2] && y <= b[4]) hit = zoneShapes.zones[b[0]].name;
+    }
+    return hit;
+  }
+  function setZonesVisible(on) {
+    $('zonesOn').checked = on;
+    $('zonesOpacityWrap').hidden = !on;
+    STORE.set('zonesOn', on);
+    if (on) { zoneLayer.addTo(map); zoneLabelLayer.addTo(map); updateZoneLabels(); }
+    else { map.removeLayer(zoneLayer); map.removeLayer(zoneLabelLayer); }
+  }
+  function setZonesOpacity(pct) {
+    map.getPane('zones').style.opacity = pct / 100;
+    $('zonesOpacity').value = pct;
+    STORE.set('zonesOpacity', pct);
+  }
 
   var markerLayer = L.layerGroup().addTo(map);
   var tempLayer = L.layerGroup().addTo(map);
@@ -614,7 +666,8 @@
   map.invalidateSize();
 
   map.on('mousemove', function (e) {
-    $('cursor').textContent = 'X ' + fmt(e.latlng.lng) + '  Y ' + fmt(e.latlng.lat);
+    var zn = zoneNameAt(e.latlng.lng, e.latlng.lat);
+    $('cursor').textContent = 'X ' + fmt(e.latlng.lng) + '  Y ' + fmt(e.latlng.lat) + (zn ? '  ·  ' + zn : '');
   });
   map.on('mouseout', function () { $('cursor').textContent = ''; });
   map.on('contextmenu', function (e) {
@@ -787,7 +840,7 @@
   }
 
   function applyLanguage() {
-    I18N.apply(document, LINKS);
+    I18N.apply(document);
     setDateFormats();
     $('lang').value = I18N.code;
     map.closePopup();
@@ -887,13 +940,19 @@
     fetch('data/daily.json?v=' + window.APP_VERSION).then(function (r) { return r.json(); }),
     fetch('data/info.json?v=' + window.APP_VERSION).then(function (r) { return r.json(); }),
     fetch('data/ghosts.json?v=' + window.APP_VERSION).then(function (r) { return r.json(); }),
-    fetch('data/zones.json?v=' + window.APP_VERSION).then(function (r) { return r.json(); })
+    fetch('data/zones.json?v=' + window.APP_VERSION).then(function (r) { return r.json(); }),
+    fetch('data/zone_shapes.json?v=' + window.APP_VERSION).then(function (r) { return r.json(); })
   ]).then(function (res) {
     var cats = res[1], points = res[2];
     state.daily = res[3];
     state.info = res[4];
     state.ghostData = res[5];
     state.zones = res[6];
+    buildZones(res[7]);
+    setZonesOpacity(STORE.get('zonesOpacity', 35));
+    setZonesVisible(STORE.get('zonesOn', false));
+    $('zonesOn').addEventListener('change', function (e) { setZonesVisible(e.target.checked); });
+    $('zonesOpacity').addEventListener('input', function (e) { setZonesOpacity(Number(e.target.value)); });
     state.daily.dealerXY = points.street_dealers;
     var savedVisible = STORE.get('visible', null);
     cats.forEach(function (cat) {

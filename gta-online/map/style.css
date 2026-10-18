@@ -189,6 +189,15 @@ a { color: var(--accent); }
 }
 .leaflet-popup-content { min-width: 250px; }
 
+.zones-ctl { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 0 16px 10px; }
+.zones-op { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; }
+.zones-op input { width: 110px; accent-color: var(--accent); }
+.zone-label span {
+  position: absolute; transform: translate(-50%, -50%); white-space: nowrap;
+  font-size: 11px; font-weight: 700; letter-spacing: .3px; color: #fff;
+  text-shadow: 0 0 3px #000, 0 0 2px #000; pointer-events: none;
+}
+
 /* ---------- planner ---------- */
 .planner-btn {
   margin: 0 16px 10px; padding: 10px 12px; border-radius: 10px; cursor: pointer; text-align: left;

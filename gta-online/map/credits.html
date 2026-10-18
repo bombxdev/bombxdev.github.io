@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Credits — GTA Online Map</title>
+  <meta name="theme-color" content="#111318">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%97%BA%EF%B8%8F%3C/text%3E%3C/svg%3E">
+  <style>
+    :root { --bg: #111318; --panel: #181b21; --line: #2c313b; --text: #e8eaed; --muted: #9aa1ad; --accent: #5eb1ef; color-scheme: dark;
+      font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans Thai", "Leelawadee UI", Tahoma, sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); line-height: 1.55; }
+    main { max-width: 760px; margin: 0 auto; padding: 24px 16px 48px; }
+    a { color: var(--accent); }
+    .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    h1 { font-size: 24px; margin: 8px 0; }
+    .back { text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; background: var(--panel); }
+    .intro { color: var(--muted); }
+    section { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 4px 18px 10px; margin: 16px 0; }
+    h2 { font-size: 16px; margin: 14px 0 6px; }
+    ul { margin: 0; padding-left: 18px; }
+    li { margin: 8px 0; }
+    li .what, p.what { display: block; margin: 4px 0; color: var(--muted); font-size: 14px; }
+    .lic { font-size: 12px; color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0 5px; margin-left: 4px; white-space: nowrap; }
+    .legal { color: var(--muted); font-size: 13px; text-align: center; margin-top: 24px; }
+    select { background: var(--panel); color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 4px 6px; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="top">
+      <a class="back" href="./" data-i18n="credits.back">← Back to map</a>
+      <label>🌐 <select id="lang" aria-label="Language"></select></label>
+    </div>
+    <h1>❤ <span data-i18n="credits.title">Credits & thanks</span></h1>
+    <p class="intro" data-i18n="credits.intro">This fan-made map would not exist without these projects and people. Thank you!</p>
+
+    <section>
+      <h2>✨ <span data-i18n="credits.inspiration">Inspiration</span></h2>
+      <p class="what" data-i18n="credits.inspirationText">The idea and feature set of this map were inspired by these sites. No data or images were copied from them.</p>
+      <ul>
+        <li><a href="https://gtalens.com/map" target="_blank" rel="noopener">GTALens — Interactive GTA Online Map</a></li>
+        <li><a href="https://gtaweb.eu/gtao-map" target="_blank" rel="noopener">GTAweb.eu — GTA Online Map</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🎮 <span data-i18n="credits.data">Game data</span></h2>
+      <ul>
+        <li><a href="https://github.com/Sainan/GTA-V-Decompiled-Scripts" target="_blank" rel="noopener">Sainan/GTA-V-Decompiled-Scripts</a>
+          <span class="what" data-i18n="credits.dataScripts">Collectible and daily locations, rewards, rank/RP table, Ghosts Exposed, street dealers and time trials.</span></li>
+        <li><a href="https://github.com/ShinyWasabi/GTAO-Bot" target="_blank" rel="noopener">ShinyWasabi/GTAO-Bot</a> <span class="lic">ISC</span>
+          <span class="what" data-i18n="credits.dataBot">Showed how the daily rotation works, in-game clock and area names; network RNG implementation by gir489returns.</span></li>
+        <li><a href="https://tunables.rdo.gg" target="_blank" rel="noopener">rdo.gg tunables</a> — Senexis
+          <span class="what" data-i18n="credits.dataTunables">Decrypted Rockstar tunables used to detect live overrides.</span></li>
+        <li><a href="https://github.com/DurtyFree/gta-v-data-dumps" target="_blank" rel="noopener">DurtyFree/gta-v-data-dumps</a>
+          <span class="what" data-i18n="credits.dataZones">Game zone boundaries for the city zone highlight and area names.</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🗺 <span data-i18n="credits.images">Map images & icons</span></h2>
+      <ul>
+        <li><a href="https://github.com/CreepPork/GTAV-Maps" target="_blank" rel="noopener">CreepPork/GTAV-Maps</a> <span class="lic">MIT</span>
+          <span class="what" data-i18n="credits.imagesTiles">Atlas, road and satellite map tiles.</span></li>
+        <li><a href="https://github.com/fivenet-app/livemap-tiles" target="_blank" rel="noopener">FiveNet livemap-tiles</a> <span class="lic">Apache-2.0</span> —
+          <a href="https://forum.cfx.re/t/free-cayo-perico-satelitte-map-v3/5260282" target="_blank" rel="noopener">Cayo Perico Satellite Map V3</a> by jonstyle83
+          <span class="what" data-i18n="credits.imagesCayo">Cayo Perico island image.</span></li>
+        <li><a href="https://docs.fivem.net/docs/game-references/blips/" target="_blank" rel="noopener">FiveM documentation — blips</a>
+          <span class="what" data-i18n="credits.imagesBlips">In-game radar blip icons.</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🛠 <span data-i18n="credits.software">Software</span></h2>
+      <ul>
+        <li><a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a> <span class="lic">BSD-2-Clause</span>
+          <span class="what" data-i18n="credits.softwareLeaflet">Interactive map library.</span></li>
+      </ul>
+    </section>
+
+    <p class="legal" data-i18n="foot.legal">GTA V / GTA Online © Rockstar Games — fan-made site, not affiliated with Rockstar</p>
+  </main>
+
+  <script>window.APP_VERSION = '20261018-4';</script>
+  <script src="i18n.js?v=20261018-4"></script>
+  <script>
+    (function () {
+      var saved = null;
+      try { saved = JSON.parse(localStorage.getItem('gtaomap.lang')); } catch (e) { /* storage unavailable */ }
+      I18N.init().then(function () { return I18N.use(I18N.detect(saved)); }).then(function () {
+        var sel = document.getElementById('lang');
+        I18N.languages.forEach(function (l) {
+          var o = document.createElement('option'); o.value = l.code; o.textContent = l.label; sel.appendChild(o);
+        });
+        sel.value = I18N.code;
+        I18N.apply(document);
+        document.title = I18N.t('credits.title') + ' — GTA Online Map';
+        sel.addEventListener('change', function () {
+          try { localStorage.setItem('gtaomap.lang', JSON.stringify(sel.value)); } catch (e) { /* ignore */ }
+          I18N.use(sel.value).then(function () { I18N.apply(document); document.title = I18N.t('credits.title') + ' — GTA Online Map'; });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
