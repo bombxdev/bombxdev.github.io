@@ -18,7 +18,7 @@
 - แผนที่เกาะ Cayo Perico (ภาพดาวเทียม) วางตามพิกัดเกม
 - 🚗 Exotic Exports (`exports.js`): รถ 10 คันที่ต้องหาในวันนั้น (เรียงตามลำดับในเกม) ค้นหารถด้วยชื่อรุ่น/ยี่ห้อ (หลายภาษา)
   แสดงจุดจอดที่เป็นไปได้ทั้ง 50 จุดของรถคันนั้นบนแผนที่ ค่าความแรงรถสต็อก (ความเร็วสูงสุด/อัตราเร่ง/เบรก/การยึดเกาะ)
-  และวันที่รถคันนั้นจะกลับมาอยู่ในรายการ
+  และวันที่รถคันนั้นจะกลับมาอยู่ในรายการ พร้อมรูปรถ (`vehicles/<model>.webp` จาก FiveM docs) และหน้ารวมรถ 100 คัน กรอง/เรียงตามค่าความแรงได้
 - popup แต่ละจุดบอก "แถว <ชื่อย่าน>" + ความสูงจากระดับน้ำทะเล / ความลึกใต้น้ำ + ภาพดาวเทียมซูมใกล้พร้อมวงแดง
   และช่อง "โน้ตของฉัน" ไว้จดคำบอกทางเอง (เก็บในเบราว์เซอร์ ค้นหาได้ และรวมในไฟล์สำรอง)
   ชื่อย่าน (`data/zones.json`) ค้นจากกล่องโซนจริงของเกม
@@ -110,6 +110,8 @@ python3 tools/extract_collectibles.py freemode.c data/points.json
 python3 tools/extract_daily.py freemode.c tuneables_processing.c data/daily.json
 curl -LO https://raw.githubusercontent.com/DurtyFree/gta-v-data-dumps/master/vehicles.json
 python3 tools/extract_exotic_exports.py freemode.c tuneables_processing.c vehicles.json data/exotic_exports.json data/points.json
+# รูปรถ: ดาวน์โหลด https://raw.githubusercontent.com/citizenfx/fivem-docs/master/static/vehicles/<model>.webp
+# แล้วครอปขอบใส + ย่อกว้าง 480px บันทึกเป็น vehicles/<model>.webp
 ```
 
 ชื่อฟังก์ชัน (`func_NNNN`) อาจเปลี่ยนเมื่อเกมอัปเดต ดูคำอธิบายใน `tools/extract_collectibles.py`

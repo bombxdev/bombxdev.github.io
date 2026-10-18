@@ -102,62 +102,166 @@
     return '<div class="ee-when">📅 ' + esc(t('ee.next', { date: M.dayFmt().format(new Date(nx.start * 1000)), n: nx.days, pos: nx.pos })) + '</div>';
   }
 
-  function cardEl(v) {
-    var el = document.createElement('div');
-    el.className = 'ee-card';
-    el.innerHTML = '<div class="ee-h"><b>' + esc(fullName(v)) + '</b>' + (carName(v) !== v.name.en ? ' <span class="muted">(' + esc(v.name.en) + ')</span>' : '') + '</div>' +
-      '<div class="muted">' + esc(className(v)) + ' · ' + esc(t('ee.seats', { n: v.seats })) + ' · ' + esc(t('ee.fastest', { n: speedRank[v.i], total: data.vehicles.length })) + '</div>' +
-      whenHtml(v) + statBars(v) +
-      '<p class="muted">' + esc(t('ee.statsNote')) + '</p>' +
-      '<p class="ee-spots">📍 ' + esc(t('ee.spots', { n: spotItems[v.tier].length, set: t('ee.set.' + v.tier) })) + '</p>';
-    return el;
+  function img(v, cls) {
+    return '<img class="' + cls + '" src="vehicles/' + v.model + '.webp?v=' + window.APP_VERSION + '" alt="" loading="lazy" decoding="async">';
   }
-
-  function openCar(v) {
-    if (!v || v.unknown) return;
-    M.showItemsOnMap(spotItems[v.tier], t('ee.spotsTitle', { name: carName(v) }), cardEl(v));
-  }
-
-  function carButton(v, extra) {
-    var b = document.createElement('button');
-    b.className = 'result';
-    var cat = M.state.catByKey.exotic_exports;
-    b.innerHTML = '<span class="res-blip" style="--c:' + cat.color + '">' + M.blipImg(cat) + '</span><span><div class="name">' + esc(fullName(v)) + (extra || '') + '</div>' +
-      '<div class="meta">' + esc(className(v)) + ' · 🏁 ' + kmh(v) + ' km/h · ' + esc(t('ee.set.' + v.tier)) + '</div></span>';
-    b.addEventListener('click', function () { openCar(v); });
-    return b;
-  }
-
   function badge(v, list) {
     var pos = list.indexOf(v);
     return pos === -1 ? '' : ' <span class="ee-badge">' + esc(t('ee.badge', { n: pos + 1 })) + '</span>';
   }
 
-  // Every export car, sortable.
-  function openAll(sortBy) {
-    sortBy = sortBy || M.store.get('eeSort', 'name');
-    var list = todayList();
-    var el = document.createElement('div');
-    var sel = '<label class="ee-sort"><span class="muted">' + esc(t('ee.sort')) + '</span> <select>' +
-      ['name', 'speed', 'accel', 'today'].map(function (k) {
-        return '<option value="' + k + '"' + (k === sortBy ? ' selected' : '') + '>' + esc(t('ee.sort.' + k)) + '</option>';
-      }).join('') + '</select></label>';
-    el.innerHTML = sel;
-    var cars = data.vehicles.slice();
+  // Car details and the full car list open in a dialog (like the planner), so
+  // they are always in view, also on phones.
+  var dlg = document.createElement('div');
+  dlg.className = 'planner ee-dlg';
+  dlg.hidden = true;
+  dlg.setAttribute('role', 'dialog');
+  dlg.setAttribute('aria-modal', 'true');
+  document.body.appendChild(dlg);
+  function closeDlg() { dlg.hidden = true; }
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) closeDlg(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !dlg.hidden) closeDlg(); });
+  function showDlg(title, body) {
+    dlg.innerHTML = '<div class="pl-box ee-box"><div class="pl-top"><h2>' + title + '</h2>' +
+      '<button type="button" class="icon-btn" data-close aria-label="' + esc(t('plan.close')) + '">✕</button></div>' + body + '</div>';
+    dlg.querySelector('[data-close]').addEventListener('click', closeDlg);
+    dlg.hidden = false;
+    dlg.querySelector('.pl-box').scrollTop = 0;
+  }
+
+  function openCar(v, fromList) {
+    if (!v || v.unknown) return;
+    showDlg('🚗 ' + esc(fullName(v)),
+      '<div class="ee-hero">' + img(v, 'ee-img') + '</div>' +
+      (carName(v) !== v.name.en ? '<div class="muted">' + esc(v.name.en) + '</div>' : '') +
+      '<div class="ee-meta">' + esc(className(v)) + ' · ' + esc(t('ee.seats', { n: v.seats })) + ' · ' + esc(t('ee.fastest', { n: speedRank[v.i], total: data.vehicles.length })) + '</div>' +
+      whenHtml(v) + statBars(v) +
+      '<div class="ee-overall">🏆 ' + esc(t('ee.overall', { score: Math.round(score(v, rankCfg())), n: rankOf(v), total: data.vehicles.length })) + '</div>' +
+      '<p class="muted">' + esc(t('ee.statsNote')) + '</p>' +
+      '<p class="ee-spots">📍 ' + esc(t('ee.spots', { n: spotItems[v.tier].length, set: t('ee.set.' + v.tier) })) + '</p>' +
+      '<div class="ee-actions"><button type="button" class="chip primary" data-map>🗺 ' + esc(t('ee.showSpots', { n: spotItems[v.tier].length })) + '</button>' +
+      '<button type="button" class="chip" data-all>☰ ' + esc(t('ee.all', { n: data.vehicles.length })) + '</button></div>');
+    dlg.querySelector('[data-map]').addEventListener('click', function () {
+      closeDlg();
+      M.showItemsOnMap(spotItems[v.tier], t('ee.spotsTitle', { name: carName(v) }));
+      if (M.isMobile()) M.setSidebar(false);   // phones: show the map, the list stays in the menu
+    });
+    dlg.querySelector('[data-all]').addEventListener('click', function () { openAll(); });
+  }
+
+  // Search result row (sidebar).
+  function carButton(v, extra) {
+    var b = document.createElement('button');
+    b.className = 'result ee-result';
+    b.innerHTML = img(v, 'ee-thumb') + '<span><div class="name">' + esc(fullName(v)) + (extra || '') + '</div>' +
+      '<div class="meta">' + esc(className(v)) + ' · 🏁 ' + kmh(v) + ' km/h · ' + esc(t('ee.set.' + v.tier)) + '</div></span>';
+    b.addEventListener('click', function () { openCar(v); });
+    return b;
+  }
+
+  // Ranking: "score" = weighted sum of the stats (each as % of the best export
+  // car) by the chosen priority; "strict" = sort by priority 1, ties by 2, 3, 4.
+  // Default: speed and acceleration first, braking and traction second.
+  var RANK_DEFAULT = { mode: 'score', prio: ['speed', 'accel', 'brake', 'traction'], w: [40, 30, 20, 10] };
+  function rankCfg() {
+    var c = M.store.get('eeRank', null);
+    var ok = c && ['score', 'strict', 'name', 'today'].indexOf(c.mode) !== -1 && Array.isArray(c.prio) && c.prio.length === 4 &&
+      STATS.every(function (k) { return c.prio.indexOf(k) !== -1; }) && Array.isArray(c.w) && c.w.length === 4;
+    return ok ? c : JSON.parse(JSON.stringify(RANK_DEFAULT));
+  }
+  function pct(v, k) { return v[k] / best[k] * 100; }
+  function score(v, c) {
+    var sum = 0, tot = 0;
+    c.prio.forEach(function (k, i) { var w = Math.max(0, Number(c.w[i]) || 0); sum += w * pct(v, k); tot += w; });
+    return tot ? sum / tot : 0;
+  }
+  function rankSort(cars, c, list) {
     var byName = function (a, b) { return carName(a).localeCompare(carName(b), I18N.code); };
-    cars.sort(sortBy === 'name' ? byName
-      : sortBy === 'today' ? function (a, b) {
+    var strict = function (a, b) {
+      for (var i = 0; i < 4; i++) { var d = b[c.prio[i]] - a[c.prio[i]]; if (d) return d; }
+      return byName(a, b);
+    };
+    return cars.sort(c.mode === 'name' ? byName
+      : c.mode === 'today' ? function (a, b) {
         var pa = list.indexOf(a), pb = list.indexOf(b);
         return (pa === -1 ? 99 : pa) - (pb === -1 ? 99 : pb) || byName(a, b);
       }
-      : function (a, b) { return b[sortBy] - a[sortBy]; });
-    cars.forEach(function (v) { el.appendChild(carButton(v, badge(v, list))); });
-    el.querySelector('select').addEventListener('change', function (e) {
-      M.store.set('eeSort', e.target.value);
-      openAll(e.target.value);
-    });
-    M.showPanel(t('ee.allTitle', { n: data.vehicles.length }), el);
+      : c.mode === 'strict' ? strict
+      : function (a, b) { return score(b, c) - score(a, c) || strict(a, b); });
   }
+  // Rank of a car with the saved settings (score mode unless strict is chosen).
+  function rankOf(v) {
+    var c = rankCfg();
+    if (c.mode !== 'strict') c.mode = 'score';
+    return rankSort(data.vehicles.slice(), c, []).indexOf(v) + 1;
+  }
+
+  // Every export car as a grid of cards: ranked, filterable.
+  function openAll() {
+    var c = rankCfg();
+    var statOpts = function (sel) {
+      return STATS.map(function (k) { return '<option value="' + k + '"' + (k === sel ? ' selected' : '') + '>' + esc(t('ee.' + k)) + '</option>'; }).join('');
+    };
+    showDlg('🏆 ' + esc(t('ee.allTitle', { n: data.vehicles.length })),
+      '<div class="ee-tools"><input type="search" class="ee-filter" placeholder="' + esc(t('ee.filter')) + '">' +
+      '<label class="ee-sort"><span class="muted">' + esc(t('ee.sort')) + '</span> <select data-mode>' +
+      ['score', 'strict', 'name', 'today'].map(function (k) {
+        return '<option value="' + k + '"' + (k === c.mode ? ' selected' : '') + '>' + esc(t('ee.mode.' + k)) + '</option>';
+      }).join('') + '</select></label></div>' +
+      '<div class="ee-prio">' + c.prio.map(function (k, i) {
+        return '<label><span class="muted">' + esc(t('ee.prio', { n: i + 1 })) + '</span><select data-prio="' + i + '">' + statOpts(k) + '</select>' +
+          '<span class="ee-w"><input type="number" min="0" max="100" step="5" data-w="' + i + '" value="' + esc(c.w[i]) + '"> %</span></label>';
+      }).join('') + '<button type="button" class="chip" data-reset>↺ ' + esc(t('plan.reset')) + '</button></div>' +
+      '<div class="muted ee-legend" data-hint></div>' +
+      '<div class="ee-grid"></div>');
+    var grid = dlg.querySelector('.ee-grid'), filter = dlg.querySelector('.ee-filter');
+    function save() { M.store.set('eeRank', c); }
+    function draw() {
+      dlg.querySelectorAll('.ee-w').forEach(function (el) { el.hidden = c.mode !== 'score'; });
+      dlg.querySelector('.ee-prio').classList.toggle('off', c.mode === 'name' || c.mode === 'today');
+      dlg.querySelector('[data-hint]').textContent = t('ee.hint.' + c.mode) + ' · ' + t('ee.legend') + ' ' +
+        c.prio.map(function (k) { return t('ee.' + k); }).join(' · ');
+      var list = todayList();
+      var cars = rankSort(data.vehicles.slice(), c, list);
+      var words = M.norm(filter.value).split(/\s+/).filter(Boolean);
+      grid.innerHTML = '';
+      cars.forEach(function (v, idx) {
+        if (!words.every(function (w) { return hay[v.i].indexOf(w) !== -1; })) return;
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'ee-tile' + (list.indexOf(v) !== -1 ? ' on' : '');
+        var top = c.mode === 'score' || c.mode === 'strict'
+          ? '<div class="ee-rank">#' + (idx + 1) + (c.mode === 'score' ? ' · ' + esc(t('ee.score')) + ' ' + score(v, c).toFixed(1) : '') + '</div>' : '';
+        b.innerHTML = top + img(v, 'ee-tile-img') + '<div class="ee-tile-n">' + esc(carName(v)) + badge(v, list) + '</div>' +
+          '<div class="muted">' + esc(v.maker) + ' · ' + esc(className(v)) + '</div>' + miniBars(v, c.prio);
+        b.addEventListener('click', function () { openCar(v, true); });
+        grid.appendChild(b);
+      });
+    }
+    dlg.querySelector('[data-mode]').addEventListener('change', function (e) { c.mode = e.target.value; save(); draw(); });
+    dlg.querySelectorAll('[data-prio]').forEach(function (sel) {
+      sel.addEventListener('change', function () {
+        var i = Number(sel.getAttribute('data-prio')), k = sel.value, j = c.prio.indexOf(k);
+        c.prio[j] = c.prio[i];          // swap, so each stat is used once
+        c.prio[i] = k;
+        dlg.querySelectorAll('[data-prio]').forEach(function (s2, n) { s2.value = c.prio[n]; });
+        save(); draw();
+      });
+    });
+    dlg.querySelectorAll('[data-w]').forEach(function (inp) {
+      inp.addEventListener('input', function () { c.w[Number(inp.getAttribute('data-w'))] = Math.max(0, Number(inp.value) || 0); save(); draw(); });
+    });
+    dlg.querySelector('[data-reset]').addEventListener('click', function () { M.store.set('eeRank', null); openAll(); });
+    filter.addEventListener('input', draw);
+    draw();
+  }
+
+  function miniBars(v, order) {
+    return '<div class="ee-mini">' + (order || STATS).map(function (k) {
+      return '<span title="' + esc(t('ee.' + k)) + (k === 'speed' ? ' ' + kmh(v) + ' km/h' : ' ' + Math.round(pct(v, k)) + '%') + '"><i style="width:' + Math.round(pct(v, k)) + '%"></i></span>';
+    }).join('') + '</div><div class="ee-kmh">🏁 ' + kmh(v) + ' km/h</div>';
+  }
+
 
   // Today panel row: the 10 cars in the order they are asked for.
   var lastKey = '';
