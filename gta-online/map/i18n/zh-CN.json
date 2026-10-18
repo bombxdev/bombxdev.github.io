@@ -184,9 +184,10 @@
   "purpose.landmark": "商店与地标",
   "group.showAll": "全部显示",
   "group.hideAll": "全部隐藏",
-  "style.road": "游戏内",
+  "style.road": "道路",
   "style.atlas": "地图集",
-  "style.satellite": "卫星"
+  "style.satellite": "卫星",
+  "style.game": "游戏内"
  },
  "cats": {
   "action_figures": {

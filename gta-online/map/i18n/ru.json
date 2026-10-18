@@ -184,9 +184,10 @@
   "purpose.landmark": "Магазины и ориентиры",
   "group.showAll": "Показать все",
   "group.hideAll": "Скрыть все",
-  "style.road": "Как в игре",
+  "style.road": "Дороги",
   "style.atlas": "Атлас",
-  "style.satellite": "Спутник"
+  "style.satellite": "Спутник",
+  "style.game": "Как в игре"
  },
  "cats": {
   "action_figures": {
