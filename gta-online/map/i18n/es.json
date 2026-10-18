@@ -131,7 +131,43 @@
   "credits.imagesCayo": "Imagen de la isla Cayo Perico.",
   "credits.imagesBlips": "Iconos de radar del juego.",
   "credits.software": "Software",
-  "credits.softwareLeaflet": "Biblioteca de mapas interactivos."
+  "credits.softwareLeaflet": "Biblioteca de mapas interactivos.",
+  "ee.title": "Exotic Exports — los 10 coches del día",
+  "ee.all": "Los {n} coches de exportación y sus datos",
+  "ee.allTitle": "Coches de Exotic Exports ({n})",
+  "ee.spotsTitle": "Dónde puede estar aparcado el {name}",
+  "ee.onList": "En la lista de este día (n.º {n})",
+  "ee.next": "Próxima vez en la lista: {date} (en {n} días, n.º {pos})",
+  "ee.notSoon": "No aparece en la lista en los próximos {n} días",
+  "ee.seats": "{n} asientos",
+  "ee.fastest": "N.º {n} en velocidad de {total}",
+  "ee.speed": "Velocidad máxima",
+  "ee.accel": "Aceleración",
+  "ee.brake": "Frenada",
+  "ee.traction": "Tracción",
+  "ee.statsNote": "Datos de serie de los archivos del juego (sin mejoras). Las barras comparan con el mejor coche de exportación.",
+  "ee.spots": "Aparcado en uno de estos {n} puntos al azar ({set}); revísalos uno a uno.",
+  "ee.set.high": "Puntos de coches de gama alta",
+  "ee.set.std": "Puntos de coches normales",
+  "ee.sort": "Ordenar:",
+  "ee.sort.name": "Nombre",
+  "ee.sort.speed": "Velocidad máxima",
+  "ee.sort.accel": "Aceleración",
+  "ee.sort.today": "Lista del día",
+  "ee.badge": "Hoy n.º {n}",
+  "ee.found": "{n} coches de exportación",
+  "ee.popHere": "En la lista de este día y puede estar aquí:",
+  "ee.popNone": "Ningún coche de este día usa este grupo de puntos.",
+  "ee.class.SUPER": "Superdeportivo",
+  "ee.class.SPORT": "Deportivo",
+  "ee.class.SPORT_CLASSIC": "Deportivo clásico",
+  "ee.class.MUSCLE": "Muscle",
+  "ee.class.SUV": "Todoterreno SUV",
+  "ee.class.COUPE": "Coupé",
+  "ee.class.COMPACT": "Compacto",
+  "ee.class.OFF_ROAD": "Todoterreno",
+  "ee.class.SEDAN": "Sedán",
+  "credits.dataVehicles": "Nombres de vehículos y estadísticas de serie (Exotic Exports)."
  },
  "cats": {
   "action_figures": {
@@ -228,6 +264,11 @@
   "ghosts": {
    "name": "Ghosts Exposed",
    "note": "Evento de Halloween: cada fantasma aparece una hora del juego"
+  },
+  "exotic_exports": {
+   "name": "Coches de Exotic Exports",
+   "note": "Diario: 10 coches al día, cada uno en 1 de 50 puntos",
+   "info": "Exotic Exports (LS Tuners): cada día hay una lista de 10 coches que buscar y entregar en el muelle de Exotic Exports del puerto de Los Santos. Cada coche está aparcado en uno de 50 puntos fijos al azar (un grupo para gama alta y otro para coches normales). Busca un coche por nombre para ver dónde puede estar, sus datos y cuándo vuelve a la lista."
   }
  }
 }

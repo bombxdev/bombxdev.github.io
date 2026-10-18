@@ -131,7 +131,43 @@
   "credits.imagesCayo": "Cayo Perico adası görseli.",
   "credits.imagesBlips": "Oyun içi radar simgeleri.",
   "credits.software": "Yazılım",
-  "credits.softwareLeaflet": "Etkileşimli harita kütüphanesi."
+  "credits.softwareLeaflet": "Etkileşimli harita kütüphanesi.",
+  "ee.title": "Exotic Exports — günün 10 aracı",
+  "ee.all": "Tüm {n} ihracat aracı ve değerleri",
+  "ee.allTitle": "Exotic Exports araçları ({n})",
+  "ee.spotsTitle": "{name} nerede park etmiş olabilir",
+  "ee.onList": "Bu günün listesinde (#{n})",
+  "ee.next": "Listede tekrar: {date} ({n} gün sonra, #{pos})",
+  "ee.notSoon": "Önümüzdeki {n} gün listede yok",
+  "ee.seats": "{n} koltuk",
+  "ee.fastest": "{total} araç içinde en hızlı #{n}",
+  "ee.speed": "Azami hız",
+  "ee.accel": "Hızlanma",
+  "ee.brake": "Frenleme",
+  "ee.traction": "Yol tutuş",
+  "ee.statsNote": "Oyun dosyalarından stok değerler (yükseltmesiz). Çubuklar en iyi ihracat aracıyla karşılaştırır.",
+  "ee.spots": "Bu {n} noktadan rastgele birinde park halinde ({set}) — tek tek kontrol edin.",
+  "ee.set.high": "Lüks araç noktaları",
+  "ee.set.std": "Normal araç noktaları",
+  "ee.sort": "Sırala:",
+  "ee.sort.name": "Ad",
+  "ee.sort.speed": "Azami hız",
+  "ee.sort.accel": "Hızlanma",
+  "ee.sort.today": "Günün listesi",
+  "ee.badge": "Bugün #{n}",
+  "ee.found": "{n} ihracat aracı",
+  "ee.popHere": "Bu günün listesinde ve burada olabilir:",
+  "ee.popNone": "Bu günün hiçbir aracı bu noktaları kullanmıyor.",
+  "ee.class.SUPER": "Süper",
+  "ee.class.SPORT": "Spor",
+  "ee.class.SPORT_CLASSIC": "Klasik spor",
+  "ee.class.MUSCLE": "Muscle",
+  "ee.class.SUV": "SUV",
+  "ee.class.COUPE": "Coupe",
+  "ee.class.COMPACT": "Kompakt",
+  "ee.class.OFF_ROAD": "Arazi",
+  "ee.class.SEDAN": "Sedan",
+  "credits.dataVehicles": "Araç adları ve stok performans değerleri (Exotic Exports)."
  },
  "cats": {
   "action_figures": {
@@ -228,6 +264,11 @@
   "ghosts": {
    "name": "Ghosts Exposed",
    "note": "Cadılar Bayramı etkinliği: her hayalet bir oyun saati görünür"
+  },
+  "exotic_exports": {
+   "name": "Exotic Exports araçları",
+   "note": "Günlük: günde 10 araç, her biri 50 noktadan birinde",
+   "info": "Exotic Exports (LS Tuners): her gün bulunup Los Santos Limanı'ndaki Exotic Exports iskelesine teslim edilecek 10 araçlık bir liste olur. Her araç 50 sabit noktadan rastgele birinde park halindedir (lüks araçlar için bir grup, normal araçlar için bir grup). Nerede olabileceğini, değerlerini ve listeye ne zaman döneceğini görmek için aracı adıyla arayın."
   }
  }
 }

@@ -16,6 +16,9 @@
 - Ghosts Exposed: ตำแหน่ง + ชั่วโมงที่ผีแต่ละตัวโผล่ (เวลาในเกม) แปลงเป็นเวลาจริงของเครื่องผู้ใช้ และนาฬิกาเวลาในเกม (1 นาทีในเกม = 2 วินาทีจริง)
 - รายวันเพิ่ม: Street Dealers (3 จุด/วัน), Junk Energy Bike Time Trial, RC Bandito Time Trial
 - แผนที่เกาะ Cayo Perico (ภาพดาวเทียม) วางตามพิกัดเกม
+- 🚗 Exotic Exports (`exports.js`): รถ 10 คันที่ต้องหาในวันนั้น (เรียงตามลำดับในเกม) ค้นหารถด้วยชื่อรุ่น/ยี่ห้อ (หลายภาษา)
+  แสดงจุดจอดที่เป็นไปได้ทั้ง 50 จุดของรถคันนั้นบนแผนที่ ค่าความแรงรถสต็อก (ความเร็วสูงสุด/อัตราเร่ง/เบรก/การยึดเกาะ)
+  และวันที่รถคันนั้นจะกลับมาอยู่ในรายการ
 - popup แต่ละจุดบอก "แถว <ชื่อย่าน>" + ความสูงจากระดับน้ำทะเล / ความลึกใต้น้ำ + ภาพดาวเทียมซูมใกล้พร้อมวงแดง
   และช่อง "โน้ตของฉัน" ไว้จดคำบอกทางเอง (เก็บในเบราว์เซอร์ ค้นหาได้ และรวมในไฟล์สำรอง)
   ชื่อย่าน (`data/zones.json`) ค้นจากกล่องโซนจริงของเกม
@@ -53,8 +56,14 @@
   ดึงจาก [api.rdo.gg](https://tunables.rdo.gg) ทุกวันหลังรีเซ็ต เก็บไว้ที่ `data/tunables.json`
   หน้าเว็บจะนำ override มาใช้และแจ้งเตือนถ้ามี
 
+- **Exotic Exports**: รถ 100 รุ่น (ตัดรุ่นที่ถูก blacklist ผ่าน tunables) สับด้วยตัวสุ่มเดียวกัน seed เดียวกับ Gun Van
+  10 คันแรกคือรถของวันนั้น (tunables แทนบางช่องได้) ลำดับที่ขอสับอีกรอบด้วย `seed % (i + 1)`
+  เวลาขอรถแต่ละคัน เกมสุ่มจุดจอด 1 ใน 50 จุด (มี 2 ชุด: รถหรู 60 รุ่น / รถทั่วไป 40 รุ่น) จึงบอกได้แค่ 50 จุดที่เป็นไปได้
+  → `data/exotic_exports.json` (ดึงด้วย `tools/extract_exotic_exports.py`, ค่าความแรงจาก DurtyFree `vehicles.json`)
+
 ตรวจสอบแล้ว: ตาราง 84 วันที่ดึงเองตรงกับของ [GTAO-Bot](https://github.com/ShinyWasabi/GTAO-Bot) ครบ 504/504 รายการ
 และ Gun Van ที่คำนวณได้ตรงกับที่เว็บอื่นรายงาน (17 ต.ค. 2026 = #7 Paleto Forest)
+รายการ Exotic Exports ตรงกับ GTAO-Bot ครบ 400/400 วันที่ทดสอบ
 
 ## เครดิต
 
@@ -99,6 +108,8 @@ curl -LO https://raw.githubusercontent.com/Sainan/GTA-V-Decompiled-Scripts/maste
 curl -LO https://raw.githubusercontent.com/Sainan/GTA-V-Decompiled-Scripts/master/decompiled_scripts/tuneables_processing.c
 python3 tools/extract_collectibles.py freemode.c data/points.json
 python3 tools/extract_daily.py freemode.c tuneables_processing.c data/daily.json
+curl -LO https://raw.githubusercontent.com/DurtyFree/gta-v-data-dumps/master/vehicles.json
+python3 tools/extract_exotic_exports.py freemode.c tuneables_processing.c vehicles.json data/exotic_exports.json data/points.json
 ```
 
 ชื่อฟังก์ชัน (`func_NNNN`) อาจเปลี่ยนเมื่อเกมอัปเดต ดูคำอธิบายใน `tools/extract_collectibles.py`

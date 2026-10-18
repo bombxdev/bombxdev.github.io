@@ -131,7 +131,43 @@
   "credits.imagesCayo": "Obraz wyspy Cayo Perico.",
   "credits.imagesBlips": "Ikony radaru z gry.",
   "credits.software": "Oprogramowanie",
-  "credits.softwareLeaflet": "Biblioteka map interaktywnych."
+  "credits.softwareLeaflet": "Biblioteka map interaktywnych.",
+  "ee.title": "Exotic Exports — 10 aut tego dnia",
+  "ee.all": "Wszystkie {n} auta na eksport i statystyki",
+  "ee.allTitle": "Auta Exotic Exports ({n})",
+  "ee.spotsTitle": "Gdzie może stać {name}",
+  "ee.onList": "Na liście tego dnia (nr {n})",
+  "ee.next": "Następnie na liście: {date} (za {n} dni, nr {pos})",
+  "ee.notSoon": "Brak na liście przez następne {n} dni",
+  "ee.seats": "Miejsca: {n}",
+  "ee.fastest": "{n}. najszybsze z {total}",
+  "ee.speed": "Prędkość maks.",
+  "ee.accel": "Przyspieszenie",
+  "ee.brake": "Hamowanie",
+  "ee.traction": "Przyczepność",
+  "ee.statsNote": "Fabryczne dane z plików gry (bez ulepszeń). Paski porównują z najlepszym autem na eksport.",
+  "ee.spots": "Stoi losowo w jednym z tych {n} miejsc ({set}) — sprawdzaj po kolei.",
+  "ee.set.high": "Miejsca aut luksusowych",
+  "ee.set.std": "Miejsca zwykłych aut",
+  "ee.sort": "Sortuj:",
+  "ee.sort.name": "Nazwa",
+  "ee.sort.speed": "Prędkość maks.",
+  "ee.sort.accel": "Przyspieszenie",
+  "ee.sort.today": "Lista dnia",
+  "ee.badge": "Dziś nr {n}",
+  "ee.found": "Aut na eksport: {n}",
+  "ee.popHere": "Na liście tego dnia i może tu stać:",
+  "ee.popNone": "Żadne auto tego dnia nie używa tych miejsc.",
+  "ee.class.SUPER": "Super",
+  "ee.class.SPORT": "Sportowe",
+  "ee.class.SPORT_CLASSIC": "Sportowe klasyczne",
+  "ee.class.MUSCLE": "Muscle",
+  "ee.class.SUV": "SUV",
+  "ee.class.COUPE": "Coupé",
+  "ee.class.COMPACT": "Kompaktowe",
+  "ee.class.OFF_ROAD": "Terenowe",
+  "ee.class.SEDAN": "Sedany",
+  "credits.dataVehicles": "Nazwy pojazdów i fabryczne osiągi (Exotic Exports)."
  },
  "cats": {
   "action_figures": {
@@ -228,6 +264,11 @@
   "ghosts": {
    "name": "Ghosts Exposed",
    "note": "Wydarzenie halloweenowe: każdy duch pojawia się na godzinę gry"
+  },
+  "exotic_exports": {
+   "name": "Auta Exotic Exports",
+   "note": "Codziennie: 10 aut dziennie, każde w 1 z 50 miejsc",
+   "info": "Exotic Exports (LS Tuners): codziennie jest lista 10 aut do znalezienia i dostarczenia do doku Exotic Exports w porcie Los Santos. Każde auto stoi losowo w jednym z 50 stałych miejsc (jedna grupa dla aut luksusowych, druga dla zwykłych). Wyszukaj auto po nazwie, aby zobaczyć, gdzie może stać, jego statystyki i kiedy znów będzie na liście."
   }
  }
 }

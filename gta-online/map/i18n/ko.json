@@ -131,7 +131,43 @@
   "credits.imagesCayo": "카요 페리코 섬 이미지.",
   "credits.imagesBlips": "게임 내 레이더 아이콘.",
   "credits.software": "소프트웨어",
-  "credits.softwareLeaflet": "인터랙티브 지도 라이브러리."
+  "credits.softwareLeaflet": "인터랙티브 지도 라이브러리.",
+  "ee.title": "Exotic Exports — 오늘의 차량 10대",
+  "ee.all": "수출 차량 전체 {n}대 및 성능",
+  "ee.allTitle": "Exotic Exports 차량 ({n})",
+  "ee.spotsTitle": "{name}이(가) 주차되어 있을 수 있는 곳",
+  "ee.onList": "이 날의 목록에 있음 ({n}번)",
+  "ee.next": "다음 등장: {date} ({n}일 후, {pos}번)",
+  "ee.notSoon": "앞으로 {n}일 동안 목록에 없음",
+  "ee.seats": "{n}인승",
+  "ee.fastest": "속도 {total}대 중 {n}위",
+  "ee.speed": "최고 속도",
+  "ee.accel": "가속",
+  "ee.brake": "제동",
+  "ee.traction": "접지력",
+  "ee.statsNote": "게임 파일의 순정 성능(개조 없음). 막대는 가장 뛰어난 수출 차량과 비교합니다.",
+  "ee.spots": "이 {n}곳 중 한 곳에 무작위로 주차됨 ({set}) — 하나씩 확인하세요.",
+  "ee.set.high": "고급 차량 주차 지점",
+  "ee.set.std": "일반 차량 주차 지점",
+  "ee.sort": "정렬:",
+  "ee.sort.name": "이름",
+  "ee.sort.speed": "최고 속도",
+  "ee.sort.accel": "가속",
+  "ee.sort.today": "이 날의 목록",
+  "ee.badge": "오늘 {n}번",
+  "ee.found": "수출 차량 {n}대",
+  "ee.popHere": "이 날의 목록에 있으며 여기 주차될 수 있음:",
+  "ee.popNone": "이 날의 차량 중 이 지점을 쓰는 차가 없습니다.",
+  "ee.class.SUPER": "슈퍼카",
+  "ee.class.SPORT": "스포츠카",
+  "ee.class.SPORT_CLASSIC": "클래식 스포츠카",
+  "ee.class.MUSCLE": "머슬카",
+  "ee.class.SUV": "SUV",
+  "ee.class.COUPE": "쿠페",
+  "ee.class.COMPACT": "소형차",
+  "ee.class.OFF_ROAD": "오프로드",
+  "ee.class.SEDAN": "세단",
+  "credits.dataVehicles": "차량 이름과 순정 성능 데이터 (Exotic Exports)."
  },
  "cats": {
   "action_figures": {
@@ -228,6 +264,11 @@
   "ghosts": {
    "name": "Ghosts Exposed (유령 촬영)",
    "note": "핼러윈 이벤트: 유령마다 게임 시간 1시간 동안 출현"
+  },
+  "exotic_exports": {
+   "name": "Exotic Exports 차량",
+   "note": "일일: 하루 10대, 각각 50곳 중 한 곳에 주차",
+   "info": "Exotic Exports (LS Tuners): 매일 찾아서 로스 산토스 항구의 Exotic Exports 부두로 배달할 차량 10대 목록이 있습니다. 각 차량은 고정된 50곳 중 한 곳에 무작위로 주차됩니다(고급 차량용, 일반 차량용 두 세트). 차량 이름으로 검색하면 주차 가능한 곳, 성능, 다음 등장일을 볼 수 있습니다."
   }
  }
 }

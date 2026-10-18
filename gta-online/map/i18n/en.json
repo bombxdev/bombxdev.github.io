@@ -131,7 +131,43 @@
   "credits.imagesCayo": "Cayo Perico island image.",
   "credits.imagesBlips": "In-game radar blip icons.",
   "credits.software": "Software",
-  "credits.softwareLeaflet": "Interactive map library."
+  "credits.softwareLeaflet": "Interactive map library.",
+  "ee.title": "Exotic Exports — this day's 10 cars",
+  "ee.all": "All {n} export cars & stats",
+  "ee.allTitle": "Exotic Exports cars ({n})",
+  "ee.spotsTitle": "Where the {name} can be parked",
+  "ee.onList": "On this day's list (#{n})",
+  "ee.next": "Next on the list: {date} (in {n} days, #{pos})",
+  "ee.notSoon": "Not on the list in the next {n} days",
+  "ee.seats": "{n} seats",
+  "ee.fastest": "#{n} fastest of {total}",
+  "ee.speed": "Top speed",
+  "ee.accel": "Acceleration",
+  "ee.brake": "Braking",
+  "ee.traction": "Traction",
+  "ee.statsNote": "Stock stats from the game files (no upgrades). Bars compare with the fastest/best export car.",
+  "ee.spots": "Parked at a random one of these {n} spots ({set}) — check them one by one.",
+  "ee.set.high": "High-end car spots",
+  "ee.set.std": "Regular car spots",
+  "ee.sort": "Sort:",
+  "ee.sort.name": "Name",
+  "ee.sort.speed": "Top speed",
+  "ee.sort.accel": "Acceleration",
+  "ee.sort.today": "This day's list",
+  "ee.badge": "Today #{n}",
+  "ee.found": "{n} export cars",
+  "ee.popHere": "On this day's list and may be parked here:",
+  "ee.popNone": "None of this day's cars use this spot set.",
+  "ee.class.SUPER": "Super",
+  "ee.class.SPORT": "Sports",
+  "ee.class.SPORT_CLASSIC": "Sports Classic",
+  "ee.class.MUSCLE": "Muscle",
+  "ee.class.SUV": "SUV",
+  "ee.class.COUPE": "Coupe",
+  "ee.class.COMPACT": "Compact",
+  "ee.class.OFF_ROAD": "Off-road",
+  "ee.class.SEDAN": "Sedan",
+  "credits.dataVehicles": "Vehicle names and stock performance stats (Exotic Exports)."
  },
  "cats": {
   "action_figures": {
@@ -253,6 +289,11 @@
    "name": "Ghosts Exposed",
    "note": "Halloween event: each ghost appears for one in-game hour",
    "info": "Photograph each ghost with your phone camera while it is out. $20,000 per ghost, $50,000 bonus for all 10. The clock in the Daily panel shows the current in-game time."
+  },
+  "exotic_exports": {
+   "name": "Exotic Exports cars",
+   "note": "Daily: 10 cars a day, each parked at 1 of 50 spots",
+   "info": "Exotic Exports (LS Tuners): every day there is a list of 10 cars to find and deliver to the Exotic Exports dock at the Port of Los Santos. Each car is parked at a random one of 50 fixed spots (one set for high-end cars, one for regular cars). Search a car by name to see where it can be, its stats, and when it is on the list again."
   }
  }
 }

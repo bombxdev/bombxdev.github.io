@@ -131,7 +131,43 @@
   "credits.imagesCayo": "カヨ・ペリコ島の画像。",
   "credits.imagesBlips": "ゲーム内レーダーのアイコン。",
   "credits.software": "ソフトウェア",
-  "credits.softwareLeaflet": "インタラクティブ地図ライブラリ。"
+  "credits.softwareLeaflet": "インタラクティブ地図ライブラリ。",
+  "ee.title": "Exotic Exports — この日の10台",
+  "ee.all": "輸出車全{n}台と性能",
+  "ee.allTitle": "Exotic Exports の車（{n}）",
+  "ee.spotsTitle": "{name} が停まっている可能性のある場所",
+  "ee.onList": "この日のリストに掲載（{n}番目）",
+  "ee.next": "次の掲載：{date}（{n}日後、{pos}番目）",
+  "ee.notSoon": "今後{n}日間はリストに出ません",
+  "ee.seats": "{n}人乗り",
+  "ee.fastest": "最高速度 {total}台中{n}位",
+  "ee.speed": "最高速度",
+  "ee.accel": "加速",
+  "ee.brake": "ブレーキ",
+  "ee.traction": "トラクション",
+  "ee.statsNote": "ゲームファイルのノーマル性能（改造なし）。バーは最も優れた輸出車との比較です。",
+  "ee.spots": "この{n}か所のどこかにランダムで駐車（{set}）— 順番に確認してください。",
+  "ee.set.high": "高級車の駐車地点",
+  "ee.set.std": "一般車の駐車地点",
+  "ee.sort": "並べ替え：",
+  "ee.sort.name": "名前",
+  "ee.sort.speed": "最高速度",
+  "ee.sort.accel": "加速",
+  "ee.sort.today": "この日のリスト",
+  "ee.badge": "今日 {n}番目",
+  "ee.found": "輸出車 {n}台",
+  "ee.popHere": "この日のリストにあり、ここに停まる可能性あり：",
+  "ee.popNone": "この日の車はこの地点セットを使いません。",
+  "ee.class.SUPER": "スーパー",
+  "ee.class.SPORT": "スポーツ",
+  "ee.class.SPORT_CLASSIC": "スポーツクラシック",
+  "ee.class.MUSCLE": "マッスル",
+  "ee.class.SUV": "SUV",
+  "ee.class.COUPE": "クーペ",
+  "ee.class.COMPACT": "コンパクト",
+  "ee.class.OFF_ROAD": "オフロード",
+  "ee.class.SEDAN": "セダン",
+  "credits.dataVehicles": "車名とノーマル性能データ（Exotic Exports）。"
  },
  "cats": {
   "action_figures": {
@@ -228,6 +264,11 @@
   "ghosts": {
    "name": "Ghosts Exposed（幽霊撮影）",
    "note": "ハロウィンイベント: 各幽霊はゲーム内の 1 時間だけ出現"
+  },
+  "exotic_exports": {
+   "name": "Exotic Exports の車",
+   "note": "デイリー：1日10台、それぞれ50か所のどこかに駐車",
+   "info": "Exotic Exports（LS Tuners）：毎日10台の車のリストがあり、見つけてロスサントス港の Exotic Exports の埠頭へ届けます。各車は50か所の固定地点のどこかにランダムで駐車されています（高級車用と一般車用の2セット）。車名で検索すると、駐車場所の候補・性能・次にリストに載る日がわかります。"
   }
  }
 }
