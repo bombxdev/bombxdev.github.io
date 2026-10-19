@@ -41,5 +41,7 @@
   {"key": "cayo_supply_truck", "en": "Supply truck", "group": "cayo", "color": "#e0a030", "glyph": "🏝", "aliases": ["supply truck", "truck", "trojan", "รถส่งของ"], "blip": "radar_truck", "blipSource": "game"},
   {"key": "cayo_loot_island", "en": "Secondary loot (outside)", "group": "cayo", "color": "#5fb85f", "glyph": "🏝", "aliases": ["loot", "secondary", "cash", "weed", "cocaine", "coke", "gold", "ของมีค่า", "เงิน", "ทอง"], "blip": "radar_cash_pickup", "blipSource": "game"},
   {"key": "cayo_loot_compound", "en": "Secondary loot (compound)", "group": "cayo", "color": "#c9a227", "glyph": "🏝", "aliases": ["loot", "secondary", "cash", "weed", "cocaine", "coke", "gold", "ของมีค่า"], "blip": "radar_cash_pickup", "blipSource": "game"},
-  {"key": "cayo_paintings", "en": "Paintings", "group": "cayo", "color": "#8e4ec6", "glyph": "🏝", "aliases": ["painting", "art", "ภาพวาด"], "blip": "radar_painting", "blipSource": "game"}
+  {"key": "cayo_paintings", "en": "Paintings", "group": "cayo", "color": "#8e4ec6", "glyph": "🏝", "aliases": ["painting", "art", "ภาพวาด"], "blip": "radar_painting", "blipSource": "game"},
+  {"key": "kortz_entry", "en": "Kortz Center entry points", "group": "kortz", "color": "#d4a13a", "glyph": "🖼", "aliases": ["kortz", "entry", "skylight", "sewer", "loading bay", "staff entrance", "ทางเข้า"], "blip": "radar_compound_gate", "blipSource": "closest"},
+  {"key": "kortz_poi", "en": "Kortz Center points of interest", "group": "kortz", "color": "#3fa7d6", "glyph": "🖼", "aliases": ["kortz", "point of interest", "poi", "scope"], "blip": "radar_collectible", "blipSource": "closest"}
 ]

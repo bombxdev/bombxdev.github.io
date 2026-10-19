@@ -394,6 +394,7 @@
   "g.kortz.note": "Kortz Center to nowość (Title Update 1.73); te kroki opierają się tylko na tym, co wiadomo na tej stronie – resztę sprawdź na tablicy w grze.",
   "g.scopeTitle": "Lista Scope – co sfotografować",
   "g.scopeHint": "Każdy punkt poniżej pochodzi prosto z ekranu planowania w grze. Narzędzia i łup dodatkowy pojawiają się w każdym podejściu tylko w niektórych z tych miejsc – lista pokazuje wszystkie możliwe punkty. Dotknij punktu, aby zobaczyć go na mapie.",
+  "g.scopeHintKortz": "Wszystkie punkty pochodzą z misji Scope w grze. Tekstów nie ma w skrypcie, więc nazwy ustalono pośrednio: Staff Entrance i Skylight (cztery punkty na dachu) są pewne, Loading Bay i Sewer – na podstawie położenia. Dotknij, by zobaczyć na mapie.",
   "g.scopeAll": "Pokaż wszystkie punkty Scope na mapie",
   "g.chTitle": "Heist Challenges: Criminal Mastermind (CMM)",
   "g.chIntro": "Original Heists i Doomsday Heist mają jednorazowe wyzwania za przejście całej serii w określony sposób. Płacą dodatkowo, poza zwykłą kasą za skok – najtrudniejsze i najbardziej znane to Criminal Mastermind, często skracane do CMM.",

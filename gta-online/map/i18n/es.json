@@ -200,7 +200,26 @@
   "nav.heistPlan": "Abrir el planificador de golpes",
   "nav.heistCayo": "Planear el golpe a Cayo Perico",
   "credits.heistTiles": "Planificador de golpes: las fotos aéreas de los lugares se recortan de estas imágenes y de la imagen de Cayo Perico de abajo.",
-  "credits.heistFivem": "Planificador de golpes: imágenes de vehículos e iconos del radar de la guía para principiantes."
+  "credits.heistFivem": "Planificador de golpes: imágenes de vehículos e iconos del radar de la guía para principiantes.",
+  "group.kortz": "Golpe al Kortz Center",
+  "kortz.STAFF": "Staff Entrance (entrada de personal)",
+  "kortz.SKYLIGHT": "Skylight (claraboya)",
+  "kortz.LOADING": "Loading Bay (zona de carga)",
+  "kortz.SEWER": "Sewer (alcantarilla)",
+  "kortz.POI1": "#1",
+  "kortz.POI2": "#2",
+  "kortz.POI3": "#3",
+  "nav.heistKortz": "Planear el golpe al Kortz Center",
+  "kortz.SKYLIGHT1": "Skylight (claraboya) 1",
+  "kortz.SKYLIGHT2": "Skylight (claraboya) 2",
+  "kortz.SKYLIGHT3": "Skylight (claraboya) 3",
+  "kortz.SKYLIGHT4": "Skylight (claraboya) 4",
+  "kortz.POI21": "#2.1",
+  "kortz.POI22": "#2.2",
+  "kortz.POI23": "#2.3",
+  "kortz.POI31": "#3.1",
+  "kortz.POI32": "#3.2",
+  "kortz.POI33": "#3.3"
  },
  "cats": {
   "action_figures": {
@@ -387,6 +406,16 @@
    "name": "Cuadros",
    "note": "Dentro del complejo",
    "info": "Lugares donde puede haber cuadros dentro del complejo."
+  },
+  "kortz_entry": {
+   "name": "Puntos de entrada",
+   "note": "Fotografiar durante el Scope",
+   "info": "Entradas que fotografías en el Scope del Kortz Center. Puntos de la misión Scope del juego; los nombres de Loading Bay y Sewer se deducen por su posición."
+  },
+  "kortz_poi": {
+   "name": "Puntos de interés",
+   "note": "Fotografiar durante el Scope",
+   "info": "Otros lugares que el Scope te pide fotografiar alrededor del museo (de la misión Scope del juego)."
   }
  }
 }

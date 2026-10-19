@@ -200,7 +200,26 @@
   "nav.heistPlan": "Otwórz planer skoków",
   "nav.heistCayo": "Zaplanuj skok na Cayo Perico",
   "credits.heistTiles": "Planer skoków: zdjęcia z góry miejsc skoków są wycięte z tych obrazów i z obrazu Cayo Perico poniżej.",
-  "credits.heistFivem": "Planer skoków: zdjęcia pojazdów i ikony radaru w poradniku dla początkujących."
+  "credits.heistFivem": "Planer skoków: zdjęcia pojazdów i ikony radaru w poradniku dla początkujących.",
+  "group.kortz": "Skok na Kortz Center",
+  "kortz.STAFF": "Staff Entrance (wejście dla personelu)",
+  "kortz.SKYLIGHT": "Skylight (świetlik)",
+  "kortz.LOADING": "Loading Bay (rampa załadunkowa)",
+  "kortz.SEWER": "Sewer (kanał)",
+  "kortz.POI1": "#1",
+  "kortz.POI2": "#2",
+  "kortz.POI3": "#3",
+  "nav.heistKortz": "Zaplanuj skok na Kortz Center",
+  "kortz.SKYLIGHT1": "Skylight (świetlik) 1",
+  "kortz.SKYLIGHT2": "Skylight (świetlik) 2",
+  "kortz.SKYLIGHT3": "Skylight (świetlik) 3",
+  "kortz.SKYLIGHT4": "Skylight (świetlik) 4",
+  "kortz.POI21": "#2.1",
+  "kortz.POI22": "#2.2",
+  "kortz.POI23": "#2.3",
+  "kortz.POI31": "#3.1",
+  "kortz.POI32": "#3.2",
+  "kortz.POI33": "#3.3"
  },
  "cats": {
   "action_figures": {
@@ -387,6 +406,16 @@
    "name": "Obrazy",
    "note": "W posiadłości",
    "info": "Miejsca, gdzie w posiadłości mogą wisieć obrazy."
+  },
+  "kortz_entry": {
+   "name": "Punkty wejścia",
+   "note": "Sfotografuj podczas Scope",
+   "info": "Wejścia, które fotografujesz podczas Scope w Kortz Center. Punkty z misji Scope w grze; nazwy Loading Bay i Sewer ustalono na podstawie położenia."
+  },
+  "kortz_poi": {
+   "name": "Punkty zainteresowania",
+   "note": "Sfotografuj podczas Scope",
+   "info": "Inne miejsca wokół muzeum, które trzeba sfotografować podczas Scope (z misji Scope w grze)."
   }
  }
 }

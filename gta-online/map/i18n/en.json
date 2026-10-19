@@ -244,7 +244,26 @@
   "nav.heistPlan": "Open the heist planner",
   "nav.heistCayo": "Plan the Cayo Perico Heist",
   "credits.heistTiles": "Heist planner: overhead photos of the heist locations are cropped from these images and the Cayo Perico image below.",
-  "credits.heistFivem": "Heist planner: vehicle pictures and radar icons in the beginner guide."
+  "credits.heistFivem": "Heist planner: vehicle pictures and radar icons in the beginner guide.",
+  "group.kortz": "Kortz Center Heist",
+  "kortz.STAFF": "Staff Entrance",
+  "kortz.SKYLIGHT": "Skylight",
+  "kortz.LOADING": "Loading Bay",
+  "kortz.SEWER": "Sewer",
+  "kortz.POI1": "#1",
+  "kortz.POI2": "#2",
+  "kortz.POI3": "#3",
+  "nav.heistKortz": "Plan the Kortz Center Heist",
+  "kortz.SKYLIGHT1": "Skylight 1",
+  "kortz.SKYLIGHT2": "Skylight 2",
+  "kortz.SKYLIGHT3": "Skylight 3",
+  "kortz.SKYLIGHT4": "Skylight 4",
+  "kortz.POI21": "#2.1",
+  "kortz.POI22": "#2.2",
+  "kortz.POI23": "#2.3",
+  "kortz.POI31": "#3.1",
+  "kortz.POI32": "#3.2",
+  "kortz.POI33": "#3.3"
  },
  "cats": {
   "action_figures": {
@@ -456,6 +475,16 @@
    "name": "Paintings",
    "note": "Inside the compound",
    "info": "Spots where paintings can hang inside the compound."
+  },
+  "kortz_entry": {
+   "name": "Entry points",
+   "note": "Photograph during the Scope",
+   "info": "Entrances you photograph during the Kortz Center Scope. Spots from the game's Scope mission; names for the Loading Bay and Sewer are worked out from their position."
+  },
+  "kortz_poi": {
+   "name": "Points of interest",
+   "note": "Photograph during the Scope",
+   "info": "Other spots the Scope asks you to photograph around the museum (from the game's Scope mission)."
   }
  }
 }

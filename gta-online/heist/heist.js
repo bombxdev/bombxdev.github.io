@@ -184,8 +184,8 @@ const CAYO_SCOPE = [['cayo_infiltration','radar_heist_island','#3e9cf0',7], ['ca
   ['cayo_uniform','radar_clothes_store','#d96bb0',16], ['cayo_supply_truck','radar_truck','#e0a030',5], ['cayo_loot_island','radar_cash_pickup','#5fb85f',24],
   ['cayo_loot_compound','radar_cash_pickup','#c9a227',8], ['cayo_paintings','radar_painting','#8e4ec6',7]];
 const GUIDE = {
-  kortz:{steps:[{k:'s1'}, {k:'s2'}, {k:'s3'}, {k:'s4', place:'kortz'}], note:'g.kortz.note', words:['scope','prep','finale','host','elite','firstweek','detected']},
-  cayo:{steps:[{k:'s1', veh:'kosatka', blip:'radar_sub2'}, {k:'s2'}, {k:'s3', blip:'radar_heist_island', scope:true}, {k:'s4'}, {k:'s5'}, {k:'s6'}],
+  kortz:{steps:[{k:'s1'}, {k:'s2', scope:'kortz'}, {k:'s3'}, {k:'s4', place:'kortz'}], note:'g.kortz.note', words:['scope','prep','finale','host','elite','firstweek','detected']},
+  cayo:{steps:[{k:'s1', veh:'kosatka', blip:'radar_sub2'}, {k:'s2'}, {k:'s3', blip:'radar_heist_island', scope:'cayo'}, {k:'s4'}, {k:'s5'}, {k:'s6'}],
     words:['scope','prep','finale','primary','secondary','cut','elite','hard','cooldown','fencing','detected']},
   casino:{steps:[{k:'s1', blip:'radar_arcade'}, {k:'s2'}, {k:'s3', blip:'radar_casino', place:'casino'}, {k:'s4'}, {k:'s5'}],
     words:['scope','approach','prep','finale','cut','elite','firstweek','detected','getaway','buyer']},
@@ -194,6 +194,9 @@ const GUIDE = {
 };
 const FLOW = [['buy','🏠'], ['scope','📷'], ['prep','🧰'], ['finale','💥'], ['pay','💰'], ['cool','⏳']];
 // Local meaning of an in-game English name (i18n/<lang>.json "names"; none in English).
+// Kortz Center Scope spots (map categories kortz_entry / kortz_poi, from fm_content_kortz_scoping).
+const KORTZ_SCOPE = [['Staff Entrance', 'kortz_entry-1', '#d4a13a', 'radar_compound_gate', 1], ['Loading Bay', 'kortz_entry-2', '#d4a13a', 'radar_compound_gate', 1],
+  ['Sewer', 'kortz_entry-3', '#d4a13a', 'radar_compound_gate', 1], ['Skylight', 'show:kortz_entry', '#d4a13a', 'radar_compound_gate', 4], ['poi', 'show:kortz_poi', '#3fa7d6', 'radar_collectible', 7]];
 // Category names in the chosen language, from the map's own language file.
 let mapCats = {}, mapCatsBase = {};
 function loadMapCats(){
@@ -542,14 +545,18 @@ function stepHTML(heist, s){
   const pics = (s.blip ? blip(s.blip) : '') +
     (s.veh ? `<img class="step-veh" src="${vehSrc(s.veh)}" alt="${s.veh}" loading="lazy">` : '') +
     (s.place ? `<img class="step-place" src="${placeSrc(s.place)}" alt="${t('g.mapPhoto')}" loading="lazy">` : '');
-  return `<li><p>${t('g.' + heist + '.' + s.k)}</p>${pics ? `<div class="step-pics">${pics}</div>` : ''}${HeistPhotos.html('step:' + heist + '.' + s.k)}${s.scope ? scopeHTML() : ''}</li>`;
+  return `<li><p>${t('g.' + heist + '.' + s.k)}</p>${pics ? `<div class="step-pics">${pics}</div>` : ''}${HeistPhotos.html('step:' + heist + '.' + s.k)}${s.scope ? scopeHTML(s.scope) : ''}</li>`;
 }
-function scopeHTML(){
-  const all = CAYO_SCOPE.map(c => c[0]).join(',');
-  return `<div class="scope"><b>📷 ${t('g.scopeTitle')}</b><p class="hint">${t('g.scopeHint')}</p>
-    <a class="scope-img" href="${MAP}show:${all}"><img src="img/place/cayo_scope.webp" alt="${t('g.scopeTitle')}" width="1000" height="925" loading="lazy"></a>
-    <ul class="scope-list">${CAYO_SCOPE.map(([k, b, col, n]) => `<li><a href="${MAP}show:${k}"><i style="background:${col}"></i><img src="../map/blips/${b}.png" alt="" width="18" height="18">${catName(k)} <span class="muted">×${n}</span></a></li>`).join('')}</ul>
-    <a class="maplink big" href="${MAP}show:${all}">📍 ${t('g.scopeAll')}</a></div>`;
+function scopeHTML(kind){
+  // rows: [label, map hash, colour, blip, count]
+  const rows = kind === 'cayo' ? CAYO_SCOPE.map(([k, b, col, n]) => [catName(k), 'show:' + k, col, b, n]) : KORTZ_SCOPE.map(([name, hash, col, b, n]) =>
+    [name === 'poi' ? catName('kortz_poi') : name + (gl(name) ? ` <span class="muted">${gl(name)}</span>` : ''), hash, col, b, n]);
+  const all = 'show:' + (kind === 'cayo' ? CAYO_SCOPE.map(c => c[0]) : ['kortz_entry', 'kortz_poi']).join(',');
+  const img = kind === 'cayo' ? ['cayo_scope', 1000, 925] : ['kortz_scope', 1000, 760];
+  return `<div class="scope"><b>📷 ${t('g.scopeTitle')}</b><p class="hint">${t(kind === 'cayo' ? 'g.scopeHint' : 'g.scopeHintKortz')}</p>
+    <a class="scope-img" href="${MAP}${all}"><img src="img/place/${img[0]}.webp" alt="${t('g.scopeTitle')}" width="${img[1]}" height="${img[2]}" loading="lazy"></a>
+    <ul class="scope-list">${rows.map(([label, hash, col, b, n]) => `<li><a href="${MAP}${hash}"><i style="background:${col}"></i><img src="../map/blips/${b}.png" alt="" width="18" height="18">${label} <span class="muted">×${n}</span></a></li>`).join('')}</ul>
+    <a class="maplink big" href="${MAP}${all}">📍 ${t('g.scopeAll')}</a></div>`;
 }
 let howtoOpen = true;
 try{ howtoOpen = localStorage.getItem('gtaoheist.howto') !== '0'; }catch(e){}
@@ -741,7 +748,7 @@ function applyLanguage(anim){
   $('lang').value = I18N.code;
   if(!applyLanguage.done){ applyLanguage.done = true; HeistPhotos.init(() => { if(view === 'heist'){ renderHero(false); renderBoard(); } }); }
   else HeistPhotos.renderAdmin();
-  loadMapCats().then(() => { if(view === 'heist' && cur === 'cayo') renderBoard(); });
+  loadMapCats().then(() => { if(view === 'heist' && (cur === 'cayo' || cur === 'kortz')) renderBoard(); });
   if(view === 'guide'){ const term = (fromHash() || '').split(':')[1]; setHeist(cur, false); showGuide(term); }
   else setHeist(cur, anim);
 }

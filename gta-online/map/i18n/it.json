@@ -200,7 +200,26 @@
   "nav.heistPlan": "Apri il pianificatore colpi",
   "nav.heistCayo": "Pianifica il colpo a Cayo Perico",
   "credits.heistTiles": "Pianificatore colpi: le foto aeree dei luoghi sono ritagliate da queste immagini e dall'immagine di Cayo Perico qui sotto.",
-  "credits.heistFivem": "Pianificatore colpi: immagini dei veicoli e icone del radar nella guida per principianti."
+  "credits.heistFivem": "Pianificatore colpi: immagini dei veicoli e icone del radar nella guida per principianti.",
+  "group.kortz": "Colpo al Kortz Center",
+  "kortz.STAFF": "Staff Entrance (ingresso personale)",
+  "kortz.SKYLIGHT": "Skylight (lucernario)",
+  "kortz.LOADING": "Loading Bay (area di carico)",
+  "kortz.SEWER": "Sewer (fogna)",
+  "kortz.POI1": "#1",
+  "kortz.POI2": "#2",
+  "kortz.POI3": "#3",
+  "nav.heistKortz": "Pianifica il colpo al Kortz Center",
+  "kortz.SKYLIGHT1": "Skylight (lucernario) 1",
+  "kortz.SKYLIGHT2": "Skylight (lucernario) 2",
+  "kortz.SKYLIGHT3": "Skylight (lucernario) 3",
+  "kortz.SKYLIGHT4": "Skylight (lucernario) 4",
+  "kortz.POI21": "#2.1",
+  "kortz.POI22": "#2.2",
+  "kortz.POI23": "#2.3",
+  "kortz.POI31": "#3.1",
+  "kortz.POI32": "#3.2",
+  "kortz.POI33": "#3.3"
  },
  "cats": {
   "action_figures": {
@@ -387,6 +406,16 @@
    "name": "Dipinti",
    "note": "Nel complesso",
    "info": "Punti dove possono esserci dipinti nel complesso."
+  },
+  "kortz_entry": {
+   "name": "Punti d'ingresso",
+   "note": "Da fotografare durante lo Scope",
+   "info": "Ingressi da fotografare durante lo Scope del Kortz Center. Punti dalla missione Scope del gioco; i nomi Loading Bay e Sewer sono dedotti dalla posizione."
+  },
+  "kortz_poi": {
+   "name": "Punti d'interesse",
+   "note": "Da fotografare durante lo Scope",
+   "info": "Altri punti attorno al museo che lo Scope chiede di fotografare (dalla missione Scope del gioco)."
   }
  }
 }

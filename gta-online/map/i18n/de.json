@@ -200,7 +200,26 @@
   "nav.heistPlan": "Heist-Planer öffnen",
   "nav.heistCayo": "Cayo-Perico-Heist planen",
   "credits.heistTiles": "Heist-Planer: Die Luftbilder der Heist-Orte sind aus diesen Bildern und dem Cayo-Perico-Bild unten ausgeschnitten.",
-  "credits.heistFivem": "Heist-Planer: Fahrzeugbilder und Radar-Symbole im Einsteiger-Guide."
+  "credits.heistFivem": "Heist-Planer: Fahrzeugbilder und Radar-Symbole im Einsteiger-Guide.",
+  "group.kortz": "Kortz-Center-Heist",
+  "kortz.STAFF": "Staff Entrance (Personaleingang)",
+  "kortz.SKYLIGHT": "Skylight (Oberlicht)",
+  "kortz.LOADING": "Loading Bay (Laderampe)",
+  "kortz.SEWER": "Sewer (Kanalisation)",
+  "kortz.POI1": "#1",
+  "kortz.POI2": "#2",
+  "kortz.POI3": "#3",
+  "nav.heistKortz": "Kortz-Center-Heist planen",
+  "kortz.SKYLIGHT1": "Skylight (Oberlicht) 1",
+  "kortz.SKYLIGHT2": "Skylight (Oberlicht) 2",
+  "kortz.SKYLIGHT3": "Skylight (Oberlicht) 3",
+  "kortz.SKYLIGHT4": "Skylight (Oberlicht) 4",
+  "kortz.POI21": "#2.1",
+  "kortz.POI22": "#2.2",
+  "kortz.POI23": "#2.3",
+  "kortz.POI31": "#3.1",
+  "kortz.POI32": "#3.2",
+  "kortz.POI33": "#3.3"
  },
  "cats": {
   "action_figures": {
@@ -387,6 +406,16 @@
    "name": "Gemälde",
    "note": "Im Anwesen",
    "info": "Orte, an denen im Anwesen Gemälde hängen können."
+  },
+  "kortz_entry": {
+   "name": "Eingänge",
+   "note": "Beim Scope fotografieren",
+   "info": "Eingänge, die du beim Scope des Kortz Center fotografierst. Punkte aus der Scope-Mission des Spiels; die Namen Loading Bay und Sewer sind aus der Lage abgeleitet."
+  },
+  "kortz_poi": {
+   "name": "Interessante Punkte",
+   "note": "Beim Scope fotografieren",
+   "info": "Weitere Stellen rund ums Museum, die du beim Scope fotografieren sollst (aus der Scope-Mission des Spiels)."
   }
  }
 }

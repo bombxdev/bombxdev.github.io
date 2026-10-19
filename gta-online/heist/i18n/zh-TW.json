@@ -394,6 +394,7 @@
   "g.kortz.note": "Kortz Center 是新內容（Title Update 1.73）；這些步驟只使用本頁已知的資訊——其他內容請以遊戲內計畫板為準。",
   "g.scopeTitle": "Scope 清單——要拍哪些東西",
   "g.scopeHint": "下面每個地點都來自遊戲自己的計畫螢幕。工具和次要戰利品每次只會出現在其中部分地點——清單顯示所有可能的地點。點一下即可在地圖上查看。",
+  "g.scopeHintKortz": "以下所有地點都來自遊戲本身的 Scope 任務。腳本裡沒有文字，所以名稱是推斷的：Staff Entrance 和 Skylight（屋頂的四個點）可以確定，Loading Bay 和 Sewer 則依位置推斷。點一下即可在地圖上查看。",
   "g.scopeAll": "在地圖上顯示所有 Scope 地點",
   "g.chTitle": "Heist Challenges: Criminal Mastermind (CMM)",
   "g.chIntro": "Original Heists 和 Doomsday Heist 都有一次性挑戰，要求按特定方式打完整套搶劫。獎勵在一般搶劫收益之外額外發放——最難也最有名的是 Criminal Mastermind，常簡稱 CMM。",

@@ -394,6 +394,7 @@
   "g.kortz.note": "Kortz Center là phi vụ mới (Title Update 1.73); các bước này chỉ dựa trên những gì trang này biết – những thứ khác hãy xem trên bảng trong game.",
   "g.scopeTitle": "Danh sách Scope – cần chụp những gì",
   "g.scopeHint": "Mọi điểm bên dưới đều lấy từ màn hình kế hoạch của chính game. Dụng cụ và chiến lợi phẩm phụ mỗi lượt chỉ xuất hiện ở một số chỗ trong đây – danh sách cho thấy mọi điểm có thể có. Chạm vào một điểm để xem trên bản đồ.",
+  "g.scopeHintKortz": "Mọi điểm dưới đây lấy từ chính nhiệm vụ Scope trong game. Script không chứa chữ nên tên được suy ra: Staff Entrance và Skylight (bốn điểm trên mái) là chắc chắn, Loading Bay và Sewer suy từ vị trí. Chạm để xem trên bản đồ.",
   "g.scopeAll": "Hiện tất cả điểm Scope trên bản đồ",
   "g.chTitle": "Heist Challenges: Criminal Mastermind (CMM)",
   "g.chIntro": "Original Heists và Doomsday Heist có các thử thách chỉ nhận một lần khi chơi hết cả chuỗi theo một cách nhất định. Tiền thưởng được cộng thêm ngoài tiền phi vụ bình thường – khó nhất và nổi tiếng nhất là Criminal Mastermind, thường gọi tắt là CMM.",

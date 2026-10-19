@@ -200,7 +200,26 @@
   "nav.heistPlan": "Mở trang lên kế hoạch phi vụ",
   "nav.heistCayo": "Lên kế hoạch phi vụ Cayo Perico",
   "credits.heistTiles": "Lên kế hoạch phi vụ: ảnh nhìn từ trên cao của các địa điểm được cắt từ những ảnh này và ảnh Cayo Perico bên dưới.",
-  "credits.heistFivem": "Lên kế hoạch phi vụ: hình xe và biểu tượng radar trong hướng dẫn cho người mới."
+  "credits.heistFivem": "Lên kế hoạch phi vụ: hình xe và biểu tượng radar trong hướng dẫn cho người mới.",
+  "group.kortz": "Phi vụ Kortz Center",
+  "kortz.STAFF": "Staff Entrance (lối vào nhân viên)",
+  "kortz.SKYLIGHT": "Skylight (cửa sổ mái)",
+  "kortz.LOADING": "Loading Bay (khu bốc dỡ)",
+  "kortz.SEWER": "Sewer (cống ngầm)",
+  "kortz.POI1": "#1",
+  "kortz.POI2": "#2",
+  "kortz.POI3": "#3",
+  "nav.heistKortz": "Lên kế hoạch phi vụ Kortz Center",
+  "kortz.SKYLIGHT1": "Skylight (cửa sổ mái) 1",
+  "kortz.SKYLIGHT2": "Skylight (cửa sổ mái) 2",
+  "kortz.SKYLIGHT3": "Skylight (cửa sổ mái) 3",
+  "kortz.SKYLIGHT4": "Skylight (cửa sổ mái) 4",
+  "kortz.POI21": "#2.1",
+  "kortz.POI22": "#2.2",
+  "kortz.POI23": "#2.3",
+  "kortz.POI31": "#3.1",
+  "kortz.POI32": "#3.2",
+  "kortz.POI33": "#3.3"
  },
  "cats": {
   "action_figures": {
@@ -387,6 +406,16 @@
    "name": "Tranh",
    "note": "Trong dinh thự",
    "info": "Chỗ có thể treo tranh trong dinh thự."
+  },
+  "kortz_entry": {
+   "name": "Lối vào",
+   "note": "Chụp ảnh khi Scope",
+   "info": "Các lối vào cần chụp ảnh khi Scope ở Kortz Center. Vị trí lấy từ nhiệm vụ Scope trong game; tên Loading Bay và Sewer được suy ra từ vị trí."
+  },
+  "kortz_poi": {
+   "name": "Điểm đáng chú ý",
+   "note": "Chụp ảnh khi Scope",
+   "info": "Những chỗ khác quanh bảo tàng mà Scope yêu cầu chụp ảnh (từ nhiệm vụ Scope trong game)."
   }
  }
 }
