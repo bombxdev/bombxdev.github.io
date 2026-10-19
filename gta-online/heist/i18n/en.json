@@ -434,6 +434,23 @@
   "g.term.lives": "Team lives",
   "g.def.lives": "Shared lives in a Finale. Each death uses one; when they run out, the mission fails.",
   "g.term.retry": "Checkpoint / retry",
-  "g.def.retry": "After a failed mission the team can usually retry from the last checkpoint instead of starting over."
+  "g.def.retry": "After a failed mission the team can usually retry from the last checkpoint instead of starting over.",
+  "hint.add": "Add photo",
+  "hint.adminTitle": "Admin sign-in (site owner only)",
+  "hint.captionPrompt": "Caption for this photo (optional), e.g. \"behind the 3rd bush, right of the door\":",
+  "hint.confirmDelete": "Delete this photo from the site?",
+  "hint.delete": "Delete",
+  "hint.deleted": "Photo deleted.",
+  "hint.failed": "Failed: {msg}",
+  "hint.notOwner": "This token does not belong to the site owner.",
+  "hint.remember": "Remember on this device",
+  "hint.signIn": "Sign in",
+  "hint.signOut": "Sign out",
+  "hint.signedIn": "Admin: {login}",
+  "hint.signedOut": "Signed out. The token was removed from this browser.",
+  "hint.tokenHelp": "Paste a GitHub fine-grained token: only this repository, permission Contents = Read and write. Create one at",
+  "hint.uploaded": "Photo added. Everyone sees it after GitHub Pages rebuilds (about 1 minute).",
+  "hint.uploading": "Uploading photo…",
+  "photo.howTo": "Each step, each selected choice and the top of every heist now has a “📷 Add photo” button. Photos go straight into the repository (live in about a minute)."
  }
 }
