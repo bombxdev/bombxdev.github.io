@@ -12,6 +12,10 @@
 select { font: inherit; }
 :focus-visible { outline: 2px solid var(--heist); outline-offset: 2px; }
 
+/* the language picker sits next to the title, as on the map */
+.brand h1 { min-width: 0; overflow: hidden; text-overflow: ellipsis; font-size: 16px; }
+.brand .lang select { max-width: 104px; }
+
 /* ---------- sidebar: heist list ---------- */
 .hlist { display: grid; gap: 2px; padding: 0 8px 8px; }
 .hlist button {
