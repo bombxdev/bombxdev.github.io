@@ -193,7 +193,12 @@
   "gang.title": "Zonas de bandas",
   "gang.hint": "Zonas aproximadas de cada banda (zonas del juego en GTA V). No son los puntos exactos de los ataques de bandas.",
   "gang.show": "Ver",
-  "credits.imagesGangs": "Imágenes de pandilleros (zonas de bandas)."
+  "credits.imagesGangs": "Imágenes de pandilleros (zonas de bandas).",
+  "nav.label": "Páginas",
+  "nav.map": "Mapa",
+  "nav.heist": "Planificador de golpes",
+  "nav.heistPlan": "Abrir el planificador de golpes",
+  "nav.heistCayo": "Planear el golpe a Cayo Perico"
  },
  "cats": {
   "action_figures": {

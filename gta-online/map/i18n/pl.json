@@ -193,7 +193,12 @@
   "gang.title": "Rejony gangów",
   "gang.hint": "Przybliżone rejony gangów (strefy gry w GTA V). To nie dokładne miejsca ataków na gangi.",
   "gang.show": "Pokaż",
-  "credits.imagesGangs": "Zdjęcia członków gangów (rejony gangów)."
+  "credits.imagesGangs": "Zdjęcia członków gangów (rejony gangów).",
+  "nav.label": "Strony",
+  "nav.map": "Mapa",
+  "nav.heist": "Planer skoków",
+  "nav.heistPlan": "Otwórz planer skoków",
+  "nav.heistCayo": "Zaplanuj skok na Cayo Perico"
  },
  "cats": {
   "action_figures": {
