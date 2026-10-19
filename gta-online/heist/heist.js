@@ -160,6 +160,35 @@ const PLACES = {
   humane:at(3619, 3730, 'Humane Labs and Research'),
   pacific:at(235, 216, 'Pacific Standard Bank')
 };
+/* ---------- pictures ----------
+   img/veh: vehicle renders (FiveM docs), img/place: overhead crops of the map's
+   own images (tools in README), img/blip: in-game radar icons (FiveM docs). */
+const VEH_IMG = {
+  cayo:{kosatka:'kosatka', alkonost:'alkonost', velum:'velum2', annihilator:'annihilator2', patrol:'patrolboat', longfin:'longfin'},
+  kortz:{manchez:'manchez', annihilator:'annihilator2', caracara:'caracara'}
+};
+const vehSrc = m => 'img/veh/' + m + '.webp';
+const placeSrc = id => 'img/place/' + id + '.webp';
+const placeImgs = ids => Object.fromEntries(Object.entries(ids).map(([v, id]) => [v, {place:id}]));
+const PLACE_IMG = {kortz:'kortz', casino:'casino', cayo:'cayo_key_places-3', fleeca:'fleeca', prison:'prison', humane:'humane', pacific:'pacific'};
+const blip = b => `<img class="blip" src="img/blip/${b}.png" alt="" width="22" height="22">`;
+
+/* ---------- beginner guide ----------
+   Steps per heist (texts g.<heist>.sN), with pictures; `words` link to the glossary. */
+const GLOSSARY = ['host','scope','setup','prep','finale','approach','primary','secondary','cut','elite','hard','firstweek','cooldown','fencing','board','detected','getaway','buyer','invite','blip'];
+const GUIDE = {
+  kortz:{steps:[{k:'s1'}, {k:'s2'}, {k:'s3'}, {k:'s4', place:'kortz'}], note:'g.kortz.note', words:['scope','prep','finale','host','elite','firstweek','detected']},
+  cayo:{steps:[{k:'s1', veh:'kosatka', blip:'radar_sub2'}, {k:'s2'}, {k:'s3', blip:'radar_heist_island', place:'cayo_key_places-3'}, {k:'s4'}, {k:'s5'}, {k:'s6'}],
+    words:['scope','prep','finale','primary','secondary','cut','elite','hard','cooldown','fencing','detected']},
+  casino:{steps:[{k:'s1', blip:'radar_arcade'}, {k:'s2'}, {k:'s3', blip:'radar_casino', place:'casino'}, {k:'s4'}, {k:'s5'}],
+    words:['scope','approach','prep','finale','cut','elite','firstweek','detected','getaway','buyer']},
+  doom:{steps:[{k:'s1'}, {k:'s2'}, {k:'s3'}], words:['setup','prep','finale','host','cut','elite','hard','firstweek']},
+  og:{steps:[{k:'s1', blip:'radar_heist'}, {k:'s2'}, {k:'s3'}], words:['setup','finale','host','cut','elite','hard','firstweek']}
+};
+const FLOW = [['buy','🏠'], ['scope','📷'], ['prep','🧰'], ['finale','💥'], ['pay','💰'], ['cool','⏳']];
+// Local meaning of an in-game English name (i18n/<lang>.json "names"; none in English).
+const gl = name => (I18N.dict && I18N.dict.names && I18N.dict.names[name]) || '';
+
 const mapHref = hash => MAP + encodeURIComponent(hash).replace(/%2C/g, ',').replace(/%40/g, '@');
 
 const yesno = (yk, nk) => [{v:'yes', l:t(yk)}, {v:'no', l:t(nk)}];
@@ -196,7 +225,7 @@ kortz:{
       {key:'preps', label:t('kortz.preps'), hint:t('hint.multi'), type:'multi', options:[
         {v:'guard', l:'Guard Routes', d:t('kortz.prep.guard')}, {v:'emp', l:'EMP Charges', d:t('kortz.prep.emp')},
         {v:'glass', l:'Glass Cutter', d:t('kortz.prep.glass')}, {v:'drills', l:'Power Drills', d:t('kortz.prep.drills')}, {v:'keypad', l:'Vault Keypad', d:t('kortz.prep.keypad')}]},
-      {stage:t('stage.escape'), key:'getaway', label:t('kortz.getaway'), type:'chips', options:[
+      {stage:t('stage.escape'), key:'getaway', label:t('kortz.getaway'), img:VEH_IMG.kortz, type:'chips', options:[
         {v:'manchez', l:'Manchez', d:t('kortz.get.manchez')}, {v:'annihilator', l:'Annihilator Stealth', d:t('kortz.get.annihilator')},
         {v:'caracara', l:'Armored Caracara', d:t('kortz.get.caracara')}, {v:'none', l:t('kortz.get.none'), d:t('kortz.get.noneD')}]},
       eliteGroup(t('kortz.eliteHint'))
@@ -250,13 +279,13 @@ cayo:{
       {key:'safe', label:t('cayo.safe'), hint:t('cayo.safeHint'), type:'range', min:18000, max:99000, step:1000},
       {stage:t('stage.infil'), key:'approach', label:t('cayo.approach'), type:'chips', options:[{v:'stealth', l:'Stealth', d:t('cayo.app.stealth')}, {v:'aggressive', l:'Aggressive', d:t('cayo.app.aggressive')}]},
       {key:'time', label:t('cayo.time'), type:'chips', options:[{v:'night', l:t('cayo.night'), d:t('cayo.nightD')}, {v:'day', l:t('cayo.day'), d:t('cayo.dayD')}]},
-      {key:'vehicle', label:t('cayo.vehicle'), type:'chips', wide:true, options:Object.entries(CAYO_VEH).map(([v, o]) => ({v, l:o.l, d:t('cayo.veh.' + v)}))},
-      {key:'entry', label:t('cayo.entry'), hint:t('cayo.entryHint'), map:CAYO_MAP.entry, type:'chips', options:Object.entries(CAYO_ENTRY).map(([v, l]) => ({v, l, dis:!ents.includes(v)}))},
-      {key:'compound', label:t('cayo.compound'), map:CAYO_MAP.compound, type:'chips', options:Object.entries(CAYO_COMP).map(([v, l]) => ({v, l, dis:(st.entry === 'drain') !== (v === 'drain')}))},
+      {key:'vehicle', label:t('cayo.vehicle'), img:VEH_IMG.cayo, type:'chips', wide:true, options:Object.entries(CAYO_VEH).map(([v, o]) => ({v, l:o.l, d:t('cayo.veh.' + v)}))},
+      {key:'entry', label:t('cayo.entry'), hint:t('cayo.entryHint'), map:CAYO_MAP.entry, img:placeImgs(CAYO_MAP.entry), type:'chips', options:Object.entries(CAYO_ENTRY).map(([v, l]) => ({v, l, dis:!ents.includes(v)}))},
+      {key:'compound', label:t('cayo.compound'), map:CAYO_MAP.compound, img:placeImgs(CAYO_MAP.compound), type:'chips', options:Object.entries(CAYO_COMP).map(([v, l]) => ({v, l, dis:(st.entry === 'drain') !== (v === 'drain')}))},
       {key:'loadout', label:t('cayo.loadout'), type:'chips', wide:true, options:[
         {v:'aggressor', l:'Aggressor', d:t('weapon.shotgun')}, {v:'conspirator', l:'Conspirator', d:t('weapon.silencedRifle')}, {v:'crackshot', l:'Crack Shot', d:t('weapon.sniper')},
         {v:'saboteur', l:'Saboteur', d:t('weapon.silencedSmg')}, {v:'marksman', l:'Marksman', d:t('weapon.assault')}]},
-      {stage:t('stage.escape'), key:'escape', label:t('cayo.escape'), map:CAYO_MAP.escape, type:'chips', options:[
+      {stage:t('stage.escape'), key:'escape', label:t('cayo.escape'), map:CAYO_MAP.escape, img:placeImgs(CAYO_MAP.escape), type:'chips', options:[
         {v:'kosatka', l:'Kosatka', d:t('cayo.esc.kosatka')}, {v:'airstrip', l:'Airstrip', d:t('cayo.esc.airstrip')},
         {v:'maindock', l:'Main Dock', d:t('cayo.esc.maindock')}, {v:'northdock', l:'North Dock', d:t('cayo.esc.northdock')}]},
       eliteGroup(t('cayo.eliteHint'))
@@ -308,8 +337,7 @@ casino:{
       diffGroup('casino.hard'),
       Object.assign(firstFinale('casino.firstYes'), {hint:t('casino.firstHint')}),
       {stage:t('stage.targetApproach'), key:'target', label:t('casino.target'), type:'chips', wide:true,
-        options:Object.entries(CASINO_T).map(([v, o]) => { const ln = t('loot.' + (v === 'art' ? 'artwork' : v));
-          return {v, l:o.l, d:(f ? '≈ ' : '') + fmt(o.v * (hard ? 1.1 : 1) * (f ? 1.86 : 1)) + (ln !== o.l ? ' • ' + ln : '') + (o.ev ? ' • ' + t('tag.event') : '')}; })},
+        options:Object.entries(CASINO_T).map(([v, o]) => ({v, l:o.l, d:(f ? '≈ ' : '') + fmt(o.v * (hard ? 1.1 : 1) * (f ? 1.86 : 1)) + (o.ev ? ' • ' + t('tag.event') : '')}))},
       {key:'approach', label:t('casino.approach'), type:'chips', wide:true, options:[
         {v:'ss', l:'Silent & Sneaky', d:t('casino.app.ss')}, {v:'bigcon', l:'The Big Con', d:t('casino.app.bigcon')}, {v:'aggr', l:'Aggressive', d:t('casino.app.aggr')}]},
       {stage:t('stage.crew'), key:'hacker', label:t('casino.hacker'), hint:t('casino.hackerHint'), type:'chips', wide:true, options:HCK.map(([v, l, c, tm]) => ({v, l, d:`${c}% • ${tm}`}))},
@@ -431,21 +459,26 @@ try{
   const saved = JSON.parse(localStorage.getItem(STORE_KEY) || 'null');
   if(saved && saved.S){ ORDER.forEach(k => { if(saved.S[k]) S[k] = Object.assign(S[k], saved.S[k]); }); if(H[saved.cur]) cur = saved.cur; }
 }catch(e){}
-const fromHash = () => { const k = decodeURIComponent(location.hash.slice(1)); return H[k] ? k : null; };
-if(fromHash()) cur = fromHash();
+const fromHash = () => { const k = decodeURIComponent(location.hash.slice(1)); return H[k] || /^guide(:|$)/.test(k) ? k : null; };
+let view = 'heist';
+if(fromHash()){ if(H[fromHash()]) cur = fromHash(); else view = 'guide'; }
 ORDER.forEach(k => { const st = S[k]; if(!Array.isArray(st.cuts) || st.cuts.length !== st.players) st.cuts = evenCuts(st.players); H[k].fix(st); });
 function save(){ try{ localStorage.setItem(STORE_KEY, JSON.stringify({cur, S})); }catch(e){} }
 
 /* ---------- render ---------- */
 const $ = id => document.getElementById(id);
 function renderRail(){
-  const item = k => `<button type="button" data-h="${k}" aria-current="${k === cur}" style="--h:${H[k].accent}"><div class="thumb">${H[k].poster()}</div><span class="nm">${H[k].short}${H[k].isNew ? `<span class="new">${t('rail.new')}</span>` : ''}</span></button>`;
+  const item = k => `<button type="button" data-h="${k}" aria-current="${view === 'heist' && k === cur}" style="--h:${H[k].accent}"><div class="thumb">${H[k].poster()}</div><span class="nm">${H[k].short}${H[k].isNew ? `<span class="new">${t('rail.new')}</span>` : ''}</span></button>`;
   $('rail').innerHTML = ORDER.map(item).join('');
-  $('tabs').innerHTML = ORDER.map(k => `<button type="button" data-h="${k}" aria-current="${k === cur}" style="--h:${H[k].accent}">${H[k].short}</button>`).join('');
+  $('tabs').innerHTML = [`<button type="button" data-h="guide" aria-current="${view === 'guide'}" style="--h:var(--accent)">📘</button>`].concat(ORDER.map(k => `<button type="button" data-h="${k}" aria-current="${view === 'heist' && k === cur}" style="--h:${H[k].accent}">${H[k].short}</button>`)).join('');
+  $('guideBtn').setAttribute('aria-current', view === 'guide');
 }
 function whereHTML(){
   const h = H[cur], w = h.where(S[cur]);
-  return w ? `<a class="maplink big" href="${mapHref(w.hash)}">📍 ${t('where.view', {place:w.l})}</a>` : `<p class="nowhere">📍 ${h.nowhere()}</p>`;
+  if(!w) return `<p class="nowhere">📍 ${h.nowhere()}</p>`;
+  const key = cur === 'og' ? S.og.heist : cur, img = PLACE_IMG[key];
+  return (img ? `<a class="where-img" href="${mapHref(w.hash)}"><img src="${placeSrc(img)}" alt="${t('g.mapPhoto')}: ${w.l}" width="360" height="220" loading="lazy"></a>` : '') +
+    `<a class="maplink big" href="${mapHref(w.hash)}">📍 ${t('where.view', {place:w.l})}</a>`;
 }
 function renderHero(anim){
   const h = H[cur];
@@ -461,7 +494,7 @@ function renderBoard(){
     html += groupHTML(g, st);
   });
   if(open) html += '</div>';
-  $('board').innerHTML = html;
+  $('board').innerHTML = howtoHTML() + html;
   if($('where')) $('where').innerHTML = whereHTML();
 }
 function groupHTML(g, st){
@@ -469,7 +502,7 @@ function groupHTML(g, st){
   if(g.type === 'chips' || g.type === 'multi'){
     b = `<div class="opts" role="group" aria-label="${g.label}">` + g.options.map(o => {
       const on = g.type === 'multi' ? (st[g.key] || []).includes(o.v) : st[g.key] === o.v;
-      return `<button type="button" class="opt${on ? ' on' : ''}" data-k="${g.key}" data-v="${o.v}" data-t="${g.type}"${g.num ? ' data-num="1"' : ''} aria-pressed="${on}"${o.dis ? ' disabled' : ''}><span>${o.l}</span>${o.d ? `<span class="cd">${o.d}</span>` : ''}</button>`;
+      return `<button type="button" class="opt${on ? ' on' : ''}" data-k="${g.key}" data-v="${o.v}" data-t="${g.type}"${g.num ? ' data-num="1"' : ''} aria-pressed="${on}"${o.dis ? ' disabled' : ''}><span>${o.l}</span>${gl(o.l) && !(o.d || '').startsWith(gl(o.l)) ? `<span class="gl">${gl(o.l)}</span>` : ''}${o.d ? `<span class="cd">${o.d}</span>` : ''}</button>`;
     }).join('') + '</div>';
   } else if(g.type === 'range'){
     b = `<div class="rng"><input type="range" min="${g.min}" max="${g.max}" step="${g.step}" value="${st[g.key]}" data-r="${g.key}" aria-label="${g.label}"><output id="o-${g.key}">${rv(g, st[g.key])}</output></div>`;
@@ -480,8 +513,42 @@ function groupHTML(g, st){
   } else if(g.type === 'info'){
     b = '<ul class="info">' + g.items.map(x => `<li>${x}</li>`).join('') + '</ul>';
   }
+  const pic = g.img && g.img[st[g.key]];
+  if(pic){
+    const o = g.options.find(x => x.v === st[g.key]), isPlace = typeof pic === 'object';
+    b += `<figure class="pick${isPlace ? ' place' : ''}"><img src="${isPlace ? placeSrc(pic.place) : vehSrc(pic)}" alt="${o ? o.l : ''}" loading="lazy">` +
+      `<figcaption>${isPlace ? t('g.mapPhoto') + ': ' : ''}${o ? o.l : ''}</figcaption></figure>`;
+  }
   const ml = g.map && g.map[st[g.key]] ? ` <a class="maplink" href="${mapHref(g.map[st[g.key]])}" title="${t('where.mapTitle')}">📍 ${t('where.map')}</a>` : '';
   return `<section class="grp${g.wide ? ' wide' : ''}"><h3>${g.label}${ml}</h3>${g.hint ? `<p class="hint">${g.hint}</p>` : ''}${b}</section>`;
+}
+function stepHTML(heist, s){
+  const pics = (s.blip ? blip(s.blip) : '') +
+    (s.veh ? `<img class="step-veh" src="${vehSrc(s.veh)}" alt="${s.veh}" loading="lazy">` : '') +
+    (s.place ? `<img class="step-place" src="${placeSrc(s.place)}" alt="${t('g.mapPhoto')}" loading="lazy">` : '');
+  return `<li><p>${t('g.' + heist + '.' + s.k)}</p>${pics ? `<div class="step-pics">${pics}</div>` : ''}</li>`;
+}
+let howtoOpen = true;
+try{ howtoOpen = localStorage.getItem('gtaoheist.howto') !== '0'; }catch(e){}
+function howtoHTML(){
+  const G = GUIDE[cur];
+  return `<details class="howto" id="howto"${howtoOpen ? ' open' : ''}><summary>📘 ${t('g.howTitle')}</summary>
+    ${flowHTML()}<ol class="steps">${G.steps.map(s => stepHTML(cur, s)).join('')}</ol>
+    ${G.note ? `<p class="hint">ℹ️ ${t(G.note)}</p>` : ''}
+    <div class="words"><b>${t('g.wordsTitle')}:</b> ${G.words.map(w => `<a href="#guide:${w}" class="word">${t('g.term.' + w)}</a>`).join('')}
+    <a href="#guide" class="word more">📘 ${t('g.fullGuide')} →</a></div></details>`;
+}
+function flowHTML(){
+  return `<ol class="flow" aria-label="${t('g.flowTitle')}">` + FLOW.map(([k, ic]) =>
+    `<li><span class="ic" aria-hidden="true">${ic}</span><b>${t('g.flow.' + k)}</b><small>${t('g.flow.' + k + 'D')}</small></li>`).join('') + '</ol>';
+}
+function renderGuide(){
+  $('guide').innerHTML = `<h1>📘 ${t('g.title')}</h1><p class="tag">${t('g.intro')}</p>
+    <h2>${t('g.flowTitle')}</h2>${flowHTML()}
+    <h2>${t('g.tipsTitle')}</h2><ul class="tips">${[1,2,3,4,5].map(i => `<li>${t('g.tip' + i)}</li>`).join('')}</ul>
+    <h2>${t('g.glossTitle')}</h2><dl class="gloss">${GLOSSARY.map(w => `<div id="term-${w}"><dt>${t('g.term.' + w)}</dt><dd>${t('g.def.' + w)}</dd></div>`).join('')}</dl>
+    <h2>${t('side.pick')}</h2><div class="glinks">${ORDER.map(k => `<a href="#${k}" style="--h:${H[k].accent}">${H[k].short}</a>`).join('')}</div>
+    <p class="rc-note">${t('g.imgCredit')}</p>`;
 }
 const rv = (g, v) => g.unit ? t(g.unit, {n:v}) : fmt(v);
 
@@ -549,9 +616,20 @@ function renderAside(keepCuts){
   renderSplit(res);
   renderCoach();
 }
+function showGuide(term){
+  view = 'guide';
+  $('app').classList.add('guide-view');
+  renderRail(); renderGuide();
+  const want = '#guide' + (term ? ':' + term : '');
+  if(location.hash !== want) history.replaceState(null, '', want);
+  document.title = t('g.title') + ' – ' + t('page.title');
+  const el = term && $('term-' + term);
+  if(el){ el.classList.add('hl'); el.scrollIntoView({block:'center'}); } else $('page').scrollTo({top:0});
+}
 function setHeist(k, anim = true){
   if(k !== cur) coachMsg = null;
-  cur = k;
+  cur = k; view = 'heist';
+  $('app').classList.remove('guide-view');
   document.documentElement.style.setProperty('--heist', H[k].accent);
   renderRail(); renderHero(anim); renderBoard(); renderAside(); save();
   if(location.hash.slice(1) !== k) history.replaceState(null, '', '#' + k);
@@ -561,12 +639,22 @@ function setHeist(k, anim = true){
 /* ---------- events ---------- */
 function pick(e){
   const b = e.target.closest('button[data-h]'); if(!b) return;
-  if(b.dataset.h !== cur){ setHeist(b.dataset.h); $('page').scrollTo({top:0}); }
+  if(b.dataset.h === 'guide') showGuide();
+  else if(b.dataset.h !== cur || view !== 'heist'){ setHeist(b.dataset.h); $('page').scrollTo({top:0}); }
   if(isMobile()) setSidebar(false);
 }
 $('rail').addEventListener('click', pick);
 $('tabs').addEventListener('click', pick);
-window.addEventListener('hashchange', () => { const k = fromHash(); if(k && k !== cur) setHeist(k); });
+$('guideBtn').addEventListener('click', pick);
+window.addEventListener('hashchange', () => {
+  const k = fromHash(); if(!k) return;
+  if(H[k]){ if(k !== cur || view !== 'heist'){ setHeist(k); $('page').scrollTo({top:0}); } }
+  else showGuide(k.split(':')[1]);
+});
+$('board').addEventListener('toggle', e => {
+  if(e.target.id !== 'howto') return;
+  howtoOpen = e.target.open; try{ localStorage.setItem('gtaoheist.howto', howtoOpen ? '1' : '0'); }catch(err){}
+}, true);
 $('board').addEventListener('click', e => {
   const c = e.target.closest('.opt'); if(!c || c.disabled) return;
   const st = S[cur], k = c.dataset.k; let v = c.dataset.v; if(c.dataset.num) v = Number(v);
@@ -624,7 +712,8 @@ function savedLang(){ try{ return JSON.parse(localStorage.getItem(LANG_KEY)); }c
 function applyLanguage(anim){
   I18N.apply(document);
   $('lang').value = I18N.code;
-  setHeist(cur, anim);
+  if(view === 'guide'){ const term = (fromHash() || '').split(':')[1]; setHeist(cur, false); showGuide(term); }
+  else setHeist(cur, anim);
 }
 I18N.init().then(() => {
   const sel = $('lang');

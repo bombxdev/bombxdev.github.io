@@ -198,7 +198,9 @@
   "nav.map": "Bản đồ",
   "nav.heist": "Lên kế hoạch phi vụ",
   "nav.heistPlan": "Mở trang lên kế hoạch phi vụ",
-  "nav.heistCayo": "Lên kế hoạch phi vụ Cayo Perico"
+  "nav.heistCayo": "Lên kế hoạch phi vụ Cayo Perico",
+  "credits.heistTiles": "Lên kế hoạch phi vụ: ảnh nhìn từ trên cao của các địa điểm được cắt từ những ảnh này và ảnh Cayo Perico bên dưới.",
+  "credits.heistFivem": "Lên kế hoạch phi vụ: hình xe và biểu tượng radar trong hướng dẫn cho người mới."
  },
  "cats": {
   "action_figures": {

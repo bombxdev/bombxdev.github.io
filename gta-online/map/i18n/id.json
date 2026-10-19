@@ -198,7 +198,9 @@
   "nav.map": "Peta",
   "nav.heist": "Perencana heist",
   "nav.heistPlan": "Buka perencana heist",
-  "nav.heistCayo": "Rencanakan Cayo Perico Heist"
+  "nav.heistCayo": "Rencanakan Cayo Perico Heist",
+  "credits.heistTiles": "Perencana heist: foto dari atas lokasi heist dipotong dari gambar-gambar ini dan gambar Cayo Perico di bawah.",
+  "credits.heistFivem": "Perencana heist: gambar kendaraan dan ikon radar di panduan pemula."
  },
  "cats": {
   "action_figures": {

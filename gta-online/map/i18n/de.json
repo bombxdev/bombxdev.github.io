@@ -198,7 +198,9 @@
   "nav.map": "Karte",
   "nav.heist": "Heist-Planer",
   "nav.heistPlan": "Heist-Planer öffnen",
-  "nav.heistCayo": "Cayo-Perico-Heist planen"
+  "nav.heistCayo": "Cayo-Perico-Heist planen",
+  "credits.heistTiles": "Heist-Planer: Die Luftbilder der Heist-Orte sind aus diesen Bildern und dem Cayo-Perico-Bild unten ausgeschnitten.",
+  "credits.heistFivem": "Heist-Planer: Fahrzeugbilder und Radar-Symbole im Einsteiger-Guide."
  },
  "cats": {
   "action_figures": {

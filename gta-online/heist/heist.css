@@ -157,3 +157,56 @@ select { font: inherit; }
   .hero { grid-template-columns: 1fr; gap: 16px; }
   .hero .poster { aspect-ratio: 16 / 10; }
 }
+
+/* ---------- beginner guide ---------- */
+.guide-btn {
+  margin: 10px 16px 0; padding: 9px 12px; border-radius: 10px; cursor: pointer; text-align: left; font-size: 14px; font-weight: 600;
+  border: 1px solid var(--ok); background: color-mix(in srgb, var(--ok) 14%, var(--panel-2));
+}
+.guide-btn:hover, .guide-btn[aria-current="true"] { background: color-mix(in srgb, var(--ok) 28%, var(--panel-2)); }
+.guide { display: none; }
+#app.guide-view .guide { display: block; }
+#app.guide-view .hero, #app.guide-view .hmain { display: none; }
+.guide h1 { font-size: clamp(26px, 4vw, 38px); margin: 8px 0 10px; }
+.guide h2 { font-size: 18px; margin: 26px 0 10px; }
+.guide .tag { color: var(--muted); max-width: 70ch; margin: 0; }
+.tips { margin: 0; padding-left: 20px; }
+.tips li { margin-bottom: 6px; }
+.gloss { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; margin: 0; }
+.gloss div { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; scroll-margin: 80px; transition: border-color .3s; }
+.gloss div.hl { border-color: var(--ok); box-shadow: 0 0 0 1px var(--ok) inset; }
+.gloss dt { font-weight: 600; }
+.gloss dd { margin: 3px 0 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.glinks { display: flex; flex-wrap: wrap; gap: 8px; }
+.glinks a { text-decoration: none; color: var(--text); border: 1px solid var(--h); background: color-mix(in srgb, var(--h) 18%, var(--panel-2)); border-radius: 999px; padding: 5px 14px; }
+
+.flow { list-style: none; margin: 4px 0 14px; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); gap: 8px; counter-reset: f; }
+.flow li { counter-increment: f; position: relative; background: var(--surface2); border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; display: flex; flex-direction: column; gap: 2px; }
+.flow li::before { content: counter(f); position: absolute; top: 7px; right: 9px; font-size: 12px; font-weight: 700; color: var(--muted); }
+.flow .ic { font-size: 20px; line-height: 1.2; }
+.flow b { font-size: 14px; }
+.flow small { font-size: 12px; color: var(--muted); line-height: 1.35; }
+
+.howto { margin: 18px 0 4px; background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--ok); border-radius: 10px; padding: 0 16px; }
+.howto summary { cursor: pointer; font-weight: 600; font-size: 16px; padding: 12px 0; }
+.howto[open] summary { border-bottom: 1px solid var(--line); margin-bottom: 12px; }
+.steps { margin: 0 0 12px; padding-left: 22px; display: grid; gap: 10px; }
+.steps li::marker { font-weight: 700; color: var(--ok); }
+.steps p { margin: 0; font-size: 14px; line-height: 1.55; }
+.step-pics { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
+.step-pics .blip { width: 26px; height: 26px; padding: 4px; box-sizing: content-box; border-radius: 50%; background: #0b0d11; border: 1px solid var(--line); }
+.step-veh { height: 70px; width: auto; }
+.step-place { width: 200px; height: auto; border-radius: 8px; border: 1px solid var(--line); }
+.words { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding: 0 0 14px; font-size: 13px; }
+.word { text-decoration: none; color: var(--text); border: 1px solid var(--line); background: var(--surface2); border-radius: 999px; padding: 2px 10px; }
+.word:hover { border-color: var(--ok); }
+.word.more { border-color: var(--ok); }
+
+.opt .gl { font-size: 12px; color: var(--ok); line-height: 1.3; }
+.opt.on .gl { color: #fff; opacity: .95; }
+.pick { margin: 10px 0 0; display: flex; align-items: center; gap: 10px; }
+.pick img { max-height: 90px; max-width: 220px; width: auto; height: auto; }
+.pick.place img { max-height: none; width: 220px; border-radius: 8px; border: 1px solid var(--line); }
+.pick figcaption { font-size: 12px; color: var(--muted); }
+.where-img { display: block; margin-bottom: 8px; width: max-content; max-width: 100%; }
+.where-img img { display: block; width: 260px; max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--line); }

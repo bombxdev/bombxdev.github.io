@@ -242,7 +242,9 @@
   "nav.map": "แผนที่",
   "nav.heist": "วางแผนปล้น",
   "nav.heistPlan": "เปิดหน้าวางแผนปล้น",
-  "nav.heistCayo": "วางแผนปล้น Cayo Perico"
+  "nav.heistCayo": "วางแผนปล้น Cayo Perico",
+  "credits.heistTiles": "หน้าวางแผนปล้น: ภาพมุมสูงของสถานที่ปล้นครอปจากภาพชุดนี้และภาพเกาะ Cayo Perico ด้านล่าง",
+  "credits.heistFivem": "หน้าวางแผนปล้น: รูปรถและไอคอนเรดาร์ในคู่มือมือใหม่"
  },
  "cats": {
   "action_figures": {

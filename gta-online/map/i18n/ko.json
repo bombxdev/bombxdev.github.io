@@ -198,7 +198,9 @@
   "nav.map": "지도",
   "nav.heist": "습격 플래너",
   "nav.heistPlan": "습격 플래너 열기",
-  "nav.heistCayo": "카요 페리코 습격 계획"
+  "nav.heistCayo": "카요 페리코 습격 계획",
+  "credits.heistTiles": "습격 플래너: 습격 장소의 위성 사진은 이 이미지들과 아래 카요 페리코 이미지에서 잘라냈습니다.",
+  "credits.heistFivem": "습격 플래너: 초보자 가이드의 차량 사진과 레이더 아이콘."
  },
  "cats": {
   "action_figures": {

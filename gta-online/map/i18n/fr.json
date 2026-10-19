@@ -198,7 +198,9 @@
   "nav.map": "Carte",
   "nav.heist": "Planificateur de braquages",
   "nav.heistPlan": "Ouvrir le planificateur de braquages",
-  "nav.heistCayo": "Préparer le braquage de Cayo Perico"
+  "nav.heistCayo": "Préparer le braquage de Cayo Perico",
+  "credits.heistTiles": "Planificateur de braquages : les vues aériennes des lieux sont découpées dans ces images et dans l'image de Cayo Perico ci-dessous.",
+  "credits.heistFivem": "Planificateur de braquages : images de véhicules et icônes du radar du guide débutant."
  },
  "cats": {
   "action_figures": {

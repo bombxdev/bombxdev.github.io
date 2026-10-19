@@ -198,7 +198,9 @@
   "nav.map": "Mapa",
   "nav.heist": "Planer skoków",
   "nav.heistPlan": "Otwórz planer skoków",
-  "nav.heistCayo": "Zaplanuj skok na Cayo Perico"
+  "nav.heistCayo": "Zaplanuj skok na Cayo Perico",
+  "credits.heistTiles": "Planer skoków: zdjęcia z góry miejsc skoków są wycięte z tych obrazów i z obrazu Cayo Perico poniżej.",
+  "credits.heistFivem": "Planer skoków: zdjęcia pojazdów i ikony radaru w poradniku dla początkujących."
  },
  "cats": {
   "action_figures": {
