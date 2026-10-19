@@ -189,7 +189,11 @@
   "style.satellite": "Satellite",
   "style.game": "Jeu",
   "group.cayo": "Braquage de Cayo Perico",
-  "purpose.heist": "Braquage"
+  "purpose.heist": "Braquage",
+  "gang.title": "Zones des gangs",
+  "gang.hint": "Zones approximatives de chaque gang (zones du jeu dans GTA V). Pas les lieux exacts des attaques de gangs.",
+  "gang.show": "Voir",
+  "credits.imagesGangs": "Images de membres de gangs (zones des gangs)."
  },
  "cats": {
   "action_figures": {

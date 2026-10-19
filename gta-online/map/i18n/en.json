@@ -233,7 +233,11 @@
   "cayo.INT6_UNIF": "Guard Clothing",
   "cayo.INT2_PAIN": "Painting",
   "cayo.LOOT_OUT": "Secondary loot",
-  "cayo.LOOT_IN": "Secondary loot"
+  "cayo.LOOT_IN": "Secondary loot",
+  "gang.title": "Gang areas",
+  "gang.hint": "Approximate gang areas (game zones where each gang hangs out in GTA V). Not exact Gang Attack spots.",
+  "gang.show": "Show",
+  "credits.imagesGangs": "Gang member pictures (gang areas)."
  },
  "cats": {
   "action_figures": {

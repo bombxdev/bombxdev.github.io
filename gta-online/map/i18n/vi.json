@@ -189,7 +189,11 @@
   "style.satellite": "Vệ tinh",
   "style.game": "Trong game",
   "group.cayo": "Phi vụ Cayo Perico",
-  "purpose.heist": "Phi vụ"
+  "purpose.heist": "Phi vụ",
+  "gang.title": "Khu vực băng đảng",
+  "gang.hint": "Khu vực ước lượng của từng băng (vùng trong GTA V). Không phải vị trí chính xác của Gang Attack.",
+  "gang.show": "Xem",
+  "credits.imagesGangs": "Hình thành viên băng đảng (khu vực băng đảng)."
  },
  "cats": {
   "action_figures": {

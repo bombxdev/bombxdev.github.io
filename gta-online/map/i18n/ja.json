@@ -189,7 +189,11 @@
   "style.satellite": "衛星",
   "style.game": "ゲーム内",
   "group.cayo": "カヨ・ペリコ強盗",
-  "purpose.heist": "強盗"
+  "purpose.heist": "強盗",
+  "gang.title": "ギャングの縄張り",
+  "gang.hint": "各ギャングのおおよその縄張り（GTA V のゲーム内ゾーン）。ギャングアタックの正確な場所ではありません。",
+  "gang.show": "表示",
+  "credits.imagesGangs": "ギャングメンバーの画像（縄張り）。"
  },
  "cats": {
   "action_figures": {

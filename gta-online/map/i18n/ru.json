@@ -189,7 +189,11 @@
   "style.satellite": "Спутник",
   "style.game": "Как в игре",
   "group.cayo": "Ограбление Кайо-Перико",
-  "purpose.heist": "Ограбление"
+  "purpose.heist": "Ограбление",
+  "gang.title": "Районы банд",
+  "gang.hint": "Примерные районы банд (игровые зоны в GTA V). Не точные места нападений на банды.",
+  "gang.show": "Показать",
+  "credits.imagesGangs": "Изображения членов банд (районы банд)."
  },
  "cats": {
   "action_figures": {

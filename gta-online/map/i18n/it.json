@@ -189,7 +189,11 @@
   "style.satellite": "Satellite",
   "style.game": "Come nel gioco",
   "group.cayo": "Colpo a Cayo Perico",
-  "purpose.heist": "Colpo"
+  "purpose.heist": "Colpo",
+  "gang.title": "Zone delle gang",
+  "gang.hint": "Zone approssimative di ogni gang (zone di gioco in GTA V). Non i punti esatti degli attacchi alle gang.",
+  "gang.show": "Mostra",
+  "credits.imagesGangs": "Immagini dei membri delle gang (zone delle gang)."
  },
  "cats": {
   "action_figures": {

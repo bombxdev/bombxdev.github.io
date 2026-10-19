@@ -189,7 +189,11 @@
   "style.satellite": "Satelit",
   "style.game": "Dalam game",
   "group.cayo": "Perampokan Cayo Perico",
-  "purpose.heist": "Perampokan"
+  "purpose.heist": "Perampokan",
+  "gang.title": "Wilayah geng",
+  "gang.hint": "Perkiraan wilayah tiap geng (zona game GTA V). Bukan lokasi pasti Gang Attack.",
+  "gang.show": "Lihat",
+  "credits.imagesGangs": "Gambar anggota geng (wilayah geng)."
  },
  "cats": {
   "action_figures": {

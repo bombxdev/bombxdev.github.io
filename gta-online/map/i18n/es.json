@@ -189,7 +189,11 @@
   "style.satellite": "Satélite",
   "style.game": "Del juego",
   "group.cayo": "Golpe a Cayo Perico",
-  "purpose.heist": "Golpe"
+  "purpose.heist": "Golpe",
+  "gang.title": "Zonas de bandas",
+  "gang.hint": "Zonas aproximadas de cada banda (zonas del juego en GTA V). No son los puntos exactos de los ataques de bandas.",
+  "gang.show": "Ver",
+  "credits.imagesGangs": "Imágenes de pandilleros (zonas de bandas)."
  },
  "cats": {
   "action_figures": {

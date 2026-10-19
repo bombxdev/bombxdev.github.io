@@ -189,7 +189,11 @@
   "style.satellite": "Satelita",
   "style.game": "Jak w grze",
   "group.cayo": "Skok na Cayo Perico",
-  "purpose.heist": "Skok"
+  "purpose.heist": "Skok",
+  "gang.title": "Rejony gangów",
+  "gang.hint": "Przybliżone rejony gangów (strefy gry w GTA V). To nie dokładne miejsca ataków na gangi.",
+  "gang.show": "Pokaż",
+  "credits.imagesGangs": "Zdjęcia członków gangów (rejony gangów)."
  },
  "cats": {
   "action_figures": {

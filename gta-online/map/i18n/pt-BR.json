@@ -189,7 +189,11 @@
   "style.satellite": "Satélite",
   "style.game": "Do jogo",
   "group.cayo": "Golpe de Cayo Perico",
-  "purpose.heist": "Golpe"
+  "purpose.heist": "Golpe",
+  "gang.title": "Áreas de gangues",
+  "gang.hint": "Áreas aproximadas de cada gangue (zonas do jogo em GTA V). Não são os pontos exatos dos Ataques de Gangue.",
+  "gang.show": "Ver",
+  "credits.imagesGangs": "Imagens de membros de gangues (áreas de gangues)."
  },
  "cats": {
   "action_figures": {
