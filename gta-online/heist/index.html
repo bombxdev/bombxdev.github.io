@@ -1,49 +1,53 @@
 <!DOCTYPE html>
-<html lang="th" data-app-version="20261019-2">
+<html lang="en" data-app-version="20261019-3">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>GTA Online Heist Planner – วางแผนปล้นทุก Heist</title>
-  <meta name="description" content="วางแผน Heist ใน GTA Online: เลือก setup แบบในเกม คำนวณเงินตามความยาก/จำนวนผู้เล่น แจกแจงส่วนที่ถูกหัก ตั้ง cut และดูจุดเข้า/จุดหนีบนแผนที่">
+  <title>GTA Online Heist Planner</title>
+  <meta name="description" content="Plan GTA Online heists: pick setups like the in-game board, work out payouts by difficulty and team size, see every deduction, set cuts and view entry and escape points on the map." data-i18n-attr="content:meta.description">
   <meta name="theme-color" content="#111318">
   <!-- Same policy as the map page: only this site's own scripts. -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%B0%3C/text%3E%3C/svg%3E">
   <!-- Shared look (colours, sidebar, menu) comes from the map page. -->
-  <link rel="stylesheet" href="../map/style.css?v=20261019-2">
-  <link rel="stylesheet" href="heist.css?v=20261019-2">
+  <link rel="stylesheet" href="../map/style.css?v=20261019-3">
+  <link rel="stylesheet" href="heist.css?v=20261019-3">
 </head>
 <body>
   <div id="app">
-    <aside id="sidebar" aria-label="เมนู">
+    <aside id="sidebar" data-i18n-attr="aria-label:aria.menu">
       <header class="brand">
         <h1>GTA Online Heist</h1>
-        <button id="closeSidebar" class="icon-btn" aria-label="ปิดเมนู" title="ปิดเมนู">«</button>
+        <label class="lang" title="Language">
+          <span aria-hidden="true">🌐</span>
+          <select id="lang" data-i18n-attr="aria-label:settings.language"></select>
+        </label>
+        <button id="closeSidebar" class="icon-btn" data-i18n-attr="aria-label:aria.closeMenu;title:aria.closeMenu">«</button>
       </header>
 
-      <nav class="site-nav" aria-label="หน้า">
-        <a href="../map/">🗺 <span>แผนที่</span></a>
-        <a href="./" aria-current="page">💰 <span>วางแผนปล้น</span></a>
+      <nav class="site-nav" data-i18n-attr="aria-label:nav.label">
+        <a href="../map/">🗺 <span data-i18n="nav.map"></span></a>
+        <a href="./" aria-current="page">💰 <span data-i18n="nav.heist"></span></a>
       </nav>
 
-      <div class="group-title">เลือก Heist</div>
-      <nav class="hlist" id="rail" aria-label="เลือก Heist"></nav>
+      <div class="group-title" data-i18n="side.pick"></div>
+      <nav class="hlist" id="rail" data-i18n-attr="aria-label:side.pick"></nav>
 
-      <p class="patch">ตัวเลขอิง Title Update 1.73 (ก.ค. 2026) • วางแผน Finale • คำนวณส่วนแบ่ง • ถามมือโปร</p>
+      <p class="patch" data-i18n="side.patch"></p>
 
       <footer class="foot">
-        <p>มูลค่าของรวบรวมจากการทดสอบในเกมของชุมชนหลัง Title Update 1.73 (14 ก.ค. 2026) เช่น GTA BOOM, Timesaver และ GTA Boss – Rockstar ยืนยันระบบโบนัสรันแรกของสัปดาห์แต่ไม่เคยประกาศตัวคูณ ค่าที่มีเครื่องหมาย ≈ จึงเป็นค่าประมาณ ส่วนมูลค่าของรองสุ่มทุกรอบ ใช้หน้านี้เพื่อวางแผน ไม่ใช่ตัวเลขทางการ</p>
-        <p>โปสเตอร์ทั้งหมดเป็นงานวาดประกอบที่ทำขึ้นใหม่ ไม่ใช่ภาพจากเกม</p>
-        <p><a href="../map/credits.html" class="credits-link">❤ เครดิตและแหล่งข้อมูล</a></p>
-        <p>GTA V / GTA Online © Rockstar Games — เว็บแฟนเมด ไม่เกี่ยวข้องกับ Rockstar</p>
+        <p data-i18n="foot.data"></p>
+        <p data-i18n="foot.posters"></p>
+        <p><a href="../map/credits.html" class="credits-link">❤ <span data-i18n="credits.link"></span></a></p>
+        <p data-i18n="foot.legal"></p>
       </footer>
     </aside>
-    <button id="backdrop" class="backdrop" tabindex="-1" aria-label="ปิดเมนู"></button>
+    <button id="backdrop" class="backdrop" tabindex="-1" data-i18n-attr="aria-label:aria.closeMenu"></button>
 
     <main id="page">
-      <button id="openSidebar" class="fab" aria-label="เปิดเมนู" title="เปิดเมนู" hidden><span class="only-desktop">☰</span><span class="only-mobile">☰ เมนู</span></button>
+      <button id="openSidebar" class="fab" data-i18n-attr="aria-label:aria.openMenu;title:aria.openMenu" hidden><span class="only-desktop">☰</span><span class="only-mobile" data-i18n="mobile.open"></span></button>
       <div class="wrap">
-        <nav class="tabs only-mobile-flex" id="tabs" aria-label="เลือก Heist"></nav>
+        <nav class="tabs only-mobile-flex" id="tabs" data-i18n-attr="aria-label:side.pick"></nav>
 
         <section class="hero" id="hero"></section>
 
@@ -51,7 +55,7 @@
           <div id="board"></div>
           <div class="ticket" id="ticket">
             <div class="rc">
-              <div class="rc-head"><h2>ใบแบ่งเงิน</h2><p id="rcsub"></p></div>
+              <div class="rc-head"><h2 data-i18n="ticket.title"></h2><p id="rcsub"></p></div>
               <div id="summary"></div>
               <div id="cuts"></div>
               <div id="split"></div>
@@ -64,6 +68,7 @@
   </div>
 
   <!-- Bump data-app-version on <html> (and the ?v= on these files) on every deploy. -->
-  <script src="heist.js?v=20261019-2"></script>
+  <script src="../map/i18n.js?v=20261019-3"></script>
+  <script src="heist.js?v=20261019-3"></script>
 </body>
 </html>
