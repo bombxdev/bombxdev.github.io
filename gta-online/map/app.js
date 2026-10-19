@@ -820,6 +820,13 @@
   function openFromHash() {
     var id = decodeURIComponent(location.hash.slice(1));
     if (!id) return;
+    // #show:cat1,cat2: every point of those categories (heist planner's Scope list)
+    if (id.indexOf('show:') === 0) {
+      var keys = id.slice(5).split(',');
+      var items = state.items.filter(function (it) { return keys.indexOf(it.cat) !== -1; });
+      if (items.length) showItemsOnMap(items, keys.map(function (k) { return state.catByKey[k] ? I18N.catName(k) : k; }).join(' · '));
+      return;
+    }
     // #@x,y[,label]: a spot that is not a map point (heist planner links)
     var at = /^@(-?[\d.]+),(-?[\d.]+)(?:,(.*))?$/.exec(id);
     if (at) {

@@ -175,18 +175,32 @@ const blip = b => `<img class="blip" src="img/blip/${b}.png" alt="" width="22" h
 
 /* ---------- beginner guide ----------
    Steps per heist (texts g.<heist>.sN), with pictures; `words` link to the glossary. */
-const GLOSSARY = ['host','scope','setup','prep','finale','approach','primary','secondary','cut','elite','hard','firstweek','cooldown','fencing','board','detected','getaway','buyer','invite','blip'];
+const GLOSSARY = ['host','scope','setup','prep','finale','approach','primary','secondary','take','cut','elite','hard','firstweek','cooldown','fencing','board','lobby','role','vault','keycard','hacking','thermal','drill','disguise','loadout','detected','wanted','lives','retry','getaway','buyer','invite','blip'];
+// One-time challenges for doing a whole set (Original Heists, Doomsday).
+const CHALLENGES = ['allinorder','loyalty','cmm'];
+// Cayo Perico Scope points: the map's categories (data from the game's planning screen).
+const CAYO_SCOPE = [['cayo_infiltration','radar_heist_island','#3e9cf0',7], ['cayo_entrances','radar_compound_gate','#f76b15',6], ['cayo_escape','radar_sub2','#30a46c',4],
+  ['cayo_key_places','radar_control_tower','#e5484d',3], ['cayo_bolt_cutters','radar_bolt_cutters','#a26bdb',16], ['cayo_grapple','radar_rappel_gear','#4ea3d9',16],
+  ['cayo_uniform','radar_clothes_store','#d96bb0',16], ['cayo_supply_truck','radar_truck','#e0a030',5], ['cayo_loot_island','radar_cash_pickup','#5fb85f',24],
+  ['cayo_loot_compound','radar_cash_pickup','#c9a227',8], ['cayo_paintings','radar_painting','#8e4ec6',7]];
 const GUIDE = {
   kortz:{steps:[{k:'s1'}, {k:'s2'}, {k:'s3'}, {k:'s4', place:'kortz'}], note:'g.kortz.note', words:['scope','prep','finale','host','elite','firstweek','detected']},
-  cayo:{steps:[{k:'s1', veh:'kosatka', blip:'radar_sub2'}, {k:'s2'}, {k:'s3', blip:'radar_heist_island', place:'cayo_key_places-3'}, {k:'s4'}, {k:'s5'}, {k:'s6'}],
+  cayo:{steps:[{k:'s1', veh:'kosatka', blip:'radar_sub2'}, {k:'s2'}, {k:'s3', blip:'radar_heist_island', scope:true}, {k:'s4'}, {k:'s5'}, {k:'s6'}],
     words:['scope','prep','finale','primary','secondary','cut','elite','hard','cooldown','fencing','detected']},
   casino:{steps:[{k:'s1', blip:'radar_arcade'}, {k:'s2'}, {k:'s3', blip:'radar_casino', place:'casino'}, {k:'s4'}, {k:'s5'}],
     words:['scope','approach','prep','finale','cut','elite','firstweek','detected','getaway','buyer']},
-  doom:{steps:[{k:'s1'}, {k:'s2'}, {k:'s3'}], words:['setup','prep','finale','host','cut','elite','hard','firstweek']},
-  og:{steps:[{k:'s1', blip:'radar_heist'}, {k:'s2'}, {k:'s3'}], words:['setup','finale','host','cut','elite','hard','firstweek']}
+  doom:{steps:[{k:'s1'}, {k:'s2'}, {k:'s3'}, {k:'s4'}], words:['setup','prep','finale','host','cut','elite','hard','firstweek','lives','cmm']},
+  og:{steps:[{k:'s1', blip:'radar_heist'}, {k:'s2'}, {k:'s3'}, {k:'s4'}], words:['setup','finale','host','role','cut','elite','hard','firstweek','lives','cmm']}
 };
 const FLOW = [['buy','🏠'], ['scope','📷'], ['prep','🧰'], ['finale','💥'], ['pay','💰'], ['cool','⏳']];
 // Local meaning of an in-game English name (i18n/<lang>.json "names"; none in English).
+// Category names in the chosen language, from the map's own language file.
+let mapCats = {}, mapCatsBase = {};
+function loadMapCats(){
+  const get = c => fetch('../map/i18n/' + c + '.json?v=' + window.APP_VERSION).then(r => r.ok ? r.json() : {cats:{}}).then(j => j.cats || {}).catch(() => ({}));
+  return Promise.all([get('en'), I18N.code === 'en' ? null : get(I18N.code)]).then(([b, c]) => { mapCatsBase = b; mapCats = c || b; });
+}
+const catName = k => (mapCats[k] && mapCats[k].name) || (mapCatsBase[k] && mapCatsBase[k].name) || k;
 const gl = name => (I18N.dict && I18N.dict.names && I18N.dict.names[name]) || '';
 
 const mapHref = hash => MAP + encodeURIComponent(hash).replace(/%2C/g, ',').replace(/%40/g, '@');
@@ -526,7 +540,14 @@ function stepHTML(heist, s){
   const pics = (s.blip ? blip(s.blip) : '') +
     (s.veh ? `<img class="step-veh" src="${vehSrc(s.veh)}" alt="${s.veh}" loading="lazy">` : '') +
     (s.place ? `<img class="step-place" src="${placeSrc(s.place)}" alt="${t('g.mapPhoto')}" loading="lazy">` : '');
-  return `<li><p>${t('g.' + heist + '.' + s.k)}</p>${pics ? `<div class="step-pics">${pics}</div>` : ''}</li>`;
+  return `<li><p>${t('g.' + heist + '.' + s.k)}</p>${pics ? `<div class="step-pics">${pics}</div>` : ''}${s.scope ? scopeHTML() : ''}</li>`;
+}
+function scopeHTML(){
+  const all = CAYO_SCOPE.map(c => c[0]).join(',');
+  return `<div class="scope"><b>📷 ${t('g.scopeTitle')}</b><p class="hint">${t('g.scopeHint')}</p>
+    <a class="scope-img" href="${MAP}show:${all}"><img src="img/place/cayo_scope.webp" alt="${t('g.scopeTitle')}" width="1000" height="925" loading="lazy"></a>
+    <ul class="scope-list">${CAYO_SCOPE.map(([k, b, col, n]) => `<li><a href="${MAP}show:${k}"><i style="background:${col}"></i><img src="../map/blips/${b}.png" alt="" width="18" height="18">${catName(k)} <span class="muted">×${n}</span></a></li>`).join('')}</ul>
+    <a class="maplink big" href="${MAP}show:${all}">📍 ${t('g.scopeAll')}</a></div>`;
 }
 let howtoOpen = true;
 try{ howtoOpen = localStorage.getItem('gtaoheist.howto') !== '0'; }catch(e){}
@@ -546,6 +567,9 @@ function renderGuide(){
   $('guide').innerHTML = `<h1>📘 ${t('g.title')}</h1><p class="tag">${t('g.intro')}</p>
     <h2>${t('g.flowTitle')}</h2>${flowHTML()}
     <h2>${t('g.tipsTitle')}</h2><ul class="tips">${[1,2,3,4,5].map(i => `<li>${t('g.tip' + i)}</li>`).join('')}</ul>
+    <h2 id="term-challenges">🏆 ${t('g.chTitle')}</h2><p class="tag">${t('g.chIntro')}</p>
+    <dl class="gloss">${CHALLENGES.map(w => `<div id="term-${w}"><dt>${t('g.term.' + w)}</dt><dd>${t('g.def.' + w)}</dd></div>`).join('')}</dl>
+    <ul class="tips">${[1,2,3,4].map(i => `<li>${t('g.chTip' + i)}</li>`).join('')}</ul>
     <h2>${t('g.glossTitle')}</h2><dl class="gloss">${GLOSSARY.map(w => `<div id="term-${w}"><dt>${t('g.term.' + w)}</dt><dd>${t('g.def.' + w)}</dd></div>`).join('')}</dl>
     <h2>${t('side.pick')}</h2><div class="glinks">${ORDER.map(k => `<a href="#${k}" style="--h:${H[k].accent}">${H[k].short}</a>`).join('')}</div>
     <p class="rc-note">${t('g.imgCredit')}</p>`;
@@ -712,6 +736,7 @@ function savedLang(){ try{ return JSON.parse(localStorage.getItem(LANG_KEY)); }c
 function applyLanguage(anim){
   I18N.apply(document);
   $('lang').value = I18N.code;
+  loadMapCats().then(() => { if(view === 'heist' && cur === 'cayo') renderBoard(); });
   if(view === 'guide'){ const term = (fromHash() || '').split(':')[1]; setHeist(cur, false); showGuide(term); }
   else setHeist(cur, anim);
 }
