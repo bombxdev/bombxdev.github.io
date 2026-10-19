@@ -452,6 +452,25 @@
   "hint.tokenHelp": "Paste a GitHub fine-grained token: only this repository, permission Contents = Read and write. Create one at",
   "hint.uploaded": "Photo added. Everyone sees it after GitHub Pages rebuilds (about 1 minute).",
   "hint.uploading": "Uploading photo…",
-  "photo.howTo": "Each step, each selected choice and the top of every heist now has a “📷 Add photo” button. Photos go straight into the repository (live in about a minute)."
+  "photo.howTo": "Each step, each selected choice and the top of every heist now has a “📷 Add photo” button. Photos go straight into the repository (live in about a minute).",
+  "share.open": "📤 Share this plan",
+  "share.title": "Share the plan with your crew",
+  "share.hint": "The link opens this exact plan for each friend, in their own language, and they can load it onto their board. The image is for chats.",
+  "share.note": "Message for your crew (optional)",
+  "share.notePh": "e.g. Tonight at 8 pm – bring full armour",
+  "share.copy": "🔗 Copy link",
+  "share.copied": "Link copied – paste it in your chat",
+  "share.save": "🖼 Save image",
+  "share.send": "📤 Share…",
+  "share.close": "Close",
+  "share.from": "📨 A plan shared with you",
+  "share.use": "Load this plan on my board",
+  "share.useConfirm": "Replace your current {heist} plan with this one?",
+  "share.loaded": "Plan loaded",
+  "share.bad": "This plan link is broken or from an older version.",
+  "share.payout": "Payout",
+  "share.planTitle": "Heist plan",
+  "share.made": "Made with the GTA Online Heist Planner",
+  "share.dismiss": "Dismiss"
  }
 }
