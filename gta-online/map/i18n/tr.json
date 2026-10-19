@@ -198,7 +198,9 @@
   "nav.map": "Harita",
   "nav.heist": "Soygun planlayıcı",
   "nav.heistPlan": "Soygun planlayıcıyı aç",
-  "nav.heistCayo": "Cayo Perico soygununu planla"
+  "nav.heistCayo": "Cayo Perico soygununu planla",
+  "credits.heistTiles": "Soygun planlayıcı: soygun yerlerinin üstten görünümleri bu görsellerden ve aşağıdaki Cayo Perico görselinden kırpılmıştır.",
+  "credits.heistFivem": "Soygun planlayıcı: yeni başlayan rehberindeki araç görselleri ve radar simgeleri."
  },
  "cats": {
   "action_figures": {

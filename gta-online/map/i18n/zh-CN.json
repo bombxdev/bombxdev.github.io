@@ -198,7 +198,9 @@
   "nav.map": "地图",
   "nav.heist": "抢劫规划",
   "nav.heistPlan": "打开抢劫规划",
-  "nav.heistCayo": "规划佩里科岛抢劫"
+  "nav.heistCayo": "规划佩里科岛抢劫",
+  "credits.heistTiles": "抢劫规划：抢劫地点的俯视图裁剪自这些图片和下方的佩里科岛图片。",
+  "credits.heistFivem": "抢劫规划：新手指南中的载具图片和雷达图标。"
  },
  "cats": {
   "action_figures": {

@@ -198,7 +198,9 @@
   "nav.map": "Mapa",
   "nav.heist": "Planificador de golpes",
   "nav.heistPlan": "Abrir el planificador de golpes",
-  "nav.heistCayo": "Planear el golpe a Cayo Perico"
+  "nav.heistCayo": "Planear el golpe a Cayo Perico",
+  "credits.heistTiles": "Planificador de golpes: las fotos aéreas de los lugares se recortan de estas imágenes y de la imagen de Cayo Perico de abajo.",
+  "credits.heistFivem": "Planificador de golpes: imágenes de vehículos e iconos del radar de la guía para principiantes."
  },
  "cats": {
   "action_figures": {
