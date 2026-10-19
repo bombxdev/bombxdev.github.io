@@ -1111,6 +1111,7 @@
     focusItem: function (item) { focusItem(item); }, isMobile: function () { return isMobile(); },
     dayFmt: function () { return dayFmt; },
     popupExtra: POPUP_EXTRA, searchExtra: SEARCH_EXTRA, popupAll: POPUP_ALL, toast: function (m) { toast(m); },
+    map: map, zoneShapes: function () { return zoneShapes; },
     findItem: function (id) { return state.items.find(function (it) { return idOf(it) === id; }); },
     refreshPopup: function (item) {
       if (!item || !item.marker || !item.marker.isPopupOpen()) return;

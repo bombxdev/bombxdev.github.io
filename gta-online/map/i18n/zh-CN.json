@@ -189,7 +189,11 @@
   "style.satellite": "卫星",
   "style.game": "游戏内",
   "group.cayo": "佩里科岛抢劫",
-  "purpose.heist": "抢劫"
+  "purpose.heist": "抢劫",
+  "gang.title": "帮派地盘",
+  "gang.hint": "各帮派的大致地盘（GTA V 游戏区域），并非帮派袭击的确切地点。",
+  "gang.show": "查看",
+  "credits.imagesGangs": "帮派成员图片（帮派地盘）。"
  },
  "cats": {
   "action_figures": {

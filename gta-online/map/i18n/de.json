@@ -189,7 +189,11 @@
   "style.satellite": "Satellit",
   "style.game": "Wie im Spiel",
   "group.cayo": "Cayo-Perico-Coup",
-  "purpose.heist": "Coup"
+  "purpose.heist": "Coup",
+  "gang.title": "Gang-Gebiete",
+  "gang.hint": "Ungefähre Gebiete der Gangs (Spielzonen in GTA V). Nicht die genauen Orte der Gang-Angriffe.",
+  "gang.show": "Zeigen",
+  "credits.imagesGangs": "Bilder von Gangmitgliedern (Gang-Gebiete)."
  },
  "cats": {
   "action_figures": {

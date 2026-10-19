@@ -233,7 +233,11 @@
   "cayo.INT6_UNIF": "ชุดยาม",
   "cayo.INT2_PAIN": "ภาพวาด",
   "cayo.LOOT_OUT": "ของมีค่ารอง",
-  "cayo.LOOT_IN": "ของมีค่ารอง"
+  "cayo.LOOT_IN": "ของมีค่ารอง",
+  "gang.title": "ถิ่นแก๊ง",
+  "gang.hint": "พื้นที่โดยประมาณที่แต่ละแก๊งอยู่ (ตามโซนในเกม GTA V) ไม่ใช่จุด Gang Attack แบบเป๊ะ ๆ",
+  "gang.show": "ไปดู",
+  "credits.imagesGangs": "รูปสมาชิกแก๊ง (ถิ่นแก๊ง)"
  },
  "cats": {
   "action_figures": {

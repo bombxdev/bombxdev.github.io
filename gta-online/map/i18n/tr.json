@@ -189,7 +189,11 @@
   "style.satellite": "Uydu",
   "style.game": "Oyundaki",
   "group.cayo": "Cayo Perico Soygunu",
-  "purpose.heist": "Soygun"
+  "purpose.heist": "Soygun",
+  "gang.title": "Çete bölgeleri",
+  "gang.hint": "Çetelerin yaklaşık bölgeleri (GTA V oyun bölgeleri). Çete Saldırısı noktalarının tam yeri değildir.",
+  "gang.show": "Göster",
+  "credits.imagesGangs": "Çete üyesi görselleri (çete bölgeleri)."
  },
  "cats": {
   "action_figures": {

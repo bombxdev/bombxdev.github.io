@@ -189,7 +189,11 @@
   "style.satellite": "위성",
   "style.game": "게임 지도",
   "group.cayo": "카요 페리코 습격",
-  "purpose.heist": "습격"
+  "purpose.heist": "습격",
+  "gang.title": "갱 구역",
+  "gang.hint": "각 갱의 대략적인 구역(GTA V 게임 구역). 갱 습격의 정확한 위치는 아닙니다.",
+  "gang.show": "보기",
+  "credits.imagesGangs": "갱 조직원 이미지 (갱 구역)."
  },
  "cats": {
   "action_figures": {
