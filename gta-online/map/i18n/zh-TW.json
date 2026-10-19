@@ -200,7 +200,26 @@
   "nav.heistPlan": "開啟搶劫規劃",
   "nav.heistCayo": "規劃佩里科島搶劫",
   "credits.heistTiles": "搶劫規劃：搶劫地點的俯視圖裁切自這些圖片和下方的佩里科島圖片。",
-  "credits.heistFivem": "搶劫規劃：新手指南中的載具圖片和雷達圖示。"
+  "credits.heistFivem": "搶劫規劃：新手指南中的載具圖片和雷達圖示。",
+  "group.kortz": "Kortz Center 搶劫",
+  "kortz.STAFF": "Staff Entrance（員工入口）",
+  "kortz.SKYLIGHT": "Skylight（天窗）",
+  "kortz.LOADING": "Loading Bay（裝卸區）",
+  "kortz.SEWER": "Sewer（下水道）",
+  "kortz.POI1": "#1",
+  "kortz.POI2": "#2",
+  "kortz.POI3": "#3",
+  "nav.heistKortz": "規劃 Kortz Center 搶劫",
+  "kortz.SKYLIGHT1": "Skylight（天窗） 1",
+  "kortz.SKYLIGHT2": "Skylight（天窗） 2",
+  "kortz.SKYLIGHT3": "Skylight（天窗） 3",
+  "kortz.SKYLIGHT4": "Skylight（天窗） 4",
+  "kortz.POI21": "#2.1",
+  "kortz.POI22": "#2.2",
+  "kortz.POI23": "#2.3",
+  "kortz.POI31": "#3.1",
+  "kortz.POI32": "#3.2",
+  "kortz.POI33": "#3.3"
  },
  "cats": {
   "action_figures": {
@@ -387,6 +406,16 @@
    "name": "畫作",
    "note": "豪宅內",
    "info": "豪宅內可能掛有畫作的位置。"
+  },
+  "kortz_entry": {
+   "name": "入口",
+   "note": "在 Scope 時拍照",
+   "info": "Kortz Center 偵察（Scope）時要拍照的入口。位置來自遊戲的 Scope 任務；Loading Bay 和 Sewer 的名稱是依位置推斷的。"
+  },
+  "kortz_poi": {
+   "name": "興趣點",
+   "note": "在 Scope 時拍照",
+   "info": "Scope 要求你在博物館周圍拍照的其他地點（來自遊戲的 Scope 任務）。"
   }
  }
 }

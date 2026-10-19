@@ -200,7 +200,26 @@
   "nav.heistPlan": "Soygun planlayıcıyı aç",
   "nav.heistCayo": "Cayo Perico soygununu planla",
   "credits.heistTiles": "Soygun planlayıcı: soygun yerlerinin üstten görünümleri bu görsellerden ve aşağıdaki Cayo Perico görselinden kırpılmıştır.",
-  "credits.heistFivem": "Soygun planlayıcı: yeni başlayan rehberindeki araç görselleri ve radar simgeleri."
+  "credits.heistFivem": "Soygun planlayıcı: yeni başlayan rehberindeki araç görselleri ve radar simgeleri.",
+  "group.kortz": "Kortz Center Soygunu",
+  "kortz.STAFF": "Staff Entrance (personel girişi)",
+  "kortz.SKYLIGHT": "Skylight (çatı penceresi)",
+  "kortz.LOADING": "Loading Bay (yükleme alanı)",
+  "kortz.SEWER": "Sewer (kanalizasyon)",
+  "kortz.POI1": "#1",
+  "kortz.POI2": "#2",
+  "kortz.POI3": "#3",
+  "nav.heistKortz": "Kortz Center soygununu planla",
+  "kortz.SKYLIGHT1": "Skylight (çatı penceresi) 1",
+  "kortz.SKYLIGHT2": "Skylight (çatı penceresi) 2",
+  "kortz.SKYLIGHT3": "Skylight (çatı penceresi) 3",
+  "kortz.SKYLIGHT4": "Skylight (çatı penceresi) 4",
+  "kortz.POI21": "#2.1",
+  "kortz.POI22": "#2.2",
+  "kortz.POI23": "#2.3",
+  "kortz.POI31": "#3.1",
+  "kortz.POI32": "#3.2",
+  "kortz.POI33": "#3.3"
  },
  "cats": {
   "action_figures": {
@@ -387,6 +406,16 @@
    "name": "Tablolar",
    "note": "Malikâne içinde",
    "info": "Malikânede tabloların asılı olabileceği yerler."
+  },
+  "kortz_entry": {
+   "name": "Giriş noktaları",
+   "note": "Scope sırasında fotoğrafla",
+   "info": "Kortz Center Scope'unda fotoğrafladığın girişler. Oyundaki Scope görevinden noktalar; Loading Bay ve Sewer adları konumlarından çıkarıldı."
+  },
+  "kortz_poi": {
+   "name": "İlgi noktaları",
+   "note": "Scope sırasında fotoğrafla",
+   "info": "Scope'un müze çevresinde fotoğraflamanı istediği diğer noktalar (oyundaki Scope görevinden)."
   }
  }
 }

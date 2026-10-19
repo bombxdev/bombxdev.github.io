@@ -200,7 +200,26 @@
   "nav.heistPlan": "Ouvrir le planificateur de braquages",
   "nav.heistCayo": "Préparer le braquage de Cayo Perico",
   "credits.heistTiles": "Planificateur de braquages : les vues aériennes des lieux sont découpées dans ces images et dans l'image de Cayo Perico ci-dessous.",
-  "credits.heistFivem": "Planificateur de braquages : images de véhicules et icônes du radar du guide débutant."
+  "credits.heistFivem": "Planificateur de braquages : images de véhicules et icônes du radar du guide débutant.",
+  "group.kortz": "Braquage du Kortz Center",
+  "kortz.STAFF": "Staff Entrance (entrée du personnel)",
+  "kortz.SKYLIGHT": "Skylight (verrière)",
+  "kortz.LOADING": "Loading Bay (quai de chargement)",
+  "kortz.SEWER": "Sewer (égout)",
+  "kortz.POI1": "#1",
+  "kortz.POI2": "#2",
+  "kortz.POI3": "#3",
+  "nav.heistKortz": "Préparer le braquage du Kortz Center",
+  "kortz.SKYLIGHT1": "Skylight (verrière) 1",
+  "kortz.SKYLIGHT2": "Skylight (verrière) 2",
+  "kortz.SKYLIGHT3": "Skylight (verrière) 3",
+  "kortz.SKYLIGHT4": "Skylight (verrière) 4",
+  "kortz.POI21": "#2.1",
+  "kortz.POI22": "#2.2",
+  "kortz.POI23": "#2.3",
+  "kortz.POI31": "#3.1",
+  "kortz.POI32": "#3.2",
+  "kortz.POI33": "#3.3"
  },
  "cats": {
   "action_figures": {
@@ -387,6 +406,16 @@
    "name": "Tableaux",
    "note": "Dans le complexe",
    "info": "Emplacements où des tableaux peuvent être accrochés dans le complexe."
+  },
+  "kortz_entry": {
+   "name": "Points d'entrée",
+   "note": "À photographier pendant le Scope",
+   "info": "Entrées à photographier pendant le Scope du Kortz Center. Points tirés de la mission Scope du jeu ; les noms Loading Bay et Sewer sont déduits de leur position."
+  },
+  "kortz_poi": {
+   "name": "Points d'intérêt",
+   "note": "À photographier pendant le Scope",
+   "info": "Autres endroits à photographier autour du musée pendant le Scope (mission Scope du jeu)."
   }
  }
 }

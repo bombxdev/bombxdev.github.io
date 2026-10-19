@@ -394,6 +394,7 @@
   "g.kortz.note": "O Kortz Center é novo (Title Update 1.73); estes passos usam só o que se sabe nesta página – confira o quadro do jogo para o resto.",
   "g.scopeTitle": "Checklist do Scope – o que fotografar",
   "g.scopeHint": "Cada ponto abaixo vem da própria tela de planejamento do jogo. Ferramentas e saque secundário aparecem só em alguns desses lugares a cada partida – a lista mostra todos os pontos possíveis. Toque em um para vê-lo no mapa.",
+  "g.scopeHintKortz": "Todos os pontos vêm da própria missão Scope do jogo. Os textos não estão no script, então os nomes foram deduzidos: Staff Entrance e Skylight (os quatro pontos do telhado) são claros; Loading Bay e Sewer, pela posição. Toque em um para ver no mapa.",
   "g.scopeAll": "Mostrar todos os pontos de Scope no mapa",
   "g.chTitle": "Heist Challenges: Criminal Mastermind (CMM)",
   "g.chIntro": "Os Original Heists e o Doomsday Heist têm desafios de uma vez só por jogar o conjunto inteiro de um jeito específico. Eles pagam além do dinheiro normal do golpe – o mais difícil e mais famoso é o Criminal Mastermind, muitas vezes abreviado como CMM.",

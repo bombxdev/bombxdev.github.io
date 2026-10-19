@@ -394,6 +394,7 @@
   "g.kortz.note": "Kortz Center yeni (Title Update 1.73); bu adımlar yalnızca bu sayfada bilinenleri kullanır – geri kalanı için oyundaki tahtaya bak.",
   "g.scopeTitle": "Scope kontrol listesi – neyin fotoğrafını çekmeli",
   "g.scopeHint": "Aşağıdaki her nokta oyunun kendi planlama ekranından alındı. Aletler ve ikincil ganimet her turda bu yerlerin yalnızca bazılarında çıkar – liste olası tüm noktaları gösterir. Haritada görmek için birine dokun.",
+  "g.scopeHintKortz": "Aşağıdaki tüm noktalar oyunun kendi Scope görevinden. Metinler betikte yok, bu yüzden adlar çıkarıldı: Staff Entrance ve Skylight (çatıdaki dört nokta) kesin, Loading Bay ve Sewer konumlarından. Haritada görmek için birine dokun.",
   "g.scopeAll": "Tüm Scope noktalarını haritada göster",
   "g.chTitle": "Heist Challenges: Criminal Mastermind (CMM)",
   "g.chIntro": "Original Heists ve Doomsday Heist'te, tüm seriyi belirli bir şekilde oynamak için tek seferlik meydan okumalar vardır. Normal soygun parasının üstüne ödeme yaparlar – en zoru ve en bilineni Criminal Mastermind'dır, kısaca CMM denir.",

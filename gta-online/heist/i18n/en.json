@@ -394,6 +394,7 @@
   "g.kortz.note": "Kortz Center is new (Title Update 1.73); these steps only use what's known on this page – check the in-game board for anything else.",
   "g.scopeTitle": "Scope checklist – what to photograph",
   "g.scopeHint": "Every spot below comes from the game's own planning screen. Tools and secondary loot appear in only some of these places each run – the list shows every possible spot. Tap one to see it on the map.",
+  "g.scopeHintKortz": "Every spot below comes from the game's own Scope mission. The game's texts aren't in the script, so the names are worked out: Staff Entrance and Skylight (the four roof spots) are clear, Loading Bay and Sewer come from where they are. Tap one to see it on the map.",
   "g.scopeAll": "Show every Scope spot on the map",
   "g.chTitle": "Heist Challenges: Criminal Mastermind (CMM)",
   "g.chIntro": "The Original Heists and the Doomsday Heist have one-time challenges for playing the whole set in a certain way. They pay on top of the normal heist money – the hardest and best known is Criminal Mastermind, often shortened to CMM.",

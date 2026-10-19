@@ -22,6 +22,13 @@
 - ชื่อเฉพาะภาษาอังกฤษในเกม (ทางเข้า พาหนะ ภาพวาด ฯลฯ) แสดงความหมายเป็นภาษาที่เลือกไว้ใต้ชื่อ: `"names"` ใน `i18n/<code>.json`
   (ไม่มีในภาษาอังกฤษ) ไม่แสดงถ้าคำอธิบายของตัวเลือกขึ้นต้นด้วยความหมายเดียวกันอยู่แล้ว
 
+## จุด Scope จากสคริปต์เกม
+
+- Cayo Perico: หมวด `cayo_*` ของหน้าแผนที่ (จากจอวางแผน `heist_island_planning.c`) ภาพรวม `img/place/cayo_scope.webp`
+- Kortz Center: หมวด `kortz_entry` / `kortz_poi` ของหน้าแผนที่ (จากภารกิจ Scope `fm_content_kortz_scoping.c`,
+  `../map/tools/extract_kortz_scope.py`) ภาพรวม `img/place/kortz_scope.webp`; รายการในหน้า = `KORTZ_SCOPE` ใน `heist.js`
+- Diamond Casino: ยังไม่มี – สคริปต์ (`gb_casino_heist.c`) มีพิกัดรอบคาสิโนแต่ไม่มีอะไรบอกว่าจุดไหนคืออะไร
+
 ## รูปภาพ (`img/`)
 
 ใช้เฉพาะแหล่งเดียวกับหน้าแผนที่ซึ่งมีเครดิตอยู่แล้วใน `../map/credits.html`:

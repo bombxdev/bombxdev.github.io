@@ -394,6 +394,7 @@
   "g.kortz.note": "Kortz Center は新しい強盗です（Title Update 1.73）。ここのステップはこのページで分かっている情報だけを使っています——それ以外はゲーム内のボードで確認してください。",
   "g.scopeTitle": "Scope チェックリスト——何を撮影するか",
   "g.scopeHint": "下の場所はすべてゲーム内のプラン画面から取ったものです。道具やサブの戦利品は、毎回このうち一部の場所にしか出ません——リストには出る可能性のある場所をすべて載せています。タップするとマップで確認できます。",
+  "g.scopeHintKortz": "以下の地点はすべてゲームのScopeミッションから取得。スクリプトにテキストはないため名前は推定です：Staff EntranceとSkylight（屋上の4地点）は確実、Loading BayとSewerは位置から推定。タップで地図に表示。",
   "g.scopeAll": "Scope の場所をすべてマップに表示",
   "g.chTitle": "Heist Challenges: Criminal Mastermind (CMM)",
   "g.chIntro": "Original Heists と Doomsday Heist には、シリーズ全体を決まった遊び方でクリアすると1回だけもらえるチャレンジがあります。通常の強盗の報酬に上乗せで支払われます——いちばん難しく有名なのが Criminal Mastermind で、よく CMM と略されます。",

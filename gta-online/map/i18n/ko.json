@@ -200,7 +200,26 @@
   "nav.heistPlan": "습격 플래너 열기",
   "nav.heistCayo": "카요 페리코 습격 계획",
   "credits.heistTiles": "습격 플래너: 습격 장소의 위성 사진은 이 이미지들과 아래 카요 페리코 이미지에서 잘라냈습니다.",
-  "credits.heistFivem": "습격 플래너: 초보자 가이드의 차량 사진과 레이더 아이콘."
+  "credits.heistFivem": "습격 플래너: 초보자 가이드의 차량 사진과 레이더 아이콘.",
+  "group.kortz": "Kortz Center 습격",
+  "kortz.STAFF": "Staff Entrance (직원 출입구)",
+  "kortz.SKYLIGHT": "Skylight (천창)",
+  "kortz.LOADING": "Loading Bay (하역장)",
+  "kortz.SEWER": "Sewer (하수도)",
+  "kortz.POI1": "#1",
+  "kortz.POI2": "#2",
+  "kortz.POI3": "#3",
+  "nav.heistKortz": "Kortz Center 습격 계획",
+  "kortz.SKYLIGHT1": "Skylight (천창) 1",
+  "kortz.SKYLIGHT2": "Skylight (천창) 2",
+  "kortz.SKYLIGHT3": "Skylight (천창) 3",
+  "kortz.SKYLIGHT4": "Skylight (천창) 4",
+  "kortz.POI21": "#2.1",
+  "kortz.POI22": "#2.2",
+  "kortz.POI23": "#2.3",
+  "kortz.POI31": "#3.1",
+  "kortz.POI32": "#3.2",
+  "kortz.POI33": "#3.3"
  },
  "cats": {
   "action_figures": {
@@ -387,6 +406,16 @@
    "name": "그림",
    "note": "저택 안",
    "info": "저택 안에 그림이 걸려 있을 수 있는 곳."
+  },
+  "kortz_entry": {
+   "name": "진입 지점",
+   "note": "Scope 중 사진 촬영",
+   "info": "Kortz Center Scope에서 사진을 찍는 진입로. 위치는 게임의 Scope 미션에서 가져왔고, Loading Bay와 Sewer 이름은 위치로 추정했습니다."
+  },
+  "kortz_poi": {
+   "name": "관심 지점",
+   "note": "Scope 중 사진 촬영",
+   "info": "Scope에서 박물관 주변에서 사진을 찍으라고 하는 다른 지점(게임의 Scope 미션에서)."
   }
  }
 }

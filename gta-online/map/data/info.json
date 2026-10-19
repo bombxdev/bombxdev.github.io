@@ -172,5 +172,11 @@
  },
  "cayo_paintings": {
   "purpose": "heist"
+ },
+ "kortz_entry": {
+  "purpose": "heist"
+ },
+ "kortz_poi": {
+  "purpose": "heist"
  }
 }

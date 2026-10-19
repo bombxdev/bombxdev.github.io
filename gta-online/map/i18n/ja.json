@@ -200,7 +200,26 @@
   "nav.heistPlan": "強盗プランナーを開く",
   "nav.heistCayo": "カヨ・ペリコ強盗を計画",
   "credits.heistTiles": "強盗プランナー：強盗場所の上空写真は、これらの画像と下のカヨ・ペリコ画像から切り出しています。",
-  "credits.heistFivem": "強盗プランナー：初心者ガイドの車両画像とレーダーアイコン。"
+  "credits.heistFivem": "強盗プランナー：初心者ガイドの車両画像とレーダーアイコン。",
+  "group.kortz": "Kortz Center強盗",
+  "kortz.STAFF": "Staff Entrance（従業員入口）",
+  "kortz.SKYLIGHT": "Skylight（天窓）",
+  "kortz.LOADING": "Loading Bay（搬入口）",
+  "kortz.SEWER": "Sewer（下水道）",
+  "kortz.POI1": "#1",
+  "kortz.POI2": "#2",
+  "kortz.POI3": "#3",
+  "nav.heistKortz": "Kortz Center強盗を計画",
+  "kortz.SKYLIGHT1": "Skylight（天窓） 1",
+  "kortz.SKYLIGHT2": "Skylight（天窓） 2",
+  "kortz.SKYLIGHT3": "Skylight（天窓） 3",
+  "kortz.SKYLIGHT4": "Skylight（天窓） 4",
+  "kortz.POI21": "#2.1",
+  "kortz.POI22": "#2.2",
+  "kortz.POI23": "#2.3",
+  "kortz.POI31": "#3.1",
+  "kortz.POI32": "#3.2",
+  "kortz.POI33": "#3.3"
  },
  "cats": {
   "action_figures": {
@@ -387,6 +406,16 @@
    "name": "絵画",
    "note": "屋敷内",
    "info": "屋敷内で絵画が飾られている可能性のある場所。"
+  },
+  "kortz_entry": {
+   "name": "侵入口",
+   "note": "Scope中に撮影",
+   "info": "Kortz CenterのScopeで撮影する侵入口。位置はゲームのScopeミッションから。Loading BayとSewerの名前は位置から推定。"
+  },
+  "kortz_poi": {
+   "name": "注目ポイント",
+   "note": "Scope中に撮影",
+   "info": "Scopeで撮影を求められる博物館周辺のその他の場所（ゲームのScopeミッションから）。"
   }
  }
 }

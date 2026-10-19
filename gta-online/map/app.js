@@ -25,7 +25,7 @@
     game: { name: 'Game', bg: '#0d1625' },
     satellite: { name: 'Satellite', bg: '#143d6b' }
   };
-  var GROUPS = ['permanent', 'daily', 'event', 'landmark', 'cayo'];
+  var GROUPS = ['permanent', 'daily', 'event', 'landmark', 'cayo', 'kortz'];
   var PURPOSES = ['money', 'unlock', 'service', 'activity', 'timed', 'event', 'landmark', 'heist'];
   var t = I18N.t;
 
@@ -227,7 +227,7 @@
   function idOf(item) { return item.cat + '-' + item.n; }
   // Shops/services move daily; there is nothing to "collect".
   var NOT_COLLECTABLE = { gun_van: true, street_dealers: true, exotic_exports: true };
-  function collectable(cat) { return !NOT_COLLECTABLE[cat.key] && cat.group !== 'landmark' && cat.group !== 'cayo'; }
+  function collectable(cat) { return !NOT_COLLECTABLE[cat.key] && cat.group !== 'landmark' && cat.group !== 'cayo' && cat.group !== 'kortz'; }
   // Extension points for other modules (exports.js): extra popup HTML per
   // category, and extra search results shown above the map points.
   var POPUP_EXTRA = {};
@@ -380,7 +380,7 @@
       (item.ghost ? '<div class="pop-rw">' + ghostTimingHtml(item.ghost) + '</div>' : '') +
       (rewardHtml(cat) ? '<div class="pop-rw">' + rewardHtml(cat) + '</div>' : '') +
       (POPUP_EXTRA[item.cat] ? POPUP_EXTRA[item.cat](item) : '') +
-      (cat.group === 'cayo' ? '<a class="pop-heist" href="../heist/#cayo">💰 ' + esc(t('nav.heistCayo')) + '</a>' : '') +
+      (cat.group === 'cayo' || cat.group === 'kortz' ? '<a class="pop-heist" href="../heist/#' + cat.group + '">💰 ' + esc(t(cat.group === 'cayo' ? 'nav.heistCayo' : 'nav.heistKortz')) + '</a>' : '') +
       POPUP_ALL.map(function (fn) { return fn(item); }).join('') +
       whereHtml(item) +
       '<div class="pop-mini" data-mini="' + idOf(item) + '"></div>' +

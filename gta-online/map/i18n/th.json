@@ -244,7 +244,26 @@
   "nav.heistPlan": "เปิดหน้าวางแผนปล้น",
   "nav.heistCayo": "วางแผนปล้น Cayo Perico",
   "credits.heistTiles": "หน้าวางแผนปล้น: ภาพมุมสูงของสถานที่ปล้นครอปจากภาพชุดนี้และภาพเกาะ Cayo Perico ด้านล่าง",
-  "credits.heistFivem": "หน้าวางแผนปล้น: รูปรถและไอคอนเรดาร์ในคู่มือมือใหม่"
+  "credits.heistFivem": "หน้าวางแผนปล้น: รูปรถและไอคอนเรดาร์ในคู่มือมือใหม่",
+  "group.kortz": "ปล้น Kortz Center",
+  "kortz.STAFF": "Staff Entrance (ทางเข้าพนักงาน)",
+  "kortz.SKYLIGHT": "Skylight (หน้าต่างหลังคา)",
+  "kortz.LOADING": "Loading Bay (ลานขนของ)",
+  "kortz.SEWER": "Sewer (ท่อระบายน้ำ)",
+  "kortz.POI1": "#1",
+  "kortz.POI2": "#2",
+  "kortz.POI3": "#3",
+  "nav.heistKortz": "วางแผนปล้น Kortz Center",
+  "kortz.SKYLIGHT1": "Skylight (หน้าต่างหลังคา) 1",
+  "kortz.SKYLIGHT2": "Skylight (หน้าต่างหลังคา) 2",
+  "kortz.SKYLIGHT3": "Skylight (หน้าต่างหลังคา) 3",
+  "kortz.SKYLIGHT4": "Skylight (หน้าต่างหลังคา) 4",
+  "kortz.POI21": "#2.1",
+  "kortz.POI22": "#2.2",
+  "kortz.POI23": "#2.3",
+  "kortz.POI31": "#3.1",
+  "kortz.POI32": "#3.2",
+  "kortz.POI33": "#3.3"
  },
  "cats": {
   "action_figures": {
@@ -456,6 +475,16 @@
    "name": "ภาพวาด",
    "note": "ในคฤหาสน์",
    "info": "จุดที่อาจมีภาพวาดแขวนอยู่ในคฤหาสน์"
+  },
+  "kortz_entry": {
+   "name": "ทางเข้า",
+   "note": "ถ่ายรูปตอน Scope",
+   "info": "ทางเข้าที่ต้องถ่ายรูปตอน Scope ของ Kortz Center จุดจากภารกิจ Scope ในเกม ส่วนชื่อ Loading Bay กับ Sewer อนุมานจากตำแหน่ง"
+  },
+  "kortz_poi": {
+   "name": "จุดน่าสนใจ",
+   "note": "ถ่ายรูปตอน Scope",
+   "info": "จุดอื่นรอบพิพิธภัณฑ์ที่ Scope ให้ถ่ายรูป (จากภารกิจ Scope ในเกม)"
   }
  }
 }

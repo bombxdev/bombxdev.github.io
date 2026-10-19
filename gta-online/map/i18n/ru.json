@@ -200,7 +200,26 @@
   "nav.heistPlan": "Открыть планировщик ограблений",
   "nav.heistCayo": "Спланировать ограбление Кайо-Перико",
   "credits.heistTiles": "Планировщик ограблений: виды сверху мест ограблений вырезаны из этих изображений и изображения Кайо-Перико ниже.",
-  "credits.heistFivem": "Планировщик ограблений: изображения транспорта и значки радара в гайде для новичков."
+  "credits.heistFivem": "Планировщик ограблений: изображения транспорта и значки радара в гайде для новичков.",
+  "group.kortz": "Ограбление Kortz Center",
+  "kortz.STAFF": "Staff Entrance (служебный вход)",
+  "kortz.SKYLIGHT": "Skylight (световой люк)",
+  "kortz.LOADING": "Loading Bay (погрузочная зона)",
+  "kortz.SEWER": "Sewer (канализация)",
+  "kortz.POI1": "#1",
+  "kortz.POI2": "#2",
+  "kortz.POI3": "#3",
+  "nav.heistKortz": "Спланировать ограбление Kortz Center",
+  "kortz.SKYLIGHT1": "Skylight (световой люк) 1",
+  "kortz.SKYLIGHT2": "Skylight (световой люк) 2",
+  "kortz.SKYLIGHT3": "Skylight (световой люк) 3",
+  "kortz.SKYLIGHT4": "Skylight (световой люк) 4",
+  "kortz.POI21": "#2.1",
+  "kortz.POI22": "#2.2",
+  "kortz.POI23": "#2.3",
+  "kortz.POI31": "#3.1",
+  "kortz.POI32": "#3.2",
+  "kortz.POI33": "#3.3"
  },
  "cats": {
   "action_figures": {
@@ -387,6 +406,16 @@
    "name": "Картины",
    "note": "В поместье",
    "info": "Места, где в поместье могут висеть картины."
+  },
+  "kortz_entry": {
+   "name": "Точки входа",
+   "note": "Сфотографировать во время Scope",
+   "info": "Входы, которые нужно сфотографировать во время Scope в Kortz Center. Точки из миссии Scope в игре; названия Loading Bay и Sewer определены по расположению."
+  },
+  "kortz_poi": {
+   "name": "Точки интереса",
+   "note": "Сфотографировать во время Scope",
+   "info": "Другие места вокруг музея, которые нужно сфотографировать во время Scope (из миссии Scope в игре)."
   }
  }
 }

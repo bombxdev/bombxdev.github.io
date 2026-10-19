@@ -22,6 +22,11 @@
   (ped render จาก FiveM docs) และตราสัญลักษณ์ที่ออกแบบเอง — ไม่ใช่จุด Gang Attack แบบเป๊ะ (เกมโหลดจุดพวกนั้นจากเซิร์ฟเวอร์ Rockstar)
 - 🏝 ปล้น Cayo Perico: จุดเข้าเกาะ, จุดหนี, ทางเข้าคฤหาสน์, หอควบคุม/สถานีไฟฟ้า, จุดที่อาจมีคีมตัดเหล็ก/ตะขอปีน/ชุดยาม/รถส่งของ,
   จุดของมีค่ารอง (นอก/ในคฤหาสน์) และภาพวาด — จากกระดานวางแผนในเกม (`heist_island_planning.c`) ด้วย `tools/extract_cayo_heist.py`
+- 🖼 ปล้น Kortz Center (Title Update 1.73): จุดถ่ายรูปตอน Scope – ทางเข้า 4 แบบ (Staff Entrance, Loading Bay, Sewer, Skylight 4 จุด)
+  และจุดน่าสนใจรอบพิพิธภัณฑ์ – จากภารกิจ Scope ในเกม (`fm_content_kortz_scoping.c`) ด้วย `tools/extract_kortz_scope.py`
+  สคริปต์ไม่มีข้อความภาษาอังกฤษ: Staff Entrance (มี blip label ของตัวเอง `KSC_BLP_TPSE`) และ Skylight (4 จุดบนหลังคา) ชัดเจน
+  ส่วน Loading Bay และ Sewer อนุมานจากตำแหน่ง (ดูคำอธิบายในสคริปต์)
+- ลิงก์ `#show:<หมวด>,<หมวด>` แสดงทุกจุดของหมวดเหล่านั้น (หน้า heist ใช้ในรายการ Scope)
 - เกาะ Cayo Perico เปลี่ยนตามแบบแผนที่ (แบบในเกม/ถนน/Atlas/ดาวเทียม) — สร้างด้วย `tools/build_cayo_styles.py`
 - 🏪 ร้านค้าและจุดสังเกตแบบที่เห็นในเกม: Ammu-Nation, ร้านเสื้อผ้า (รวมร้านหน้ากาก), ร้านตัดผม, ร้านสัก,
   Los Santos Customs, ร้านสะดวกซื้อ — ดึงจาก `shop_controller.c` + `freemode.c` ด้วย `tools/extract_shops.py`
@@ -139,6 +144,8 @@ curl -LO https://raw.githubusercontent.com/Sainan/GTA-V-Decompiled-Scripts/maste
 python3 tools/extract_shops.py shop_controller.c freemode.c data/points.json
 curl -LO https://raw.githubusercontent.com/Sainan/GTA-V-Decompiled-Scripts/master/decompiled_scripts/heist_island_planning.c
 python3 tools/extract_cayo_heist.py heist_island_planning.c data/points.json
+curl -LO https://raw.githubusercontent.com/Sainan/GTA-V-Decompiled-Scripts/master/decompiled_scripts/fm_content_kortz_scoping.c
+python3 tools/extract_kortz_scope.py fm_content_kortz_scoping.c data/points.json
 curl -LO https://raw.githubusercontent.com/DurtyFree/gta-v-data-dumps/master/vehicles.json
 python3 tools/extract_exotic_exports.py freemode.c tuneables_processing.c vehicles.json data/exotic_exports.json data/points.json
 # รูปรถ: ดาวน์โหลด https://raw.githubusercontent.com/citizenfx/fivem-docs/master/static/vehicles/<model>.webp

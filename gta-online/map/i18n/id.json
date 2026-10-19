@@ -200,7 +200,26 @@
   "nav.heistPlan": "Buka perencana heist",
   "nav.heistCayo": "Rencanakan Cayo Perico Heist",
   "credits.heistTiles": "Perencana heist: foto dari atas lokasi heist dipotong dari gambar-gambar ini dan gambar Cayo Perico di bawah.",
-  "credits.heistFivem": "Perencana heist: gambar kendaraan dan ikon radar di panduan pemula."
+  "credits.heistFivem": "Perencana heist: gambar kendaraan dan ikon radar di panduan pemula.",
+  "group.kortz": "Kortz Center Heist",
+  "kortz.STAFF": "Staff Entrance (pintu staf)",
+  "kortz.SKYLIGHT": "Skylight (jendela atap)",
+  "kortz.LOADING": "Loading Bay (area bongkar muat)",
+  "kortz.SEWER": "Sewer (saluran pembuangan)",
+  "kortz.POI1": "#1",
+  "kortz.POI2": "#2",
+  "kortz.POI3": "#3",
+  "nav.heistKortz": "Rencanakan Kortz Center Heist",
+  "kortz.SKYLIGHT1": "Skylight (jendela atap) 1",
+  "kortz.SKYLIGHT2": "Skylight (jendela atap) 2",
+  "kortz.SKYLIGHT3": "Skylight (jendela atap) 3",
+  "kortz.SKYLIGHT4": "Skylight (jendela atap) 4",
+  "kortz.POI21": "#2.1",
+  "kortz.POI22": "#2.2",
+  "kortz.POI23": "#2.3",
+  "kortz.POI31": "#3.1",
+  "kortz.POI32": "#3.2",
+  "kortz.POI33": "#3.3"
  },
  "cats": {
   "action_figures": {
@@ -387,6 +406,16 @@
    "name": "Lukisan",
    "note": "Di dalam kompleks",
    "info": "Tempat lukisan bisa tergantung di dalam kompleks."
+  },
+  "kortz_entry": {
+   "name": "Titik masuk",
+   "note": "Foto saat Scope",
+   "info": "Jalan masuk yang difoto saat Scope Kortz Center. Titik dari misi Scope di game; nama Loading Bay dan Sewer disimpulkan dari posisinya."
+  },
+  "kortz_poi": {
+   "name": "Titik penting",
+   "note": "Foto saat Scope",
+   "info": "Tempat lain di sekitar museum yang harus difoto saat Scope (dari misi Scope di game)."
   }
  }
 }
