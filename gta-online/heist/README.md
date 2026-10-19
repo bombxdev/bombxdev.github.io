@@ -31,6 +31,18 @@
 - `img/place/` ภาพมุมสูง 360×220 ครอปจากภาพแผนที่ของเว็บเอง (`../map/tiles/satellite/7` สำหรับ Los Santos,
   `../map/tiles-cayo/satellite.webp` สำหรับ Cayo Perico) วงแดงที่พิกัดจุดนั้น ชื่อไฟล์ Cayo ตรงกับ id จุดบนแผนที่ (`cayo_infiltration-7` ฯลฯ)
 
+## โหมดแอดมิน: เพิ่มรูปจากในเกม (เฉพาะเจ้าของเว็บ)
+
+ทำงานแบบเดียวกับหน้าแผนที่ (`../map/README.md`) และใช้ token เดียวกัน (เก็บที่ `gtaoadmin.token` ร่วมกัน เข้าสู่ระบบหน้าไหนก็ได้ทั้งสองหน้า)
+
+1. เปิด `https://bombxdev.github.io/gta-online/heist/?admin` → วาง token (Fine-grained, เฉพาะ repo นี้, Contents = Read and write) → เข้าสู่ระบบ
+2. จะมีปุ่ม "📷 Add photo" ที่: ด้านบนของแต่ละ heist (`hero:<heist>`), แต่ละขั้นในกล่อง "ทีละขั้น" (`step:<heist>.<sN>`)
+   และตัวเลือกที่เลือกอยู่ในแต่ละกลุ่ม (`opt:<heist>.<กลุ่ม>.<ค่า>` เช่น `opt:cayo.entry.drain` แสดงเมื่อเลือก Drainage Tunnel)
+3. รูปถูกย่อ (ยาวสุด 1600px, webp) ลบ EXIF แล้ว commit เข้า `photos/` + `data/photos.json` บน master ผ่าน GitHub API
+
+`photos.js` = โค้ดทั้งหมดของส่วนนี้ ข้อความแอดมินใช้คีย์ `hint.*` ชุดเดียวกับหน้าแผนที่ (+ `photo.howTo`)
+รูปที่อัปโหลดเข้า master โดยตรง: ก่อน merge branch อื่นเข้า master ให้ merge master กลับมาก่อน (หรือ merge แบบปกติ ไม่ force) จะได้ไม่ทับรูป
+
 ## หน้าตาและเมนู
 
 ใช้ `../map/style.css` ร่วมกับหน้าแผนที่ (สี, sidebar, แถบ แผนที่ / วางแผนปล้น, เมนูมือถือ) แล้วเพิ่มเฉพาะของหน้านี้ใน `heist.css`

@@ -498,7 +498,7 @@ function renderHero(anim){
   const h = H[cur];
   $('hero').innerHTML = `<div class="poster${anim ? ' in' : ''}">${h.poster()}</div>
   <div class="brief"><h1>${h.name}</h1><p class="tag">${h.tag()}</p>
-  <dl class="facts">${h.facts().map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl><div id="where">${whereHTML()}</div></div>`;
+  <dl class="facts">${h.facts().map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl><div id="where">${whereHTML()}</div>${HeistPhotos.html('hero:' + cur)}</div>`;
 }
 function renderBoard(){
   const h = H[cur], st = S[cur], gs = h.groups(st);
@@ -533,6 +533,8 @@ function groupHTML(g, st){
     b += `<figure class="pick${isPlace ? ' place' : ''}"><img src="${isPlace ? placeSrc(pic.place) : vehSrc(pic)}" alt="${o ? o.l : ''}" loading="lazy">` +
       `<figcaption>${isPlace ? t('g.mapPhoto') + ': ' : ''}${o ? o.l : ''}</figcaption></figure>`;
   }
+  // photos of the selected choice (admin can add one to any named choice)
+  if(g.type === 'chips' && !NO_PHOTO[g.key]) b += HeistPhotos.html('opt:' + cur + '.' + g.key + '.' + st[g.key]);
   const ml = g.map && g.map[st[g.key]] ? ` <a class="maplink" href="${mapHref(g.map[st[g.key]])}" title="${t('where.mapTitle')}">📍 ${t('where.map')}</a>` : '';
   return `<section class="grp${g.wide ? ' wide' : ''}"><h3>${g.label}${ml}</h3>${g.hint ? `<p class="hint">${g.hint}</p>` : ''}${b}</section>`;
 }
@@ -540,7 +542,7 @@ function stepHTML(heist, s){
   const pics = (s.blip ? blip(s.blip) : '') +
     (s.veh ? `<img class="step-veh" src="${vehSrc(s.veh)}" alt="${s.veh}" loading="lazy">` : '') +
     (s.place ? `<img class="step-place" src="${placeSrc(s.place)}" alt="${t('g.mapPhoto')}" loading="lazy">` : '');
-  return `<li><p>${t('g.' + heist + '.' + s.k)}</p>${pics ? `<div class="step-pics">${pics}</div>` : ''}${s.scope ? scopeHTML() : ''}</li>`;
+  return `<li><p>${t('g.' + heist + '.' + s.k)}</p>${pics ? `<div class="step-pics">${pics}</div>` : ''}${HeistPhotos.html('step:' + heist + '.' + s.k)}${s.scope ? scopeHTML() : ''}</li>`;
 }
 function scopeHTML(){
   const all = CAYO_SCOPE.map(c => c[0]).join(',');
@@ -574,6 +576,7 @@ function renderGuide(){
     <h2>${t('side.pick')}</h2><div class="glinks">${ORDER.map(k => `<a href="#${k}" style="--h:${H[k].accent}">${H[k].short}</a>`).join('')}</div>
     <p class="rc-note">${t('g.imgCredit')}</p>`;
 }
+const NO_PHOTO = {players:1, diff:1, first:1, run:1, elite:1, request:1};
 const rv = (g, v) => g.unit ? t(g.unit, {n:v}) : fmt(v);
 
 const SEG = ['#B83227','#D9763A','#C9A227','#8C6D5A','#7E57C2','#5C6BC0'];
@@ -736,6 +739,8 @@ function savedLang(){ try{ return JSON.parse(localStorage.getItem(LANG_KEY)); }c
 function applyLanguage(anim){
   I18N.apply(document);
   $('lang').value = I18N.code;
+  if(!applyLanguage.done){ applyLanguage.done = true; HeistPhotos.init(() => { if(view === 'heist'){ renderHero(false); renderBoard(); } }); }
+  else HeistPhotos.renderAdmin();
   loadMapCats().then(() => { if(view === 'heist' && cur === 'cayo') renderBoard(); });
   if(view === 'guide'){ const term = (fromHash() || '').split(':')[1]; setHeist(cur, false); showGuide(term); }
   else setHeist(cur, anim);
