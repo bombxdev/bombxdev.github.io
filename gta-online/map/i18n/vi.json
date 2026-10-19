@@ -193,7 +193,12 @@
   "gang.title": "Khu vực băng đảng",
   "gang.hint": "Khu vực ước lượng của từng băng (vùng trong GTA V). Không phải vị trí chính xác của Gang Attack.",
   "gang.show": "Xem",
-  "credits.imagesGangs": "Hình thành viên băng đảng (khu vực băng đảng)."
+  "credits.imagesGangs": "Hình thành viên băng đảng (khu vực băng đảng).",
+  "nav.label": "Trang",
+  "nav.map": "Bản đồ",
+  "nav.heist": "Lên kế hoạch phi vụ",
+  "nav.heistPlan": "Mở trang lên kế hoạch phi vụ",
+  "nav.heistCayo": "Lên kế hoạch phi vụ Cayo Perico"
  },
  "cats": {
   "action_figures": {

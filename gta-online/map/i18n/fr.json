@@ -193,7 +193,12 @@
   "gang.title": "Zones des gangs",
   "gang.hint": "Zones approximatives de chaque gang (zones du jeu dans GTA V). Pas les lieux exacts des attaques de gangs.",
   "gang.show": "Voir",
-  "credits.imagesGangs": "Images de membres de gangs (zones des gangs)."
+  "credits.imagesGangs": "Images de membres de gangs (zones des gangs).",
+  "nav.label": "Pages",
+  "nav.map": "Carte",
+  "nav.heist": "Planificateur de braquages",
+  "nav.heistPlan": "Ouvrir le planificateur de braquages",
+  "nav.heistCayo": "Préparer le braquage de Cayo Perico"
  },
  "cats": {
   "action_figures": {

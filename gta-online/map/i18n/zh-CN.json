@@ -193,7 +193,12 @@
   "gang.title": "帮派地盘",
   "gang.hint": "各帮派的大致地盘（GTA V 游戏区域），并非帮派袭击的确切地点。",
   "gang.show": "查看",
-  "credits.imagesGangs": "帮派成员图片（帮派地盘）。"
+  "credits.imagesGangs": "帮派成员图片（帮派地盘）。",
+  "nav.label": "页面",
+  "nav.map": "地图",
+  "nav.heist": "抢劫规划",
+  "nav.heistPlan": "打开抢劫规划",
+  "nav.heistCayo": "规划佩里科岛抢劫"
  },
  "cats": {
   "action_figures": {

@@ -193,7 +193,12 @@
   "gang.title": "Wilayah geng",
   "gang.hint": "Perkiraan wilayah tiap geng (zona game GTA V). Bukan lokasi pasti Gang Attack.",
   "gang.show": "Lihat",
-  "credits.imagesGangs": "Gambar anggota geng (wilayah geng)."
+  "credits.imagesGangs": "Gambar anggota geng (wilayah geng).",
+  "nav.label": "Halaman",
+  "nav.map": "Peta",
+  "nav.heist": "Perencana heist",
+  "nav.heistPlan": "Buka perencana heist",
+  "nav.heistCayo": "Rencanakan Cayo Perico Heist"
  },
  "cats": {
   "action_figures": {

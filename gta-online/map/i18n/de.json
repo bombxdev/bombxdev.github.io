@@ -193,7 +193,12 @@
   "gang.title": "Gang-Gebiete",
   "gang.hint": "Ungefähre Gebiete der Gangs (Spielzonen in GTA V). Nicht die genauen Orte der Gang-Angriffe.",
   "gang.show": "Zeigen",
-  "credits.imagesGangs": "Bilder von Gangmitgliedern (Gang-Gebiete)."
+  "credits.imagesGangs": "Bilder von Gangmitgliedern (Gang-Gebiete).",
+  "nav.label": "Seiten",
+  "nav.map": "Karte",
+  "nav.heist": "Heist-Planer",
+  "nav.heistPlan": "Heist-Planer öffnen",
+  "nav.heistCayo": "Cayo-Perico-Heist planen"
  },
  "cats": {
   "action_figures": {

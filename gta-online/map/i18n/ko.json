@@ -193,7 +193,12 @@
   "gang.title": "갱 구역",
   "gang.hint": "각 갱의 대략적인 구역(GTA V 게임 구역). 갱 습격의 정확한 위치는 아닙니다.",
   "gang.show": "보기",
-  "credits.imagesGangs": "갱 조직원 이미지 (갱 구역)."
+  "credits.imagesGangs": "갱 조직원 이미지 (갱 구역).",
+  "nav.label": "페이지",
+  "nav.map": "지도",
+  "nav.heist": "습격 플래너",
+  "nav.heistPlan": "습격 플래너 열기",
+  "nav.heistCayo": "카요 페리코 습격 계획"
  },
  "cats": {
   "action_figures": {

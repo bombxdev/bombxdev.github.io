@@ -48,6 +48,17 @@ a { color: var(--accent); }
 .backup .toolbar { padding: 6px 8px 4px; }
 .backup .muted { margin: 0 8px 8px; }
 
+/* Map / Heist page switch, shared by gta-online/map and gta-online/heist */
+.site-nav { display: flex; gap: 6px; padding: 10px 16px 2px; }
+.site-nav a {
+  flex: 1; text-align: center; text-decoration: none; color: var(--muted); font-size: 13px;
+  border: 1px solid var(--line); background: var(--panel-2); border-radius: 8px; padding: 6px 8px;
+}
+.site-nav a:hover { color: var(--text); border-color: #3d4452; }
+.site-nav a[aria-current="page"] { color: var(--text); border-color: var(--accent); background: color-mix(in srgb, var(--accent) 22%, var(--panel-2)); }
+.pop-heist { display: block; margin: 6px 0 2px; font-size: 13px; text-decoration: none; }
+.pop-heist:hover { text-decoration: underline; }
+
 .search { position: relative; padding: 8px 16px; }
 .search input {
   width: 100%;

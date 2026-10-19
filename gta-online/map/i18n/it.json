@@ -193,7 +193,12 @@
   "gang.title": "Zone delle gang",
   "gang.hint": "Zone approssimative di ogni gang (zone di gioco in GTA V). Non i punti esatti degli attacchi alle gang.",
   "gang.show": "Mostra",
-  "credits.imagesGangs": "Immagini dei membri delle gang (zone delle gang)."
+  "credits.imagesGangs": "Immagini dei membri delle gang (zone delle gang).",
+  "nav.label": "Pagine",
+  "nav.map": "Mappa",
+  "nav.heist": "Pianificatore colpi",
+  "nav.heistPlan": "Apri il pianificatore colpi",
+  "nav.heistCayo": "Pianifica il colpo a Cayo Perico"
  },
  "cats": {
   "action_figures": {

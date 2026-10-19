@@ -193,7 +193,12 @@
   "gang.title": "Áreas de gangues",
   "gang.hint": "Áreas aproximadas de cada gangue (zonas do jogo em GTA V). Não são os pontos exatos dos Ataques de Gangue.",
   "gang.show": "Ver",
-  "credits.imagesGangs": "Imagens de membros de gangues (áreas de gangues)."
+  "credits.imagesGangs": "Imagens de membros de gangues (áreas de gangues).",
+  "nav.label": "Páginas",
+  "nav.map": "Mapa",
+  "nav.heist": "Planejador de golpes",
+  "nav.heistPlan": "Abrir o planejador de golpes",
+  "nav.heistCayo": "Planejar o Golpe de Cayo Perico"
  },
  "cats": {
   "action_figures": {

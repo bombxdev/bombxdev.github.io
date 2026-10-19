@@ -193,7 +193,12 @@
   "gang.title": "ギャングの縄張り",
   "gang.hint": "各ギャングのおおよその縄張り（GTA V のゲーム内ゾーン）。ギャングアタックの正確な場所ではありません。",
   "gang.show": "表示",
-  "credits.imagesGangs": "ギャングメンバーの画像（縄張り）。"
+  "credits.imagesGangs": "ギャングメンバーの画像（縄張り）。",
+  "nav.label": "ページ",
+  "nav.map": "マップ",
+  "nav.heist": "強盗プランナー",
+  "nav.heistPlan": "強盗プランナーを開く",
+  "nav.heistCayo": "カヨ・ペリコ強盗を計画"
  },
  "cats": {
   "action_figures": {

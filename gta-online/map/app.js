@@ -380,6 +380,7 @@
       (item.ghost ? '<div class="pop-rw">' + ghostTimingHtml(item.ghost) + '</div>' : '') +
       (rewardHtml(cat) ? '<div class="pop-rw">' + rewardHtml(cat) + '</div>' : '') +
       (POPUP_EXTRA[item.cat] ? POPUP_EXTRA[item.cat](item) : '') +
+      (cat.group === 'cayo' ? '<a class="pop-heist" href="../heist/#cayo">💰 ' + esc(t('nav.heistCayo')) + '</a>' : '') +
       POPUP_ALL.map(function (fn) { return fn(item); }).join('') +
       whereHtml(item) +
       '<div class="pop-mini" data-mini="' + idOf(item) + '"></div>' +
@@ -683,10 +684,13 @@
     if (isMobile()) setSidebar(true);
   }
 
-  function gotoCoord(x, y) {
+  // label: optional place name (from a #@x,y,label link, e.g. the heist planner).
+  function gotoCoord(x, y, label) {
     tempLayer.clearLayers();
     var m = L.marker([y, x]).addTo(tempLayer);
-    m.bindPopup('<div class="pop"><h3>📍 ' + esc(t('pop.coords')) + '</h3><code>' + coordText(x, y) + '</code></div>').openPopup();
+    m.bindPopup('<div class="pop"><h3>📍 ' + esc(label || t('pop.coords')) + '</h3>' +
+      (label ? '<div class="sub">' + esc(zoneNameAt(x, y)) + '</div>' : '') + '<code>' + coordText(x, y) + '</code>' +
+      (label ? '<a class="pop-heist" href="../heist/">💰 ' + esc(t('nav.heistPlan')) + '</a>' : '') + '</div>').openPopup();
     map.flyTo([y, x], 6, { duration: 0.6 });
   }
 
@@ -816,6 +820,13 @@
   function openFromHash() {
     var id = decodeURIComponent(location.hash.slice(1));
     if (!id) return;
+    // #@x,y[,label]: a spot that is not a map point (heist planner links)
+    var at = /^@(-?[\d.]+),(-?[\d.]+)(?:,(.*))?$/.exec(id);
+    if (at) {
+      gotoCoord(Number(at[1]), Number(at[2]), (at[3] || '').slice(0, 80));
+      if (isMobile()) setSidebar(false);
+      return;
+    }
     var item = state.items.find(function (it) { return idOf(it) === id; });
     if (item) focusItem(item);
   }

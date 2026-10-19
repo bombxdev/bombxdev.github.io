@@ -237,7 +237,12 @@
   "gang.title": "ถิ่นแก๊ง",
   "gang.hint": "พื้นที่โดยประมาณที่แต่ละแก๊งอยู่ (ตามโซนในเกม GTA V) ไม่ใช่จุด Gang Attack แบบเป๊ะ ๆ",
   "gang.show": "ไปดู",
-  "credits.imagesGangs": "รูปสมาชิกแก๊ง (ถิ่นแก๊ง)"
+  "credits.imagesGangs": "รูปสมาชิกแก๊ง (ถิ่นแก๊ง)",
+  "nav.label": "หน้า",
+  "nav.map": "แผนที่",
+  "nav.heist": "วางแผนปล้น",
+  "nav.heistPlan": "เปิดหน้าวางแผนปล้น",
+  "nav.heistCayo": "วางแผนปล้น Cayo Perico"
  },
  "cats": {
   "action_figures": {

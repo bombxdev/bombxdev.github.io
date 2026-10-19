@@ -237,7 +237,12 @@
   "gang.title": "Gang areas",
   "gang.hint": "Approximate gang areas (game zones where each gang hangs out in GTA V). Not exact Gang Attack spots.",
   "gang.show": "Show",
-  "credits.imagesGangs": "Gang member pictures (gang areas)."
+  "credits.imagesGangs": "Gang member pictures (gang areas).",
+  "nav.label": "Pages",
+  "nav.map": "Map",
+  "nav.heist": "Heist planner",
+  "nav.heistPlan": "Open the heist planner",
+  "nav.heistCayo": "Plan the Cayo Perico Heist"
  },
  "cats": {
   "action_figures": {

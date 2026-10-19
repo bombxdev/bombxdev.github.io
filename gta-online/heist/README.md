@@ -1,0 +1,25 @@
+# GTA Online Heist Planner
+
+หน้าวางแผน Heist ใช้งานที่ `https://bombxdev.github.io/gta-online/heist/` (ลิงก์ตรงไปแต่ละ heist: `#kortz`, `#cayo`, `#casino`, `#doom`, `#og`)
+
+- 5 heist: Kortz Center, Cayo Perico, Diamond Casino, Doomsday, Original Heists พร้อมโปสเตอร์ SVG ที่วาดใหม่
+- บอร์ดเลือก setup แบบในเกม คำนวณเงินตามความยาก/จำนวนผู้เล่น/ของที่ปล้น แจกแจง % ที่ถูกหัก ตั้ง cut และโค้ช "พี่บอส"
+- ตัวเลขอิง Title Update 1.73 (ก.ค. 2026) — ข้อมูลทั้งหมดอยู่ใน `heist.js` (`CAYO_PRIM`, `CASINO_T`, `KORTZ_P`, `DOOM`, `OG` ฯลฯ)
+- การตั้งค่าเก็บใน localStorage (`gtaoheist.board`)
+
+## หน้าตาและเมนู
+
+ใช้ `../map/style.css` ร่วมกับหน้าแผนที่ (สี, sidebar, แถบ แผนที่ / วางแผนปล้น, เมนูมือถือ) แล้วเพิ่มเฉพาะของหน้านี้ใน `heist.css`
+Content-Security-Policy เหมือนหน้าแผนที่ จึงไม่มี inline script และไม่โหลดฟอนต์จากเว็บอื่น
+
+## ลิงก์ไปแผนที่
+
+- Cayo Perico: จุดขึ้นเกาะ / ทางเข้าคฤหาสน์ / จุดหนี ลิงก์ไปจุดจริงบนแผนที่ (`#cayo_infiltration-n`, `#cayo_entrances-n`, `#cayo_escape-n`)
+  ซึ่งดึงจากกระดานวางแผนในเกม (ดู `../map/tools/extract_cayo_heist.py`) — HALO Jump ไม่มีจุดตายตัวจึงไม่มีลิงก์
+- สถานที่อื่น (Kortz Center, Diamond Casino, ธนาคาร Fleeca/Pacific Standard, เรือนจำ, Humane Labs) ใช้ `#@x,y,ชื่อ`
+  พิกัดเกมตรวจกับภาพดาวเทียมของแผนที่แล้ว ลิงก์ไปที่ตัวอาคาร (ทางเข้าย่อยของ Kortz/Casino ยังไม่มีพิกัด)
+- Doomsday เริ่มที่ Facility ของผู้เล่นเอง และ Series A ไม่มีจุดเดียว จึงไม่มีลิงก์
+
+## ก่อน deploy ทุกครั้ง
+
+เปลี่ยน `data-app-version` และ `?v=` ใน `index.html` ให้ตรงกับหน้าแผนที่ (เพราะใช้ `../map/style.css` ร่วมกัน)
