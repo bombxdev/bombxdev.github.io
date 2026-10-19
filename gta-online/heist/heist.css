@@ -210,3 +210,11 @@ select { font: inherit; }
 .pick figcaption { font-size: 12px; color: var(--muted); }
 .where-img { display: block; margin-bottom: 8px; width: max-content; max-width: 100%; }
 .where-img img { display: block; width: 260px; max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--line); }
+.scope { margin-top: 10px; background: var(--surface2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+.scope .hint { margin: 4px 0 8px; }
+.scope-img img { display: block; width: 100%; max-width: 520px; height: auto; border-radius: 8px; border: 1px solid var(--line); }
+.scope-list { list-style: none; margin: 10px 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 4px 12px; font-size: 13px; }
+.scope-list a { display: flex; align-items: center; gap: 6px; text-decoration: none; color: var(--text); padding: 2px 0; }
+.scope-list a:hover { color: var(--accent); }
+.scope-list i { width: 10px; height: 10px; border-radius: 50%; flex: none; border: 1px solid #fff; }
+.scope-list .muted { font-size: 12px; }
