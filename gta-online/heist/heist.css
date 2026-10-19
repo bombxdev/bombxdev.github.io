@@ -218,3 +218,34 @@ select { font: inherit; }
 .scope-list a:hover { color: var(--accent); }
 .scope-list i { width: 10px; height: 10px; border-radius: 50%; flex: none; border: 1px solid #fff; }
 .scope-list .muted { font-size: 12px; }
+
+/* ---------- share a plan ---------- */
+.share-btn { margin-top: 12px; background: var(--heist); color: #fff; font-size: 16px; }
+.share-modal { position: fixed; inset: 0; z-index: 3000; background: rgba(0, 0, 0, .7); display: flex; align-items: flex-start; justify-content: center; overflow-y: auto; padding: 24px 12px; }
+.share-modal[hidden] { display: none; }
+.share-box { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px 16px; width: min(560px, 100%); }
+.share-top { display: flex; align-items: center; justify-content: space-between; }
+.share-top h2 { margin: 0; font-size: 18px; }
+.share-note { display: grid; gap: 4px; font-size: 13px; color: var(--muted); margin: 6px 0 10px; }
+.share-note input { padding: 8px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel-2); color: var(--text); font-size: 14px; }
+.share-btns { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.share-btns .chip { font-size: 14px; padding: 7px 14px; }
+.share-img { display: block; width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--line); }
+.shared-plan { margin: 8px 0 16px; background: var(--surface); border: 2px solid var(--ok); border-radius: 12px; padding: 12px 14px 14px; }
+.shared-plan[hidden] { display: none; }
+.shared-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; font-size: 16px; }
+.shared-plan .btn { margin-top: 12px; background: var(--ok); color: #0b0d11; }
+.plan-card { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--bg); }
+.plan-head { background: var(--h); color: #fff; padding: 10px 14px; display: grid; gap: 2px; }
+.plan-head b { font-size: 20px; font-style: italic; font-weight: 900; }
+.plan-head span { font-size: 13px; opacity: .9; }
+.plan-note { margin: 10px 14px 0; padding: 8px 10px; background: var(--panel-2); border-radius: 8px; font-size: 14px; }
+.plan-rows { margin: 4px 14px 10px; display: grid; gap: 2px; }
+.plan-rows .plan-stage { margin-top: 10px; font-size: 11px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; color: var(--h); }
+.plan-rows div { display: grid; grid-template-columns: minmax(120px, 38%) 1fr; gap: 10px; font-size: 14px; padding: 2px 0; }
+.plan-rows dt { color: var(--muted); }
+.plan-rows dd { margin: 0; font-weight: 600; }
+.plan-pay { margin: 0 14px 14px; padding: 10px 12px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; }
+.plan-pay ul { list-style: none; margin: 6px 0 0; padding: 0; display: grid; gap: 4px; }
+.plan-pay li { display: flex; justify-content: space-between; gap: 10px; font-size: 14px; }
+.plan-pay li b { color: var(--ok); font-variant-numeric: tabular-nums; }

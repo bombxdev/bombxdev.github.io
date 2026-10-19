@@ -746,8 +746,8 @@ function savedLang(){ try{ return JSON.parse(localStorage.getItem(LANG_KEY)); }c
 function applyLanguage(anim){
   I18N.apply(document);
   $('lang').value = I18N.code;
-  if(!applyLanguage.done){ applyLanguage.done = true; HeistPhotos.init(() => { if(view === 'heist'){ renderHero(false); renderBoard(); } }); }
-  else HeistPhotos.renderAdmin();
+  if(!applyLanguage.done){ applyLanguage.done = true; HeistPhotos.init(() => { if(view === 'heist'){ renderHero(false); renderBoard(); } }); SharePlan.init(); }
+  else { HeistPhotos.renderAdmin(); SharePlan.renderShared(); }
   loadMapCats().then(() => { if(view === 'heist' && (cur === 'cayo' || cur === 'kortz')) renderBoard(); });
   if(view === 'guide'){ const term = (fromHash() || '').split(':')[1]; setHeist(cur, false); showGuide(term); }
   else setHeist(cur, anim);
