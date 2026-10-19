@@ -313,8 +313,8 @@ casino:{
       {key:'approach', label:t('casino.approach'), type:'chips', wide:true, options:[
         {v:'ss', l:'Silent & Sneaky', d:t('casino.app.ss')}, {v:'bigcon', l:'The Big Con', d:t('casino.app.bigcon')}, {v:'aggr', l:'Aggressive', d:t('casino.app.aggr')}]},
       {stage:t('stage.crew'), key:'hacker', label:t('casino.hacker'), hint:t('casino.hackerHint'), type:'chips', wide:true, options:HCK.map(([v, l, c, tm]) => ({v, l, d:`${c}% • ${tm}`}))},
-      {key:'gunman', label:t('casino.gunman'), type:'chips', options:GUN.map(([v, l, c]) => ({v, l, d:c + '%'}))},
-      {key:'driver', label:t('casino.driver'), type:'chips', options:DRV.map(([v, l, c]) => ({v, l, d:c + '%'}))},
+      {key:'gunman', label:t('casino.gunman'), hint:t('casino.gunmanHint'), type:'chips', options:GUN.map(([v, l, c]) => ({v, l, d:c + '%'}))},
+      {key:'driver', label:t('casino.driver'), hint:t('casino.driverHint'), type:'chips', options:DRV.map(([v, l, c]) => ({v, l, d:c + '%'}))},
       {stage:t('stage.infil'), key:'entry', label:t('grp.entrance'), hint:t('casino.entryHint'), type:'chips', options:Object.entries(CASINO_ENTRY).map(([v, l]) => ({v, l, dis:!ok.includes(v)}))}
     ];
     if(st.approach === 'bigcon') g.push({key:'disguise', label:t('casino.disguise'), type:'chips', options:[
