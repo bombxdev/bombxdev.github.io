@@ -637,7 +637,7 @@ function renderSplit(res){
 }
 function renderCoach(){
   const h = H[cur], st = S[cur];
-  const face = `<svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="10" r="6" fill="#fff"/><rect x="6.5" y="8" width="13" height="3.4" rx="1.6" fill="#18212D"/><path d="M3 25c1-6 5.5-8.5 10-8.5S22 19 23 25z" fill="#fff"/></svg>`;
+  const face = '<span aria-hidden="true">💡</span>';
   // coachMsg is kept as a function so it follows a language switch
   $('coach').innerHTML = `<div class="who"><div class="av">${face}</div><div><b>${t('coach.name')}</b><small>${t('coach.sub', {heist:h.short})}</small></div></div>
   ${coachMsg ? `<p class="said">${coachMsg()}</p>` : ''}

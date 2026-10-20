@@ -3,7 +3,7 @@
 หน้าวางแผน Heist ใช้งานที่ `https://bombxdev.github.io/gta-online/heist/` (ลิงก์ตรงไปแต่ละ heist: `#kortz`, `#cayo`, `#casino`, `#doom`, `#og`)
 
 - 5 heist: Kortz Center, Cayo Perico, Diamond Casino, Doomsday, Original Heists พร้อมโปสเตอร์ SVG ที่วาดใหม่
-- บอร์ดเลือก setup แบบในเกม คำนวณเงินตามความยาก/จำนวนผู้เล่น/ของที่ปล้น แจกแจง % ที่ถูกหัก ตั้ง cut และโค้ช "พี่บอส"
+- บอร์ดเลือก setup แบบในเกม คำนวณเงินตามความยาก/จำนวนผู้เล่น/ของที่ปล้น แจกแจง % ที่ถูกหัก ตั้ง cut และกล่องคำแนะนำพร้อมปุ่มใช้ setup ที่แนะนำ
 - ตัวเลขอิง Title Update 1.73 (ก.ค. 2026) — ข้อมูลทั้งหมดอยู่ใน `heist.js` (`CAYO_PRIM`, `CASINO_T`, `KORTZ_P`, `DOOM`, `OG` ฯลฯ)
 - การตั้งค่าเก็บใน localStorage (`gtaoheist.board`)
 

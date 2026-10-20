@@ -131,7 +131,7 @@ select { font: inherit; }
 .coach { margin-top: 14px; background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--heist); border-radius: 10px; padding: 14px 16px; }
 .who { display: flex; gap: 11px; align-items: center; }
 .av { width: 42px; height: 42px; border-radius: 50%; background: var(--heist); display: grid; place-items: center; flex: none; }
-.av svg { width: 26px; height: 26px; }
+.av span { font-size: 22px; line-height: 1; }
 .who b { display: block; font-weight: 600; line-height: 1.2; }
 .who small { color: var(--muted); font-size: 12px; }
 .coach ul { margin: 12px 0; padding-left: 18px; font-size: 14px; }
