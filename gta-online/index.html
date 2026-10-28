@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" data-app-version="20261028-1">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>GTA Online Toolkit</title>
+  <meta name="description" content="Fan-made GTA Online tools: searchable map with daily locations, heist planner with payout calculator and a beginner guide. No ads, no sign-up." data-i18n-attr="content:p.metaDesc">
+  <meta name="theme-color" content="#0d0f1a">
+  <!-- Same policy as the other pages: only this site's own scripts. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%86%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="portal.css?v=20261028-1">
+</head>
+<body>
+  <div id="boot" class="boot" aria-hidden="true" hidden>
+    <div class="boot-logo"><span class="boot-mark">◈</span> GTAO<b>OS</b></div>
+    <div class="boot-bar"><i></i></div>
+    <div class="boot-msg" data-i18n="p.boot"></div>
+  </div>
+
+  <header class="menubar">
+    <button type="button" id="startBtn" class="mb-start" aria-haspopup="true" aria-expanded="false"><span class="boot-mark">◈</span> GTAO<b>OS</b></button>
+    <span id="activeApp" class="mb-app" data-i18n="p.desktop"></span>
+    <span class="mb-spacer"></span>
+    <span id="gameClock" class="mb-item" title=""></span>
+    <span id="resetIn" class="mb-item mb-hide-s"></span>
+    <label class="mb-item mb-lang"><span aria-hidden="true">🌐</span>
+      <select id="lang" data-i18n-attr="aria-label:p.language"></select></label>
+    <span id="realClock" class="mb-item mb-clock"></span>
+  </header>
+
+  <main id="desktop" class="desktop">
+    <svg class="skyline" viewBox="0 0 1600 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <defs><linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a1030"/><stop offset="1" stop-color="#07070f"/></linearGradient></defs>
+      <path fill="url(#sk)" d="M0 300V210h40v-30h30v40h25v-70h18v-25h14v25h20v80h30v-55h45v-40h12v-20h10v20h12v40h20v95h35v-120h30v-35h8v35h30v120h25v-60h40v60h20v-150l15-20 15 20v150h30v-90h45v90h25v-45h30v-25h40v25h20v45h35v-130h20v-30h6v30h20v130h40v-70h28v-30h40v30h20v70h30v-110h50v110h25v-55h35v55h30v-160l20-28 20 28v160h35v-80h45v80h30v-50h40v-30h25v30h20v50h40v-100h30v-40h10v40h25v100h30v-60h50v60h40V300z"/>
+      <g fill="#ffcf73" opacity=".55"><rect x="220" y="215" width="4" height="5"/><rect x="232" y="235" width="4" height="5"/><rect x="420" y="190" width="4" height="5"/><rect x="430" y="210" width="4" height="5"/><rect x="560" y="160" width="4" height="5"/><rect x="572" y="200" width="4" height="5"/><rect x="860" y="190" width="4" height="5"/><rect x="872" y="230" width="4" height="5"/><rect x="1150" y="170" width="4" height="5"/><rect x="1162" y="210" width="4" height="5"/><rect x="1330" y="215" width="4" height="5"/><rect x="1440" y="185" width="4" height="5"/></g>
+    </svg>
+
+    <nav id="icons" class="icons" data-i18n-attr="aria-label:p.apps"></nav>
+    <aside id="widgets" class="widgets" data-i18n-attr="aria-label:p.widgets"></aside>
+    <div id="windows"></div>
+  </main>
+
+  <div id="launcher" class="launcher" hidden>
+    <input id="launchSearch" type="search" autocomplete="off" data-i18n-attr="placeholder:p.search">
+    <div id="launchList" class="launch-list"></div>
+    <p class="launch-foot" data-i18n="p.legal"></p>
+  </div>
+
+  <nav id="dock" class="dock" data-i18n-attr="aria-label:p.dock"></nav>
+
+  <script src="map/i18n.js?v=20261028-1"></script>
+  <script src="map/daily.js?v=20261028-1"></script>
+  <script src="portal.js?v=20261028-1"></script>
+</body>
+</html>

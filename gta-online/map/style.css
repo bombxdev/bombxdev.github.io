@@ -54,6 +54,7 @@ a { color: var(--accent); }
   flex: 1; text-align: center; text-decoration: none; color: var(--muted); font-size: 13px;
   border: 1px solid var(--line); background: var(--panel-2); border-radius: 8px; padding: 6px 8px;
 }
+.site-nav a.home { flex: 0 0 auto; padding: 6px 10px; }
 .site-nav a:hover { color: var(--text); border-color: #3d4452; }
 .site-nav a[aria-current="page"] { color: var(--text); border-color: var(--accent); background: color-mix(in srgb, var(--accent) 22%, var(--panel-2)); }
 .pop-heist { display: block; margin: 6px 0 2px; font-size: 13px; text-decoration: none; }
