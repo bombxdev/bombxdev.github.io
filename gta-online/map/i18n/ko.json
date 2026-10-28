@@ -219,7 +219,8 @@
   "kortz.POI23": "#2.3",
   "kortz.POI31": "#3.1",
   "kortz.POI32": "#3.2",
-  "kortz.POI33": "#3.3"
+  "kortz.POI33": "#3.3",
+  "nav.home": "홈"
  },
  "cats": {
   "action_figures": {
