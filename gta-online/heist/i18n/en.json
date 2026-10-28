@@ -472,6 +472,27 @@
   "share.planTitle": "Heist plan",
   "share.made": "Made with the GTA Online Heist Planner",
   "share.dismiss": "Dismiss",
-  "nav.home": "Home"
+  "nav.home": "Home",
+  "g.cas.hint": "There are no map spots for the Casino: the game's scripts don't say which position is which access point, so here is a checklist instead. Everything is photographed with the phone camera, from outside the casino and from its roof.",
+  "g.cas.reqTitle": "Required – Vault Contents:",
+  "g.cas.req": "the scope mission on the Setup board. Follow Lester's instructions inside the casino; it shows what's in the vault (cash, artwork, gold or diamonds).",
+  "g.cas.accTitle": "Access points (11):",
+  "g.cas.acc": "every one you photograph can be picked as an entrance or exit on the Finale board.",
+  "g.cas.ground": "Ground level",
+  "g.cas.under": "Underground",
+  "g.cas.roof": "Roof (easiest from a helicopter)",
+  "g.cas.byApproach": "Which approach can use which entrance (the same as the board above):",
+  "g.cas.poiTitle": "Points of interest:",
+  "g.cas.poi": "extra photos around the casino for Lester's board. They're optional – you don't need them to start the heist.",
+  "g.cas.tip1": "Photograph as many access points as you can in one trip – more entrances and exits to choose from on the Finale board.",
+  "g.cas.tip2": "The roof access points are hard to reach on foot – fly over the casino and take the photos from the air.",
+  "g.cas.tip3": "Do the scope in an invite-only session so nobody attacks you while you hold the camera.",
+  "g.cas.prepTitle": "Optional preps that make the Finale easier",
+  "g.cas.prepHint": "Which ones you can do depends on the approach – the Prep board shows them.",
+  "g.cas.prep.patrol": "shows where the guards walk inside.",
+  "g.cas.prep.duggan": "destroy the shipments to weaken the casino guards.",
+  "g.cas.prep.pass": "a security keycard that opens more doors without hacking.",
+  "g.cas.prep.emp": "(Silent & Sneaky) cuts the power for a while so cameras and lasers go off.",
+  "g.cas.prep.suits": "(Silent & Sneaky) outfits that make you harder to spot."
  }
 }
