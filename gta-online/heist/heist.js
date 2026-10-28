@@ -187,7 +187,7 @@ const GUIDE = {
   kortz:{steps:[{k:'s1'}, {k:'s2', scope:'kortz'}, {k:'s3'}, {k:'s4', place:'kortz'}], note:'g.kortz.note', words:['scope','prep','finale','host','elite','firstweek','detected']},
   cayo:{steps:[{k:'s1', veh:'kosatka', blip:'radar_sub2'}, {k:'s2'}, {k:'s3', blip:'radar_heist_island', scope:'cayo'}, {k:'s4'}, {k:'s5'}, {k:'s6'}],
     words:['scope','prep','finale','primary','secondary','cut','elite','hard','cooldown','fencing','detected']},
-  casino:{steps:[{k:'s1', blip:'radar_arcade'}, {k:'s2'}, {k:'s3', blip:'radar_casino', place:'casino'}, {k:'s4'}, {k:'s5'}],
+  casino:{steps:[{k:'s1', blip:'radar_arcade'}, {k:'s2'}, {k:'s3', blip:'radar_casino', place:'casino', scope:'casino'}, {k:'s4', preps:'casino'}, {k:'s5'}],
     words:['scope','approach','prep','finale','cut','elite','firstweek','detected','getaway','buyer']},
   doom:{steps:[{k:'s1'}, {k:'s2'}, {k:'s3'}, {k:'s4'}], words:['setup','prep','finale','host','cut','elite','hard','firstweek','lives','cmm']},
   og:{steps:[{k:'s1', blip:'radar_heist'}, {k:'s2'}, {k:'s3'}, {k:'s4'}], words:['setup','finale','host','role','cut','elite','hard','firstweek','lives','cmm']}
@@ -545,9 +545,33 @@ function stepHTML(heist, s){
   const pics = (s.blip ? blip(s.blip) : '') +
     (s.veh ? `<img class="step-veh" src="${vehSrc(s.veh)}" alt="${s.veh}" loading="lazy">` : '') +
     (s.place ? `<img class="step-place" src="${placeSrc(s.place)}" alt="${t('g.mapPhoto')}" loading="lazy">` : '');
-  return `<li><p>${t('g.' + heist + '.' + s.k)}</p>${pics ? `<div class="step-pics">${pics}</div>` : ''}${HeistPhotos.html('step:' + heist + '.' + s.k)}${s.scope ? scopeHTML(s.scope) : ''}</li>`;
+  return `<li><p>${t('g.' + heist + '.' + s.k)}</p>${pics ? `<div class="step-pics">${pics}</div>` : ''}${HeistPhotos.html('step:' + heist + '.' + s.k)}${s.scope ? scopeHTML(s.scope) : ''}${s.preps ? prepsHTML(s.preps) : ''}</li>`;
+}
+// Diamond Casino: no map spots (the scripts don't say which position is which
+// access point), so a checklist: the 11 access points, which approach can use
+// which entrance (from CASINO_BY), and the optional preps worth doing.
+const CASINO_ACCESS = [['🚪', 'g.cas.ground', ['Main Door', 'Staff Lobby', 'Waste Disposal']], ['🕳', 'g.cas.under', ['Sewer', 'Security Tunnel']],
+  ['🏢', 'g.cas.roof', ['Roof Terrace ×4', 'Helipad ×2']]];
+function casinoScopeHTML(){
+  const app = {ss:'Silent & Sneaky', bigcon:'The Big Con', aggr:'Aggressive'};
+  return `<div class="scope"><b>📷 ${t('g.scopeTitle')}</b><p class="hint">${t('g.cas.hint')}</p>
+    <ol class="cas-list">
+      <li><b>${t('g.cas.reqTitle')}</b> ${t('g.cas.req')}</li>
+      <li><b>${t('g.cas.accTitle')}</b> ${t('g.cas.acc')}
+        <ul>${CASINO_ACCESS.map(([ic, k, names]) => `<li>${ic} <b>${t(k)}:</b> ${names.map(n => n.replace(/ ×\d$/, '') !== n ? n : n + (gl(n) ? ` <span class="muted">(${gl(n)})</span>` : '')).join(', ')}</li>`).join('')}</ul>
+        <p class="hint">${t('g.cas.byApproach')}</p>
+        <ul>${Object.entries(CASINO_BY).map(([a, list]) => `<li><b>${app[a]}:</b> ${list.map(e => CASINO_ENTRY[e]).join(', ')}</li>`).join('')}</ul></li>
+      <li><b>${t('g.cas.poiTitle')}</b> ${t('g.cas.poi')}</li>
+    </ol>
+    <ul class="tips">${[1, 2, 3].map(i => `<li>${t('g.cas.tip' + i)}</li>`).join('')}</ul></div>`;
+}
+const CASINO_PREPS = [['Patrol Routes', 'g.cas.prep.patrol'], ['Duggan Shipments', 'g.cas.prep.duggan'], ['Security Pass', 'g.cas.prep.pass'], ['EMP', 'g.cas.prep.emp'], ['Infiltration Suits', 'g.cas.prep.suits']];
+function prepsHTML(){
+  return `<div class="scope"><b>🧰 ${t('g.cas.prepTitle')}</b><p class="hint">${t('g.cas.prepHint')}</p>
+    <ul class="cas-preps">${CASINO_PREPS.map(([n, k]) => `<li><b>${n}</b> – ${t(k)}</li>`).join('')}</ul></div>`;
 }
 function scopeHTML(kind){
+  if(kind === 'casino') return casinoScopeHTML();
   // rows: [label, map hash, colour, blip, count]
   const rows = kind === 'cayo' ? CAYO_SCOPE.map(([k, b, col, n]) => [catName(k), 'show:' + k, col, b, n]) : KORTZ_SCOPE.map(([name, hash, col, b, n]) =>
     [name === 'poi' ? catName('kortz_poi') : name + (gl(name) ? ` <span class="muted">${gl(name)}</span>` : ''), hash, col, b, n]);
