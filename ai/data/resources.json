@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-28T09:50:06.869Z",
+  "updated": "2026-10-28T09:52:20.119Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -46,7 +46,16 @@
         "id": "mvrxo84532p4",
         "name": "Agent Management",
         "folders": [],
-        "links": []
+        "links": [
+          {
+            "url": "https://github.com/stablyai/orca",
+            "title": "Orca",
+            "remark": "🐳 Orca เป็นเครื่องมือ Open Source สำหรับควบคุม AI Coding Agents หลายตัว เช่น Claude Code, Codex และ OMP จากหน้าจอเดียว\n🚀 จุดเด่น: ให้ AI หลายตัวพัฒนาโค้ดพร้อมกัน แยก Git Worktree ไม่ให้แก้ไฟล์ทับกัน พร้อมระบบ Code Review และปรับ UI ผ่าน Design Mode\n✅ ประโยชน์: ลดเวลาพัฒนา จัดการทีม AI ได้สะดวกขึ้น เปรียบเทียบผลงาน และรวมโค้ดจากหลาย Agent เป็นโปรเจกต์เดียว",
+            "image": "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fgithub.com%2Fstablyai%2Forca?w=640&h=360",
+            "id": "mvrxr2xje0pc",
+            "added": "2026-10-28T09:52:20.119Z"
+          }
+        ]
       }
     ],
     "links": []
