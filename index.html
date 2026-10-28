@@ -1,7 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BoMBx Portal</title>
+  <meta name="description" content="Portal รวมลิงก์ไปยังหน้าต่างๆ ของ BoMBx">
+  <meta name="theme-color" content="#111318">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9A%80%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="portal.css">
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm BoMBx using GitHub Pages.</p>
+  <main class="wrap">
+    <header>
+      <h1>BoMBx Portal</h1>
+      <p class="muted">รวมหน้าเว็บทั้งหมดที่สร้างไว้ที่เดียว</p>
+    </header>
+
+    <section class="grid">
+      <a class="card" href="ai/">
+        <span class="ico" aria-hidden="true">🤖</span>
+        <h2>AI Notes</h2>
+        <p>สมุดลิงก์ศึกษา AI — repo/บทความน่าสนใจ แยกหมวดเป็นโฟลเดอร์ พร้อม thumbnail และ remark</p>
+        <span class="path">/ai/</span>
+      </a>
+      <a class="card" href="gta-online/map/">
+        <span class="ico" aria-hidden="true">🗺️</span>
+        <h2>GTA Online Map</h2>
+        <p>แผนที่ GTA Online ค้นหาได้ พร้อม collectibles และตำแหน่งรายวัน</p>
+        <span class="path">/gta-online/map/</span>
+      </a>
+      <a class="card" href="gta-online/heist/">
+        <span class="ico" aria-hidden="true">💰</span>
+        <h2>GTA Online Heist Planner</h2>
+        <p>วางแผนปล้นและตัวช่วยแนะนำ</p>
+        <span class="path">/gta-online/heist/</span>
+      </a>
+    </section>
+
+    <footer class="muted">I'm BoMBx using GitHub Pages.</footer>
+  </main>
 </body>
 </html>
