@@ -1,0 +1,48 @@
+{
+  "updated": "2026-10-28T00:00:00.000Z",
+  "root": {
+    "id": "root",
+    "name": "AI",
+    "folders": [
+      {
+        "id": "agents",
+        "name": "Agents & Coding",
+        "folders": [],
+        "links": [
+          {
+            "id": "claude-code",
+            "url": "https://github.com/anthropics/claude-code",
+            "title": "anthropics/claude-code",
+            "remark": "ตัวอย่าง: Claude Code CLI — agent สำหรับเขียนโค้ดในเทอร์มินัล",
+            "image": "",
+            "added": "2026-10-28T00:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "id": "tools",
+        "name": "Tools & Infra",
+        "folders": [],
+        "links": [
+          {
+            "id": "mcp-servers",
+            "url": "https://github.com/modelcontextprotocol/servers",
+            "title": "modelcontextprotocol/servers",
+            "remark": "ตัวอย่าง: รวม MCP server สำหรับต่อ tool/ข้อมูลเข้ากับ LLM",
+            "image": "",
+            "added": "2026-10-28T00:00:00.000Z"
+          },
+          {
+            "id": "ollama",
+            "url": "https://github.com/ollama/ollama",
+            "title": "ollama/ollama",
+            "remark": "ตัวอย่าง: รัน LLM บนเครื่องตัวเอง",
+            "image": "",
+            "added": "2026-10-28T00:00:00.000Z"
+          }
+        ]
+      }
+    ],
+    "links": []
+  }
+}

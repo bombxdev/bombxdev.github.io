@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Notes</title>
+  <meta name="description" content="สมุดลิงก์ศึกษา AI: repo และบทความน่าสนใจ แยกหมวดเป็นโฟลเดอร์">
+  <meta name="theme-color" content="#111318">
+  <!-- Only this site's own scripts may run (no inline/third-party JS), so an
+       injected script cannot reach the admin token. Thumbnails may come from any
+       https host; api.microlink.io is only used by the admin to fill in title/image. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com https://api.microlink.io; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A4%96%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="ai.css?v=1">
+</head>
+<body>
+  <main class="wrap">
+    <header class="top">
+      <a class="home" href="../">← Portal</a>
+      <h1>🤖 AI Notes</h1>
+      <input id="search" type="search" placeholder="ค้นหาลิงก์ / remark…" autocomplete="off" spellcheck="false" aria-label="ค้นหา">
+    </header>
+
+    <nav id="crumbs" class="crumbs" aria-label="ตำแหน่งโฟลเดอร์"></nav>
+    <div id="adminBar" class="admin-bar" hidden></div>
+    <div id="view"></div>
+
+    <section id="adminBox" class="admin-box" hidden></section>
+    <footer class="muted">ทุกคนดูได้ · แก้ไขได้เฉพาะเจ้าของ (ล็อกอินด้วย GitHub token)</footer>
+  </main>
+
+  <dialog id="dlg"></dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <script src="ai.js?v=1"></script>
+</body>
+</html>
