@@ -1,9 +1,9 @@
 {
  "source": "https://api.rdo.gg/tunables/gta/pcros/",
- "tunables_updated": 1792659663,
+ "tunables_updated": 1793268013,
  "values": {
   "VC_PEYOTE_ENABLE": true,
   "GHOSTS_SET_2026": true
  },
- "fetched_at": "2026-10-22T12:06:26.839Z"
+ "fetched_at": "2026-10-29T13:21:02.377Z"
 }
