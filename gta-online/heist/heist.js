@@ -511,7 +511,7 @@ function renderBoard(){
     html += groupHTML(g, st);
   });
   if(open) html += '</div>';
-  $('board').innerHTML = howtoHTML() + html;
+  $('board').innerHTML = howtoHTML() + tricksHTML() + html;
   if($('where')) $('where').innerHTML = whereHTML();
 }
 function groupHTML(g, st){
@@ -536,6 +536,7 @@ function groupHTML(g, st){
     b += `<figure class="pick${isPlace ? ' place' : ''}"><img src="${isPlace ? placeSrc(pic.place) : vehSrc(pic)}" alt="${o ? o.l : ''}" loading="lazy">` +
       `<figcaption>${isPlace ? t('g.mapPhoto') + ': ' : ''}${o ? o.l : ''}</figcaption></figure>`;
   }
+  if(g.type === 'chips') b += proconHTML(g, st);
   // photos of the selected choice (admin can add one to any named choice)
   if(g.type === 'chips' && !NO_PHOTO[g.key]) b += HeistPhotos.html('opt:' + cur + '.' + g.key + '.' + st[g.key]);
   const ml = g.map && g.map[st[g.key]] ? ` <a class="maplink" href="${mapHref(g.map[st[g.key]])}" title="${t('where.mapTitle')}">📍 ${t('where.map')}</a>` : '';
@@ -581,6 +582,68 @@ function scopeHTML(kind){
     <a class="scope-img" href="${MAP}${all}"><img src="img/place/${img[0]}.webp" alt="${t('g.scopeTitle')}" width="${img[1]}" height="${img[2]}" loading="lazy"></a>
     <ul class="scope-list">${rows.map(([label, hash, col, b, n]) => `<li><a href="${MAP}${hash}"><i style="background:${col}"></i><img src="../map/blips/${b}.png" alt="" width="18" height="18">${label} <span class="muted">×${n}</span></a></li>`).join('')}</ul>
     <a class="maplink big" href="${MAP}${all}">📍 ${t('g.scopeAll')}</a></div>`;
+}
+/* ---------- tricks ----------
+   Community tips (guides and player experience, not official data). Texts live
+   in i18n as tr.<heist>.<id> (tips), pc.<heist>.<group>.<value>.p / .c (pros and
+   cons of the selected choice; either may be missing). "dyn" tips follow the
+   board, "pro" tips are always shown. */
+const TRICKS = {
+  casino:{
+    dyn(st){
+      const o = [], n = st.players;
+      o.push(['💰', {cash:'tr.cas.t.cash', art:'tr.cas.t.art', gold:n <= 2 ? 'tr.cas.t.gold2' : 'tr.cas.t.gold3', diamonds:'tr.cas.t.dia'}[st.target]]);
+      o.push(['🏦', 'tr.cas.t.vault']);
+      if(n === 2) o.push(['🤝', 'tr.cas.t.duo']);
+      if(st.approach === 'ss') o.push(['🤫', 'tr.cas.t.ss']);
+      if(st.entry === 'staff' || st.exit === 'staff') o.push(['🚪', 'tr.cas.t.staff']);
+      if(st.entry === 'tunnel') o.push(['🛠', 'tr.cas.t.tunnel']);
+      if(st.entry === 'main') o.push(['🎰', 'tr.cas.t.main']);
+      if(st.exitd === 'fire') o.push(['🚒', 'tr.cas.t.fire']);
+      if(st.exitd === 'noose') o.push(['🚔', 'tr.cas.t.noose']);
+      return o;
+    },
+    pro:[['⚡', 'tr.cas.p1'], ['📷', 'tr.cas.p2'], ['🧯', 'tr.cas.p3']]
+  },
+  kortz:{
+    dyn(st){
+      const o = [['🚪', {staff:'tr.kor.t.staff', loading:'tr.kor.t.loading', sewer:'tr.kor.t.sewer', skylight:'tr.kor.t.sky'}[st.entry]]];
+      if(st.entry === 'sewer' || st.entry === 'skylight') o.push(['🥷', 'tr.kor.t.quiet']);
+      return o;
+    },
+    pro:[['⚡', 'tr.kor.p1'], ['📷', 'tr.kor.p2']]
+  },
+  cayo:{
+    dyn(st){
+      const o = [];
+      if(st.entry === 'drain') o.push(['🕳', 'tr.cay.t.drain']);
+      if(st.escape === 'maindock') o.push(['⛵', 'tr.cay.t.dock']);
+      o.push(['🥇', st.players === 1 ? 'tr.cay.t.solo' : 'tr.cay.t.gold']);
+      if(st.time === 'night') o.push(['🌙', 'tr.cay.t.night']);
+      return o;
+    },
+    pro:[['📷', 'tr.cay.p1']]
+  }
+};
+// Which group of which heist has pros and cons (casino entry and exit share one text per place).
+const PC_GROUP = {casino:{entry:'loc', exit:'loc', exitd:'exitd', approach:'app'}, cayo:{entry:'entry', escape:'escape'}, kortz:{entry:'entry'}};
+function proconHTML(g, st){
+  const grp = PC_GROUP[cur] && PC_GROUP[cur][g.key]; if(!grp) return '';
+  const base = `pc.${cur}.${grp}.${st[g.key]}`, p = t(base + '.p'), c = t(base + '.c');
+  const hasP = p !== base + '.p', hasC = c !== base + '.c';
+  if(!hasP && !hasC) return '';
+  return `<div class="procon">${hasP ? `<p class="pc-p"><b>👍 ${t('pc.pro')}</b> ${p}</p>` : ''}${hasC ? `<p class="pc-c"><b>👎 ${t('pc.con')}</b> ${c}</p>` : ''}</div>`;
+}
+let tricksOpen = true;
+try{ tricksOpen = localStorage.getItem('gtaoheist.tricks') !== '0'; }catch(e){}
+function tricksHTML(){
+  const T = TRICKS[cur], own = HeistPhotos.textHTML('tricks:' + cur);
+  if(!T && !own) return '';
+  const li = ([ic, k]) => `<li><span class="ic" aria-hidden="true">${ic}</span><span>${t(k)}</span></li>`;
+  return `<details class="tricks" id="tricks"${tricksOpen ? ' open' : ''}><summary>🎯 ${t('tr.title')}</summary>` +
+    `<p class="hint">${t('tr.note')}</p>` +
+    (T ? `<h4>${t('tr.forYou')}</h4><ul class="tr-list">${T.dyn(S[cur]).map(li).join('')}</ul><h4>${t('tr.pros')}</h4><ul class="tr-list">${T.pro.map(li).join('')}</ul>` : '') +
+    own + '</details>';
 }
 let howtoOpen = true;
 try{ howtoOpen = localStorage.getItem('gtaoheist.howto') !== '0'; }catch(e){}
@@ -710,6 +773,7 @@ window.addEventListener('hashchange', () => {
   else showGuide(k.split(':')[1]);
 });
 $('board').addEventListener('toggle', e => {
+  if(e.target.id === 'tricks'){ tricksOpen = e.target.open; try{ localStorage.setItem('gtaoheist.tricks', tricksOpen ? '1' : '0'); }catch(err){} return; }
   if(e.target.id !== 'howto') return;
   howtoOpen = e.target.open; try{ localStorage.setItem('gtaoheist.howto', howtoOpen ? '1' : '0'); }catch(err){}
 }, true);

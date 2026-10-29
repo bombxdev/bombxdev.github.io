@@ -11,6 +11,7 @@
 //   hero:<heist>              top of a heist
 //   step:<heist>.<sN>         a step of the "step by step" card
 //   opt:<heist>.<group>.<v>   a choice on the board (shown while it is selected)
+//   tricks:<heist>            written tricks added by the owner ({text, added}, no file)
 'use strict';
 const HeistPhotos = (() => {
   const OWNER = 'bombxdev', REPO = 'bombxdev.github.io', BRANCH = 'master', BASE = 'gta-online/heist/';
@@ -61,6 +62,16 @@ const HeistPhotos = (() => {
       '</div>';
   }
 
+  // Written tricks of a heist (owner only can add or delete; everybody reads).
+  function textHTML(slot){
+    const list = photos[slot] || [];
+    if(!list.length && !admin) return '';
+    return `<div class="owner-tricks"><h4>${esc(tt('tr.owner'))}</h4>` +
+      (list.length ? '<ul>' + list.map((h, i) => `<li><span>${esc(h.text)}</span>` +
+        (admin ? ` <button type="button" class="chip hint-del" data-text-del="${esc(slot)}|${i}" aria-label="${esc(tt('hint.delete'))}">🗑</button>` : '') + '</li>').join('') + '</ul>' : '') +
+      (admin ? `<button type="button" class="chip hint-add" data-text-add="${esc(slot)}">✏️ ${esc(tt('tr.add'))}</button>` : '') + '</div>';
+  }
+
   const viewer = document.createElement('div');
   viewer.className = 'hint-viewer'; viewer.hidden = true;
   viewer.addEventListener('click', () => { viewer.hidden = true; });
@@ -78,6 +89,10 @@ const HeistPhotos = (() => {
     }
     const d = e.target.closest && e.target.closest('[data-photo-del]');
     if(d && admin){ const [slot, i] = d.getAttribute('data-photo-del').split('|'); removePhoto(slot, Number(i)); }
+    const ta = e.target.closest && e.target.closest('[data-text-add]');
+    if(ta && admin) addText(ta.getAttribute('data-text-add'));
+    const td = e.target.closest && e.target.closest('[data-text-del]');
+    if(td && admin){ const [slot, i] = td.getAttribute('data-text-del').split('|'); removeText(slot, Number(i)); }
   });
   document.addEventListener('change', e => {
     const slot = e.target.getAttribute && e.target.getAttribute('data-photo-add');
@@ -105,7 +120,7 @@ const HeistPhotos = (() => {
   }
   function verify(){
     return gh('GET', 'https://api.github.com/user').then(u => {
-      if(!u || String(u.login).toLowerCase() !== OWNER) throw new Error(tt('hint.notOwner'));
+      if(!u || String(u.login).toLowerCase() !== OWNER){ const e = new Error(tt('hint.notOwner')); e.status = 403; throw e; }
       admin = {login:u.login};
     });
   }
@@ -176,6 +191,26 @@ const HeistPhotos = (() => {
       .then(() => { busy = false; });
   }
 
+  function addText(slot){
+    if(busy) return;
+    const text = (window.prompt(tt('tr.addPrompt'), '') || '').trim().slice(0, 500);
+    if(!text) return;
+    busy = true;
+    update(p => { (p[slot] = p[slot] || []).push({text, added:new Date().toISOString()}); }, 'Heist trick list: add ' + slot)
+      .then(() => { onChange(); toast(tt('tr.added')); })
+      .catch(err => toast(tt('hint.failed', {msg:err.message})))
+      .then(() => { busy = false; });
+  }
+  function removeText(slot, i){
+    const h = (photos[slot] || [])[i];
+    if(!h || busy || !window.confirm(tt('tr.confirmDel'))) return;
+    busy = true;
+    update(p => { const list = (p[slot] || []).filter(x => x.added !== h.added); if(list.length) p[slot] = list; else delete p[slot]; }, 'Heist trick list: remove ' + slot)
+      .then(() => { onChange(); toast(tt('tr.removed')); })
+      .catch(err => toast(tt('hint.failed', {msg:err.message})))
+      .then(() => { busy = false; });
+  }
+
   // Sign-in box in the sidebar, only shown with ?admin or a saved token.
   let wanted = false;
   function renderAdmin(){
@@ -210,8 +245,9 @@ const HeistPhotos = (() => {
     onChange = rerender;
     wanted = /[?&]admin\b/.test(location.search);
     load();
-    if(getToken()) verify().catch(() => setToken('')).then(() => { renderAdmin(); if(admin) onChange(); });
+    // Forget the saved token only when GitHub refuses it (a network hiccup or a page reload must not log the owner out).
+    if(getToken()) verify().catch(err => { if(err && (err.status === 401 || err.status === 403)) setToken(''); }).then(() => { renderAdmin(); if(admin) onChange(); });
     else renderAdmin();
   }
-  return {init, html, renderAdmin};
+  return {init, html, textHTML, renderAdmin};
 })();

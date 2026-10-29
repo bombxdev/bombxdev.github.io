@@ -253,3 +253,20 @@ select { font: inherit; }
 .cas-list ul { margin: 4px 0; padding-left: 18px; }
 .cas-list .hint { margin: 6px 0 2px; }
 .cas-preps { margin: 6px 0 0; padding-left: 18px; font-size: 14px; line-height: 1.55; }
+
+/* ---------- tricks and pros/cons ---------- */
+.tricks { margin: 14px 0 4px; background: var(--surface); border: 1px solid var(--line); border-left: 4px solid #e0a030; border-radius: 10px; padding: 0 16px; }
+.tricks summary { cursor: pointer; font-weight: 600; font-size: 16px; padding: 12px 0; }
+.tricks[open] summary { border-bottom: 1px solid var(--line); margin-bottom: 10px; }
+.tricks h4 { margin: 14px 0 6px; font-size: 12px; text-transform: uppercase; letter-spacing: .8px; color: #e0a030; }
+.tr-list { list-style: none; margin: 0 0 8px; padding: 0; display: grid; gap: 8px; }
+.tr-list li { display: grid; grid-template-columns: 26px 1fr; gap: 8px; font-size: 14px; line-height: 1.55; }
+.tr-list .ic { font-size: 17px; text-align: center; line-height: 1.5; }
+.owner-tricks { margin: 12px 0 14px; padding: 8px 12px 10px; border: 1px dashed #c9a227; border-radius: 10px; }
+.owner-tricks h4 { margin-top: 4px; }
+.owner-tricks ul { margin: 0 0 8px; padding-left: 20px; font-size: 14px; line-height: 1.55; }
+.procon { margin-top: 10px; display: grid; gap: 4px; font-size: 13px; line-height: 1.5; }
+.procon p { margin: 0; padding: 6px 9px; border-radius: 8px; }
+.pc-p { background: color-mix(in srgb, var(--ok) 14%, transparent); }
+.pc-c { background: color-mix(in srgb, #ff7b6c 14%, transparent); }
+.procon b { margin-right: 4px; white-space: nowrap; }
