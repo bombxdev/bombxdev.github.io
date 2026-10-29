@@ -270,3 +270,18 @@ select { font: inherit; }
 .pc-p { background: color-mix(in srgb, var(--ok) 14%, transparent); }
 .pc-c { background: color-mix(in srgb, #ff7b6c 14%, transparent); }
 .procon b { margin-right: 4px; white-space: nowrap; }
+
+/* ---------- hacking guide ---------- */
+.hack-card { margin: 14px 0; background: var(--surface); border: 1px solid var(--line); border-left: 4px solid #3fa7c9; border-radius: 10px; padding: 4px 16px 14px; }
+.hack-card h3 { margin: 12px 0 8px; }
+.hack-card h4 { margin: 14px 0 6px; font-size: 12px; text-transform: uppercase; letter-spacing: .8px; color: #3fa7c9; }
+.hack-svg { width: 100%; max-width: 360px; height: auto; display: block; margin: 6px auto; }
+.hack-svg .fp-big, .hack-svg .fp-tile { fill: var(--bg, #111318); stroke: var(--line); stroke-width: 1.5; }
+.hack-svg .fp-tile.ok { stroke: var(--ok, #3fb67a); stroke-width: 2.5; }
+.hack-svg .fp-ridge ellipse { fill: none; stroke: var(--muted, #9aa3b5); stroke-width: 1.6; }
+.hack-svg .fp-cut { stroke: #3fa7c9; stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+.hack-svg .fp-ok { fill: var(--ok, #3fb67a); font-size: 14px; text-anchor: middle; font-weight: 700; }
+.hack-svg .fp-lbl { fill: var(--muted, #9aa3b5); font-size: 20px; text-anchor: middle; }
+.hack-steps { list-style: none; margin: 0 0 8px; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 8px; }
+.hack-steps li { background: var(--bg, #111318); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; display: grid; gap: 2px; font-size: 13.5px; }
+.hack-steps small { color: var(--muted); font-size: 12.5px; line-height: 1.45; }
