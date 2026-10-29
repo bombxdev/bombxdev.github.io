@@ -653,11 +653,44 @@ function howtoHTML(){
     ${flowHTML()}<ol class="steps">${G.steps.map(s => stepHTML(cur, s)).join('')}</ol>
     ${G.note ? `<p class="hint">ℹ️ ${t(G.note)}</p>` : ''}
     <div class="words"><b>${t('g.wordsTitle')}:</b> ${G.words.map(w => `<a href="#guide:${w}" class="word">${t('g.term.' + w)}</a>`).join('')}
+    ${['kortz','cayo','casino'].includes(cur) ? `<a href="#guide:hackguide" class="word">🔓 ${t('hk.title')}</a>` : ''}
     <a href="#guide" class="word more">📘 ${t('g.fullGuide')} →</a></div></details>`;
 }
 function flowHTML(){
   return `<ol class="flow" aria-label="${t('g.flowTitle')}">` + FLOW.map(([k, ic]) =>
     `<li><span class="ic" aria-hidden="true">${ic}</span><b>${t('g.flow.' + k)}</b><small>${t('g.flow.' + k + 'D')}</small></li>`).join('') + '</ol>';
+}
+/* ---------- hacking guide (original schematic art, not game screenshots) ---------- */
+function fpSvg(){
+  // Abstract print: concentric ridges cut into 8 pieces (2 x 4); right side shows look-alike pieces, 4 of them correct.
+  const ridge = (cx, cy, n, a) => Array.from({length:n}, (_, i) => `<ellipse cx="${cx}" cy="${cy}" rx="${5 + i * a}" ry="${7 + i * a * 1.35}" />`).join('');
+  const tile = (x, y, ok, n) => `<rect x="${x}" y="${y}" width="44" height="44" rx="6" class="fp-tile${ok ? ' ok' : ''}"/>` +
+    `<svg x="${x}" y="${y}" width="44" height="44" viewBox="0 0 44 44" class="fp-ridge">${n ? ridge(22, 40, 6, 5) : ridge(8, 4, 6, 5.5)}</svg>` + (ok ? `<text x="${x + 22}" y="${y + 29}" class="fp-ok">✓</text>` : '');
+  const marks = [1,0,0,1,0,1,0,1];
+  return `<svg class="hack-svg" viewBox="0 0 330 200" role="img" aria-label="${t('hk.fp.alt')}">
+    <rect x="6" y="6" width="116" height="188" rx="10" class="fp-big"/>
+    <svg x="6" y="6" width="116" height="188" viewBox="0 0 116 188" class="fp-ridge">${ridge(58, 100, 11, 8)}</svg>
+    <path d="M64 6V194M6 53H122M6 100H122M6 147H122" class="fp-cut"/>
+    <text x="134" y="104" class="fp-lbl">≈</text>
+    ${marks.map((ok, i) => tile(146 + (i % 3) * 58, 6 + Math.floor(i / 3) * 62, ok, i % 2)).join('')}</svg>`;
+}
+function hackHTML(){
+  const li = k => `<li>${t(k)}</li>`;
+  const card = (ic, k) => `<li><span class="ic" aria-hidden="true">${ic}</span><b>${t('hk.' + k)}</b><small>${t('hk.' + k + 'D')}</small></li>`;
+  return `<div id="term-hackguide"><h2>🔓 ${t('hk.title')}</h2><p class="tag">${t('hk.intro')}</p>
+    <div class="hack-card"><h3>🖐 ${t('hk.fp.h')}</h3>${fpSvg()}<p class="hint">${t('hk.fp.cap')}</p>
+      <p>${t('hk.fp.what')}</p><p>${t('hk.fp.cayo')}</p>
+      <h4>${t('hk.how')}</h4><ol class="hack-steps">${card('1️⃣','s1')}${card('2️⃣','s2')}${card('3️⃣','s3')}${card('4️⃣','s4')}</ol>
+      <ul class="tips">${[1,2,3,4].map(i => li('hk.fp.t' + i)).join('')}</ul>
+      <p class="hint">${t('hk.fp.practice')} <a href="https://johan.li/gta-online/fingerprint-scanner-simulator" target="_blank" rel="noopener noreferrer">johan.li ↗</a></p></div>
+    <div class="hack-card"><h3>🔢 ${t('hk.kp.h')}</h3>
+      <p>${t('hk.kp.honest')}</p>
+      <ol class="flow" aria-label="${t('hk.kp.h')}"><li><span class="ic" aria-hidden="true">🪪</span><b>${t('hk.kp.f1')}</b><small>${t('hk.kp.f1D')}</small></li>
+        <li><span class="ic" aria-hidden="true">🚪</span><b>${t('hk.kp.f2')}</b><small>${t('hk.kp.f2D')}</small></li>
+        <li><span class="ic" aria-hidden="true">🔢</span><b>${t('hk.kp.f3')}</b><small>${t('hk.kp.f3D')}</small></li></ol>
+      <h4>${t('hk.kp.easy')}</h4><ul class="tips">${[1,2,3,4,5].map(i => li('hk.kp.t' + i)).join('')}</ul>
+      ${HeistPhotos.textHTML('hack:keypad')}</div>
+    <p class="rc-note">${t('hk.src')}</p></div>`;
 }
 function renderGuide(){
   $('guide').innerHTML = `<h1>📘 ${t('g.title')}</h1><p class="tag">${t('g.intro')}</p>
@@ -666,6 +699,7 @@ function renderGuide(){
     <h2 id="term-challenges">🏆 ${t('g.chTitle')}</h2><p class="tag">${t('g.chIntro')}</p>
     <dl class="gloss">${CHALLENGES.map(w => `<div id="term-${w}"><dt>${t('g.term.' + w)}</dt><dd>${t('g.def.' + w)}</dd></div>`).join('')}</dl>
     <ul class="tips">${[1,2,3,4].map(i => `<li>${t('g.chTip' + i)}</li>`).join('')}</ul>
+    ${hackHTML()}
     <h2>${t('g.glossTitle')}</h2><dl class="gloss">${GLOSSARY.map(w => `<div id="term-${w}"><dt>${t('g.term.' + w)}</dt><dd>${t('g.def.' + w)}</dd></div>`).join('')}</dl>
     <h2>${t('side.pick')}</h2><div class="glinks">${ORDER.map(k => `<a href="#${k}" style="--h:${H[k].accent}">${H[k].short}</a>`).join('')}</div>
     <p class="rc-note">${t('g.imgCredit')}</p>`;
@@ -834,7 +868,7 @@ function savedLang(){ try{ return JSON.parse(localStorage.getItem(LANG_KEY)); }c
 function applyLanguage(anim){
   I18N.apply(document);
   $('lang').value = I18N.code;
-  if(!applyLanguage.done){ applyLanguage.done = true; HeistPhotos.init(() => { if(view === 'heist'){ renderHero(false); renderBoard(); } }); SharePlan.init(); }
+  if(!applyLanguage.done){ applyLanguage.done = true; HeistPhotos.init(() => { if(view === 'heist'){ renderHero(false); renderBoard(); } else if(view === 'guide') renderGuide(); }); SharePlan.init(); }
   else { HeistPhotos.renderAdmin(); SharePlan.renderShared(); }
   loadMapCats().then(() => { if(view === 'heist' && (cur === 'cayo' || cur === 'kortz')) renderBoard(); });
   if(view === 'guide'){ const term = (fromHash() || '').split(':')[1]; setHeist(cur, false); showGuide(term); }
