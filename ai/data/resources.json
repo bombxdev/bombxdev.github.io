@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T04:47:24.588Z",
+  "updated": "2026-11-02T04:47:33.742Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -32,6 +32,14 @@
             "image": "",
             "id": "mvyqluaouqex",
             "added": "2026-11-02T04:06:41.568Z"
+          },
+          {
+            "url": "https://github.com/rebelytics/one-skill-to-rule-them-all",
+            "title": "",
+            "remark": "One Skill to Rule Them All (Task Observer) คือ Open Source Meta-Skill ที่ช่วยให้ AI Agents เรียนรู้จากการทำงานจริง เพื่อนำไปสร้างและปรับปรุง Skills ให้มีประสิทธิภาพมากขึ้นอย่างต่อเนื่อง\n\n- Work Observation: ติดตามการทำงานของ AI Agent วิเคราะห์ข้อผิดพลาด การแก้ไข และรูปแบบการทำงานที่เกิดขึ้นซ้ำ\n- Skill Discovery: ค้นหางานที่ทำบ่อยหรือขั้นตอนที่ซ้ำกัน แล้วเสนอให้สร้างเป็น Skill ใหม่โดยอัตโนมัติ\n- Continuous Improvement: วิเคราะห์ข้อบกพร่องและคำแนะนำจากผู้ใช้ เพื่อนำไปปรับปรุง Skills ที่มีอยู่ให้ทำงานดีขึ้น\n- Self-Improvement: สามารถวิเคราะห์และเสนอแนวทางปรับปรุงตัวเองได้ ทำให้ระบบ Skills พัฒนาไปพร้อมกับการใช้งาน\n- Compatibility: ออกแบบมาสำหรับ Claude เป็นหลัก สามารถประยุกต์ใช้กับ Codex, Cursor และ AI Agents อื่น ๆ ได้ แต่ต้องปรับให้เข้ากับระบบ โดยผู้ใช้เป็นผู้อนุมัติการเปลี่ยนแปลง ใช้งานฟรี (CC BY 4.0 License)",
+            "image": "",
+            "id": "mvys2eemshk2",
+            "added": "2026-11-02T04:47:33.742Z"
           }
         ]
       },
