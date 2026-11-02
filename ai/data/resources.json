@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T07:18:51.987Z",
+  "updated": "2026-11-02T07:19:03.861Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -268,7 +268,16 @@
         "id": "mvyxgz83lfw5",
         "name": "Showcase",
         "folders": [],
-        "links": []
+        "links": [
+          {
+            "url": "https://webgpu.com/",
+            "title": "",
+            "remark": "WebGPU.com คือเว็บไซต์ Community Showcase ที่รวบรวมผลงาน 3D Graphics, WebGL และ WebGPU สำหรับนักพัฒนาเว็บไซต์และผู้สนใจงานกราฟิกประสิทธิภาพสูง\n\n- Project Showcase: รวมตัวอย่างเว็บไซต์ 3D, Interactive Animation, Shader Effects และเกมที่ทำงานผ่าน Browser\n- Design Inspiration: ค้นหาไอเดียและตัวอย่างการออกแบบเว็บไซต์ที่มี Animation และ Visual Effects สวยงาม\n- Graphics Technology: สำรวจผลงานที่ใช้ WebGL, WebGPU, Three.js และ React Three Fiber\n- News & Updates: ติดตามเทคโนโลยี GPU Rendering, AI บน Browser และเครื่องมือพัฒนา Graphics\n- จุดเด่น: เป็นแหล่งรวมผลงานและแรงบันดาลใจสำหรับ Frontend Developer สามารถเข้าชมฟรี แต่ไม่ใช่ Framework หรือเว็บไซต์ทางการของ WebGPU",
+            "image": "",
+            "id": "mvyxh8dxuo2c",
+            "added": "2026-11-02T07:19:03.861Z"
+          }
+        ]
       }
     ],
     "links": []
