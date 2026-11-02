@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T08:08:55.245Z",
+  "updated": "2026-11-02T08:09:00.005Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -183,7 +183,7 @@
             "url": "https://github.com/getopenscreen/openscreen",
             "title": "",
             "remark": "OpenScreen คือ Open Source Screen Recorder และ Video Editor สำหรับบันทึกหน้าจอและสร้างวิดีโอ Demo, Tutorial และ Product Walkthrough คล้าย Screen Studio แต่ใช้งานฟรี\n\n- Screen Recording: บันทึกหน้าจอพร้อมเสียง Microphone, System Audio และ Webcam รองรับ Windows, macOS และ Linux\n- Smart Zoom & Effects: ซูมตามตำแหน่งเมาส์อัตโนมัติ ปรับ Cursor Effects, Motion Blur, Background และ Animation\n- Video Editing: ตัดต่อวิดีโอ เพิ่มข้อความ ลูกศร คำบรรยายอัตโนมัติ (Auto Captions) และส่งออกเป็น MP4 หรือ GIF\n- AI Agent Integration: รองรับ MCP, CLI และ Agent Skills ให้ Claude Code, Codex และ Cursor ช่วยบันทึก ตัดต่อ และสร้างวิดีโอ Demo ได้อัตโนมัติ\n- จุดเด่น: ใช้ GPU ช่วยประมวลผลวิดีโอ ไม่มีลายน้ำ ไม่มีค่าสมาชิก ใช้งานฟรีทั้งส่วนตัวและเชิงพาณิชย์ (MIT License) ส่วน AI Editing ต้องเชื่อมต่อ API Key ของผู้ให้บริการเอง",
-            "image": "",
+            "image": "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fgithub.com%2Fgetopenscreen%2Fopenscreen?w=640&h=360",
             "id": "mvyz8mjlefh7",
             "added": "2026-11-02T08:08:21.537Z"
           }
