@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T04:06:41.568Z",
+  "updated": "2026-11-02T04:09:30.974Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -72,6 +72,12 @@
             "added": "2026-10-28T09:52:20.119Z"
           }
         ]
+      },
+      {
+        "id": "mvyqph0e4ywf",
+        "name": "Design",
+        "folders": [],
+        "links": []
       }
     ],
     "links": []
