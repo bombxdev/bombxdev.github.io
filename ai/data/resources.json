@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T04:30:38.840Z",
+  "updated": "2026-11-02T04:35:24.369Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -161,7 +161,16 @@
         "id": "mvyrgnaw2tas",
         "name": "Skill",
         "folders": [],
-        "links": []
+        "links": [
+          {
+            "url": "https://github.com/vercel-labs/skills/blob/main/skills/find-skills/SKILL.md",
+            "title": "",
+            "remark": "Find Skills คือ Agent Skill จาก Vercel Labs ที่ช่วยให้ AI Coding Agent ค้นหา แนะนำ และติดตั้ง Skills ที่เหมาะกับงานได้อัตโนมัติ ผ่านระบบ Skills CLI และ skills.sh\n\n- Skill Discovery: ค้นหา Skills ตามความต้องการ เช่น Coding, UI/UX, Testing, DevOps และ Automation\n- Smart Recommendation: ให้ AI วิเคราะห์งานที่ต้องทำ แล้วแนะนำ Skills ที่เหมาะสมจากแหล่งต่าง ๆ\n- Quality Verification: ตรวจสอบความน่าเชื่อถือของ Skills จากยอดติดตั้ง GitHub Stars และผู้พัฒนา\n- Skill Installation: รองรับการค้นหา ติดตั้ง และอัปเดต Skills ผ่านคำสั่ง npx skills\n- จุดเด่น: เปรียบเสมือน Skill Finder สำหรับ AI Agents ช่วยค้นหาเครื่องมือเพิ่มความสามารถให้ AI โดยไม่ต้องเสียเวลาหาเอง",
+            "image": "",
+            "id": "mvyrmrm9ieut",
+            "added": "2026-11-02T04:35:24.369Z"
+          }
+        ]
       }
     ],
     "links": []
