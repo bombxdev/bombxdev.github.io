@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T04:26:58.146Z",
+  "updated": "2026-11-02T04:27:13.370Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -138,7 +138,16 @@
         "id": "mvyrbx0ix5dp",
         "name": "Video Editor",
         "folders": [],
-        "links": []
+        "links": [
+          {
+            "url": "https://github.com/heygen-com/hyperframes",
+            "title": "",
+            "remark": "HyperFrames คือ Open Source Framework จาก HeyGen สำหรับสร้างวิดีโอด้วย HTML, CSS และ Animation โดยออกแบบมาให้ AI Coding Agent ช่วยสร้างและตัดต่อวิดีโอได้อัตโนมัติ\n\n- AI Video Creation: สั่ง AI สร้างวิดีโอจาก Prompt เช่น Product Demo, Promotional Video, Tutorial และ Social Media Content\n- HTML to Video: แปลง HTML, CSS และ JavaScript Animation ให้เป็นวิดีโอ MP4 โดยไม่จำเป็นต้องใช้โปรแกรมตัดต่อแบบดั้งเดิม\n- Motion Graphics: สร้าง Animation, Transition, Subtitle, Animated Charts และ Data Visualization สำหรับวิดีโอ\n- Video Automation: รองรับการ Preview, Render และสร้างวิดีโออัตโนมัติผ่าน CLI หรือ AI Agents\n- Compatibility: รองรับ Claude Code, Codex, Cursor, Gemini CLI และ GitHub Copilot ใช้งานฟรีแบบ Open Source (Apache 2.0 License) โดยต้องมี Node.js 22+ และ FFmpeg",
+            "image": "",
+            "id": "mvyrc8reh2cd",
+            "added": "2026-11-02T04:27:13.370Z"
+          }
+        ]
       }
     ],
     "links": []
