@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T08:43:28.336Z",
+  "updated": "2026-11-02T09:38:02.324Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -276,7 +276,14 @@
       {
         "id": "mvyx9udhmxw8",
         "name": "Tool",
-        "folders": [],
+        "folders": [
+          {
+            "id": "mvz2fydw2tzo",
+            "name": "News",
+            "folders": [],
+            "links": []
+          }
+        ],
         "links": [
           {
             "url": "https://github.com/Alishahryar1/free-claude-code",
