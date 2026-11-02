@@ -1,12 +1,12 @@
 {
-  "updated": "2026-11-02T04:37:49.195Z",
+  "updated": "2026-11-02T04:47:24.588Z",
   "root": {
     "id": "root",
     "name": "AI",
     "folders": [
       {
         "id": "agents",
-        "name": "Agents & Coding",
+        "name": "Performance",
         "folders": [],
         "links": [
           {
