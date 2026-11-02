@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T04:47:33.742Z",
+  "updated": "2026-11-02T04:51:36.557Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -109,6 +109,14 @@
             "image": "",
             "id": "mvyqygyvqe3q",
             "added": "2026-11-02T04:16:30.823Z"
+          },
+          {
+            "url": "https://github.com/nvidia/simready-foundation",
+            "title": "",
+            "remark": "SimReady Foundation คือ Open Source Framework จาก NVIDIA สำหรับกำหนดมาตรฐาน ตรวจสอบ และเตรียม 3D Assets ให้พร้อมใช้งานกับระบบ Simulation, Robotics และ AI Training ผ่าน NVIDIA Omniverse\n\n- 3D Asset Validation: ตรวจสอบโมเดล 3D ในรูปแบบ OpenUSD ให้ตรงตามมาตรฐานด้าน Geometry, Physics และ Materials\n- Robotics Simulation: เตรียมโมเดลหุ่นยนต์ แขนกล และอุปกรณ์ต่าง ๆ สำหรับจำลองการทำงานในสภาพแวดล้อมเสมือนจริง\n- Asset Transformation: แปลงและปรับแต่ง 3D Assets ให้รองรับ Simulation Engines เช่น NVIDIA PhysX และ Isaac\n- AI Agent Skills: มี Skills สำหรับช่วย AI Agents สร้าง แก้ไข ตรวจสอบ และจัดแพ็กเกจ SimReady Assets ตามมาตรฐาน\n- จุดเด่น: ช่วยสร้างมาตรฐาน Digital Twin และ Robotics Simulation พร้อมรองรับ Automated Validation ผ่าน CI/CD เป็น Open Source (Apache 2.0 License สำหรับเนื้อหาที่ NVIDIA พัฒนา)",
+            "image": "",
+            "id": "mvys7lrh1zdz",
+            "added": "2026-11-02T04:51:36.557Z"
           }
         ]
       },
