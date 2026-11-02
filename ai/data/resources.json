@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T04:37:30.957Z",
+  "updated": "2026-11-02T04:37:49.195Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -176,7 +176,16 @@
         "id": "mvyrphala8kj",
         "name": "Memory",
         "folders": [],
-        "links": []
+        "links": [
+          {
+            "url": "https://github.com/thedotmack/claude-mem",
+            "title": "",
+            "remark": "Claude-Mem คือ Open Source Memory System ที่ช่วยให้ AI Coding Agent จดจำบริบทการทำงานข้าม Session ได้อัตโนมัติ ไม่ต้องอธิบายโปรเจกต์ใหม่ทุกครั้ง\n\n- Persistent Memory: จดจำประวัติการทำงาน โค้ดที่แก้ไข ปัญหาที่พบ และการตัดสินใจ แม้ปิด Session ไปแล้ว\n- Automatic Context: บันทึกและสรุปข้อมูลด้วย AI พร้อมดึงบริบทที่เกี่ยวข้องกลับมาใช้ในการสนทนาครั้งถัดไป\n- Smart Search: ค้นหาประวัติการทำงานย้อนหลังผ่าน Semantic Search และ MCP โดยใช้ Token อย่างมีประสิทธิภาพ\n- AI Agent Integration: รองรับ Claude Code, Codex, Cursor, Gemini, GitHub Copilot และ AI Agents อื่น ๆ\n- จุดเด่น: ช่วยให้ AI ทำงานต่อเนื่องจาก Session ก่อนหน้า ลดการอธิบายซ้ำและประหยัด Token เป็น Open Source ฟรี (Apache 2.0) แต่การใช้ AI Model หรือ Cloud Service อาจมีค่าใช้จ่าย",
+            "image": "",
+            "id": "mvyrpvd7nbc9",
+            "added": "2026-11-02T04:37:49.195Z"
+          }
+        ]
       }
     ],
     "links": []
