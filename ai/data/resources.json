@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T04:25:33.230Z",
+  "updated": "2026-11-02T04:25:47.581Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -123,7 +123,16 @@
         "id": "mvyr7kok3yxk",
         "name": "Scraping",
         "folders": [],
-        "links": []
+        "links": [
+          {
+            "url": "https://github.com/firecrawl/firecrawl",
+            "title": "",
+            "remark": "Firecrawl คือ Open Source Web Scraping และ Crawling Framework สำหรับดึงข้อมูลจากเว็บไซต์มาใช้งานกับ AI Agents, LLM และ Data Pipeline ผ่าน API\n\n- Web Scraping: ดึงข้อมูลจากเว็บไซต์และแปลงเป็น Markdown, HTML, JSON หรือ Screenshot พร้อมรองรับเว็บไซต์ที่ใช้ JavaScript\n- Web Crawling: ดึงข้อมูลจากหลายหน้าเว็บหรือทั้งเว็บไซต์โดยอัตโนมัติ พร้อมค้นหา URL ภายในเว็บไซต์\n- Data Extraction: สกัดข้อมูลจากเว็บไซต์และเอกสาร PDF/DOCX ให้อยู่ในรูปแบบ Structured Data สำหรับนำไปวิเคราะห์หรือใช้งานกับ AI\n- AI Agent Integration: รองรับ MCP, Claude Code, Codex และ AI Agents อื่น ๆ ผ่าน API, CLI และ SDK เช่น Python และ Node.js\n- License & Pricing: เป็น Open Source (AGPL-3.0) รองรับ Self-host และ Cloud API มีแพ็กเกจฟรี 1,000 Credits/เดือน พร้อมแพ็กเกจเสียเงินสำหรับการใช้งานเพิ่มเติม",
+            "image": "",
+            "id": "mvyraekdu24o",
+            "added": "2026-11-02T04:25:47.581Z"
+          }
+        ]
       }
     ],
     "links": []
