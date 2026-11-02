@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T04:13:05.206Z",
+  "updated": "2026-11-02T04:16:30.824Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -93,6 +93,14 @@
             "image": "",
             "id": "mvyqu2bablml",
             "added": "2026-11-02T04:13:05.206Z"
+          },
+          {
+            "url": "https://github.com/pbakaus/impeccable",
+            "title": "",
+            "remark": "Impeccable คือ Open Source Agent Skill ที่ช่วยให้ AI Coding Agent ออกแบบและปรับปรุง UI/UX ให้สวยงาม มีคุณภาพ และลดปัญหาดีไซน์ซ้ำ ๆ แบบ AI (AI Slop)\n\n- UI/UX Design: ช่วยออกแบบและปรับปรุงเว็บไซต์ Dashboard และ Application ให้มีความสวยงามและเป็นมืออาชีพ\n- Design Enhancement: มี 24 คำสั่งสำหรับปรับ Layout, Typography, Colors, Animation และ Responsive Design\n- Design Review: วิเคราะห์คุณภาพ UI/UX ตรวจสอบ Accessibility, Performance และจัดลำดับปัญหาที่ควรแก้ไข\n- AI Slop Detection: มีกฎตรวจจับ 62 ข้อ เพื่อค้นหาดีไซน์ซ้ำซากและข้อบกพร่องของ UI โดยไม่ต้องใช้ LLM หรือ API Key\n- Compatibility: รองรับ Claude Code, Codex, Cursor, GitHub Copilot, Gemini CLI และอื่น ๆ ใช้งานฟรี (Apache 2.0 License)",
+            "image": "",
+            "id": "mvyqygyvqe3q",
+            "added": "2026-11-02T04:16:30.823Z"
           }
         ]
       }
