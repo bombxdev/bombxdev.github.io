@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T07:34:01.687Z",
+  "updated": "2026-11-02T08:03:51.756Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -201,6 +201,14 @@
             "image": "",
             "id": "mvywo10km4mx",
             "added": "2026-11-02T06:56:21.284Z"
+          },
+          {
+            "url": "https://github.com/multica-ai/andrej-karpathy-skills",
+            "title": "",
+            "remark": "Andrej Karpathy Skills คือ Open Source Agent Skill ที่ช่วยปรับพฤติกรรม AI Coding Agent ให้เขียนโค้ดอย่างมีเหตุผล เรียบง่าย และแม่นยำขึ้น โดยอ้างอิงแนวคิดของ Andrej Karpathy เพื่อลดข้อผิดพลาดที่ AI มักสร้างขึ้น\n\n- Think Before Coding: ให้ AI วิเคราะห์ความต้องการ ตรวจสอบสมมติฐาน และพิจารณาทางเลือกก่อนเริ่มเขียนโค้ด\n- Simplicity First: เน้นเขียนโค้ดให้เรียบง่าย กระชับ ไม่สร้างโครงสร้างซับซ้อนหรือฟีเจอร์ที่ไม่ได้ร้องขอ (Overengineering)\n- Surgical Changes: แก้ไขเฉพาะโค้ดที่เกี่ยวข้องกับงาน ไม่เปลี่ยนแปลงส่วนอื่นโดยไม่จำเป็น\n- Goal-Driven Execution: กำหนดเป้าหมายและเกณฑ์ตรวจสอบความสำเร็จ เช่น เขียน Tests ก่อนแก้ Bug และตรวจสอบผลลัพธ์หลังแก้ไข\n- จุดเด่น: เป็นชุดแนวทางควบคุมพฤติกรรม AI ผ่าน CLAUDE.md ไม่ใช่ AI Model ใหม่ รองรับ Claude Code และ Cursor ใช้งานฟรีแบบ Open Source (MIT License)",
+            "image": "",
+            "id": "mvyz2udowd9f",
+            "added": "2026-11-02T08:03:51.756Z"
           }
         ]
       },
