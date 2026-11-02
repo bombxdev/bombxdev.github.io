@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T07:01:28.081Z",
+  "updated": "2026-11-02T07:02:32.503Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -193,6 +193,14 @@
             "image": "",
             "id": "mvywo10km4mx",
             "added": "2026-11-02T06:56:21.284Z"
+          },
+          {
+            "url": "https://github.com/vercel-labs/agent-skills/tree/main/skills/web-design-guidelines",
+            "title": "",
+            "remark": "Web Design Guidelines คือ Open Source Agent Skill จาก Vercel Labs ที่ช่วยให้ AI Coding Agent ตรวจสอบคุณภาพ UI/UX ของเว็บไซต์ตามมาตรฐาน Web Interface Guidelines มากกว่า 100 ข้อ\n\n- UI/UX Audit: ตรวจสอบโค้ด Frontend เพื่อค้นหาปัญหา Layout, Typography, Forms, Navigation และ User Experience\n- Accessibility: ตรวจสอบการรองรับผู้พิการ เช่น ARIA Labels, Keyboard Navigation, Focus States และ Semantic HTML\n- Performance Review: วิเคราะห์ปัญหาด้าน Rendering, Animation, Image Loading และประสิทธิภาพการแสดงผล\n- Code Review: ตรวจสอบไฟล์ที่กำหนด พร้อมระบุปัญหาตามชื่อไฟล์และเลขบรรทัด (file:line) เพื่อให้นักพัฒนาแก้ไขได้ตรงจุด\n- จุดเด่น: ต่างจาก Impeccable ที่เน้นปรับปรุงดีไซน์ โดย Skill นี้เน้นตรวจสอบความถูกต้องตามมาตรฐาน Web UI รองรับ AI Coding Agents เช่น Claude Code, Codex และ Cursor ใช้งานฟรี (MIT License)",
+            "image": "",
+            "id": "mvywvzg7lihs",
+            "added": "2026-11-02T07:02:32.503Z"
           }
         ]
       },
