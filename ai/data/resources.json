@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T07:05:06.700Z",
+  "updated": "2026-11-02T07:07:33.132Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -223,7 +223,16 @@
         "id": "mvywzafgikge",
         "name": "Game",
         "folders": [],
-        "links": []
+        "links": [
+          {
+            "url": "https://github.com/Jakeschincariol/console-skill",
+            "title": "",
+            "remark": "Console Skill คือ Open Source Agent Skills จำนวน 11 ตัว สำหรับช่วย AI แปลงเกม PlayStation 2 (PS2) ให้สามารถเล่นบน PC และอุปกรณ์อื่นได้ โดยไม่ต้องใช้ Emulator\n\n- Game Reverse Engineering: วิเคราะห์โค้ดเกม PS2 และแปลงเป็น C++ เพื่อสร้างเกมที่ทำงานบนเครื่องโดยตรง ผ่าน PS2Recomp\n- Graphics & Sound: ดึงและปรับแต่ง Texture, เสียง, เพลง และรองรับการปรับภาพเป็น Widescreen\n- Game Modding: ใช้ AI ช่วยปรับแต่งเกม เช่น เพิ่มความเร็วรถ เปลี่ยนอาวุธ ปรับฟิสิกส์ และแก้ไขด่าน\n- Cross-Platform: รองรับการพัฒนาเกมสำหรับ Windows, macOS, Linux, Steam Deck, Android และ PS Vita พร้อมปรับแต่ง Controller\n- จุดเด่น: ใช้ Claude Code ช่วย Reverse Engineering, Debug และ Port เกม PS2 ที่เป็นเจ้าของได้ เป็น Open Source ฟรี (MIT License) แต่ยังอยู่ในขั้นทดลอง และไม่รับประกันว่าทุกเกมจะใช้งานได้",
+            "image": "",
+            "id": "mvyx2ff0toq8",
+            "added": "2026-11-02T07:07:33.132Z"
+          }
+        ]
       }
     ],
     "links": []
