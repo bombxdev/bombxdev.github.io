@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T07:13:19.109Z",
+  "updated": "2026-11-02T07:13:36.672Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -253,7 +253,16 @@
         "id": "mvyx9udhmxw8",
         "name": "Tool",
         "folders": [],
-        "links": []
+        "links": [
+          {
+            "url": "https://github.com/Alishahryar1/free-claude-code",
+            "title": "",
+            "remark": "Free Claude Code (FCC) คือ Open Source AI Model Router ที่ช่วยให้ใช้ Claude Code, Codex และ AI Coding Agents อื่น ๆ กับโมเดล AI จากหลาย Provider ทั้งแบบฟรี เสียเงิน และ Local\n\n- Multi-Agent Support: รองรับ AI Coding Agents 12 ตัว เช่น Claude Code, Codex, OpenCode, Cline, Aider และ Antigravity CLI\n- Free AI Models: เชื่อมต่อ AI Providers กว่า 61 ราย เช่น NVIDIA NIM, OpenRouter, Groq และ Gemini โดยโปรเจกต์ระบุว่ามี Free Token รวมกว่า 1.3 พันล้าน Tokens/เดือน\n- Model Switching: สลับโมเดล AI ได้โดยไม่ต้องเปลี่ยน Coding Agent เช่น ใช้ Claude Code ทำงานกับโมเดลอื่นแทน Claude\n- Smart Fallback: เปลี่ยน Provider หรือ Model อัตโนมัติเมื่อ API ใช้งานไม่ได้ รองรับการจัดการ API Keys และลดการใช้ Token\n- จุดเด่น: ใช้งานผ่าน Terminal, VS Code, Desktop และ Browser รองรับ Windows, macOS และ Linux เป็น Open Source (AGPL-3.0) โดยการใช้ฟรีขึ้นอยู่กับโควต้าแต่ละ Provider ไม่ได้หมายความว่า Claude Model ใช้ฟรี",
+            "image": "",
+            "id": "mvyxa7xcg57i",
+            "added": "2026-11-02T07:13:36.672Z"
+          }
+        ]
       }
     ],
     "links": []
