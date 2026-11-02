@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T04:09:30.974Z",
+  "updated": "2026-11-02T04:10:03.782Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -77,7 +77,16 @@
         "id": "mvyqph0e4ywf",
         "name": "Design",
         "folders": [],
-        "links": []
+        "links": [
+          {
+            "url": "https://github.com/lucide-icons/lucide",
+            "title": "",
+            "remark": "Lucide คือ Open Source Icon Library สำหรับนักพัฒนาและนักออกแบบ UI/UX มีไอคอน SVG มากกว่า 1,600 แบบ ใช้งานฟรี\n\n- Icon Library: รวมไอคอนสำหรับเว็บไซต์ Dashboard และ Mobile App ในสไตล์ Minimalist ที่สวยงามและสม่ำเสมอ\n- Customization: ปรับขนาด สี ความหนาของเส้น และรูปแบบไอคอนได้ตามต้องการ\n- Compatibility: รองรับ React, Vue, Angular, Svelte, React Native และ HTML/JavaScript\n- Performance: ใช้ SVG ที่มีขนาดเล็ก รองรับ Tree Shaking เพื่อลดขนาดแอปพลิเคชัน\n- จุดเด่น: ช่วยให้งาน Frontend มีไอคอนมาตรฐานเดียวกัน ใช้งานฟรีทั้งส่วนตัวและเชิงพาณิชย์ (ISC License)",
+            "image": "",
+            "id": "mvyqq6bqigoy",
+            "added": "2026-11-02T04:10:03.782Z"
+          }
+        ]
       }
     ],
     "links": []
