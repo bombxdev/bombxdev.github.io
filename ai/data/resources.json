@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T04:00:40.834Z",
+  "updated": "2026-11-02T04:06:41.568Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -24,6 +24,14 @@
             "image": "",
             "id": "mvyqe3y9tdzd",
             "added": "2026-11-02T04:00:40.833Z"
+          },
+          {
+            "url": "https://github.com/leonxlnx/taste-skill",
+            "title": "",
+            "remark": "Taste Skill คือ Agent Skill ที่ช่วยให้ AI Coding Agent ออกแบบเว็บไซต์และ UI/UX ได้สวยงาม มีเอกลักษณ์ ลดปัญหาดีไซน์ซ้ำ ๆ แบบ AI (AI Slop)\n\n- Art Direction: ช่วย AI เลือกสไตล์ สี Layout และภาพอ้างอิงให้เหมาะกับโปรเจกต์\n- Frontend Design: สร้างและปรับปรุง Landing Page, Dashboard และหน้าจอแอปพลิเคชัน\n- Visual QA: เปิดเว็บจริง ตรวจสอบ Screenshot หลายขนาดหน้าจอ และปรับปรุงดีไซน์อัตโนมัติ\n- Compatibility: รองรับ Claude Code, Codex และ Frontend Framework เช่น React, Vue, Svelte\n- จุดเด่น: เน้นคุณภาพงานออกแบบมากกว่า Superpowers ที่เน้นกระบวนการพัฒนา Software โดยเป็น Open Source ฟรี (MIT License)",
+            "image": "",
+            "id": "mvyqluaouqex",
+            "added": "2026-11-02T04:06:41.568Z"
           }
         ]
       },
