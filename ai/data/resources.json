@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T09:38:09.264Z",
+  "updated": "2026-11-02T09:38:18.808Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -333,6 +333,12 @@
             "added": "2026-11-02T07:34:01.687Z"
           }
         ]
+      },
+      {
+        "id": "mvz2gb3szzwz",
+        "name": "News",
+        "folders": [],
+        "links": []
       }
     ],
     "links": []
