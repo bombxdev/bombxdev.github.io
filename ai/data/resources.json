@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T08:09:00.005Z",
+  "updated": "2026-11-02T08:17:03.321Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -217,6 +217,14 @@
             "image": "",
             "id": "mvyz2udowd9f",
             "added": "2026-11-02T08:03:51.756Z"
+          },
+          {
+            "url": "https://github.com/NVIDIA/SkillSpector",
+            "title": "",
+            "remark": "SkillSpector คือ Open Source AI Skill Security Scanner จาก NVIDIA สำหรับตรวจสอบความปลอดภัยของ AI Agent Skills ก่อนติดตั้ง เพื่อป้องกันโค้ดอันตราย การขโมยข้อมูล และความเสี่ยงด้าน Cybersecurity\n\n- Security Scanning: สแกน Skills จาก GitHub Repository, URL, ZIP หรือไฟล์ SKILL.md เพื่อตรวจสอบความปลอดภัยก่อนใช้งาน\n- Threat Detection: ตรวจจับความเสี่ยง 71 รูปแบบใน 17 หมวดหมู่ เช่น Prompt Injection, Data Exfiltration, Malicious Code และ Supply Chain Attacks\n- AI-Powered Analysis: วิเคราะห์ความปลอดภัยด้วย Static Analysis ร่วมกับ LLM เช่น OpenAI, Claude, Gemini และ Ollama โดยเลือกใช้ LLM เพิ่มเติมได้\n- Risk Assessment: ประเมินคะแนนความเสี่ยง 0–100 พร้อมระดับความรุนแรงและคำแนะนำในการแก้ไข ส่งออกรายงาน JSON, Markdown และ SARIF ได้\n- จุดเด่น: เหมาะสำหรับตรวจสอบ Skills ที่ดาวน์โหลดจากอินเทอร์เน็ตก่อนนำไปใช้กับ Claude Code, Codex และ AI Agents อื่น ๆ รองรับ CLI, Docker และ CI/CD ใช้งานฟรี (Apache 2.0 License)",
+            "image": "",
+            "id": "mvyzjt5lziz5",
+            "added": "2026-11-02T08:17:03.321Z"
           }
         ]
       },
