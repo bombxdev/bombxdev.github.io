@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T07:19:03.861Z",
+  "updated": "2026-11-02T07:22:47.539Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -261,6 +261,14 @@
             "image": "",
             "id": "mvyxa7xcg57i",
             "added": "2026-11-02T07:13:36.672Z"
+          },
+          {
+            "url": "https://opencode.ai/",
+            "title": "",
+            "remark": "OpenCode คือ Open Source AI Coding Agent ที่ช่วยเขียน แก้ไข Debug และพัฒนา Software ด้วย AI คล้าย Claude Code และ Codex แต่สามารถเลือกใช้ AI Models จากหลาย Provider ได้อย่างอิสระ\n\n- AI Coding Assistant: ช่วยเขียนโค้ด แก้ไข Bug, Refactoring, Debugging และจัดการไฟล์ภายในโปรเจกต์\n- Multi-Model Support: รองรับ AI Providers กว่า 75 ราย เช่น OpenAI, Anthropic, Google Gemini และ Local Models ผ่าน Ollama\n- Multi-Agent & Multi-Session: สามารถเปิดหลาย AI Agents ทำงานพร้อมกันภายในโปรเจกต์เดียวกัน\n- Compatibility: รองรับ Terminal, Desktop, Web และ IDE เช่น VS Code, Cursor และ Zed พร้อมเชื่อมต่อบัญชี GitHub Copilot หรือ ChatGPT Plus/Pro ได้\n- จุดเด่น: เป็นทางเลือกแทน Claude Code และ Codex ที่ไม่ผูกติดกับ AI Provider รายเดียว ใช้งานฟรีแบบ Open Source (MIT License) มีโมเดลฟรีให้เลือก แต่โมเดลแบบเสียเงินอาจมีค่าใช้จ่ายเพิ่มเติม",
+            "image": "",
+            "id": "mvyxm0z717hk",
+            "added": "2026-11-02T07:22:47.539Z"
           }
         ]
       },
