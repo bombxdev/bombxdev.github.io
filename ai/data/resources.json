@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T04:17:44.144Z",
+  "updated": "2026-11-02T04:18:19.928Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -108,7 +108,16 @@
         "id": "mvyr01jk0e6r",
         "name": "Testing",
         "folders": [],
-        "links": []
+        "links": [
+          {
+            "url": "https://github.com/microsoft/playwright",
+            "title": "",
+            "remark": "Playwright คือ Open Source Framework จาก Microsoft สำหรับทดสอบเว็บไซต์และควบคุม Browser อัตโนมัติ รองรับ Chromium, Firefox และ WebKit\n\n- Web Testing: ทดสอบการทำงานของเว็บไซต์แบบ End-to-End (E2E) เช่น Login, Form และ User Flow\n- Browser Automation: สั่ง Browser ให้เปิดเว็บ คลิกปุ่ม กรอกข้อมูล ดึงข้อมูล (Web Scraping) และทำงานซ้ำ ๆ อัตโนมัติ\n- Visual Testing: จับภาพ Screenshot, บันทึกวิดีโอ และตรวจสอบข้อผิดพลาดผ่าน Trace Viewer\n- AI Agent Integration: รองรับ Playwright CLI และ MCP ช่วยให้ AI Agents เช่น Claude Code, Codex และ GitHub Copilot ควบคุม Browser เพื่อทดสอบเว็บไซต์ได้\n- Compatibility: รองรับ JavaScript, TypeScript, Python, Java และ .NET ใช้งานฟรี (Apache 2.0 License)",
+            "image": "",
+            "id": "mvyr0t5kqbar",
+            "added": "2026-11-02T04:18:19.928Z"
+          }
+        ]
       }
     ],
     "links": []
