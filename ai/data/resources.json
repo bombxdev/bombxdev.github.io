@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T07:33:49.425Z",
+  "updated": "2026-11-02T07:34:01.687Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -291,7 +291,16 @@
         "id": "mvyy07oxwl4p",
         "name": "Analysis",
         "folders": [],
-        "links": []
+        "links": [
+          {
+            "url": "https://github.com/NVIDIA/structured-data-models",
+            "title": "",
+            "remark": "Structured Data Models (SDM) คือ Open Source AI Framework จาก NVIDIA สำหรับวิเคราะห์และทำนายข้อมูลแบบ Structured Data เช่น ตารางฐานข้อมูล ข้อมูลธุรกิจ และ Time Series โดยใช้ Foundation Models ที่ทำงานบน GPU\n\n- Tabular AI: วิเคราะห์และทำนายข้อมูลตาราง เช่น ยอดขาย พฤติกรรมลูกค้า และความเสี่ยงทางธุรกิจ ด้วยโมเดล TabICLv2, TabFM และ KumoTabular\n- Time Series Forecasting: พยากรณ์ข้อมูลตามช่วงเวลา เช่น ยอดขาย ราคา และความต้องการสินค้า ด้วย Chronos2, TimesFM3 และ KumoForecast\n- Anomaly Detection: ตรวจจับข้อมูลผิดปกติและแนวโน้มที่แตกต่างจากปกติด้วย KumoAnomaly\n- Relational Data: วิเคราะห์ความสัมพันธ์ของข้อมูลจากหลายตารางด้วย KumoRelational เหมาะกับงาน Database และ Data Analytics\n- จุดเด่น: รองรับ GPU Acceleration, Python, PyTorch และ Data Processing ใช้งานฟรีแบบ Open Source (Apache 2.0 สำหรับโค้ด NVIDIA) แต่โมเดลและส่วนประกอบบางรายการมี License แยกต่างหาก",
+            "image": "",
+            "id": "mvyy0h5jya45",
+            "added": "2026-11-02T07:34:01.687Z"
+          }
+        ]
       }
     ],
     "links": []
