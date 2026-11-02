@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T04:10:03.782Z",
+  "updated": "2026-11-02T04:13:05.206Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -85,6 +85,14 @@
             "image": "",
             "id": "mvyqq6bqigoy",
             "added": "2026-11-02T04:10:03.782Z"
+          },
+          {
+            "url": "https://github.com/simple-icons/simple-icons",
+            "title": "",
+            "remark": "Simple Icons คือ Open Source Icon Library ที่รวบรวมโลโก้แบรนด์และเทคโนโลยีชื่อดังกว่า 3,400 แบบ ในรูปแบบ SVG สำหรับใช้งานบนเว็บไซต์และแอปพลิเคชัน\n\n- Brand Icons: รวมโลโก้แบรนด์ เช่น GitHub, Google, Microsoft, Docker, Python และเทคโนโลยีอื่น ๆ\n- Customization: ปรับขนาดและสีของไอคอนได้ รองรับสีประจำแบรนด์และ Dark Mode\n- Compatibility: รองรับ HTML, JavaScript, Node.js, React, Vue และ Framework อื่น ๆ ผ่าน npm, CDN หรือ SVG\n- จุดเด่น: ต่างจาก Lucide ที่เน้นไอคอน UI ทั่วไป โดย Simple Icons เน้นโลโก้แบรนด์และเทคโนโลยีเป็นหลัก\n- License: โปรเจกต์เป็น Open Source ฟรี (CC0 1.0) แต่ต้องตรวจสอบสิทธิ์และข้อกำหนดเครื่องหมายการค้าของแต่ละแบรนด์ก่อนใช้งาน",
+            "image": "",
+            "id": "mvyqu2bablml",
+            "added": "2026-11-02T04:13:05.206Z"
           }
         ]
       }
