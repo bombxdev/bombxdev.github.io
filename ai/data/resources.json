@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-28T09:52:20.119Z",
+  "updated": "2026-11-02T04:00:40.834Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -16,6 +16,14 @@
             "remark": "ตัวอย่าง: Claude Code CLI — agent สำหรับเขียนโค้ดในเทอร์มินัล",
             "image": "",
             "added": "2026-10-28T00:00:00.000Z"
+          },
+          {
+            "url": "https://github.com/obra/superpowers",
+            "title": "Superpowers",
+            "remark": "Superpowers คือ Framework ที่ช่วยให้ AI Coding Agent พัฒนาซอฟต์แวร์อย่างเป็นระบบ ตั้งแต่เริ่มต้นจนส่งมอบงาน\n\n- Brainstorming: ช่วย AI วิเคราะห์ความต้องการและออกแบบระบบก่อนเขียนโค้ด\n- Planning: แบ่งงานเป็นขั้นตอนย่อย พร้อมกำหนดวิธีดำเนินการอย่างชัดเจน\n- Multi-Agent: ให้ AI Agents หลายตัวช่วยกันพัฒนา ตรวจสอบ และรีวิวโค้ด\n- Quality Control: รองรับ TDD, Debugging, Code Review และ Git Worktrees\n- Compatibility: ใช้ได้กับ Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot CLI และอื่น ๆ เป็น Open Source ฟรี (MIT License)",
+            "image": "",
+            "id": "mvyqe3y9tdzd",
+            "added": "2026-11-02T04:00:40.833Z"
           }
         ]
       },
