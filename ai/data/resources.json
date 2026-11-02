@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T08:18:32.787Z",
+  "updated": "2026-11-02T08:43:28.336Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -293,6 +293,14 @@
             "image": "",
             "id": "mvyxm0z717hk",
             "added": "2026-11-02T07:22:47.539Z"
+          },
+          {
+            "url": "https://github.com/trycua/cua",
+            "title": "",
+            "remark": "Cua (Computer-Use Agent) คือ Open Source Framework ที่ช่วยให้ AI Agents ควบคุมคอมพิวเตอร์และใช้งานโปรแกรมต่าง ๆ ผ่านหน้าจอจริงได้อัตโนมัติ คล้ายมนุษย์ใช้งานคอมพิวเตอร์\n\n- Desktop Automation: ให้ AI มองเห็นหน้าจอ คลิกเมาส์ พิมพ์ข้อความ และควบคุมโปรแกรมบน Windows, macOS และ Linux ผ่าน Cua Driver\n- AI Agent Integration: รองรับ Claude Code, Codex, Cursor และ AI Agents อื่น ๆ ผ่าน MCP, CLI และ SDK\n- Sandbox & Virtual Machines: สร้างสภาพแวดล้อมจำลองด้วย VM และ Container เพื่อให้ AI ทดลองทำงานได้อย่างแยกส่วนจากระบบหลัก\n- Cua Spaces: จัดเตรียม Desktop แยกสำหรับ AI Agents รองรับการทำงานร่วมกันระหว่างผู้ใช้กับ AI และการควบคุมเครื่องระยะไกล\n- จุดเด่น: แตกต่างจาก Playwright ที่เน้น Browser โดย Cua สามารถควบคุม Desktop Applications ได้ด้วย พร้อมเครื่องมือ Cua Bench สำหรับทดสอบ AI Agents โดยส่วนหลักใช้ MIT License ส่วน Cua Spaces ใช้ FSL-1.1-MIT และมีทั้งแพ็กเกจฟรีและเสียเงิน",
+            "image": "",
+            "id": "mvz0hs5sbck9",
+            "added": "2026-11-02T08:43:28.336Z"
           }
         ]
       },
