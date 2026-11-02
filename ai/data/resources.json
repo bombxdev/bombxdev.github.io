@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T04:25:47.581Z",
+  "updated": "2026-11-02T04:26:58.146Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -133,6 +133,12 @@
             "added": "2026-11-02T04:25:47.581Z"
           }
         ]
+      },
+      {
+        "id": "mvyrbx0ix5dp",
+        "name": "Video Editor",
+        "folders": [],
+        "links": []
       }
     ],
     "links": []
