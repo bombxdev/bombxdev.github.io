@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T04:23:35.540Z",
+  "updated": "2026-11-02T04:25:33.230Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -121,7 +121,7 @@
       },
       {
         "id": "mvyr7kok3yxk",
-        "name": "Scrapping",
+        "name": "Scraping",
         "folders": [],
         "links": []
       }
