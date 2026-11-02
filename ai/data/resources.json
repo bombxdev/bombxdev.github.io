@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T07:10:09.388Z",
+  "updated": "2026-11-02T07:10:53.499Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -238,7 +238,16 @@
         "id": "mvyx5rzgibyd",
         "name": "Harness",
         "folders": [],
-        "links": []
+        "links": [
+          {
+            "url": "https://github.com/tigerless-labs/autoharness",
+            "title": "",
+            "remark": "AutoHarness คือ Open Source Plugin ที่ช่วยให้ AI Coding Agent เรียนรู้จากการทำงานจริง และสร้าง Skills ใหม่ได้อัตโนมัติ ทำให้ AI พัฒนาความสามารถของตัวเองจากประสบการณ์ที่ผ่านมา\n\n- Automatic Skill Creation: วิเคราะห์ประวัติการทำงานของ AI แล้วสร้าง Skills จากความรู้และวิธีแก้ปัญหาที่ค้นพบโดยอัตโนมัติ\n- Self-Improvement: ปรับปรุง Skills เดิมเมื่อพบวิธีทำงานที่ดีกว่า โดยไม่จำเป็นต้องเขียนหรือแก้ไข Skill เอง\n- Skill Consolidation: ตรวจจับและรวม Skills ที่มีหน้าที่คล้ายกัน เพื่อลดความซ้ำซ้อนและจัดระเบียบคลัง Skills\n- Smart Skill Management: ติดตามการใช้งาน Skills และเก็บ Skills ที่ไม่ถูกใช้งานเข้า Archive โดยไม่ลบประวัติเดิม\n- จุดเด่น: ทำให้ AI เรียนรู้และพัฒนา Skills จากงานจริงได้อย่างต่อเนื่อง ปัจจุบันรองรับ Claude Code เป็นหลัก ต้องใช้ Python 3.11+ และเป็น Open Source ฟรี (MIT License)",
+            "image": "",
+            "id": "mvyx6q0robbf",
+            "added": "2026-11-02T07:10:53.499Z"
+          }
+        ]
       }
     ],
     "links": []
