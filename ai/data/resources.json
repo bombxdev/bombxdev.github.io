@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T04:27:13.370Z",
+  "updated": "2026-11-02T04:29:41.511Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -116,6 +116,14 @@
             "image": "",
             "id": "mvyr0t5kqbar",
             "added": "2026-11-02T04:18:19.928Z"
+          },
+          {
+            "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+            "title": "",
+            "remark": "Chrome DevTools MCP คือ Open Source MCP Server จาก Google Chrome DevTools ที่ช่วยให้ AI Coding Agent ควบคุม Browser ตรวจสอบเว็บไซต์ และ Debug ปัญหาได้โดยตรง\n\n- Browser Automation: ให้ AI เปิดเว็บไซต์ คลิกปุ่ม กรอกข้อมูล และจับภาพ Screenshot ผ่าน Chrome โดยอัตโนมัติ\n- Web Debugging: ตรวจสอบ JavaScript Errors, Console Logs, Network Requests และปัญหาการทำงานของเว็บไซต์\n- Performance Analysis: วิเคราะห์ความเร็วเว็บไซต์ผ่าน Performance Trace, Core Web Vitals และค้นหาจุดที่ทำให้เว็บช้า\n- AI Agent Integration: รองรับ Claude Code, Codex, Cursor, GitHub Copilot และ AI Agents ที่เชื่อมต่อผ่าน MCP\n- จุดเด่น: ต่างจาก Playwright ที่เน้น Automated Testing โดย Chrome DevTools MCP เน้นให้ AI วิเคราะห์ Debug และปรับปรุงเว็บไซต์จาก Browser จริง ใช้งานฟรี (Apache 2.0 License)",
+            "image": "",
+            "id": "mvyrff2f1a43",
+            "added": "2026-11-02T04:29:41.511Z"
           }
         ]
       },
