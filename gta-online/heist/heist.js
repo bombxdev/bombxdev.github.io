@@ -511,7 +511,7 @@ function renderBoard(){
     html += groupHTML(g, st);
   });
   if(open) html += '</div>';
-  $('board').innerHTML = howtoHTML() + tricksHTML() + html;
+  $('board').innerHTML = howtoHTML() + tricksHTML() + lootHTML() + html;
   if($('where')) $('where').innerHTML = whereHTML();
 }
 function groupHTML(g, st){
@@ -644,6 +644,29 @@ function tricksHTML(){
     `<p class="hint">${t('tr.note')}</p>` +
     (T ? `<h4>${t('tr.forYou')}</h4><ul class="tr-list">${T.dyn(S[cur]).map(li).join('')}</ul><h4>${t('tr.pros')}</h4><ul class="tr-list">${T.pro.map(li).join('')}</ul>` : '') +
     own + '</details>';
+}
+/* ---------- loot priority and order (values come from this page's own calculator data) ---------- */
+let lootOpen = true;
+try{ lootOpen = localStorage.getItem('gtaoheist.loot') !== '0'; }catch(e){}
+function lootRank(){
+  if(cur === 'cayo') return Object.entries(CAYO_BAG).filter(([k]) => k !== 'none').map(([k, v]) => [t('loot.' + k), v]);
+  if(cur === 'casino') return Object.values(CASINO_T).map(o => [o.l + (o.ev ? ' (' + t('tag.event') + ')' : ''), o.v]);
+  if(cur === 'kortz') return Object.entries(KORTZ_BAG).filter(([k]) => k !== 'none').map(([k, v]) => [t('kortz.bag.' + k), v]);
+  return null;
+}
+const LOOT_TXT = {cayo:{o:5, p:3, extra:['lt.cay.docs']}, casino:{o:4, p:3, extra:[]}, kortz:{o:4, p:2, extra:[]}};
+function lootHTML(){
+  const rank = lootRank(), X = LOOT_TXT[cur]; if(!rank) return '';
+  const sorted = rank.slice().sort((a, b) => b[1] - a[1]), max = sorted[0][1], k = {cayo:'cay', casino:'cas', kortz:'kor'}[cur];
+  const rng = n => Array.from({length:n}, (_, i) => i + 1);
+  return `<details class="tricks loot" id="loot"${lootOpen ? ' open' : ''}><summary>💎 ${t('lt.title')}</summary>
+    <p class="hint">${t('lt.note')}</p>
+    <h4>${t('lt.rank')}</h4>
+    <ol class="lt-rank">${sorted.map(([l, v]) => `<li><span>${l}</span><i style="width:${(v / max * 100).toFixed(1)}%"></i><b>${fmt(v)}</b></li>`).join('')}</ol>
+    <h4>${t('lt.pick')}</h4><ul class="tr-list">${rng(X.p).map(i => `<li><span class="ic" aria-hidden="true">✅</span><span>${t(`lt.${k}.p${i}`)}</span></li>`).join('')}</ul>
+    <h4>${t('lt.order')}</h4><ol class="lt-order">${rng(X.o).map(i => `<li>${t(`lt.${k}.o${i}`)}</li>`).join('')}</ol>
+    ${X.extra.map(e => `<p class="hint">❓ ${t(e)}</p>`).join('')}
+    <p class="hint"><b>${t('lt.sum')}</b> ${t(`lt.${k}.sum`)}</p></details>`;
 }
 let howtoOpen = true;
 try{ howtoOpen = localStorage.getItem('gtaoheist.howto') !== '0'; }catch(e){}
@@ -807,6 +830,7 @@ window.addEventListener('hashchange', () => {
   else showGuide(k.split(':')[1]);
 });
 $('board').addEventListener('toggle', e => {
+  if(e.target.id === 'loot'){ lootOpen = e.target.open; try{ localStorage.setItem('gtaoheist.loot', lootOpen ? '1' : '0'); }catch(err){} return; }
   if(e.target.id === 'tricks'){ tricksOpen = e.target.open; try{ localStorage.setItem('gtaoheist.tricks', tricksOpen ? '1' : '0'); }catch(err){} return; }
   if(e.target.id !== 'howto') return;
   howtoOpen = e.target.open; try{ localStorage.setItem('gtaoheist.howto', howtoOpen ? '1' : '0'); }catch(err){}

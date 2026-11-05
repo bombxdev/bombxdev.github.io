@@ -285,3 +285,12 @@ select { font: inherit; }
 .hack-steps { list-style: none; margin: 0 0 8px; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 8px; }
 .hack-steps li { background: var(--bg, #111318); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; display: grid; gap: 2px; font-size: 13.5px; }
 .hack-steps small { color: var(--muted); font-size: 12.5px; line-height: 1.45; }
+
+/* ---------- loot priority ---------- */
+.tricks.loot { border-left-color: #3dd68c; }
+.tricks.loot h4 { color: #3dd68c; }
+.lt-rank { list-style: none; margin: 0 0 6px; padding: 0; display: grid; gap: 6px; }
+.lt-rank li { position: relative; display: flex; justify-content: space-between; gap: 10px; padding: 6px 10px; border-radius: 6px; overflow: hidden; font-size: 14px; background: var(--bg, #111318); }
+.lt-rank li i { position: absolute; inset: 0 auto 0 0; background: color-mix(in srgb, #3dd68c 22%, transparent); z-index: 0; }
+.lt-rank li span, .lt-rank li b { position: relative; z-index: 1; }
+.lt-order { margin: 0 0 8px; padding-left: 22px; font-size: 14px; line-height: 1.6; }
