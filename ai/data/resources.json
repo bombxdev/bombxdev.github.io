@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06T13:25:18.211Z",
+  "updated": "2026-11-06T13:25:52.007Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -353,7 +353,16 @@
         "id": "mw50bmkj48k3",
         "name": "Reverse Engineering",
         "folders": [],
-        "links": []
+        "links": [
+          {
+            "url": "https://github.com/storytold/craft-anything",
+            "title": "",
+            "remark": "Craft Anything คือ Open Source AI Reverse Engineering Framework ที่ช่วยให้ AI วิเคราะห์เว็บไซต์ แอปพลิเคชัน และเกมต้นแบบ แล้วสร้างโปรเจกต์ใหม่ที่มีหน้าตาและการทำงานใกล้เคียงต้นฉบับโดยอัตโนมัติ\n\n- Software Reverse Engineering: วิเคราะห์เว็บไซต์ Desktop Apps, Mobile Apps และเกม เพื่อศึกษาการออกแบบ โครงสร้าง และพฤติกรรมการทำงาน\n- AI-Powered Recreation: ให้ AI Coding Agent สร้างเว็บไซต์ แอป หรือเกมใหม่จากต้นแบบ โดยเลือกภาษาและ Framework ที่ต้องการได้\n- Automated Visual Testing: เปรียบเทียบหน้าตาและพฤติกรรมของโปรเจกต์ใหม่กับต้นฉบับ พร้อมให้ AI ปรับแก้จนใกล้เคียง\n- AI Agent Integration: มีเครื่องมือกว่า 320 ตัวผ่าน CLI และ MCP รองรับ Claude Code เป็นหลัก ส่วน Codex, GitHub Copilot และ Agent อื่น ๆ ยังมีข้อจำกัดในการรองรับ\n- จุดเด่น: มี Clean Room Mode สำหรับสร้างงานใหม่จากสิ่งที่มองเห็นโดยไม่อ่าน Source Code ต้นฉบับ รองรับ Windows, macOS และ Linux ใช้งานฟรี (MIT / Apache 2.0 License) แต่ยังอยู่ใน Early Alpha",
+            "image": "",
+            "id": "mw50ccna2yjx",
+            "added": "2026-11-06T13:25:52.006Z"
+          }
+        ]
       }
     ],
     "links": []
