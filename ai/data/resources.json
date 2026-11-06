@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06T13:28:32.275Z",
+  "updated": "2026-11-06T13:29:53.792Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -366,6 +366,12 @@
       },
       {
         "id": "mw50eje88w5o",
+        "name": "Reverse Engineering",
+        "folders": [],
+        "links": []
+      },
+      {
+        "id": "mw50hj7kn3vz",
         "name": "Reverse Engineering",
         "folders": [],
         "links": []
