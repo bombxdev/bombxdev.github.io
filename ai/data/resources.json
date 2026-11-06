@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06T18:15:29.129Z",
+  "updated": "2026-11-06T18:18:45.119Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -365,7 +365,7 @@
           {
             "url": "https://github.com/morluto/rea",
             "title": "",
-            "remark": "",
+            "remark": "REA (Reverse Engineer Anything) คือ Open Source AI Reverse Engineering Framework ที่ช่วยให้ AI Coding Agent วิเคราะห์การทำงานของเว็บไซต์ แอปพลิเคชัน และไฟล์โปรแกรม แม้ไม่มี Source Code ต้นฉบับ\n\n- Software Reverse Engineering: วิเคราะห์โครงสร้างและพฤติกรรมของเว็บไซต์ Desktop Apps, Android APK, Electron, .NET และ Native Binaries\n- AI-Powered Recreation: ให้ AI ศึกษาฟีเจอร์จากแอปต้นแบบ อธิบายหลักการทำงาน และช่วยสร้างฟีเจอร์ลักษณะเดียวกันในโปรเจกต์ใหม่\n- Code & Binary Analysis: วิเคราะห์ Assembly, Pseudocode, Functions, API Calls และความสัมพันธ์ของโค้ดผ่าน Ghidra, Hopper, IDA และเครื่องมืออื่น ๆ\n- AI Agent Integration: รองรับ Claude Code, Codex, Cursor, Gemini CLI และ AI Agents อื่น ๆ ผ่าน MCP และ CLI\n- จุดเด่น: แตกต่างจาก Craft Anything ที่เน้นสร้างโปรเจกต์เลียนแบบต้นฉบับ โดย REA เน้นวิเคราะห์ระบบเชิงลึกพร้อมหลักฐาน รองรับ Windows, macOS และ Linux ใช้งานฟรี (MIT License) แต่เครื่องมือวิเคราะห์บางตัวอาจมีค่าใช้จ่าย",
             "image": "",
             "id": "mw5aosx5vo3a",
             "added": "2026-11-06T18:15:29.129Z"
