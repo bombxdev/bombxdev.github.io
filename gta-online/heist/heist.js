@@ -282,7 +282,9 @@ cayo:{
   defaults:{players:1, diff:'normal', primary:'pink', approach:'stealth', vehicle:'kosatka', entry:'drain', compound:'drain', escape:'kosatka', loadout:'conspirator', time:'night', bags:['coke','coke','coke','coke'], safe:50000, elite:'no', cuts:[100]},
   fix(st){
     const e = CAYO_VEH[st.vehicle].e; if(!e.includes(st.entry)) st.entry = e[0];
-    if(st.entry === 'drain') st.compound = 'drain'; else if(st.compound === 'drain') st.compound = 'main';
+    // Landing in the tunnel (Kosatka) forces the tunnel as compound entrance; from any other landing point
+    // the tunnel is still a valid compound entrance (confirmed in game with Longfin + Main/North Dock).
+    if(st.entry === 'drain') st.compound = 'drain';
     if(st.players === 1 && st.bags[0] === 'gold') st.bags[0] = 'coke';
   },
   groups(st){
@@ -298,7 +300,7 @@ cayo:{
       {key:'time', label:t('cayo.time'), type:'chips', options:[{v:'night', l:t('cayo.night'), d:t('cayo.nightD')}, {v:'day', l:t('cayo.day'), d:t('cayo.dayD')}]},
       {key:'vehicle', label:t('cayo.vehicle'), img:VEH_IMG.cayo, type:'chips', wide:true, options:Object.entries(CAYO_VEH).map(([v, o]) => ({v, l:o.l, d:t('cayo.veh.' + v)}))},
       {key:'entry', label:t('cayo.entry'), hint:t('cayo.entryHint'), map:CAYO_MAP.entry, img:placeImgs(CAYO_MAP.entry), type:'chips', options:Object.entries(CAYO_ENTRY).map(([v, l]) => ({v, l, dis:!ents.includes(v)}))},
-      {key:'compound', label:t('cayo.compound'), map:CAYO_MAP.compound, img:placeImgs(CAYO_MAP.compound), type:'chips', options:Object.entries(CAYO_COMP).map(([v, l]) => ({v, l, dis:(st.entry === 'drain') !== (v === 'drain')}))},
+      {key:'compound', label:t('cayo.compound'), map:CAYO_MAP.compound, img:placeImgs(CAYO_MAP.compound), type:'chips', options:Object.entries(CAYO_COMP).map(([v, l]) => ({v, l, dis:st.entry === 'drain' && v !== 'drain'}))},
       {key:'loadout', label:t('cayo.loadout'), type:'chips', wide:true, options:[
         {v:'aggressor', l:'Aggressor', d:t('weapon.shotgun')}, {v:'conspirator', l:'Conspirator', d:t('weapon.silencedRifle')}, {v:'crackshot', l:'Crack Shot', d:t('weapon.sniper')},
         {v:'saboteur', l:'Saboteur', d:t('weapon.silencedSmg')}, {v:'marksman', l:'Marksman', d:t('weapon.assault')}]},
@@ -326,7 +328,7 @@ cayo:{
     if(p === 'panther') T.push(t('cayo.tip.panther'));
     if(n === 1) T.push(t('cayo.tip.solo'));
     else if(st.bags.slice(0, n).some(b => b !== 'gold')) T.push(t('cayo.tip.gold', {n}));
-    T.push(t(st.entry === 'drain' ? 'cayo.tip.drain' : 'cayo.tip.tryDrain'));
+    if(st.entry === 'drain') T.push(t('cayo.tip.drain')); else if(st.compound !== 'drain') T.push(t('cayo.tip.tryDrain'));
     if(st.escape === 'airstrip') T.push(t('cayo.tip.airstrip'));
     if(st.time === 'day') T.push(t('cayo.tip.day'));
     if(st.approach === 'stealth' && (st.loadout === 'aggressor' || st.loadout === 'crackshot' || st.loadout === 'marksman')) T.push(t('cayo.tip.silenced'));
@@ -616,7 +618,7 @@ const TRICKS = {
   cayo:{
     dyn(st){
       const o = [];
-      if(st.entry === 'drain') o.push(['🕳', 'tr.cay.t.drain']);
+      if(st.compound === 'drain') o.push(['🕳', 'tr.cay.t.drain']);
       if(st.escape === 'maindock') o.push(['⛵', 'tr.cay.t.dock']);
       o.push(['🥇', st.players === 1 ? 'tr.cay.t.solo' : 'tr.cay.t.gold']);
       if(st.time === 'night') o.push(['🌙', 'tr.cay.t.night']);
