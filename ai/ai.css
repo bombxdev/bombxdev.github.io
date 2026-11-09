@@ -88,3 +88,4 @@ dialog::backdrop { background: rgba(0, 0, 0, .6); }
 .toast { position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); background: #0b0d11; border: 1px solid var(--line); padding: 10px 16px; border-radius: 10px; font-size: 14px; z-index: 10; max-width: calc(100vw - 24px); }
 footer { margin-top: 36px; font-size: 13px; text-align: center; }
 @media (max-width: 520px) { input[type=search] { width: 100%; } }
+.visits::before { content: ' · '; }
