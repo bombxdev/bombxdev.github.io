@@ -53,3 +53,4 @@ a { color: var(--accent); }
 .badge.reply { background: #24525a; color: #c4f1f6; }
 .qa .note { font-size: 13.5px; color: var(--muted); border-left: 3px solid #e0a030; padding-left: 8px; }
 .qa .vol { white-space: nowrap; }
+.qa .related { font-size: 13.5px; }

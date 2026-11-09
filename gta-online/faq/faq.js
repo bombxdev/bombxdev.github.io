@@ -29,6 +29,8 @@ function itemHTML(it, open){
       <h3>${esc(t('f.explain'))}</h3><p>${esc(t(k + 'explain'))}</p>
       <h3>${esc(t('f.rec'))}</h3><p class="rec">${esc(t(k + 'rec'))}</p>`}
       ${it.link ? `<p><a href="${esc(it.link[0])}">${esc(t(it.link[1]))}</a></p>` : ''}
+      ${it.related ? `<p class="related">${esc(t('f.related'))}: ${it.related.map(r =>
+        `<a href="#q-${r}" data-goto="${r}">${esc(t('i.' + r + '.q'))}</a>`).join(' • ')}</p>` : ''}
       <div class="meta">
         <span>${esc(t('f.conf'))}: ${badge(it.conf)}</span>
         ${it.vol ? `<span class="vol">⏳ ${esc(t('f.vol.' + it.vol))}</span>` : ''}
@@ -93,6 +95,12 @@ $('toc').addEventListener('click', e => {
   const a = e.target.closest('a[data-cat]'); if(!a) return;
   if(cat !== 'all' && cat !== a.dataset.cat){ cat = 'all'; render(); }
   if(isMobile()) setSidebar(false);
+});
+$('faq').addEventListener('click', e => {
+  const g = e.target.closest('a[data-goto]'); if(!g) return;
+  e.preventDefault();
+  if(cat !== 'all' || query){ cat = 'all'; query = ''; render(); }
+  history.replaceState(null, '', '#q-' + g.dataset.goto); openFromHash();
 });
 window.addEventListener('hashchange', openFromHash);
 
