@@ -180,7 +180,20 @@
   "i.r036.a": "Başlıktaki bir yanıta göre kupon La Coureuse ile sınırlı değil. Hedef araba HSW yükseltmesini desteklemeli ve ödülün koşulları yine geçerlidir.",
   "i.r047.q": "Bir sonraki GTA ile de ilgileniyorsam, GTA Online'a şimdi başlamaya hâlâ değer mi?",
   "i.r047.a": "Bir oyuncu, GTA Online'ın her şeye sahip olmanız gerekmeden hâlâ çok şey sunduğunu söylüyor. Onu, daha önce başlayanlarla bir yarış olarak değil, sevdiğiniz aktiviteleri seçtiğiniz bir oyun olarak görün.",
-  "i.r047.note": "Bir oyunun eğlenceli olup olmadığı kişisel bir görüştür."
+  "i.r047.note": "Bir oyunun eğlenceli olup olmadığı kişisel bir görüştür.",
+  "f.related": "Ayrıca bakın",
+  "i.drdre.q": "Dr. Dre Contract nedir ve nasıl başlatılır?",
+  "i.drdre.insight": "Konunun SSS'si onu en iyi aktif para işleri arasında sayıyor. Rehberler temel konularda hemfikir ama tam kilit açma adımı konusunda ayrışıyor; ödemeler de 2026'da değişti.",
+  "i.drdre.explain": "Agency sahipleri için olan VIP Contract'tır (Agency, Dynasty 8 web sitesinden satın alınır; 2026 tarihli bir rehber en ucuzu için GTA$2,010,000 fiyatını veriyor). Çoğu rehbere göre Agency bilgisayarından bir Security Contract bitirdikten sonra açılır – bazılarına göre iki. Tek başına oynanabilir. Temmuz 2026 dengelemesinden sonra rehberler, final görevi 'Don't Fuck With Dre' için lidere GTA$900,000, haftalık sıfırlamadan sonraki ilk tamamlama için ise yaklaşık GTA$1.1M veriyor; eski rehberler GTA$1M diyor. Bir rehbere göre tekrar oynamak için yaklaşık bir oyun içi günlük bekleme süresi gerekiyor; r/gtaonline konusundaki bir oyuncu ise görevi öğrendikten sonra her tur için yaklaşık bir saat tahmin ediyor.",
+  "i.drdre.rec": "Agency'nin diğer gelirlerini de kullanacaksan değer. Finali haftanın ilk tamamlaması yap ve ödemeyi kendi oyununda kontrol et.",
+  "i.cluckin.q": "Cluckin' Bell Farm Raid nedir?",
+  "i.cluckin.insight": "Genellikle ücretsiz, tek başına oynanabilen bir başlangıç işi olarak önerilir – konunun para kazanma hakkındaki SSS yanıtında yer alıyor.",
+  "i.cluckin.explain": "Vincent Effenburger'den gelen altı görevlik bir hikâye işi. Free Roam'a gir (herkese açık ya da özel), herhangi bir binadan çık ve aramasını bekle – mülk gerekmez. Tek başına ya da en fazla üç oyuncuyla birlikte yapılabilir. Yeni bir rehbere göre host, her hafta ilk final için GTA$600,000, o haftaki tekrarlar için GTA$400,000 alır; eski rehberler GTA$500,000 diyor.",
+  "i.cluckin.rec": "Yeni oyuncular için iyi bir ilk büyük kazanç. Haftanın ilk tamamlama tutarını almak için finali Perşembe sıfırlamasından hemen sonra oyna.",
+  "i.knoway.q": "KnoWay Out nedir (KnoWay taksi sabotaj görevleri)?",
+  "i.knoway.insight": "Konunun SSS'sinin aktif para işleriyle birlikte listelediği, daha yeni ve ücretsiz bir görev seti.",
+  "i.knoway.explain": "KnoWay'in sürücüsüz taksileri üzerinden yürütülen bir gözetim planına karşı Avi Schwartzman için beş hikâye görevi. Bilinmeyen bir numaradan mesaj alırsın, ardından sarı işaretteki ankesörlü telefonu açarsın; mülk gerekmez ve görevler sırayla oynanır. Ödemeler rehberden rehbere değişiyor: yeni bir rehbere göre Temmuz 2026 kesintisinden sonra final Normal'de GTA$245,000, Hard'da GTA$367,500 öder; haftalık sıfırlamadan sonraki ilk host tamamlamasında daha fazlası verilir (GTA$455,700 / GTA$683,550). 5–11 Kasım 2026 arasında Rockstar, KnoWay Out'un ilk tamamlamasını iki katına çıkardı.",
+  "i.knoway.rec": "Yapabiliyorsan Hard oyna ve haftanın ilk turunu sen host et; rehberler ayrıştığı için rakamları kendi oyununda tekrar kontrol et."
  },
  "names": {},
  "cats": {}
