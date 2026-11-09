@@ -49,3 +49,7 @@ a { color: var(--accent); }
 .qa > summary > span:first-child { flex: 1; }
 @media (max-width: 760px) { .wrap { padding-top: 58px; } }
 @media (min-width: 761px) { #page .fab, #closeSidebar { display: none; } }
+.badge.thread { background: #3f2f66; color: #ddd0ff; }
+.badge.reply { background: #24525a; color: #c4f1f6; }
+.qa .note { font-size: 13.5px; color: var(--muted); border-left: 3px solid #e0a030; padding-left: 8px; }
+.qa .vol { white-space: nowrap; }

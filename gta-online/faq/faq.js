@@ -1,12 +1,14 @@
 /* GTA Online FAQ. Which questions exist, their topic, confidence and sources live in
    data/faq.json; every sentence shown to the reader lives in i18n/<code>.json
-   (keys i.<id>.q / .insight / .explain / .rec), so data and wording stay separate. */
+   (keys i.<id>.q / .insight / .explain / .rec), so data and wording stay separate.
+   Cards whose id starts with "r" summarise the r/gtaonline FAQ thread (keys i.<id>.q / .a / .note);
+   their "ref" is the GTAFAQ-xxx id of the research handoff they came from. */
 'use strict';
 const $ = id => document.getElementById(id);
 const t = (k, v) => I18N.t(k, v);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[c]));
 const LANG_KEY = 'gtaomap.lang';   // shared with the map and the heist planner (JSON string)
-const CONF = ['verified', 'consensus', 'opinion', 'unconfirmed'];
+const CONF = ['verified', 'consensus', 'thread', 'reply', 'opinion', 'unconfirmed'];
 
 let DATA = null, cat = 'all', query = '';
 
@@ -21,12 +23,15 @@ function itemHTML(it, open){
   return `<details class="qa" id="q-${it.id}"${open ? ' open' : ''}>
     <summary><span>${esc(t(k + 'q'))}</span>${badge(it.conf)}</summary>
     <div class="body">
-      <h3>${esc(t('f.insight'))}</h3><p>${esc(t(k + 'insight'))}</p>
+      ${it.ref ? `<h3>${esc(t('f.answer'))}</h3><p>${esc(t(k + 'a'))}</p>` +
+        (it.note ? `<p class="note">⚠️ <b>${esc(t('f.note'))}:</b> ${esc(t(k + 'note'))}</p>` : '') :
+      `<h3>${esc(t('f.insight'))}</h3><p>${esc(t(k + 'insight'))}</p>
       <h3>${esc(t('f.explain'))}</h3><p>${esc(t(k + 'explain'))}</p>
-      <h3>${esc(t('f.rec'))}</h3><p class="rec">${esc(t(k + 'rec'))}</p>
-      ${it.link ? `<p><a href="${esc(it.link)}">${esc(t('f.toHeist'))}</a></p>` : ''}
+      <h3>${esc(t('f.rec'))}</h3><p class="rec">${esc(t(k + 'rec'))}</p>`}
+      ${it.link ? `<p><a href="${esc(it.link[0])}">${esc(t(it.link[1]))}</a></p>` : ''}
       <div class="meta">
         <span>${esc(t('f.conf'))}: ${badge(it.conf)}</span>
+        ${it.vol ? `<span class="vol">⏳ ${esc(t('f.vol.' + it.vol))}</span>` : ''}
         <span>${esc(t('f.reviewed', {date:reviewedDate()}))}</span>
         <div class="srcs">${esc(t('f.sources'))}:<ul>${it.sources.map(([name, url]) =>
           `<li><a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(name)} ↗</a></li>`).join('')}</ul></div>
@@ -38,7 +43,7 @@ const matches = it => {
   if(cat !== 'all' && it.cat !== cat) return false;
   if(!query) return true;
   const k = 'i.' + it.id + '.';
-  return ['q', 'insight', 'explain', 'rec'].some(p => t(k + p).toLowerCase().includes(query));
+  return (it.ref ? ['q', 'a', 'note'] : ['q', 'insight', 'explain', 'rec']).some(p => t(k + p).toLowerCase().includes(query));
 };
 
 function renderList(){
@@ -55,6 +60,7 @@ function render(){
     <section class="src-box"><h2>📚 ${esc(t('f.srcTitle'))}</h2>
       <p>${esc(t('f.srcThread'))} <a href="${esc(DATA.thread)}" target="_blank" rel="noopener noreferrer">Simple and Frequently Asked Question Thread – r/gtaonline ↗</a></p>
       <p class="muted">${esc(t('f.srcNote'))}</p>
+      ${DATA.handoff ? `<p class="muted">${esc(t('f.archived', {n:DATA.handoff.archived.length}))}</p>` : ''}
       <p class="muted">${esc(t('f.reviewed', {date:reviewedDate()}))}</p></section>
     <div class="faq-tools"><input type="search" id="q" autocomplete="off" placeholder="${esc(t('f.search'))}" aria-label="${esc(t('f.search'))}" value="${esc(query)}"></div>
     <div class="chips" id="chips">${['all'].concat(DATA.cats).map(c =>
@@ -68,7 +74,7 @@ function render(){
 }
 
 function openFromHash(){
-  const m = /^#q-([a-z]+)$/.exec(location.hash), el = m && $('q-' + m[1]);
+  const m = /^#q-([a-z0-9]+)$/.exec(location.hash), el = m && $('q-' + m[1]);
   if(el){ el.open = true; el.scrollIntoView({block:'start'}); }
 }
 

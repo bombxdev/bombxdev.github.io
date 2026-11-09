@@ -656,7 +656,7 @@ function lootRank(){
   if(cur === 'kortz') return Object.entries(KORTZ_BAG).filter(([k]) => k !== 'none').map(([k, v]) => [t('kortz.bag.' + k), v]);
   return null;
 }
-const LOOT_TXT = {cayo:{o:5, p:3, extra:['lt.cay.docs']}, casino:{o:4, p:3, extra:[]}, kortz:{o:4, p:2, extra:[]}};
+const LOOT_TXT = {cayo:{o:5, p:3, extra:['lt.cay.docs'], comm:['lt.cay.comm', '../faq/#q-r016']}, casino:{o:4, p:3, extra:[]}, kortz:{o:4, p:2, extra:[]}};
 function lootHTML(){
   const rank = lootRank(), X = LOOT_TXT[cur]; if(!rank) return '';
   const sorted = rank.slice().sort((a, b) => b[1] - a[1]), max = sorted[0][1], k = {cayo:'cay', casino:'cas', kortz:'kor'}[cur];
@@ -668,6 +668,7 @@ function lootHTML(){
     <h4>${t('lt.pick')}</h4><ul class="tr-list">${rng(X.p).map(i => `<li><span class="ic" aria-hidden="true">✅</span><span>${t(`lt.${k}.p${i}`)}</span></li>`).join('')}</ul>
     <h4>${t('lt.order')}</h4><ol class="lt-order">${rng(X.o).map(i => `<li>${t(`lt.${k}.o${i}`)}</li>`).join('')}</ol>
     ${X.extra.map(e => `<p class="hint">❓ ${t(e)}</p>`).join('')}
+    ${X.comm ? `<p class="hint">💬 ${t(X.comm[0])} <a href="${X.comm[1]}">FAQ →</a></p>` : ''}
     <p class="hint"><b>${t('lt.sum')}</b> ${t(`lt.${k}.sum`)}</p></details>`;
 }
 let howtoOpen = true;

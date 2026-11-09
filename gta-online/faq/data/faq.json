@@ -1,39 +1,762 @@
 {
  "reviewed": "2026-11-09",
  "thread": "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/simple_and_frequently_asked_question_thread/",
- "cats": ["money", "heist", "session", "account"],
+ "cats": [
+  "money",
+  "business",
+  "heist",
+  "events",
+  "progression",
+  "vehicles",
+  "session",
+  "account",
+  "help",
+  "community"
+ ],
  "items": [
-  {"id": "start", "cat": "money", "conf": "consensus", "sources": [
-   ["Tech Times", "https://www.techtimes.com/articles/317813/20260605/how-make-money-fast-gta-online-beginner-tips-tricks-get-you-started-2026.htm"],
-   ["Prism News", "https://www.prismnews.com/hobbies/gta/gta-online-2026-beginner-guide-build-cash-avoid-griefers"],
-   ["LibertyCity", "https://libertycity.net/guides/gta-online/9915-gta-online-money-guide-2026-best-ways.html"]]},
-  {"id": "firstbiz", "cat": "money", "conf": "consensus", "sources": [
-   ["G2A News", "https://www.g2a.com/news/features/guide/top-money-making-businesses-in-gta-online-2026-profit-guide/"],
-   ["Timesaver", "https://timesaver.gg/blog/gta-online-make-money-fast-2026"],
-   ["GTA Boss", "https://www.gtaboss.gg/gta-5-online/guides/solo-money-making-guide-gta-online"]]},
-  {"id": "nightclub", "cat": "money", "conf": "consensus", "sources": [
-   ["GTA BOOM", "https://www.gtaboom.com/gta-online-nightclub-warehouse-business-guide/"],
-   ["GTA Intel", "https://gtaintel.com/news/gta-online-nightclub-business-guide"],
-   ["Sportskeeda", "https://www.sportskeeda.com/gta/how-make-money-nightclub-gta-online"]]},
-  {"id": "cayo", "cat": "heist", "conf": "consensus", "link": "../heist/#cayo", "sources": [
-   ["G2A News", "https://www.g2a.com/news/features/guide/best-ways-to-make-money-in-gta-5-online-2026-player-guide/"],
-   ["GTA Boss", "https://www.gtaboss.gg/gta-5-online/guides/solo-money-making-guide-gta-online"],
-   ["GTA Series Videos (X)", "https://x.com/GTASeries/status/2077101523478155593"]]},
-  {"id": "weekly", "cat": "heist", "conf": "verified", "sources": [
-   ["Rockstar Games – GTA Online", "https://www.rockstargames.com/gta-online"],
-   ["GTA Series Videos (X)", "https://x.com/GTASeries/status/2077101523478155593"],
-   ["Timesaver – weekly update 5–11 Nov 2026", "https://timesaver.gg/blog/gta-online-weekly-update-november-5-11-2026"]]},
-  {"id": "private", "cat": "session", "conf": "verified", "sources": [
-   ["Rockstar Newswire – The Criminal Enterprises", "https://www.rockstargames.com/newswire/article/25k44k95aa452a/the-criminal-enterprises-coming-july-26-to-gta-online"],
-   ["TheGamer", "https://www.thegamer.com/gta-online-business-private-lobbies/"]]},
-  {"id": "passive", "cat": "session", "conf": "consensus", "sources": [
-   ["Push Square", "https://www.pushsquare.com/guides/gta-online-how-to-avoid-griefers"],
-   ["GTA Intel", "https://gtaintel.com/news/gta-online-how-to-avoid-griefers"]]},
-  {"id": "solopublic", "cat": "session", "conf": "opinion", "sources": [
-   ["Sportskeeda", "https://sportskeeda.com/gta/how-get-gta-online-public-lobby-alone-2022"],
-   ["Push Square", "https://pushsquare.com/guides/gta-online-how-to-play-solo-and-avoid-griefers"]]},
-  {"id": "migrate", "cat": "account", "conf": "verified", "sources": [
-   ["Rockstar Support", "https://support.rockstargames.com/articles/259ZyI1It8EACcCuOk5u4z"],
-   ["Destructoid", "https://destructoid.com/how-to-fix-games-account-is-not-eligible-for-migration-at-this-time-in-gta-online"]]}
- ]
+  {
+   "id": "start",
+   "cat": "money",
+   "conf": "consensus",
+   "sources": [
+    [
+     "Tech Times",
+     "https://www.techtimes.com/articles/317813/20260605/how-make-money-fast-gta-online-beginner-tips-tricks-get-you-started-2026.htm"
+    ],
+    [
+     "Prism News",
+     "https://www.prismnews.com/hobbies/gta/gta-online-2026-beginner-guide-build-cash-avoid-griefers"
+    ],
+    [
+     "LibertyCity",
+     "https://libertycity.net/guides/gta-online/9915-gta-online-money-guide-2026-best-ways.html"
+    ]
+   ]
+  },
+  {
+   "id": "firstbiz",
+   "cat": "money",
+   "conf": "consensus",
+   "sources": [
+    [
+     "G2A News",
+     "https://www.g2a.com/news/features/guide/top-money-making-businesses-in-gta-online-2026-profit-guide/"
+    ],
+    [
+     "Timesaver",
+     "https://timesaver.gg/blog/gta-online-make-money-fast-2026"
+    ],
+    [
+     "GTA Boss",
+     "https://www.gtaboss.gg/gta-5-online/guides/solo-money-making-guide-gta-online"
+    ]
+   ]
+  },
+  {
+   "id": "nightclub",
+   "cat": "business",
+   "conf": "consensus",
+   "sources": [
+    [
+     "GTA BOOM",
+     "https://www.gtaboom.com/gta-online-nightclub-warehouse-business-guide/"
+    ],
+    [
+     "GTA Intel",
+     "https://gtaintel.com/news/gta-online-nightclub-business-guide"
+    ],
+    [
+     "Sportskeeda",
+     "https://www.sportskeeda.com/gta/how-make-money-nightclub-gta-online"
+    ]
+   ]
+  },
+  {
+   "id": "cayo",
+   "cat": "heist",
+   "conf": "consensus",
+   "link": [
+    "../heist/#cayo",
+    "f.toHeist"
+   ],
+   "sources": [
+    [
+     "G2A News",
+     "https://www.g2a.com/news/features/guide/best-ways-to-make-money-in-gta-5-online-2026-player-guide/"
+    ],
+    [
+     "GTA Boss",
+     "https://www.gtaboss.gg/gta-5-online/guides/solo-money-making-guide-gta-online"
+    ],
+    [
+     "GTA Series Videos (X)",
+     "https://x.com/GTASeries/status/2077101523478155593"
+    ]
+   ]
+  },
+  {
+   "id": "weekly",
+   "cat": "heist",
+   "conf": "verified",
+   "sources": [
+    [
+     "Rockstar Games – GTA Online",
+     "https://www.rockstargames.com/gta-online"
+    ],
+    [
+     "GTA Series Videos (X)",
+     "https://x.com/GTASeries/status/2077101523478155593"
+    ],
+    [
+     "Timesaver – weekly update 5–11 Nov 2026",
+     "https://timesaver.gg/blog/gta-online-weekly-update-november-5-11-2026"
+    ]
+   ]
+  },
+  {
+   "id": "private",
+   "cat": "session",
+   "conf": "verified",
+   "sources": [
+    [
+     "Rockstar Newswire – The Criminal Enterprises",
+     "https://www.rockstargames.com/newswire/article/25k44k95aa452a/the-criminal-enterprises-coming-july-26-to-gta-online"
+    ],
+    [
+     "TheGamer",
+     "https://www.thegamer.com/gta-online-business-private-lobbies/"
+    ]
+   ]
+  },
+  {
+   "id": "passive",
+   "cat": "session",
+   "conf": "consensus",
+   "sources": [
+    [
+     "Push Square",
+     "https://www.pushsquare.com/guides/gta-online-how-to-avoid-griefers"
+    ],
+    [
+     "GTA Intel",
+     "https://gtaintel.com/news/gta-online-how-to-avoid-griefers"
+    ]
+   ]
+  },
+  {
+   "id": "solopublic",
+   "cat": "session",
+   "conf": "opinion",
+   "sources": [
+    [
+     "Sportskeeda",
+     "https://sportskeeda.com/gta/how-get-gta-online-public-lobby-alone-2022"
+    ],
+    [
+     "Push Square",
+     "https://pushsquare.com/guides/gta-online-how-to-play-solo-and-avoid-griefers"
+    ]
+   ]
+  },
+  {
+   "id": "migrate",
+   "cat": "account",
+   "conf": "verified",
+   "sources": [
+    [
+     "Rockstar Support",
+     "https://support.rockstargames.com/articles/259ZyI1It8EACcCuOk5u4z"
+    ],
+    [
+     "Destructoid",
+     "https://destructoid.com/how-to-fix-games-account-is-not-eligible-for-migration-at-this-time-in-gta-online"
+    ],
+    [
+     "r/gtaonline – FAQ thread (Q02)",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/simple_and_frequently_asked_question_thread/"
+    ]
+   ]
+  },
+  {
+   "id": "r001",
+   "ref": "GTAFAQ-001",
+   "cat": "money",
+   "conf": "thread",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – FAQ thread (Q01)",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/simple_and_frequently_asked_question_thread/"
+    ]
+   ]
+  },
+  {
+   "id": "r003",
+   "ref": "GTAFAQ-003",
+   "cat": "help",
+   "conf": "thread",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – FAQ thread (Q03)",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/simple_and_frequently_asked_question_thread/"
+    ]
+   ]
+  },
+  {
+   "id": "r007",
+   "ref": "GTAFAQ-007",
+   "cat": "business",
+   "conf": "thread",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – FAQ thread (Q07)",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/simple_and_frequently_asked_question_thread/"
+    ]
+   ]
+  },
+  {
+   "id": "r008",
+   "ref": "GTAFAQ-008",
+   "cat": "events",
+   "conf": "thread",
+   "vol": "event",
+   "sources": [
+    [
+     "r/gtaonline – FAQ thread (Q08)",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/simple_and_frequently_asked_question_thread/"
+    ]
+   ]
+  },
+  {
+   "id": "r011",
+   "ref": "GTAFAQ-011",
+   "cat": "help",
+   "conf": "thread",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – FAQ thread (Q11)",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/simple_and_frequently_asked_question_thread/"
+    ]
+   ]
+  },
+  {
+   "id": "r014",
+   "ref": "GTAFAQ-014",
+   "cat": "business",
+   "conf": "reply",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – player reply",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/comment/oq357pk/"
+    ]
+   ]
+  },
+  {
+   "id": "r019",
+   "ref": "GTAFAQ-019",
+   "cat": "money",
+   "conf": "opinion",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – player reply",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/comment/ovri2df/"
+    ]
+   ],
+   "note": true
+  },
+  {
+   "id": "r022",
+   "ref": "GTAFAQ-022",
+   "cat": "business",
+   "conf": "reply",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – player reply",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/comment/ox29iu2/"
+    ]
+   ]
+  },
+  {
+   "id": "r024",
+   "ref": "GTAFAQ-024",
+   "cat": "business",
+   "conf": "reply",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – player reply",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/comment/ou3zb8q/"
+    ]
+   ]
+  },
+  {
+   "id": "r025",
+   "ref": "GTAFAQ-025",
+   "cat": "business",
+   "conf": "reply",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – player reply",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/comment/ou3zb8q/"
+    ]
+   ]
+  },
+  {
+   "id": "r027",
+   "ref": "GTAFAQ-027",
+   "cat": "vehicles",
+   "conf": "reply",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – player reply",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/comment/19ro8zbgmt2kl/"
+    ]
+   ]
+  },
+  {
+   "id": "r031",
+   "ref": "GTAFAQ-031",
+   "cat": "progression",
+   "conf": "reply",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – player reply",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/comment/19rmexc214ncz/"
+    ]
+   ]
+  },
+  {
+   "id": "r033",
+   "ref": "GTAFAQ-033",
+   "cat": "progression",
+   "conf": "reply",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – player reply",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/comment/otcit2e/"
+    ]
+   ],
+   "link": [
+    "../heist/#guide",
+    "f.toGuide"
+   ]
+  },
+  {
+   "id": "r044",
+   "ref": "GTAFAQ-044",
+   "cat": "money",
+   "conf": "opinion",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – player reply",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/comment/opg6ax6/"
+    ]
+   ],
+   "note": true
+  },
+  {
+   "id": "r004",
+   "ref": "GTAFAQ-004",
+   "cat": "events",
+   "conf": "thread",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – FAQ thread (Q04)",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/simple_and_frequently_asked_question_thread/"
+    ]
+   ]
+  },
+  {
+   "id": "r006",
+   "ref": "GTAFAQ-006",
+   "cat": "vehicles",
+   "conf": "thread",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – FAQ thread (Q06)",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/simple_and_frequently_asked_question_thread/"
+    ]
+   ],
+   "link": [
+    "../map/",
+    "f.toMap"
+   ]
+  },
+  {
+   "id": "r009",
+   "ref": "GTAFAQ-009",
+   "cat": "account",
+   "conf": "thread",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – FAQ thread (Q09)",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/simple_and_frequently_asked_question_thread/"
+    ]
+   ]
+  },
+  {
+   "id": "r010",
+   "ref": "GTAFAQ-010",
+   "cat": "events",
+   "conf": "thread",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – FAQ thread (Q10)",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/simple_and_frequently_asked_question_thread/"
+    ]
+   ]
+  },
+  {
+   "id": "r012",
+   "ref": "GTAFAQ-012",
+   "cat": "help",
+   "conf": "thread",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – FAQ thread (Q12)",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/simple_and_frequently_asked_question_thread/"
+    ]
+   ]
+  },
+  {
+   "id": "r013",
+   "ref": "GTAFAQ-013",
+   "cat": "heist",
+   "conf": "thread",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – FAQ thread (Q13)",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/simple_and_frequently_asked_question_thread/"
+    ]
+   ],
+   "link": [
+    "../heist/",
+    "f.toHeist"
+   ]
+  },
+  {
+   "id": "r015",
+   "ref": "GTAFAQ-015",
+   "cat": "business",
+   "conf": "reply",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – player reply",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/comment/pabei2b/"
+    ]
+   ],
+   "note": true
+  },
+  {
+   "id": "r016",
+   "ref": "GTAFAQ-016",
+   "cat": "heist",
+   "conf": "reply",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – player reply",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/comment/19roago3rxgeb/"
+    ]
+   ],
+   "link": [
+    "../heist/#cayo",
+    "f.toHeist"
+   ]
+  },
+  {
+   "id": "r017",
+   "ref": "GTAFAQ-017",
+   "cat": "heist",
+   "conf": "reply",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – player reply",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/comment/ote03kr/"
+    ]
+   ],
+   "link": [
+    "../heist/#casino",
+    "f.toHeist"
+   ]
+  },
+  {
+   "id": "r018",
+   "ref": "GTAFAQ-018",
+   "cat": "heist",
+   "conf": "reply",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – player reply",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/comment/or72r7u/"
+    ]
+   ],
+   "note": true
+  },
+  {
+   "id": "r020",
+   "ref": "GTAFAQ-020",
+   "cat": "business",
+   "conf": "reply",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – player reply",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/comment/ovr5g9o/"
+    ]
+   ]
+  },
+  {
+   "id": "r021",
+   "ref": "GTAFAQ-021",
+   "cat": "business",
+   "conf": "opinion",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – player reply",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/comment/ov2fers/"
+    ]
+   ]
+  },
+  {
+   "id": "r023",
+   "ref": "GTAFAQ-023",
+   "cat": "business",
+   "conf": "reply",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – player reply",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/comment/p0qol68/"
+    ]
+   ]
+  },
+  {
+   "id": "r026",
+   "ref": "GTAFAQ-026",
+   "cat": "business",
+   "conf": "reply",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – player reply",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/comment/ou3zb8q/"
+    ]
+   ],
+   "note": true
+  },
+  {
+   "id": "r028",
+   "ref": "GTAFAQ-028",
+   "cat": "vehicles",
+   "conf": "reply",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – player reply",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/comment/p5tt524/"
+    ]
+   ]
+  },
+  {
+   "id": "r029",
+   "ref": "GTAFAQ-029",
+   "cat": "help",
+   "conf": "reply",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – player reply",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/comment/owweiqd/"
+    ]
+   ]
+  },
+  {
+   "id": "r030",
+   "ref": "GTAFAQ-030",
+   "cat": "vehicles",
+   "conf": "reply",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – player reply",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/comment/owx0fd8/"
+    ],
+    [
+     "gtacars.net",
+     "https://gtacars.net/"
+    ]
+   ]
+  },
+  {
+   "id": "r032",
+   "ref": "GTAFAQ-032",
+   "cat": "progression",
+   "conf": "reply",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – player reply",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/comment/19rmexc214ncz/"
+    ]
+   ]
+  },
+  {
+   "id": "r034",
+   "ref": "GTAFAQ-034",
+   "cat": "progression",
+   "conf": "reply",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – player reply",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/comment/otcit2e/"
+    ]
+   ]
+  },
+  {
+   "id": "r035",
+   "ref": "GTAFAQ-035",
+   "cat": "community",
+   "conf": "thread",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – FAQ thread (Q01)",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/simple_and_frequently_asked_question_thread/"
+    ],
+    [
+     "r/HeistTeams",
+     "https://www.reddit.com/r/HeistTeams/"
+    ]
+   ],
+   "note": true
+  },
+  {
+   "id": "r037",
+   "ref": "GTAFAQ-037",
+   "cat": "events",
+   "conf": "thread",
+   "vol": "event",
+   "sources": [
+    [
+     "r/gtaonline – FAQ thread (Q10)",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/simple_and_frequently_asked_question_thread/"
+    ]
+   ],
+   "note": true
+  },
+  {
+   "id": "r038",
+   "ref": "GTAFAQ-038",
+   "cat": "business",
+   "conf": "opinion",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – player reply",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/comment/ophmhig/"
+    ]
+   ]
+  },
+  {
+   "id": "r043",
+   "ref": "GTAFAQ-043",
+   "cat": "account",
+   "conf": "reply",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – player reply",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/comment/os08mhi/"
+    ]
+   ]
+  },
+  {
+   "id": "r046",
+   "ref": "GTAFAQ-046",
+   "cat": "help",
+   "conf": "reply",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – thread replies",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/simple_and_frequently_asked_question_thread/"
+    ]
+   ],
+   "note": true
+  },
+  {
+   "id": "r005",
+   "ref": "GTAFAQ-005",
+   "cat": "vehicles",
+   "conf": "thread",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – FAQ thread (Q05)",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/simple_and_frequently_asked_question_thread/"
+    ]
+   ]
+  },
+  {
+   "id": "r036",
+   "ref": "GTAFAQ-036",
+   "cat": "vehicles",
+   "conf": "reply",
+   "vol": "event",
+   "sources": [
+    [
+     "r/gtaonline – player reply",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/comment/paq6c5j/"
+    ]
+   ]
+  },
+  {
+   "id": "r047",
+   "ref": "GTAFAQ-047",
+   "cat": "community",
+   "conf": "opinion",
+   "vol": "change",
+   "sources": [
+    [
+     "r/gtaonline – player reply",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/comment/ot32iwl/"
+    ]
+   ],
+   "note": true
+  }
+ ],
+ "handoff": {
+  "retrieved": "2026-11-09",
+  "post_date": "2026-06-03",
+  "archived": [
+   "GTAFAQ-039",
+   "GTAFAQ-040",
+   "GTAFAQ-041",
+   "GTAFAQ-042",
+   "GTAFAQ-045"
+  ]
+ }
 }
