@@ -1,0 +1,39 @@
+{
+ "reviewed": "2026-11-09",
+ "thread": "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/simple_and_frequently_asked_question_thread/",
+ "cats": ["money", "heist", "session", "account"],
+ "items": [
+  {"id": "start", "cat": "money", "conf": "consensus", "sources": [
+   ["Tech Times", "https://www.techtimes.com/articles/317813/20260605/how-make-money-fast-gta-online-beginner-tips-tricks-get-you-started-2026.htm"],
+   ["Prism News", "https://www.prismnews.com/hobbies/gta/gta-online-2026-beginner-guide-build-cash-avoid-griefers"],
+   ["LibertyCity", "https://libertycity.net/guides/gta-online/9915-gta-online-money-guide-2026-best-ways.html"]]},
+  {"id": "firstbiz", "cat": "money", "conf": "consensus", "sources": [
+   ["G2A News", "https://www.g2a.com/news/features/guide/top-money-making-businesses-in-gta-online-2026-profit-guide/"],
+   ["Timesaver", "https://timesaver.gg/blog/gta-online-make-money-fast-2026"],
+   ["GTA Boss", "https://www.gtaboss.gg/gta-5-online/guides/solo-money-making-guide-gta-online"]]},
+  {"id": "nightclub", "cat": "money", "conf": "consensus", "sources": [
+   ["GTA BOOM", "https://www.gtaboom.com/gta-online-nightclub-warehouse-business-guide/"],
+   ["GTA Intel", "https://gtaintel.com/news/gta-online-nightclub-business-guide"],
+   ["Sportskeeda", "https://www.sportskeeda.com/gta/how-make-money-nightclub-gta-online"]]},
+  {"id": "cayo", "cat": "heist", "conf": "consensus", "link": "../heist/#cayo", "sources": [
+   ["G2A News", "https://www.g2a.com/news/features/guide/best-ways-to-make-money-in-gta-5-online-2026-player-guide/"],
+   ["GTA Boss", "https://www.gtaboss.gg/gta-5-online/guides/solo-money-making-guide-gta-online"],
+   ["GTA Series Videos (X)", "https://x.com/GTASeries/status/2077101523478155593"]]},
+  {"id": "weekly", "cat": "heist", "conf": "verified", "sources": [
+   ["Rockstar Games – GTA Online", "https://www.rockstargames.com/gta-online"],
+   ["GTA Series Videos (X)", "https://x.com/GTASeries/status/2077101523478155593"],
+   ["Timesaver – weekly update 5–11 Nov 2026", "https://timesaver.gg/blog/gta-online-weekly-update-november-5-11-2026"]]},
+  {"id": "private", "cat": "session", "conf": "verified", "sources": [
+   ["Rockstar Newswire – The Criminal Enterprises", "https://www.rockstargames.com/newswire/article/25k44k95aa452a/the-criminal-enterprises-coming-july-26-to-gta-online"],
+   ["TheGamer", "https://www.thegamer.com/gta-online-business-private-lobbies/"]]},
+  {"id": "passive", "cat": "session", "conf": "consensus", "sources": [
+   ["Push Square", "https://www.pushsquare.com/guides/gta-online-how-to-avoid-griefers"],
+   ["GTA Intel", "https://gtaintel.com/news/gta-online-how-to-avoid-griefers"]]},
+  {"id": "solopublic", "cat": "session", "conf": "opinion", "sources": [
+   ["Sportskeeda", "https://sportskeeda.com/gta/how-get-gta-online-public-lobby-alone-2022"],
+   ["Push Square", "https://pushsquare.com/guides/gta-online-how-to-play-solo-and-avoid-griefers"]]},
+  {"id": "migrate", "cat": "account", "conf": "verified", "sources": [
+   ["Rockstar Support", "https://support.rockstargames.com/articles/259ZyI1It8EACcCuOk5u4z"],
+   ["Destructoid", "https://destructoid.com/how-to-fix-games-account-is-not-eligible-for-migration-at-this-time-in-gta-online"]]}
+ ]
+}

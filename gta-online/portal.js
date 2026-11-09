@@ -15,6 +15,7 @@
     map:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><path d="M3 6.5 8.5 4l7 2.5L21 4v13.5L15.5 20l-7-2.5L3 20z" fill="rgba(255,255,255,.15)"/><path d="M8.5 4v13.5M15.5 6.5V20"/><circle cx="12" cy="10" r="2.2" fill="#fff" stroke="none"/></svg>',
     heist:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3" y="3.5" width="18" height="17" rx="3" fill="rgba(255,255,255,.15)"/><circle cx="12" cy="12" r="4.5"/><path d="M12 7.5v2M12 14.5v2M7.5 12h2M14.5 12h2"/><circle cx="12" cy="12" r="1.2" fill="#fff"/><path d="M6.5 20.5v1.5M17.5 20.5v1.5" stroke-linecap="round"/></svg>',
     guide:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><path d="M12 6.5C10 5 6.5 4.5 3.5 5v13c3-.5 6.5 0 8.5 1.5 2-1.5 5.5-2 8.5-1.5V5c-3-.5-6.5 0-8.5 1.5z" fill="rgba(255,255,255,.15)"/><path d="M12 6.5v13"/></svg>',
+    faq:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="9" fill="rgba(255,255,255,.15)"/><path d="M9.3 9.4a2.8 2.8 0 1 1 3.9 2.6c-.8.4-1.2 1-1.2 1.8v.6"/><circle cx="12" cy="17.2" r=".6" fill="#fff"/></svg>',
     credits:'<svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.3 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z" fill="#fff"/></svg>',
     about:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><circle cx="12" cy="12" r="8.5" fill="rgba(255,255,255,.15)"/><path d="M12 11v6" stroke-linecap="round"/><circle cx="12" cy="7.6" r="1.2" fill="#fff" stroke="none"/></svg>'
   };
@@ -22,6 +23,7 @@
     {id:'map', href:'map/', bg:'linear-gradient(145deg,#3ccf8e,#14794b)', c:'#22a868', feats:3},
     {id:'heist', href:'heist/', bg:'linear-gradient(145deg,#ff9a55,#c93d1f)', c:'#e0632f', feats:3},
     {id:'guide', href:'heist/#guide', bg:'linear-gradient(145deg,#6cb8ff,#2e5fd6)', c:'#3d7be0', feats:3},
+    {id:'faq', href:'faq/', bg:'linear-gradient(145deg,#ffd166,#d98a12)', c:'#d9971f', feats:2},
     {id:'credits', href:'map/credits.html', bg:'linear-gradient(145deg,#ff7aa8,#c2366b)', c:'#d84a7f', feats:0},
     {id:'about', href:null, bg:'linear-gradient(145deg,#9aa3b8,#4d556b)', c:'#5c667e', feats:0}
   ];
