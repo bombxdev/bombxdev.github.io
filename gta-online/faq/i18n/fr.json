@@ -180,7 +180,20 @@
   "i.r036.a": "Une réponse du fil indique que le bon n'est pas limité à La Coureuse. La voiture visée doit être compatible avec l'amélioration HSW, et les conditions de la récompense s'appliquent toujours.",
   "i.r047.q": "GTA Online vaut-il encore la peine de commencer maintenant, si le prochain GTA m'intéresse aussi ?",
   "i.r047.a": "Un joueur estime que GTA Online offre encore beaucoup sans qu'il soit nécessaire de tout posséder. Voyez-le comme un jeu où vous choisissez les activités qui vous plaisent, plutôt que comme une course contre ceux qui ont commencé avant vous.",
-  "i.r047.note": "Savoir si un jeu est amusant relève de l'avis personnel."
+  "i.r047.note": "Savoir si un jeu est amusant relève de l'avis personnel.",
+  "f.related": "Voir aussi",
+  "i.drdre.q": "Qu'est-ce que le Dr. Dre Contract et comment le lancer ?",
+  "i.drdre.insight": "La FAQ du fil le classe parmi les meilleures missions actives pour gagner de l'argent. Les guides s'accordent sur l'essentiel mais divergent sur l'étape exacte de déblocage, et les gains ont changé en 2026.",
+  "i.drdre.explain": "C'est le VIP Contract réservé aux propriétaires d'une Agency (achetée sur le site de Dynasty 8 ; un guide de 2026 indique GTA$2,010,000 pour la moins chère). La plupart des guides disent qu'il apparaît une fois que vous avez terminé un Security Contract depuis l'ordinateur de l'Agency – certains disent deux. Il se joue en solo. Après le rééquilibrage de juillet 2026, les guides citent GTA$900,000 pour le leader lors du final, 'Don't Fuck With Dre', et environ GTA$1.1M pour la première réussite après la réinitialisation hebdomadaire ; les guides plus anciens parlent de GTA$1M. Un guide indique qu'il faut environ un jour en jeu de délai avant de le rejouer, et un joueur du fil r/gtaonline estime qu'une partie prend environ une heure une fois qu'on la connaît.",
+  "i.drdre.rec": "Intéressant si vous comptez aussi profiter des autres revenus de l'Agency. Faites du final votre première réussite de la semaine et vérifiez le gain dans votre jeu.",
+  "i.cluckin.q": "Qu'est-ce que le Cluckin' Bell Farm Raid ?",
+  "i.cluckin.insight": "Souvent conseillé comme première mission gratuite en solo – il figure dans la réponse de la FAQ du fil sur les moyens de gagner de l'argent.",
+  "i.cluckin.explain": "Une mission scénarisée en six étapes proposée par Vincent Effenburger. Allez en Free Roam (session publique ou privée), sortez de n'importe quel bâtiment et attendez son appel – aucune propriété n'est nécessaire. Elle se joue en solo ou avec jusqu'à trois autres joueurs. Un guide récent indique que l'hôte touche GTA$600,000 pour le premier final de chaque semaine et GTA$400,000 pour les suivants de la même semaine ; les guides plus anciens parlent de GTA$500,000.",
+  "i.cluckin.rec": "Un bon premier gros gain pour les nouveaux joueurs. Jouez le final juste après la réinitialisation du jeudi pour toucher le montant de la première réussite de la semaine.",
+  "i.knoway.q": "Qu'est-ce que KnoWay Out (les missions de sabotage des taxis KnoWay) ?",
+  "i.knoway.insight": "Une série de missions gratuites plus récente, que la FAQ du fil range avec les missions actives pour gagner de l'argent.",
+  "i.knoway.explain": "Cinq missions scénarisées pour Avi Schwartzman contre un système de surveillance qui passe par les taxis autonomes de KnoWay. Vous recevez un SMS d'un numéro inconnu, puis vous répondez à la cabine téléphonique au marqueur jaune ; aucune propriété n'est nécessaire et les missions se jouent dans l'ordre. Les gains varient selon les guides : un guide récent indique que le final rapporte GTA$245,000 en Normal et GTA$367,500 en Hard après la baisse de juillet 2026, avec davantage pour la première réussite en tant qu'hôte après la réinitialisation hebdomadaire (GTA$455,700 / GTA$683,550). Du 5 au 11 novembre 2026, Rockstar a doublé les gains de la première réussite de KnoWay Out.",
+  "i.knoway.rec": "Jouez en Hard si vous le pouvez et soyez l'hôte de la première partie de la semaine ; vérifiez les montants dans votre jeu, car les guides divergent."
  },
  "names": {},
  "cats": {}

@@ -180,7 +180,20 @@
   "i.r036.a": "A reply in the thread says the voucher is not limited to the La Coureuse. The target car must support the HSW upgrade, and the conditions of the reward still apply.",
   "i.r047.q": "Is GTA Online still worth starting now, if I'm also interested in the next GTA?",
   "i.r047.a": "A player says GTA Online still offers a lot without needing to own everything. See it as a game where you pick the activities you enjoy, rather than a race against people who started earlier.",
-  "i.r047.note": "Whether a game is fun is a personal opinion."
+  "i.r047.note": "Whether a game is fun is a personal opinion.",
+  "f.related": "See also",
+  "i.drdre.q": "What is the Dr. Dre Contract and how do I start it?",
+  "i.drdre.insight": "The thread's FAQ lists it among the best hands-on money jobs. Guides agree on the basics but disagree on the exact unlock step, and payouts changed in 2026.",
+  "i.drdre.explain": "It is the VIP Contract for owners of an Agency (bought on the Dynasty 8 website; one 2026 guide lists GTA$2,010,000 for the cheapest). Most guides say it appears after you finish one Security Contract from the Agency computer – some say two. It can be played solo. After the July 2026 rebalance, guides quote GTA$900,000 for the leader on the finale, 'Don't Fuck With Dre', and about GTA$1.1M for the first completion after the weekly reset; older guides say GTA$1M. One guide says a replay needs roughly one in-game day of cooldown, and a player in the r/gtaonline thread estimates about an hour per run once you know it.",
+  "i.drdre.rec": "Worth it if you will also use the Agency's other income. Make the finale your first completion of the week, and check the payout in your game.",
+  "i.cluckin.q": "What is the Cluckin' Bell Farm Raid?",
+  "i.cluckin.insight": "Often recommended as a free solo starter job – it is in the thread's FAQ answer on making money.",
+  "i.cluckin.explain": "A six-mission story job from Vincent Effenburger. Go to Free Roam (public or private), leave any building and wait for his call – no property is needed. It can be done solo or with up to three other players. A recent guide says the host gets GTA$600,000 for the first finale each week and GTA$400,000 for repeats that week; older guides say GTA$500,000.",
+  "i.cluckin.rec": "A good first big payday for new players. Play the finale right after the Thursday reset to get the first-of-the-week amount.",
+  "i.knoway.q": "What is KnoWay Out (the KnoWay taxi sabotage missions)?",
+  "i.knoway.insight": "A newer free mission set that the thread's FAQ lists with the hands-on money jobs.",
+  "i.knoway.explain": "Five story missions for Avi Schwartzman against a surveillance scheme run through KnoWay's self-driving taxis. You get a text from an unknown number, then answer the payphone at the yellow marker; no property is needed, and the missions are played in order. Payouts differ between guides: a recent one says the finale pays GTA$245,000 on Normal and GTA$367,500 on Hard after the July 2026 cut, with more for the first hosted completion after the weekly reset (GTA$455,700 / GTA$683,550). For 5–11 November 2026 Rockstar doubled the first completion of KnoWay Out.",
+  "i.knoway.rec": "Play Hard if you can and host the first run of the week; double-check the numbers in your game, because guides disagree."
  },
  "names": {},
  "cats": {}

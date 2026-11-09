@@ -180,7 +180,20 @@
   "i.r036.a": "Una respuesta del hilo dice que el vale no está limitado al La Coureuse. El coche elegido debe admitir la mejora HSW, y las condiciones de la recompensa siguen aplicándose.",
   "i.r047.q": "¿Sigue mereciendo la pena empezar GTA Online ahora si también me interesa el próximo GTA?",
   "i.r047.a": "Un jugador dice que GTA Online sigue ofreciendo mucho sin necesidad de tenerlo todo. Tómatelo como un juego en el que eliges las actividades que te gustan, no como una carrera contra quienes empezaron antes.",
-  "i.r047.note": "Que un juego sea divertido es una opinión personal."
+  "i.r047.note": "Que un juego sea divertido es una opinión personal.",
+  "f.related": "Ver también",
+  "i.drdre.q": "¿Qué es el Dr. Dre Contract y cómo lo empiezo?",
+  "i.drdre.insight": "El FAQ del hilo lo pone entre los mejores trabajos activos para ganar dinero. Las guías coinciden en lo básico, pero no en el paso exacto para desbloquearlo, y los pagos cambiaron en 2026.",
+  "i.drdre.explain": "Es el VIP Contract para dueños de una Agency (se compra en la web de Dynasty 8; una guía de 2026 indica GTA$2,010,000 para la más barata). La mayoría de las guías dicen que aparece después de terminar un Security Contract desde el ordenador de la Agency; algunas dicen que dos. Se puede jugar en solitario. Tras el reajuste de julio de 2026, las guías citan GTA$900,000 para el líder en el final, 'Don't Fuck With Dre', y unos GTA$1.1M por la primera vez que lo completas tras el reinicio semanal; las guías más antiguas dicen GTA$1M. Una guía dice que para repetirlo hay que esperar más o menos un día del juego, y un jugador del hilo de r/gtaonline calcula una hora por partida cuando ya te lo sabes.",
+  "i.drdre.rec": "Vale la pena si también vas a usar los otros ingresos de la Agency. Haz que el final sea tu primera vez de la semana y comprueba el pago en tu juego.",
+  "i.cluckin.q": "¿Qué es el Cluckin' Bell Farm Raid?",
+  "i.cluckin.insight": "Se suele recomendar como trabajo inicial gratis y en solitario; aparece en la respuesta del FAQ del hilo sobre cómo ganar dinero.",
+  "i.cluckin.explain": "Un trabajo de historia de seis misiones de Vincent Effenburger. Ve a Free Roam (sesión pública o privada), sal de cualquier edificio y espera su llamada; no necesitas ninguna propiedad. Puedes hacerlo solo o con hasta otros tres jugadores. Una guía reciente dice que el anfitrión recibe GTA$600,000 por el primer final de cada semana y GTA$400,000 por las repeticiones de esa semana; las guías más antiguas dicen GTA$500,000.",
+  "i.cluckin.rec": "Un buen primer gran pago para jugadores nuevos. Juega el final justo después del reinicio del jueves para cobrar la cantidad de la primera vez de la semana.",
+  "i.knoway.q": "¿Qué es KnoWay Out (las misiones de sabotaje de los taxis KnoWay)?",
+  "i.knoway.insight": "Un conjunto de misiones gratis más reciente que el FAQ del hilo pone junto a los trabajos activos para ganar dinero.",
+  "i.knoway.explain": "Cinco misiones de historia para Avi Schwartzman contra una red de vigilancia que funciona con los taxis autónomos de KnoWay. Recibes un mensaje de un número desconocido y luego contestas el teléfono público en el marcador amarillo; no necesitas ninguna propiedad y las misiones se juegan en orden. Los pagos varían según la guía: una reciente dice que el final paga GTA$245,000 en Normal y GTA$367,500 en Hard tras el recorte de julio de 2026, y más por la primera vez que lo completas como anfitrión tras el reinicio semanal (GTA$455,700 / GTA$683,550). Del 5 al 11 de noviembre de 2026, Rockstar duplicó la primera vez que completas KnoWay Out.",
+  "i.knoway.rec": "Juega en Hard si puedes y sé el anfitrión de la primera partida de la semana; comprueba las cifras en tu juego, porque las guías no coinciden."
  },
  "names": {},
  "cats": {}

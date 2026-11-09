@@ -188,6 +188,92 @@
      "r/gtaonline – FAQ thread (Q01)",
      "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/simple_and_frequently_asked_question_thread/"
     ]
+   ],
+   "related": [
+    "drdre",
+    "cluckin",
+    "knoway",
+    "firstbiz",
+    "nightclub"
+   ]
+  },
+  {
+   "id": "drdre",
+   "cat": "money",
+   "conf": "consensus",
+   "vol": "change",
+   "related": [
+    "r018",
+    "r001"
+   ],
+   "sources": [
+    [
+     "GTA Boss – Dr. Dre Contract",
+     "https://www.gtaboss.gg/gta-5-online/guides/the-contract-with-dr-dre-in-gta-v-online-full-walkthrough"
+    ],
+    [
+     "Timesaver – Agency 2026",
+     "https://timesaver.gg/blog/gta-online-agency-payouts-worth-it-2026"
+    ],
+    [
+     "GTA Wiki – The Contract: Dr. Dre",
+     "https://gta.fandom.com/wiki/The_Contract:_Dr._Dre"
+    ],
+    [
+     "r/gtaonline – player reply",
+     "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/comment/or72r7u/"
+    ]
+   ]
+  },
+  {
+   "id": "cluckin",
+   "cat": "money",
+   "conf": "consensus",
+   "vol": "change",
+   "related": [
+    "r001"
+   ],
+   "sources": [
+    [
+     "GTA Boss – Cluckin' Bell Farm Raid",
+     "https://www.gtaboss.gg/gta-5-online/guides/how-to-complete-the-cluckin-bell-farm-raid-in-gta-online"
+    ],
+    [
+     "GamesRadar+",
+     "https://www.gamesradar.com/gta-online-cluckin-bell-farm-raid"
+    ],
+    [
+     "GTA Intel",
+     "https://gtaintel.com/news/gta-online-cluckin-bell-farm-raid-guide"
+    ]
+   ]
+  },
+  {
+   "id": "knoway",
+   "cat": "money",
+   "conf": "consensus",
+   "vol": "change",
+   "related": [
+    "r001",
+    "weekly"
+   ],
+   "sources": [
+    [
+     "GTA Wiki – KnoWay Out",
+     "https://gta.fandom.com/wiki/KnoWay_Out"
+    ],
+    [
+     "GTA Boss – KnoWay Out",
+     "https://www.gtaboss.gg/gta-5-online/guides/knoway-out-missions-gta-online"
+    ],
+    [
+     "Deltia's Gaming",
+     "https://deltiasgaming.com/gta-online-knoway-out-walkthrough-mission-guide/"
+    ],
+    [
+     "Rockstar Games – GTA Online",
+     "https://www.rockstargames.com/gta-online"
+    ]
    ]
   },
   {
@@ -511,7 +597,10 @@
      "https://www.reddit.com/r/gtaonline/comments/1tvd4s5/comment/or72r7u/"
     ]
    ],
-   "note": true
+   "note": true,
+   "related": [
+    "drdre"
+   ]
   },
   {
    "id": "r020",

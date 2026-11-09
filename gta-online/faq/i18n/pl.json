@@ -180,7 +180,20 @@
   "i.r036.a": "Jedna odpowiedź w wątku mówi, że kupon nie jest ograniczony do La Coureuse. Wybrane auto musi obsługiwać ulepszenie HSW, a warunki nagrody nadal obowiązują.",
   "i.r047.q": "Czy warto jeszcze zaczynać GTA Online, jeśli interesuje mnie też następne GTA?",
   "i.r047.a": "Jeden gracz mówi, że GTA Online wciąż oferuje dużo, nawet bez posiadania wszystkiego. Traktuj ją jako grę, w której wybierasz aktywności, które lubisz, a nie wyścig z tymi, którzy zaczęli wcześniej.",
-  "i.r047.note": "To, czy gra jest fajna, to kwestia osobistej opinii."
+  "i.r047.note": "To, czy gra jest fajna, to kwestia osobistej opinii.",
+  "f.related": "Zobacz też",
+  "i.drdre.q": "Czym jest Dr. Dre Contract i jak go zacząć?",
+  "i.drdre.insight": "FAQ wątku wymienia go wśród najlepszych aktywnych sposobów na zarobek. Poradniki zgadzają się co do podstaw, ale nie co do dokładnego kroku odblokowania, a wypłaty zmieniły się w 2026 roku.",
+  "i.drdre.explain": "To VIP Contract dla właścicieli Agency (kupowanej na stronie Dynasty 8; jeden poradnik z 2026 roku podaje GTA$2,010,000 za najtańszą). Większość poradników mówi, że pojawia się po ukończeniu jednego Security Contract z komputera w Agency – niektóre mówią, że dwóch. Można go przejść solo. Po zmianach balansu w lipcu 2026 roku poradniki podają GTA$900,000 dla lidera za finał 'Don't Fuck With Dre' i około GTA$1.1M za pierwsze ukończenie po cotygodniowym resecie; starsze poradniki mówią o GTA$1M. Jeden poradnik mówi, że przed powtórką trzeba odczekać mniej więcej jeden dzień w grze, a gracz z wątku na r/gtaonline szacuje około godziny na podejście, gdy już znasz przebieg.",
+  "i.drdre.rec": "Warto, jeśli będziesz korzystać też z innych źródeł dochodu Agency. Niech finał będzie twoim pierwszym ukończeniem w tygodniu i sprawdź wypłatę w swojej grze.",
+  "i.cluckin.q": "Czym jest Cluckin' Bell Farm Raid?",
+  "i.cluckin.insight": "Często polecany jako darmowa misja na start dla gracza solo – jest w odpowiedzi FAQ wątku na temat zarabiania.",
+  "i.cluckin.explain": "Fabularna seria sześciu misji od Vincent Effenburger. Wejdź do Free Roam (sesja publiczna lub prywatna), wyjdź z dowolnego budynku i poczekaj na jego telefon – nie potrzebujesz żadnej nieruchomości. Można ją przejść solo albo z maksymalnie trzema innymi graczami. Jeden nowy poradnik mówi, że host dostaje GTA$600,000 za pierwszy finał w każdym tygodniu i GTA$400,000 za powtórki w tym samym tygodniu; starsze poradniki mówią o GTA$500,000.",
+  "i.cluckin.rec": "Dobra pierwsza duża wypłata dla nowych graczy. Zagraj finał zaraz po czwartkowym resecie, żeby dostać kwotę za pierwsze ukończenie w tygodniu.",
+  "i.knoway.q": "Czym jest KnoWay Out (misje sabotażu taksówek KnoWay)?",
+  "i.knoway.insight": "Nowszy darmowy zestaw misji, który FAQ wątku wymienia wśród aktywnych sposobów na zarobek.",
+  "i.knoway.explain": "Pięć misji fabularnych dla Avi Schwartzman przeciwko systemowi inwigilacji działającemu przez autonomiczne taksówki KnoWay. Dostajesz SMS z nieznanego numeru, a potem odbierasz telefon w budce przy żółtym znaczniku; nie potrzebujesz żadnej nieruchomości, a misje przechodzi się po kolei. Wypłaty różnią się w zależności od poradnika: jeden nowy mówi, że po obcięciu w lipcu 2026 roku finał płaci GTA$245,000 na Normal i GTA$367,500 na Hard, a więcej za pierwsze ukończenie jako host po cotygodniowym resecie (GTA$455,700 / GTA$683,550). Od 5 do 11 listopada 2026 roku Rockstar podwoił nagrodę za pierwsze ukończenie KnoWay Out.",
+  "i.knoway.rec": "Graj na Hard, jeśli możesz, i hostuj pierwsze podejście w tygodniu; sprawdź liczby w swojej grze, bo poradniki się różnią."
  },
  "names": {},
  "cats": {}
