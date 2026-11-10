@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06T18:18:45.119Z",
+  "updated": "2026-11-10T07:35:33.078Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -240,6 +240,14 @@
             "image": "",
             "id": "mvyrpvd7nbc9",
             "added": "2026-11-02T04:37:49.195Z"
+          },
+          {
+            "url": "https://github.com/Dicklesworthstone/eidetic_engine_cli",
+            "title": "",
+            "remark": "Eidetic Engine (EE) คือ AI Memory System แบบ Local-first ที่ช่วยให้ AI Coding Agents จดจำข้อมูลโปรเจกต์ ประวัติการทำงาน และบทเรียนจาก Session ก่อนหน้า เพื่อให้สามารถทำงานต่อเนื่องโดยไม่ต้องเริ่มต้นใหม่ทุกครั้ง\n\n- Persistent Memory: บันทึกความรู้ การตัดสินใจ ข้อผิดพลาด กฎการพัฒนา และประสบการณ์จากการทำงานของ AI Agents ข้าม Session\n- Smart Memory Search: ค้นหาความทรงจำด้วย Hybrid Search (BM25 + Semantic Search) พร้อมดึงข้อมูลที่เกี่ยวข้องกับงานปัจจุบันโดยอัตโนมัติ\n- Explainable Memory: แสดงแหล่งที่มา ความน่าเชื่อถือ และคะแนนความเกี่ยวข้องของข้อมูล พร้อมปรับความเชื่อมั่นตามผลการใช้งานจริง\n- AI Agent Integration: ใช้งานร่วมกับ Claude Code, Codex, Cursor และ AI Agents อื่น ๆ ผ่าน CLI, Hooks หรือ MCP โดยนำเข้าประวัติ Session ผ่าน CASS ได้\n- จุดเด่น: พัฒนาด้วย Rust ทำงานบนเครื่อง Local โดยไม่ต้องใช้ Cloud หรือ Paid AI API รองรับ Windows, macOS และ Linux โค้ดเปิดเผยภายใต้ MIT License ที่มีข้อจำกัดเพิ่มเติมสำหรับ OpenAI/Anthropic (ไม่ใช่ MIT มาตรฐาน)",
+            "image": "",
+            "id": "mwadl904b7vo",
+            "added": "2026-11-10T07:35:33.076Z"
           }
         ]
       },
