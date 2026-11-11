@@ -124,7 +124,7 @@
   function linkCard(l, folderPath, idx, total) {
     var href = safeUrl(l.url);
     var img = thumb(l);
-    return '<article class="card link" data-id="' + esc(l.id) + '">' +
+    return '<article class="card link" data-id="' + esc(l.id) + '"' + (editing() && !folderPath ? ' draggable="true" data-kind="link"' : '') + '>' +
       '<a class="thumb" href="' + esc(href) + '" target="_blank" rel="noopener noreferrer"' + (href ? '' : ' tabindex="-1"') + '>' +
         (img ? '<img class="thumb-img" src="' + esc(img) + '" alt="" loading="lazy" referrerpolicy="no-referrer">' : '') +
         '<span class="ph" aria-hidden="true">🔗</span>' +
@@ -142,11 +142,12 @@
       '<button type="button" class="chip" data-act="up" data-kind="' + kind + '" data-id="' + esc(id) + '"' + (idx === 0 ? ' disabled' : '') + ' title="เลื่อนขึ้น">↑</button>' +
       '<button type="button" class="chip" data-act="down" data-kind="' + kind + '" data-id="' + esc(id) + '"' + (idx === total - 1 ? ' disabled' : '') + ' title="เลื่อนลง">↓</button>' +
       '<button type="button" class="chip" data-act="edit-' + kind + '" data-id="' + esc(id) + '" title="แก้ไข">✏️<span class="lbl"> แก้ไข</span></button>' +
+      '<button type="button" class="chip" data-act="relocate" data-kind="' + kind + '" data-id="' + esc(id) + '" title="ย้ายไปโฟลเดอร์อื่น (หรือลากไปวางบนโฟลเดอร์)">📂<span class="lbl"> ย้าย</span></button>' +
       '<button type="button" class="chip danger" data-act="del-' + kind + '" data-id="' + esc(id) + '" title="ลบ">🗑<span class="lbl"> ลบ</span></button>' +
       '</div>';
   }
   function folderCard(f, idx, total) {
-    return '<article class="card folder">' +
+    return '<article class="card folder" data-id="' + esc(f.id) + '"' + (editing() ? ' draggable="true" data-kind="folder"' : '') + '>' +
       '<a class="folder-link" href="#' + esc(f.id) + '"><span class="ico" aria-hidden="true">📁</span>' +
         '<span><strong>' + esc(f.name) + '</strong><small>' + countLinks(f) + ' ลิงก์' + (f.folders.length ? ' · ' + f.folders.length + ' โฟลเดอร์ย่อย' : '') + '</small></span></a>' +
       (editing() ? adminBtns('folder', f.id, idx, total) : '') +
@@ -453,6 +454,86 @@
     }, 'ai: จัดลำดับ');
   }
 
+  // Move a folder or link into another folder (button dialog or drag & drop).
+  function canDrop(kind, id, destId) {
+    if (kind === 'folder') {
+      var r = find(id);
+      if (!r || id === destId || !find(destId)) return false;
+      if (find(destId, r.node)) return false;                 // into itself / a subfolder of itself
+      return !!r.parent && r.parent.id !== destId;
+    }
+    var l = findLink(id);
+    return !!l && !!find(destId) && l.folder.id !== destId;
+  }
+  function relocate(kind, id, destId) {
+    if (!canDrop(kind, id, destId)) return;
+    var name = kind === 'folder' ? find(id).node.name : (findLink(id).link.title || host(findLink(id).link.url));
+    var destName = destId === 'root' ? 'AI' : find(destId).node.name;
+    save(function (d) {
+      var dest = need(d, destId).node;
+      if (kind === 'folder') {
+        var r = need(d, id);
+        if (find(dest.id, r.node)) throw new Error('ย้ายโฟลเดอร์เข้าไปในตัวเองไม่ได้');
+        r.parent.folders.splice(r.parent.folders.indexOf(r.node), 1);
+        dest.folders.push(r.node);
+      } else {
+        var l = needLink(d, id);
+        l.folder.links.splice(l.folder.links.indexOf(l.link), 1);
+        dest.links.push(l.link);
+      }
+    }, 'ai: ย้าย' + (kind === 'folder' ? 'โฟลเดอร์ ' : 'ลิงก์ ') + name + ' → ' + destName);
+  }
+  function relocateDialog(kind, id) {
+    var cur = kind === 'folder' ? find(id) : findLink(id);
+    if (!cur) return;
+    var name = kind === 'folder' ? cur.node.name : (cur.link.title || host(cur.link.url));
+    var fromId = kind === 'folder' ? cur.parent.id : cur.folder.id;
+    openDialog('ย้าย “' + name + '”',
+      field('ย้ายไปไว้ในโฟลเดอร์', folderSelect(fromId, kind === 'folder' ? id : null)) +
+      '<p class="muted small">ทิป: ลากการ์ดไปวางบนไอคอนโฟลเดอร์ หรือบนชื่อในแถบ Address ก็ย้ายได้</p>',
+      function (v) {
+        if (v.folder && v.folder !== fromId) relocate(kind, id, v.folder);
+      });
+  }
+
+  var dragging = null;   // { kind, id }
+  function dropTarget(el) {
+    var f = el.closest && el.closest('.card.folder[data-id], #crumbs a');
+    if (!f) return null;
+    var id = f.hasAttribute('data-id') ? f.getAttribute('data-id') : (decodeURIComponent(f.getAttribute('href').slice(1)) || 'root');
+    return { el: f, id: id };
+  }
+  function clearDrop() { Array.prototype.forEach.call(document.querySelectorAll('.drop-ok'), function (x) { x.classList.remove('drop-ok'); }); }
+  document.addEventListener('dragstart', function (e) {
+    var card = editing() && e.target.closest && e.target.closest('[draggable=true][data-kind]');
+    if (!card) return;
+    dragging = { kind: card.getAttribute('data-kind'), id: card.getAttribute('data-id') };
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/plain', dragging.kind + ':' + dragging.id);
+    card.classList.add('dragging');
+  });
+  document.addEventListener('dragend', function () {
+    dragging = null;
+    clearDrop();
+    Array.prototype.forEach.call(document.querySelectorAll('.dragging'), function (x) { x.classList.remove('dragging'); });
+  });
+  document.addEventListener('dragover', function (e) {
+    if (!dragging) return;
+    var t = dropTarget(e.target);
+    clearDrop();
+    if (!t || !canDrop(dragging.kind, dragging.id, t.id)) return;
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+    t.el.classList.add('drop-ok');
+  });
+  document.addEventListener('drop', function (e) {
+    if (!dragging) return;
+    var t = dropTarget(e.target), d = dragging;
+    e.preventDefault();
+    clearDrop();
+    if (t && canDrop(d.kind, d.id, t.id)) relocate(d.kind, d.id, t.id);
+  });
+
   document.addEventListener('click', function (e) {
     var b = e.target.closest && e.target.closest('[data-act]');
     if (!b || !editing()) return;
@@ -461,6 +542,7 @@
     else if (act === 'add-link') linkDialog(null);
     else if (act === 'edit-folder') { var f = find(id); if (f) folderDialog(f.node); }
     else if (act === 'edit-link') { var l = findLink(id); if (l) linkDialog(l.link); }
+    else if (act === 'relocate') relocateDialog(kind, id);
     else if (act === 'up') move(kind, id, -1);
     else if (act === 'down') move(kind, id, 1);
     else if (act === 'del-folder') {

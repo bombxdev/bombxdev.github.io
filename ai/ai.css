@@ -172,3 +172,9 @@ dialog::backdrop { background: rgba(0, 0, 0, .25); }
   input[type=search] { width: 100%; }
   .grid.links { grid-template-columns: 1fr; }
 }
+
+/* drag & drop moving (admin) */
+[draggable=true] { cursor: grab; }
+.dragging { opacity: .45; }
+.card.folder.drop-ok .folder-link strong, #crumbs a.drop-ok { background: var(--navy); color: #fff; outline: 1px dotted #ff0; }
+.card.folder.drop-ok .folder-link .ico { filter: brightness(.75) sepia(1) hue-rotate(190deg) saturate(3); }
