@@ -23,23 +23,27 @@ if (!OUT) { console.error('usage: fetch_stars.mjs <stars.json> [resources.json]'
 
 const API = process.env.GITHUB_API_URL || 'https://api.github.com';
 const TOKEN = process.env.GITHUB_TOKEN || '';
+// The Actions GITHUB_TOKEN may not list other repos' stargazers ("Resource not
+// accessible by integration"). STARS_TOKEN (optional secret: a fine-grained
+// token with read-only access to public repos) fixes that; without it the
+// stargazer samples are fetched anonymously (60 requests/hour per runner).
+const STARS_TOKEN = process.env.STARS_TOKEN || '';
 const BUDGET = +(process.env.STAR_BUDGET || 700);   // max API calls per run (GITHUB_TOKEN: 1000/h)
 const CAP = 40000;                                    // stargazers GitHub will list
-const SAMPLES = 24;                                   // stargazer pages sampled per repo
+const SAMPLES = STARS_TOKEN ? 24 : 10;                // stargazer pages sampled per repo
 const SEARCH_DAYS = 540;
 const SEARCH_MIN_STARS = 10000;
 const SEARCH_TOP = 40;
 
-const HEADERS = {
-  Accept: 'application/vnd.github+json',
-  'User-Agent': 'star-trends-collector',
-  'X-GitHub-Api-Version': '2022-11-28',
-  ...(TOKEN ? { Authorization: 'Bearer ' + TOKEN } : {})
-};
+const BASE = { 'User-Agent': 'star-trends-collector', 'X-GitHub-Api-Version': '2022-11-28' };
 let calls = 0;
-async function gh(path, accept) {
+let starLeft = Infinity;                                // rate limit left for stargazer requests
+async function gh(path, accept, token = TOKEN) {
   calls++;
-  const r = await fetch(API + path, { headers: accept ? { ...HEADERS, Accept: accept } : HEADERS });
+  const headers = { ...BASE, Accept: accept || 'application/vnd.github+json' };
+  if (token) headers.Authorization = 'Bearer ' + token;
+  const r = await fetch(API + path, { headers });
+  if (accept) starLeft = +(r.headers.get('x-ratelimit-remaining') ?? starLeft);
   if (r.status === 404 || r.status === 422 || r.status === 451) return null;   // gone / past the stargazer cap
   if (!r.ok) throw new Error(`${path} → ${r.status} ${(await r.text()).slice(0, 200)}`);
   return r.json();
@@ -100,17 +104,21 @@ for (const [key, r] of Object.entries(data.repos)) {
   const lastPage = Math.max(1, Math.ceil(Math.min(r.stars || 0, CAP) / 100));
   const n = Math.min(SAMPLES, lastPage);
   const pages = [...new Set(Array.from({ length: n }, (_, i) => 1 + Math.round(i * (lastPage - 1) / Math.max(1, n - 1))))];
-  if (calls + pages.length > BUDGET) { console.log('budget reached, rest next run'); break; }
+  if (calls + pages.length > BUDGET || starLeft < pages.length + 2) { console.log('rate budget reached, the rest next run'); break; }
   const hist = new Map();
   const put = (d, v) => hist.set(d, Math.max(hist.get(d) || 0, v));
   try {
     for (const p of pages) {
-      const items = await gh(`/repos/${key}/stargazers?per_page=100&page=${p}`, 'application/vnd.github.star+json');
+      const items = await gh(`/repos/${key}/stargazers?per_page=100&page=${p}`, 'application/vnd.github.star+json', STARS_TOKEN);
       if (!items || !items.length) break;
       put(day(items[0].starred_at), (p - 1) * 100 + 1);
       put(day(items[items.length - 1].starred_at), (p - 1) * 100 + items.length);
     }
-  } catch (e) { console.warn(key, 'backfill:', e.message); continue; }
+  } catch (e) {
+    console.warn(key, 'backfill:', e.message);
+    if (/ 403 | 429 /.test(e.message)) break;          // rate limited / not allowed: try again next run
+    continue;
+  }
 
   const snaps = r.pts;
   const first = snaps.length ? snaps[0][0] : today;
@@ -126,4 +134,5 @@ for (const [key, r] of Object.entries(data.repos)) {
 
 data.updated = new Date().toISOString();
 fs.writeFileSync(OUT, JSON.stringify(data) + '\n');
-console.log(`tracked ${Object.keys(data.repos).length} repos · snapshot ${snapped} · back-filled ${filled} · ${calls} API calls`);
+const pending = Object.values(data.repos).filter((r) => !r.bf).length;
+console.log(`tracked ${Object.keys(data.repos).length} repos · snapshot ${snapped} · back-filled ${filled} (${pending} waiting) · ${calls} API calls · stargazer mode: ${STARS_TOKEN ? 'STARS_TOKEN' : 'anonymous'}`);
