@@ -26,6 +26,7 @@
   var query = '';
 
   var $ = function (id) { return document.getElementById(id); };
+  var T = window.T || function (s, v) { return v ? s.replace(/\{(\w+)\}/g, function (m, k) { return k in v ? v[k] : m; }) : s; };
 
   function esc(s) {
     return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
@@ -139,17 +140,17 @@
   }
   function adminBtns(kind, id, idx, total) {
     return '<div class="row-admin">' +
-      '<button type="button" class="chip" data-act="up" data-kind="' + kind + '" data-id="' + esc(id) + '"' + (idx === 0 ? ' disabled' : '') + ' title="เลื่อนขึ้น">↑</button>' +
-      '<button type="button" class="chip" data-act="down" data-kind="' + kind + '" data-id="' + esc(id) + '"' + (idx === total - 1 ? ' disabled' : '') + ' title="เลื่อนลง">↓</button>' +
-      '<button type="button" class="chip" data-act="edit-' + kind + '" data-id="' + esc(id) + '" title="แก้ไข">✏️<span class="lbl"> แก้ไข</span></button>' +
-      '<button type="button" class="chip" data-act="relocate" data-kind="' + kind + '" data-id="' + esc(id) + '" title="ย้ายไปโฟลเดอร์อื่น (หรือลากไปวางบนโฟลเดอร์)">📂<span class="lbl"> ย้าย</span></button>' +
-      '<button type="button" class="chip danger" data-act="del-' + kind + '" data-id="' + esc(id) + '" title="ลบ">🗑<span class="lbl"> ลบ</span></button>' +
+      '<button type="button" class="chip" data-act="up" data-kind="' + kind + '" data-id="' + esc(id) + '"' + (idx === 0 ? ' disabled' : '') + ' title="' + T('เลื่อนขึ้น') + '">↑</button>' +
+      '<button type="button" class="chip" data-act="down" data-kind="' + kind + '" data-id="' + esc(id) + '"' + (idx === total - 1 ? ' disabled' : '') + ' title="' + T('เลื่อนลง') + '">↓</button>' +
+      '<button type="button" class="chip" data-act="edit-' + kind + '" data-id="' + esc(id) + '" title="' + T('แก้ไข') + '">✏️<span class="lbl"> ' + T('แก้ไข') + '</span></button>' +
+      '<button type="button" class="chip" data-act="relocate" data-kind="' + kind + '" data-id="' + esc(id) + '" title="' + T('ย้ายไปโฟลเดอร์อื่น (หรือลากไปวางบนโฟลเดอร์)') + '">📂<span class="lbl"> ' + T('ย้าย') + '</span></button>' +
+      '<button type="button" class="chip danger" data-act="del-' + kind + '" data-id="' + esc(id) + '" title="' + T('ลบ') + '">🗑<span class="lbl"> ' + T('ลบ') + '</span></button>' +
       '</div>';
   }
   function folderCard(f, idx, total) {
     return '<article class="card folder" data-id="' + esc(f.id) + '"' + (editing() ? ' draggable="true" data-kind="folder"' : '') + '>' +
       '<a class="folder-link" href="#' + esc(f.id) + '"><span class="ico" aria-hidden="true">📁</span>' +
-        '<span><strong>' + esc(f.name) + '</strong><small>' + countLinks(f) + ' ลิงก์' + (f.folders.length ? ' · ' + f.folders.length + ' โฟลเดอร์ย่อย' : '') + '</small></span></a>' +
+        '<span><strong>' + esc(f.name) + '</strong><small>' + T(countLinks(f) === 1 ? '1 ลิงก์' : '{n} ลิงก์', { n: countLinks(f) }) + (f.folders.length ? ' · ' + T(f.folders.length === 1 ? '1 โฟลเดอร์ย่อย' : '{n} โฟลเดอร์ย่อย', { n: f.folders.length }) : '') + '</small></span></a>' +
       (editing() ? adminBtns('folder', f.id, idx, total) : '') +
       '</article>';
   }
@@ -177,7 +178,7 @@
       html += '<div class="grid links">' + cur.node.links.map(function (l, i) { return linkCard(l, '', i, cur.node.links.length); }).join('') + '</div>';
     }
     $('status').textContent = (cur.node.folders.length + cur.node.links.length) + ' object(s)';
-    if (!html) html = '<p class="empty muted">ยังไม่มีอะไรในโฟลเดอร์นี้' + (editing() ? ' — กดปุ่มด้านบนเพื่อเพิ่ม' : '') + '</p>';
+    if (!html) html = '<p class="empty muted">' + T('ยังไม่มีอะไรในโฟลเดอร์นี้') + (editing() ? T(' — กดปุ่มด้านบนเพื่อเพิ่ม') : '') + '</p>';
     $('view').innerHTML = html;
   }
 
@@ -189,21 +190,21 @@
       });
       node.folders.forEach(function (f) { walk(f, path.concat(f)); });
     })(data.root, [data.root]);
-    $('status').textContent = 'พบ ' + hits.length + ' รายการ';
+    $('status').textContent = T('พบ {n} รายการ', { n: hits.length });
     $('view').innerHTML = hits.length
       ? '<div class="grid links">' + hits.map(function (h) {
         var trail = h.path.map(function (n, i) { return '<a href="#' + (i === 0 ? '' : esc(n.id)) + '">' + esc(i === 0 ? 'AI' : n.name) + '</a>'; }).join(' / ');
         return linkCard(h.l, trail, 0, 1);
       }).join('') + '</div>'
-      : '<p class="empty muted">ไม่พบ “' + esc(q) + '”</p>';
+      : '<p class="empty muted">' + T('ไม่พบ “{q}”', { q: esc(q) }) + '</p>';
   }
 
   function renderViewToggle() {
     var t = $('viewToggle');
     t.hidden = !admin;
     if (admin) $('adminBox').hidden = guestView;
-    t.textContent = guestView ? '✏️ กลับโหมดแก้ไข' : '👁 มุมมองผู้เข้าชม';
-    t.title = guestView ? 'แสดงปุ่มแก้ไขอีกครั้ง' : 'ดูหน้านี้แบบที่คนทั่วไปเห็น';
+    t.textContent = T(guestView ? '✏️ กลับโหมดแก้ไข' : '👁 มุมมองผู้เข้าชม');
+    t.title = T(guestView ? 'แสดงปุ่มแก้ไขอีกครั้ง' : 'ดูหน้านี้แบบที่คนทั่วไปเห็น');
     t.setAttribute('aria-pressed', guestView ? 'true' : 'false');
     document.body.classList.toggle('guest-view', !!admin && guestView);
   }
@@ -211,7 +212,7 @@
     guestView = !guestView;
     try { guestView ? sessionStorage.setItem(GUEST_KEY, '1') : sessionStorage.removeItem(GUEST_KEY); } catch (e) { /* storage unavailable */ }
     render();
-    toast(guestView ? 'มุมมองผู้เข้าชม — กดปุ่มเดิมเพื่อกลับไปแก้ไข' : 'กลับโหมดแก้ไขแล้ว');
+    toast(T(guestView ? 'มุมมองผู้เข้าชม — กดปุ่มเดิมเพื่อกลับไปแก้ไข' : 'กลับโหมดแก้ไขแล้ว'));
   });
 
   function renderAdminBar() {
@@ -219,9 +220,9 @@
     bar.hidden = !editing();
     renderViewToggle();
     if (!editing()) return;
-    bar.innerHTML = '<button type="button" class="chip primary" data-act="add-folder">📁 + โฟลเดอร์</button>' +
-      '<button type="button" class="chip primary" data-act="add-link">🔗 + ลิงก์</button>' +
-      (currentId !== 'root' ? '<button type="button" class="chip" data-act="edit-folder" data-id="' + esc(currentId) + '">✏️ แก้โฟลเดอร์นี้</button>' : '');
+    bar.innerHTML = '<button type="button" class="chip primary" data-act="add-folder">' + T('📁 + โฟลเดอร์') + '</button>' +
+      '<button type="button" class="chip primary" data-act="add-link">' + T('🔗 + ลิงก์') + '</button>' +
+      (currentId !== 'root' ? '<button type="button" class="chip" data-act="edit-folder" data-id="' + esc(currentId) + '">' + T('✏️ แก้โฟลเดอร์นี้') + '</button>' : '');
   }
 
   function onHash() {
@@ -272,7 +273,7 @@
 
   function verify() {
     return gh('GET', 'https://api.github.com/user').then(function (u) {
-      if (!u || String(u.login).toLowerCase() !== OWNER) throw new Error('บัญชีนี้ไม่ใช่เจ้าของเว็บ');
+      if (!u || String(u.login).toLowerCase() !== OWNER) throw new Error(T('บัญชีนี้ไม่ใช่เจ้าของเว็บ'));
       admin = { login: u.login };
     });
   }
@@ -313,25 +314,25 @@
   function save(fn, message) {
     if (busy) return Promise.resolve(false);
     busy = true;
-    toast('กำลังบันทึก…');
+    toast(T('กำลังบันทึก…'));
     return commit(fn, message).then(function () {
-      toast('บันทึกแล้ว ✓ (เว็บอัปเดตให้คนอื่นใน ~1 นาที)');
+      toast(T('บันทึกแล้ว ✓ (เว็บอัปเดตให้คนอื่นใน ~1 นาที)'));
       render();
       return true;
     }).catch(function (err) {
-      toast('บันทึกไม่สำเร็จ: ' + err.message);
+      toast(T('บันทึกไม่สำเร็จ: {e}', { e: err.message }));
       return false;
     }).then(function (ok) { busy = false; return ok; });
   }
 
   function need(d, id) {
     var r = find(id, d.root);
-    if (!r) throw new Error('ไม่พบโฟลเดอร์ (ถูกลบไปแล้ว?)');
+    if (!r) throw new Error(T('ไม่พบโฟลเดอร์ (ถูกลบไปแล้ว?)'));
     return r;
   }
   function needLink(d, id) {
     var r = findLink(id, d.root);
-    if (!r) throw new Error('ไม่พบลิงก์ (ถูกลบไปแล้ว?)');
+    if (!r) throw new Error(T('ไม่พบลิงก์ (ถูกลบไปแล้ว?)'));
     return r;
   }
 
@@ -348,8 +349,8 @@
     }).join('') + '</select>';
   }
   function openDialog(title, body, onSubmit) {
-    dlg.innerHTML = '<form method="dialog" class="form"><h2 class="titlebar"><span class="title">' + esc(title) + '</span><button type="button" class="tb-x" data-close aria-label="ปิด">×</button></h2>' + body +
-      '<div class="actions"><button type="button" class="chip" data-cancel>ยกเลิก</button><button type="submit" class="chip primary">บันทึก</button></div></form>';
+    dlg.innerHTML = '<form method="dialog" class="form"><h2 class="titlebar"><span class="title">' + esc(title) + '</span><button type="button" class="tb-x" data-close aria-label="' + T('ปิด') + '">×</button></h2>' + body +
+      '<div class="actions"><button type="button" class="chip" data-cancel>' + T('ยกเลิก') + '</button><button type="submit" class="chip primary">' + T('บันทึก') + '</button></div></form>';
     var form = dlg.querySelector('form');
     dlg.querySelectorAll('[data-close],[data-cancel]').forEach(function (b) { b.addEventListener('click', function () { dlg.close(); }); });
     form.addEventListener('submit', function (e) {
@@ -365,9 +366,9 @@
 
   function folderDialog(existing) {
     var parentId = existing ? (find(existing.id).parent || data.root).id : currentId;
-    openDialog(existing ? 'แก้ไขโฟลเดอร์' : 'เพิ่มโฟลเดอร์',
-      field('ชื่อโฟลเดอร์', '<input name="name" required maxlength="80" value="' + esc(existing ? existing.name : '') + '">') +
-      (existing && existing.id === 'root' ? '' : field(existing ? 'ย้ายไปอยู่ใน' : 'สร้างใน', folderSelect(parentId, existing && existing.id))),
+    openDialog(T(existing ? 'แก้ไขโฟลเดอร์' : 'เพิ่มโฟลเดอร์'),
+      field(T('ชื่อโฟลเดอร์'), '<input name="name" required maxlength="80" value="' + esc(existing ? existing.name : '') + '">') +
+      (existing && existing.id === 'root' ? '' : field(T(existing ? 'ย้ายไปอยู่ใน' : 'สร้างใน'), folderSelect(parentId, existing && existing.id))),
       function (v) {
         if (!v.name) return false;
         if (existing) {
@@ -376,7 +377,7 @@
             r.node.name = v.name;
             if (v.folder && r.parent && v.folder !== r.parent.id) {
               var dest = need(d, v.folder).node;
-              if (find(dest.id, r.node)) throw new Error('ย้ายโฟลเดอร์เข้าไปในตัวเองไม่ได้');
+              if (find(dest.id, r.node)) throw new Error(T('ย้ายโฟลเดอร์เข้าไปในตัวเองไม่ได้'));
               r.parent.folders.splice(r.parent.folders.indexOf(r.node), 1);
               dest.folders.push(r.node);
             }
@@ -391,17 +392,17 @@
 
   function linkDialog(existing) {
     var folderId = existing ? findLink(existing.id).folder.id : currentId;
-    openDialog(existing ? 'แก้ไขลิงก์' : 'เพิ่มลิงก์',
-      field('URL', '<div class="inline"><input name="url" type="url" required placeholder="https://github.com/owner/repo" value="' + esc(existing ? existing.url : '') + '"><button type="button" class="chip" id="fetchMeta">⚡ ดึงข้อมูล</button></div>') +
-      field('ชื่อ', '<input name="title" maxlength="200" placeholder="(เว้นว่าง = ดึงอัตโนมัติ/ใช้โดเมน)" value="' + esc(existing ? existing.title : '') + '">') +
-      field('Remark', '<textarea name="remark" rows="4" maxlength="2000" placeholder="จดว่าทำไมน่าสนใจ ใช้ทำอะไร">' + esc(existing ? existing.remark : '') + '</textarea>') +
-      field('โฟลเดอร์', folderSelect(folderId)) +
-      field('รูป thumbnail (เว้นว่าง = อัตโนมัติ)', '<div class="inline"><input name="image" type="url" placeholder="https://…" value="' + esc(existing ? existing.image : '') + '"><button type="button" class="chip" id="useShot">📸 ภาพหน้าเว็บ</button></div>') +
-      '<p class="muted small" id="metaStatus">GitHub / YouTube ได้ thumbnail อัตโนมัติ เว็บอื่นใช้ og:image หรือภาพหน้าเว็บ</p>',
+    openDialog(T(existing ? 'แก้ไขลิงก์' : 'เพิ่มลิงก์'),
+      field('URL', '<div class="inline"><input name="url" type="url" required placeholder="https://github.com/owner/repo" value="' + esc(existing ? existing.url : '') + '"><button type="button" class="chip" id="fetchMeta">' + T('⚡ ดึงข้อมูล') + '</button></div>') +
+      field(T('ชื่อ'), '<input name="title" maxlength="200" placeholder="' + T('(เว้นว่าง = ดึงอัตโนมัติ/ใช้โดเมน)') + '" value="' + esc(existing ? existing.title : '') + '">') +
+      field('Remark', '<textarea name="remark" rows="4" maxlength="2000" placeholder="' + T('จดว่าทำไมน่าสนใจ ใช้ทำอะไร') + '">' + esc(existing ? existing.remark : '') + '</textarea>') +
+      field(T('โฟลเดอร์'), folderSelect(folderId)) +
+      field(T('รูป thumbnail (เว้นว่าง = อัตโนมัติ)'), '<div class="inline"><input name="image" type="url" placeholder="https://…" value="' + esc(existing ? existing.image : '') + '"><button type="button" class="chip" id="useShot">' + T('📸 ภาพหน้าเว็บ') + '</button></div>') +
+      '<p class="muted small" id="metaStatus">' + T('GitHub / YouTube ได้ thumbnail อัตโนมัติ เว็บอื่นใช้ og:image หรือภาพหน้าเว็บ') + '</p>',
       function (v) {
         var url = safeUrl(v.url);
-        if (!url) { toast('URL ต้องขึ้นต้นด้วย http:// หรือ https://'); return false; }
-        if (v.image && !safeUrl(v.image)) { toast('URL รูปไม่ถูกต้อง'); return false; }
+        if (!url) { toast(T('URL ต้องขึ้นต้นด้วย http:// หรือ https://')); return false; }
+        if (v.image && !safeUrl(v.image)) { toast(T('URL รูปไม่ถูกต้อง')); return false; }
         var rec = { url: url, title: v.title || '', remark: v.remark || '', image: v.image ? safeUrl(v.image) : '' };
         save(function (d) {
           if (existing) {
@@ -427,16 +428,16 @@
     });
     $('fetchMeta').addEventListener('click', function () {
       var u = safeUrl(form.elements.url.value.trim());
-      if (!u) { status.textContent = 'ใส่ URL ก่อน'; return; }
-      status.textContent = 'กำลังดึงข้อมูล…';
+      if (!u) { status.textContent = T('ใส่ URL ก่อน'); return; }
+      status.textContent = T('กำลังดึงข้อมูล…');
       fetch('https://api.microlink.io/?url=' + encodeURIComponent(u)).then(function (r) { return r.json(); }).then(function (j) {
         var m = j && j.data;
-        if (!m) throw new Error('ไม่พบข้อมูล');
+        if (!m) throw new Error(T('ไม่พบข้อมูล'));
         if (!form.elements.title.value && m.title) form.elements.title.value = m.title;
         if (!form.elements.remark.value && m.description) form.elements.remark.value = m.description;
         if (!form.elements.image.value && m.image && safeUrl(m.image.url)) form.elements.image.value = m.image.url;
-        status.textContent = 'ดึงข้อมูลแล้ว ✓ ตรวจ/แก้ได้ก่อนบันทึก';
-      }).catch(function (err) { status.textContent = 'ดึงไม่ได้ (' + err.message + ') — กรอกเองได้ หรือปล่อยให้ใช้ thumbnail อัตโนมัติ'; });
+        status.textContent = T('ดึงข้อมูลแล้ว ✓ ตรวจ/แก้ได้ก่อนบันทึก');
+      }).catch(function (err) { status.textContent = T('ดึงไม่ได้ ({e}) — กรอกเองได้ หรือปล่อยให้ใช้ thumbnail อัตโนมัติ', { e: err.message }); });
     });
   }
 
@@ -473,7 +474,7 @@
       var dest = need(d, destId).node;
       if (kind === 'folder') {
         var r = need(d, id);
-        if (find(dest.id, r.node)) throw new Error('ย้ายโฟลเดอร์เข้าไปในตัวเองไม่ได้');
+        if (find(dest.id, r.node)) throw new Error(T('ย้ายโฟลเดอร์เข้าไปในตัวเองไม่ได้'));
         r.parent.folders.splice(r.parent.folders.indexOf(r.node), 1);
         dest.folders.push(r.node);
       } else {
@@ -488,9 +489,9 @@
     if (!cur) return;
     var name = kind === 'folder' ? cur.node.name : (cur.link.title || host(cur.link.url));
     var fromId = kind === 'folder' ? cur.parent.id : cur.folder.id;
-    openDialog('ย้าย “' + name + '”',
-      field('ย้ายไปไว้ในโฟลเดอร์', folderSelect(fromId, kind === 'folder' ? id : null)) +
-      '<p class="muted small">ทิป: ลากการ์ดไปวางบนไอคอนโฟลเดอร์ หรือบนชื่อในแถบ Address ก็ย้ายได้</p>',
+    openDialog(T('ย้าย “{name}”', { name: name }),
+      field(T('ย้ายไปไว้ในโฟลเดอร์'), folderSelect(fromId, kind === 'folder' ? id : null)) +
+      '<p class="muted small">' + T('ทิป: ลากการ์ดไปวางบนไอคอนโฟลเดอร์ หรือบนชื่อในแถบ Address ก็ย้ายได้') + '</p>',
       function (v) {
         if (v.folder && v.folder !== fromId) relocate(kind, id, v.folder);
       });
@@ -547,12 +548,12 @@
     else if (act === 'down') move(kind, id, 1);
     else if (act === 'del-folder') {
       var fo = find(id);
-      if (fo && confirm('ลบโฟลเดอร์ “' + fo.node.name + '” และทุกอย่างข้างใน (' + countLinks(fo.node) + ' ลิงก์)?')) {
+      if (fo && confirm(T('ลบโฟลเดอร์ “{name}” และทุกอย่างข้างใน ({n} ลิงก์)?', { name: fo.node.name, n: countLinks(fo.node) }))) {
         save(function (d) { var r = need(d, id); r.parent.folders.splice(r.parent.folders.indexOf(r.node), 1); }, 'ai: ลบโฟลเดอร์ ' + fo.node.name);
       }
     } else if (act === 'del-link') {
       var li = findLink(id);
-      if (li && confirm('ลบลิงก์ “' + (li.link.title || li.link.url) + '”?')) {
+      if (li && confirm(T('ลบลิงก์ “{name}”?', { name: li.link.title || li.link.url }))) {
         save(function (d) { var r = needLink(d, id); r.folder.links.splice(r.folder.links.indexOf(r.link), 1); }, 'ai: ลบลิงก์ ' + (li.link.title || host(li.link.url)));
       }
     }
@@ -565,8 +566,8 @@
     var box = $('adminBox');
     box.hidden = false;
     if (admin) {
-      box.innerHTML = '<div>🔐 ล็อกอินเป็น <strong>' + esc(admin.login) + '</strong> — แก้ไขได้</div>' +
-        '<button type="button" class="chip" id="adminOut">ออกจากระบบ</button>';
+      box.innerHTML = '<div>' + T('🔐 ล็อกอินเป็น {login} — แก้ไขได้', { login: '<strong>' + esc(admin.login) + '</strong>' }) + '</div>' +
+        '<button type="button" class="chip" id="adminOut">' + T('ออกจากระบบ') + '</button>';
       $('adminOut').addEventListener('click', function () {
         setToken('');
         admin = null;
@@ -574,15 +575,17 @@
         try { sessionStorage.removeItem(GUEST_KEY); } catch (e) { /* storage unavailable */ }
         box.hidden = true;
         render();
-        toast('ออกจากระบบแล้ว');
+        toast(T('ออกจากระบบแล้ว'));
       });
     } else {
-      box.innerHTML = '<div>🔐 โหมดเจ้าของ</div>' +
-        '<p class="muted small">สร้าง fine-grained token ที่ <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">github.com/settings/personal-access-tokens</a> ' +
-        'เลือกเฉพาะ repo <code>' + esc(OWNER + '/' + REPO) + '</code> สิทธิ์ Contents: Read and write แล้ววางด้านล่าง (token ไม่ถูกส่งไปที่ไหนนอกจาก api.github.com)</p>' +
+      box.innerHTML = '<div>' + T('🔐 โหมดเจ้าของ') + '</div>' +
+        '<p class="muted small">' + T('สร้าง fine-grained token ที่ {link} เลือกเฉพาะ repo {repo} สิทธิ์ Contents: Read and write แล้ววางด้านล่าง (token ไม่ถูกส่งไปที่ไหนนอกจาก api.github.com)', {
+          link: '<a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">github.com/settings/personal-access-tokens</a>',
+          repo: '<code>' + esc(OWNER + '/' + REPO) + '</code>'
+        }) + '</p>' +
         '<input type="password" id="adminToken" autocomplete="off" spellcheck="false" placeholder="github_pat_…">' +
-        '<label class="chip toggle"><input type="checkbox" id="adminRemember"> จำไว้ในเครื่องนี้</label>' +
-        '<button type="button" class="chip primary" id="adminIn">เข้าสู่ระบบ</button>';
+        '<label class="chip toggle"><input type="checkbox" id="adminRemember"> ' + T('จำไว้ในเครื่องนี้') + '</label>' +
+        '<button type="button" class="chip primary" id="adminIn">' + T('เข้าสู่ระบบ') + '</button>';
       $('adminIn').addEventListener('click', function () {
         var tok = $('adminToken').value.trim();
         if (!tok) return;
@@ -590,14 +593,20 @@
         verify().then(function () {
           renderAdmin();
           render();
-          toast('ล็อกอินเป็น ' + admin.login);
+          toast(T('ล็อกอินเป็น {login}', { login: admin.login }));
         }).catch(function (err) {
           setToken('');
-          toast('ล็อกอินไม่สำเร็จ: ' + err.message);
+          toast(T('ล็อกอินไม่สำเร็จ: {e}', { e: err.message }));
         });
       });
     }
   }
+
+  if (window.I18N) window.I18N.on(function () {
+    render();
+    if (!$('adminBox').hidden) renderAdmin();
+    renderViewToggle();
+  });
 
   // ---------------------------------------------------------------------------
   loadData().then(function () {

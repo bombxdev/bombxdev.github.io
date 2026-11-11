@@ -111,7 +111,9 @@
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (j) {
         if (!j || !j.count) return;
-        el.textContent = '👀 ผู้เข้าชม ' + j.count + ' คน';
+        var show = function () { el.textContent = window.T ? window.T('👀 ผู้เข้าชม {n} คน', { n: j.count }) : '👀 ผู้เข้าชม ' + j.count + ' คน'; };
+        show();
+        if (window.I18N) window.I18N.on(show);
         el.hidden = false;
       })
       .catch(function () { /* counter off or blocked: just hide it */ });

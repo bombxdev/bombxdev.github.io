@@ -79,6 +79,13 @@
 **ไม่นับ**: ตอนล็อกอิน admin (มี token ในเครื่อง), localhost, headless browser และเบราว์เซอร์ที่เปิด `?nostat` ครั้งหนึ่ง
 (เปิด `?stat` เพื่อกลับมานับ) — ตัวเลขท้ายหน้า GoatCounter cache ไว้สูงสุด ~4 ชม.
 
+## ภาษา TH / EN และ Taskbar
+
+แถบ taskbar แบบ Windows 95 ด้านล่าง: ปุ่ม **Start** (เมนูไปที่หน้าต่าง + เลือกภาษา), ปุ่มหน้าต่างแต่ละอัน
+(คลิกเพื่อเลื่อนไปหา อันที่อยู่บนจอจะเป็นปุ่มกดค้าง) และ tray มีตัวบอกภาษา **TH/EN** (คลิกเพื่อสลับ) กับนาฬิกา
+ภาษาที่เลือกจำไว้ในเบราว์เซอร์ (localStorage) iframe ใช้ `&lang=en` (ปุ่ม Copy iframe ใส่ให้เองตอนอยู่โหมด EN)
+ข้อความแปลอยู่ใน `i18n.js` (ใช้ข้อความไทยเป็นคีย์)
+
 ## ไฟล์
 
-`index.html`, `ai.js`, `ai.css`, `stats.js`, `trends.js` + `trends.css` + `trends.html` (iframe), `tools/fetch_stars.mjs`, `data/resources.json` (`{updated, root:{id,name,folders:[…],links:[{id,url,title,remark,image,added}]}}`)
+`index.html`, `ai.js`, `ai.css`, `stats.js`, `i18n.js`, `taskbar.js`, `trends.js` + `trends.css` + `trends.html` (iframe), `tools/fetch_stars.mjs`, `data/resources.json` (`{updated, root:{id,name,folders:[…],links:[{id,url,title,remark,image,added}]}}`)

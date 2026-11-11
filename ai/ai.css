@@ -178,3 +178,72 @@ dialog::backdrop { background: rgba(0, 0, 0, .25); }
 .dragging { opacity: .45; }
 .card.folder.drop-ok .folder-link strong, #crumbs a.drop-ok { background: var(--navy); color: #fff; outline: 1px dotted #ff0; }
 .card.folder.drop-ok .folder-link .ico { filter: brightness(.75) sepia(1) hue-rotate(190deg) saturate(3); }
+
+/* ---- taskbar (taskbar.js) ------------------------------------------------ */
+body.has-taskbar { padding-bottom: 40px; }
+body.has-taskbar .toast { bottom: 44px; }
+.taskbar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; height: 32px;
+  display: flex; align-items: center; gap: 4px; padding: 4px 3px 3px;
+  background: var(--face); box-shadow: inset 0 1px var(--light), inset 0 2px var(--hi);
+}
+.taskbar button { font: inherit; color: #000; border: 0; border-radius: 0; cursor: pointer; }
+.tb-start, .tb-task {
+  background: var(--face); box-shadow: var(--raised); height: 24px; padding: 0 6px;
+  display: inline-flex; align-items: center; gap: 5px; font-size: 12px;
+}
+.tb-start { font-weight: bold; flex: none; padding: 0 7px 0 5px; }
+.tb-start.on, .tb-start:active, .tb-task:active { box-shadow: var(--pressed); }
+.tb-start.on { outline: 1px dotted #000; outline-offset: -4px; }
+.tb-logo {
+  width: 16px; height: 14px; flex: none; transform: skewY(-4deg);
+  background:
+    linear-gradient(#f03a17, #f03a17) 0 0 / 7px 6px no-repeat,
+    linear-gradient(#4caf28, #4caf28) 9px 0 / 7px 6px no-repeat,
+    linear-gradient(#1f63d6, #1f63d6) 0 8px / 7px 6px no-repeat,
+    linear-gradient(#ffc400, #ffc400) 9px 8px / 7px 6px no-repeat;
+}
+.tb-tasks { flex: 1; min-width: 0; display: flex; gap: 3px; padding-left: 4px; border-left: 1px solid var(--shadow); box-shadow: inset 1px 0 var(--hi); }
+.tb-task { flex: 0 1 170px; min-width: 0; justify-content: flex-start; }
+.tb-tl { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tb-task.on {
+  box-shadow: var(--pressed); font-weight: bold;
+  background: repeating-conic-gradient(var(--face) 0 25%, var(--hi) 0 50%) 0 0 / 2px 2px;
+}
+.tb-tray {
+  flex: none; height: 24px; display: flex; align-items: center; gap: 8px; padding: 0 8px 0 4px; font-size: 12px;
+  box-shadow: inset 1px 1px var(--shadow), inset -1px -1px var(--hi);
+}
+.taskbar .tb-lang {
+  background: var(--navy); color: #fff; font-size: 10px; font-weight: bold; line-height: 1; padding: 3px 4px; min-width: 22px;
+}
+.taskbar .tb-lang:hover, .taskbar .tb-lang[aria-expanded=true] { outline: 1px dotted #000; outline-offset: 1px; }
+.tb-clock { white-space: nowrap; }
+
+.tb-menu {
+  position: fixed; bottom: 30px; left: 2px; z-index: 51; display: flex; min-width: 210px;
+  background: var(--face); box-shadow: var(--raised); padding: 3px;
+}
+.tb-langmenu { left: auto; right: 2px; min-width: 150px; }
+.tb-banner {
+  width: 24px; flex: none; writing-mode: vertical-rl; transform: rotate(180deg);
+  background: linear-gradient(0deg, var(--navy), var(--navy-2)); color: var(--face);
+  font-size: 16px; font-weight: bold; padding: 8px 0; letter-spacing: .5px;
+}
+.tb-banner b { color: #fff; }
+.tb-menu ul { list-style: none; margin: 0; padding: 0; flex: 1; }
+.tb-menu li button {
+  width: 100%; text-align: left; background: transparent; padding: 6px 16px 6px 6px; font-size: 12.5px;
+  display: flex; align-items: center; gap: 8px; white-space: nowrap;
+}
+.tb-menu li button:hover, .tb-menu li button:focus-visible { background: var(--navy); color: #fff; outline: none; }
+.tb-menu .ic { font-size: 18px; width: 24px; text-align: center; }
+.tb-menu .ck { width: 12px; text-align: center; font-weight: bold; }
+.tb-menu .code { background: var(--navy); color: #fff; font-size: 10px; padding: 1px 3px; }
+.tb-menu li button:hover .code { background: #fff; color: var(--navy); }
+.tb-menu .sep { height: 0; margin: 3px 2px; border-top: 1px solid var(--shadow); border-bottom: 1px solid var(--hi); }
+.tb-menu .hd { font-size: 11px; color: var(--muted); padding: 4px 6px 2px; }
+@media (max-width: 520px) {
+  .tb-task { flex-basis: 110px; }
+  .tb-task .tb-tl { font-size: 11px; }
+}

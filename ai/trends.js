@@ -23,7 +23,13 @@
     '#27ae60', '#0057b8', '#b8860b', '#ff5e5b', '#00897b', '#ad1457', '#6d4c41', '#43a047', '#1e88e5', '#8d6e63'];
   var MONTHS = ['มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม'];
   var MON = ['ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.', 'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.'];
+  var MONTHS_EN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  var MON_EN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   var SVGNS = 'http://www.w3.org/2000/svg';
+  var T = window.T || function (s, v) { return v ? s.replace(/\{(\w+)\}/g, function (m, k) { return k in v ? v[k] : m; }) : s; };
+  function en() { return !!window.I18N && window.I18N.lang === 'en'; }
+  function months() { return en() ? MONTHS_EN : MONTHS; }
+  function mon() { return en() ? MON_EN : MON; }
 
   function esc(s) {
     return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
@@ -40,8 +46,8 @@
     if (a >= 1e3) return (v / 1e3).toFixed(a >= 1e4 ? 0 : 1).replace(/\.0$/, '') + 'K';
     return String(Math.round(v));
   }
-  function thaiDate(n) { var d = new Date(n * DAY); return d.getUTCDate() + ' ' + MONTHS[d.getUTCMonth()] + ' ' + d.getUTCFullYear(); }
-  function shortDate(n) { var d = new Date(n * DAY); return d.getUTCDate() + ' ' + MON[d.getUTCMonth()] + ' ' + d.getUTCFullYear(); }
+  function longDate(n) { var d = new Date(n * DAY); return d.getUTCDate() + ' ' + months()[d.getUTCMonth()] + ' ' + d.getUTCFullYear(); }
+  function shortDate(n) { var d = new Date(n * DAY); return d.getUTCDate() + ' ' + mon()[d.getUTCMonth()] + ' ' + d.getUTCFullYear(); }
 
   // ---------------------------------------------------------------------------
   // Data
@@ -161,6 +167,7 @@
     if (s.mode === 'range') q.push('from=' + s.from, 'to=' + s.to);
     if (s.top !== 20) q.push('top=' + s.top);
     if (s.mode !== 'date' && s.metric === 'total') q.push('metric=total');
+    if (en()) q.push('lang=en');
     return '?' + q.join('&');
   }
   function metricOf(s) { return s.mode === 'date' ? 'total' : (s.metric || 'gain'); }
@@ -170,15 +177,15 @@
     var t = todayNum(), start, end, title, label;
     if (s.mode === 'date') {
       end = s.d ? Math.min(num(s.d), t) : t;
-      return { start: null, end: end, title: thaiDate(end), sub: 'จำนวนดาวทั้งหมด ณ วันนี้', metric: 'total' };
+      return { start: null, end: end, title: longDate(end), sub: T('จำนวนดาวทั้งหมด ณ วันนี้'), metric: 'total' };
     }
     if (s.mode === 'month') {
       var y = +s.m.slice(0, 4), m = +s.m.slice(5, 7) - 1;
       start = Date.UTC(y, m, 1) / DAY; end = Date.UTC(y, m + 1, 0) / DAY;
-      title = MONTHS[m] + ' ' + y; label = 'เดือนนี้';
+      title = months()[m] + ' ' + y; label = 'เดือนนี้';
     } else if (s.mode === 'year') {
       start = Date.UTC(+s.y, 0, 1) / DAY; end = Date.UTC(+s.y, 11, 31) / DAY;
-      title = 'ปี ' + s.y; label = 'ปีนี้';
+      title = T('ปี {y}', { y: s.y }); label = 'ปีนี้';
     } else {
       start = num(s.from); end = num(s.to);
       if (end < start) { var x = start; start = end; end = x; }
@@ -188,7 +195,7 @@
     if (start > end) start = end;
     var metric = metricOf(s);
     return { start: start, end: end, title: title, metric: metric,
-      sub: metric === 'gain' ? 'ดาวที่เพิ่มขึ้นใน' + label : 'จำนวนดาวทั้งหมด ณ วันสุดท้ายของ' + label };
+      sub: T(metric === 'gain' ? 'ดาวที่เพิ่มขึ้นใน' + label : 'จำนวนดาวทั้งหมด ณ วันสุดท้ายของ' + label) };
   }
 
   // ---------------------------------------------------------------------------
@@ -208,7 +215,7 @@
     var span = b - a, out = [];
     if (span <= 62) {
       var step = [1, 2, 3, 7, 14, 21].filter(function (st) { return span / st <= maxN; })[0] || 21;
-      for (var x = a; x <= b; x += step) out.push({ x: x, t: (function (d) { return d.getUTCDate() + ' ' + MON[d.getUTCMonth()]; })(new Date(x * DAY)) });
+      for (var x = a; x <= b; x += step) out.push({ x: x, t: (function (d) { return d.getUTCDate() + ' ' + mon()[d.getUTCMonth()]; })(new Date(x * DAY)) });
       return out;
     }
     var months = span / 30.4, ms = [1, 2, 3, 4, 6, 12, 24].filter(function (m) { return months / m <= maxN; })[0] || 24;
@@ -218,10 +225,43 @@
       var x2 = Date.UTC(y, m, 1) / DAY;
       if (x2 > b) break;
       var dd = new Date(x2 * DAY);
-      out.push({ x: x2, t: MON[dd.getUTCMonth()] + ' ' + dd.getUTCFullYear() });
+      out.push({ x: x2, t: mon()[dd.getUTCMonth()] + ' ' + dd.getUTCFullYear() });
       m += ms;
     }
     return out;
+  }
+
+  // Smooth path through screen points [[x, y], ...] (x increasing).
+  // Monotone cubic (Fritsch–Carlson): bends like a curve but never overshoots,
+  // so a line never dips below or rises above the real values. A two-point
+  // estimate is drawn as an accelerating growth curve instead of a straight line.
+  function curve(p, est) {
+    var q = [p[0]];
+    for (var i = 1; i < p.length; i++) if (p[i][0] - q[q.length - 1][0] > 0.05) q.push(p[i]);
+    var f = function (n) { return n.toFixed(1); };
+    var d = 'M' + f(q[0][0]) + ',' + f(q[0][1]);
+    var n = q.length;
+    if (n < 2) return d + 'l0,0';
+    if (n === 2) {
+      var a = q[0], b = q[1], w = b[0] - a[0];
+      return est
+        ? d + 'C' + f(a[0] + w * 0.55) + ',' + f(a[1]) + ' ' + f(b[0] - w * 0.12) + ',' + f(a[1] + (b[1] - a[1]) * 0.45) + ' ' + f(b[0]) + ',' + f(b[1])
+        : d + 'L' + f(b[0]) + ',' + f(b[1]);
+    }
+    var dk = [], m = [];
+    for (var k = 0; k < n - 1; k++) dk.push((q[k + 1][1] - q[k][1]) / (q[k + 1][0] - q[k][0]));
+    m[0] = dk[0]; m[n - 1] = dk[n - 2];
+    for (k = 1; k < n - 1; k++) m[k] = dk[k - 1] * dk[k] <= 0 ? 0 : (dk[k - 1] + dk[k]) / 2;
+    for (k = 0; k < n - 1; k++) {
+      if (dk[k] === 0) { m[k] = 0; m[k + 1] = 0; continue; }
+      var al = m[k] / dk[k], be = m[k + 1] / dk[k], h = al * al + be * be;
+      if (h > 9) { var t = 3 / Math.sqrt(h); m[k] = t * al * dk[k]; m[k + 1] = t * be * dk[k]; }
+    }
+    for (k = 0; k < n - 1; k++) {
+      var dx = (q[k + 1][0] - q[k][0]) / 3;
+      d += 'C' + f(q[k][0] + dx) + ',' + f(q[k][1] + m[k] * dx) + ' ' + f(q[k + 1][0] - dx) + ',' + f(q[k + 1][1] - m[k + 1] * dx) + ' ' + f(q[k + 1][0]) + ',' + f(q[k + 1][1]);
+    }
+    return d;
   }
 
   function draw(box, tip, s) {
@@ -261,9 +301,9 @@
 
     box.innerHTML = '';
     tip.hidden = true;
-    var svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H, width: W, height: H, class: 'tr-svg', role: 'img', 'aria-label': 'กราฟดาว GitHub: ' + P.title }, box);
+    var svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H, width: W, height: H, class: 'tr-svg', role: 'img', 'aria-label': T('กราฟดาว GitHub: {t}', { t: P.title }) }, box);
     if (!rows.length) {
-      el('text', { x: W / 2, y: H / 2, 'text-anchor': 'middle', class: 'tr-empty' }, svg).textContent = 'ไม่มีข้อมูลในช่วงนี้';
+      el('text', { x: W / 2, y: H / 2, 'text-anchor': 'middle', class: 'tr-empty' }, svg).textContent = T('ไม่มีข้อมูลในช่วงนี้');
       return { rows: rows, P: P };
     }
     // grid + axes
@@ -289,14 +329,14 @@
         r.pts.forEach(function (p) { if (p.x > first && p.x < P.end) pts.push(p); });
         pts.push({ x: P.end, v: valueAt(r, P.end), e: estAt(r, P.end) });
       }
-      var xy = function (p) { return sx(p.x).toFixed(1) + ',' + sy(p.v - row.base).toFixed(1); };
+      var xy = function (p) { return [sx(p.x), sy(p.v - row.base)]; };
       for (var i = 1; i < pts.length; i++) {
         var last = segs[segs.length - 1];
-        if (last && last.e === pts[i].e) last.d += 'L' + xy(pts[i]);
-        else segs.push({ e: pts[i].e, d: 'M' + xy(pts[i - 1]) + 'L' + xy(pts[i]) });
+        if (last && last.e === pts[i].e) last.p.push(xy(pts[i]));
+        else segs.push({ e: pts[i].e, p: [xy(pts[i - 1]), xy(pts[i])] });
       }
       var grp = el('g', { class: 'tr-line', 'data-r': r.name, stroke: r.color }, lines);
-      segs.forEach(function (sg) { el('path', { d: sg.d, class: sg.e ? 'est' : '' }, grp); });
+      segs.forEach(function (sg) { el('path', { d: curve(sg.p, sg.e), class: sg.e ? 'est' : '' }, grp); });
       el('circle', { cx: sx(P.end), cy: sy(row.val), r: 4.5, fill: r.color }, grp);
     });
 
@@ -358,7 +398,7 @@
         .filter(function (o) { return o.v !== null && o.v > 0; }).sort(function (a, b) { return b.v - a.v; }).slice(0, 10);
       tip.innerHTML = '<b>' + esc(shortDate(x)) + '</b>' + list.map(function (o) {
         return '<div><i style="background:' + o.r.color + '"></i>' + esc(o.r.short) + '<span>' + (gain ? '+' : '') + fmt(o.v) + (estAt(o.r, x) ? '*' : '') + '</span></div>';
-      }).join('') + (list.some(function (o) { return estAt(o.r, x); }) ? '<small>* ประมาณการ</small>' : '');
+      }).join('') + (list.some(function (o) { return estAt(o.r, x); }) ? '<small>' + T('* ประมาณการ') + '</small>' : '');
       tip.hidden = false;
       var bx = box.getBoundingClientRect();
       var left = e.clientX - bx.left + 14;
@@ -378,28 +418,31 @@
     opts = opts || {};
     var s = readState(opts.embed ? location.search : '');
     var t = todayNum();
-    root.innerHTML =
+    var box, tip, status, upd;
+    var $ = function (k) { return root.querySelector('[data-k="' + k + '"]'); };
+    function chrome() {   // (re)builds the window, e.g. after a language switch
+      root.innerHTML =
       '<div class="titlebar"><h2 class="title">📈 GitHub Star Trends</h2><span class="tb-btns" aria-hidden="true"><span>_</span><span>□</span><span>×</span></span></div>' +
       '<div class="toolbar tr-bar">' +
-        '<label>ดู <select data-k="mode"><option value="date">วันที่</option><option value="month">เดือน</option><option value="year">ปี</option><option value="range">ช่วงวันที่</option></select></label>' +
-        '<input type="date" data-k="d" data-show="date" max="' + str(t) + '" aria-label="วันที่">' +
-        '<select data-k="mm" data-show="month" aria-label="เดือน">' + MONTHS.map(function (m, i) { return '<option value="' + ('0' + (i + 1)).slice(-2) + '">' + m + '</option>'; }).join('') + '</select>' +
-        '<select data-k="yy" data-show="month year" aria-label="ปี"></select>' +
-        '<span data-show="range" class="tr-rng"><input type="date" data-k="from" max="' + str(t) + '" aria-label="ตั้งแต่"> – <input type="date" data-k="to" max="' + str(t) + '" aria-label="ถึง"></span>' +
-        '<select data-k="metric" data-show="month year range" aria-label="ค่าที่แสดง"><option value="gain">ดาวที่เพิ่มขึ้น</option><option value="total">ดาวทั้งหมด</option></select>' +
+        '<label>' + T('ดู') + ' <select data-k="mode"><option value="date">' + T('วันที่') + '</option><option value="month">' + T('เดือน') + '</option><option value="year">' + T('ปี') + '</option><option value="range">' + T('ช่วงวันที่') + '</option></select></label>' +
+        '<input type="date" data-k="d" data-show="date" max="' + str(t) + '" aria-label="' + T('วันที่') + '">' +
+        '<select data-k="mm" data-show="month" aria-label="' + T('เดือน') + '">' + months().map(function (m, i) { return '<option value="' + ('0' + (i + 1)).slice(-2) + '">' + m + '</option>'; }).join('') + '</select>' +
+        '<select data-k="yy" data-show="month year" aria-label="' + T('ปี') + '"></select>' +
+        '<span data-show="range" class="tr-rng"><input type="date" data-k="from" max="' + str(t) + '" aria-label="' + T('ตั้งแต่') + '"> – <input type="date" data-k="to" max="' + str(t) + '" aria-label="' + T('ถึง') + '"></span>' +
+        '<select data-k="metric" data-show="month year range" aria-label="' + T('ค่าที่แสดง') + '"><option value="gain">' + T('ดาวที่เพิ่มขึ้น') + '</option><option value="total">' + T('ดาวทั้งหมด') + '</option></select>' +
         '<label>Top <select data-k="top"><option>10</option><option>20</option><option>30</option></select></label>' +
         '<span class="tr-sp"></span>' +
         (opts.embed
-          ? '<a class="chip" target="_blank" rel="noopener" data-k="open">เปิดเต็ม ↗</a>'
+          ? '<a class="chip" target="_blank" rel="noopener" data-k="open">' + T('เปิดเต็ม ↗') + '</a>'
           : '<button type="button" class="chip" data-k="copy">📋 Copy iframe</button>') +
       '</div>' +
       '<div class="content tr-pane"><div class="tr-head"><div class="tr-title"></div><div class="tr-sub muted"></div></div>' +
         '<div class="tr-box"></div><div class="tr-tip" hidden></div></div>' +
-      '<div class="statusbar"><span class="tr-status">กำลังโหลด…</span><span class="tr-upd"></span></div>';
-
-    var $ = function (k) { return root.querySelector('[data-k="' + k + '"]'); };
-    var box = root.querySelector('.tr-box'), tip = root.querySelector('.tr-tip');
-    var status = root.querySelector('.tr-status'), upd = root.querySelector('.tr-upd');
+      '<div class="statusbar"><span class="tr-status">' + T('กำลังโหลด…') + '</span><span class="tr-upd"></span></div>';
+      box = root.querySelector('.tr-box'); tip = root.querySelector('.tr-tip');
+      status = root.querySelector('.tr-status'); upd = root.querySelector('.tr-upd');
+    }
+    chrome();
     var liveCount = 0;
 
     function syncControls() {
@@ -424,22 +467,23 @@
       if (loadState !== 'ok') {
         root.querySelector('.tr-title').textContent = '';
         root.querySelector('.tr-sub').textContent = '';
-        box.innerHTML = '<p class="empty muted">' + (loadState === 'loading' ? 'กำลังโหลดข้อมูล…'
+        box.innerHTML = '<p class="empty muted">' + T(loadState === 'loading' ? 'กำลังโหลดข้อมูล…'
           : loadState === 'nodata' ? 'ยังไม่มีข้อมูล — รอ GitHub Actions เก็บข้อมูลรอบแรก (ทุกชั่วโมง)'
           : 'โหลดข้อมูลไม่สำเร็จ ลองรีเฟรชอีกครั้ง') + '</p>';
-        status.textContent = loadState === 'loading' ? 'กำลังโหลด…' : 'ไม่มีข้อมูล';
+        status.textContent = T(loadState === 'loading' ? 'กำลังโหลด…' : 'ไม่มีข้อมูล');
         return;
       }
       var res = draw(box, tip, s);
       root.querySelector('.tr-title').textContent = res.P.title;
       root.querySelector('.tr-sub').textContent = res.P.sub;
       var est = res.rows.some(function (x) { return x.r.pts.some(function (p) { return p.e; }); });
-      status.textContent = res.rows.length + ' / ' + repos.length + ' repos' + (est ? ' · เส้นประ = ประมาณการ' : '');
-      upd.textContent = (liveCount && res.P.end === t ? '🟢 live · ' : '') + 'อัปเดต ' + (updated ? new Date(updated).toLocaleString('th-TH-u-ca-gregory', { dateStyle: 'short', timeStyle: 'short' }) : '-');
+      status.textContent = res.rows.length + ' / ' + repos.length + ' repos' + (est ? T(' · เส้นประ = ประมาณการ') : '');
+      upd.textContent = (liveCount && res.P.end === t ? '🟢 live · ' : '') + T('อัปเดต {t}', { t: updated ? new Date(updated).toLocaleString(en() ? 'en-GB' : 'th-TH-u-ca-gregory', { dateStyle: 'short', timeStyle: 'short' }) : '-' });
     }
 
-    root.querySelector('.tr-bar').addEventListener('change', function (e) {
+    root.addEventListener('change', function (e) {
       var k = e.target.getAttribute('data-k');
+      if (!k) return;
       if (k === 'mode') s.mode = e.target.value;
       else if (k === 'd') s.d = e.target.value && e.target.value !== str(t) ? e.target.value : '';
       else if (k === 'mm' || k === 'yy') {
@@ -451,7 +495,12 @@
       if (opts.embed) history.replaceState(null, '', stateQuery(s));
       render();
     });
-    if ($('copy')) $('copy').addEventListener('click', function () { copyDialog(s); });
+    root.addEventListener('click', function (e) { if (e.target.closest && e.target.closest('[data-k="copy"]')) copyDialog(s); });
+    if (window.I18N) window.I18N.on(function () {
+      chrome();
+      render();
+      if (opts.embed) history.replaceState(null, '', stateQuery(s));
+    });
 
     var rt;
     window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(render, 150); });
@@ -469,16 +518,16 @@
     var dlg = document.getElementById('trDlg');
     if (!dlg) { dlg = document.createElement('dialog'); dlg.id = 'trDlg'; document.body.appendChild(dlg); }
     var code = '<iframe src="' + EMBED_URL + stateQuery(s) + '" width="100%" height="720" style="border:0;max-width:1100px" loading="lazy" title="GitHub Star Trends"></iframe>';
-    dlg.innerHTML = '<form method="dialog" class="form"><h2 class="titlebar"><span class="title">📋 Copy iframe</span><button type="submit" class="tb-x" aria-label="ปิด">×</button></h2>' +
-      '<p class="small">แปะโค้ดนี้ในเว็บอื่นเพื่อแสดงกราฟนี้ (ใช้ตัวกรองที่เลือกอยู่ตอนนี้' + (s.mode === 'date' && !s.d ? ' — แสดงวันปัจจุบันเสมอ' : '') + ')</p>' +
+    dlg.innerHTML = '<form method="dialog" class="form"><h2 class="titlebar"><span class="title">📋 Copy iframe</span><button type="submit" class="tb-x" aria-label="' + T('ปิด') + '">×</button></h2>' +
+      '<p class="small">' + T('แปะโค้ดนี้ในเว็บอื่นเพื่อแสดงกราฟนี้ (ใช้ตัวกรองที่เลือกอยู่ตอนนี้{note})', { note: s.mode === 'date' && !s.d ? T(' — แสดงวันปัจจุบันเสมอ') : '' }) + '</p>' +
       '<textarea class="tr-code" rows="4" readonly spellcheck="false"></textarea>' +
-      '<div class="actions"><button type="button" class="chip primary" data-copy>📋 คัดลอก</button><button type="submit" class="chip">ปิด</button></div></form>';
+      '<div class="actions"><button type="button" class="chip primary" data-copy>' + T('📋 คัดลอก') + '</button><button type="submit" class="chip">' + T('ปิด') + '</button></div></form>';
     var ta = dlg.querySelector('textarea');
     ta.value = code;
     dlg.querySelector('[data-copy]').addEventListener('click', function () {
       var btn = this;
       ta.select();
-      var done = function () { btn.textContent = '✓ คัดลอกแล้ว'; };
+      var done = function () { btn.textContent = T('✓ คัดลอกแล้ว'); };
       if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(code).then(done, function () { try { document.execCommand('copy'); done(); } catch (e) { /* user copies by hand */ } });
       else { try { document.execCommand('copy'); done(); } catch (e) { /* user copies by hand */ } }
     });
