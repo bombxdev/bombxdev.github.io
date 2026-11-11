@@ -43,10 +43,18 @@ jobs:
         continue-on-error: true
         timeout-minutes: 10
         run: |
-          # Thai glyphs for the screenshots (best effort: the apt mirrors are sometimes unreachable)
-          timeout 120 sudo apt-get install -y -qq --no-install-recommends fonts-thai-tlwg >/dev/null 2>&1 \
-            || (timeout 120 sudo apt-get update -qq && timeout 120 sudo apt-get install -y -qq --no-install-recommends fonts-thai-tlwg) >/dev/null 2>&1 \
-            || echo "Thai fonts not installed"
+          # Thai glyphs for the screenshots (Noto Sans Thai; apt as a last resort)
+          mkdir -p ~/.local/share/fonts
+          for u in \
+            "https://github.com/google/fonts/raw/main/ofl/notosansthai/NotoSansThai%5Bwdth,wght%5D.ttf" \
+            "https://raw.githubusercontent.com/notofonts/notofonts.github.io/main/fonts/NotoSansThai/hinted/ttf/NotoSansThai-Regular.ttf"; do
+            if curl -fsSL --max-time 60 -o /tmp/thai.ttf "$u" && file /tmp/thai.ttf | grep -qi 'truetype\|opentype'; then
+              mv /tmp/thai.ttf ~/.local/share/fonts/NotoSansThai.ttf && break
+            fi
+          done
+          [ -f ~/.local/share/fonts/NotoSansThai.ttf ] || timeout 180 sudo apt-get install -y -qq --no-install-recommends fonts-thai-tlwg >/dev/null 2>&1 || true
+          fc-cache -f >/dev/null 2>&1 || true
+          fc-list :lang=th family | head -3 || true
           # the runner's own Google Chrome: nothing to download
           npm install --silent --no-save --prefix "$RUNNER_TEMP/pw" playwright-core@1.49.1
           NODE_PATH="$RUNNER_TEMP/pw/node_modules" PW_CHANNEL=chrome node ai/tools/render_og.cjs "$RUNNER_TEMP/out"
