@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AI Notes</title>
   <meta name="description" content="สมุดลิงก์ศึกษา AI: repo และบทความน่าสนใจ แยกหมวดเป็นโฟลเดอร์">
-  <meta name="theme-color" content="#111318">
+  <meta name="theme-color" content="#008080">
   <!-- Only this site's own scripts may run (no inline/third-party JS), so an
        injected script cannot reach the admin token. Thumbnails may come from any
        https host; api.microlink.io is only used by the admin to fill in title/image.
@@ -13,27 +13,36 @@
        GoatCounter script is loaded). -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://bombxdev.goatcounter.com https://api.github.com https://raw.githubusercontent.com https://api.microlink.io; object-src 'none'; base-uri 'self'; form-action 'none'">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A4%96%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="ai.css?v=2">
+  <link rel="stylesheet" href="ai.css?v=3">
 </head>
 <body>
-  <main class="wrap">
-    <header class="top">
-      <a class="home" href="../">← Portal</a>
-      <h1>🤖 AI Notes</h1>
-      <input id="search" type="search" placeholder="ค้นหาลิงก์ / remark…" autocomplete="off" spellcheck="false" aria-label="ค้นหา">
+  <main class="wrap win">
+    <div class="titlebar">
+      <h1 class="title">🤖 AI Notes</h1>
+      <span class="tb-btns" aria-hidden="true"><span>_</span><span>□</span><span>×</span></span>
+    </div>
+
+    <header class="top toolbar">
+      <label class="search-l" for="search">ค้นหา:</label>
+      <input id="search" type="search" placeholder="ลิงก์ / remark…" autocomplete="off" spellcheck="false">
     </header>
 
-    <nav id="crumbs" class="crumbs" aria-label="ตำแหน่งโฟลเดอร์"></nav>
-    <div id="adminBar" class="admin-bar" hidden></div>
-    <div id="view"></div>
+    <div class="address"><span class="address-l">Address</span>
+      <nav id="crumbs" class="crumbs" aria-label="ตำแหน่งโฟลเดอร์"></nav>
+    </div>
 
-    <section id="adminBox" class="admin-box" hidden></section>
-    <footer class="muted">ทุกคนดูได้ · แก้ไขได้เฉพาะเจ้าของ (ล็อกอินด้วย GitHub token)<span id="visits" class="visits" hidden></span></footer>
+    <div class="content">
+      <div id="adminBar" class="admin-bar" hidden></div>
+      <div id="view"></div>
+      <section id="adminBox" class="admin-box" hidden></section>
+    </div>
+
+    <footer class="statusbar"><span id="status">พร้อม</span><span id="visits" hidden></span></footer>
   </main>
 
   <dialog id="dlg"></dialog>
   <div id="toast" class="toast" role="status" hidden></div>
   <script src="stats.js?v=2"></script>
-  <script src="ai.js?v=2"></script>
+  <script src="ai.js?v=3"></script>
 </body>
 </html>

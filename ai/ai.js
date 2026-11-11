@@ -137,8 +137,8 @@
     return '<div class="row-admin">' +
       '<button type="button" class="chip" data-act="up" data-kind="' + kind + '" data-id="' + esc(id) + '"' + (idx === 0 ? ' disabled' : '') + ' title="เลื่อนขึ้น">↑</button>' +
       '<button type="button" class="chip" data-act="down" data-kind="' + kind + '" data-id="' + esc(id) + '"' + (idx === total - 1 ? ' disabled' : '') + ' title="เลื่อนลง">↓</button>' +
-      '<button type="button" class="chip" data-act="edit-' + kind + '" data-id="' + esc(id) + '">✏️ แก้ไข</button>' +
-      '<button type="button" class="chip danger" data-act="del-' + kind + '" data-id="' + esc(id) + '">🗑 ลบ</button>' +
+      '<button type="button" class="chip" data-act="edit-' + kind + '" data-id="' + esc(id) + '" title="แก้ไข">✏️<span class="lbl"> แก้ไข</span></button>' +
+      '<button type="button" class="chip danger" data-act="del-' + kind + '" data-id="' + esc(id) + '" title="ลบ">🗑<span class="lbl"> ลบ</span></button>' +
       '</div>';
   }
   function folderCard(f, idx, total) {
@@ -171,6 +171,7 @@
     if (cur.node.links.length) {
       html += '<div class="grid links">' + cur.node.links.map(function (l, i) { return linkCard(l, '', i, cur.node.links.length); }).join('') + '</div>';
     }
+    $('status').textContent = (cur.node.folders.length + cur.node.links.length) + ' object(s)';
     if (!html) html = '<p class="empty muted">ยังไม่มีอะไรในโฟลเดอร์นี้' + (admin ? ' — กดปุ่มด้านบนเพื่อเพิ่ม' : '') + '</p>';
     $('view').innerHTML = html;
   }
@@ -183,6 +184,7 @@
       });
       node.folders.forEach(function (f) { walk(f, path.concat(f)); });
     })(data.root, [data.root]);
+    $('status').textContent = 'พบ ' + hits.length + ' รายการ';
     $('view').innerHTML = hits.length
       ? '<div class="grid links">' + hits.map(function (h) {
         var trail = h.path.map(function (n, i) { return '<a href="#' + (i === 0 ? '' : esc(n.id)) + '">' + esc(i === 0 ? 'AI' : n.name) + '</a>'; }).join(' / ');
@@ -324,10 +326,10 @@
     }).join('') + '</select>';
   }
   function openDialog(title, body, onSubmit) {
-    dlg.innerHTML = '<form method="dialog" class="form"><h2>' + esc(title) + '</h2>' + body +
-      '<div class="actions"><button type="button" class="chip" data-close>ยกเลิก</button><button type="submit" class="chip primary">บันทึก</button></div></form>';
+    dlg.innerHTML = '<form method="dialog" class="form"><h2 class="titlebar"><span class="title">' + esc(title) + '</span><button type="button" class="tb-x" data-close aria-label="ปิด">×</button></h2>' + body +
+      '<div class="actions"><button type="button" class="chip" data-cancel>ยกเลิก</button><button type="submit" class="chip primary">บันทึก</button></div></form>';
     var form = dlg.querySelector('form');
-    dlg.querySelector('[data-close]').addEventListener('click', function () { dlg.close(); });
+    dlg.querySelectorAll('[data-close],[data-cancel]').forEach(function (b) { b.addEventListener('click', function () { dlg.close(); }); });
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var v = {};
