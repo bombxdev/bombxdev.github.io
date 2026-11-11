@@ -51,6 +51,9 @@ button, input, select, textarea { font: inherit; color: inherit; }
 
 .toolbar { display: flex; align-items: center; gap: 6px; padding: 4px 4px 6px; border-bottom: 1px solid var(--shadow); box-shadow: 0 1px var(--hi); }
 .search-l { flex: none; }
+.view-toggle { margin-left: auto; flex: none; }
+.view-toggle[aria-pressed=true] { box-shadow: var(--pressed); background: repeating-conic-gradient(var(--face) 0 25%, var(--hi) 0 50%) 0 0 / 2px 2px; font-weight: bold; }
+.toolbar { flex-wrap: wrap; }
 .address { display: flex; align-items: center; gap: 6px; padding: 3px 4px; }
 .address-l { color: var(--muted); flex: none; }
 

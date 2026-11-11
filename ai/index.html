@@ -13,7 +13,7 @@
        GoatCounter script is loaded). -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://bombxdev.goatcounter.com https://api.github.com https://raw.githubusercontent.com https://api.microlink.io; object-src 'none'; base-uri 'self'; form-action 'none'">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A4%96%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="ai.css?v=3">
+  <link rel="stylesheet" href="ai.css?v=4">
 </head>
 <body>
   <main class="wrap win">
@@ -25,6 +25,7 @@
     <header class="top toolbar">
       <label class="search-l" for="search">ค้นหา:</label>
       <input id="search" type="search" placeholder="ลิงก์ / remark…" autocomplete="off" spellcheck="false">
+      <button type="button" id="viewToggle" class="chip view-toggle" hidden></button>
     </header>
 
     <div class="address"><span class="address-l">Address</span>
@@ -43,6 +44,6 @@
   <dialog id="dlg"></dialog>
   <div id="toast" class="toast" role="status" hidden></div>
   <script src="stats.js?v=2"></script>
-  <script src="ai.js?v=3"></script>
+  <script src="ai.js?v=4"></script>
 </body>
 </html>

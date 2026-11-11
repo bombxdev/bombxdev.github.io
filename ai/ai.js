@@ -17,6 +17,10 @@
 
   var data = { updated: '', root: { id: 'root', name: 'AI', folders: [], links: [] } };
   var admin = null;      // { login } once the token is verified
+  var GUEST_KEY = 'ai.guestView';
+  var guestView = false; // admin previewing the page as a normal visitor (this tab only)
+  try { guestView = sessionStorage.getItem(GUEST_KEY) === '1'; } catch (e) { /* storage unavailable */ }
+  function editing() { return !!admin && !guestView; }
   var busy = false;
   var currentId = 'root';
   var query = '';
@@ -130,7 +134,7 @@
         '<div class="host">' + esc(host(l.url)) + '</div>' +
         (l.remark ? '<p class="remark">' + esc(l.remark) + '</p>' : '') +
         (folderPath ? '<div class="where">📁 ' + folderPath + '</div>' : '') +
-        (admin && !folderPath ? adminBtns('link', l.id, idx, total) : '') +
+        (editing() && !folderPath ? adminBtns('link', l.id, idx, total) : '') +
       '</div></article>';
   }
   function adminBtns(kind, id, idx, total) {
@@ -145,7 +149,7 @@
     return '<article class="card folder">' +
       '<a class="folder-link" href="#' + esc(f.id) + '"><span class="ico" aria-hidden="true">📁</span>' +
         '<span><strong>' + esc(f.name) + '</strong><small>' + countLinks(f) + ' ลิงก์' + (f.folders.length ? ' · ' + f.folders.length + ' โฟลเดอร์ย่อย' : '') + '</small></span></a>' +
-      (admin ? adminBtns('folder', f.id, idx, total) : '') +
+      (editing() ? adminBtns('folder', f.id, idx, total) : '') +
       '</article>';
   }
 
@@ -172,7 +176,7 @@
       html += '<div class="grid links">' + cur.node.links.map(function (l, i) { return linkCard(l, '', i, cur.node.links.length); }).join('') + '</div>';
     }
     $('status').textContent = (cur.node.folders.length + cur.node.links.length) + ' object(s)';
-    if (!html) html = '<p class="empty muted">ยังไม่มีอะไรในโฟลเดอร์นี้' + (admin ? ' — กดปุ่มด้านบนเพื่อเพิ่ม' : '') + '</p>';
+    if (!html) html = '<p class="empty muted">ยังไม่มีอะไรในโฟลเดอร์นี้' + (editing() ? ' — กดปุ่มด้านบนเพื่อเพิ่ม' : '') + '</p>';
     $('view').innerHTML = html;
   }
 
@@ -193,10 +197,27 @@
       : '<p class="empty muted">ไม่พบ “' + esc(q) + '”</p>';
   }
 
+  function renderViewToggle() {
+    var t = $('viewToggle');
+    t.hidden = !admin;
+    if (admin) $('adminBox').hidden = guestView;
+    t.textContent = guestView ? '✏️ กลับโหมดแก้ไข' : '👁 มุมมองผู้เข้าชม';
+    t.title = guestView ? 'แสดงปุ่มแก้ไขอีกครั้ง' : 'ดูหน้านี้แบบที่คนทั่วไปเห็น';
+    t.setAttribute('aria-pressed', guestView ? 'true' : 'false');
+    document.body.classList.toggle('guest-view', !!admin && guestView);
+  }
+  $('viewToggle').addEventListener('click', function () {
+    guestView = !guestView;
+    try { guestView ? sessionStorage.setItem(GUEST_KEY, '1') : sessionStorage.removeItem(GUEST_KEY); } catch (e) { /* storage unavailable */ }
+    render();
+    toast(guestView ? 'มุมมองผู้เข้าชม — กดปุ่มเดิมเพื่อกลับไปแก้ไข' : 'กลับโหมดแก้ไขแล้ว');
+  });
+
   function renderAdminBar() {
     var bar = $('adminBar');
-    bar.hidden = !admin;
-    if (!admin) return;
+    bar.hidden = !editing();
+    renderViewToggle();
+    if (!editing()) return;
     bar.innerHTML = '<button type="button" class="chip primary" data-act="add-folder">📁 + โฟลเดอร์</button>' +
       '<button type="button" class="chip primary" data-act="add-link">🔗 + ลิงก์</button>' +
       (currentId !== 'root' ? '<button type="button" class="chip" data-act="edit-folder" data-id="' + esc(currentId) + '">✏️ แก้โฟลเดอร์นี้</button>' : '');
@@ -434,7 +455,7 @@
 
   document.addEventListener('click', function (e) {
     var b = e.target.closest && e.target.closest('[data-act]');
-    if (!b || !admin) return;
+    if (!b || !editing()) return;
     var act = b.getAttribute('data-act'), id = b.getAttribute('data-id'), kind = b.getAttribute('data-kind');
     if (act === 'add-folder') folderDialog(null);
     else if (act === 'add-link') linkDialog(null);
@@ -467,6 +488,8 @@
       $('adminOut').addEventListener('click', function () {
         setToken('');
         admin = null;
+        guestView = false;
+        try { sessionStorage.removeItem(GUEST_KEY); } catch (e) { /* storage unavailable */ }
         box.hidden = true;
         render();
         toast('ออกจากระบบแล้ว');
