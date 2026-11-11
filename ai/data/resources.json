@@ -1,9 +1,32 @@
 {
-  "updated": "2026-11-10T09:16:04.358Z",
+  "updated": "2026-11-11T08:45:39.064Z",
   "root": {
     "id": "root",
     "name": "AI",
     "folders": [
+      {
+        "id": "tools",
+        "name": "Tools & Infra",
+        "folders": [],
+        "links": [
+          {
+            "id": "mcp-servers",
+            "url": "https://github.com/modelcontextprotocol/servers",
+            "title": "modelcontextprotocol/servers",
+            "remark": "ตัวอย่าง: รวม MCP server สำหรับต่อ tool/ข้อมูลเข้ากับ LLM",
+            "image": "",
+            "added": "2026-10-28T00:00:00.000Z"
+          },
+          {
+            "id": "ollama",
+            "url": "https://github.com/ollama/ollama",
+            "title": "ollama/ollama",
+            "remark": "ตัวอย่าง: รัน LLM บนเครื่องตัวเอง",
+            "image": "",
+            "added": "2026-10-28T00:00:00.000Z"
+          }
+        ]
+      },
       {
         "id": "agents",
         "name": "Performance",
@@ -40,29 +63,6 @@
             "image": "",
             "id": "mvys2eemshk2",
             "added": "2026-11-02T04:47:33.742Z"
-          }
-        ]
-      },
-      {
-        "id": "tools",
-        "name": "Tools & Infra",
-        "folders": [],
-        "links": [
-          {
-            "id": "mcp-servers",
-            "url": "https://github.com/modelcontextprotocol/servers",
-            "title": "modelcontextprotocol/servers",
-            "remark": "ตัวอย่าง: รวม MCP server สำหรับต่อ tool/ข้อมูลเข้ากับ LLM",
-            "image": "",
-            "added": "2026-10-28T00:00:00.000Z"
-          },
-          {
-            "id": "ollama",
-            "url": "https://github.com/ollama/ollama",
-            "title": "ollama/ollama",
-            "remark": "ตัวอย่าง: รัน LLM บนเครื่องตัวเอง",
-            "image": "",
-            "added": "2026-10-28T00:00:00.000Z"
           }
         ]
       },
