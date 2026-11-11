@@ -1,6 +1,6 @@
 // Link-preview images for the share pages (ai/share/*.html), 1200x630.
 //
-//   NODE_PATH=<dir with playwright> node ai/tools/render_og.cjs <out dir>
+//   NODE_PATH=<dir with playwright(-core)> [PW_CHANNEL=chrome] node ai/tools/render_og.cjs <out dir>
 //
 // Serves the checked-out site locally, opens the chart for each preset with
 // the stars.json just written to <out dir> (instead of the published copy)
@@ -8,7 +8,9 @@
 const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
-const { chromium } = require('playwright');
+let pw;
+try { pw = require('playwright'); } catch (e) { pw = require('playwright-core'); }
+const { chromium } = pw;
 
 const OUT = process.argv[2];
 if (!OUT) { console.error('usage: render_og.cjs <out dir>'); process.exit(2); }
@@ -29,7 +31,8 @@ const server = http.createServer((req, res) => {
   await new Promise((r) => server.listen(0, '127.0.0.1', r));
   const port = server.address().port;
   fs.mkdirSync(path.join(OUT, 'og'), { recursive: true });
-  const browser = await chromium.launch();
+  // PW_CHANNEL=chrome uses the Google Chrome already installed on the runner
+  const browser = await chromium.launch(process.env.PW_CHANNEL ? { channel: process.env.PW_CHANNEL } : {});
   try {
     for (const lang of ['th', 'en']) {
       const ctx = await browser.newContext({ viewport: { width: 1200, height: 630 }, timezoneId: 'Asia/Bangkok', locale: lang === 'en' ? 'en-GB' : 'th-TH' });

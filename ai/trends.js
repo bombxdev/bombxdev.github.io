@@ -32,6 +32,7 @@
   var MON_EN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   var SVGNS = 'http://www.w3.org/2000/svg';
   var CREDIT = 'Bomb x AI';
+  var TOPIC_LABEL = '# Artificial Intelligence';   // data: repos with the GitHub topic 'ai'
   var SITE = 'bombxdev.github.io/ai';
   var T = window.T || function (s, v) { return v ? s.replace(/\{(\w+)\}/g, function (m, k) { return k in v ? v[k] : m; }) : s; };
   function en() { return !!window.I18N && window.I18N.lang === 'en'; }
@@ -485,7 +486,7 @@
       var xml = '<svg xmlns="' + SVGNS + '" xmlns:xlink="http://www.w3.org/1999/xlink" width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + ' ' + H + '" font-family="' + xmlEsc(font) + '">' +
         '<rect width="100%" height="100%" fill="#ffffff"/>' +
         '<text x="' + pad + '" y="42" font-size="28" font-weight="bold" fill="#000">' + xmlEsc(res.P.title) + '</text>' +
-        '<text x="' + pad + '" y="64" font-size="14" fill="#555">' + xmlEsc(res.P.sub) + ' · GitHub Star Trends</text>' +
+        '<text x="' + pad + '" y="64" font-size="14" fill="#555">' + xmlEsc(res.P.sub) + ' · GitHub Star Trends ' + TOPIC_LABEL + '</text>' +
         new XMLSerializer().serializeToString(clone) +
         '<line x1="' + pad + '" x2="' + (W - pad) + '" y1="' + (H - foot + 4) + '" y2="' + (H - foot + 4) + '" stroke="#e6e6e6"/>' +
         '<text x="' + pad + '" y="' + (H - 12) + '" font-size="12" fill="#888">' + xmlEsc(SITE + ' · ' + T('อัปเดต {t}', { t: fmtUpdated() })) + '</text>' +
@@ -595,7 +596,7 @@
     var $ = function (k) { return root.querySelector('[data-k="' + k + '"]'); };
     function chrome() {   // (re)builds the window, e.g. after a language switch
       root.innerHTML =
-      '<div class="titlebar"><h2 class="title">📈 GitHub Star Trends</h2><span class="tb-btns" aria-hidden="true"><span>_</span><span>□</span><span>×</span></span></div>' +
+      '<div class="titlebar"><h2 class="title">📈 GitHub Star Trends <span class="tr-topic">' + TOPIC_LABEL + '</span></h2><span class="tb-btns" aria-hidden="true"><span>_</span><span>□</span><span>×</span></span></div>' +
       '<div class="toolbar tr-bar">' +
         '<label>' + T('ดู') + ' <select data-k="mode"><option value="date">' + T('วันที่') + '</option><option value="month">' + T('เดือน') + '</option><option value="year">' + T('ปี') + '</option><option value="range">' + T('ช่วงวันที่') + '</option></select></label>' +
         '<input type="date" data-k="d" data-show="date" max="' + str(t) + '" aria-label="' + T('วันที่') + '">' +

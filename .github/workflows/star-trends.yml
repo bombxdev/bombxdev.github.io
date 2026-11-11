@@ -1,6 +1,6 @@
 name: Star trends data
 
-# Hourly star counts for the "GitHub Star Trends" chart on /ai/.
+# Hourly star counts for the "GitHub Star Trends" chart on /ai/ (GitHub topic "ai").
 # The data (stars.json + og/*.png link-preview images) lives alone on the
 # `stars-data` branch (one commit, force-pushed),
 # so master's history stays clean and Pages is not rebuilt every hour.
@@ -37,15 +37,19 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # optional: fine-grained token (public repos, read-only) to back-fill star history
           STARS_TOKEN: ${{ secrets.STARS_TOKEN }}
-        run: node ai/tools/fetch_stars.mjs "$RUNNER_TEMP/out/stars.json" ai/data/resources.json
+        run: node ai/tools/fetch_stars.mjs "$RUNNER_TEMP/out/stars.json"
       - name: Render link-preview images
         # screenshots for the share pages (ai/share/*.html); data is published even if this fails
         continue-on-error: true
         timeout-minutes: 10
         run: |
-          npm install --silent --no-save --prefix "$RUNNER_TEMP/pw" playwright@1.49.1
-          "$RUNNER_TEMP/pw/node_modules/.bin/playwright" install --with-deps chromium
-          NODE_PATH="$RUNNER_TEMP/pw/node_modules" node ai/tools/render_og.cjs "$RUNNER_TEMP/out"
+          # Thai glyphs for the screenshots (best effort: the apt mirrors are sometimes unreachable)
+          timeout 120 sudo apt-get install -y -qq --no-install-recommends fonts-thai-tlwg >/dev/null 2>&1 \
+            || (timeout 120 sudo apt-get update -qq && timeout 120 sudo apt-get install -y -qq --no-install-recommends fonts-thai-tlwg) >/dev/null 2>&1 \
+            || echo "Thai fonts not installed"
+          # the runner's own Google Chrome: nothing to download
+          npm install --silent --no-save --prefix "$RUNNER_TEMP/pw" playwright-core@1.49.1
+          NODE_PATH="$RUNNER_TEMP/pw/node_modules" PW_CHANNEL=chrome node ai/tools/render_og.cjs "$RUNNER_TEMP/out"
       - name: Publish to stars-data branch
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

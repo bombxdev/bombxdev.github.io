@@ -6,7 +6,7 @@
   var I18N = window.I18N;
   var T = window.T || function (s) { return s; };
   var WINDOWS = [
-    { id: 'trends', icon: '📈', label: 'Star Trends', title: 'GitHub Star Trends' },
+    { id: 'trends', icon: '📈', label: 'Star Trends', title: 'GitHub Star Trends # Artificial Intelligence' },
     { id: 'notes', icon: '🤖', label: 'AI Notes', title: 'AI Notes' }
   ].filter(function (w) { return document.getElementById(w.id); });
 

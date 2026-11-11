@@ -1,11 +1,12 @@
 // Star history collector for the "GitHub Star Trends" chart (ai/trends.js).
 //
-//   node ai/tools/fetch_stars.mjs <stars.json> [resources.json]
+//   node ai/tools/fetch_stars.mjs <stars.json>
 //
 // Every run (hourly, .github/workflows/star-trends.yml):
-//   1. picks the repos to track: the most-starred repos created in the last
-//      ~18 months (GitHub search), every GitHub link in the AI Notes page, and
-//      everything tracked before (never dropped, so history keeps growing);
+//   1. picks the repos to track: the most-starred repos with the GitHub topic
+//      "ai" (the list on https://github.com/topics/ai), plus every repo tracked
+//      before that still carries the topic (so history keeps growing); repos
+//      that lost the topic are dropped;
 //   2. stores today's star count for each one (one point per day, overwritten
 //      until the day ends);
 //   3. back-fills older history for repos seen for the first time, by sampling
@@ -18,8 +19,8 @@
 //   bf: <history back-filled>, pts: [["YYYY-MM-DD", stars, estimated?], ...] } } }
 import fs from 'node:fs';
 
-const [, , OUT, RESOURCES] = process.argv;
-if (!OUT) { console.error('usage: fetch_stars.mjs <stars.json> [resources.json]'); process.exit(2); }
+const [, , OUT] = process.argv;
+if (!OUT) { console.error('usage: fetch_stars.mjs <stars.json>'); process.exit(2); }
 
 const API = process.env.GITHUB_API_URL || 'https://api.github.com';
 const TOKEN = process.env.GITHUB_TOKEN || '';
@@ -32,9 +33,8 @@ const STARS_TOKEN = process.env.STARS_TOKEN || '';
 const BUDGET = +(process.env.STAR_BUDGET || 700);   // max API calls per run (GITHUB_TOKEN: 1000/h)
 const CAP = 40000;                                    // stargazers GitHub will list
 const SAMPLES = 24;                                   // stargazer pages sampled per repo
-const SEARCH_DAYS = 540;
-const SEARCH_MIN_STARS = 10000;
-const SEARCH_TOP = 40;
+const TOPIC = 'ai';                                   // https://github.com/topics/ai
+const TOPIC_TOP = 50;                                 // most-starred repos taken from the topic
 
 const BASE = { 'User-Agent': 'star-trends-collector', 'X-GitHub-Api-Version': '2022-11-28' };
 let calls = 0;
@@ -61,30 +61,20 @@ const wanted = new Map();                               // lower-case name -> na
 const add = (n) => { if (n && !wanted.has(n.toLowerCase())) wanted.set(n.toLowerCase(), n); };
 Object.keys(data.repos).forEach(add);
 
-const since = new Date(Date.now() - SEARCH_DAYS * 864e5).toISOString().slice(0, 10);
-const found = await gh(`/search/repositories?q=${encodeURIComponent(`created:>${since} stars:>${SEARCH_MIN_STARS}`)}&sort=stars&order=desc&per_page=${SEARCH_TOP}`);
-(found ? found.items : []).forEach((i) => add(i.full_name));
-
-if (RESOURCES) {
-  try {
-    const res = JSON.parse(fs.readFileSync(RESOURCES, 'utf8'));
-    (function walk(node) {
-      (node.links || []).forEach((l) => {
-        const m = /^https?:\/\/(?:www\.)?github\.com\/([\w.-]+\/[\w.-]+?)(?:\.git)?(?:[/?#]|$)/i.exec(l.url || '');
-        if (m) add(m[1]);
-      });
-      (node.folders || []).forEach(walk);
-    })(res.root || {});
-  } catch (e) { console.warn('resources:', e.message); }
-}
+const found = await gh(`/search/repositories?q=${encodeURIComponent('topic:' + TOPIC)}&sort=stars&order=desc&per_page=${TOPIC_TOP}`);
+if (!found) throw new Error('topic search failed');
+found.items.forEach((i) => add(i.full_name));
 
 // ---- 2. today's snapshot ---------------------------------------------------
 let snapped = 0;
 for (const name of wanted.values()) {
   let info;
   try { info = await gh(`/repos/${name}`); } catch (e) { console.warn(name, e.message); continue; }
-  if (!info || info.private) continue;
-  const key = info.full_name;                            // follows renames / transfers
+  const key = info && info.full_name;                    // follows renames / transfers
+  if (!info || info.private || !(info.topics || []).includes(TOPIC)) {   // gone, or no longer in the topic
+    if (info !== undefined) { delete data.repos[name]; if (key) delete data.repos[key]; }
+    continue;
+  }
   const r = data.repos[key] || data.repos[name] || { bf: false, pts: [] };
   if (key !== name && data.repos[name]) delete data.repos[name];
   r.avatar = info.owner && info.owner.avatar_url || '';
@@ -134,6 +124,7 @@ for (const [key, r] of Object.entries(STARS_TOKEN ? data.repos : {})) {
   filled++;
 }
 
+data.topic = TOPIC;
 data.updated = new Date().toISOString();
 fs.writeFileSync(OUT, JSON.stringify(data) + '\n');
 const pending = Object.values(data.repos).filter((r) => !r.bf).length;

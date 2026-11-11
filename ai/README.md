@@ -35,7 +35,8 @@
 (ดาวที่เพิ่มขึ้นในช่วง หรือดาวทั้งหมด), เลือก Top 10/20/30, ชี้เมาส์ดูค่าแต่ละวัน, ชี้ชื่อเพื่อไฮไลต์เส้น
 
 - **ข้อมูล**: `.github/workflows/star-trends.yml` รันทุกชั่วโมง (`ai/tools/fetch_stars.mjs`) เก็บดาวของ
-  repo ใหม่ยอดนิยม (สร้างใน ~18 เดือน, ดาว > 10k, top 40 จาก GitHub search) + ทุกลิงก์ GitHub ในหน้านี้
+  repo ที่มี GitHub topic **`ai`** (https://github.com/topics/ai) ที่ดาวมากที่สุด 50 อันดับ — repo ที่เคยติดอันดับจะเก็บต่อ
+  ตราบที่ยังมี topic `ai` อยู่
   แล้ว force-push ไฟล์เดียว `stars.json` ไปที่ branch **`stars-data`** (ไม่รก history ของ master)
 - **เรียลไทม์**: หน้าเว็บดึงจำนวนดาวล่าสุดของวันนี้เพิ่มจาก GitHub search API อีกที (cache 10 นาที)
 - **ประวัติย้อนหลัง**: ตอนเจอ repo ครั้งแรกจะสุ่มอ่านรายชื่อ stargazers (มีวันที่กดดาว) แต่ GitHub ให้ดู
