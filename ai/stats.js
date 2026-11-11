@@ -32,13 +32,16 @@
   if (/[?&]nostat\b/.test(location.search)) set('localStorage', OPT_OUT_KEY, '1');
   if (/[?&]stat\b/.test(location.search)) del('localStorage', OPT_OUT_KEY);
 
-  function enabled() {
-    if (!/\.github\.io$/.test(location.hostname)) return false;   // not on localhost / previews
-    if (navigator.webdriver) return false;                        // headless browsers, test runs
-    if (get('localStorage', OPT_OUT_KEY)) return false;
-    if (get('sessionStorage', TOKEN_KEY) || get('localStorage', TOKEN_KEY)) return false;  // the owner
-    return true;
+  function skipReason() {
+    if (!/\.github\.io$/.test(location.hostname)) return 'not on github.io (localhost / preview)';
+    if (navigator.webdriver) return 'automated browser';
+    if (get('localStorage', OPT_OUT_KEY)) return 'opted out with ?nostat (open ?stat to undo)';
+    if (get('sessionStorage', TOKEN_KEY) || get('localStorage', TOKEN_KEY)) return 'admin token saved in this browser (owner is not counted)';
+    return '';
   }
+  var reason = skipReason();
+  if (window.console) console.info('[stats] ' + (reason ? 'not counted: ' + reason : 'counting via GoatCounter'));
+  function enabled() { return !skipReason(); }
 
   function send(path, title, isEvent) {
     if (!enabled()) return;
