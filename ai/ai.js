@@ -203,6 +203,8 @@
   function onHash() {
     currentId = decodeURIComponent(location.hash.replace(/^#/, '')) || 'root';
     render();
+    var cur = find(currentId);   // render() falls back to root for unknown ids
+    if (window.aiStats) window.aiStats.view(currentId, cur && cur.node.id !== 'root' ? cur.node.name : '');
   }
   window.addEventListener('hashchange', onHash);
   $('search').addEventListener('input', function (e) { query = e.target.value; render(); });
