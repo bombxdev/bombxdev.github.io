@@ -44,10 +44,11 @@
 - **แปะเว็บอื่น**: ปุ่ม `📋 Copy iframe` ได้โค้ด `<iframe src="https://bombxdev.github.io/ai/trends.html?…">`
   ตามตัวกรองที่เลือกอยู่ (โหมด "วันที่" ที่ไม่ได้เลือกวันจะแสดงวันปัจจุบันเสมอ)
 - รันเองทันที: Actions → *Star trends data* → Run workflow
-- **ทำให้ประวัติย้อนหลังครบเร็วขึ้น (แนะนำ)**: `GITHUB_TOKEN` ของ Actions อ่านรายชื่อ stargazers ของ repo อื่นไม่ได้
-  ถ้าไม่ตั้งอะไร ระบบจะอ่านแบบไม่ล็อกอิน (60 ครั้ง/ชม. → ได้ ~5 repo ต่อชั่วโมง ครบในราวครึ่งวัน)
-  ถ้าอยากให้ครบในรอบเดียว: สร้าง fine-grained token (Repository access: *Public repositories (read-only)*,
-  ไม่ต้องติ๊กสิทธิ์อะไร) แล้วใส่เป็น secret ชื่อ **`STARS_TOKEN`** ที่ Settings → Secrets and variables → Actions
+- **ประวัติย้อนหลัง (ต้องตั้ง secret)**: การอ่านรายชื่อ stargazers ต้องใช้ token ของผู้ใช้
+  (`GITHUB_TOKEN` ของ Actions และการเรียกแบบไม่ล็อกอินถูกปฏิเสธ) — สร้าง fine-grained token
+  (Repository access: *Public repositories (read-only)*, ไม่ต้องติ๊กสิทธิ์อะไร) แล้วใส่เป็น secret ชื่อ
+  **`STARS_TOKEN`** ที่ Settings → Secrets and variables → Actions จากนั้น Run workflow หนึ่งครั้ง
+  ถ้าไม่ตั้ง: เก็บแค่ข้อมูลจริงรายวันตั้งแต่วันนี้ ส่วนก่อนหน้าวาดเป็นเส้นประจากวันสร้าง repo (0 ดาว)
 
 ## สถิติการใช้งาน (GoatCounter — ฟรี)
 

@@ -34,7 +34,7 @@ jobs:
       - name: Fetch star counts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # optional: fine-grained token (public repos, read-only) to back-fill history faster
+          # optional: fine-grained token (public repos, read-only) to back-fill star history
           STARS_TOKEN: ${{ secrets.STARS_TOKEN }}
         run: node ai/tools/fetch_stars.mjs "$RUNNER_TEMP/out/stars.json" ai/data/resources.json
       - name: Publish to stars-data branch

@@ -23,14 +23,15 @@ if (!OUT) { console.error('usage: fetch_stars.mjs <stars.json> [resources.json]'
 
 const API = process.env.GITHUB_API_URL || 'https://api.github.com';
 const TOKEN = process.env.GITHUB_TOKEN || '';
-// The Actions GITHUB_TOKEN may not list other repos' stargazers ("Resource not
-// accessible by integration"). STARS_TOKEN (optional secret: a fine-grained
-// token with read-only access to public repos) fixes that; without it the
-// stargazer samples are fetched anonymously (60 requests/hour per runner).
+// Listing stargazers needs a user token: the Actions GITHUB_TOKEN gets 403
+// ("Resource not accessible by integration") and anonymous calls get 401.
+// STARS_TOKEN (optional secret: fine-grained token, public repos read-only)
+// enables the back-fill; without it only the daily snapshots are recorded and
+// the page draws a dashed estimate from the repo's creation date.
 const STARS_TOKEN = process.env.STARS_TOKEN || '';
 const BUDGET = +(process.env.STAR_BUDGET || 700);   // max API calls per run (GITHUB_TOKEN: 1000/h)
 const CAP = 40000;                                    // stargazers GitHub will list
-const SAMPLES = STARS_TOKEN ? 24 : 10;                // stargazer pages sampled per repo
+const SAMPLES = 24;                                   // stargazer pages sampled per repo
 const SEARCH_DAYS = 540;
 const SEARCH_MIN_STARS = 10000;
 const SEARCH_TOP = 40;
@@ -99,7 +100,8 @@ for (const name of wanted.values()) {
 
 // ---- 3. back-fill history (oldest repos first, within the call budget) ---------
 let filled = 0;
-for (const [key, r] of Object.entries(data.repos)) {
+if (!STARS_TOKEN) console.log('no STARS_TOKEN secret: history back-fill skipped');
+for (const [key, r] of Object.entries(STARS_TOKEN ? data.repos : {})) {
   if (r.bf) continue;
   const lastPage = Math.max(1, Math.ceil(Math.min(r.stars || 0, CAP) / 100));
   const n = Math.min(SAMPLES, lastPage);
@@ -116,7 +118,7 @@ for (const [key, r] of Object.entries(data.repos)) {
     }
   } catch (e) {
     console.warn(key, 'backfill:', e.message);
-    if (/ 403 | 429 /.test(e.message)) break;          // rate limited / not allowed: try again next run
+    if (/ 40[13] | 429 /.test(e.message)) break;          // rate limited / not allowed: try again next run
     continue;
   }
 
@@ -135,4 +137,4 @@ for (const [key, r] of Object.entries(data.repos)) {
 data.updated = new Date().toISOString();
 fs.writeFileSync(OUT, JSON.stringify(data) + '\n');
 const pending = Object.values(data.repos).filter((r) => !r.bf).length;
-console.log(`tracked ${Object.keys(data.repos).length} repos · snapshot ${snapped} · back-filled ${filled} (${pending} waiting) · ${calls} API calls · stargazer mode: ${STARS_TOKEN ? 'STARS_TOKEN' : 'anonymous'}`);
+console.log(`tracked ${Object.keys(data.repos).length} repos · snapshot ${snapped} · back-filled ${filled} (${pending} waiting) · ${calls} API calls · back-fill: ${STARS_TOKEN ? 'on' : 'off (no STARS_TOKEN)'}`);

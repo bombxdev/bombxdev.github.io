@@ -65,6 +65,15 @@
             .sort(function (a, b) { return a.x - b.x; })
         };
       }).filter(function (r) { return r.pts.length; });
+      // No back-filled history yet: assume growth from 0 at creation up to the
+      // first real data point, drawn dashed as an estimate.
+      repos.forEach(function (r, i) {
+        var c = j.repos[r.name].created;
+        if (r.bf || !validDay(c) || num(c) >= r.pts[0].x) return;
+        r.pts[0].e = true;
+        r.pts.unshift({ x: num(c), v: 0, e: false });
+        r.bf = true;
+      });
       repos.sort(function (a, b) { return b.stars - a.stars; });
       repos.forEach(function (r, i) { r.color = PALETTE[i % PALETTE.length]; });
       loadState = repos.length ? 'ok' : 'nodata';
@@ -232,7 +241,7 @@
     var start = P.start;
     if (start === null) {   // "date" mode: from the first star of the oldest repo shown
       start = rows.reduce(function (m, x) { return Math.min(m, x.r.pts[0].x); }, P.end);
-      start = Math.max(start, P.end - 365 * 4);
+      start = Math.max(start, P.end - 730);
       if (P.end - start < 7) start = P.end - 7;
     }
     if (P.end === start) start = P.end - 1;
@@ -274,7 +283,7 @@
     rows.slice().reverse().forEach(function (row) {
       var r = row.r, pts = [], segs = [];
       // pts[i].e: is the segment from pts[i-1] to pts[i] an estimate
-      var first = r.bf ? start : Math.max(start, r.pts[0].x);
+      var first = Math.max(start, r.pts[0].x);   // nothing to draw before the repo existed
       if (first <= P.end) {
         pts.push({ x: first, v: valueAt(r, first), e: false });
         r.pts.forEach(function (p) { if (p.x > first && p.x < P.end) pts.push(p); });
