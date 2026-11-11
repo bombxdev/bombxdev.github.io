@@ -44,9 +44,17 @@
 
 /* trends.html (iframe) */
 body.tr-embed { background: var(--face); }
-body.tr-embed .win { margin: 0; max-width: none; min-height: 100vh; }
-body.tr-embed .tr-pane { flex: 1; }
+body.tr-embed .win { margin: 0; max-width: none; min-height: 0; }   /* the chart height is fitted to the iframe in trends.js */
+body.tr-embed .tr-pane { padding-bottom: 2px; }
 
 @media (max-width: 640px) {
   .tr-title { font-size: 20px; }
 }
+
+.tr-credit { fill: #c2c2c2; font-size: 11px; letter-spacing: .3px; pointer-events: none; }
+.tr-nets { display: flex; flex-wrap: wrap; gap: 6px; }
+.tr-nets .chip { text-decoration: none; }
+.tr-net { display: inline-grid; place-items: center; min-width: 16px; height: 16px; padding: 0 2px; background: var(--navy); color: #fff; font-size: 10px; margin-right: 2px; }
+#trDlg .tr-link { flex: 1; min-width: 0; font-size: 12px; }
+#trDlg .inline { display: flex; gap: 6px; }
+#trDlg .small.muted { margin-top: 0; margin-bottom: 0; }

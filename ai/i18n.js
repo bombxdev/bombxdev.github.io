@@ -120,9 +120,22 @@
     ' — แสดงวันปัจจุบันเสมอ': ' — always shows the current day',
     '📋 คัดลอก': '📋 Copy',
     '✓ คัดลอกแล้ว': '✓ Copied',
+    // save / share
+    '💾 บันทึกรูป': '💾 Save image',
+    'บันทึกกราฟเป็นไฟล์ PNG': 'Save the chart as a PNG file',
+    '📤 แชร์': '📤 Share',
+    'GitHub repo ที่ได้ดาวมากที่สุด — {t}': 'Most-starred GitHub repos — {t}',
+    '📱 แชร์รูปผ่านแอปในเครื่อง': '📱 Share the image with an app',
+    'แชร์ลิงก์ไปที่': 'Share the link on',
+    '🔗 คัดลอกลิงก์': '🔗 Copy link',
+    'โซเชียลส่วนใหญ่แชร์ได้แค่ลิงก์ ถ้าอยากโพสต์เป็นรูป ให้กด 💾 บันทึกรูป แล้วแนบรูปเอง': 'Most social networks only take a link; to post the picture, use 💾 Save image and attach it yourself',
+    'กำลังสร้างรูป…': 'Creating image…',
+    'บันทึกรูปแล้ว ✓': 'Image saved ✓',
+    'สร้างรูปไม่สำเร็จ: {e}': 'Could not create the image: {e}',
+    'เวลาตามเครื่องของคุณ ({tz})': 'Your local time ({tz})',
     // taskbar
     'ภาษา': 'Language',
-    'ภาษา: ไทย (คลิกเพื่อเปลี่ยน)': 'Language: English (click to change)',
+    'ภาษา: ไทย (คลิก หรือกดปุ่ม ` เพื่อเปลี่ยน)': 'Language: English (click or press ` to change)',
     'เริ่ม': 'Start'
   };
 
@@ -163,6 +176,16 @@
     apply();
     subs.forEach(function (fn) { try { fn(lang); } catch (e) { if (window.console) console.error(e); } });
   }
+
+  // ` (grave / backquote, the Thai keyboard's language key) switches TH <-> EN,
+  // except while typing in a field
+  document.addEventListener('keydown', function (e) {
+    if (e.code !== 'Backquote' || e.ctrlKey || e.metaKey || e.altKey || e.repeat) return;
+    var t = e.target, tag = t && t.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || (t && t.isContentEditable)) return;
+    e.preventDefault();
+    set(lang === 'th' ? 'en' : 'th');
+  });
 
   window.T = T;
   window.I18N = {

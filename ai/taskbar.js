@@ -29,7 +29,7 @@
         return '<button type="button" class="tb-task" data-win="' + w.id + '" title="' + w.title + '"><span aria-hidden="true">' + w.icon + '</span><span class="tb-tl">' + w.label + '</span></button>';
       }).join('') + '</div>' +
       '<div class="tb-tray">' +
-        '<button type="button" class="tb-lang" data-tb="lang" aria-haspopup="menu" aria-expanded="' + (open === 'lang') + '" title="' + T('ภาษา: ไทย (คลิกเพื่อเปลี่ยน)') + '">' + l.toUpperCase() + '</button>' +
+        '<button type="button" class="tb-lang" data-tb="lang" aria-haspopup="menu" aria-expanded="' + (open === 'lang') + '" title="' + T('ภาษา: ไทย (คลิก หรือกดปุ่ม ` เพื่อเปลี่ยน)') + '">' + l.toUpperCase() + '</button>' +
         '<span class="tb-clock" aria-label="clock"></span>' +
       '</div>' +
       (open === 'start' ? startMenu() : '') +

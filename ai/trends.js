@@ -26,6 +26,8 @@
   var MONTHS_EN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   var MON_EN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   var SVGNS = 'http://www.w3.org/2000/svg';
+  var CREDIT = 'Bomb x AI';
+  var SITE = 'bombxdev.github.io/ai';
   var T = window.T || function (s, v) { return v ? s.replace(/\{(\w+)\}/g, function (m, k) { return k in v ? v[k] : m; }) : s; };
   function en() { return !!window.I18N && window.I18N.lang === 'en'; }
   function months() { return en() ? MONTHS_EN : MONTHS; }
@@ -264,7 +266,8 @@
     return d;
   }
 
-  function draw(box, tip, s) {
+  function draw(box, tip, s, o) {
+    o = o || {};
     var P = period(s);
     var gain = P.metric === 'gain';
     // rank
@@ -288,7 +291,7 @@
 
     var W = Math.max(320, box.clientWidth || 900);
     var narrow = W < 640;
-    var H = Math.round(Math.min(680, Math.max(360, W * (narrow ? 1.05 : 0.6))));
+    var H = o.fitH ? Math.max(240, 44 + rows.length * 12, Math.round(o.fitH)) : Math.round(Math.min(680, Math.max(360, W * (narrow ? 1.05 : 0.6))));
     var M = { l: narrow ? 38 : 52, r: narrow ? 150 : 250, t: 14, b: 30 };
     var pw = W - M.l - M.r, ph = H - M.t - M.b;
     var maxY = rows.reduce(function (m, x) {
@@ -304,7 +307,7 @@
     var svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H, width: W, height: H, class: 'tr-svg', role: 'img', 'aria-label': T('กราฟดาว GitHub: {t}', { t: P.title }) }, box);
     if (!rows.length) {
       el('text', { x: W / 2, y: H / 2, 'text-anchor': 'middle', class: 'tr-empty' }, svg).textContent = T('ไม่มีข้อมูลในช่วงนี้');
-      return { rows: rows, P: P };
+      return { rows: rows, P: P, svg: svg, W: W, H: H };
     }
     // grid + axes
     var g = el('g', { class: 'tr-grid' }, svg);
@@ -376,6 +379,7 @@
     });
 
     // hover: highlight a repo, crosshair with values
+    if (o.credit) el('text', { x: W - 4, y: H - 5, 'text-anchor': 'end', class: 'tr-credit' }, svg).textContent = CREDIT;
     var hover = el('rect', { x: M.l, y: M.t, width: pw, height: ph, class: 'tr-hover' }, svg);
     var cross = el('line', { y1: M.t, y2: M.t + ph, class: 'tr-cross' }, svg);
     cross.style.display = 'none';
@@ -408,12 +412,161 @@
     }
     hover.addEventListener('mousemove', move);
     hover.addEventListener('mouseleave', function () { cross.style.display = 'none'; tip.hidden = true; });
-    return { rows: rows, P: P };
+    return { rows: rows, P: P, svg: svg, W: W, H: H };
   }
 
   // ---------------------------------------------------------------------------
   // Window UI
   // ---------------------------------------------------------------------------
+  // "updated" time, shown in the viewer's own time zone with its name
+  function tzName() { try { return Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) { return ''; } }
+  function fmtUpdated() {
+    if (!updated) return '-';
+    var d = new Date(updated);
+    try {
+      return d.toLocaleString(en() ? 'en-GB' : 'th-TH-u-ca-gregory', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', timeZoneName: 'short' });
+    } catch (e) { return d.toLocaleString(); }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Save as image / share
+  // ---------------------------------------------------------------------------
+  var STYLE_PROPS = ['fill', 'stroke', 'stroke-width', 'stroke-dasharray', 'stroke-linecap', 'stroke-linejoin', 'opacity', 'font-size', 'font-weight', 'font-family'];
+  var avatarCache = {};
+  function avatarData(url) {   // avatars.githubusercontent.com sends CORS headers, so the canvas stays clean
+    if (!avatarCache[url]) {
+      avatarCache[url] = new Promise(function (resolve) {
+        var img = new Image();
+        img.crossOrigin = 'anonymous';
+        img.onload = function () {
+          try {
+            var c = document.createElement('canvas'); c.width = c.height = 48;
+            c.getContext('2d').drawImage(img, 0, 0, 48, 48);
+            resolve(c.toDataURL('image/png'));
+          } catch (e) { resolve(''); }
+        };
+        img.onerror = function () { resolve(''); };
+        img.src = url;
+      });
+    }
+    return avatarCache[url];
+  }
+  function xmlEsc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+  // PNG of the current chart: title + chart + footer (site, updated time, credit)
+  function exportPng(res, root) {
+    var src = res.svg;
+    root.querySelector('.tr-box').classList.remove('tr-focus');
+    Array.prototype.forEach.call(src.querySelectorAll('.on'), function (n) { n.classList.remove('on'); });
+    var clone = src.cloneNode(true);
+    var a = src.querySelectorAll('*'), b = clone.querySelectorAll('*');
+    for (var i = 0; i < a.length; i++) {
+      var cs = getComputedStyle(a[i]), st = '';
+      STYLE_PROPS.forEach(function (p) { var v = cs.getPropertyValue(p); if (v) st += p + ':' + v + ';'; });
+      b[i].setAttribute('style', st);
+    }
+    Array.prototype.forEach.call(clone.querySelectorAll('.tr-hover, .tr-cross, .tr-credit, title'), function (n) { n.parentNode.removeChild(n); });
+    var images = Array.prototype.slice.call(clone.querySelectorAll('image'));
+    return Promise.all(images.map(function (im) {
+      return avatarData(im.getAttribute('href')).then(function (d) {
+        if (d) im.setAttribute('href', d); else im.parentNode.removeChild(im);
+      });
+    })).then(function () {
+      var pad = 24, head = 78, foot = 34, W = res.W + pad * 2, H = res.H + head + foot;
+      var font = getComputedStyle(root).fontFamily.replace(/"/g, "'");
+      clone.setAttribute('x', pad); clone.setAttribute('y', head);
+      clone.setAttribute('width', res.W); clone.setAttribute('height', res.H);
+      clone.removeAttribute('class');
+      var xml = '<svg xmlns="' + SVGNS + '" xmlns:xlink="http://www.w3.org/1999/xlink" width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + ' ' + H + '" font-family="' + xmlEsc(font) + '">' +
+        '<rect width="100%" height="100%" fill="#ffffff"/>' +
+        '<text x="' + pad + '" y="42" font-size="28" font-weight="bold" fill="#000">' + xmlEsc(res.P.title) + '</text>' +
+        '<text x="' + pad + '" y="64" font-size="14" fill="#555">' + xmlEsc(res.P.sub) + ' · GitHub Star Trends</text>' +
+        new XMLSerializer().serializeToString(clone) +
+        '<line x1="' + pad + '" x2="' + (W - pad) + '" y1="' + (H - foot + 4) + '" y2="' + (H - foot + 4) + '" stroke="#e6e6e6"/>' +
+        '<text x="' + pad + '" y="' + (H - 12) + '" font-size="12" fill="#888">' + xmlEsc(SITE + ' · ' + T('อัปเดต {t}', { t: fmtUpdated() })) + '</text>' +
+        '<text x="' + (W - pad) + '" y="' + (H - 12) + '" font-size="12" fill="#c4c4c4" text-anchor="end">' + CREDIT + '</text>' +
+        '</svg>';
+      return new Promise(function (resolve, reject) {
+        var img = new Image();
+        img.onload = function () {
+          var k = 2, c = document.createElement('canvas');
+          c.width = W * k; c.height = H * k;
+          var ctx = c.getContext('2d');
+          ctx.scale(k, k);
+          ctx.drawImage(img, 0, 0, W, H);
+          try { c.toBlob(function (bl) { bl ? resolve(bl) : reject(new Error('toBlob')); }, 'image/png'); } catch (e) { reject(e); }
+        };
+        img.onerror = function () { reject(new Error('SVG')); };
+        img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(xml);
+      });
+    });
+  }
+  function fileName(s) {
+    var tag = s.mode === 'date' ? (s.d || str(todayNum())) : s.mode === 'month' ? s.m : s.mode === 'year' ? s.y : s.from + '_' + s.to;
+    return 'github-star-trends-' + tag + '.png';
+  }
+  function download(blob, name) {
+    var url = URL.createObjectURL(blob), a = document.createElement('a');
+    a.href = url; a.download = name;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
+  }
+  function shareDialog(s, res, root) {
+    var link = EMBED_URL + stateQuery(s);
+    var text = T('GitHub repo ที่ได้ดาวมากที่สุด — {t}', { t: res.P.title });
+    var u = encodeURIComponent(link), tx = encodeURIComponent(text);
+    var nets = [
+      ['𝕏', 'X', 'https://twitter.com/intent/tweet?text=' + tx + '&url=' + u],
+      ['f', 'Facebook', 'https://www.facebook.com/sharer/sharer.php?u=' + u],
+      ['L', 'LINE', 'https://social-plugins.line.me/lineit/share?url=' + u + '&text=' + tx],
+      ['in', 'LinkedIn', 'https://www.linkedin.com/sharing/share-offsite/?url=' + u],
+      ['✈', 'Telegram', 'https://t.me/share/url?url=' + u + '&text=' + tx],
+      ['r', 'Reddit', 'https://www.reddit.com/submit?url=' + u + '&title=' + tx]
+    ];
+    var dlg = document.getElementById('trDlg');
+    if (!dlg) { dlg = document.createElement('dialog'); dlg.id = 'trDlg'; document.body.appendChild(dlg); }
+    dlg.innerHTML = '<form method="dialog" class="form"><h2 class="titlebar"><span class="title">' + T('📤 แชร์') + '</span><button type="submit" class="tb-x" aria-label="' + T('ปิด') + '">×</button></h2>' +
+      '<p class="small">' + esc(text) + '</p>' +
+      '<div class="tr-share-native" hidden><button type="button" class="chip primary" data-native>' + T('📱 แชร์รูปผ่านแอปในเครื่อง') + '</button></div>' +
+      '<p class="small muted">' + T('แชร์ลิงก์ไปที่') + '</p>' +
+      '<div class="tr-nets">' + nets.map(function (n) {
+        return '<a class="chip" target="_blank" rel="noopener noreferrer" href="' + esc(n[2]) + '"><b class="tr-net">' + n[0] + '</b>' + n[1] + '</a>';
+      }).join('') + '</div>' +
+      '<div class="inline"><input class="tr-link" readonly value="' + esc(link) + '"><button type="button" class="chip" data-copylink>' + T('🔗 คัดลอกลิงก์') + '</button></div>' +
+      '<p class="small muted">' + T('โซเชียลส่วนใหญ่แชร์ได้แค่ลิงก์ ถ้าอยากโพสต์เป็นรูป ให้กด 💾 บันทึกรูป แล้วแนบรูปเอง') + '</p>' +
+      '<div class="actions"><button type="button" class="chip" data-save>' + T('💾 บันทึกรูป') + '</button><button type="submit" class="chip">' + T('ปิด') + '</button></div></form>';
+    var blobP = null;
+    var getBlob = function () { return blobP || (blobP = exportPng(res, root)); };
+    // native share sheet with the image (phones, some desktops)
+    if (navigator.canShare && window.File) {
+      var probe = new File([''], 'x.png', { type: 'image/png' });
+      if (navigator.canShare({ files: [probe] })) dlg.querySelector('.tr-share-native').hidden = false;
+    }
+    dlg.querySelector('[data-native]').addEventListener('click', function () {
+      var btn = this;
+      btn.textContent = T('กำลังสร้างรูป…');
+      getBlob().then(function (bl) {
+        var f = new File([bl], fileName(s), { type: 'image/png' });
+        return navigator.share({ files: [f], title: 'GitHub Star Trends', text: text + ' ' + link });
+      }).then(function () { btn.textContent = T('📱 แชร์รูปผ่านแอปในเครื่อง'); }, function () { btn.textContent = T('📱 แชร์รูปผ่านแอปในเครื่อง'); });
+    });
+    dlg.querySelector('[data-copylink]').addEventListener('click', function () {
+      var btn = this, inp = dlg.querySelector('.tr-link');
+      inp.select();
+      var done = function () { btn.textContent = T('✓ คัดลอกแล้ว'); };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(link).then(done, function () { try { document.execCommand('copy'); done(); } catch (e) { /* by hand */ } });
+      else { try { document.execCommand('copy'); done(); } catch (e) { /* by hand */ } }
+    });
+    dlg.querySelector('[data-save]').addEventListener('click', function () {
+      var btn = this;
+      btn.textContent = T('กำลังสร้างรูป…');
+      getBlob().then(function (bl) { download(bl, fileName(s)); btn.textContent = T('บันทึกรูปแล้ว ✓'); },
+        function (e) { btn.textContent = T('สร้างรูปไม่สำเร็จ: {e}', { e: e.message }); });
+    });
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+    dlg.showModal();
+  }
+
   function mount(root, opts) {
     opts = opts || {};
     var s = readState(opts.embed ? location.search : '');
@@ -432,6 +585,8 @@
         '<select data-k="metric" data-show="month year range" aria-label="' + T('ค่าที่แสดง') + '"><option value="gain">' + T('ดาวที่เพิ่มขึ้น') + '</option><option value="total">' + T('ดาวทั้งหมด') + '</option></select>' +
         '<label>Top <select data-k="top"><option>10</option><option>20</option><option>30</option></select></label>' +
         '<span class="tr-sp"></span>' +
+        '<button type="button" class="chip" data-k="save" title="' + T('บันทึกกราฟเป็นไฟล์ PNG') + '">' + T('💾 บันทึกรูป') + '</button>' +
+        '<button type="button" class="chip" data-k="share">' + T('📤 แชร์') + '</button>' +
         (opts.embed
           ? '<a class="chip" target="_blank" rel="noopener" data-k="open">' + T('เปิดเต็ม ↗') + '</a>'
           : '<button type="button" class="chip" data-k="copy">📋 Copy iframe</button>') +
@@ -444,6 +599,7 @@
     }
     chrome();
     var liveCount = 0;
+    var last = null;   // last drawn chart (for save / share)
 
     function syncControls() {
       $('mode').value = s.mode;
@@ -473,12 +629,22 @@
         status.textContent = T(loadState === 'loading' ? 'กำลังโหลด…' : 'ไม่มีข้อมูล');
         return;
       }
-      var res = draw(box, tip, s);
+      var P0 = period(s);   // title first: its height matters when fitting the chart
+      root.querySelector('.tr-title').textContent = P0.title;
+      root.querySelector('.tr-sub').textContent = P0.sub;
+      var fitH = null;
+      if (opts.embed) {   // fill the iframe exactly: no scrollbar unless it is really tiny
+        var below = root.getBoundingClientRect().bottom - box.getBoundingClientRect().bottom;
+        fitH = window.innerHeight - box.getBoundingClientRect().top - below - 2;
+      }
+      var res = draw(box, tip, s, { fitH: fitH, credit: !!opts.embed });
+      last = res;
       root.querySelector('.tr-title').textContent = res.P.title;
       root.querySelector('.tr-sub').textContent = res.P.sub;
       var est = res.rows.some(function (x) { return x.r.pts.some(function (p) { return p.e; }); });
       status.textContent = res.rows.length + ' / ' + repos.length + ' repos' + (est ? T(' · เส้นประ = ประมาณการ') : '');
-      upd.textContent = (liveCount && res.P.end === t ? '🟢 live · ' : '') + T('อัปเดต {t}', { t: updated ? new Date(updated).toLocaleString(en() ? 'en-GB' : 'th-TH-u-ca-gregory', { dateStyle: 'short', timeStyle: 'short' }) : '-' });
+      upd.textContent = (liveCount && res.P.end === t ? '🟢 live · ' : '') + T('อัปเดต {t}', { t: fmtUpdated() });
+      upd.title = T('เวลาตามเครื่องของคุณ ({tz})', { tz: tzName() });
     }
 
     root.addEventListener('change', function (e) {
@@ -495,7 +661,19 @@
       if (opts.embed) history.replaceState(null, '', stateQuery(s));
       render();
     });
-    root.addEventListener('click', function (e) { if (e.target.closest && e.target.closest('[data-k="copy"]')) copyDialog(s); });
+    root.addEventListener('click', function (e) {
+      var b = e.target.closest && e.target.closest('[data-k]');
+      if (!b) return;
+      var k = b.getAttribute('data-k');
+      if (k === 'copy') copyDialog(s);
+      else if ((k === 'save' || k === 'share') && last && last.rows.length) {
+        if (k === 'share') return shareDialog(s, last, root);
+        var label = b.textContent;
+        b.textContent = T('กำลังสร้างรูป…');
+        exportPng(last, root).then(function (bl) { download(bl, fileName(s)); b.textContent = label; },
+          function (err) { b.textContent = label; window.alert(T('สร้างรูปไม่สำเร็จ: {e}', { e: err.message })); });
+      }
+    });
     if (window.I18N) window.I18N.on(function () {
       chrome();
       render();
