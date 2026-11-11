@@ -1,7 +1,8 @@
 name: Star trends data
 
 # Hourly star counts for the "GitHub Star Trends" chart on /ai/.
-# The data lives alone on the `stars-data` branch (one commit, force-pushed),
+# The data (stars.json + og/*.png link-preview images) lives alone on the
+# `stars-data` branch (one commit, force-pushed),
 # so master's history stays clean and Pages is not rebuilt every hour.
 # The page reads it from raw.githubusercontent.com/<repo>/stars-data/stars.json.
 on:
@@ -37,6 +38,14 @@ jobs:
           # optional: fine-grained token (public repos, read-only) to back-fill star history
           STARS_TOKEN: ${{ secrets.STARS_TOKEN }}
         run: node ai/tools/fetch_stars.mjs "$RUNNER_TEMP/out/stars.json" ai/data/resources.json
+      - name: Render link-preview images
+        # screenshots for the share pages (ai/share/*.html); data is published even if this fails
+        continue-on-error: true
+        timeout-minutes: 10
+        run: |
+          npm install --silent --no-save --prefix "$RUNNER_TEMP/pw" playwright@1.49.1
+          "$RUNNER_TEMP/pw/node_modules/.bin/playwright" install --with-deps chromium
+          NODE_PATH="$RUNNER_TEMP/pw/node_modules" node ai/tools/render_og.cjs "$RUNNER_TEMP/out"
       - name: Publish to stars-data branch
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -45,6 +54,6 @@ jobs:
           git init -q -b stars-data
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add stars.json
+          git add -A
           git commit -qm "star trends data $(date -u +%Y-%m-%dT%H:%MZ)"
           git push -qf "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git" stars-data

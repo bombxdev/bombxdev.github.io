@@ -16,6 +16,11 @@
   var OWNER = 'bombxdev', REPO = 'bombxdev.github.io';
   var DATA_URL = 'https://raw.githubusercontent.com/' + OWNER + '/' + REPO + '/stars-data/stars.json';
   var EMBED_URL = 'https://' + OWNER + '.github.io/ai/trends.html';
+  // Link previews on social networks need a ready-made image: the hourly
+  // workflow screenshots these filters (ai/tools/render_og.cjs) and the static
+  // pages ai/share/<preset>[-en].html point their og:image at them.
+  var SHARE_URL = 'https://' + OWNER + '.github.io/ai/share/';
+  var OG_URL = 'https://raw.githubusercontent.com/' + OWNER + '/' + REPO + '/stars-data/og/';
   var LIVE_KEY = 'trends.live';
   var DAY = 864e5;
   var PALETTE = ['#1f6feb', '#a0785a', '#e3b505', '#2fb34a', '#d93a49', '#7b52d9', '#3aa0e8', '#b04fc9', '#ff8c00', '#17a2b8',
@@ -511,8 +516,19 @@
     document.body.appendChild(a); a.click(); a.remove();
     setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
   }
+  // today / this month / this year with the default options have a preview image
+  function presetOf(s) {
+    if (s.top !== 20) return null;
+    var t = str(todayNum());
+    if (s.mode === 'date' && !s.d) return 'today';
+    if (s.metric === 'total') return null;
+    if (s.mode === 'month' && s.m === t.slice(0, 7)) return 'month';
+    if (s.mode === 'year' && s.y === t.slice(0, 4)) return 'year';
+    return null;
+  }
   function shareDialog(s, res, root) {
-    var link = EMBED_URL + stateQuery(s);
+    var preset = presetOf(s), key = preset ? preset + (en() ? '-en' : '') : '';
+    var link = preset ? SHARE_URL + key + '.html' : EMBED_URL + stateQuery(s);
     var text = T('GitHub repo ที่ได้ดาวมากที่สุด — {t}', { t: res.P.title });
     var u = encodeURIComponent(link), tx = encodeURIComponent(text);
     var nets = [
@@ -527,6 +543,9 @@
     if (!dlg) { dlg = document.createElement('dialog'); dlg.id = 'trDlg'; document.body.appendChild(dlg); }
     dlg.innerHTML = '<form method="dialog" class="form"><h2 class="titlebar"><span class="title">' + T('📤 แชร์') + '</span><button type="submit" class="tb-x" aria-label="' + T('ปิด') + '">×</button></h2>' +
       '<p class="small">' + esc(text) + '</p>' +
+      (preset
+        ? '<figure class="tr-og"><img alt="" src="' + OG_URL + key + '.png?t=' + Math.floor(Date.now() / 36e5) + '"><figcaption class="small muted">' + T('ภาพนี้จะแสดงเป็นพรีวิวเมื่อแชร์ลิงก์ (อัปเดตทุกชั่วโมง)') + '</figcaption></figure>'
+        : '<p class="small muted">' + T('ตัวกรองนี้ไม่มีภาพพรีวิวอัตโนมัติ (มีเฉพาะ วันนี้ / เดือนนี้ / ปีนี้) — ใช้ 📱 หรือ 💾 เพื่อแนบภาพกราฟที่ตรงกับตัวกรองนี้') + '</p>') +
       '<div class="tr-share-native" hidden><button type="button" class="chip primary" data-native>' + T('📱 แชร์รูปผ่านแอปในเครื่อง') + '</button></div>' +
       '<p class="small muted">' + T('แชร์ลิงก์ไปที่') + '</p>' +
       '<div class="tr-nets">' + nets.map(function (n) {
@@ -569,7 +588,8 @@
 
   function mount(root, opts) {
     opts = opts || {};
-    var s = readState(opts.embed ? location.search : '');
+    // filters: the page URL, then the page's own preset (data-query, share pages)
+    var s = readState(opts.embed ? location.search.slice(1) + '&' + String(opts.query || '').replace(/^\?/, '') : '');
     var t = todayNum();
     var box, tip, status, upd;
     var $ = function (k) { return root.querySelector('[data-k="' + k + '"]'); };
@@ -716,5 +736,5 @@
 
   window.StarTrends = { mount: mount };
   var auto = document.querySelector('[data-star-trends]');
-  if (auto) mount(auto, { embed: auto.getAttribute('data-star-trends') === 'embed' });
+  if (auto) mount(auto, { embed: auto.getAttribute('data-star-trends') === 'embed', query: auto.getAttribute('data-query') || '' });
 })();

@@ -58,3 +58,6 @@ body.tr-embed .tr-pane { padding-bottom: 2px; }
 #trDlg .tr-link { flex: 1; min-width: 0; font-size: 12px; }
 #trDlg .inline { display: flex; gap: 6px; }
 #trDlg .small.muted { margin-top: 0; margin-bottom: 0; }
+#trDlg .tr-og { margin: 0 10px; }
+#trDlg .tr-og img { display: block; width: 100%; aspect-ratio: 1200 / 630; object-fit: cover; background: var(--face); box-shadow: var(--sunken); }
+#trDlg .tr-og figcaption { margin-top: 3px; }

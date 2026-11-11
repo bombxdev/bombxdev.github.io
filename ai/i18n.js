@@ -1,7 +1,7 @@
 // TH / EN for the /ai/ pages. Thai is the source text: T('ข้อความ {n}', { n: 3 })
 // returns it as is in Thai, or the English entry below. Static markup uses
 // data-i18n (text), data-i18n-ph (placeholder), data-i18n-title, data-i18n-aria.
-// Language: ?lang=th|en (iframe) > saved choice > Thai.
+// Language: ?lang=th|en (iframe) > <html data-lang> (share pages) > saved choice > Thai.
 (function () {
   'use strict';
 
@@ -133,6 +133,8 @@
     'บันทึกรูปแล้ว ✓': 'Image saved ✓',
     'สร้างรูปไม่สำเร็จ: {e}': 'Could not create the image: {e}',
     'เวลาตามเครื่องของคุณ ({tz})': 'Your local time ({tz})',
+    'ภาพนี้จะแสดงเป็นพรีวิวเมื่อแชร์ลิงก์ (อัปเดตทุกชั่วโมง)': 'This picture shows as the link preview (updated hourly)',
+    'ตัวกรองนี้ไม่มีภาพพรีวิวอัตโนมัติ (มีเฉพาะ วันนี้ / เดือนนี้ / ปีนี้) — ใช้ 📱 หรือ 💾 เพื่อแนบภาพกราฟที่ตรงกับตัวกรองนี้': 'No automatic preview for this filter (only today / this month / this year) — use 📱 or 💾 to attach a picture of exactly this chart',
     // taskbar
     'ภาษา': 'Language',
     'ภาษา: ไทย (คลิก หรือกดปุ่ม ` เพื่อเปลี่ยน)': 'Language: English (click or press ` to change)',
@@ -142,6 +144,8 @@
   function pick() {
     var q = /[?&]lang=(th|en)\b/.exec(location.search);
     if (q) return q[1];
+    var forced = document.documentElement.getAttribute('data-lang');   // share pages
+    if (forced === 'th' || forced === 'en') return forced;
     try { var s = localStorage.getItem(KEY); if (s === 'th' || s === 'en') return s; } catch (e) { /* storage unavailable */ }
     return 'th';
   }

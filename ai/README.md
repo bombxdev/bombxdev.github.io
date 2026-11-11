@@ -44,6 +44,11 @@
 - **บันทึกรูป / แชร์**: `💾 บันทึกรูป` ได้ PNG (2x) มีหัวเรื่อง, เวลาอัปเดต และ credit `Bomb x AI` สีเทาจาง
   `📤 แชร์` = แชร์รูปผ่านแอปในเครื่อง (มือถือที่รองรับ Web Share) หรือแชร์ลิงก์ไป X / Facebook / LINE / LinkedIn /
   Telegram / Reddit / คัดลอกลิงก์ (โซเชียลส่วนใหญ่รับแค่ลิงก์ ถ้าอยากโพสต์เป็นรูปให้บันทึกรูปแล้วแนบเอง)
+- **ภาพพรีวิวตอนแชร์ลิงก์**: workflow ถ่าย screenshot กราฟทุกชั่วโมง (`ai/tools/render_og.cjs`, 1200×630)
+  สำหรับ วันนี้ / เดือนนี้ / ปีนี้ × TH/EN ไว้ที่ `stars-data/og/*.png` และหน้า `ai/share/<preset>[-en].html`
+  ใส่ og:image ชี้ไปที่ภาพนั้น — ปุ่มแชร์ใช้หน้าเหล่านี้อัตโนมัติเมื่อตัวกรองตรงกัน (Top 20, ค่าเริ่มต้น)
+  ตัวกรองอื่นแชร์เป็นลิงก์ `trends.html?…` ได้ แต่ภาพพรีวิวจะเป็นของ "วันนี้"; ถ้าอยากได้ภาพตรงตัวกรองใช้ 📱 / 💾
+  (โซเชียลแต่ละเจ้าจะ cache ภาพพรีวิวไว้เองระยะหนึ่ง)
 - **เวลาอัปเดต** แสดงตามเขตเวลาของเครื่องที่เปิดดู พร้อมชื่อเขต เช่น `GMT+7` (ชี้เมาส์เพื่อดูชื่อ timezone)
 - **แปะเว็บอื่น**: ปุ่ม `📋 Copy iframe` ได้โค้ด `<iframe src="https://bombxdev.github.io/ai/trends.html?…">`
   ตามตัวกรองที่เลือกอยู่ (โหมด "วันที่" ที่ไม่ได้เลือกวันจะแสดงวันปัจจุบันเสมอ)
@@ -93,4 +98,4 @@
 
 ## ไฟล์
 
-`index.html`, `ai.js`, `ai.css`, `stats.js`, `i18n.js`, `taskbar.js`, `trends.js` + `trends.css` + `trends.html` (iframe), `tools/fetch_stars.mjs`, `data/resources.json` (`{updated, root:{id,name,folders:[…],links:[{id,url,title,remark,image,added}]}}`)
+`index.html`, `ai.js`, `ai.css`, `stats.js`, `i18n.js`, `taskbar.js`, `trends.js` + `trends.css` + `trends.html` (iframe), `tools/fetch_stars.mjs`, `tools/render_og.cjs`, `share/*.html`, `data/resources.json` (`{updated, root:{id,name,folders:[…],links:[{id,url,title,remark,image,added}]}}`)
