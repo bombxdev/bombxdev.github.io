@@ -1,0 +1,52 @@
+/* GitHub Star Trends window (uses the Windows 95 base from ai.css) */
+.tr-win { margin-bottom: 0; }
+.tr-win + .win { margin-top: 16px; }
+.tr-bar { gap: 6px 8px; }
+.tr-bar label { display: inline-flex; align-items: center; gap: 4px; }
+.tr-bar select, .tr-bar input {
+  background: #fff; color: #000; border: 0; border-radius: 0; box-shadow: var(--field); padding: 3px 4px; font-size: 12px; min-height: 22px;
+}
+.tr-rng { display: inline-flex; align-items: center; gap: 4px; }
+.tr-sp { flex: 1; }
+.tr-pane { position: relative; min-height: 0; padding: 12px 10px 6px; }
+.tr-head { padding: 0 6px 6px; }
+.tr-title { font-size: 26px; font-weight: bold; line-height: 1.2; }
+.tr-sub { font-size: 13px; }
+.tr-box { width: 100%; overflow: hidden; }
+.tr-svg { display: block; width: 100%; height: auto; font-family: inherit; }
+.tr-grid line { stroke: #e4e4e4; }
+.tr-grid text { fill: #555; font-size: 11px; }
+.tr-empty { fill: #666; font-size: 14px; }
+.tr-line path { fill: none; stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+.tr-line path.est { stroke-dasharray: 2 5; stroke-width: 2; }
+.tr-leader { fill: none; stroke-width: 1; opacity: .6; }
+.tr-label { cursor: pointer; }
+.tr-label text { fill: #000; }
+.tr-label .n { font-weight: bold; }
+.tr-label .v { fill: #555; }
+.tr-label:hover .n { text-decoration: underline; }
+.tr-hover { fill: transparent; }
+.tr-cross { stroke: #000; stroke-dasharray: 1 2; pointer-events: none; }
+.tr-focus .tr-line:not(.on), .tr-focus .tr-label:not(.on) { opacity: .15; }
+.tr-focus .tr-line.on path { stroke-width: 3.5; }
+.tr-line, .tr-label { transition: opacity .12s; }
+.tr-tip {
+  position: absolute; z-index: 5; pointer-events: none; min-width: 170px;
+  background: #ffffe1; border: 1px solid #000; box-shadow: 2px 2px 0 rgba(0, 0, 0, .35); padding: 4px 6px; font-size: 11.5px;
+}
+.tr-tip div { display: flex; align-items: center; gap: 5px; white-space: nowrap; }
+.tr-tip i { width: 8px; height: 8px; flex: none; }
+.tr-tip span { margin-left: auto; padding-left: 10px; font-weight: bold; }
+.tr-tip small { color: #555; }
+#trDlg .tr-code { width: calc(100% - 20px); font-family: "Courier New", monospace; font-size: 12px; background: #fff; border: 0; box-shadow: var(--field); padding: 6px; resize: vertical; }
+#trDlg { width: min(620px, calc(100vw - 24px)); }
+#trDlg p { margin-top: 0; margin-bottom: 0; }
+
+/* trends.html (iframe) */
+body.tr-embed { background: var(--face); }
+body.tr-embed .win { margin: 0; max-width: none; min-height: 100vh; }
+body.tr-embed .tr-pane { flex: 1; }
+
+@media (max-width: 640px) {
+  .tr-title { font-size: 20px; }
+}

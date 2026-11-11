@@ -29,6 +29,22 @@
 เว็บอื่น → og:image ที่ดึงตอนเพิ่ม (ปุ่ม ⚡ ดึงข้อมูล ผ่าน microlink.io) หรือภาพหน้าเว็บ (`s.wordpress.com/mshots`)
 ใส่ URL รูปเองได้ในช่อง "รูป thumbnail"
 
+## GitHub Star Trends (กราฟด้านบน)
+
+กราฟ repo ที่ได้ดาวมากที่สุด — ค่าเริ่มต้นคือ "วันนี้" (ดาวทั้งหมด) เลือกดูเป็น เดือน / ปี / ช่วงวันที่ ได้
+(ดาวที่เพิ่มขึ้นในช่วง หรือดาวทั้งหมด), เลือก Top 10/20/30, ชี้เมาส์ดูค่าแต่ละวัน, ชี้ชื่อเพื่อไฮไลต์เส้น
+
+- **ข้อมูล**: `.github/workflows/star-trends.yml` รันทุกชั่วโมง (`ai/tools/fetch_stars.mjs`) เก็บดาวของ
+  repo ใหม่ยอดนิยม (สร้างใน ~18 เดือน, ดาว > 10k, top 40 จาก GitHub search) + ทุกลิงก์ GitHub ในหน้านี้
+  แล้ว force-push ไฟล์เดียว `stars.json` ไปที่ branch **`stars-data`** (ไม่รก history ของ master)
+- **เรียลไทม์**: หน้าเว็บดึงจำนวนดาวล่าสุดของวันนี้เพิ่มจาก GitHub search API อีกที (cache 10 นาที)
+- **ประวัติย้อนหลัง**: ตอนเจอ repo ครั้งแรกจะสุ่มอ่านรายชื่อ stargazers (มีวันที่กดดาว) แต่ GitHub ให้ดู
+  ได้แค่ 40,000 ดาวแรก repo ที่ใหญ่กว่านั้นช่วงระหว่างดาวที่ 40,000 จนถึงวันเริ่มเก็บจะเป็น**เส้นประ (ประมาณการ)**
+  — หลังจากนั้นเป็นข้อมูลจริงรายวัน
+- **แปะเว็บอื่น**: ปุ่ม `📋 Copy iframe` ได้โค้ด `<iframe src="https://bombxdev.github.io/ai/trends.html?…">`
+  ตามตัวกรองที่เลือกอยู่ (โหมด "วันที่" ที่ไม่ได้เลือกวันจะแสดงวันปัจจุบันเสมอ)
+- รันเองทันที: Actions → *Star trends data* → Run workflow
+
 ## สถิติการใช้งาน (GoatCounter — ฟรี)
 
 `stats.js` ส่งสถิติแบบไม่ระบุตัวตนไปที่ [GoatCounter](https://www.goatcounter.com) (ฟรีสำหรับเว็บส่วนตัว, ไม่ใช้ cookie)
@@ -60,4 +76,4 @@
 
 ## ไฟล์
 
-`index.html`, `ai.js`, `ai.css`, `stats.js`, `data/resources.json` (`{updated, root:{id,name,folders:[…],links:[{id,url,title,remark,image,added}]}}`)
+`index.html`, `ai.js`, `ai.css`, `stats.js`, `trends.js` + `trends.css` + `trends.html` (iframe), `tools/fetch_stars.mjs`, `data/resources.json` (`{updated, root:{id,name,folders:[…],links:[{id,url,title,remark,image,added}]}}`)
