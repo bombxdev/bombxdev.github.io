@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T01:27:07.187Z",
+  "updated": "2026-11-12T01:27:28.522Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -390,7 +390,16 @@
         "id": "mwcvb5bnm795",
         "name": "Smart Home",
         "folders": [],
-        "links": []
+        "links": [
+          {
+            "url": "https://github.com/Goblinmine/homelab-diagram",
+            "title": "",
+            "remark": "Homelab Diagram คือ Open Source Network Diagram Generator ที่ช่วยสร้างแผนผังระบบ Network Infrastructure จากไฟล์ YAML ให้ออกมาเป็นภาพ SVG/PNG พร้อมรายละเอียดอุปกรณ์และการเชื่อมต่อ โดยพัฒนาด้วย Python และ Claude Code\n\n- Network Visualization: สร้างแผนผังเครือข่าย แสดง Router, Firewall, Switch, Server และอุปกรณ์ต่าง ๆ พร้อม IP Address และ Hostname\n- Infrastructure Mapping: แสดง VLAN, Switch Ports, Network Connections และความเร็วสาย LAN เช่น 1G, 2.5G และ 10G\n- Server & Container Diagram: แสดงโครงสร้าง Proxmox, Virtual Machines, Docker Containers และ TrueNAS Storage\n- AI Agent Integration: มีไฟล์ CLAUDE.md ให้ Claude Code ช่วยปรับแต่ง Network Diagram จากข้อมูลระบบของผู้ใช้ พร้อมตรวจสอบภาพและแก้ไข Layout\n- จุดเด่น: สร้าง Diagram ที่สวยงามและมีรายละเอียดสูงจาก YAML พร้อมปกปิดข้อมูลสำคัญก่อนเผยแพร่ ใช้งานฟรี (MIT License) แต่ Layout ยังเป็นแบบ Hardcoded ต้องปรับ Python Code ให้เหมาะกับ Network ของตัวเอง",
+            "image": "",
+            "id": "mwcvblsa6ues",
+            "added": "2026-11-12T01:27:28.522Z"
+          }
+        ]
       }
     ],
     "links": []
