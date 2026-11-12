@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T02:01:53.352Z",
+  "updated": "2026-11-12T02:02:04.964Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -57,12 +57,6 @@
             "added": "2026-11-02T04:47:33.742Z"
           }
         ]
-      },
-      {
-        "id": "mvrxo84532p4",
-        "name": "Agent Management",
-        "folders": [],
-        "links": []
       },
       {
         "id": "mvyqph0e4ywf",
