@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T01:27:28.522Z",
+  "updated": "2026-11-12T01:58:23.109Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -400,6 +400,12 @@
             "added": "2026-11-12T01:27:28.522Z"
           }
         ]
+      },
+      {
+        "id": "mwcwfcsl9umi",
+        "name": "Coding Agent",
+        "folders": [],
+        "links": []
       }
     ],
     "links": []
