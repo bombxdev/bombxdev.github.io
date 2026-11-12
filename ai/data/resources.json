@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11T08:45:39.064Z",
+  "updated": "2026-11-12T01:27:07.187Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -383,6 +383,12 @@
       {
         "id": "mwah6irqxk3e",
         "name": "3D",
+        "folders": [],
+        "links": []
+      },
+      {
+        "id": "mwcvb5bnm795",
+        "name": "Smart Home",
         "folders": [],
         "links": []
       }
