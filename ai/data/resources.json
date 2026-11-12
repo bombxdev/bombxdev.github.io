@@ -1,12 +1,12 @@
 {
-  "updated": "2026-11-12T02:00:31.352Z",
+  "updated": "2026-11-12T02:01:04.330Z",
   "root": {
     "id": "root",
     "name": "AI",
     "folders": [
       {
         "id": "tools",
-        "name": "Tools & Infra",
+        "name": "Local LLM",
         "folders": [],
         "links": [
           {
