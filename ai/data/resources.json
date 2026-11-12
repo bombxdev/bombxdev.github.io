@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T01:58:23.109Z",
+  "updated": "2026-11-12T01:59:08.902Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -405,7 +405,16 @@
         "id": "mwcwfcsl9umi",
         "name": "Coding Agent",
         "folders": [],
-        "links": []
+        "links": [
+          {
+            "url": "https://github.com/pingdotgg/t3code",
+            "title": "",
+            "remark": "T3 Code คือ Open Source AI Coding Agent Interface จาก Theo (t3.gg) ที่ช่วยควบคุม AI Coding Agents หลายตัวผ่านหน้าจอเดียว รองรับการใช้งานบน Desktop, Web และ Mobile\n\n- Multi-Agent Support: รองรับ Claude Code, Codex, Cursor, OpenCode, Grok Build และ Google Antigravity โดยใช้บัญชีหรือ Subscription ที่มีอยู่แล้ว\n- Unified Interface: จัดการ AI Coding Agents จากหลาย Provider ผ่าน UI เดียว ไม่ต้องสลับ Terminal หรือโปรแกรมไปมา\n- Remote Coding: สั่ง AI เขียนโค้ดและแก้ไขโปรเจกต์บนคอมพิวเตอร์จากมือถือ iOS/Android หรือ Browser ได้ แม้ไม่ได้อยู่หน้าเครื่อง\n- Git Integration: รองรับ Git Worktrees, Code Diff, Commit, Pull Request และ Code Review เชื่อมต่อ GitHub, GitLab และ Azure DevOps ได้\n- จุดเด่น: คล้าย Codex Desktop แต่รวมหลาย AI Coding Agents ไว้ในแอปเดียว รองรับ Windows, macOS และ Linux ใช้งานฟรีแบบ Open Source (MIT License) แต่ AI Provider อาจมีค่าใช้จ่าย และโปรเจกต์ยังอยู่ในช่วงพัฒนา",
+            "image": "",
+            "id": "mwcwgc4ms4w7",
+            "added": "2026-11-12T01:59:08.902Z"
+          }
+        ]
       }
     ],
     "links": []
