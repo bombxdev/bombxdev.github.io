@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T02:00:12.215Z",
+  "updated": "2026-11-12T02:00:31.352Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -9,14 +9,6 @@
         "name": "Tools & Infra",
         "folders": [],
         "links": [
-          {
-            "id": "mcp-servers",
-            "url": "https://github.com/modelcontextprotocol/servers",
-            "title": "modelcontextprotocol/servers",
-            "remark": "ตัวอย่าง: รวม MCP server สำหรับต่อ tool/ข้อมูลเข้ากับ LLM",
-            "image": "",
-            "added": "2026-10-28T00:00:00.000Z"
-          },
           {
             "id": "ollama",
             "url": "https://github.com/ollama/ollama",
@@ -420,7 +412,16 @@
         "id": "mwcwhozb43sx",
         "name": "MCP",
         "folders": [],
-        "links": []
+        "links": [
+          {
+            "id": "mcp-servers",
+            "url": "https://github.com/modelcontextprotocol/servers",
+            "title": "modelcontextprotocol/servers",
+            "remark": "ตัวอย่าง: รวม MCP server สำหรับต่อ tool/ข้อมูลเข้ากับ LLM",
+            "image": "",
+            "added": "2026-10-28T00:00:00.000Z"
+          }
+        ]
       }
     ],
     "links": []
