@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-19T12:49:05.822Z",
+  "updated": "2026-11-19T12:51:13.252Z",
   "root": {
     "id": "root",
     "name": "AI",
@@ -356,7 +356,7 @@
             "added": "2026-11-06T18:15:29.129Z"
           },
           {
-            "url": "https://github.com/storytold/craft-anything",
+            "url": "https://github.com/erkamyaman/rust-anything",
             "title": "",
             "remark": "Rust Anything คือ Open Source Framework สำหรับช่วย AI Coding Agent แปลงโปรแกรมจากภาษาเดิมเป็น Rust เพื่อเพิ่มประสิทธิภาพ โดยตรวจสอบให้ทำงานเหมือนต้นฉบับ\n\n- Code Migration: ช่วยย้ายโปรแกรมจาก TypeScript, JavaScript, Python, C, Go, Ruby และ Java ไปเป็น Rust ทีละส่วน\n- Performance Optimization: วิเคราะห์โค้ดที่ทำงานช้า (Hot Paths) แล้วเลือกส่วนที่ควรเขียนใหม่ด้วย Rust โดยมีตัวอย่างที่เร็วขึ้นสูงสุด 20 เท่า\n- Behavior Verification: บันทึกผลลัพธ์ของโปรแกรมเดิมและทดสอบเปรียบเทียบกับ Rust เพื่อป้องกันการเปลี่ยนพฤติกรรมหรือเกิด Bug\n- AI Agent Integration: รองรับ Claude Code, Codex, Cursor และ Gemini CLI ผ่าน MCP, Agent Skills และ CLI\n- จุดเด่น: ไม่จำเป็นต้อง Rewrite ทั้งระบบในครั้งเดียว สามารถทยอยย้ายเฉพาะส่วนที่ต้องการได้ ใช้งานฟรี (MIT License) โดย AI Agent หรือผู้พัฒนายังคงต้องเขียนโค้ด Rust เอง",
             "image": "",
